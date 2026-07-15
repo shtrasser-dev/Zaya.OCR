@@ -12,7 +12,7 @@ internal static class OneOcrNative
 {
     private const string ModelKey = "kj)TGtrK>f]b[Piow.gU+nC@s\"\"\"\"\"\"4";
 
-    private const int S_OK = 0;
+    private const long S_OK = 0;
 
 #pragma warning disable CS0649
     private struct Img
@@ -27,43 +27,43 @@ internal static class OneOcrNative
 #pragma warning restore CS0649
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int CreateOcrInitOptions(out long ctx);
+    private delegate long CreateOcrInitOptions(out long ctx);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int OcrInitOptionsSetUseModelDelayLoad(long ctx, byte useDelayLoad);
+    private delegate long OcrInitOptionsSetUseModelDelayLoad(long ctx, byte useDelayLoad);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int CreateOcrPipeline(long modelPath, long key, long ctx, out long pipeline);
+    private delegate long CreateOcrPipeline(long modelPath, long key, long ctx, out long pipeline);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int CreateOcrProcessOptions(out long opt);
+    private delegate long CreateOcrProcessOptions(out long opt);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int OcrProcessOptionsSetMaxRecognitionLineCount(long opt, long maxCount);
+    private delegate long OcrProcessOptionsSetMaxRecognitionLineCount(long opt, long maxCount);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int RunOcrPipeline(long pipeline, ref Img img, long opt, out long instance);
+    private delegate long RunOcrPipeline(long pipeline, ref Img img, long opt, out long instance);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int GetOcrLineCount(long instance, out long count);
+    private delegate long GetOcrLineCount(long instance, out long count);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int GetOcrLine(long instance, long index, out long line);
+    private delegate long GetOcrLine(long instance, long index, out long line);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int GetOcrLineContent(long line, out long content);
+    private delegate long GetOcrLineContent(long line, out long content);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int GetOcrLineWordCount(long line, out long count);
+    private delegate long GetOcrLineWordCount(long line, out long count);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int GetOcrWord(long line, long index, out long word);
+    private delegate long GetOcrWord(long line, long index, out long word);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int GetOcrWordContent(long word, out long content);
+    private delegate long GetOcrWordContent(long word, out long content);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate int GetOcrWordBoundingBox(long word, out long box);
+    private delegate long GetOcrWordBoundingBox(long word, out long box);
 
     private static readonly nint _dllHandle;
     private static readonly string? _modelPath;
@@ -150,7 +150,7 @@ internal static class OneOcrNative
 
             try
             {
-                int res = _createInit!(out _ctx);
+                long res = _createInit!(out _ctx);
                 if (res != S_OK) throw new Exception($"CreateOcrInitOptions: {res}");
 
                 res = _setDelayLoad!(_ctx, 0);
@@ -191,7 +191,7 @@ internal static class OneOcrNative
     {
         EnsureInitialized();
 
-        int res = _createOpt!(out long opt);
+        long res = _createOpt!(out long opt);
         if (res != S_OK) throw new Exception($"CreateOcrProcessOptions: {res}");
 
         res = _setMaxLine!(opt, 1000);
