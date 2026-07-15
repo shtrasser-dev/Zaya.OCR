@@ -1,0 +1,394 @@
+### YamlMime:ManagedReference
+items:
+- uid: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions
+  commentId: T:Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions
+  id: OneOcrServiceCollectionExtensions
+  parent: Microsoft.Extensions.DependencyInjection
+  children:
+  - Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.AddOneOcr(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  langs:
+  - csharp
+  - vb
+  name: OneOcrServiceCollectionExtensions
+  nameWithType: OneOcrServiceCollectionExtensions
+  fullName: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions
+  type: Class
+  source:
+    id: OneOcrServiceCollectionExtensions
+    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Extensions\ServiceCollectionExtensions.cs
+    startLine: 8
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Microsoft.Extensions.DependencyInjection
+  summary: Extension methods for registering OneOCR services in a DI container.
+  example: []
+  syntax:
+    content: public static class OneOcrServiceCollectionExtensions
+    content.vb: Public Module OneOcrServiceCollectionExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.AddOneOcr(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  commentId: M:Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.AddOneOcr(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  id: AddOneOcr(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  isExtensionMethod: true
+  parent: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddOneOcr(IServiceCollection)
+  nameWithType: OneOcrServiceCollectionExtensions.AddOneOcr(IServiceCollection)
+  fullName: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.AddOneOcr(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  type: Method
+  source:
+    id: AddOneOcr
+    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Extensions\ServiceCollectionExtensions.cs
+    startLine: 15
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Microsoft.Extensions.DependencyInjection
+  summary: Registers the <xref href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService" data-throw-if-not-resolved="false"></xref> as a scoped <xref href="Zaya.OCR.Services.IOCRService" data-throw-if-not-resolved="false"></xref> implementation.
+  example: []
+  syntax:
+    content: public static IServiceCollection AddOneOcr(this IServiceCollection services)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The <xref href="Microsoft.Extensions.DependencyInjection.IServiceCollection" data-throw-if-not-resolved="false"></xref> to add services to.
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The same service collection for chaining.
+    content.vb: Public Shared Function AddOneOcr(services As IServiceCollection) As IServiceCollection
+  overload: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.AddOneOcr*
+references:
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
+  commentId: T:Zaya.OCR.Impl.OneOcr.Services.OneOcrService
+  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html
+  name: OneOcrService
+  nameWithType: OneOcrService
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
+- uid: Zaya.OCR.Services.IOCRService
+  commentId: T:Zaya.OCR.Services.IOCRService
+  parent: Zaya.OCR.Services
+  href: Zaya.OCR.Services.IOCRService.html
+  name: IOCRService
+  nameWithType: IOCRService
+  fullName: Zaya.OCR.Services.IOCRService
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.AddOneOcr*
+  commentId: Overload:Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.AddOneOcr
+  href: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.html#Microsoft_Extensions_DependencyInjection_OneOcrServiceCollectionExtensions_AddOneOcr_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  name: AddOneOcr
+  nameWithType: OneOcrServiceCollectionExtensions.AddOneOcr
+  fullName: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.AddOneOcr
+- uid: Zaya.OCR.Services
+  commentId: N:Zaya.OCR.Services
+  href: Zaya.html
+  name: Zaya.OCR.Services
+  nameWithType: Zaya.OCR.Services
+  fullName: Zaya.OCR.Services
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Services
+    name: Services
+    href: Zaya.OCR.Services.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Services
+    name: Services
+    href: Zaya.OCR.Services.html

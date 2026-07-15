@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.OneOcr.Models
+  commentId: N:Zaya.OCR.Impl.OneOcr.Models
+  id: Zaya.OCR.Impl.OneOcr.Models
+  children:
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Impl.OneOcr.Models
+  nameWithType: Zaya.OCR.Impl.OneOcr.Models
+  fullName: Zaya.OCR.Impl.OneOcr.Models
+  type: Namespace
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+references:
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
+  commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.html
+  name: OneOcrResult
+  nameWithType: OneOcrResult
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html
+  name: OneOcrWord
+  nameWithType: OneOcrWord
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord

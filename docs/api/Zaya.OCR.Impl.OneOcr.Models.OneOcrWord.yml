@@ -1,0 +1,573 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  id: OneOcrWord
+  parent: Zaya.OCR.Impl.OneOcr.Models
+  children:
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,System.Drawing.Rectangle,System.Double)
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text
+  langs:
+  - csharp
+  - vb
+  name: OneOcrWord
+  nameWithType: OneOcrWord
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  type: Class
+  source:
+    id: OneOcrWord
+    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrWord.cs
+    startLine: 8
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Models
+  summary: Default implementation of <xref href="Zaya.OCR.Models.IOCRWord" data-throw-if-not-resolved="false"></xref> for OneOCR engine results.
+  example: []
+  syntax:
+    content: 'public sealed class OneOcrWord : IOCRWord'
+    content.vb: Public NotInheritable Class OneOcrWord Implements IOCRWord
+  inheritance:
+  - System.Object
+  implements:
+  - Zaya.OCR.Models.IOCRWord
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text
+  commentId: P:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text
+  id: Text
+  parent: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: OneOcrWord.Text
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text
+  type: Property
+  source:
+    id: Text
+    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrWord.cs
+    startLine: 13
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Models
+  summary: Gets the recognized text of the word.
+  example: []
+  syntax:
+    content: public string Text { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Text As String
+  overload: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text*
+  implements:
+  - Zaya.OCR.Models.IOCRWord.Text
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
+  commentId: P:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
+  id: Bounds
+  parent: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  langs:
+  - csharp
+  - vb
+  name: Bounds
+  nameWithType: OneOcrWord.Bounds
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
+  type: Property
+  source:
+    id: Bounds
+    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrWord.cs
+    startLine: 18
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Models
+  summary: Gets the bounding rectangle of the word in the image.
+  example: []
+  syntax:
+    content: public Rectangle Bounds { get; }
+    parameters: []
+    return:
+      type: System.Drawing.Rectangle
+    content.vb: Public ReadOnly Property Bounds As Rectangle
+  overload: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds*
+  implements:
+  - Zaya.OCR.Models.IOCRWord.Bounds
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
+  commentId: P:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
+  id: Confidence
+  parent: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  langs:
+  - csharp
+  - vb
+  name: Confidence
+  nameWithType: OneOcrWord.Confidence
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
+  type: Property
+  source:
+    id: Confidence
+    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrWord.cs
+    startLine: 23
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Models
+  summary: Gets the confidence of the word recognition (0.0 to 1.0).
+  example: []
+  syntax:
+    content: public double Confidence { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Confidence As Double
+  overload: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence*
+  implements:
+  - Zaya.OCR.Models.IOCRWord.Confidence
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,System.Drawing.Rectangle,System.Double)
+  commentId: M:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,System.Drawing.Rectangle,System.Double)
+  id: '#ctor(System.String,System.Drawing.Rectangle,System.Double)'
+  parent: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  langs:
+  - csharp
+  - vb
+  name: OneOcrWord(string, Rectangle, double)
+  nameWithType: OneOcrWord.OneOcrWord(string, Rectangle, double)
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.OneOcrWord(string, System.Drawing.Rectangle, double)
+  type: Constructor
+  source:
+    id: .ctor
+    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrWord.cs
+    startLine: 31
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Models
+  summary: Initializes a new instance of the <xref href="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public OneOcrWord(string text, Rectangle bounds, double confidence)
+    parameters:
+    - id: text
+      type: System.String
+      description: The recognized text.
+    - id: bounds
+      type: System.Drawing.Rectangle
+      description: The bounding rectangle in the image.
+    - id: confidence
+      type: System.Double
+      description: The confidence score (0.0 to 1.0).
+    content.vb: Public Sub New(text As String, bounds As Rectangle, confidence As Double)
+  overload: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor*
+  nameWithType.vb: OneOcrWord.New(String, Rectangle, Double)
+  fullName.vb: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.New(String, System.Drawing.Rectangle, Double)
+  name.vb: New(String, Rectangle, Double)
+references:
+- uid: Zaya.OCR.Models.IOCRWord
+  commentId: T:Zaya.OCR.Models.IOCRWord
+  parent: Zaya.OCR.Models
+  href: Zaya.OCR.Models.IOCRWord.html
+  name: IOCRWord
+  nameWithType: IOCRWord
+  fullName: Zaya.OCR.Models.IOCRWord
+- uid: Zaya.OCR.Impl.OneOcr.Models
+  commentId: N:Zaya.OCR.Impl.OneOcr.Models
+  href: Zaya.html
+  name: Zaya.OCR.Impl.OneOcr.Models
+  nameWithType: Zaya.OCR.Impl.OneOcr.Models
+  fullName: Zaya.OCR.Impl.OneOcr.Models
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr
+    name: OneOcr
+    href: Zaya.OCR.Impl.OneOcr.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr.Models
+    name: Models
+    href: Zaya.OCR.Impl.OneOcr.Models.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr
+    name: OneOcr
+    href: Zaya.OCR.Impl.OneOcr.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr.Models
+    name: Models
+    href: Zaya.OCR.Impl.OneOcr.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: Zaya.OCR.Models
+  commentId: N:Zaya.OCR.Models
+  href: Zaya.html
+  name: Zaya.OCR.Models
+  nameWithType: Zaya.OCR.Models
+  fullName: Zaya.OCR.Models
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Text
+  name: Text
+  nameWithType: OneOcrWord.Text
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text
+- uid: Zaya.OCR.Models.IOCRWord.Text
+  commentId: P:Zaya.OCR.Models.IOCRWord.Text
+  parent: Zaya.OCR.Models.IOCRWord
+  href: Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Text
+  name: Text
+  nameWithType: IOCRWord.Text
+  fullName: Zaya.OCR.Models.IOCRWord.Text
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Bounds
+  name: Bounds
+  nameWithType: OneOcrWord.Bounds
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
+- uid: Zaya.OCR.Models.IOCRWord.Bounds
+  commentId: P:Zaya.OCR.Models.IOCRWord.Bounds
+  parent: Zaya.OCR.Models.IOCRWord
+  href: Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Bounds
+  name: Bounds
+  nameWithType: IOCRWord.Bounds
+  fullName: Zaya.OCR.Models.IOCRWord.Bounds
+- uid: System.Drawing.Rectangle
+  commentId: T:System.Drawing.Rectangle
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  name: Rectangle
+  nameWithType: Rectangle
+  fullName: System.Drawing.Rectangle
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Confidence
+  name: Confidence
+  nameWithType: OneOcrWord.Confidence
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
+- uid: Zaya.OCR.Models.IOCRWord.Confidence
+  commentId: P:Zaya.OCR.Models.IOCRWord.Confidence
+  parent: Zaya.OCR.Models.IOCRWord
+  href: Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Confidence
+  name: Confidence
+  nameWithType: IOCRWord.Confidence
+  fullName: Zaya.OCR.Models.IOCRWord.Confidence
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html
+  name: OneOcrWord
+  nameWithType: OneOcrWord
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrWord__ctor_System_String_System_Drawing_Rectangle_System_Double_
+  name: OneOcrWord
+  nameWithType: OneOcrWord.OneOcrWord
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.OneOcrWord
+  nameWithType.vb: OneOcrWord.New
+  fullName.vb: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.New
+  name.vb: New

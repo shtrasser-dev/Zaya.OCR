@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Models
+  commentId: N:Zaya.OCR.Models
+  id: Zaya.OCR.Models
+  children:
+  - Zaya.OCR.Models.IOCRResult
+  - Zaya.OCR.Models.IOCRWord
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Models
+  nameWithType: Zaya.OCR.Models
+  fullName: Zaya.OCR.Models
+  type: Namespace
+  assemblies:
+  - Zaya.OCR
+references:
+- uid: Zaya.OCR.Models.IOCRResult
+  commentId: T:Zaya.OCR.Models.IOCRResult
+  parent: Zaya.OCR.Models
+  href: Zaya.OCR.Models.IOCRResult.html
+  name: IOCRResult
+  nameWithType: IOCRResult
+  fullName: Zaya.OCR.Models.IOCRResult
+- uid: Zaya.OCR.Models.IOCRWord
+  commentId: T:Zaya.OCR.Models.IOCRWord
+  parent: Zaya.OCR.Models
+  href: Zaya.OCR.Models.IOCRWord.html
+  name: IOCRWord
+  nameWithType: IOCRWord
+  fullName: Zaya.OCR.Models.IOCRWord
+- uid: Zaya.OCR.Models
+  commentId: N:Zaya.OCR.Models
+  href: Zaya.html
+  name: Zaya.OCR.Models
+  nameWithType: Zaya.OCR.Models
+  fullName: Zaya.OCR.Models
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html

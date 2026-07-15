@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Services
+  commentId: N:Zaya.OCR.Services
+  id: Zaya.OCR.Services
+  children:
+  - Zaya.OCR.Services.IOCRService
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Services
+  nameWithType: Zaya.OCR.Services
+  fullName: Zaya.OCR.Services
+  type: Namespace
+  assemblies:
+  - Zaya.OCR
+references:
+- uid: Zaya.OCR.Services.IOCRService
+  commentId: T:Zaya.OCR.Services.IOCRService
+  parent: Zaya.OCR.Services
+  href: Zaya.OCR.Services.IOCRService.html
+  name: IOCRService
+  nameWithType: IOCRService
+  fullName: Zaya.OCR.Services.IOCRService
+- uid: Zaya.OCR.Services
+  commentId: N:Zaya.OCR.Services
+  href: Zaya.html
+  name: Zaya.OCR.Services
+  nameWithType: Zaya.OCR.Services
+  fullName: Zaya.OCR.Services
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Services
+    name: Services
+    href: Zaya.OCR.Services.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Services
+    name: Services
+    href: Zaya.OCR.Services.html

@@ -1,0 +1,248 @@
+{
+  "source_base_path": "D:/p/Zaya/Zaya.OCR",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions",
+      "Summary": "<p sourcefile=\"docs/api/Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.yml\" sourcestartlinenumber=\"1\">Extension methods for registering OneOCR services in a DI container.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Microsoft.Extensions.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Microsoft.Extensions.DependencyInjection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.OneOcr.Models.OneOcrResult",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.OCR.Models.IOCRResult\" data-throw-if-not-resolved=\"false\"></xref> for OneOCR engine results.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.OneOcr.Models.OneOcrWord",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.OCR.Models.IOCRWord\" data-throw-if-not-resolved=\"false\"></xref> for OneOCR engine results.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.OneOcr.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.OneOcr.Services.OneOcrService",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml\" sourcestartlinenumber=\"1\">OneOCR engine implementation of <xref href=\"Zaya.OCR.Services.IOCRService\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.OneOcr.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Models.IOCRResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Models.IOCRResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Models.IOCRResult",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.IOCRResult.yml\" sourcestartlinenumber=\"1\">Represents the result of an OCR recognition operation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Models.IOCRWord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Models.IOCRWord.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Models.IOCRWord",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.IOCRWord.yml\" sourcestartlinenumber=\"1\">Represents a single recognized word with its text, bounding box, and confidence score.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Services.IOCRService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Services.IOCRService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Services.IOCRService",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.IOCRService.yml\" sourcestartlinenumber=\"1\">Provides text recognition (OCR) capabilities for image data.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Services",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/articles/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

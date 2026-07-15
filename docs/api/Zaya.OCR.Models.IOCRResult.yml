@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Models.IOCRResult
+  commentId: T:Zaya.OCR.Models.IOCRResult
+  id: IOCRResult
+  parent: Zaya.OCR.Models
+  children:
+  - Zaya.OCR.Models.IOCRResult.Confidence
+  - Zaya.OCR.Models.IOCRResult.Words
+  langs:
+  - csharp
+  - vb
+  name: IOCRResult
+  nameWithType: IOCRResult
+  fullName: Zaya.OCR.Models.IOCRResult
+  type: Interface
+  source:
+    id: IOCRResult
+    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR\Models\IOCRResult.cs
+    startLine: 5
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Represents the result of an OCR recognition operation.
+  example: []
+  syntax:
+    content: public interface IOCRResult
+    content.vb: Public Interface IOCRResult
+  derivedClasses:
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
+- uid: Zaya.OCR.Models.IOCRResult.Words
+  commentId: P:Zaya.OCR.Models.IOCRResult.Words
+  id: Words
+  parent: Zaya.OCR.Models.IOCRResult
+  langs:
+  - csharp
+  - vb
+  name: Words
+  nameWithType: IOCRResult.Words
+  fullName: Zaya.OCR.Models.IOCRResult.Words
+  type: Property
+  source:
+    id: Words
+    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR\Models\IOCRResult.cs
+    startLine: 10
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Gets the list of recognized words with their bounding boxes and confidence.
+  example: []
+  syntax:
+    content: IReadOnlyList<IOCRWord> Words { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{Zaya.OCR.Models.IOCRWord}
+    content.vb: ReadOnly Property Words As IReadOnlyList(Of IOCRWord)
+  overload: Zaya.OCR.Models.IOCRResult.Words*
+- uid: Zaya.OCR.Models.IOCRResult.Confidence
+  commentId: P:Zaya.OCR.Models.IOCRResult.Confidence
+  id: Confidence
+  parent: Zaya.OCR.Models.IOCRResult
+  langs:
+  - csharp
+  - vb
+  name: Confidence
+  nameWithType: IOCRResult.Confidence
+  fullName: Zaya.OCR.Models.IOCRResult.Confidence
+  type: Property
+  source:
+    id: Confidence
+    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR\Models\IOCRResult.cs
+    startLine: 15
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Gets the overall confidence of the recognition (0.0 to 1.0).
+  example: []
+  syntax:
+    content: double Confidence { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: ReadOnly Property Confidence As Double
+  overload: Zaya.OCR.Models.IOCRResult.Confidence*
+references:
+- uid: Zaya.OCR.Models
+  commentId: N:Zaya.OCR.Models
+  href: Zaya.html
+  name: Zaya.OCR.Models
+  nameWithType: Zaya.OCR.Models
+  fullName: Zaya.OCR.Models
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+- uid: Zaya.OCR.Models.IOCRResult.Words*
+  commentId: Overload:Zaya.OCR.Models.IOCRResult.Words
+  href: Zaya.OCR.Models.IOCRResult.html#Zaya_OCR_Models_IOCRResult_Words
+  name: Words
+  nameWithType: IOCRResult.Words
+  fullName: Zaya.OCR.Models.IOCRResult.Words
+- uid: System.Collections.Generic.IReadOnlyList{Zaya.OCR.Models.IOCRWord}
+  commentId: T:System.Collections.Generic.IReadOnlyList{Zaya.OCR.Models.IOCRWord}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<IOCRWord>
+  nameWithType: IReadOnlyList<IOCRWord>
+  fullName: System.Collections.Generic.IReadOnlyList<Zaya.OCR.Models.IOCRWord>
+  nameWithType.vb: IReadOnlyList(Of IOCRWord)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Zaya.OCR.Models.IOCRWord)
+  name.vb: IReadOnlyList(Of IOCRWord)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Zaya.OCR.Models.IOCRWord
+    name: IOCRWord
+    href: Zaya.OCR.Models.IOCRWord.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Zaya.OCR.Models.IOCRWord
+    name: IOCRWord
+    href: Zaya.OCR.Models.IOCRWord.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Zaya.OCR.Models.IOCRResult.Confidence*
+  commentId: Overload:Zaya.OCR.Models.IOCRResult.Confidence
+  href: Zaya.OCR.Models.IOCRResult.html#Zaya_OCR_Models_IOCRResult_Confidence
+  name: Confidence
+  nameWithType: IOCRResult.Confidence
+  fullName: Zaya.OCR.Models.IOCRResult.Confidence
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

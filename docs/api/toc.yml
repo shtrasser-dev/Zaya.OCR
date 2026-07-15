@@ -1,0 +1,44 @@
+### YamlMime:TableOfContent
+items:
+- uid: Microsoft.Extensions.DependencyInjection
+  name: Microsoft.Extensions.DependencyInjection
+  type: Namespace
+  items:
+  - uid: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions
+    name: OneOcrServiceCollectionExtensions
+    type: Class
+- uid: Zaya.OCR.Impl.OneOcr.Models
+  name: Zaya.OCR.Impl.OneOcr.Models
+  type: Namespace
+  items:
+  - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
+    name: OneOcrResult
+    type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+    name: OneOcrWord
+    type: Class
+- uid: Zaya.OCR.Impl.OneOcr.Services
+  name: Zaya.OCR.Impl.OneOcr.Services
+  type: Namespace
+  items:
+  - uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
+    name: OneOcrService
+    type: Class
+- uid: Zaya.OCR.Models
+  name: Zaya.OCR.Models
+  type: Namespace
+  items:
+  - uid: Zaya.OCR.Models.IOCRResult
+    name: IOCRResult
+    type: Interface
+  - uid: Zaya.OCR.Models.IOCRWord
+    name: IOCRWord
+    type: Interface
+- uid: Zaya.OCR.Services
+  name: Zaya.OCR.Services
+  type: Namespace
+  items:
+  - uid: Zaya.OCR.Services.IOCRService
+    name: IOCRService
+    type: Interface
+memberLayout: SamePage
