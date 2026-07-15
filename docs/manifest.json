@@ -84,7 +84,21 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.OneOcr.Services.OneOcrService",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml\" sourcestartlinenumber=\"1\">OneOCR engine implementation of <xref href=\"Zaya.OCR.Services.IOCRService\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml\" sourcestartlinenumber=\"1\">OneOCR engine implementation of <xref href=\"Zaya.OCR.Services.IOCRService\" data-throw-if-not-resolved=\"false\"></xref> using P/Invoke\ninto the native oneocr.dll (Windows 11 SnippingTool OCR engine).\nNo WinRT, no Windows App SDK, no package identity required.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.OneOcr.Services.OneOcrSession",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.yml\" sourcestartlinenumber=\"1\">OneOCR session that holds recognition options and performs OCR\nusing the native oneocr.dll via P/Invoke.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -130,6 +144,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Models.OcrOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Models.OcrOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Models.OcrOptions",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.OcrOptions.yml\" sourcestartlinenumber=\"1\">Configuration options for OCR recognition operations.\nOptions that are not supported by a particular engine implementation are silently ignored.\nWhen <xref href=\"Zaya.OCR.Models.OcrOptions.Width\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"Zaya.OCR.Models.OcrOptions.Height\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"Zaya.OCR.Models.OcrOptions.Stride\" data-throw-if-not-resolved=\"false\"></xref>, and <xref href=\"Zaya.OCR.Models.OcrOptions.PixelFormat\" data-throw-if-not-resolved=\"false\"></xref>\nare set, the <code>byte[]</code> passed to <xref href=\"Zaya.OCR.Services.IOCRSession.RecognizeAsync(System.Byte%5b%5d%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref>\nis treated as raw pixel data rather than an encoded image (PNG, JPEG, BMP).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/Zaya.OCR.Models.yml",
       "output": {
         ".html": {
@@ -154,7 +182,49 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Services.IOCRService",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.IOCRService.yml\" sourcestartlinenumber=\"1\">Provides text recognition (OCR) capabilities for image data.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.IOCRService.yml\" sourcestartlinenumber=\"1\">Provides text recognition (OCR) capabilities.\nCreate sessions with <xref href=\"Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> to perform recognition\nwith a fixed set of options.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Services.IOCRSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Services.IOCRSession.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Services.IOCRSession",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.IOCRSession.yml\" sourcestartlinenumber=\"1\">Represents an active OCR session with fixed recognition options.\nCreate via <xref href=\"Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Services.OcrEngineInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Services.OcrEngineInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Services.OcrEngineInfo",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.OcrEngineInfo.yml\" sourcestartlinenumber=\"1\">Describes an available OCR engine.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Services.OcrEngineProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Services.OcrEngineProvider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Services.OcrEngineProvider",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.OcrEngineProvider.yml\" sourcestartlinenumber=\"1\">Discovers available OCR engines by scanning loaded assemblies\nfor concrete implementations of <xref href=\"Zaya.OCR.Services.IOCRService\" data-throw-if-not-resolved=\"false\"></xref>.\nTraverses all referenced assemblies recursively so that\nimplementations in referenced NuGet/project packages are discovered.</p>\n"
     },
     {
       "type": "ManagedReference",

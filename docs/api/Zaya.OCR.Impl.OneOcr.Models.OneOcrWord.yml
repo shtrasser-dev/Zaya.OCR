@@ -17,8 +17,12 @@ items:
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
   type: Class
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrWord
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrWord.cs
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
     startLine: 8
   assemblies:
   - Zaya.OCR.Impl.OneOcr
@@ -51,8 +55,12 @@ items:
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text
   type: Property
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Text
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrWord.cs
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
     startLine: 13
   assemblies:
   - Zaya.OCR.Impl.OneOcr
@@ -80,8 +88,12 @@ items:
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
   type: Property
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Bounds
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrWord.cs
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
     startLine: 18
   assemblies:
   - Zaya.OCR.Impl.OneOcr
@@ -109,8 +121,12 @@ items:
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
   type: Property
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Confidence
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrWord.cs
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
     startLine: 23
   assemblies:
   - Zaya.OCR.Impl.OneOcr
@@ -138,8 +154,12 @@ items:
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.OneOcrWord(string, System.Drawing.Rectangle, double)
   type: Constructor
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrWord.cs
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
     startLine: 31
   assemblies:
   - Zaya.OCR.Impl.OneOcr
@@ -469,7 +489,6 @@ references:
 - uid: Zaya.OCR.Models.IOCRWord.Text
   commentId: P:Zaya.OCR.Models.IOCRWord.Text
   parent: Zaya.OCR.Models.IOCRWord
-  href: Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Text
   name: Text
   nameWithType: IOCRWord.Text
   fullName: Zaya.OCR.Models.IOCRWord.Text
@@ -493,7 +512,6 @@ references:
 - uid: Zaya.OCR.Models.IOCRWord.Bounds
   commentId: P:Zaya.OCR.Models.IOCRWord.Bounds
   parent: Zaya.OCR.Models.IOCRWord
-  href: Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Bounds
   name: Bounds
   nameWithType: IOCRWord.Bounds
   fullName: Zaya.OCR.Models.IOCRWord.Bounds
@@ -541,7 +559,6 @@ references:
 - uid: Zaya.OCR.Models.IOCRWord.Confidence
   commentId: P:Zaya.OCR.Models.IOCRWord.Confidence
   parent: Zaya.OCR.Models.IOCRWord
-  href: Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Confidence
   name: Confidence
   nameWithType: IOCRWord.Confidence
   fullName: Zaya.OCR.Models.IOCRWord.Confidence

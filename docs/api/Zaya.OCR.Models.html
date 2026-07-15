@@ -72,6 +72,16 @@
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
+    <h3 id="classes">
+Classes
+</h3>
+      <h4><a class="xref" href="Zaya.OCR.Models.OcrOptions.html">OcrOptions</a></h4>
+      <section><p>Configuration options for OCR recognition operations.
+Options that are not supported by a particular engine implementation are silently ignored.
+When <a class="xref" href="Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Width">Width</a>, <a class="xref" href="Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Height">Height</a>, <a class="xref" href="Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Stride">Stride</a>, and <a class="xref" href="Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_PixelFormat">PixelFormat</a>
+are set, the <code>byte[]</code> passed to <a class="xref" href="Zaya.OCR.Services.IOCRSession.html#Zaya_OCR_Services_IOCRSession_RecognizeAsync_System_Byte___System_Threading_CancellationToken_">RecognizeAsync(byte[], CancellationToken)</a>
+is treated as raw pixel data rather than an encoded image (PNG, JPEG, BMP).</p>
+</section>
     <h3 id="interfaces">
 Interfaces
 </h3>

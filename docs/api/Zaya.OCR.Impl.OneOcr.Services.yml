@@ -5,6 +5,7 @@ items:
   id: Zaya.OCR.Impl.OneOcr.Services
   children:
   - Zaya.OCR.Impl.OneOcr.Services.OneOcrService
+  - Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
   langs:
   - csharp
   - vb
@@ -21,3 +22,9 @@ references:
   name: OneOcrService
   nameWithType: OneOcrService
   fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  commentId: T:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html
+  name: OneOcrSession
+  nameWithType: OneOcrSession
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession

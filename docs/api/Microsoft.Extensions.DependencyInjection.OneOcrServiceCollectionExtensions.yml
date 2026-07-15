@@ -14,8 +14,12 @@ items:
   fullName: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions
   type: Class
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Extensions/ServiceCollectionExtensions.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrServiceCollectionExtensions
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Extensions\ServiceCollectionExtensions.cs
+    path: src/Zaya.OCR.Impl.OneOcr/Extensions/ServiceCollectionExtensions.cs
     startLine: 8
   assemblies:
   - Zaya.OCR.Impl.OneOcr
@@ -48,13 +52,24 @@ items:
   fullName: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.AddOneOcr(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   type: Method
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Extensions/ServiceCollectionExtensions.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: AddOneOcr
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Extensions\ServiceCollectionExtensions.cs
-    startLine: 15
+    path: src/Zaya.OCR.Impl.OneOcr/Extensions/ServiceCollectionExtensions.cs
+    startLine: 18
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Microsoft.Extensions.DependencyInjection
-  summary: Registers the <xref href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService" data-throw-if-not-resolved="false"></xref> as a scoped <xref href="Zaya.OCR.Services.IOCRService" data-throw-if-not-resolved="false"></xref> implementation.
+  summary: >-
+    Registers <xref href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService" data-throw-if-not-resolved="false"></xref> as a singleton <xref href="Zaya.OCR.Services.IOCRService" data-throw-if-not-resolved="false"></xref>.
+
+    The underlying <xref href="Microsoft.Windows.AI.Imaging.TextRecognizer" data-throw-if-not-resolved="false"></xref> is initialized
+
+    lazily on the first session creation. Sessions are created on demand via
+
+    <xref href="Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref> and are designed to be short-lived.
   example: []
   syntax:
     content: public static IServiceCollection AddOneOcr(this IServiceCollection services)
@@ -348,6 +363,50 @@ references:
   name: IOCRService
   nameWithType: IOCRService
   fullName: Zaya.OCR.Services.IOCRService
+- uid: Microsoft.Windows.AI.Imaging.TextRecognizer
+  commentId: T:Microsoft.Windows.AI.Imaging.TextRecognizer
+  isExternal: true
+  name: TextRecognizer
+  nameWithType: TextRecognizer
+  fullName: Microsoft.Windows.AI.Imaging.TextRecognizer
+- uid: Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)
+  commentId: M:Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)
+  parent: Zaya.OCR.Services.IOCRService
+  isExternal: true
+  href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_
+  name: CreateSessionAsync(OcrOptions, CancellationToken)
+  nameWithType: IOCRService.CreateSessionAsync(OcrOptions, CancellationToken)
+  fullName: Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)
+    name: CreateSessionAsync
+    href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_
+  - name: (
+  - uid: Zaya.OCR.Models.OcrOptions
+    name: OcrOptions
+    href: Zaya.OCR.Models.OcrOptions.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)
+    name: CreateSessionAsync
+    href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_
+  - name: (
+  - uid: Zaya.OCR.Models.OcrOptions
+    name: OcrOptions
+    href: Zaya.OCR.Models.OcrOptions.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
 - uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
   commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
   parent: Microsoft.Extensions.DependencyInjection

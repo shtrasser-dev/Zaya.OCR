@@ -24,6 +24,9 @@ items:
   - uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
     name: OneOcrService
     type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+    name: OneOcrSession
+    type: Class
 - uid: Zaya.OCR.Models
   name: Zaya.OCR.Models
   type: Namespace
@@ -34,6 +37,9 @@ items:
   - uid: Zaya.OCR.Models.IOCRWord
     name: IOCRWord
     type: Interface
+  - uid: Zaya.OCR.Models.OcrOptions
+    name: OcrOptions
+    type: Class
 - uid: Zaya.OCR.Services
   name: Zaya.OCR.Services
   type: Namespace
@@ -41,4 +47,13 @@ items:
   - uid: Zaya.OCR.Services.IOCRService
     name: IOCRService
     type: Interface
+  - uid: Zaya.OCR.Services.IOCRSession
+    name: IOCRSession
+    type: Interface
+  - uid: Zaya.OCR.Services.OcrEngineInfo
+    name: OcrEngineInfo
+    type: Class
+  - uid: Zaya.OCR.Services.OcrEngineProvider
+    name: OcrEngineProvider
+    type: Class
 memberLayout: SamePage

@@ -159,22 +159,109 @@ references:
   commentId: T:Zaya.OCR.Impl.OneOcr.Services.OneOcrService
   fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
   nameWithType: OneOcrService
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.RecognizeAsync(System.Byte[],System.Threading.CancellationToken)
-  name: RecognizeAsync(byte[], CancellationToken)
-  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_RecognizeAsync_System_Byte___System_Threading_CancellationToken_
-  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.RecognizeAsync(System.Byte[],System.Threading.CancellationToken)
-  name.vb: RecognizeAsync(Byte(), CancellationToken)
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.RecognizeAsync(byte[], System.Threading.CancellationToken)
-  fullName.vb: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.RecognizeAsync(Byte(), System.Threading.CancellationToken)
-  nameWithType: OneOcrService.RecognizeAsync(byte[], CancellationToken)
-  nameWithType.vb: OneOcrService.RecognizeAsync(Byte(), CancellationToken)
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.RecognizeAsync*
-  name: RecognizeAsync
-  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_RecognizeAsync_
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.RecognizeAsync
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)
+  name: CreateSessionAsync(OcrOptions?, CancellationToken)
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_
+  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)
+  name.vb: CreateSessionAsync(OcrOptions, CancellationToken)
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions?, System.Threading.CancellationToken)
+  fullName.vb: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions, System.Threading.CancellationToken)
+  nameWithType: OneOcrService.CreateSessionAsync(OcrOptions?, CancellationToken)
+  nameWithType.vb: OneOcrService.CreateSessionAsync(OcrOptions, CancellationToken)
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync*
+  name: CreateSessionAsync
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync
   isSpec: "True"
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.RecognizeAsync
-  nameWithType: OneOcrService.RecognizeAsync
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync
+  nameWithType: OneOcrService.CreateSessionAsync
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId
+  name: EngineId
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_EngineId
+  commentId: P:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId
+  nameWithType: OneOcrService.EngineId
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId*
+  name: EngineId
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_EngineId_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId
+  isSpec: "True"
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId
+  nameWithType: OneOcrService.EngineId
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable
+  name: IsAvailable
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_IsAvailable
+  commentId: P:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable
+  nameWithType: OneOcrService.IsAvailable
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable*
+  name: IsAvailable
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_IsAvailable_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable
+  isSpec: "True"
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable
+  nameWithType: OneOcrService.IsAvailable
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat
+  name: PreferredPixelFormat
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_PreferredPixelFormat
+  commentId: P:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat
+  nameWithType: OneOcrService.PreferredPixelFormat
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat*
+  name: PreferredPixelFormat
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_PreferredPixelFormat_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat
+  isSpec: "True"
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat
+  nameWithType: OneOcrService.PreferredPixelFormat
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  name: OneOcrSession
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html
+  commentId: T:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  nameWithType: OneOcrSession
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
+  name: Dispose()
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrSession_Dispose
+  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose()
+  nameWithType: OneOcrSession.Dispose()
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose*
+  name: Dispose
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrSession_Dispose_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
+  isSpec: "True"
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
+  nameWithType: OneOcrSession.Dispose
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Options
+  name: Options
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrSession_Options
+  commentId: P:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Options
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Options
+  nameWithType: OneOcrSession.Options
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Options*
+  name: Options
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrSession_Options_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Options
+  isSpec: "True"
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Options
+  nameWithType: OneOcrSession.Options
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(System.Byte[],System.Threading.CancellationToken)
+  name: RecognizeAsync(byte[], CancellationToken)
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrSession_RecognizeAsync_System_Byte___System_Threading_CancellationToken_
+  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(System.Byte[],System.Threading.CancellationToken)
+  name.vb: RecognizeAsync(Byte(), CancellationToken)
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(byte[], System.Threading.CancellationToken)
+  fullName.vb: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(Byte(), System.Threading.CancellationToken)
+  nameWithType: OneOcrSession.RecognizeAsync(byte[], CancellationToken)
+  nameWithType.vb: OneOcrSession.RecognizeAsync(Byte(), CancellationToken)
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync*
+  name: RecognizeAsync
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrSession_RecognizeAsync_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync
+  isSpec: "True"
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync
+  nameWithType: OneOcrSession.RecognizeAsync
 - uid: Zaya.OCR.Models
   name: Zaya.OCR.Models
   href: api/Zaya.OCR.Models.html
@@ -258,6 +345,90 @@ references:
   isSpec: "True"
   fullName: Zaya.OCR.Models.IOCRWord.Text
   nameWithType: IOCRWord.Text
+- uid: Zaya.OCR.Models.OcrOptions
+  name: OcrOptions
+  href: api/Zaya.OCR.Models.OcrOptions.html
+  commentId: T:Zaya.OCR.Models.OcrOptions
+  fullName: Zaya.OCR.Models.OcrOptions
+  nameWithType: OcrOptions
+- uid: Zaya.OCR.Models.OcrOptions.EnableWordLevelConfidence
+  name: EnableWordLevelConfidence
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_EnableWordLevelConfidence
+  commentId: P:Zaya.OCR.Models.OcrOptions.EnableWordLevelConfidence
+  fullName: Zaya.OCR.Models.OcrOptions.EnableWordLevelConfidence
+  nameWithType: OcrOptions.EnableWordLevelConfidence
+- uid: Zaya.OCR.Models.OcrOptions.EnableWordLevelConfidence*
+  name: EnableWordLevelConfidence
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_EnableWordLevelConfidence_
+  commentId: Overload:Zaya.OCR.Models.OcrOptions.EnableWordLevelConfidence
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.OcrOptions.EnableWordLevelConfidence
+  nameWithType: OcrOptions.EnableWordLevelConfidence
+- uid: Zaya.OCR.Models.OcrOptions.Height
+  name: Height
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Height
+  commentId: P:Zaya.OCR.Models.OcrOptions.Height
+  fullName: Zaya.OCR.Models.OcrOptions.Height
+  nameWithType: OcrOptions.Height
+- uid: Zaya.OCR.Models.OcrOptions.Height*
+  name: Height
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Height_
+  commentId: Overload:Zaya.OCR.Models.OcrOptions.Height
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.OcrOptions.Height
+  nameWithType: OcrOptions.Height
+- uid: Zaya.OCR.Models.OcrOptions.Language
+  name: Language
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Language
+  commentId: P:Zaya.OCR.Models.OcrOptions.Language
+  fullName: Zaya.OCR.Models.OcrOptions.Language
+  nameWithType: OcrOptions.Language
+- uid: Zaya.OCR.Models.OcrOptions.Language*
+  name: Language
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Language_
+  commentId: Overload:Zaya.OCR.Models.OcrOptions.Language
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.OcrOptions.Language
+  nameWithType: OcrOptions.Language
+- uid: Zaya.OCR.Models.OcrOptions.PixelFormat
+  name: PixelFormat
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_PixelFormat
+  commentId: P:Zaya.OCR.Models.OcrOptions.PixelFormat
+  fullName: Zaya.OCR.Models.OcrOptions.PixelFormat
+  nameWithType: OcrOptions.PixelFormat
+- uid: Zaya.OCR.Models.OcrOptions.PixelFormat*
+  name: PixelFormat
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_PixelFormat_
+  commentId: Overload:Zaya.OCR.Models.OcrOptions.PixelFormat
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.OcrOptions.PixelFormat
+  nameWithType: OcrOptions.PixelFormat
+- uid: Zaya.OCR.Models.OcrOptions.Stride
+  name: Stride
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Stride
+  commentId: P:Zaya.OCR.Models.OcrOptions.Stride
+  fullName: Zaya.OCR.Models.OcrOptions.Stride
+  nameWithType: OcrOptions.Stride
+- uid: Zaya.OCR.Models.OcrOptions.Stride*
+  name: Stride
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Stride_
+  commentId: Overload:Zaya.OCR.Models.OcrOptions.Stride
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.OcrOptions.Stride
+  nameWithType: OcrOptions.Stride
+- uid: Zaya.OCR.Models.OcrOptions.Width
+  name: Width
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Width
+  commentId: P:Zaya.OCR.Models.OcrOptions.Width
+  fullName: Zaya.OCR.Models.OcrOptions.Width
+  nameWithType: OcrOptions.Width
+- uid: Zaya.OCR.Models.OcrOptions.Width*
+  name: Width
+  href: api/Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Width_
+  commentId: Overload:Zaya.OCR.Models.OcrOptions.Width
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.OcrOptions.Width
+  nameWithType: OcrOptions.Width
 - uid: Zaya.OCR.Services
   name: Zaya.OCR.Services
   href: api/Zaya.OCR.Services.html
@@ -270,19 +441,211 @@ references:
   commentId: T:Zaya.OCR.Services.IOCRService
   fullName: Zaya.OCR.Services.IOCRService
   nameWithType: IOCRService
-- uid: Zaya.OCR.Services.IOCRService.RecognizeAsync(System.Byte[],System.Threading.CancellationToken)
-  name: RecognizeAsync(byte[], CancellationToken)
-  href: api/Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_RecognizeAsync_System_Byte___System_Threading_CancellationToken_
-  commentId: M:Zaya.OCR.Services.IOCRService.RecognizeAsync(System.Byte[],System.Threading.CancellationToken)
-  name.vb: RecognizeAsync(Byte(), CancellationToken)
-  fullName: Zaya.OCR.Services.IOCRService.RecognizeAsync(byte[], System.Threading.CancellationToken)
-  fullName.vb: Zaya.OCR.Services.IOCRService.RecognizeAsync(Byte(), System.Threading.CancellationToken)
-  nameWithType: IOCRService.RecognizeAsync(byte[], CancellationToken)
-  nameWithType.vb: IOCRService.RecognizeAsync(Byte(), CancellationToken)
-- uid: Zaya.OCR.Services.IOCRService.RecognizeAsync*
-  name: RecognizeAsync
-  href: api/Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_RecognizeAsync_
-  commentId: Overload:Zaya.OCR.Services.IOCRService.RecognizeAsync
+- uid: Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)
+  name: CreateSessionAsync(OcrOptions?, CancellationToken)
+  href: api/Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_
+  commentId: M:Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)
+  name.vb: CreateSessionAsync(OcrOptions, CancellationToken)
+  fullName: Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions?, System.Threading.CancellationToken)
+  fullName.vb: Zaya.OCR.Services.IOCRService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions, System.Threading.CancellationToken)
+  nameWithType: IOCRService.CreateSessionAsync(OcrOptions?, CancellationToken)
+  nameWithType.vb: IOCRService.CreateSessionAsync(OcrOptions, CancellationToken)
+- uid: Zaya.OCR.Services.IOCRService.CreateSessionAsync*
+  name: CreateSessionAsync
+  href: api/Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_
+  commentId: Overload:Zaya.OCR.Services.IOCRService.CreateSessionAsync
   isSpec: "True"
-  fullName: Zaya.OCR.Services.IOCRService.RecognizeAsync
-  nameWithType: IOCRService.RecognizeAsync
+  fullName: Zaya.OCR.Services.IOCRService.CreateSessionAsync
+  nameWithType: IOCRService.CreateSessionAsync
+- uid: Zaya.OCR.Services.IOCRService.EngineId
+  name: EngineId
+  href: api/Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_EngineId
+  commentId: P:Zaya.OCR.Services.IOCRService.EngineId
+  fullName: Zaya.OCR.Services.IOCRService.EngineId
+  nameWithType: IOCRService.EngineId
+- uid: Zaya.OCR.Services.IOCRService.EngineId*
+  name: EngineId
+  href: api/Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_EngineId_
+  commentId: Overload:Zaya.OCR.Services.IOCRService.EngineId
+  isSpec: "True"
+  fullName: Zaya.OCR.Services.IOCRService.EngineId
+  nameWithType: IOCRService.EngineId
+- uid: Zaya.OCR.Services.IOCRService.IsAvailable
+  name: IsAvailable
+  href: api/Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_IsAvailable
+  commentId: P:Zaya.OCR.Services.IOCRService.IsAvailable
+  fullName: Zaya.OCR.Services.IOCRService.IsAvailable
+  nameWithType: IOCRService.IsAvailable
+- uid: Zaya.OCR.Services.IOCRService.IsAvailable*
+  name: IsAvailable
+  href: api/Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_IsAvailable_
+  commentId: Overload:Zaya.OCR.Services.IOCRService.IsAvailable
+  isSpec: "True"
+  fullName: Zaya.OCR.Services.IOCRService.IsAvailable
+  nameWithType: IOCRService.IsAvailable
+- uid: Zaya.OCR.Services.IOCRService.PreferredPixelFormat
+  name: PreferredPixelFormat
+  href: api/Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_PreferredPixelFormat
+  commentId: P:Zaya.OCR.Services.IOCRService.PreferredPixelFormat
+  fullName: Zaya.OCR.Services.IOCRService.PreferredPixelFormat
+  nameWithType: IOCRService.PreferredPixelFormat
+- uid: Zaya.OCR.Services.IOCRService.PreferredPixelFormat*
+  name: PreferredPixelFormat
+  href: api/Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_PreferredPixelFormat_
+  commentId: Overload:Zaya.OCR.Services.IOCRService.PreferredPixelFormat
+  isSpec: "True"
+  fullName: Zaya.OCR.Services.IOCRService.PreferredPixelFormat
+  nameWithType: IOCRService.PreferredPixelFormat
+- uid: Zaya.OCR.Services.IOCRSession
+  name: IOCRSession
+  href: api/Zaya.OCR.Services.IOCRSession.html
+  commentId: T:Zaya.OCR.Services.IOCRSession
+  fullName: Zaya.OCR.Services.IOCRSession
+  nameWithType: IOCRSession
+- uid: Zaya.OCR.Services.IOCRSession.Options
+  name: Options
+  href: api/Zaya.OCR.Services.IOCRSession.html#Zaya_OCR_Services_IOCRSession_Options
+  commentId: P:Zaya.OCR.Services.IOCRSession.Options
+  fullName: Zaya.OCR.Services.IOCRSession.Options
+  nameWithType: IOCRSession.Options
+- uid: Zaya.OCR.Services.IOCRSession.Options*
+  name: Options
+  href: api/Zaya.OCR.Services.IOCRSession.html#Zaya_OCR_Services_IOCRSession_Options_
+  commentId: Overload:Zaya.OCR.Services.IOCRSession.Options
+  isSpec: "True"
+  fullName: Zaya.OCR.Services.IOCRSession.Options
+  nameWithType: IOCRSession.Options
+- uid: Zaya.OCR.Services.IOCRSession.RecognizeAsync(System.Byte[],System.Threading.CancellationToken)
+  name: RecognizeAsync(byte[], CancellationToken)
+  href: api/Zaya.OCR.Services.IOCRSession.html#Zaya_OCR_Services_IOCRSession_RecognizeAsync_System_Byte___System_Threading_CancellationToken_
+  commentId: M:Zaya.OCR.Services.IOCRSession.RecognizeAsync(System.Byte[],System.Threading.CancellationToken)
+  name.vb: RecognizeAsync(Byte(), CancellationToken)
+  fullName: Zaya.OCR.Services.IOCRSession.RecognizeAsync(byte[], System.Threading.CancellationToken)
+  fullName.vb: Zaya.OCR.Services.IOCRSession.RecognizeAsync(Byte(), System.Threading.CancellationToken)
+  nameWithType: IOCRSession.RecognizeAsync(byte[], CancellationToken)
+  nameWithType.vb: IOCRSession.RecognizeAsync(Byte(), CancellationToken)
+- uid: Zaya.OCR.Services.IOCRSession.RecognizeAsync*
+  name: RecognizeAsync
+  href: api/Zaya.OCR.Services.IOCRSession.html#Zaya_OCR_Services_IOCRSession_RecognizeAsync_
+  commentId: Overload:Zaya.OCR.Services.IOCRSession.RecognizeAsync
+  isSpec: "True"
+  fullName: Zaya.OCR.Services.IOCRSession.RecognizeAsync
+  nameWithType: IOCRSession.RecognizeAsync
+- uid: Zaya.OCR.Services.OcrEngineInfo
+  name: OcrEngineInfo
+  href: api/Zaya.OCR.Services.OcrEngineInfo.html
+  commentId: T:Zaya.OCR.Services.OcrEngineInfo
+  fullName: Zaya.OCR.Services.OcrEngineInfo
+  nameWithType: OcrEngineInfo
+- uid: Zaya.OCR.Services.OcrEngineInfo.#ctor(System.String,Zaya.OCR.Services.IOCRService)
+  name: OcrEngineInfo(string, IOCRService)
+  href: api/Zaya.OCR.Services.OcrEngineInfo.html#Zaya_OCR_Services_OcrEngineInfo__ctor_System_String_Zaya_OCR_Services_IOCRService_
+  commentId: M:Zaya.OCR.Services.OcrEngineInfo.#ctor(System.String,Zaya.OCR.Services.IOCRService)
+  name.vb: New(String, IOCRService)
+  fullName: Zaya.OCR.Services.OcrEngineInfo.OcrEngineInfo(string, Zaya.OCR.Services.IOCRService)
+  fullName.vb: Zaya.OCR.Services.OcrEngineInfo.New(String, Zaya.OCR.Services.IOCRService)
+  nameWithType: OcrEngineInfo.OcrEngineInfo(string, IOCRService)
+  nameWithType.vb: OcrEngineInfo.New(String, IOCRService)
+- uid: Zaya.OCR.Services.OcrEngineInfo.#ctor*
+  name: OcrEngineInfo
+  href: api/Zaya.OCR.Services.OcrEngineInfo.html#Zaya_OCR_Services_OcrEngineInfo__ctor_
+  commentId: Overload:Zaya.OCR.Services.OcrEngineInfo.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Zaya.OCR.Services.OcrEngineInfo.OcrEngineInfo
+  fullName.vb: Zaya.OCR.Services.OcrEngineInfo.New
+  nameWithType: OcrEngineInfo.OcrEngineInfo
+  nameWithType.vb: OcrEngineInfo.New
+- uid: Zaya.OCR.Services.OcrEngineInfo.Id
+  name: Id
+  href: api/Zaya.OCR.Services.OcrEngineInfo.html#Zaya_OCR_Services_OcrEngineInfo_Id
+  commentId: P:Zaya.OCR.Services.OcrEngineInfo.Id
+  fullName: Zaya.OCR.Services.OcrEngineInfo.Id
+  nameWithType: OcrEngineInfo.Id
+- uid: Zaya.OCR.Services.OcrEngineInfo.Id*
+  name: Id
+  href: api/Zaya.OCR.Services.OcrEngineInfo.html#Zaya_OCR_Services_OcrEngineInfo_Id_
+  commentId: Overload:Zaya.OCR.Services.OcrEngineInfo.Id
+  isSpec: "True"
+  fullName: Zaya.OCR.Services.OcrEngineInfo.Id
+  nameWithType: OcrEngineInfo.Id
+- uid: Zaya.OCR.Services.OcrEngineInfo.Service
+  name: Service
+  href: api/Zaya.OCR.Services.OcrEngineInfo.html#Zaya_OCR_Services_OcrEngineInfo_Service
+  commentId: P:Zaya.OCR.Services.OcrEngineInfo.Service
+  fullName: Zaya.OCR.Services.OcrEngineInfo.Service
+  nameWithType: OcrEngineInfo.Service
+- uid: Zaya.OCR.Services.OcrEngineInfo.Service*
+  name: Service
+  href: api/Zaya.OCR.Services.OcrEngineInfo.html#Zaya_OCR_Services_OcrEngineInfo_Service_
+  commentId: Overload:Zaya.OCR.Services.OcrEngineInfo.Service
+  isSpec: "True"
+  fullName: Zaya.OCR.Services.OcrEngineInfo.Service
+  nameWithType: OcrEngineInfo.Service
+- uid: Zaya.OCR.Services.OcrEngineProvider
+  name: OcrEngineProvider
+  href: api/Zaya.OCR.Services.OcrEngineProvider.html
+  commentId: T:Zaya.OCR.Services.OcrEngineProvider
+  fullName: Zaya.OCR.Services.OcrEngineProvider
+  nameWithType: OcrEngineProvider
+- uid: Zaya.OCR.Services.OcrEngineProvider.#ctor(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
+  name: OcrEngineProvider(IEnumerable<Assembly>?)
+  href: api/Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider__ctor_System_Collections_Generic_IEnumerable_System_Reflection_Assembly__
+  commentId: M:Zaya.OCR.Services.OcrEngineProvider.#ctor(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
+  name.vb: New(IEnumerable(Of Assembly))
+  fullName: Zaya.OCR.Services.OcrEngineProvider.OcrEngineProvider(System.Collections.Generic.IEnumerable<System.Reflection.Assembly>?)
+  fullName.vb: Zaya.OCR.Services.OcrEngineProvider.New(System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly))
+  nameWithType: OcrEngineProvider.OcrEngineProvider(IEnumerable<Assembly>?)
+  nameWithType.vb: OcrEngineProvider.New(IEnumerable(Of Assembly))
+- uid: Zaya.OCR.Services.OcrEngineProvider.#ctor*
+  name: OcrEngineProvider
+  href: api/Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider__ctor_
+  commentId: Overload:Zaya.OCR.Services.OcrEngineProvider.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Zaya.OCR.Services.OcrEngineProvider.OcrEngineProvider
+  fullName.vb: Zaya.OCR.Services.OcrEngineProvider.New
+  nameWithType: OcrEngineProvider.OcrEngineProvider
+  nameWithType.vb: OcrEngineProvider.New
+- uid: Zaya.OCR.Services.OcrEngineProvider.AvailableEngines
+  name: AvailableEngines
+  href: api/Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider_AvailableEngines
+  commentId: P:Zaya.OCR.Services.OcrEngineProvider.AvailableEngines
+  fullName: Zaya.OCR.Services.OcrEngineProvider.AvailableEngines
+  nameWithType: OcrEngineProvider.AvailableEngines
+- uid: Zaya.OCR.Services.OcrEngineProvider.AvailableEngines*
+  name: AvailableEngines
+  href: api/Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider_AvailableEngines_
+  commentId: Overload:Zaya.OCR.Services.OcrEngineProvider.AvailableEngines
+  isSpec: "True"
+  fullName: Zaya.OCR.Services.OcrEngineProvider.AvailableEngines
+  nameWithType: OcrEngineProvider.AvailableEngines
+- uid: Zaya.OCR.Services.OcrEngineProvider.GetById(System.String)
+  name: GetById(string)
+  href: api/Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider_GetById_System_String_
+  commentId: M:Zaya.OCR.Services.OcrEngineProvider.GetById(System.String)
+  name.vb: GetById(String)
+  fullName: Zaya.OCR.Services.OcrEngineProvider.GetById(string)
+  fullName.vb: Zaya.OCR.Services.OcrEngineProvider.GetById(String)
+  nameWithType: OcrEngineProvider.GetById(string)
+  nameWithType.vb: OcrEngineProvider.GetById(String)
+- uid: Zaya.OCR.Services.OcrEngineProvider.GetById*
+  name: GetById
+  href: api/Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider_GetById_
+  commentId: Overload:Zaya.OCR.Services.OcrEngineProvider.GetById
+  isSpec: "True"
+  fullName: Zaya.OCR.Services.OcrEngineProvider.GetById
+  nameWithType: OcrEngineProvider.GetById
+- uid: Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable
+  name: GetFirstAvailable()
+  href: api/Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider_GetFirstAvailable
+  commentId: M:Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable
+  fullName: Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable()
+  nameWithType: OcrEngineProvider.GetFirstAvailable()
+- uid: Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable*
+  name: GetFirstAvailable
+  href: api/Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider_GetFirstAvailable_
+  commentId: Overload:Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable
+  isSpec: "True"
+  fullName: Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable
+  nameWithType: OcrEngineProvider.GetFirstAvailable

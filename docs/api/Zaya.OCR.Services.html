@@ -72,11 +72,29 @@
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
+    <h3 id="classes">
+Classes
+</h3>
+      <h4><a class="xref" href="Zaya.OCR.Services.OcrEngineInfo.html">OcrEngineInfo</a></h4>
+      <section><p>Describes an available OCR engine.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Services.OcrEngineProvider.html">OcrEngineProvider</a></h4>
+      <section><p>Discovers available OCR engines by scanning loaded assemblies
+for concrete implementations of <a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a>.
+Traverses all referenced assemblies recursively so that
+implementations in referenced NuGet/project packages are discovered.</p>
+</section>
     <h3 id="interfaces">
 Interfaces
 </h3>
       <h4><a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a></h4>
-      <section><p>Provides text recognition (OCR) capabilities for image data.</p>
+      <section><p>Provides text recognition (OCR) capabilities.
+Create sessions with <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_">CreateSessionAsync(OcrOptions?, CancellationToken)</a> to perform recognition
+with a fixed set of options.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Services.IOCRSession.html">IOCRSession</a></h4>
+      <section><p>Represents an active OCR session with fixed recognition options.
+Create via <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_">CreateSessionAsync(OcrOptions?, CancellationToken)</a>.</p>
 </section>
 
 

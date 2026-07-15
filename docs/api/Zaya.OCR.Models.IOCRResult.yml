@@ -15,8 +15,12 @@ items:
   fullName: Zaya.OCR.Models.IOCRResult
   type: Interface
   source:
+    remote:
+      path: src/Zaya.OCR/Models/IOCRResult.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: IOCRResult
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR\Models\IOCRResult.cs
+    path: src/Zaya.OCR/Models/IOCRResult.cs
     startLine: 5
   assemblies:
   - Zaya.OCR
@@ -40,8 +44,12 @@ items:
   fullName: Zaya.OCR.Models.IOCRResult.Words
   type: Property
   source:
+    remote:
+      path: src/Zaya.OCR/Models/IOCRResult.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Words
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR\Models\IOCRResult.cs
+    path: src/Zaya.OCR/Models/IOCRResult.cs
     startLine: 10
   assemblies:
   - Zaya.OCR
@@ -67,8 +75,12 @@ items:
   fullName: Zaya.OCR.Models.IOCRResult.Confidence
   type: Property
   source:
+    remote:
+      path: src/Zaya.OCR/Models/IOCRResult.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Confidence
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR\Models\IOCRResult.cs
+    path: src/Zaya.OCR/Models/IOCRResult.cs
     startLine: 15
   assemblies:
   - Zaya.OCR

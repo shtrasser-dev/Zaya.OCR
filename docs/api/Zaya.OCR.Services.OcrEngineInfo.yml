@@ -1,0 +1,495 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Services.OcrEngineInfo
+  commentId: T:Zaya.OCR.Services.OcrEngineInfo
+  id: OcrEngineInfo
+  parent: Zaya.OCR.Services
+  children:
+  - Zaya.OCR.Services.OcrEngineInfo.#ctor(System.String,Zaya.OCR.Services.IOCRService)
+  - Zaya.OCR.Services.OcrEngineInfo.Id
+  - Zaya.OCR.Services.OcrEngineInfo.Service
+  langs:
+  - csharp
+  - vb
+  name: OcrEngineInfo
+  nameWithType: OcrEngineInfo
+  fullName: Zaya.OCR.Services.OcrEngineInfo
+  type: Class
+  source:
+    remote:
+      path: src/Zaya.OCR/Services/OcrEngineProvider.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: OcrEngineInfo
+    path: src/Zaya.OCR/Services/OcrEngineProvider.cs
+    startLine: 149
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Services
+  summary: Describes an available OCR engine.
+  example: []
+  syntax:
+    content: 'public sealed record OcrEngineInfo : IEquatable<OcrEngineInfo>'
+    content.vb: Public NotInheritable Class OcrEngineInfo Implements IEquatable(Of OcrEngineInfo)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{Zaya.OCR.Services.OcrEngineInfo}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Zaya.OCR.Services.OcrEngineInfo.#ctor(System.String,Zaya.OCR.Services.IOCRService)
+  commentId: M:Zaya.OCR.Services.OcrEngineInfo.#ctor(System.String,Zaya.OCR.Services.IOCRService)
+  id: '#ctor(System.String,Zaya.OCR.Services.IOCRService)'
+  parent: Zaya.OCR.Services.OcrEngineInfo
+  langs:
+  - csharp
+  - vb
+  name: OcrEngineInfo(string, IOCRService)
+  nameWithType: OcrEngineInfo.OcrEngineInfo(string, IOCRService)
+  fullName: Zaya.OCR.Services.OcrEngineInfo.OcrEngineInfo(string, Zaya.OCR.Services.IOCRService)
+  type: Constructor
+  source:
+    remote:
+      path: src/Zaya.OCR/Services/OcrEngineProvider.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: .ctor
+    path: src/Zaya.OCR/Services/OcrEngineProvider.cs
+    startLine: 149
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Services
+  summary: Describes an available OCR engine.
+  example: []
+  syntax:
+    content: public OcrEngineInfo(string Id, IOCRService Service)
+    parameters:
+    - id: Id
+      type: System.String
+      description: Unique engine identifier, matches <xref href="Zaya.OCR.Services.IOCRService.EngineId" data-throw-if-not-resolved="false"></xref>.
+    - id: Service
+      type: Zaya.OCR.Services.IOCRService
+      description: The engine instance.
+    content.vb: Public Sub New(Id As String, Service As IOCRService)
+  overload: Zaya.OCR.Services.OcrEngineInfo.#ctor*
+  nameWithType.vb: OcrEngineInfo.New(String, IOCRService)
+  fullName.vb: Zaya.OCR.Services.OcrEngineInfo.New(String, Zaya.OCR.Services.IOCRService)
+  name.vb: New(String, IOCRService)
+- uid: Zaya.OCR.Services.OcrEngineInfo.Id
+  commentId: P:Zaya.OCR.Services.OcrEngineInfo.Id
+  id: Id
+  parent: Zaya.OCR.Services.OcrEngineInfo
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: OcrEngineInfo.Id
+  fullName: Zaya.OCR.Services.OcrEngineInfo.Id
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Services/OcrEngineProvider.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Id
+    path: src/Zaya.OCR/Services/OcrEngineProvider.cs
+    startLine: 150
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Services
+  summary: Unique engine identifier, matches <xref href="Zaya.OCR.Services.IOCRService.EngineId" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public string Id { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Id As String
+  overload: Zaya.OCR.Services.OcrEngineInfo.Id*
+- uid: Zaya.OCR.Services.OcrEngineInfo.Service
+  commentId: P:Zaya.OCR.Services.OcrEngineInfo.Service
+  id: Service
+  parent: Zaya.OCR.Services.OcrEngineInfo
+  langs:
+  - csharp
+  - vb
+  name: Service
+  nameWithType: OcrEngineInfo.Service
+  fullName: Zaya.OCR.Services.OcrEngineInfo.Service
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Services/OcrEngineProvider.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Service
+    path: src/Zaya.OCR/Services/OcrEngineProvider.cs
+    startLine: 151
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Services
+  summary: The engine instance.
+  example: []
+  syntax:
+    content: public IOCRService Service { get; init; }
+    parameters: []
+    return:
+      type: Zaya.OCR.Services.IOCRService
+    content.vb: Public Property Service As IOCRService
+  overload: Zaya.OCR.Services.OcrEngineInfo.Service*
+references:
+- uid: Zaya.OCR.Services.IOCRService.EngineId
+  commentId: P:Zaya.OCR.Services.IOCRService.EngineId
+  parent: Zaya.OCR.Services.IOCRService
+  href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_EngineId
+  name: EngineId
+  nameWithType: IOCRService.EngineId
+  fullName: Zaya.OCR.Services.IOCRService.EngineId
+- uid: Zaya.OCR.Services
+  commentId: N:Zaya.OCR.Services
+  href: Zaya.html
+  name: Zaya.OCR.Services
+  nameWithType: Zaya.OCR.Services
+  fullName: Zaya.OCR.Services
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Services
+    name: Services
+    href: Zaya.OCR.Services.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Services
+    name: Services
+    href: Zaya.OCR.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{Zaya.OCR.Services.OcrEngineInfo}
+  commentId: T:System.IEquatable{Zaya.OCR.Services.OcrEngineInfo}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<OcrEngineInfo>
+  nameWithType: IEquatable<OcrEngineInfo>
+  fullName: System.IEquatable<Zaya.OCR.Services.OcrEngineInfo>
+  nameWithType.vb: IEquatable(Of OcrEngineInfo)
+  fullName.vb: System.IEquatable(Of Zaya.OCR.Services.OcrEngineInfo)
+  name.vb: IEquatable(Of OcrEngineInfo)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Zaya.OCR.Services.OcrEngineInfo
+    name: OcrEngineInfo
+    href: Zaya.OCR.Services.OcrEngineInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Zaya.OCR.Services.OcrEngineInfo
+    name: OcrEngineInfo
+    href: Zaya.OCR.Services.OcrEngineInfo.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: Zaya.OCR.Services.IOCRService
+  commentId: T:Zaya.OCR.Services.IOCRService
+  parent: Zaya.OCR.Services
+  href: Zaya.OCR.Services.IOCRService.html
+  name: IOCRService
+  nameWithType: IOCRService
+  fullName: Zaya.OCR.Services.IOCRService
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Zaya.OCR.Services.OcrEngineInfo.#ctor*
+  commentId: Overload:Zaya.OCR.Services.OcrEngineInfo.#ctor
+  href: Zaya.OCR.Services.OcrEngineInfo.html#Zaya_OCR_Services_OcrEngineInfo__ctor_System_String_Zaya_OCR_Services_IOCRService_
+  name: OcrEngineInfo
+  nameWithType: OcrEngineInfo.OcrEngineInfo
+  fullName: Zaya.OCR.Services.OcrEngineInfo.OcrEngineInfo
+  nameWithType.vb: OcrEngineInfo.New
+  fullName.vb: Zaya.OCR.Services.OcrEngineInfo.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Zaya.OCR.Services.OcrEngineInfo.Id*
+  commentId: Overload:Zaya.OCR.Services.OcrEngineInfo.Id
+  href: Zaya.OCR.Services.OcrEngineInfo.html#Zaya_OCR_Services_OcrEngineInfo_Id
+  name: Id
+  nameWithType: OcrEngineInfo.Id
+  fullName: Zaya.OCR.Services.OcrEngineInfo.Id
+- uid: Zaya.OCR.Services.OcrEngineInfo.Service*
+  commentId: Overload:Zaya.OCR.Services.OcrEngineInfo.Service
+  href: Zaya.OCR.Services.OcrEngineInfo.html#Zaya_OCR_Services_OcrEngineInfo_Service
+  name: Service
+  nameWithType: OcrEngineInfo.Service
+  fullName: Zaya.OCR.Services.OcrEngineInfo.Service

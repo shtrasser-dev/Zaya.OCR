@@ -16,8 +16,12 @@ items:
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
   type: Class
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrResult.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrResult
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrResult.cs
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrResult.cs
     startLine: 7
   assemblies:
   - Zaya.OCR.Impl.OneOcr
@@ -50,8 +54,12 @@ items:
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.Words
   type: Property
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrResult.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Words
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrResult.cs
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrResult.cs
     startLine: 12
   assemblies:
   - Zaya.OCR.Impl.OneOcr
@@ -79,8 +87,12 @@ items:
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.Confidence
   type: Property
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrResult.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Confidence
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrResult.cs
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrResult.cs
     startLine: 17
   assemblies:
   - Zaya.OCR.Impl.OneOcr
@@ -108,8 +120,12 @@ items:
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.OneOcrResult(System.Collections.Generic.IReadOnlyList<Zaya.OCR.Models.IOCRWord>, double)
   type: Constructor
   source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrResult.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
-    path: D:\p\Zaya\Zaya.OCR\src\Zaya.OCR.Impl.OneOcr\Models\OneOcrResult.cs
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrResult.cs
     startLine: 24
   assemblies:
   - Zaya.OCR.Impl.OneOcr
@@ -436,7 +452,6 @@ references:
 - uid: Zaya.OCR.Models.IOCRResult.Words
   commentId: P:Zaya.OCR.Models.IOCRResult.Words
   parent: Zaya.OCR.Models.IOCRResult
-  href: Zaya.OCR.Models.IOCRResult.html#Zaya_OCR_Models_IOCRResult_Words
   name: Words
   nameWithType: IOCRResult.Words
   fullName: Zaya.OCR.Models.IOCRResult.Words
@@ -547,7 +562,6 @@ references:
 - uid: Zaya.OCR.Models.IOCRResult.Confidence
   commentId: P:Zaya.OCR.Models.IOCRResult.Confidence
   parent: Zaya.OCR.Models.IOCRResult
-  href: Zaya.OCR.Models.IOCRResult.html#Zaya_OCR_Models_IOCRResult_Confidence
   name: Confidence
   nameWithType: IOCRResult.Confidence
   fullName: Zaya.OCR.Models.IOCRResult.Confidence

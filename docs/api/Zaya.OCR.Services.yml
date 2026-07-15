@@ -5,6 +5,9 @@ items:
   id: Zaya.OCR.Services
   children:
   - Zaya.OCR.Services.IOCRService
+  - Zaya.OCR.Services.IOCRSession
+  - Zaya.OCR.Services.OcrEngineInfo
+  - Zaya.OCR.Services.OcrEngineProvider
   langs:
   - csharp
   - vb
@@ -22,6 +25,26 @@ references:
   name: IOCRService
   nameWithType: IOCRService
   fullName: Zaya.OCR.Services.IOCRService
+- uid: Zaya.OCR.Services.IOCRSession
+  commentId: T:Zaya.OCR.Services.IOCRSession
+  parent: Zaya.OCR.Services
+  href: Zaya.OCR.Services.IOCRSession.html
+  name: IOCRSession
+  nameWithType: IOCRSession
+  fullName: Zaya.OCR.Services.IOCRSession
+- uid: Zaya.OCR.Services.OcrEngineProvider
+  commentId: T:Zaya.OCR.Services.OcrEngineProvider
+  href: Zaya.OCR.Services.OcrEngineProvider.html
+  name: OcrEngineProvider
+  nameWithType: OcrEngineProvider
+  fullName: Zaya.OCR.Services.OcrEngineProvider
+- uid: Zaya.OCR.Services.OcrEngineInfo
+  commentId: T:Zaya.OCR.Services.OcrEngineInfo
+  parent: Zaya.OCR.Services
+  href: Zaya.OCR.Services.OcrEngineInfo.html
+  name: OcrEngineInfo
+  nameWithType: OcrEngineInfo
+  fullName: Zaya.OCR.Services.OcrEngineInfo
 - uid: Zaya.OCR.Services
   commentId: N:Zaya.OCR.Services
   href: Zaya.html

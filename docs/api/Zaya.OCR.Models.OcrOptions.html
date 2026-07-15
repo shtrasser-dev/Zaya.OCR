@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class OcrOptions </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class OcrOptions ">
+    
+    <meta name="description" content="Configuration options for OCR recognition operations. Options that are not supported by a particular engine implementation are silently ignored. When , , , and  are set, the byte[] passed to  is treated as raw pixel data rather than an encoded image (PNG, JPEG, BMP).">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Zaya.OCR.Models.OcrOptions">
+
+
+
+  <h1 id="Zaya_OCR_Models_OcrOptions" data-uid="Zaya.OCR.Models.OcrOptions" class="text-break">Class OcrOptions</h1>
+  <div class="markdown level0 summary"><p>Configuration options for OCR recognition operations.
+Options that are not supported by a particular engine implementation are silently ignored.
+When <a class="xref" href="Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Width">Width</a>, <a class="xref" href="Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Height">Height</a>, <a class="xref" href="Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Stride">Stride</a>, and <a class="xref" href="Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_PixelFormat">PixelFormat</a>
+are set, the <code>byte[]</code> passed to <a class="xref" href="Zaya.OCR.Services.IOCRSession.html#Zaya_OCR_Services_IOCRSession_RecognizeAsync_System_Byte___System_Threading_CancellationToken_">RecognizeAsync(byte[], CancellationToken)</a>
+is treated as raw pixel data rather than an encoded image (PNG, JPEG, BMP).</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">OcrOptions</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Zaya.html">Zaya</a>.<a class="xref" href="Zaya.OCR.html">OCR</a>.<a class="xref" href="Zaya.OCR.Models.html">Models</a></h6>
+  <h6><strong>Assembly</strong>: Zaya.OCR.dll</h6>
+  <h5 id="Zaya_OCR_Models_OcrOptions_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class OcrOptions</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_OcrOptions_EnableWordLevelConfidence.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.OcrOptions.EnableWordLevelConfidence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/OcrOptions.cs/#L25">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Models_OcrOptions_EnableWordLevelConfidence_" data-uid="Zaya.OCR.Models.OcrOptions.EnableWordLevelConfidence*"></a>
+  <h4 id="Zaya_OCR_Models_OcrOptions_EnableWordLevelConfidence" data-uid="Zaya.OCR.Models.OcrOptions.EnableWordLevelConfidence">EnableWordLevelConfidence</h4>
+  <div class="markdown level1 summary"><p>Gets or sets whether word-level confidence scores are returned.
+When <code>false</code>, only the overall result confidence is provided.
+Default is <code>true</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnableWordLevelConfidence { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_OcrOptions_Height.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.OcrOptions.Height%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/OcrOptions.cs/#L37">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Models_OcrOptions_Height_" data-uid="Zaya.OCR.Models.OcrOptions.Height*"></a>
+  <h4 id="Zaya_OCR_Models_OcrOptions_Height" data-uid="Zaya.OCR.Models.OcrOptions.Height">Height</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the height of the raw pixel data in pixels.
+When <code>null</code>, the <code>byte[]</code> is treated as an encoded image.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Height { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_OcrOptions_Language.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.OcrOptions.Language%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/OcrOptions.cs/#L18">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Models_OcrOptions_Language_" data-uid="Zaya.OCR.Models.OcrOptions.Language*"></a>
+  <h4 id="Zaya_OCR_Models_OcrOptions_Language" data-uid="Zaya.OCR.Models.OcrOptions.Language">Language</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the language tag in BCP-47 format (e.g., &quot;en&quot;, &quot;ru-RU&quot;, &quot;de-DE&quot;).
+When <code>null</code>, the engine uses automatic language detection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Language { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_OcrOptions_PixelFormat.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.OcrOptions.PixelFormat%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/OcrOptions.cs/#L49">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Models_OcrOptions_PixelFormat_" data-uid="Zaya.OCR.Models.OcrOptions.PixelFormat*"></a>
+  <h4 id="Zaya_OCR_Models_OcrOptions_PixelFormat" data-uid="Zaya.OCR.Models.OcrOptions.PixelFormat">PixelFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the pixel format of the raw pixel data.
+Required when <a class="xref" href="Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Width">Width</a> and <a class="xref" href="Zaya.OCR.Models.OcrOptions.html#Zaya_OCR_Models_OcrOptions_Height">Height</a> are set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PixelFormat? PixelFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">PixelFormat</span>?</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_OcrOptions_Stride.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.OcrOptions.Stride%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/OcrOptions.cs/#L43">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Models_OcrOptions_Stride_" data-uid="Zaya.OCR.Models.OcrOptions.Stride*"></a>
+  <h4 id="Zaya_OCR_Models_OcrOptions_Stride" data-uid="Zaya.OCR.Models.OcrOptions.Stride">Stride</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the stride (row pitch) of the raw pixel data in bytes.
+When <code>null</code>, <code>Width * PixelFormat.BytesPerPixel</code> is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Stride { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_OcrOptions_Width.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.OcrOptions.Width%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/OcrOptions.cs/#L31">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Models_OcrOptions_Width_" data-uid="Zaya.OCR.Models.OcrOptions.Width*"></a>
+  <h4 id="Zaya_OCR_Models_OcrOptions_Width" data-uid="Zaya.OCR.Models.OcrOptions.Width">Width</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the width of the raw pixel data in pixels.
+When <code>null</code>, the <code>byte[]</code> is treated as an encoded image.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Width { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_OcrOptions.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.OcrOptions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/OcrOptions.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

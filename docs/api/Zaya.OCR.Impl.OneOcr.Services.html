@@ -76,7 +76,13 @@
 Classes
 </h3>
       <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html">OneOcrService</a></h4>
-      <section><p>OneOCR engine implementation of <a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a>.</p>
+      <section><p>OneOCR engine implementation of <a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a> using P/Invoke
+into the native oneocr.dll (Windows 11 SnippingTool OCR engine).
+No WinRT, no Windows App SDK, no package identity required.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html">OneOcrSession</a></h4>
+      <section><p>OneOCR session that holds recognition options and performs OCR
+using the native oneocr.dll via P/Invoke.</p>
 </section>
 
 
