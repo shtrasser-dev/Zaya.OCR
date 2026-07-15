@@ -6,6 +6,7 @@ items:
   parent: Zaya.OCR.Impl.OneOcr.Services
   children:
   - Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)
+  - Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync
   - Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId
   - Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable
   - Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat
@@ -35,12 +36,13 @@ items:
     No WinRT, no Windows App SDK, no package identity required.
   example: []
   syntax:
-    content: 'public sealed class OneOcrService : IOCRService'
-    content.vb: Public NotInheritable Class OneOcrService Implements IOCRService
+    content: 'public sealed class OneOcrService : IOCRService, IAsyncDisposable'
+    content.vb: Public NotInheritable Class OneOcrService Implements IOCRService, IAsyncDisposable
   inheritance:
   - System.Object
   implements:
   - Zaya.OCR.Services.IOCRService
+  - System.IAsyncDisposable
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -208,6 +210,39 @@ items:
   nameWithType.vb: OneOcrService.CreateSessionAsync(OcrOptions, CancellationToken)
   fullName.vb: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions, System.Threading.CancellationToken)
   name.vb: CreateSessionAsync(OcrOptions, CancellationToken)
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync
+  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync
+  id: DisposeAsync
+  parent: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
+  langs:
+  - csharp
+  - vb
+  name: DisposeAsync()
+  nameWithType: OneOcrService.DisposeAsync()
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync()
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: DisposeAsync
+    path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs
+    startLine: 31
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Services
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources asynchronously.
+  example: []
+  syntax:
+    content: public ValueTask DisposeAsync()
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A task that represents the asynchronous dispose operation.
+    content.vb: Public Function DisposeAsync() As ValueTask
+  overload: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync*
+  implements:
+  - System.IAsyncDisposable.DisposeAsync
 references:
 - uid: Zaya.OCR.Services.IOCRService
   commentId: T:Zaya.OCR.Services.IOCRService
@@ -273,6 +308,14 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: System.IAsyncDisposable
+  commentId: T:System.IAsyncDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  name: IAsyncDisposable
+  nameWithType: IAsyncDisposable
+  fullName: System.IAsyncDisposable
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -807,3 +850,39 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync
+  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisposeAsync
+  name: DisposeAsync
+  nameWithType: OneOcrService.DisposeAsync
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync
+- uid: System.IAsyncDisposable.DisposeAsync
+  commentId: M:System.IAsyncDisposable.DisposeAsync
+  parent: System.IAsyncDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  name: DisposeAsync()
+  nameWithType: IAsyncDisposable.DisposeAsync()
+  fullName: System.IAsyncDisposable.DisposeAsync()
+  spec.csharp:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask

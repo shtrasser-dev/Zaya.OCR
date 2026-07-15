@@ -15,6 +15,7 @@
   "Zaya.OCR.Impl.OneOcr.Services": "Zaya.OCR.Impl.OneOcr.Services.yml",
   "Zaya.OCR.Impl.OneOcr.Services.OneOcrService": "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml",
   "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)": "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml",
+  "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync": "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml",
   "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId": "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml",
   "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable": "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml",
   "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat": "Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml",

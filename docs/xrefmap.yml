@@ -175,6 +175,19 @@ references:
   isSpec: "True"
   fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync
   nameWithType: OneOcrService.CreateSessionAsync
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync
+  name: DisposeAsync()
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisposeAsync
+  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync()
+  nameWithType: OneOcrService.DisposeAsync()
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync*
+  name: DisposeAsync
+  href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisposeAsync_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync
+  isSpec: "True"
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync
+  nameWithType: OneOcrService.DisposeAsync
 - uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId
   name: EngineId
   href: api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_EngineId
