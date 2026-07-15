@@ -10,7 +10,7 @@ namespace Zaya.OCR.Impl.OneOcr.Services;
 /// into the native oneocr.dll (Windows 11 SnippingTool OCR engine).
 /// No WinRT, no Windows App SDK, no package identity required.
 /// </summary>
-public sealed class OneOcrService : IOCRService, IAsyncDisposable
+public sealed class OneOcrService : IOCRService
 {
     /// <inheritdoc />
     public string EngineId => "oneocr";
@@ -26,12 +26,5 @@ public sealed class OneOcrService : IOCRService, IAsyncDisposable
     {
         cancellationToken.ThrowIfCancellationRequested();
         return Task.FromResult<IOCRSession>(new OneOcrSession(options ?? new OcrOptions()));
-    }
-
-    /// <inheritdoc />
-    public ValueTask DisposeAsync()
-    {
-        // Native library is loaded once globally — nothing to dispose per instance.
-        return ValueTask.CompletedTask;
     }
 }

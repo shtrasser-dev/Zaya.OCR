@@ -35,8 +35,7 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     public async Task DisposeAsync()
     {
         _session?.Dispose();
-        if (_service is not null)
-            await _service.DisposeAsync();
+        await Task.CompletedTask;
     }
 
     [Fact]
