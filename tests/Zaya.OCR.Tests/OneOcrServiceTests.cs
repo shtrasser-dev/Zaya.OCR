@@ -12,7 +12,7 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     private IOCRSession? _session;
     private bool _modelAvailable;
 
-    public async Task InitializeAsync()
+    public async ValueTask InitializeAsync()
     {
         _service = new OneOcrService();
         _session = await _service.CreateSessionAsync();
@@ -32,10 +32,10 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
         }
     }
 
-    public async Task DisposeAsync()
+    public ValueTask DisposeAsync()
     {
         _session?.Dispose();
-        await Task.CompletedTask;
+        return ValueTask.CompletedTask;
     }
 
     [Fact]

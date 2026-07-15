@@ -66,7 +66,7 @@ internal static class OneOcrNative
     private delegate int GetOcrWordBoundingBox(long word, out long box);
 
     private static readonly nint _dllHandle;
-    private static readonly string _modelPath;
+    private static readonly string? _modelPath;
     private static readonly CreateOcrInitOptions? _createInit;
     private static readonly OcrInitOptionsSetUseModelDelayLoad? _setDelayLoad;
     private static readonly CreateOcrPipeline? _createPipeline;
@@ -155,6 +155,9 @@ internal static class OneOcrNative
 
                 res = _setDelayLoad!(_ctx, 0);
                 if (res != S_OK) throw new Exception($"OcrInitOptionsSetUseModelDelayLoad: {res}");
+
+                if (_modelPath is null)
+                    throw new InvalidOperationException("OneOCR model path is null. Ensure FindOneOcrDll found the model.");
 
                 var modelPathBytes = System.Text.Encoding.ASCII.GetBytes(_modelPath + "\0");
                 var keyBytes = System.Text.Encoding.ASCII.GetBytes(ModelKey + "\0");
