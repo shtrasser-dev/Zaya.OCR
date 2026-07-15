@@ -7,7 +7,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>13</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
 
     <PackageId>Zaya.OCR.Impl.OneOcr</PackageId>
     <Description>OneOCR engine implementation for Zaya.OCR abstractions. Uses Windows AI Text Recognition API (Windows App SDK).</Description>
