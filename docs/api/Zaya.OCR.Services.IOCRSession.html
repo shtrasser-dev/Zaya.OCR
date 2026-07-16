@@ -72,7 +72,7 @@
 
   <h1 id="Zaya_OCR_Services_IOCRSession" data-uid="Zaya.OCR.Services.IOCRSession" class="text-break">Interface IOCRSession</h1>
   <div class="markdown level0 summary"><p>Represents an active OCR session with fixed recognition options.
-Create via <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_">CreateSessionAsync(OcrOptions?, CancellationToken)</a>.</p>
+Create via <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_System_Threading_CancellationToken_">CreateSessionAsync(CancellationToken)</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
@@ -87,56 +87,23 @@ Create via <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Ser
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IOCRSession : IDisposable</code></pre>
   </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_IOCRSession_Options.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.IOCRSession.Options%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/IOCRSession.cs/#L14">View Source</a>
-  </span>
-  <a id="Zaya_OCR_Services_IOCRSession_Options_" data-uid="Zaya.OCR.Services.IOCRSession.Options*"></a>
-  <h4 id="Zaya_OCR_Services_IOCRSession_Options" data-uid="Zaya.OCR.Services.IOCRSession.Options">Options</h4>
-  <div class="markdown level1 summary"><p>Gets the options configured for this session.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">OcrOptions Options { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Zaya.OCR.Models.OcrOptions.html">OcrOptions</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_IOCRSession_RecognizeAsync_System_Byte___System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.IOCRSession.RecognizeAsync(System.Byte%5B%5D%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_IOCRSession_RecognizeAsync_Zaya_Primitives_IRawImage_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.IOCRSession.RecognizeAsync(Zaya.Primitives.IRawImage%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/IOCRSession.cs/#L22">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/IOCRSession.cs/#L18">View Source</a>
   </span>
   <a id="Zaya_OCR_Services_IOCRSession_RecognizeAsync_" data-uid="Zaya.OCR.Services.IOCRSession.RecognizeAsync*"></a>
-  <h4 id="Zaya_OCR_Services_IOCRSession_RecognizeAsync_System_Byte___System_Threading_CancellationToken_" data-uid="Zaya.OCR.Services.IOCRSession.RecognizeAsync(System.Byte[],System.Threading.CancellationToken)">RecognizeAsync(byte[], CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Recognizes text from the provided image data.</p>
+  <h4 id="Zaya_OCR_Services_IOCRSession_RecognizeAsync_Zaya_Primitives_IRawImage_System_Threading_CancellationToken_" data-uid="Zaya.OCR.Services.IOCRSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)">RecognizeAsync(IRawImage, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Recognizes text from the provided raw image.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IOCRResult&gt; RecognizeAsync(byte[] data, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IOCRResult&gt; RecognizeAsync(IRawImage image, CancellationToken cancellationToken = default)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -149,9 +116,9 @@ Create via <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Ser
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">data</span></td>
-        <td><p>Raw image bytes (e.g., PNG, JPEG, BMP).</p>
+        <td><span class="xref">IRawImage</span></td>
+        <td><span class="parametername">image</span></td>
+        <td><p>The raw image to recognize text from.</p>
 </td>
       </tr>
       <tr>
@@ -190,7 +157,7 @@ Create via <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Ser
                     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_IOCRSession.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.IOCRSession%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/IOCRSession.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/IOCRSession.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

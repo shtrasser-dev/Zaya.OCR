@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.OneOcr
+  commentId: N:Zaya.OCR.Impl.OneOcr
+  id: Zaya.OCR.Impl.OneOcr
+  children:
+  - Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
+  - Zaya.OCR.Impl.OneOcr.OneOcrConfig
+  - Zaya.OCR.Impl.OneOcr.OneOcrDllLoadException
+  - Zaya.OCR.Impl.OneOcr.OneOcrDllNotFoundException
+  - Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
+  - Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException
+  - Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException
+  - Zaya.OCR.Impl.OneOcr.OneOcrSource
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Impl.OneOcr
+  nameWithType: Zaya.OCR.Impl.OneOcr
+  fullName: Zaya.OCR.Impl.OneOcr
+  type: Namespace
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+references:
+- uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
+  commentId: T:Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
+  parent: Zaya.OCR.Impl.OneOcr
+  href: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.html
+  name: OcrSessionExtensions
+  nameWithType: OcrSessionExtensions
+  fullName: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrSource
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrSource
+  parent: Zaya.OCR.Impl.OneOcr
+  href: Zaya.OCR.Impl.OneOcr.OneOcrSource.html
+  name: OneOcrSource
+  nameWithType: OneOcrSource
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrSource
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrConfig
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrConfig
+  href: Zaya.OCR.Impl.OneOcr.OneOcrConfig.html
+  name: OneOcrConfig
+  nameWithType: OneOcrConfig
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrConfig
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException
+  href: Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException.html
+  name: OneOcrSnippingToolNotFoundException
+  nameWithType: OneOcrSnippingToolNotFoundException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException
+  href: Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException.html
+  name: OneOcrModelNotFoundException
+  nameWithType: OneOcrModelNotFoundException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrDllLoadException
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrDllLoadException
+  href: Zaya.OCR.Impl.OneOcr.OneOcrDllLoadException.html
+  name: OneOcrDllLoadException
+  nameWithType: OneOcrDllLoadException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDllLoadException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrDllNotFoundException
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrDllNotFoundException
+  href: Zaya.OCR.Impl.OneOcr.OneOcrDllNotFoundException.html
+  name: OneOcrDllNotFoundException
+  nameWithType: OneOcrDllNotFoundException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDllNotFoundException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
+  href: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.html
+  name: OneOcrDownloadNotImplementedException
+  nameWithType: OneOcrDownloadNotImplementedException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
+- uid: Zaya.OCR.Impl.OneOcr
+  commentId: N:Zaya.OCR.Impl.OneOcr
+  href: Zaya.html
+  name: Zaya.OCR.Impl.OneOcr
+  nameWithType: Zaya.OCR.Impl.OneOcr
+  fullName: Zaya.OCR.Impl.OneOcr
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr
+    name: OneOcr
+    href: Zaya.OCR.Impl.OneOcr.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr
+    name: OneOcr
+    href: Zaya.OCR.Impl.OneOcr.html

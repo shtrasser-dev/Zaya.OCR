@@ -5,8 +5,9 @@ items:
   id: OcrEngineProvider
   parent: Zaya.OCR.Services
   children:
-  - Zaya.OCR.Services.OcrEngineProvider.#ctor(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
+  - Zaya.OCR.Services.OcrEngineProvider.#ctor(System.Collections.Generic.IEnumerable{System.String})
   - Zaya.OCR.Services.OcrEngineProvider.AvailableEngines
+  - Zaya.OCR.Services.OcrEngineProvider.Dispose
   - Zaya.OCR.Services.OcrEngineProvider.GetById(System.String)
   - Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable
   langs:
@@ -23,24 +24,17 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OcrEngineProvider
     path: src/Zaya.OCR/Services/OcrEngineProvider.cs
-    startLine: 11
+    startLine: 4
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
-  summary: >-
-    Discovers available OCR engines by scanning loaded assemblies
-
-    for concrete implementations of <xref href="Zaya.OCR.Services.IOCRService" data-throw-if-not-resolved="false"></xref>.
-
-    Traverses all referenced assemblies recursively so that
-
-    implementations in referenced NuGet/project packages are discovered.
-  example: []
   syntax:
-    content: public sealed class OcrEngineProvider
-    content.vb: Public NotInheritable Class OcrEngineProvider
+    content: 'public sealed class OcrEngineProvider : IDisposable'
+    content.vb: Public NotInheritable Class OcrEngineProvider Implements IDisposable
   inheritance:
   - System.Object
+  implements:
+  - System.IDisposable
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -48,16 +42,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Zaya.OCR.Services.OcrEngineProvider.#ctor(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
-  commentId: M:Zaya.OCR.Services.OcrEngineProvider.#ctor(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})
-  id: '#ctor(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})'
+- uid: Zaya.OCR.Services.OcrEngineProvider.#ctor(System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:Zaya.OCR.Services.OcrEngineProvider.#ctor(System.Collections.Generic.IEnumerable{System.String})
+  id: '#ctor(System.Collections.Generic.IEnumerable{System.String})'
   parent: Zaya.OCR.Services.OcrEngineProvider
   langs:
   - csharp
   - vb
-  name: OcrEngineProvider(IEnumerable<Assembly>?)
-  nameWithType: OcrEngineProvider.OcrEngineProvider(IEnumerable<Assembly>?)
-  fullName: Zaya.OCR.Services.OcrEngineProvider.OcrEngineProvider(System.Collections.Generic.IEnumerable<System.Reflection.Assembly>?)
+  name: OcrEngineProvider(IEnumerable<string>?)
+  nameWithType: OcrEngineProvider.OcrEngineProvider(IEnumerable<string>?)
+  fullName: Zaya.OCR.Services.OcrEngineProvider.OcrEngineProvider(System.Collections.Generic.IEnumerable<string>?)
   type: Constructor
   source:
     remote:
@@ -66,26 +60,20 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR/Services/OcrEngineProvider.cs
-    startLine: 20
+    startLine: 8
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
-  summary: >-
-    Initializes a new instance and scans the current <xref href="System.AppDomain" data-throw-if-not-resolved="false"></xref>
-
-    for available OCR engines.
-  example: []
   syntax:
-    content: public OcrEngineProvider(IEnumerable<Assembly>? extraAssemblies = null)
+    content: public OcrEngineProvider(IEnumerable<string>? pluginDirectories = null)
     parameters:
-    - id: extraAssemblies
-      type: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
-      description: Optional additional assemblies to scan.
-    content.vb: Public Sub New(extraAssemblies As IEnumerable(Of Assembly) = Nothing)
+    - id: pluginDirectories
+      type: System.Collections.Generic.IEnumerable{System.String}
+    content.vb: Public Sub New(pluginDirectories As IEnumerable(Of String) = Nothing)
   overload: Zaya.OCR.Services.OcrEngineProvider.#ctor*
-  nameWithType.vb: OcrEngineProvider.New(IEnumerable(Of Assembly))
-  fullName.vb: Zaya.OCR.Services.OcrEngineProvider.New(System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly))
-  name.vb: New(IEnumerable(Of Assembly))
+  nameWithType.vb: OcrEngineProvider.New(IEnumerable(Of String))
+  fullName.vb: Zaya.OCR.Services.OcrEngineProvider.New(System.Collections.Generic.IEnumerable(Of String))
+  name.vb: New(IEnumerable(Of String))
 - uid: Zaya.OCR.Services.OcrEngineProvider.AvailableEngines
   commentId: P:Zaya.OCR.Services.OcrEngineProvider.AvailableEngines
   id: AvailableEngines
@@ -104,12 +92,10 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: AvailableEngines
     path: src/Zaya.OCR/Services/OcrEngineProvider.cs
-    startLine: 66
+    startLine: 39
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
-  summary: Gets the list of all available OCR engines on this system.
-  example: []
   syntax:
     content: public IReadOnlyList<OcrEngineInfo> AvailableEngines { get; }
     parameters: []
@@ -135,15 +121,10 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: GetById
     path: src/Zaya.OCR/Services/OcrEngineProvider.cs
-    startLine: 72
+    startLine: 40
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
-  summary: >-
-    Finds an engine by its <xref href="Zaya.OCR.Services.IOCRService.EngineId" data-throw-if-not-resolved="false"></xref>.
-
-    Returns <code>null</code> if not found or not available.
-  example: []
   syntax:
     content: public OcrEngineInfo? GetById(string engineId)
     parameters:
@@ -174,26 +155,47 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: GetFirstAvailable
     path: src/Zaya.OCR/Services/OcrEngineProvider.cs
-    startLine: 81
+    startLine: 41
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
-  summary: Gets the first available engine, or <code>null</code> if none are available.
-  example: []
   syntax:
     content: public OcrEngineInfo? GetFirstAvailable()
     return:
       type: Zaya.OCR.Services.OcrEngineInfo
     content.vb: Public Function GetFirstAvailable() As OcrEngineInfo
   overload: Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable*
+- uid: Zaya.OCR.Services.OcrEngineProvider.Dispose
+  commentId: M:Zaya.OCR.Services.OcrEngineProvider.Dispose
+  id: Dispose
+  parent: Zaya.OCR.Services.OcrEngineProvider
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: OcrEngineProvider.Dispose()
+  fullName: Zaya.OCR.Services.OcrEngineProvider.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR/Services/OcrEngineProvider.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Dispose
+    path: src/Zaya.OCR/Services/OcrEngineProvider.cs
+    startLine: 43
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Services
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: Zaya.OCR.Services.OcrEngineProvider.Dispose*
+  implements:
+  - System.IDisposable.Dispose
 references:
-- uid: Zaya.OCR.Services.IOCRService
-  commentId: T:Zaya.OCR.Services.IOCRService
-  parent: Zaya.OCR.Services
-  href: Zaya.OCR.Services.IOCRService.html
-  name: IOCRService
-  nameWithType: IOCRService
-  fullName: Zaya.OCR.Services.IOCRService
 - uid: Zaya.OCR.Services
   commentId: N:Zaya.OCR.Services
   href: Zaya.html
@@ -235,6 +237,14 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -437,43 +447,36 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.AppDomain
-  commentId: T:System.AppDomain
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.appdomain
-  name: AppDomain
-  nameWithType: AppDomain
-  fullName: System.AppDomain
 - uid: Zaya.OCR.Services.OcrEngineProvider.#ctor*
   commentId: Overload:Zaya.OCR.Services.OcrEngineProvider.#ctor
-  href: Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider__ctor_System_Collections_Generic_IEnumerable_System_Reflection_Assembly__
+  href: Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider__ctor_System_Collections_Generic_IEnumerable_System_String__
   name: OcrEngineProvider
   nameWithType: OcrEngineProvider.OcrEngineProvider
   fullName: Zaya.OCR.Services.OcrEngineProvider.OcrEngineProvider
   nameWithType.vb: OcrEngineProvider.New
   fullName.vb: Zaya.OCR.Services.OcrEngineProvider.New
   name.vb: New
-- uid: System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
-  commentId: T:System.Collections.Generic.IEnumerable{System.Reflection.Assembly}
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<Assembly>
-  nameWithType: IEnumerable<Assembly>
-  fullName: System.Collections.Generic.IEnumerable<System.Reflection.Assembly>
-  nameWithType.vb: IEnumerable(Of Assembly)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Reflection.Assembly)
-  name.vb: IEnumerable(Of Assembly)
+  name: IEnumerable<string>
+  nameWithType: IEnumerable<string>
+  fullName: System.Collections.Generic.IEnumerable<string>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String)
+  name.vb: IEnumerable(Of String)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: System.Reflection.Assembly
-    name: Assembly
+  - uid: System.String
+    name: string
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -483,10 +486,10 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: System.Reflection.Assembly
-    name: Assembly
+  - uid: System.String
+    name: String
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
@@ -620,13 +623,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: Zaya.OCR.Services.IOCRService.EngineId
-  commentId: P:Zaya.OCR.Services.IOCRService.EngineId
-  parent: Zaya.OCR.Services.IOCRService
-  href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_EngineId
-  name: EngineId
-  nameWithType: IOCRService.EngineId
-  fullName: Zaya.OCR.Services.IOCRService.EngineId
 - uid: Zaya.OCR.Services.OcrEngineProvider.GetById*
   commentId: Overload:Zaya.OCR.Services.OcrEngineProvider.GetById
   href: Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider_GetById_System_String_
@@ -657,3 +653,31 @@ references:
   name: GetFirstAvailable
   nameWithType: OcrEngineProvider.GetFirstAvailable
   fullName: Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable
+- uid: Zaya.OCR.Services.OcrEngineProvider.Dispose*
+  commentId: Overload:Zaya.OCR.Services.OcrEngineProvider.Dispose
+  href: Zaya.OCR.Services.OcrEngineProvider.html#Zaya_OCR_Services_OcrEngineProvider_Dispose
+  name: Dispose
+  nameWithType: OcrEngineProvider.Dispose
+  fullName: Zaya.OCR.Services.OcrEngineProvider.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

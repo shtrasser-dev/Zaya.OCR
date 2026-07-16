@@ -76,25 +76,21 @@
 Classes
 </h3>
       <h4><a class="xref" href="Zaya.OCR.Services.OcrEngineInfo.html">OcrEngineInfo</a></h4>
-      <section><p>Describes an available OCR engine.</p>
-</section>
+      <section></section>
       <h4><a class="xref" href="Zaya.OCR.Services.OcrEngineProvider.html">OcrEngineProvider</a></h4>
-      <section><p>Discovers available OCR engines by scanning loaded assemblies
-for concrete implementations of <a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a>.
-Traverses all referenced assemblies recursively so that
-implementations in referenced NuGet/project packages are discovered.</p>
-</section>
+      <section></section>
     <h3 id="interfaces">
 Interfaces
 </h3>
       <h4><a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a></h4>
       <section><p>Provides text recognition (OCR) capabilities.
-Create sessions with <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_">CreateSessionAsync(OcrOptions?, CancellationToken)</a> to perform recognition
-with a fixed set of options.</p>
+Create sessions with <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_System_Threading_CancellationToken_">CreateSessionAsync(CancellationToken)</a> to perform recognition
+with a fixed set of options.
+Call <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_InitializeAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_">InitializeAsync(IReadOnlyDictionary&lt;string, object?&gt;?, CancellationToken)</a> with engine-specific settings before use.</p>
 </section>
       <h4><a class="xref" href="Zaya.OCR.Services.IOCRSession.html">IOCRSession</a></h4>
       <section><p>Represents an active OCR session with fixed recognition options.
-Create via <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_">CreateSessionAsync(OcrOptions?, CancellationToken)</a>.</p>
+Create via <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_System_Threading_CancellationToken_">CreateSessionAsync(CancellationToken)</a>.</p>
 </section>
 
 

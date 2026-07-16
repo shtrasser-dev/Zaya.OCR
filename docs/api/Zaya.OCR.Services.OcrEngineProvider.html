@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class OcrEngineProvider ">
     
-    <meta name="description" content="Discovers available OCR engines by scanning loaded assemblies for concrete implementations of . Traverses all referenced assemblies recursively so that implementations in referenced NuGet/project packages are discovered.">
+    
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -71,16 +71,16 @@
 
 
   <h1 id="Zaya_OCR_Services_OcrEngineProvider" data-uid="Zaya.OCR.Services.OcrEngineProvider" class="text-break">Class OcrEngineProvider</h1>
-  <div class="markdown level0 summary"><p>Discovers available OCR engines by scanning loaded assemblies
-for concrete implementations of <a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a>.
-Traverses all referenced assemblies recursively so that
-implementations in referenced NuGet/project packages are discovered.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><span class="xref">OcrEngineProvider</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -107,26 +107,24 @@ implementations in referenced NuGet/project packages are discovered.</p>
   <h6><strong>Assembly</strong>: Zaya.OCR.dll</h6>
   <h5 id="Zaya_OCR_Services_OcrEngineProvider_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class OcrEngineProvider</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class OcrEngineProvider : IDisposable</code></pre>
   </div>
   <h3 id="constructors">Constructors
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_OcrEngineProvider__ctor_System_Collections_Generic_IEnumerable_System_Reflection_Assembly__.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.OcrEngineProvider.%23ctor(System.Collections.Generic.IEnumerable%7BSystem.Reflection.Assembly%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_OcrEngineProvider__ctor_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.OcrEngineProvider.%23ctor(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L21">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L9">View Source</a>
   </span>
   <a id="Zaya_OCR_Services_OcrEngineProvider__ctor_" data-uid="Zaya.OCR.Services.OcrEngineProvider.#ctor*"></a>
-  <h4 id="Zaya_OCR_Services_OcrEngineProvider__ctor_System_Collections_Generic_IEnumerable_System_Reflection_Assembly__" data-uid="Zaya.OCR.Services.OcrEngineProvider.#ctor(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">OcrEngineProvider(IEnumerable&lt;Assembly&gt;?)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance and scans the current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.appdomain">AppDomain</a>
-for available OCR engines.</p>
-</div>
+  <h4 id="Zaya_OCR_Services_OcrEngineProvider__ctor_System_Collections_Generic_IEnumerable_System_String__" data-uid="Zaya.OCR.Services.OcrEngineProvider.#ctor(System.Collections.Generic.IEnumerable{System.String})">OcrEngineProvider(IEnumerable&lt;string&gt;?)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OcrEngineProvider(IEnumerable&lt;Assembly&gt;? extraAssemblies = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public OcrEngineProvider(IEnumerable&lt;string&gt;? pluginDirectories = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -139,10 +137,9 @@ for available OCR engines.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a>&gt;</td>
-        <td><span class="parametername">extraAssemblies</span></td>
-        <td><p>Optional additional assemblies to scan.</p>
-</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><span class="parametername">pluginDirectories</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -153,12 +150,11 @@ for available OCR engines.</p>
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_OcrEngineProvider_AvailableEngines.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.OcrEngineProvider.AvailableEngines%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L67">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L40">View Source</a>
   </span>
   <a id="Zaya_OCR_Services_OcrEngineProvider_AvailableEngines_" data-uid="Zaya.OCR.Services.OcrEngineProvider.AvailableEngines*"></a>
   <h4 id="Zaya_OCR_Services_OcrEngineProvider_AvailableEngines" data-uid="Zaya.OCR.Services.OcrEngineProvider.AvailableEngines">AvailableEngines</h4>
-  <div class="markdown level1 summary"><p>Gets the list of all available OCR engines on this system.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -183,16 +179,30 @@ for available OCR engines.</p>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_OcrEngineProvider_Dispose.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.OcrEngineProvider.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L44">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Services_OcrEngineProvider_Dispose_" data-uid="Zaya.OCR.Services.OcrEngineProvider.Dispose*"></a>
+  <h4 id="Zaya_OCR_Services_OcrEngineProvider_Dispose" data-uid="Zaya.OCR.Services.OcrEngineProvider.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_OcrEngineProvider_GetById_System_String_.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.OcrEngineProvider.GetById(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L73">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L41">View Source</a>
   </span>
   <a id="Zaya_OCR_Services_OcrEngineProvider_GetById_" data-uid="Zaya.OCR.Services.OcrEngineProvider.GetById*"></a>
   <h4 id="Zaya_OCR_Services_OcrEngineProvider_GetById_System_String_" data-uid="Zaya.OCR.Services.OcrEngineProvider.GetById(System.String)">GetById(string)</h4>
-  <div class="markdown level1 summary"><p>Finds an engine by its <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_EngineId">EngineId</a>.
-Returns <code>null</code> if not found or not available.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -235,12 +245,11 @@ Returns <code>null</code> if not found or not available.</p>
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_OcrEngineProvider_GetFirstAvailable.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L82">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L42">View Source</a>
   </span>
   <a id="Zaya_OCR_Services_OcrEngineProvider_GetFirstAvailable_" data-uid="Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable*"></a>
   <h4 id="Zaya_OCR_Services_OcrEngineProvider_GetFirstAvailable" data-uid="Zaya.OCR.Services.OcrEngineProvider.GetFirstAvailable">GetFirstAvailable()</h4>
-  <div class="markdown level1 summary"><p>Gets the first available engine, or <code>null</code> if none are available.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -261,6 +270,10 @@ Returns <code>null</code> if not found or not available.</p>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
 
 </article>
           </div>
@@ -273,7 +286,7 @@ Returns <code>null</code> if not found or not available.</p>
                     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Services_OcrEngineProvider.md&amp;value=---%0Auid%3A%20Zaya.OCR.Services.OcrEngineProvider%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Services/OcrEngineProvider.cs/#L5" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Namespace Zaya.OCR.Models </title>
+      <title>Enum OneOcrSource </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Namespace Zaya.OCR.Models ">
+      <meta name="title" content="Enum OneOcrSource ">
     
-    
+    <meta name="description" content="Specifies how the OneOCR engine files are obtained.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -66,23 +66,48 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Zaya.OCR.Models">
+            <article class="content wrap" id="_content" data-uid="Zaya.OCR.Impl.OneOcr.OneOcrSource">
 
-  <h1 id="Zaya_OCR_Models" data-uid="Zaya.OCR.Models" class="text-break">Namespace Zaya.OCR.Models</h1>
-  <div class="markdown level0 summary"></div>
+
+
+
+  <h1 id="Zaya_OCR_Impl_OneOcr_OneOcrSource" data-uid="Zaya.OCR.Impl.OneOcr.OneOcrSource" class="text-break">Enum OneOcrSource</h1>
+  <div class="markdown level0 summary"><p>Specifies how the OneOCR engine files are obtained.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="interfaces">
-Interfaces
+  <h6><strong>Namespace</strong>: <a class="xref" href="Zaya.html">Zaya</a>.<a class="xref" href="Zaya.OCR.html">OCR</a>.<a class="xref" href="Zaya.OCR.Impl.html">Impl</a>.<a class="xref" href="Zaya.OCR.Impl.OneOcr.html">OneOcr</a></h6>
+  <h6><strong>Assembly</strong>: Zaya.OCR.Impl.OneOcr.dll</h6>
+  <h5 id="Zaya_OCR_Impl_OneOcr_OneOcrSource_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum OneOcrSource</code></pre>
+  </div>
+  <h3 id="fields">Fields
 </h3>
-      <h4><a class="xref" href="Zaya.OCR.Models.IOCRResult.html">IOCRResult</a></h4>
-      <section><p>Represents the result of an OCR recognition operation.</p>
-</section>
-      <h4><a class="xref" href="Zaya.OCR.Models.IOCRWord.html">IOCRWord</a></h4>
-      <section><p>Represents a single recognized word with its text, bounding box, and confidence score.</p>
-</section>
-
-
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    </thead></thead><tbody>
+      <tr>
+        <td id="Zaya_OCR_Impl_OneOcr_OneOcrSource_Directory">Directory</td>
+        <td><p>Load from a local directory containing oneocr.dll, onnxruntime.dll, and oneocr.onemodel.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Zaya_OCR_Impl_OneOcr_OneOcrSource_SnippingTool">SnippingTool</td>
+        <td><p>Auto-detect from the Windows 11 SnippingTool installation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Zaya_OCR_Impl_OneOcr_OneOcrSource_Url">Url</td>
+        <td><p>Download from a URL (not yet implemented).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
 
@@ -90,6 +115,12 @@ Interfaces
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_OneOcrSource.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.OneOcrSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs/#L6" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

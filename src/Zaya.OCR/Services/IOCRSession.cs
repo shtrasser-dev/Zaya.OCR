@@ -1,4 +1,5 @@
 using Zaya.OCR.Models;
+using Zaya.Primitives;
 
 namespace Zaya.OCR.Services;
 
@@ -9,15 +10,10 @@ namespace Zaya.OCR.Services;
 public interface IOCRSession : IDisposable
 {
     /// <summary>
-    /// Gets the options configured for this session.
+    /// Recognizes text from the provided raw image.
     /// </summary>
-    OcrOptions Options { get; }
-
-    /// <summary>
-    /// Recognizes text from the provided image data.
-    /// </summary>
-    /// <param name="data">Raw image bytes (e.g., PNG, JPEG, BMP).</param>
+    /// <param name="image">The raw image to recognize text from.</param>
     /// <param name="cancellationToken">Token to cancel the recognition operation.</param>
     /// <returns>The OCR result containing recognized words and confidence.</returns>
-    Task<IOCRResult> RecognizeAsync(byte[] data, CancellationToken cancellationToken = default);
+    Task<IOCRResult> RecognizeAsync(IRawImage image, CancellationToken cancellationToken = default);
 }

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Namespace Zaya.OCR.Models </title>
+      <title>Namespace Zaya.OCR.Impl.OneOcr </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Namespace Zaya.OCR.Models ">
+      <meta name="title" content="Namespace Zaya.OCR.Impl.OneOcr ">
     
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -66,20 +66,42 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Zaya.OCR.Models">
+            <article class="content wrap" id="_content" data-uid="Zaya.OCR.Impl.OneOcr">
 
-  <h1 id="Zaya_OCR_Models" data-uid="Zaya.OCR.Models" class="text-break">Namespace Zaya.OCR.Models</h1>
+  <h1 id="Zaya_OCR_Impl_OneOcr" data-uid="Zaya.OCR.Impl.OneOcr" class="text-break">Namespace Zaya.OCR.Impl.OneOcr</h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
-    <h3 id="interfaces">
-Interfaces
+    <h3 id="classes">
+Classes
 </h3>
-      <h4><a class="xref" href="Zaya.OCR.Models.IOCRResult.html">IOCRResult</a></h4>
-      <section><p>Represents the result of an OCR recognition operation.</p>
+      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.html">OcrSessionExtensions</a></h4>
+      <section><p>Extension methods for <a class="xref" href="Zaya.OCR.Services.IOCRSession.html">IOCRSession</a> to accept <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.bitmap">Bitmap</a> input.</p>
 </section>
-      <h4><a class="xref" href="Zaya.OCR.Models.IOCRWord.html">IOCRWord</a></h4>
-      <section><p>Represents a single recognized word with its text, bounding box, and confidence score.</p>
+      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrConfig.html">OneOcrConfig</a></h4>
+      <section><p>Typed configuration for <a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html">OneOcrService</a>.
+Converts to the dictionary format expected by <code>InitializeAsync</code>.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrDllLoadException.html">OneOcrDllLoadException</a></h4>
+      <section><p>Thrown when <code>oneocr.dll</code> fails to load via <code>LoadLibraryEx</code>.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrDllNotFoundException.html">OneOcrDllNotFoundException</a></h4>
+      <section><p>Thrown when <code>oneocr.dll</code> is not found in the specified directory.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.html">OneOcrDownloadNotImplementedException</a></h4>
+      <section><p>Thrown when the URL-based engine download source is selected but not yet implemented.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException.html">OneOcrModelNotFoundException</a></h4>
+      <section><p>Thrown when the <code>oneocr.onemodel</code> file is not found.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException.html">OneOcrSnippingToolNotFoundException</a></h4>
+      <section><p>Thrown when the Windows 11 SnippingTool installation is not found on the current system.</p>
+</section>
+    <h3 id="enums">
+Enums
+</h3>
+      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrSource.html">OneOcrSource</a></h4>
+      <section><p>Specifies how the OneOCR engine files are obtained.</p>
 </section>
 
 

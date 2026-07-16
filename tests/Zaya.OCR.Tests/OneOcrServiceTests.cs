@@ -1,8 +1,11 @@
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
+using Xunit;
+using Zaya.OCR.Impl.OneOcr;
 using Zaya.OCR.Impl.OneOcr.Services;
-using Zaya.OCR.Models;
 using Zaya.OCR.Services;
+using Zaya.Primitives;
 
 namespace Zaya.OCR.Tests;
 
@@ -15,14 +18,14 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     public async ValueTask InitializeAsync()
     {
         _service = new OneOcrService();
-        _session = await _service.CreateSessionAsync();
 
         try
         {
-            var result = await _session.RecognizeAsync(CreateEmptyImage(100, 50));
-            _modelAvailable = result is not null;
+            await _service.InitializeAsync(null);
+            _session = await _service.CreateSessionAsync(cancellationToken: TestContext.Current.CancellationToken);
+            _modelAvailable = _service.IsAvailable;
         }
-        catch (UnauthorizedAccessException)
+        catch (LocalizedException)
         {
             _modelAvailable = false;
         }
@@ -35,40 +38,84 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     public ValueTask DisposeAsync()
     {
         _session?.Dispose();
+        _service?.Dispose();
         return ValueTask.CompletedTask;
     }
 
     [Fact]
-    public async Task CreateSession_SetsOptions()
+    public void DisplayName_ReturnsNonEmpty()
     {
-        var lang = "ru-RU";
-        var options = new OcrOptions { Language = lang };
-
-        using var session = await _service!.CreateSessionAsync(options);
-
-        Assert.Same(options, session.Options);
-        Assert.Equal(lang, session.Options.Language);
+        var name = _service!.DisplayName.GetValue(System.Globalization.CultureInfo.InvariantCulture);
+        Assert.False(string.IsNullOrWhiteSpace(name));
     }
 
     [Fact]
-    public async Task CreateSession_NullOptions_UsesDefaults()
+    public void Settings_ReturnsExpectedDescriptors()
     {
-        using var session = await _service!.CreateSessionAsync();
+        var settings = _service!.Settings;
+        Assert.NotEmpty(settings);
+        Assert.Contains(settings, s => s.Key == "source");
+        Assert.Contains(settings, s => s.Key == "directoryPath");
+        Assert.Contains(settings, s => s.Key == "downloadUrl");
+        Assert.Contains(settings, s => s.Key == "cacheDirectory");
+    }
 
-        Assert.NotNull(session.Options);
-        Assert.Null(session.Options.Language);
-        Assert.True(session.Options.EnableWordLevelConfidence);
+    [Fact]
+    public void EngineId_ReturnsOneocr()
+    {
+        Assert.Equal("oneocr", _service!.EngineId);
+    }
+
+    [Fact]
+    public void PreferredPixelFormat_IsBgra32()
+    {
+        Assert.Equal(Zaya.Primitives.PixelFormat.Bgra32, _service!.PreferredPixelFormat);
+    }
+
+    [Fact]
+    public async Task CreateSession_WithoutInitialize_Throws()
+    {
+        var service = new OneOcrService();
+        await Assert.ThrowsAsync<InvalidOperationException>(() =>
+            service.CreateSessionAsync(cancellationToken: TestContext.Current.CancellationToken));
+    }
+
+    [Fact]
+    public async Task InitializeAsync_IsIdempotent()
+    {
+        var service = new OneOcrService();
+
+        try
+        {
+            await service.InitializeAsync(null, TestContext.Current.CancellationToken);
+            // Second call should not throw — idempotent
+            await service.InitializeAsync(null, TestContext.Current.CancellationToken);
+            Assert.True(service.IsAvailable);
+        }
+        finally
+        {
+            service.Dispose();
+        }
+    }
+
+    [Fact]
+    public async Task CreateSession_Succeeds()
+    {
+        if (!_modelAvailable) return;
+
+        using var session = await _service!.CreateSessionAsync(cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.NotNull(session);
     }
 
     [Fact]
     public async Task RecognizeAsync_SimpleImage_ReturnsExpectedText()
     {
-        if (!_modelAvailable)
-            return;
+        if (!_modelAvailable) return;
 
-        var imageBytes = CreateTestImage("Hello World", 400, 100, 48);
+        var image = CreateTestImage("Hello World", 400, 100, 48);
 
-        var result = await _session!.RecognizeAsync(imageBytes);
+        var result = await _session!.RecognizeAsync(image, TestContext.Current.CancellationToken);
 
         Assert.NotNull(result);
         Assert.NotEmpty(result.Words);
@@ -82,12 +129,11 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     [Fact]
     public async Task RecognizeAsync_MultipleLines_ReturnsAllLines()
     {
-        if (!_modelAvailable)
-            return;
+        if (!_modelAvailable) return;
 
-        var imageBytes = CreateTestImage("Line One\nLine Two\nLine Three", 400, 200, 24);
+        var image = CreateTestImage("Line One\nLine Two\nLine Three", 400, 200, 24);
 
-        var result = await _session!.RecognizeAsync(imageBytes);
+        var result = await _session!.RecognizeAsync(image, TestContext.Current.CancellationToken);
 
         Assert.NotNull(result);
         Assert.NotEmpty(result.Words);
@@ -100,12 +146,11 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     [Fact]
     public async Task RecognizeAsync_EmptyImage_ReturnsEmptyResult()
     {
-        if (!_modelAvailable)
-            return;
+        if (!_modelAvailable) return;
 
-        var imageBytes = CreateEmptyImage(200, 100);
+        var image = CreateEmptyImage(200, 100);
 
-        var result = await _session!.RecognizeAsync(imageBytes);
+        var result = await _session!.RecognizeAsync(image, TestContext.Current.CancellationToken);
 
         Assert.NotNull(result);
         Assert.Empty(result.Words);
@@ -115,23 +160,24 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     [Fact]
     public async Task CancellationToken_CancelsOperation()
     {
-        var imageBytes = CreateTestImage("Hello World", 400, 100, 48);
+        if (!_modelAvailable) return;
+
+        var image = CreateTestImage("Hello World", 400, 100, 48);
         var cts = new CancellationTokenSource();
         cts.Cancel();
 
         await Assert.ThrowsAsync<OperationCanceledException>(() =>
-            _session!.RecognizeAsync(imageBytes, cts.Token));
+            _session!.RecognizeAsync(image, cts.Token));
     }
 
     [Fact]
     public async Task RecognizeAsync_EachWordHasBounds()
     {
-        if (!_modelAvailable)
-            return;
+        if (!_modelAvailable) return;
 
-        var imageBytes = CreateTestImage("Hello World", 400, 100, 48);
+        var image = CreateTestImage("Hello World", 400, 100, 48);
 
-        var result = await _session!.RecognizeAsync(imageBytes);
+        var result = await _session!.RecognizeAsync(image, TestContext.Current.CancellationToken);
 
         Assert.NotNull(result);
         Assert.NotEmpty(result.Words);
@@ -145,7 +191,27 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
         }
     }
 
-    private static byte[] CreateTestImage(string text, int width, int height, int fontSize)
+    [Fact]
+    public async Task InitializeAsync_WithDirectorySource_MissingPath_Throws()
+    {
+        var service = new OneOcrService();
+        try
+        {
+            var settings = new Dictionary<string, object?>
+            {
+                ["source"] = "directory",
+                ["directoryPath"] = @"C:\nonexistent\path"
+            };
+            await Assert.ThrowsAsync<OneOcrDllNotFoundException>(() =>
+                service.InitializeAsync(settings, TestContext.Current.CancellationToken));
+        }
+        finally
+        {
+            service.Dispose();
+        }
+    }
+
+    private static IRawImage CreateTestImage(string text, int width, int height, int fontSize)
     {
         using var bitmap = new Bitmap(width, height);
         using var graphics = Graphics.FromImage(bitmap);
@@ -162,19 +228,50 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
             currentY += graphics.MeasureString(line, font).Height * 1.2f;
         }
 
-        using var stream = new MemoryStream();
-        bitmap.Save(stream, ImageFormat.Png);
-        return stream.ToArray();
+        return BitmapToRawImage(bitmap);
     }
 
-    private static byte[] CreateEmptyImage(int width, int height)
+    private static IRawImage CreateEmptyImage(int width, int height)
     {
         using var bitmap = new Bitmap(width, height);
         using var graphics = Graphics.FromImage(bitmap);
         graphics.Clear(Color.White);
 
-        using var stream = new MemoryStream();
-        bitmap.Save(stream, ImageFormat.Png);
-        return stream.ToArray();
+        return BitmapToRawImage(bitmap);
+    }
+
+    private static IRawImage BitmapToRawImage(Bitmap bitmap)
+    {
+        var rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
+        var bmpData = bitmap.LockBits(rect, ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+
+        var stride = bmpData.Stride;
+        var pixels = new byte[stride * bitmap.Height];
+        System.Runtime.InteropServices.Marshal.Copy(bmpData.Scan0, pixels, 0, pixels.Length);
+        bitmap.UnlockBits(bmpData);
+
+        return new TestRawImage(pixels, bitmap.Width, bitmap.Height, stride, Zaya.Primitives.PixelFormat.Bgra32);
+    }
+
+    private sealed class TestRawImage : IRawImage
+    {
+        private readonly byte[] _pixels;
+        public int Width { get; }
+        public int Height { get; }
+        public int Stride { get; }
+        public Zaya.Primitives.PixelFormat Format { get; }
+
+        public TestRawImage(byte[] pixels, int width, int height, int stride, Zaya.Primitives.PixelFormat format)
+        {
+            _pixels = pixels;
+            Width = width;
+            Height = height;
+            Stride = stride;
+            Format = format;
+        }
+
+        public ReadOnlySpan<byte> GetPixelData() => _pixels;
+        public byte[] ToByteArray() => _pixels;
+        public void Dispose() { }
     }
 }

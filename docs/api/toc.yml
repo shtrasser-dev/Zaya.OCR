@@ -7,6 +7,34 @@ items:
   - uid: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions
     name: OneOcrServiceCollectionExtensions
     type: Class
+- uid: Zaya.OCR.Impl.OneOcr
+  name: Zaya.OCR.Impl.OneOcr
+  type: Namespace
+  items:
+  - uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
+    name: OcrSessionExtensions
+    type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrConfig
+    name: OneOcrConfig
+    type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrDllLoadException
+    name: OneOcrDllLoadException
+    type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrDllNotFoundException
+    name: OneOcrDllNotFoundException
+    type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
+    name: OneOcrDownloadNotImplementedException
+    type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException
+    name: OneOcrModelNotFoundException
+    type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException
+    name: OneOcrSnippingToolNotFoundException
+    type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrSource
+    name: OneOcrSource
+    type: Enum
 - uid: Zaya.OCR.Impl.OneOcr.Models
   name: Zaya.OCR.Impl.OneOcr.Models
   type: Namespace
@@ -37,9 +65,6 @@ items:
   - uid: Zaya.OCR.Models.IOCRWord
     name: IOCRWord
     type: Interface
-  - uid: Zaya.OCR.Models.OcrOptions
-    name: OcrOptions
-    type: Class
 - uid: Zaya.OCR.Services
   name: Zaya.OCR.Services
   type: Namespace

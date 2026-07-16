@@ -1,126 +1,111 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
-  commentId: T:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
-  id: OneOcrSession
-  parent: Zaya.OCR.Impl.OneOcr.Services
+- uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
+  commentId: T:Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
+  id: OcrSessionExtensions
+  parent: Zaya.OCR.Impl.OneOcr
   children:
-  - Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
-  - Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
+  - Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
-  name: OneOcrSession
-  nameWithType: OneOcrSession
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  name: OcrSessionExtensions
+  nameWithType: OcrSessionExtensions
+  fullName: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
   type: Class
   source:
     remote:
-      path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
+      path: src/Zaya.OCR.Impl.OneOcr/OcrSessionExtensions.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
-    id: OneOcrSession
-    path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
-    startLine: 10
+    id: OcrSessionExtensions
+    path: src/Zaya.OCR.Impl.OneOcr/OcrSessionExtensions.cs
+    startLine: 12
   assemblies:
   - Zaya.OCR.Impl.OneOcr
-  namespace: Zaya.OCR.Impl.OneOcr.Services
-  summary: OneOCR session that performs OCR using the native <code>oneocr.dll</code> via P/Invoke.
+  namespace: Zaya.OCR.Impl.OneOcr
+  summary: Extension methods for <xref href="Zaya.OCR.Services.IOCRSession" data-throw-if-not-resolved="false"></xref> to accept <xref href="System.Drawing.Bitmap" data-throw-if-not-resolved="false"></xref> input.
   example: []
   syntax:
-    content: 'public sealed class OneOcrSession : IOCRSession, IDisposable'
-    content.vb: Public NotInheritable Class OneOcrSession Implements IOCRSession, IDisposable
+    content: public static class OcrSessionExtensions
+    content.vb: Public Module OcrSessionExtensions
   inheritance:
   - System.Object
-  implements:
-  - Zaya.OCR.Services.IOCRSession
-  - System.IDisposable
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
   - System.Object.GetType
+  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-  extensionMethods:
-  - Zaya.OCR.Services.IOCRSession.Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(System.Drawing.Bitmap,System.Threading.CancellationToken)
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
-  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
-  id: RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
-  parent: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+- uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
+  commentId: M:Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
+  id: RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
+  isExtensionMethod: true
+  parent: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
   langs:
   - csharp
   - vb
-  name: RecognizeAsync(IRawImage, CancellationToken)
-  nameWithType: OneOcrSession.RecognizeAsync(IRawImage, CancellationToken)
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage, System.Threading.CancellationToken)
+  name: RecognizeAsync(IOCRSession, Bitmap, CancellationToken)
+  nameWithType: OcrSessionExtensions.RecognizeAsync(IOCRSession, Bitmap, CancellationToken)
+  fullName: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession, System.Drawing.Bitmap, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
-      path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
+      path: src/Zaya.OCR.Impl.OneOcr/OcrSessionExtensions.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: RecognizeAsync
-    path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
-    startLine: 21
+    path: src/Zaya.OCR.Impl.OneOcr/OcrSessionExtensions.cs
+    startLine: 22
   assemblies:
   - Zaya.OCR.Impl.OneOcr
-  namespace: Zaya.OCR.Impl.OneOcr.Services
-  summary: Recognizes text from the provided raw image.
+  namespace: Zaya.OCR.Impl.OneOcr
+  summary: >-
+    Recognizes text from a <xref href="System.Drawing.Bitmap" data-throw-if-not-resolved="false"></xref> by converting it to raw BGRA pixels
+
+    and delegating to <xref href="Zaya.OCR.Services.IOCRSession.RecognizeAsync(Zaya.Primitives.IRawImage%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public Task<IOCRResult> RecognizeAsync(IRawImage image, CancellationToken cancellationToken = default)
+    content: public static Task<IOCRResult> RecognizeAsync(this IOCRSession session, Bitmap bitmap, CancellationToken cancellationToken = default)
     parameters:
-    - id: image
-      type: Zaya.Primitives.IRawImage
-      description: The raw image to recognize text from.
+    - id: session
+      type: Zaya.OCR.Services.IOCRSession
+      description: The OCR session.
+    - id: bitmap
+      type: System.Drawing.Bitmap
+      description: The bitmap to recognize text from.
     - id: cancellationToken
       type: System.Threading.CancellationToken
       description: Token to cancel the recognition operation.
     return:
       type: System.Threading.Tasks.Task{Zaya.OCR.Models.IOCRResult}
       description: The OCR result containing recognized words and confidence.
-    content.vb: Public Function RecognizeAsync(image As IRawImage, cancellationToken As CancellationToken = Nothing) As Task(Of IOCRResult)
-  overload: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync*
-  implements:
-  - Zaya.OCR.Services.IOCRSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
-  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
-  id: Dispose
-  parent: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
-  langs:
-  - csharp
-  - vb
-  name: Dispose()
-  nameWithType: OneOcrSession.Dispose()
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose()
-  type: Method
-  source:
-    remote:
-      path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
-      branch: main
-      repo: https://github.com/shtrasser-dev/Zaya.OCR
-    id: Dispose
-    path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
-    startLine: 40
-  assemblies:
-  - Zaya.OCR.Impl.OneOcr
-  namespace: Zaya.OCR.Impl.OneOcr.Services
-  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-  example: []
-  syntax:
-    content: public void Dispose()
-    content.vb: Public Sub Dispose()
-  overload: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose*
-  implements:
-  - System.IDisposable.Dispose
+    content.vb: Public Shared Function RecognizeAsync(session As IOCRSession, bitmap As Bitmap, cancellationToken As CancellationToken = Nothing) As Task(Of IOCRResult)
+  overload: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync*
 references:
-- uid: Zaya.OCR.Impl.OneOcr.Services
-  commentId: N:Zaya.OCR.Impl.OneOcr.Services
+- uid: Zaya.OCR.Services.IOCRSession
+  commentId: T:Zaya.OCR.Services.IOCRSession
+  parent: Zaya.OCR.Services
+  href: Zaya.OCR.Services.IOCRSession.html
+  name: IOCRSession
+  nameWithType: IOCRSession
+  fullName: Zaya.OCR.Services.IOCRSession
+- uid: System.Drawing.Bitmap
+  commentId: T:System.Drawing.Bitmap
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.bitmap
+  name: Bitmap
+  nameWithType: Bitmap
+  fullName: System.Drawing.Bitmap
+- uid: Zaya.OCR.Impl.OneOcr
+  commentId: N:Zaya.OCR.Impl.OneOcr
   href: Zaya.html
-  name: Zaya.OCR.Impl.OneOcr.Services
-  nameWithType: Zaya.OCR.Impl.OneOcr.Services
-  fullName: Zaya.OCR.Impl.OneOcr.Services
+  name: Zaya.OCR.Impl.OneOcr
+  nameWithType: Zaya.OCR.Impl.OneOcr
+  fullName: Zaya.OCR.Impl.OneOcr
   spec.csharp:
   - uid: Zaya
     name: Zaya
@@ -137,10 +122,6 @@ references:
   - uid: Zaya.OCR.Impl.OneOcr
     name: OneOcr
     href: Zaya.OCR.Impl.OneOcr.html
-  - name: .
-  - uid: Zaya.OCR.Impl.OneOcr.Services
-    name: Services
-    href: Zaya.OCR.Impl.OneOcr.Services.html
   spec.vb:
   - uid: Zaya
     name: Zaya
@@ -157,10 +138,6 @@ references:
   - uid: Zaya.OCR.Impl.OneOcr
     name: OneOcr
     href: Zaya.OCR.Impl.OneOcr.html
-  - name: .
-  - uid: Zaya.OCR.Impl.OneOcr.Services
-    name: Services
-    href: Zaya.OCR.Impl.OneOcr.Services.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -172,21 +149,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: Zaya.OCR.Services.IOCRSession
-  commentId: T:Zaya.OCR.Services.IOCRSession
-  parent: Zaya.OCR.Services
-  href: Zaya.OCR.Services.IOCRSession.html
-  name: IOCRSession
-  nameWithType: IOCRSession
-  fullName: Zaya.OCR.Services.IOCRSession
-- uid: System.IDisposable
-  commentId: T:System.IDisposable
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.idisposable
-  name: IDisposable
-  nameWithType: IDisposable
-  fullName: System.IDisposable
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -313,6 +275,30 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -382,61 +368,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
-- uid: Zaya.OCR.Services.IOCRSession.Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(System.Drawing.Bitmap,System.Threading.CancellationToken)
-  commentId: M:Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
-  parent: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
-  definition: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
-  href: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.html#Zaya_OCR_Impl_OneOcr_OcrSessionExtensions_RecognizeAsync_Zaya_OCR_Services_IOCRSession_System_Drawing_Bitmap_System_Threading_CancellationToken_
-  name: RecognizeAsync(IOCRSession, Bitmap, CancellationToken)
-  nameWithType: OcrSessionExtensions.RecognizeAsync(IOCRSession, Bitmap, CancellationToken)
-  fullName: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession, System.Drawing.Bitmap, System.Threading.CancellationToken)
-  spec.csharp:
-  - uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
-    name: RecognizeAsync
-    href: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.html#Zaya_OCR_Impl_OneOcr_OcrSessionExtensions_RecognizeAsync_Zaya_OCR_Services_IOCRSession_System_Drawing_Bitmap_System_Threading_CancellationToken_
-  - name: (
-  - uid: Zaya.OCR.Services.IOCRSession
-    name: IOCRSession
-  - name: ','
-  - name: " "
-  - uid: System.Drawing.Bitmap
-    name: Bitmap
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing.bitmap
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: )
-  spec.vb:
-  - uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
-    name: RecognizeAsync
-    href: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.html#Zaya_OCR_Impl_OneOcr_OcrSessionExtensions_RecognizeAsync_Zaya_OCR_Services_IOCRSession_System_Drawing_Bitmap_System_Threading_CancellationToken_
-  - name: (
-  - uid: Zaya.OCR.Services.IOCRSession
-    name: IOCRSession
-  - name: ','
-  - name: " "
-  - uid: System.Drawing.Bitmap
-    name: Bitmap
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing.bitmap
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: Zaya.OCR.Services
   commentId: N:Zaya.OCR.Services
   href: Zaya.html
@@ -467,104 +398,40 @@ references:
   - uid: Zaya.OCR.Services
     name: Services
     href: Zaya.OCR.Services.html
-- uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
-  commentId: M:Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
+- uid: System.Drawing
+  commentId: N:System.Drawing
   isExternal: true
-  href: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.html#Zaya_OCR_Impl_OneOcr_OcrSessionExtensions_RecognizeAsync_Zaya_OCR_Services_IOCRSession_System_Drawing_Bitmap_System_Threading_CancellationToken_
-  name: RecognizeAsync(IOCRSession, Bitmap, CancellationToken)
-  nameWithType: OcrSessionExtensions.RecognizeAsync(IOCRSession, Bitmap, CancellationToken)
-  fullName: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession, System.Drawing.Bitmap, System.Threading.CancellationToken)
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
   spec.csharp:
-  - uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
-    name: RecognizeAsync
-    href: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.html#Zaya_OCR_Impl_OneOcr_OcrSessionExtensions_RecognizeAsync_Zaya_OCR_Services_IOCRSession_System_Drawing_Bitmap_System_Threading_CancellationToken_
-  - name: (
-  - uid: Zaya.OCR.Services.IOCRSession
-    name: IOCRSession
-  - name: ','
-  - name: " "
-  - uid: System.Drawing.Bitmap
-    name: Bitmap
+  - uid: System
+    name: System
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing.bitmap
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: )
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
   spec.vb:
-  - uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(Zaya.OCR.Services.IOCRSession,System.Drawing.Bitmap,System.Threading.CancellationToken)
-    name: RecognizeAsync
-    href: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.html#Zaya_OCR_Impl_OneOcr_OcrSessionExtensions_RecognizeAsync_Zaya_OCR_Services_IOCRSession_System_Drawing_Bitmap_System_Threading_CancellationToken_
-  - name: (
-  - uid: Zaya.OCR.Services.IOCRSession
-    name: IOCRSession
-  - name: ','
-  - name: " "
-  - uid: System.Drawing.Bitmap
-    name: Bitmap
+  - uid: System
+    name: System
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing.bitmap
-  - name: ','
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: )
-- uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
-  commentId: T:Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
-  parent: Zaya.OCR.Impl.OneOcr
-  href: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.html
-  name: OcrSessionExtensions
-  nameWithType: OcrSessionExtensions
-  fullName: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
-- uid: Zaya.OCR.Impl.OneOcr
-  commentId: N:Zaya.OCR.Impl.OneOcr
-  href: Zaya.html
-  name: Zaya.OCR.Impl.OneOcr
-  nameWithType: Zaya.OCR.Impl.OneOcr
-  fullName: Zaya.OCR.Impl.OneOcr
-  spec.csharp:
-  - uid: Zaya
-    name: Zaya
-    href: Zaya.html
-  - name: .
-  - uid: Zaya.OCR
-    name: OCR
-    href: Zaya.OCR.html
-  - name: .
-  - uid: Zaya.OCR.Impl
-    name: Impl
-    href: Zaya.OCR.Impl.html
-  - name: .
-  - uid: Zaya.OCR.Impl.OneOcr
-    name: OneOcr
-    href: Zaya.OCR.Impl.OneOcr.html
-  spec.vb:
-  - uid: Zaya
-    name: Zaya
-    href: Zaya.html
-  - name: .
-  - uid: Zaya.OCR
-    name: OCR
-    href: Zaya.OCR.html
-  - name: .
-  - uid: Zaya.OCR.Impl
-    name: Impl
-    href: Zaya.OCR.Impl.html
-  - name: .
-  - uid: Zaya.OCR.Impl.OneOcr
-    name: OneOcr
-    href: Zaya.OCR.Impl.OneOcr.html
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync*
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync
-  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrSession_RecognizeAsync_Zaya_Primitives_IRawImage_System_Threading_CancellationToken_
-  name: RecognizeAsync
-  nameWithType: OneOcrSession.RecognizeAsync
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Zaya.OCR.Services.IOCRSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
   commentId: M:Zaya.OCR.Services.IOCRSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
   parent: Zaya.OCR.Services.IOCRSession
@@ -601,13 +468,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
-- uid: Zaya.Primitives.IRawImage
-  commentId: T:Zaya.Primitives.IRawImage
-  parent: Zaya.Primitives
-  isExternal: true
-  name: IRawImage
-  nameWithType: IRawImage
-  fullName: Zaya.Primitives.IRawImage
+- uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync
+  href: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.html#Zaya_OCR_Impl_OneOcr_OcrSessionExtensions_RecognizeAsync_Zaya_OCR_Services_IOCRSession_System_Drawing_Bitmap_System_Threading_CancellationToken_
+  name: RecognizeAsync
+  nameWithType: OcrSessionExtensions.RecognizeAsync
+  fullName: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync
 - uid: System.Threading.CancellationToken
   commentId: T:System.Threading.CancellationToken
   parent: System.Threading
@@ -649,28 +515,6 @@ references:
     name: IOCRResult
     href: Zaya.OCR.Models.IOCRResult.html
   - name: )
-- uid: Zaya.Primitives
-  commentId: N:Zaya.Primitives
-  isExternal: true
-  name: Zaya.Primitives
-  nameWithType: Zaya.Primitives
-  fullName: Zaya.Primitives
-  spec.csharp:
-  - uid: Zaya
-    name: Zaya
-    isExternal: true
-  - name: .
-  - uid: Zaya.Primitives
-    name: Primitives
-    isExternal: true
-  spec.vb:
-  - uid: Zaya
-    name: Zaya
-    isExternal: true
-  - name: .
-  - uid: Zaya.Primitives
-    name: Primitives
-    isExternal: true
 - uid: System.Threading
   commentId: N:System.Threading
   isExternal: true
@@ -763,31 +607,3 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose*
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
-  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrSession_Dispose
-  name: Dispose
-  nameWithType: OneOcrSession.Dispose
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
-- uid: System.IDisposable.Dispose
-  commentId: M:System.IDisposable.Dispose
-  parent: System.IDisposable
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
-  name: Dispose()
-  nameWithType: IDisposable.Dispose()
-  fullName: System.IDisposable.Dispose()
-  spec.csharp:
-  - uid: System.IDisposable.Dispose
-    name: Dispose
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.IDisposable.Dispose
-    name: Dispose
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
-  - name: (
-  - name: )

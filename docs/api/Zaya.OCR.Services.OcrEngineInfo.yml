@@ -22,12 +22,10 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OcrEngineInfo
     path: src/Zaya.OCR/Services/OcrEngineProvider.cs
-    startLine: 149
+    startLine: 80
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
-  summary: Describes an available OCR engine.
-  example: []
   syntax:
     content: 'public sealed record OcrEngineInfo : IEquatable<OcrEngineInfo>'
     content.vb: Public NotInheritable Class OcrEngineInfo Implements IEquatable(Of OcrEngineInfo)
@@ -60,21 +58,17 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR/Services/OcrEngineProvider.cs
-    startLine: 149
+    startLine: 80
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
-  summary: Describes an available OCR engine.
-  example: []
   syntax:
     content: public OcrEngineInfo(string Id, IOCRService Service)
     parameters:
     - id: Id
       type: System.String
-      description: Unique engine identifier, matches <xref href="Zaya.OCR.Services.IOCRService.EngineId" data-throw-if-not-resolved="false"></xref>.
     - id: Service
       type: Zaya.OCR.Services.IOCRService
-      description: The engine instance.
     content.vb: Public Sub New(Id As String, Service As IOCRService)
   overload: Zaya.OCR.Services.OcrEngineInfo.#ctor*
   nameWithType.vb: OcrEngineInfo.New(String, IOCRService)
@@ -98,12 +92,10 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Id
     path: src/Zaya.OCR/Services/OcrEngineProvider.cs
-    startLine: 150
+    startLine: 80
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
-  summary: Unique engine identifier, matches <xref href="Zaya.OCR.Services.IOCRService.EngineId" data-throw-if-not-resolved="false"></xref>.
-  example: []
   syntax:
     content: public string Id { get; init; }
     parameters: []
@@ -129,12 +121,10 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Service
     path: src/Zaya.OCR/Services/OcrEngineProvider.cs
-    startLine: 151
+    startLine: 80
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
-  summary: The engine instance.
-  example: []
   syntax:
     content: public IOCRService Service { get; init; }
     parameters: []
@@ -143,13 +133,6 @@ items:
     content.vb: Public Property Service As IOCRService
   overload: Zaya.OCR.Services.OcrEngineInfo.Service*
 references:
-- uid: Zaya.OCR.Services.IOCRService.EngineId
-  commentId: P:Zaya.OCR.Services.IOCRService.EngineId
-  parent: Zaya.OCR.Services.IOCRService
-  href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_EngineId
-  name: EngineId
-  nameWithType: IOCRService.EngineId
-  fullName: Zaya.OCR.Services.IOCRService.EngineId
 - uid: Zaya.OCR.Services
   commentId: N:Zaya.OCR.Services
   href: Zaya.html
@@ -419,13 +402,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
-- uid: Zaya.OCR.Services.IOCRService
-  commentId: T:Zaya.OCR.Services.IOCRService
-  parent: Zaya.OCR.Services
-  href: Zaya.OCR.Services.IOCRService.html
-  name: IOCRService
-  nameWithType: IOCRService
-  fullName: Zaya.OCR.Services.IOCRService
 - uid: System
   commentId: N:System
   isExternal: true
@@ -481,6 +457,13 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: Zaya.OCR.Services.IOCRService
+  commentId: T:Zaya.OCR.Services.IOCRService
+  parent: Zaya.OCR.Services
+  href: Zaya.OCR.Services.IOCRService.html
+  name: IOCRService
+  nameWithType: IOCRService
+  fullName: Zaya.OCR.Services.IOCRService
 - uid: Zaya.OCR.Services.OcrEngineInfo.Id*
   commentId: Overload:Zaya.OCR.Services.OcrEngineInfo.Id
   href: Zaya.OCR.Services.OcrEngineInfo.html#Zaya_OCR_Services_OcrEngineInfo_Id

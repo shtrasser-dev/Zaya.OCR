@@ -1,5 +1,4 @@
-﻿using Zaya.OCR.Models;
-using Zaya.Primitives;
+﻿using Zaya.Primitives;
 
 namespace Zaya.OCR.Services;
 
@@ -7,14 +6,37 @@ namespace Zaya.OCR.Services;
 /// Provides text recognition (OCR) capabilities.
 /// Create sessions with <see cref="CreateSessionAsync"/> to perform recognition
 /// with a fixed set of options.
+/// Call <see cref="InitializeAsync"/> with engine-specific settings before use.
 /// </summary>
-public interface IOCRService
+public interface IOCRService : IDisposable
 {
     /// <summary>
     /// Gets a unique identifier for this OCR engine (e.g., "oneocr", "tesseract").
     /// Used for profile serialization and engine lookup.
     /// </summary>
     string EngineId { get; }
+
+    /// <summary>
+    /// Gets the UI display name for this engine (localized).
+    /// </summary>
+    LocalizedString DisplayName { get; }
+
+    /// <summary>
+    /// Gets the UI description for this engine (localized).
+    /// </summary>
+    LocalizedString Description { get; }
+
+    /// <summary>
+    /// Gets the list of engine-specific settings that can be configured via UI.
+    /// </summary>
+    IReadOnlyList<SettingDescriptor> Settings { get; }
+
+    /// <summary>
+    /// Initializes the engine with the specified settings.
+    /// Must be called before <see cref="CreateSessionAsync"/>.
+    /// Throws <see cref="LocalizedException"/> on failure.
+    /// </summary>
+    Task InitializeAsync(IReadOnlyDictionary<string, object?>? engineSettings, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Gets the pixel format preferred by this OCR engine.
@@ -24,19 +46,15 @@ public interface IOCRService
     PixelFormat PreferredPixelFormat { get; }
 
     /// <summary>
-    /// Gets whether this OCR engine is available on the current system.
-    /// A lightweight check that does not initialize the engine or download models.
-    /// Returns <c>false</c> when the required platform APIs, runtimes,
-    /// or hardware capabilities are not present.
+    /// Gets whether this OCR engine is initialized and ready.
+    /// Returns <c>true</c> only after successful <see cref="InitializeAsync"/>.
     /// </summary>
     bool IsAvailable { get; }
 
     /// <summary>
-    /// Creates a new OCR session with the specified options.
-    /// The session holds the options and can be used for multiple recognition calls.
+    /// Creates a new OCR session.
     /// </summary>
-    /// <param name="options">Recognition options, or <c>null</c> for defaults.</param>
     /// <param name="cancellationToken">Token to cancel session creation.</param>
     /// <returns>An active OCR session ready to recognize text.</returns>
-    Task<IOCRSession> CreateSessionAsync(OcrOptions? options = null, CancellationToken cancellationToken = default);
+    Task<IOCRSession> CreateSessionAsync(CancellationToken cancellationToken = default);
 }

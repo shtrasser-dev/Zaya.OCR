@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class OneOcrService ">
     
-    <meta name="description" content="OneOCR engine implementation of  using P/Invoke into the native oneocr.dll (Windows 11 SnippingTool OCR engine). No WinRT, no Windows App SDK, no package identity required.">
+    <meta name="description" content="OneOCR engine implementation of  using P/Invoke into the native oneocr.dll (Windows 11 SnippingTool OCR engine). No WinRT, no Windows App SDK, no package identity required. Call  before creating sessions.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -72,8 +72,9 @@
 
   <h1 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService" class="text-break">Class OneOcrService</h1>
   <div class="markdown level0 summary"><p>OneOCR engine implementation of <a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a> using P/Invoke
-into the native oneocr.dll (Windows 11 SnippingTool OCR engine).
-No WinRT, no Windows App SDK, no package identity required.</p>
+into the native <code>oneocr.dll</code> (Windows 11 SnippingTool OCR engine).
+No WinRT, no Windows App SDK, no package identity required.
+Call <a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_InitializeAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_">InitializeAsync(IReadOnlyDictionary&lt;string, object?&gt;?, CancellationToken)</a> before creating sessions.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -84,7 +85,7 @@ No WinRT, no Windows App SDK, no package identity required.</p>
   <div class="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -111,16 +112,78 @@ No WinRT, no Windows App SDK, no package identity required.</p>
   <h6><strong>Assembly</strong>: Zaya.OCR.Impl.OneOcr.dll</h6>
   <h5 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class OneOcrService : IOCRService, IAsyncDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class OneOcrService : IOCRService, IDisposable</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Description.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Description%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L28">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Description_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Description*"></a>
+  <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Description" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Description">Description</h4>
+  <div class="markdown level1 summary"><p>Gets the UI description for this engine (localized).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LocalizedString Description { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">LocalizedString</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisplayName.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisplayName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L25">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisplayName_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisplayName*"></a>
+  <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisplayName" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisplayName">DisplayName</h4>
+  <div class="markdown level1 summary"><p>Gets the UI display name for this engine (localized).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LocalizedString DisplayName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">LocalizedString</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_EngineId.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L16">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L22">View Source</a>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_EngineId_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_EngineId" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId">EngineId</h4>
@@ -152,14 +215,12 @@ Used for profile serialization and engine lookup.</p>
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_IsAvailable.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L22">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L62">View Source</a>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_IsAvailable_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_IsAvailable" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable">IsAvailable</h4>
-  <div class="markdown level1 summary"><p>Gets whether this OCR engine is available on the current system.
-A lightweight check that does not initialize the engine or download models.
-Returns <code>false</code> when the required platform APIs, runtimes,
-or hardware capabilities are not present.</p>
+  <div class="markdown level1 summary"><p>Gets whether this OCR engine is initialized and ready.
+Returns <code>true</code> only after successful <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_InitializeAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_">InitializeAsync(IReadOnlyDictionary&lt;string, object?&gt;?, CancellationToken)</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -186,7 +247,7 @@ or hardware capabilities are not present.</p>
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_PreferredPixelFormat.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L19">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L31">View Source</a>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_PreferredPixelFormat_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_PreferredPixelFormat" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat">PreferredPixelFormat</h4>
@@ -214,24 +275,54 @@ in the optimal format without extra conversion.</p>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-</h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Settings.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Settings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L25">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L34">View Source</a>
   </span>
-  <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync*"></a>
-  <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_Zaya_OCR_Models_OcrOptions_System_Threading_CancellationToken_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(Zaya.OCR.Models.OcrOptions,System.Threading.CancellationToken)">CreateSessionAsync(OcrOptions?, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Creates a new OCR session with the specified options.
-The session holds the options and can be used for multiple recognition calls.</p>
+  <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Settings_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Settings*"></a>
+  <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Settings" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Settings">Settings</h4>
+  <div class="markdown level1 summary"><p>Gets the list of engine-specific settings that can be configured via UI.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IOCRSession&gt; CreateSessionAsync(OcrOptions? options = null, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SettingDescriptor&gt; Settings { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<span class="xref">SettingDescriptor</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L89">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync*"></a>
+  <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Threading_CancellationToken_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Threading.CancellationToken)">CreateSessionAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Creates a new OCR session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IOCRSession&gt; CreateSessionAsync(CancellationToken cancellationToken = default)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -243,12 +334,6 @@ The session holds the options and can be used for multiple recognition calls.</p
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><a class="xref" href="Zaya.OCR.Models.OcrOptions.html">OcrOptions</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>Recognition options, or <code>null</code> for defaults.</p>
-</td>
-      </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellationToken</span></td>
@@ -275,20 +360,60 @@ The session holds the options and can be used for multiple recognition calls.</p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisposeAsync.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Dispose.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L32">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L100">View Source</a>
   </span>
-  <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisposeAsync_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync*"></a>
-  <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisposeAsync" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisposeAsync">DisposeAsync()</h4>
-  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources asynchronously.</p>
+  <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Dispose_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Dispose*"></a>
+  <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Dispose" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ValueTask DisposeAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
   </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Services_OneOcrService_InitializeAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Services.OneOcrService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs/#L65">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_InitializeAsync_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.InitializeAsync*"></a>
+  <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_InitializeAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)">InitializeAsync(IReadOnlyDictionary&lt;string, object?&gt;?, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Initializes the engine with the specified settings.
+Must be called before <a class="xref" href="Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_System_Threading_CancellationToken_">CreateSessionAsync(CancellationToken)</a>.
+Throws <span class="xref">Zaya.Primitives.LocalizedException</span> on failure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task InitializeAsync(IReadOnlyDictionary&lt;string, object?&gt;? settings, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
     <thead>
@@ -299,9 +424,8 @@ The session holds the options and can be used for multiple recognition calls.</p
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask">ValueTask</a></td>
-        <td><p>A task that represents the asynchronous dispose operation.</p>
-</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -310,7 +434,7 @@ The session holds the options and can be used for multiple recognition calls.</p
       <a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a>
   </div>
   <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
   </div>
 
 </article>

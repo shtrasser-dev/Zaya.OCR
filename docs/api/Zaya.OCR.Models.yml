@@ -6,7 +6,6 @@ items:
   children:
   - Zaya.OCR.Models.IOCRResult
   - Zaya.OCR.Models.IOCRWord
-  - Zaya.OCR.Models.OcrOptions
   langs:
   - csharp
   - vb
@@ -31,13 +30,6 @@ references:
   name: IOCRWord
   nameWithType: IOCRWord
   fullName: Zaya.OCR.Models.IOCRWord
-- uid: Zaya.OCR.Models.OcrOptions
-  commentId: T:Zaya.OCR.Models.OcrOptions
-  parent: Zaya.OCR.Models
-  href: Zaya.OCR.Models.OcrOptions.html
-  name: OcrOptions
-  nameWithType: OcrOptions
-  fullName: Zaya.OCR.Models.OcrOptions
 - uid: Zaya.OCR.Models
   commentId: N:Zaya.OCR.Models
   href: Zaya.html
