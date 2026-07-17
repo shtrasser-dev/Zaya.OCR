@@ -61,6 +61,39 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     }
 
     [Fact]
+    public void Settings_Predicates_AreCorrect()
+    {
+        var settings = _service!.Settings.ToDictionary(s => s.Key);
+
+        // source
+        Assert.True(settings["source"].IsVisible(new Dictionary<string, object?>()));
+        Assert.True(settings["source"].IsRequired(new Dictionary<string, object?>()));
+        Assert.True(settings["source"].IsRequired(new Dictionary<string, object?> { ["source"] = "directory" }));
+
+        // directoryPath — visible+required only when source == "directory"
+        Assert.False(settings["directoryPath"].IsVisible(new Dictionary<string, object?>()));
+        Assert.False(settings["directoryPath"].IsVisible(new Dictionary<string, object?> { ["source"] = "snippingtool" }));
+        Assert.False(settings["directoryPath"].IsRequired(new Dictionary<string, object?>()));
+        Assert.True(settings["directoryPath"].IsVisible(new Dictionary<string, object?> { ["source"] = "directory" }));
+        Assert.True(settings["directoryPath"].IsRequired(new Dictionary<string, object?> { ["source"] = "directory" }));
+
+        // downloadUrl — visible+required only when source == "url"
+        Assert.False(settings["downloadUrl"].IsVisible(new Dictionary<string, object?>()));
+        Assert.False(settings["downloadUrl"].IsVisible(new Dictionary<string, object?> { ["source"] = "directory" }));
+        Assert.False(settings["downloadUrl"].IsRequired(new Dictionary<string, object?>()));
+        Assert.True(settings["downloadUrl"].IsVisible(new Dictionary<string, object?> { ["source"] = "url" }));
+        Assert.True(settings["downloadUrl"].IsRequired(new Dictionary<string, object?> { ["source"] = "url" }));
+
+        // cacheDirectory — visible for snippingtool or url, hidden for directory
+        Assert.True(settings["cacheDirectory"].IsVisible(new Dictionary<string, object?>()));
+        Assert.True(settings["cacheDirectory"].IsVisible(new Dictionary<string, object?> { ["source"] = "snippingtool" }));
+        Assert.True(settings["cacheDirectory"].IsVisible(new Dictionary<string, object?> { ["source"] = "url" }));
+        Assert.False(settings["cacheDirectory"].IsVisible(new Dictionary<string, object?> { ["source"] = "directory" }));
+        // cacheDirectory is not required
+        Assert.False(settings["cacheDirectory"].IsRequired(new Dictionary<string, object?>()));
+    }
+
+    [Fact]
     public void EngineId_ReturnsOneocr()
     {
         Assert.Equal("oneocr", _service!.EngineId);

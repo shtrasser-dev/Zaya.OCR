@@ -270,20 +270,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Models.OcrOptions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Zaya.OCR.Models.OcrOptions.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Zaya.OCR.Models.OcrOptions",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.OcrOptions.yml\" sourcestartlinenumber=\"1\">Configuration options for OCR recognition operations.\nOptions that are not supported by a particular engine implementation are silently ignored.\nWhen <xref href=\"Zaya.OCR.Models.OcrOptions.Width\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"Zaya.OCR.Models.OcrOptions.Height\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"Zaya.OCR.Models.OcrOptions.Stride\" data-throw-if-not-resolved=\"false\"></xref>, and <xref href=\"Zaya.OCR.Models.OcrOptions.PixelFormat\" data-throw-if-not-resolved=\"false\"></xref>\nare set, the <code>byte[]</code> passed to <xref href=\"Zaya.OCR.Services.IOCRSession.RecognizeAsync(System.Byte%5b%5d%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref>\nis treated as raw pixel data rather than an encoded image (PNG, JPEG, BMP).</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "docs/api/Zaya.OCR.Models.yml",
       "output": {
         ".html": {

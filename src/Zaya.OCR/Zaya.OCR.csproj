@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.2.1</Version>
+    <Version>0.2.3</Version>
 
     <PackageId>Zaya.OCR</PackageId>
     <Description>OCR abstractions for the Zaya ecosystem: interfaces for pluggable text recognition services.</Description>
@@ -23,10 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="	Zaya.Primitives" Version="0.2.1" />
+    <PackageReference Include="Zaya.Primitives" Version="0.2.3" />
   </ItemGroup>
 
   <Target Name="Docs">
+    <Exec Command="if exist docs\api (rmdir /S /Q docs\api)" WorkingDirectory="$(MSBuildThisFileDirectory)..\.." />
     <Exec Command="dotnet docfx docfx.json" WorkingDirectory="$(MSBuildThisFileDirectory)..\.." />
   </Target>
 

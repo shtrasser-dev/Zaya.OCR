@@ -35,7 +35,7 @@ public sealed class OneOcrService : IOCRService
         new EnumSettingDescriptor("source", Loc("Ocr_Source"))
         {
             Description = Loc("Ocr_Source_Desc"),
-            IsRequired = true,
+            IsRequired = static _ => true,
             DefaultValue = "snippingtool",
             Options = [
                 new("snippingtool", Loc("Ocr_Source_SnippingTool")),
@@ -46,15 +46,20 @@ public sealed class OneOcrService : IOCRService
         new DirectoryPathSettingDescriptor("directoryPath", Loc("Ocr_EngineDir"))
         {
             Description = Loc("Ocr_EngineDir_Desc"),
+            IsVisible  = s => s.GetValueOrDefault("source") as string == "directory",
+            IsRequired = s => s.GetValueOrDefault("source") as string == "directory",
         },
         new UrlSettingDescriptor("downloadUrl", Loc("Ocr_DownloadUrl"))
         {
             Description = Loc("Ocr_DownloadUrl_Desc"),
+            IsVisible  = s => s.GetValueOrDefault("source") as string == "url",
+            IsRequired = s => s.GetValueOrDefault("source") as string == "url",
         },
         new DirectoryPathSettingDescriptor("cacheDirectory", Loc("Ocr_CacheDir"))
         {
             Description = Loc("Ocr_CacheDir_Desc"),
             DefaultValue = Path.Combine(Path.GetTempPath(), "Zaya", "OneOcr"),
+            IsVisible  = s => (s.GetValueOrDefault("source") as string ?? "snippingtool") is "snippingtool" or "url",
         },
     ];
 
@@ -78,8 +83,8 @@ public sealed class OneOcrService : IOCRService
                 settings?.GetValueOrDefault("directoryPath") as string
                     ?? throw new ArgumentException("directoryPath is required for 'directory' source")),
             "url" => await OneOcrEngine.CreateFromUrlAsync(
-                settings?.GetValueOrDefault("url") as string
-                    ?? throw new ArgumentException("url is required for 'url' source"),
+                settings?.GetValueOrDefault("downloadUrl") as string
+                    ?? throw new ArgumentException("downloadUrl is required for 'url' source"),
                 cacheDir, cancellationToken),
             _ => throw new ArgumentException($"Unknown source: {source}")
         };

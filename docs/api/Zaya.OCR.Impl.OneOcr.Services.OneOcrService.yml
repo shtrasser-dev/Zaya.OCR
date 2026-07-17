@@ -247,7 +247,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: IsAvailable
     path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs
-    startLine: 61
+    startLine: 66
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Services
@@ -283,7 +283,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: InitializeAsync
     path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs
-    startLine: 64
+    startLine: 69
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Services
@@ -328,7 +328,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: CreateSessionAsync
     path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs
-    startLine: 88
+    startLine: 93
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Services
@@ -365,7 +365,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Dispose
     path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrService.cs
-    startLine: 99
+    startLine: 104
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Services
