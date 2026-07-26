@@ -7,7 +7,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>13</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.3.1</Version>
+    <Version>0.3.2</Version>
 
     <PackageId>Zaya.OCR.Impl.OneOcr</PackageId>
     <Description>OneOCR engine implementation for Zaya.OCR. Uses P/Invoke into native oneocr.dll (Windows 11 Snipping Tool OCR); no WinRT or Windows App SDK package identity required.</Description>
