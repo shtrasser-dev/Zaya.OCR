@@ -1,88 +1,132 @@
 # Zaya.OCR
 
-Pluggable OCR abstractions for the Zaya ecosystem — engine discovery, localized settings, explicit initialization.
+Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines expose metadata and `SettingDescriptor`s, hosts pass settings into `CreateSessionAsync`.
+
+## Packages
+
+| Package | Version | Role |
+|---------|---------|------|
+| **Zaya.OCR** | 0.3.1 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
+| **Zaya.OCR.Impl.OneOcr** | 0.3.1 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 0.3.1 | Merges OCR words into lines/paragraphs by proximity heuristics |
+
+Docs: [API & articles](https://shtrasser-dev.github.io/Zaya.OCR)
 
 ## Features
 
-- **IOCRService** — engine entry point: metadata, settings descriptors, explicit `InitializeAsync`, session factory
-- **IOCRSession** — per-recognition session: accepts `IRawImage` (raw pixels), returns recognized result
-- **IOCRResult** — aggregate result: word list with per-word confidence
-- **IOCRWord** — individual word: recognized text, pixel bounding box, confidence score
-- **OcrOptions** — per-session configuration: language, word-level confidence
-- **OcrEngineProvider** — auto-discovers all `IOCRService` implementations via reflection + plugin directories
+- **IOCRService** — engine id, localized name/description, `Settings`, `PreferredPixelFormat`, `CreateSessionAsync`
+- **IOCRSession** — `RecognizeAsync(IRawImage)` → `IOCRResult` (words + confidence)
+- **ITextLayoutService** / **ITextLayoutSession** — structure OCR words into paragraphs/lines
+- **SettingDescriptor** — typed UI settings (enum, URL, paths, ints, …) from [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives)
+- Failures surface as `LocalizedException` for host UI
+
+There is no separate `InitializeAsync` / `OcrEngineProvider`: create a session with defaults or an explicit settings dictionary.
 
 ## Installation
 
 ```xml
-<PackageReference Include="Zaya.OCR" Version="0.2.0" />
+<PackageReference Include="Zaya.OCR" Version="0.3.1" />
+<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="0.3.1" />
+<!-- optional -->
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="0.3.1" />
 ```
 
-## Quick Start
+## Quick start (OneOCR)
 
 ```csharp
-using Zaya.OCR.Models;
+using System.Drawing;
+using Zaya.OCR.Impl.OneOcr;
+using Zaya.OCR.Impl.OneOcr.Services;
 using Zaya.OCR.Services;
 
-// Discover engines
-var provider = new OcrEngineProvider(new[] { @"C:\plugins" });
-var engineInfo = provider.GetById("oneocr")!;
+using var ocr = new OneOcrService();
 
-// Read metadata and settings for UI
-var name = engineInfo.Service.DisplayName.GetValue(CultureInfo.CurrentUICulture);
-var settings = engineInfo.Service.Settings; // IReadOnlyList<SettingDescriptor>
-
-// Initialize with engine-specific settings
-var config = new Dictionary<string, object?>
+using var session = await ocr.CreateSessionAsync(new Dictionary<string, object>
 {
-    ["source"] = "snippingtool",
-    ["cacheDirectory"] = @"C:\ocr_cache"
-};
-await engineInfo.Service.InitializeAsync(config);
+    ["source"] = "auto",          // SnippingTool, then download URL fallback
+    ["minConfidence"] = 40,       // 0–100
+});
 
-// Create a session and recognize from an IRawImage (e.g. a captured frame)
-using var session = await engineInfo.Service.CreateSessionAsync();
-var result = await session.RecognizeAsync(rawImage);
-
-// Or recognize from a System.Drawing.Bitmap (requires Zaya.OCR.Impl.OneOcr)
 using var bitmap = new Bitmap(@"C:\screenshot.png");
-result = await session.RecognizeAsync(bitmap); // extension method
+var result = await session.RecognizeAsync(bitmap); // Bitmap extension in Impl.OneOcr
 
 foreach (var word in result.Words)
-{
     Console.WriteLine($"'{word.Text}' at {word.Bounds} ({word.Confidence:P0})");
-}
 ```
 
-## Engine Lifecycle
+Typed settings helper:
+
+```csharp
+var config = new OneOcrConfig
+{
+    Source = OneOcrSource.Auto,
+    MinConfidence = 40,
+};
+using var session = await ocr.CreateSessionAsync(
+    config.ToDictionary()
+        .Where(kv => kv.Value is not null)
+        .ToDictionary(kv => kv.Key, kv => kv.Value!));
+```
+
+Or DI:
+
+```csharp
+services.AddOneOcr();
+// services.AddProximityTextLayout();
+```
+
+## Engine lifecycle
 
 ```
-Discover (OcrEngineProvider)
-   → Read DisplayName / Description / Settings
-   → Show UI, user configures
-   → InitializeAsync(Dictionary)  ← explicit, no magic static init
-   → IsAvailable == true
-   → CreateSessionAsync → RecognizeAsync
+Resolve IOCRService (new / DI / plugin host)
+  → Read DisplayName / Description / Settings (build UI)
+  → CreateSessionAsync(settings)   // or CreateSessionAsync() for defaults
+  → RecognizeAsync(IRawImage | Bitmap)
+  → Dispose session / service
 ```
 
-`InitializeAsync` throws `LocalizedException` on failure — host catches and shows localized error to user.
+Session creation (download, missing DLL, etc.) throws `LocalizedException` subclasses such as `OneOcrSnippingToolNotFoundException`, `OneOcrDllNotFoundException`.
+
+## OneOCR settings (`EngineId`: `oneocr`)
+
+| Key | Default | Notes |
+|-----|---------|--------|
+| `source` | `auto` | `auto` \| `snippingtool` \| `directory` \| `url` |
+| `directoryPath` | — | Required when `source` = `directory` |
+| `downloadUrl` | [Zaya.External OneOCR.zip](https://github.com/shtrasser-dev/Zaya.External/releases/latest/download/OneOCR.zip) | Used for `url` and as `auto` fallback |
+| `cacheDirectory` | `%TEMP%\Zaya\OneOcr` | Cache for copy/extract (`auto` / `snippingtool` / `url`) |
+| `minConfidence` | `0` | Drop words below this percent (0–100) |
+
+`source = auto`: try SnippingTool; if not found, download via `downloadUrl`.
+
+Full details: [docs/articles/oneocr-settings.md](docs/articles/oneocr-settings.md)
 
 ## Input formats
 
-| Source | How to pass |
-|--------|-------------|
-| `IRawImage` | `session.RecognizeAsync(rawImage)` — direct pixel buffer, no copy |
-| `System.Drawing.Bitmap` | `session.RecognizeAsync(bitmap)` — extension method in `Zaya.OCR.Impl.OneOcr`, converts to BGRA |
+| Source | API |
+|--------|-----|
+| `IRawImage` | `session.RecognizeAsync(rawImage)` — preferred (`PreferredPixelFormat` is BGRA32 for OneOCR) |
+| `System.Drawing.Bitmap` | `session.RecognizeAsync(bitmap)` — extension in `Zaya.OCR.Impl.OneOcr` (`LockBits` → BGRA) |
 
-The `Bitmap` extension converts via `LockBits` — one copy, no intermediate PNG encoding.
+## Text layout
 
-## Implementations
+```csharp
+using Zaya.OCR.Impl.ProximityTextLayout.Services;
 
-- **Zaya.OCR.Impl.OneOcr** — Windows 11 OneOCR engine (SnippingTool P/Invoke), no WinRT dependency
+using var layout = new ProximityTextLayoutService(); // EngineId: proximity-text-layout
+using var layoutSession = await layout.CreateSessionAsync();
+var structured = await layoutSession.ProcessAsync(ocrResult);
+```
+
+## Requirements
+
+- **Zaya.OCR** — .NET 8+
+- **OneOCR** — Windows 10 build ≥ 22000 (Windows 11), x64; native `oneocr.dll` + model from SnippingTool, local folder, or download URL
 
 ## Ecosystem
 
-- **Zaya.Primitives** — shared types (PixelFormat, LocalizedString, SettingDescriptor, LocalizedException)
-- *Zaya.OCR.Tesseract* — Tesseract-based implementation (coming soon)
+- **Zaya.Primitives** — `IRawImage`, `PixelFormat`, `LocalizedString`, `SettingDescriptor`, `LocalizedException`
+- **Zaya.ScreenTranslator** — host that loads OCR / layout plugins and binds settings in UI
 
 ## License
 
