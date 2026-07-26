@@ -17,17 +17,7 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        _service = new OneOcrService();
-
-        try
-        {
-            _session = await _service.CreateSessionAsync(new Dictionary<string, object>(), TestContext.Current.CancellationToken);
-            _modelAvailable = true;
-        }
-        catch (LocalizedException)
-        {
-            _modelAvailable = false;
-        }
+        await InitializeSharedFixtureAsync();
     }
 
     public ValueTask DisposeAsync()
@@ -115,6 +105,26 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task CreateSession_WithDirectorySource_EmptyPath_Throws()
+    {
+        var service = new OneOcrService();
+        try
+        {
+            var settings = new Dictionary<string, object>
+            {
+                ["source"] = "directory",
+                ["directoryPath"] = ""
+            };
+            await Assert.ThrowsAsync<OneOcrDirectoryPathRequiredException>(() =>
+                service.CreateSessionAsync(settings, TestContext.Current.CancellationToken));
+        }
+        finally
+        {
+            service.Dispose();
+        }
+    }
+
+    [Fact]
     public async Task CreateSession_WithDirectorySource_MissingPath_Throws()
     {
         var service = new OneOcrService();
@@ -137,6 +147,10 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     [Fact]
     public async Task CreateSession_WithUrlSource_DefaultDownloadUrl_RecognizesText()
     {
+        // OneOCR allows only one live pipeline per process. Tear down the shared
+        // fixture engine (which may already have called CreateOcrPipeline) first.
+        await TearDownSharedFixtureAsync();
+
         using var service = new OneOcrService();
 
         var defaultDownloadUrl = Assert.IsType<UrlSettingDescriptor>(
@@ -190,6 +204,33 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
             {
                 // DLL may still be mapped; leave temp dir for OS cleanup.
             }
+
+            // Recreate shared fixture so later tests in this class still work.
+            await InitializeSharedFixtureAsync();
+        }
+    }
+
+    private async Task TearDownSharedFixtureAsync()
+    {
+        _session?.Dispose();
+        _service?.Dispose();
+        _session = null;
+        _service = null;
+        _modelAvailable = false;
+        await Task.CompletedTask;
+    }
+
+    private async Task InitializeSharedFixtureAsync()
+    {
+        _service = new OneOcrService();
+        try
+        {
+            _session = await _service.CreateSessionAsync(new Dictionary<string, object>(), TestContext.Current.CancellationToken);
+            _modelAvailable = true;
+        }
+        catch (LocalizedException)
+        {
+            _modelAvailable = false;
         }
     }
 

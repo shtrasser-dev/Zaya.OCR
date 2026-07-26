@@ -63,6 +63,18 @@ internal sealed class OneOcrEngine : IDisposable
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     private delegate long GetOcrWordConfidence(long word, out float confidence);
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    private delegate void ReleaseOcrResult(long instance);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    private delegate void ReleaseOcrInitOptions(long ctx);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    private delegate void ReleaseOcrPipeline(long pipeline);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    private delegate void ReleaseOcrProcessOptions(long opt);
+
     private nint _dllHandle;
     private readonly string _modelPath;
     private readonly CreateOcrInitOptions _createInit;
@@ -79,6 +91,10 @@ internal sealed class OneOcrEngine : IDisposable
     private readonly GetOcrWordContent _getWordContent;
     private readonly GetOcrWordBoundingBox _getWordBoundingBox;
     private readonly GetOcrWordConfidence? _getWordConfidence;
+    private readonly ReleaseOcrResult? _releaseResult;
+    private readonly ReleaseOcrInitOptions? _releaseInit;
+    private readonly ReleaseOcrPipeline? _releasePipeline;
+    private readonly ReleaseOcrProcessOptions? _releaseOpt;
 
     private long _ctx;
     private long _pipeline;
@@ -90,7 +106,27 @@ internal sealed class OneOcrEngine : IDisposable
     public bool IsAvailable { get; }
     public string? ModelPath => _modelPath;
 
-    private OneOcrEngine(nint dllHandle, string modelPath, CreateOcrInitOptions createInit, OcrInitOptionsSetUseModelDelayLoad setDelayLoad, CreateOcrPipeline createPipeline, CreateOcrProcessOptions createOpt, OcrProcessOptionsSetMaxRecognitionLineCount setMaxLine, RunOcrPipeline runPipeline, GetOcrLineCount getLineCount, GetOcrLine getLine, GetOcrLineContent getLineContent, GetOcrLineWordCount getLineWordCount, GetOcrWord getWord, GetOcrWordContent getWordContent, GetOcrWordBoundingBox getWordBoundingBox, GetOcrWordConfidence? getWordConfidence)
+    private OneOcrEngine(
+        nint dllHandle,
+        string modelPath,
+        CreateOcrInitOptions createInit,
+        OcrInitOptionsSetUseModelDelayLoad setDelayLoad,
+        CreateOcrPipeline createPipeline,
+        CreateOcrProcessOptions createOpt,
+        OcrProcessOptionsSetMaxRecognitionLineCount setMaxLine,
+        RunOcrPipeline runPipeline,
+        GetOcrLineCount getLineCount,
+        GetOcrLine getLine,
+        GetOcrLineContent getLineContent,
+        GetOcrLineWordCount getLineWordCount,
+        GetOcrWord getWord,
+        GetOcrWordContent getWordContent,
+        GetOcrWordBoundingBox getWordBoundingBox,
+        GetOcrWordConfidence? getWordConfidence,
+        ReleaseOcrResult? releaseResult,
+        ReleaseOcrInitOptions? releaseInit,
+        ReleaseOcrPipeline? releasePipeline,
+        ReleaseOcrProcessOptions? releaseOpt)
     {
         _dllHandle = dllHandle;
         _modelPath = modelPath;
@@ -108,16 +144,26 @@ internal sealed class OneOcrEngine : IDisposable
         _getWordContent = getWordContent;
         _getWordBoundingBox = getWordBoundingBox;
         _getWordConfidence = getWordConfidence;
+        _releaseResult = releaseResult;
+        _releaseInit = releaseInit;
+        _releasePipeline = releasePipeline;
+        _releaseOpt = releaseOpt;
         IsAvailable = true;
     }
 
     public static OneOcrEngine CreateFromSnippingTool(string? cacheDir = null)
     {
+        var targetDir = cacheDir ?? Path.Combine(Path.GetTempPath(), "Zaya", "OneOcr");
+        Directory.CreateDirectory(targetDir);
+
+        // Prefer an already-populated cache so hosts can run without SnippingTool installed.
+        if (TryResolveCachedEngine(targetDir, out var cachedDll, out var cachedModel))
+            return CreateFromDll(cachedDll, cachedModel);
+
         var dllPath = FindOneOcrDll();
         if (dllPath is null)
             throw new OneOcrSnippingToolNotFoundException();
 
-        var targetDir = cacheDir ?? Path.Combine(Path.GetTempPath(), "Zaya", "OneOcr");
         dllPath = CopyToWritableLocation(dllPath, targetDir);
 
         var modelPath = FindModelFile(Path.GetDirectoryName(dllPath)!);
@@ -145,6 +191,9 @@ internal sealed class OneOcrEngine : IDisposable
         cacheDir ??= Path.Combine(Path.GetTempPath(), "Zaya", "OneOcr");
         Directory.CreateDirectory(cacheDir);
 
+        if (TryResolveCachedEngine(cacheDir, out var dllPath, out var modelPath))
+            return CreateFromDll(dllPath, modelPath);
+
         var tempFile = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
         try
         {
@@ -165,15 +214,35 @@ internal sealed class OneOcrEngine : IDisposable
                 File.Delete(tempFile);
         }
 
-        var dllPath = Path.Combine(cacheDir, "oneocr.dll");
-        if (!File.Exists(dllPath))
-            throw new OneOcrDllNotFoundException();
-
-        var modelPath = FindModelFile(cacheDir);
-        if (modelPath is null)
+        if (!TryResolveCachedEngine(cacheDir, out dllPath, out modelPath))
+        {
+            if (!File.Exists(Path.Combine(cacheDir, "oneocr.dll")))
+                throw new OneOcrDllNotFoundException();
             throw new OneOcrModelNotFoundException();
+        }
 
         return CreateFromDll(dllPath, modelPath);
+    }
+
+    /// <summary>
+    /// Returns true when the cache already has the files needed to load OneOCR:
+    /// <c>oneocr.dll</c>, <c>onnxruntime.dll</c>, and <c>oneocr.onemodel</c>.
+    /// </summary>
+    private static bool TryResolveCachedEngine(string cacheDir, out string dllPath, out string modelPath)
+    {
+        dllPath = Path.Combine(cacheDir, "oneocr.dll");
+        var onnxPath = Path.Combine(cacheDir, "onnxruntime.dll");
+        var foundModel = FindModelFile(cacheDir);
+
+        if (File.Exists(dllPath) && File.Exists(onnxPath) && foundModel is not null)
+        {
+            modelPath = foundModel;
+            return true;
+        }
+
+        dllPath = null!;
+        modelPath = null!;
+        return false;
     }
 
     private static OneOcrEngine CreateFromDll(string dllPath, string modelPath)
@@ -196,28 +265,37 @@ internal sealed class OneOcrEngine : IDisposable
         var getWordContent = GetDelegate<GetOcrWordContent>(dllHandle, "GetOcrWordContent")!;
         var getWordBoundingBox = GetDelegate<GetOcrWordBoundingBox>(dllHandle, "GetOcrWordBoundingBox")!;
         var getWordConfidence = GetDelegate<GetOcrWordConfidence>(dllHandle, "GetOcrWordConfidence");
+        var releaseResult = GetDelegate<ReleaseOcrResult>(dllHandle, "ReleaseOcrResult");
+        var releaseInit = GetDelegate<ReleaseOcrInitOptions>(dllHandle, "ReleaseOcrInitOptions");
+        var releasePipeline = GetDelegate<ReleaseOcrPipeline>(dllHandle, "ReleaseOcrPipeline");
+        var releaseOpt = GetDelegate<ReleaseOcrProcessOptions>(dllHandle, "ReleaseOcrProcessOptions");
 
-        return new OneOcrEngine(dllHandle, modelPath, createInit, setDelayLoad, createPipeline, createOpt, setMaxLine, runPipeline, getLineCount, getLine, getLineContent, getLineWordCount, getWord, getWordContent, getWordBoundingBox, getWordConfidence);
+        return new OneOcrEngine(
+            dllHandle, modelPath, createInit, setDelayLoad, createPipeline, createOpt, setMaxLine,
+            runPipeline, getLineCount, getLine, getLineContent, getLineWordCount, getWord, getWordContent,
+            getWordBoundingBox, getWordConfidence, releaseResult, releaseInit, releasePipeline, releaseOpt);
     }
 
     private void EnsureInitialized()
     {
+        ObjectDisposedException.ThrowIf(_disposed, this);
         if (_initialized) return;
         if (_initFailed)
-            throw new InvalidOperationException("OneOCR native initialization previously failed.");
+            throw new OneOcrNativeException("native initialization previously failed");
 
         lock (_initLock)
         {
+            ObjectDisposedException.ThrowIf(_disposed, this);
             if (_initialized) return;
-            if (_initFailed) throw new InvalidOperationException("OneOCR native initialization previously failed.");
+            if (_initFailed) throw new OneOcrNativeException("native initialization previously failed");
 
             try
             {
                 long res = _createInit(out _ctx);
-                if (res != S_OK) throw new InvalidOperationException($"CreateOcrInitOptions: 0x{res:X}");
+                if (res != S_OK) throw new OneOcrNativeException($"CreateOcrInitOptions: 0x{res:X}");
 
                 res = _setDelayLoad(_ctx, 0);
-                if (res != S_OK) throw new InvalidOperationException($"OcrInitOptionsSetUseModelDelayLoad: 0x{res:X}");
+                if (res != S_OK) throw new OneOcrNativeException($"OcrInitOptionsSetUseModelDelayLoad: 0x{res:X}");
 
                 var modelPathBytes = System.Text.Encoding.ASCII.GetBytes(_modelPath + "\0");
                 var keyBytes = System.Text.Encoding.ASCII.GetBytes(ModelKey + "\0");
@@ -232,7 +310,7 @@ internal sealed class OneOcrEngine : IDisposable
                 }
 
                 if (res != S_OK)
-                    throw new InvalidOperationException($"CreateOcrPipeline: 0x{res:X} (check model key compatibility)");
+                    throw new OneOcrNativeException($"CreateOcrPipeline: 0x{res:X}");
 
                 _initialized = true;
             }
@@ -246,76 +324,86 @@ internal sealed class OneOcrEngine : IDisposable
 
     public unsafe NativeWord[] Recognize(byte[] bgraPixels, int width, int height, int stride, double minConfidence = 0)
     {
+        ObjectDisposedException.ThrowIf(_disposed, this);
         EnsureInitialized();
 
         long res = _createOpt(out long opt);
-        if (res != S_OK) throw new InvalidOperationException($"CreateOcrProcessOptions: 0x{res:X}");
+        if (res != S_OK) throw new OneOcrNativeException($"CreateOcrProcessOptions: 0x{res:X}");
 
-        res = _setMaxLine(opt, 1000);
-        if (res != S_OK) throw new InvalidOperationException($"OcrProcessOptionsSetMaxRecognitionLineCount: 0x{res:X}");
-
-        var img = new Img
+        long instance = 0;
+        try
         {
-            t = 3,
-            col = width,
-            row = height,
-            _unk = 0,
-            step = stride,
-            data_ptr = 0
-        };
+            res = _setMaxLine(opt, 1000);
+            if (res != S_OK) throw new OneOcrNativeException($"OcrProcessOptionsSetMaxRecognitionLineCount: 0x{res:X}");
 
-        long instance;
-        fixed (byte* p = bgraPixels)
-        {
-            img.data_ptr = (long)p;
-            res = _runPipeline(_pipeline, ref img, opt, out instance);
-        }
-
-        if (res != S_OK) throw new InvalidOperationException($"RunOcrPipeline: 0x{res:X}");
-        if (instance == 0) return [];
-
-        res = _getLineCount(instance, out long lineCount);
-        if (res != S_OK || lineCount == 0) return [];
-
-        var words = new List<NativeWord>();
-
-        for (long li = 0; li < lineCount; li++)
-        {
-            res = _getLine(instance, li, out long line);
-            if (res != S_OK || line == 0) continue;
-
-            res = _getLineWordCount(line, out long wordCount);
-            if (res != S_OK) continue;
-
-            for (long wi = 0; wi < wordCount; wi++)
+            var img = new Img
             {
-                res = _getWord(line, wi, out long word);
-                if (res != S_OK || word == 0) continue;
+                t = 3,
+                col = width,
+                row = height,
+                _unk = 0,
+                step = stride,
+                data_ptr = 0
+            };
 
-                res = _getWordContent(word, out long contentPtr);
-                var text = Marshal.PtrToStringAnsi((nint)contentPtr) ?? "";
-
-                res = _getWordBoundingBox(word, out long boxPtr);
-                var bounds = ParseBoundingBox((nint)boxPtr);
-
-                double confidence = 1.0;
-                if (_getWordConfidence != null)
-                {
-                    res = _getWordConfidence(word, out float conf);
-                    if (res == S_OK)
-                        confidence = conf;
-                }
-
-                words.Add(new NativeWord
-                {
-                    Text = text,
-                    Bounds = bounds,
-                    Confidence = confidence
-                });
+            fixed (byte* p = bgraPixels)
+            {
+                img.data_ptr = (long)p;
+                res = _runPipeline(_pipeline, ref img, opt, out instance);
             }
-        }
 
-        return [.. words.Where(w => w.Confidence >= minConfidence)];
+            if (res != S_OK) throw new OneOcrNativeException($"RunOcrPipeline: 0x{res:X}");
+            if (instance == 0) return [];
+
+            res = _getLineCount(instance, out long lineCount);
+            if (res != S_OK || lineCount == 0) return [];
+
+            var words = new List<NativeWord>();
+
+            for (long li = 0; li < lineCount; li++)
+            {
+                res = _getLine(instance, li, out long line);
+                if (res != S_OK || line == 0) continue;
+
+                res = _getLineWordCount(line, out long wordCount);
+                if (res != S_OK) continue;
+
+                for (long wi = 0; wi < wordCount; wi++)
+                {
+                    res = _getWord(line, wi, out long word);
+                    if (res != S_OK || word == 0) continue;
+
+                    res = _getWordContent(word, out long contentPtr);
+                    var text = Marshal.PtrToStringAnsi((nint)contentPtr) ?? "";
+
+                    res = _getWordBoundingBox(word, out long boxPtr);
+                    var bounds = ParseBoundingBox((nint)boxPtr);
+
+                    double confidence = 1.0;
+                    if (_getWordConfidence != null)
+                    {
+                        res = _getWordConfidence(word, out float conf);
+                        if (res == S_OK)
+                            confidence = conf;
+                    }
+
+                    words.Add(new NativeWord
+                    {
+                        Text = text,
+                        Bounds = bounds,
+                        Confidence = confidence
+                    });
+                }
+            }
+
+            return [.. words.Where(w => w.Confidence >= minConfidence)];
+        }
+        finally
+        {
+            if (instance != 0)
+                _releaseResult?.Invoke(instance);
+            _releaseOpt?.Invoke(opt);
+        }
     }
 
     private static unsafe Rectangle ParseBoundingBox(nint ptr)
@@ -429,6 +517,24 @@ internal sealed class OneOcrEngine : IDisposable
     {
         if (_disposed) return;
         _disposed = true;
+
+        lock (_initLock)
+        {
+            if (_pipeline != 0)
+            {
+                _releasePipeline?.Invoke(_pipeline);
+                _pipeline = 0;
+            }
+
+            if (_ctx != 0)
+            {
+                _releaseInit?.Invoke(_ctx);
+                _ctx = 0;
+            }
+
+            _initialized = false;
+        }
+
         if (_dllHandle != 0)
         {
             FreeLibrary(_dllHandle);

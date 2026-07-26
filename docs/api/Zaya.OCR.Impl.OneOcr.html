@@ -83,7 +83,7 @@ Classes
 Converts to the dictionary format expected by <code>CreateSessionAsync</code>.</p>
 </section>
       <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.html">OneOcrDirectoryPathRequiredException</a></h4>
-      <section><p>Thrown when the <code>directoryPath</code> setting is required but not provided (source is <code>Directory</code>).</p>
+      <section><p>Thrown when the <code>directoryPath</code> setting is required but not provided (source is <code>directory</code>).</p>
 </section>
       <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrDllLoadException.html">OneOcrDllLoadException</a></h4>
       <section><p>Thrown when <code>oneocr.dll</code> fails to load via <code>LoadLibraryEx</code>.</p>
@@ -92,16 +92,17 @@ Converts to the dictionary format expected by <code>CreateSessionAsync</code>.</
       <section><p>Thrown when <code>oneocr.dll</code> is not found in the specified directory.</p>
 </section>
       <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException.html">OneOcrDownloadUrlRequiredException</a></h4>
-      <section><p>Thrown when the <code>downloadUrl</code> setting is required but not provided (source is <code>Url</code>).</p>
+      <section><p>Thrown when the <code>downloadUrl</code> setting is required but not provided (source is <code>url</code>).</p>
 </section>
       <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException.html">OneOcrModelNotFoundException</a></h4>
       <section><p>Thrown when the <code>oneocr.onemodel</code> file is not found.</p>
 </section>
-      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html">OneOcrNotInitializedException</a></h4>
-      <section><p>Thrown if <a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html">OneOcrService</a> fails to initialize.</p>
+      <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html">OneOcrNativeException</a></h4>
+      <section><p>Thrown when a native OneOCR API call fails (init, pipeline, or recognition).</p>
 </section>
       <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException.html">OneOcrSnippingToolNotFoundException</a></h4>
-      <section><p>Thrown when the Windows 11 SnippingTool installation is not found on the current system.</p>
+      <section><p>Thrown when the Windows 11 SnippingTool installation is not found on the current system
+and no usable engine files are present in the cache directory.</p>
 </section>
       <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.OneOcrUnknownSourceException.html">OneOcrUnknownSourceException</a></h4>
       <section><p>Thrown when an unknown source value is provided to <a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html">OneOcrService</a>.</p>

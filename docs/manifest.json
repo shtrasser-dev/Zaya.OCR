@@ -112,7 +112,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.yml\" sourcestartlinenumber=\"1\">Thrown when the <code>directoryPath</code> setting is required but not provided (source is <code>Directory</code>).</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.yml\" sourcestartlinenumber=\"1\">Thrown when the <code>directoryPath</code> setting is required but not provided (source is <code>directory</code>).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -154,7 +154,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException.yml\" sourcestartlinenumber=\"1\">Thrown when the <code>downloadUrl</code> setting is required but not provided (source is <code>Url</code>).</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException.yml\" sourcestartlinenumber=\"1\">Thrown when the <code>downloadUrl</code> setting is required but not provided (source is <code>url</code>).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -172,17 +172,17 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.yml",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.OneOcrNativeException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html"
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.yml\" sourcestartlinenumber=\"1\">Thrown if <xref href=\"Zaya.OCR.Impl.OneOcr.Services.OneOcrService\" data-throw-if-not-resolved=\"false\"></xref> fails to initialize.</p>\n"
+      "Title": "Zaya.OCR.Impl.OneOcr.OneOcrNativeException",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrNativeException.yml\" sourcestartlinenumber=\"1\">Thrown when a native OneOCR API call fails (init, pipeline, or recognition).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -196,7 +196,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException.yml\" sourcestartlinenumber=\"1\">Thrown when the Windows 11 SnippingTool installation is not found on the current system.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException.yml\" sourcestartlinenumber=\"1\">Thrown when the Windows 11 SnippingTool installation is not found on the current system\nand no usable engine files are present in the cache directory.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -252,7 +252,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.OneOcr.Services.OneOcrSession",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.yml\" sourcestartlinenumber=\"1\">OneOCR session that performs OCR using the native <code>oneocr.dll</code> via P/Invoke.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.yml\" sourcestartlinenumber=\"1\">OneOCR session that performs OCR using the native <code>oneocr.dll</code> via P/Invoke.\nOwns the underlying <xref href=\"Zaya.OCR.Impl.OneOcr.OneOcrEngine\" data-throw-if-not-resolved=\"false\"></xref> and disposes it with the session.</p>\n"
     },
     {
       "type": "ManagedReference",

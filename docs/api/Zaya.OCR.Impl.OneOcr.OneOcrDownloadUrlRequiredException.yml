@@ -21,11 +21,11 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrDownloadUrlRequiredException
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 89
+    startLine: 90
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Thrown when the <code>downloadUrl</code> setting is required but not provided (source is <code>Url</code>).
+  summary: Thrown when the <code>downloadUrl</code> setting is required but not provided (source is <code>url</code>).
   example: []
   syntax:
     content: 'public sealed class OneOcrDownloadUrlRequiredException : LocalizedException, ISerializable'
@@ -70,7 +70,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 94
+    startLine: 95
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -101,7 +101,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: GetLocalizedMessage
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 97
+    startLine: 98
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr

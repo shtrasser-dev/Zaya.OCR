@@ -21,11 +21,14 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrSnippingToolNotFoundException
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Thrown when the Windows 11 SnippingTool installation is not found on the current system.
+  summary: >-
+    Thrown when the Windows 11 SnippingTool installation is not found on the current system
+
+    and no usable engine files are present in the cache directory.
   example: []
   syntax:
     content: 'public sealed class OneOcrSnippingToolNotFoundException : LocalizedException, ISerializable'
@@ -70,7 +73,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -101,7 +104,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: GetLocalizedMessage
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr

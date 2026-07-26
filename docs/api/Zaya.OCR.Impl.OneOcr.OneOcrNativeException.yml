@@ -1,35 +1,36 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-  id: OneOcrNotInitializedException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  id: OneOcrNativeException
   parent: Zaya.OCR.Impl.OneOcr
   children:
-  - Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.#ctor
-  - Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage(System.Globalization.CultureInfo)
+  - Zaya.OCR.Impl.OneOcr.OneOcrNativeException.#ctor(System.String)
+  - Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
+  - Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage(System.Globalization.CultureInfo)
   langs:
   - csharp
   - vb
-  name: OneOcrNotInitializedException
-  nameWithType: OneOcrNotInitializedException
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
+  name: OneOcrNativeException
+  nameWithType: OneOcrNativeException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
   type: Class
   source:
     remote:
       path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
-    id: OneOcrNotInitializedException
+    id: OneOcrNativeException
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 135
+    startLine: 136
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Thrown if <xref href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService" data-throw-if-not-resolved="false"></xref> fails to initialize.
+  summary: Thrown when a native OneOCR API call fails (init, pipeline, or recognition).
   example: []
   syntax:
-    content: 'public sealed class OneOcrNotInitializedException : LocalizedException, ISerializable'
-    content.vb: Public NotInheritable Class OneOcrNotInitializedException Inherits LocalizedException Implements ISerializable
+    content: 'public sealed class OneOcrNativeException : LocalizedException, ISerializable'
+    content.vb: Public NotInheritable Class OneOcrNativeException Inherits LocalizedException Implements ISerializable
   inheritance:
   - System.Object
   - System.Exception
@@ -52,16 +53,47 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.#ctor
-  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.#ctor
-  id: '#ctor'
-  parent: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
+  commentId: P:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
+  id: Detail
+  parent: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
   langs:
   - csharp
   - vb
-  name: OneOcrNotInitializedException()
-  nameWithType: OneOcrNotInitializedException.OneOcrNotInitializedException()
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.OneOcrNotInitializedException()
+  name: Detail
+  nameWithType: OneOcrNativeException.Detail
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Detail
+    path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
+    startLine: 143
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr
+  summary: Gets the native failure detail (API name and/or status code).
+  example: []
+  syntax:
+    content: public string Detail { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Detail As String
+  overload: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail*
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.#ctor(System.String)
+  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  langs:
+  - csharp
+  - vb
+  name: OneOcrNativeException(string)
+  nameWithType: OneOcrNativeException.OneOcrNativeException(string)
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.OneOcrNativeException(string)
   type: Constructor
   source:
     remote:
@@ -70,29 +102,33 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 140
+    startLine: 149
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Initializes a new instance of the <xref href="Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException" data-throw-if-not-resolved="false"></xref> class.
+  summary: Initializes a new instance of the <xref href="Zaya.OCR.Impl.OneOcr.OneOcrNativeException" data-throw-if-not-resolved="false"></xref> class.
   example: []
   syntax:
-    content: public OneOcrNotInitializedException()
-    content.vb: Public Sub New()
-  overload: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.#ctor*
-  nameWithType.vb: OneOcrNotInitializedException.New()
-  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.New()
-  name.vb: New()
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage(System.Globalization.CultureInfo)
-  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage(System.Globalization.CultureInfo)
+    content: public OneOcrNativeException(string detail)
+    parameters:
+    - id: detail
+      type: System.String
+      description: 'Technical detail from the native call (e.g. <code>CreateOcrPipeline: 0x6</code>).'
+    content.vb: Public Sub New(detail As String)
+  overload: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.#ctor*
+  nameWithType.vb: OneOcrNativeException.New(String)
+  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.New(String)
+  name.vb: New(String)
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage(System.Globalization.CultureInfo)
+  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage(System.Globalization.CultureInfo)
   id: GetLocalizedMessage(System.Globalization.CultureInfo)
-  parent: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
+  parent: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
   langs:
   - csharp
   - vb
   name: GetLocalizedMessage(CultureInfo)
-  nameWithType: OneOcrNotInitializedException.GetLocalizedMessage(CultureInfo)
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage(System.Globalization.CultureInfo)
+  nameWithType: OneOcrNativeException.GetLocalizedMessage(CultureInfo)
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage(System.Globalization.CultureInfo)
   type: Method
   source:
     remote:
@@ -101,7 +137,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: GetLocalizedMessage
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 143
+    startLine: 155
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -123,14 +159,8 @@ items:
       description: The localized error message.
     content.vb: Public Overrides Function GetLocalizedMessage(culture As CultureInfo) As String
   overridden: Zaya.Primitives.LocalizedException.GetLocalizedMessage(System.Globalization.CultureInfo)
-  overload: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage*
+  overload: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage*
 references:
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
-  commentId: T:Zaya.OCR.Impl.OneOcr.Services.OneOcrService
-  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html
-  name: OneOcrService
-  nameWithType: OneOcrService
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
 - uid: Zaya.OCR.Impl.OneOcr
   commentId: N:Zaya.OCR.Impl.OneOcr
   href: Zaya.html
@@ -546,20 +576,37 @@ references:
     name: Serialization
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-  href: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html
-  name: OneOcrNotInitializedException
-  nameWithType: OneOcrNotInitializedException
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.#ctor*
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.#ctor
-  href: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html#Zaya_OCR_Impl_OneOcr_OneOcrNotInitializedException__ctor
-  name: OneOcrNotInitializedException
-  nameWithType: OneOcrNotInitializedException.OneOcrNotInitializedException
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.OneOcrNotInitializedException
-  nameWithType.vb: OneOcrNotInitializedException.New
-  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.New
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
+  href: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html#Zaya_OCR_Impl_OneOcr_OneOcrNativeException_Detail
+  name: Detail
+  nameWithType: OneOcrNativeException.Detail
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  href: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html
+  name: OneOcrNativeException
+  nameWithType: OneOcrNativeException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.#ctor*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.#ctor
+  href: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html#Zaya_OCR_Impl_OneOcr_OneOcrNativeException__ctor_System_String_
+  name: OneOcrNativeException
+  nameWithType: OneOcrNativeException.OneOcrNativeException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.OneOcrNativeException
+  nameWithType.vb: OneOcrNativeException.New
+  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.New
   name.vb: New
 - uid: Zaya.Primitives.LocalizedException.GetLocalizedMessage(System.Globalization.CultureInfo)
   commentId: M:Zaya.Primitives.LocalizedException.GetLocalizedMessage(System.Globalization.CultureInfo)
@@ -589,12 +636,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
   - name: )
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage*
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage
-  href: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html#Zaya_OCR_Impl_OneOcr_OneOcrNotInitializedException_GetLocalizedMessage_System_Globalization_CultureInfo_
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage
+  href: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html#Zaya_OCR_Impl_OneOcr_OneOcrNativeException_GetLocalizedMessage_System_Globalization_CultureInfo_
   name: GetLocalizedMessage
-  nameWithType: OneOcrNotInitializedException.GetLocalizedMessage
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage
+  nameWithType: OneOcrNativeException.GetLocalizedMessage
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage
 - uid: System.Globalization.CultureInfo
   commentId: T:System.Globalization.CultureInfo
   parent: System.Globalization
@@ -603,17 +650,6 @@ references:
   name: CultureInfo
   nameWithType: CultureInfo
   fullName: System.Globalization.CultureInfo
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: System.Globalization
   commentId: N:System.Globalization
   isExternal: true

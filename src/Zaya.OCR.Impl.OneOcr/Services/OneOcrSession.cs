@@ -7,6 +7,7 @@ namespace Zaya.OCR.Impl.OneOcr.Services;
 
 /// <summary>
 /// OneOCR session that performs OCR using the native <c>oneocr.dll</c> via P/Invoke.
+/// Owns the underlying <see cref="OneOcrEngine"/> and disposes it with the session.
 /// </summary>
 public sealed class OneOcrSession : IOCRSession
 {
@@ -23,6 +24,7 @@ public sealed class OneOcrSession : IOCRSession
     /// <inheritdoc />
     public Task<IOCRResult> RecognizeAsync(IRawImage image, CancellationToken cancellationToken = default)
     {
+        ObjectDisposedException.ThrowIf(_disposed, this);
         cancellationToken.ThrowIfCancellationRequested();
 
         var pixelData = image.ToByteArray();
@@ -44,5 +46,6 @@ public sealed class OneOcrSession : IOCRSession
     {
         if (_disposed) return;
         _disposed = true;
+        _engine.Dispose();
     }
 }

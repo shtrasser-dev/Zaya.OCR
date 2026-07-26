@@ -70,7 +70,7 @@
 <h1 id="oneocr-settings">OneOCR settings</h1>
 
 <p><code>OneOcrService</code> (<code>EngineId</code>: <code>oneocr</code>) exposes engine settings through
-<a href="xref:Zaya.Primitives.SettingDescriptor"><code>SettingDescriptor</code></a> for UI hosts,
+<a class="xref" href="https://shtrasser-dev.github.io/Zaya.Primitives/api/Zaya.Primitives.SettingDescriptor.html"><code>SettingDescriptor</code></a> for UI hosts,
 and accepts the same keys as a dictionary in
 <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_"><code>CreateSessionAsync</code></a>.</p>
 <p>Typed helper: <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.OneOcrConfig.html"><code>OneOcrConfig</code></a> → <code>ToDictionary()</code>.</p>
@@ -134,11 +134,11 @@ and accepts the same keys as a dictionary in
 <tbody>
 <tr>
 <td><code>auto</code></td>
-<td>Try SnippingTool; on <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException.html"><code>OneOcrSnippingToolNotFoundException</code></a> download via <code>downloadUrl</code></td>
+<td>Use cache if complete; else try SnippingTool; on <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException.html"><code>OneOcrSnippingToolNotFoundException</code></a> download via <code>downloadUrl</code></td>
 </tr>
 <tr>
 <td><code>snippingtool</code></td>
-<td>Resolve files from Windows 11 SnippingTool install, copy into <code>cacheDirectory</code></td>
+<td>Use cache if complete; else resolve from Windows 11 SnippingTool and copy into <code>cacheDirectory</code></td>
 </tr>
 <tr>
 <td><code>directory</code></td>
@@ -146,10 +146,11 @@ and accepts the same keys as a dictionary in
 </tr>
 <tr>
 <td><code>url</code></td>
-<td>Download zip from <code>downloadUrl</code> into <code>cacheDirectory</code></td>
+<td>Use cache if complete; else download zip from <code>downloadUrl</code> into <code>cacheDirectory</code></td>
 </tr>
 </tbody>
 </table>
+<p>A cache directory is treated as complete when it contains <code>oneocr.dll</code>, <code>onnxruntime.dll</code>, and <code>oneocr.onemodel</code>.</p>
 <h2 id="visibility-ui">Visibility (UI)</h2>
 <p>Hosts should honor <code>SettingDescriptor.IsVisible</code> / <code>IsRequired</code>:</p>
 <ul>

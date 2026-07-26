@@ -1,37 +1,57 @@
 # Zaya.OCR
 
-Pluggable OCR abstractions for the Zaya ecosystem — zero implementation, pure contracts.
+Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines expose metadata and `SettingDescriptor`s, hosts pass settings into `CreateSessionAsync`.
+
+## Packages
+
+| Package | Version | Role |
+|---------|---------|------|
+| **Zaya.OCR** | 0.3.1 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
+| **Zaya.OCR.Impl.OneOcr** | 0.3.1 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 0.3.1 | Merges OCR words into lines/paragraphs by proximity heuristics |
 
 ## Features
 
-- **IOCRService** — async entry point: accepts raw image bytes, returns recognized result
-- **IOCRResult** — aggregate result: word list with per-word confidence
-- **IOCRWord** — individual word: recognized text, pixel bounding box, confidence score
+- **IOCRService** — engine id, localized name/description, `Settings`, `PreferredPixelFormat`, `CreateSessionAsync`
+- **IOCRSession** — `RecognizeAsync(IRawImage)` → `IOCRResult` (words + confidence)
+- **ITextLayoutService** / **ITextLayoutSession** — structure OCR words into paragraphs/lines
+- Failures surface as `LocalizedException` for host UI
+
+There is no separate `InitializeAsync`: create a session with defaults or an explicit settings dictionary.
 
 ## Installation
 
 ```xml
-<PackageReference Include="Zaya.OCR" Version="0.1.0" />
+<PackageReference Include="Zaya.OCR" Version="0.3.1" />
+<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="0.3.1" />
+<!-- optional -->
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="0.3.1" />
 ```
 
 ## Quick Start
 
 ```csharp
-using Zaya.OCR.Models;
+using System.Drawing;
+using Zaya.OCR.Impl.OneOcr.Services;
 using Zaya.OCR.Services;
 
-IOCRService ocr = /* your implementation */;
+using var ocr = new OneOcrService();
 
-var result = await ocr.RecognizeAsync(imageBytes);
+using var session = await ocr.CreateSessionAsync(new Dictionary<string, object>
+{
+    ["source"] = "auto",
+    ["minConfidence"] = 40,
+});
+
+using var bitmap = new Bitmap(@"C:\screenshot.png");
+var result = await session.RecognizeAsync(bitmap); // Bitmap extension in Impl.OneOcr
 
 foreach (var word in result.Words)
-{
     Console.WriteLine($"'{word.Text}' at {word.Bounds} ({word.Confidence:P0})");
-}
 ```
 
 ## Next Steps
 
-- **Getting Started** — detailed usage guide
+- **[Getting Started](articles/getting-started.md)** — detailed usage guide
 - **[OneOCR settings](articles/oneocr-settings.md)** — `source`, `downloadUrl`, `cacheDirectory`, and other engine keys
-- **API Reference** — complete API documentation generated from source code
+- **[API Reference](xref:Zaya.OCR.Services)** — complete API documentation generated from source code

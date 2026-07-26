@@ -82,7 +82,8 @@ No WinRT, no Windows App SDK, no package identity required.
 Pass engine settings directly to <a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_">CreateSessionAsync(IReadOnlyDictionary&lt;string, object&gt;, CancellationToken)</a>.</p>
 </section>
       <h4><a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html">OneOcrSession</a></h4>
-      <section><p>OneOCR session that performs OCR using the native <code>oneocr.dll</code> via P/Invoke.</p>
+      <section><p>OneOCR session that performs OCR using the native <code>oneocr.dll</code> via P/Invoke.
+Owns the underlying <span class="xref">Zaya.OCR.Impl.OneOcr.OneOcrEngine</span> and disposes it with the session.</p>
 </section>
 
 

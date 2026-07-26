@@ -133,8 +133,6 @@ public sealed class OneOcrService : IOCRService
         },
     ];
 
-    private OneOcrEngine? _engine;
-    private double _minConfidence;
     private bool _disposed;
 
     private static LocalizedString Loc(string key)
@@ -195,29 +193,42 @@ public sealed class OneOcrService : IOCRService
     {
         ObjectDisposedException.ThrowIf(_disposed, this);
 
-        if (_engine is null)
+        var source = settingDescriptorList.GetValueAsString(SettingsConstants.Source);
+        var cacheDir = settingDescriptorList.GetValueAsString(SettingsConstants.CacheDirectory);
+
+        var engine = source switch
         {
-            var source = settingDescriptorList.GetValueAsString(SettingsConstants.Source);
-            var cacheDir = settingDescriptorList.GetValueAsString(SettingsConstants.CacheDirectory);
-            _minConfidence = settingDescriptorList.GetValueAsInt(SettingsConstants.MinConfidence) / 100.0;
+            SettingsConstants.Auto => await CreateEngineFromAutoAsync(
+                RequireDownloadUrl(settingDescriptorList),
+                cacheDir, cancellationToken),
+            SettingsConstants.SnippingTool => OneOcrEngine.CreateFromSnippingTool(cacheDir),
+            SettingsConstants.Directory => OneOcrEngine.CreateFromDirectory(
+                RequireDirectoryPath(settingDescriptorList)),
+            SettingsConstants.Url => await OneOcrEngine.CreateFromUrlAsync(
+                RequireDownloadUrl(settingDescriptorList),
+                cacheDir, cancellationToken),
+            _ => throw new OneOcrUnknownSourceException(source)
+        };
 
-            _engine = source switch
-            {
-                SettingsConstants.Auto => await CreateEngineFromAutoAsync(
-                    settingDescriptorList.GetValueAsString(SettingsConstants.DownloadUrl),
-                    cacheDir, cancellationToken),
-                SettingsConstants.SnippingTool => OneOcrEngine.CreateFromSnippingTool(cacheDir),
-                SettingsConstants.Directory => OneOcrEngine.CreateFromDirectory(
-                    settingDescriptorList.GetValueAsString(SettingsConstants.DirectoryPath)),
-                SettingsConstants.Url => await OneOcrEngine.CreateFromUrlAsync(
-                    settingDescriptorList.GetValueAsString(SettingsConstants.DownloadUrl),
-                    cacheDir, cancellationToken),
-                _ => throw new OneOcrUnknownSourceException(source)
-            };
-        }
-
+        var minConfidence = settingDescriptorList.GetValueAsInt(SettingsConstants.MinConfidence) / 100.0;
         cancellationToken.ThrowIfCancellationRequested();
-        return new OneOcrSession(_engine, _minConfidence);
+        return new OneOcrSession(engine, minConfidence);
+    }
+
+    private static string RequireDirectoryPath(SettingDescriptorList settings)
+    {
+        var path = settings.GetValueAsString(SettingsConstants.DirectoryPath);
+        if (string.IsNullOrWhiteSpace(path))
+            throw new OneOcrDirectoryPathRequiredException();
+        return path;
+    }
+
+    private static string RequireDownloadUrl(SettingDescriptorList settings)
+    {
+        var url = settings.GetValueAsString(SettingsConstants.DownloadUrl);
+        if (string.IsNullOrWhiteSpace(url))
+            throw new OneOcrDownloadUrlRequiredException();
+        return url;
     }
 
     private static async Task<OneOcrEngine> CreateEngineFromAutoAsync(
@@ -238,7 +249,5 @@ public sealed class OneOcrService : IOCRService
     {
         if (_disposed) return;
         _disposed = true;
-        _engine?.Dispose();
-        _engine = null;
     }
 }

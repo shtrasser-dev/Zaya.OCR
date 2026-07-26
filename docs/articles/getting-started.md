@@ -2,27 +2,35 @@
 
 ## Overview
 
-Zaya.OCR provides a set of interfaces for optical character recognition in .NET 8.0+. It follows the dependency inversion principle: consumers depend on abstractions (`IOCRService`, `IOCRResult`, `IOCRWord`), and implementations are provided separately.
+Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on abstractions (`IOCRService`, `IOCRSession`, `IOCRResult`, `IOCRWord`); implementations such as OneOCR are separate packages.
 
 ## Architecture
 
 | Interface | Role |
 |---|---|
-| `IOCRService` | Entry point — accepts raw image bytes (`byte[]`), returns `IOCRResult` |
+| `IOCRService` | Engine metadata + settings; creates sessions via `CreateSessionAsync` |
+| `IOCRSession` | Active recognition session — `RecognizeAsync(IRawImage)` → `IOCRResult` |
 | `IOCRResult` | Aggregate result — read-only list of `IOCRWord` plus overall confidence |
 | `IOCRWord` | Individual word — recognized text, pixel bounding box, per-word confidence |
+| `ITextLayoutService` | Optional layout engine — structures OCR words into paragraphs/lines |
 
-## Basic Usage
+## Basic Usage (OneOCR)
 
 ```csharp
-using Zaya.OCR.Models;
+using System.Drawing;
+using Zaya.OCR.Impl.OneOcr.Services;
 using Zaya.OCR.Services;
 
-// Obtain an implementation of IOCRService (e.g., from DI container)
-IOCRService ocr = /* your implementation */;
-byte[] imageBytes = File.ReadAllBytes("document.png");
+using var ocr = new OneOcrService();
 
-var result = await ocr.RecognizeAsync(imageBytes);
+using var session = await ocr.CreateSessionAsync(new Dictionary<string, object>
+{
+    ["source"] = "auto",          // SnippingTool, then download URL fallback
+    ["minConfidence"] = 40,       // 0–100
+});
+
+using var bitmap = new Bitmap("document.png");
+var result = await session.RecognizeAsync(bitmap);
 
 Console.WriteLine($"Overall confidence: {result.Confidence:P0}");
 Console.WriteLine($"Words found: {result.Words.Count}");
@@ -33,24 +41,99 @@ foreach (var word in result.Words)
 }
 ```
 
+Each `CreateSessionAsync` call builds a new engine from the supplied settings (or descriptor defaults). Dispose the session when finished; it owns the native engine.
+
+## Defaults and DI
+
+```csharp
+// Defaults from SettingDescriptor list (source = auto, …)
+using var session = await ocr.CreateSessionAsync();
+
+// Or register in DI
+services.AddOneOcr();
+// services.AddProximityTextLayout();
+```
+
+Typed settings helper:
+
+```csharp
+using Zaya.OCR.Impl.OneOcr;
+
+var config = new OneOcrConfig
+{
+    Source = OneOcrSource.Auto,
+    MinConfidence = 40,
+};
+using var session = await ocr.CreateSessionAsync(
+    config.ToDictionary()
+        .Where(kv => kv.Value is not null)
+        .ToDictionary(kv => kv.Key, kv => kv.Value!));
+```
+
+## Input formats
+
+| Source | API |
+|--------|-----|
+| `IRawImage` | `session.RecognizeAsync(rawImage)` — preferred (`PreferredPixelFormat` is BGRA32 for OneOCR) |
+| `System.Drawing.Bitmap` | `session.RecognizeAsync(bitmap)` — extension in `Zaya.OCR.Impl.OneOcr` |
+
 ## Cancellation
 
-`RecognizeAsync` accepts an optional `CancellationToken`:
+Both session creation and recognition accept an optional `CancellationToken`:
 
 ```csharp
 var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
-var result = await ocr.RecognizeAsync(imageBytes, cts.Token);
+
+using var session = await ocr.CreateSessionAsync(settings, cts.Token);
+var result = await session.RecognizeAsync(image, cts.Token);
 ```
 
-## Implementing a Custom Service
+## Text layout
 
 ```csharp
-public class MyOCRService : IOCRService
+using Zaya.OCR.Impl.ProximityTextLayout.Services;
+
+using var layout = new ProximityTextLayoutService();
+using var layoutSession = await layout.CreateSessionAsync();
+var structured = await layoutSession.ProcessAsync(ocrResult);
+```
+
+## Implementing a custom service
+
+```csharp
+public sealed class MyOCRService : IOCRService
 {
-    public async Task<IOCRResult> RecognizeAsync(byte[] data, CancellationToken cancellationToken = default)
+    public string EngineId => "my-ocr";
+    public LocalizedString DisplayName { get; } = /* … */;
+    public LocalizedString Description { get; } = /* … */;
+    public bool IsAvailable => true;
+    public IReadOnlyList<SettingDescriptor> Settings { get; } = [];
+    public PixelFormat PreferredPixelFormat => PixelFormat.Bgra32;
+
+    public Task<IOCRSession> CreateSessionAsync(CancellationToken cancellationToken = default)
+        => CreateSessionAsync(new Dictionary<string, object>(), cancellationToken);
+
+    public Task<IOCRSession> CreateSessionAsync(
+        IReadOnlyDictionary<string, object> engineSettings,
+        CancellationToken cancellationToken = default)
+        => Task.FromResult<IOCRSession>(new MyOCRSession(/* apply settings */));
+
+    public void Dispose() { }
+}
+
+public sealed class MyOCRSession : IOCRSession
+{
+    public Task<IOCRResult> RecognizeAsync(IRawImage image, CancellationToken cancellationToken = default)
     {
         // Custom OCR logic here
-        return new MyOCRResult(words);
+        return Task.FromResult<IOCRResult>(new MyOCRResult(words));
     }
+
+    public void Dispose() { }
 }
 ```
+
+## Next steps
+
+- **[OneOCR settings](oneocr-settings.md)** — `source`, `downloadUrl`, `cacheDirectory`, and other engine keys
+- **API Reference** — complete documentation generated from source code

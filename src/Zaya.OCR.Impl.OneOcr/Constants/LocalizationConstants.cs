@@ -33,6 +33,6 @@ internal static class LocalizationConstants
         public const string DirectoryPathRequired = "Ocr_Err_DirectoryPathRequired";
         public const string DownloadUrlRequired = "Ocr_Err_DownloadUrlRequired";
         public const string UnknownSource = "Ocr_Err_UnknownSource";
-        public const string NotInitialized = "Ocr_Err_NotInitialized";
+        public const string NativeFailed = "Ocr_Err_NativeFailed";
     }
 }

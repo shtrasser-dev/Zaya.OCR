@@ -21,7 +21,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrDllNotFoundException
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 57
+    startLine: 58
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -70,7 +70,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 62
+    startLine: 63
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -101,7 +101,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: GetLocalizedMessage
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 65
+    startLine: 66
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr

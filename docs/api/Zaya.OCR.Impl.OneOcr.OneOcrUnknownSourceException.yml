@@ -22,7 +22,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrUnknownSourceException
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 105
+    startLine: 106
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -71,7 +71,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: SourceValue
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 112
+    startLine: 113
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -102,7 +102,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 118
+    startLine: 119
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -137,7 +137,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: GetLocalizedMessage
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 124
+    startLine: 125
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr

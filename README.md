@@ -94,10 +94,10 @@ Session creation (download, missing DLL, etc.) throws `LocalizedException` subcl
 | `source` | `auto` | `auto` \| `snippingtool` \| `directory` \| `url` |
 | `directoryPath` | — | Required when `source` = `directory` |
 | `downloadUrl` | [Zaya.External OneOCR.zip](https://github.com/shtrasser-dev/Zaya.External/releases/latest/download/OneOCR.zip) | Used for `url` and as `auto` fallback |
-| `cacheDirectory` | `%TEMP%\Zaya\OneOcr` | Cache for copy/extract (`auto` / `snippingtool` / `url`) |
+| `cacheDirectory` | `%TEMP%\Zaya\OneOcr` | Shared cache for `auto` / `snippingtool` / `url`. If it already has `oneocr.dll`, `onnxruntime.dll`, and `oneocr.onemodel`, those files are used as-is (no SnippingTool lookup, no download). |
 | `minConfidence` | `0` | Drop words below this percent (0–100) |
 
-`source = auto`: try SnippingTool; if not found, download via `downloadUrl`.
+`source = auto`: use complete cache if present; else try SnippingTool; if not found, download via `downloadUrl`.
 
 Full details: [docs/articles/oneocr-settings.md](docs/articles/oneocr-settings.md)
 

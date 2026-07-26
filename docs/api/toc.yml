@@ -32,8 +32,8 @@ items:
   - uid: Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException
     name: OneOcrModelNotFoundException
     type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-    name: OneOcrNotInitializedException
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+    name: OneOcrNativeException
     type: Class
   - uid: Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException
     name: OneOcrSnippingToolNotFoundException

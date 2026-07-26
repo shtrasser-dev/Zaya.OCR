@@ -9,7 +9,6 @@
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <WindowsAppSdkSelfContained>true</WindowsAppSdkSelfContained>
   </PropertyGroup>
 
   <ItemGroup>

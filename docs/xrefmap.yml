@@ -446,44 +446,57 @@ references:
   isSpec: "True"
   fullName: Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException.GetLocalizedMessage
   nameWithType: OneOcrModelNotFoundException.GetLocalizedMessage
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-  name: OneOcrNotInitializedException
-  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html
-  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-  nameWithType: OneOcrNotInitializedException
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.#ctor
-  name: OneOcrNotInitializedException()
-  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html#Zaya_OCR_Impl_OneOcr_OneOcrNotInitializedException__ctor
-  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.#ctor
-  name.vb: New()
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.OneOcrNotInitializedException()
-  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.New()
-  nameWithType: OneOcrNotInitializedException.OneOcrNotInitializedException()
-  nameWithType.vb: OneOcrNotInitializedException.New()
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.#ctor*
-  name: OneOcrNotInitializedException
-  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html#Zaya_OCR_Impl_OneOcr_OneOcrNotInitializedException__ctor_
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.#ctor
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  name: OneOcrNativeException
+  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  nameWithType: OneOcrNativeException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.#ctor(System.String)
+  name: OneOcrNativeException(string)
+  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html#Zaya_OCR_Impl_OneOcr_OneOcrNativeException__ctor_System_String_
+  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.OneOcrNativeException(string)
+  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.New(String)
+  nameWithType: OneOcrNativeException.OneOcrNativeException(string)
+  nameWithType.vb: OneOcrNativeException.New(String)
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.#ctor*
+  name: OneOcrNativeException
+  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html#Zaya_OCR_Impl_OneOcr_OneOcrNativeException__ctor_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.#ctor
   isSpec: "True"
   name.vb: New
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.OneOcrNotInitializedException
-  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.New
-  nameWithType: OneOcrNotInitializedException.OneOcrNotInitializedException
-  nameWithType.vb: OneOcrNotInitializedException.New
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage(System.Globalization.CultureInfo)
-  name: GetLocalizedMessage(CultureInfo)
-  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html#Zaya_OCR_Impl_OneOcr_OneOcrNotInitializedException_GetLocalizedMessage_System_Globalization_CultureInfo_
-  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage(System.Globalization.CultureInfo)
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage(System.Globalization.CultureInfo)
-  nameWithType: OneOcrNotInitializedException.GetLocalizedMessage(CultureInfo)
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage*
-  name: GetLocalizedMessage
-  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html#Zaya_OCR_Impl_OneOcr_OneOcrNotInitializedException_GetLocalizedMessage_
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.OneOcrNativeException
+  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.New
+  nameWithType: OneOcrNativeException.OneOcrNativeException
+  nameWithType.vb: OneOcrNativeException.New
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
+  name: Detail
+  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html#Zaya_OCR_Impl_OneOcr_OneOcrNativeException_Detail
+  commentId: P:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
+  nameWithType: OneOcrNativeException.Detail
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail*
+  name: Detail
+  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html#Zaya_OCR_Impl_OneOcr_OneOcrNativeException_Detail_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
   isSpec: "True"
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.GetLocalizedMessage
-  nameWithType: OneOcrNotInitializedException.GetLocalizedMessage
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.Detail
+  nameWithType: OneOcrNativeException.Detail
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage(System.Globalization.CultureInfo)
+  name: GetLocalizedMessage(CultureInfo)
+  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html#Zaya_OCR_Impl_OneOcr_OneOcrNativeException_GetLocalizedMessage_System_Globalization_CultureInfo_
+  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage(System.Globalization.CultureInfo)
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage(System.Globalization.CultureInfo)
+  nameWithType: OneOcrNativeException.GetLocalizedMessage(CultureInfo)
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage*
+  name: GetLocalizedMessage
+  href: api/Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html#Zaya_OCR_Impl_OneOcr_OneOcrNativeException_GetLocalizedMessage_
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage
+  isSpec: "True"
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.GetLocalizedMessage
+  nameWithType: OneOcrNativeException.GetLocalizedMessage
 - uid: Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException
   name: OneOcrSnippingToolNotFoundException
   href: api/Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException.html

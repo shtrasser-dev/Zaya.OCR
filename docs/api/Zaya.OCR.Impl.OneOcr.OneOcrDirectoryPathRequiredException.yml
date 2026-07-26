@@ -21,11 +21,11 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrDirectoryPathRequiredException
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 73
+    startLine: 74
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Thrown when the <code>directoryPath</code> setting is required but not provided (source is <code>Directory</code>).
+  summary: Thrown when the <code>directoryPath</code> setting is required but not provided (source is <code>directory</code>).
   example: []
   syntax:
     content: 'public sealed class OneOcrDirectoryPathRequiredException : LocalizedException, ISerializable'
@@ -70,7 +70,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 78
+    startLine: 79
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -101,7 +101,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: GetLocalizedMessage
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 81
+    startLine: 82
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr

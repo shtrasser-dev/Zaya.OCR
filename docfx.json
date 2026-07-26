@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "files": ["src/Zaya.OCR/Zaya.OCR.csproj", "src/Zaya.OCR.Impl.OneOcr/Zaya.OCR.Impl.OneOcr.csproj", "../Zaya.Primitives/src/Zaya.Primitives/Zaya.Primitives.csproj"],
+          "files": ["src/Zaya.OCR/Zaya.OCR.csproj", "src/Zaya.OCR.Impl.OneOcr/Zaya.OCR.Impl.OneOcr.csproj"],
           "src": "."
         }
       ],
@@ -13,6 +13,9 @@
     }
   ],
   "build": {
+    "xref": [
+      "https://shtrasser-dev.github.io/Zaya.Primitives/xrefmap.yml"
+    ],
     "content": [
       {
         "files": [

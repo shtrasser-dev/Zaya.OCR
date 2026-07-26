@@ -21,10 +21,12 @@ Typed helper: [`OneOcrConfig`](xref:Zaya.OCR.Impl.OneOcr.OneOcrConfig) → `ToDi
 
 | Value | Behavior |
 |-------|----------|
-| `auto` | Try SnippingTool; on [`OneOcrSnippingToolNotFoundException`](xref:Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException) download via `downloadUrl` |
-| `snippingtool` | Resolve files from Windows 11 SnippingTool install, copy into `cacheDirectory` |
+| `auto` | Use cache if complete; else try SnippingTool; on [`OneOcrSnippingToolNotFoundException`](xref:Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException) download via `downloadUrl` |
+| `snippingtool` | Use cache if complete; else resolve from Windows 11 SnippingTool and copy into `cacheDirectory` |
 | `directory` | Load from `directoryPath` |
-| `url` | Download zip from `downloadUrl` into `cacheDirectory` |
+| `url` | Use cache if complete; else download zip from `downloadUrl` into `cacheDirectory` |
+
+A cache directory is treated as complete when it contains `oneocr.dll`, `onnxruntime.dll`, and `oneocr.onemodel`.
 
 ## Visibility (UI)
 

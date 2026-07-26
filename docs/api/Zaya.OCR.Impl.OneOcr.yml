@@ -11,7 +11,7 @@ items:
   - Zaya.OCR.Impl.OneOcr.OneOcrDllNotFoundException
   - Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException
   - Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException
-  - Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
+  - Zaya.OCR.Impl.OneOcr.OneOcrNativeException
   - Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException
   - Zaya.OCR.Impl.OneOcr.OneOcrSource
   - Zaya.OCR.Impl.OneOcr.OneOcrUnknownSourceException
@@ -87,12 +87,12 @@ references:
   name: OneOcrUnknownSourceException
   nameWithType: OneOcrUnknownSourceException
   fullName: Zaya.OCR.Impl.OneOcr.OneOcrUnknownSourceException
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
-  href: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html
-  name: OneOcrNotInitializedException
-  nameWithType: OneOcrNotInitializedException
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  href: Zaya.OCR.Impl.OneOcr.OneOcrNativeException.html
+  name: OneOcrNativeException
+  nameWithType: OneOcrNativeException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
 - uid: Zaya.OCR.Impl.OneOcr
   commentId: N:Zaya.OCR.Impl.OneOcr
   href: Zaya.html

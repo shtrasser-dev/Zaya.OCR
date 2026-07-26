@@ -5,7 +5,8 @@ using Zaya.Primitives;
 namespace Zaya.OCR.Impl.OneOcr;
 
 /// <summary>
-/// Thrown when the Windows 11 SnippingTool installation is not found on the current system.
+/// Thrown when the Windows 11 SnippingTool installation is not found on the current system
+/// and no usable engine files are present in the cache directory.
 /// </summary>
 public sealed class OneOcrSnippingToolNotFoundException : LocalizedException
 {
@@ -69,7 +70,7 @@ public sealed class OneOcrDllNotFoundException : LocalizedException
 }
 
 /// <summary>
-/// Thrown when the <c>directoryPath</c> setting is required but not provided (source is <c>Directory</c>).
+/// Thrown when the <c>directoryPath</c> setting is required but not provided (source is <c>directory</c>).
 /// </summary>
 public sealed class OneOcrDirectoryPathRequiredException : LocalizedException
 {
@@ -85,7 +86,7 @@ public sealed class OneOcrDirectoryPathRequiredException : LocalizedException
 }
 
 /// <summary>
-/// Thrown when the <c>downloadUrl</c> setting is required but not provided (source is <c>Url</c>).
+/// Thrown when the <c>downloadUrl</c> setting is required but not provided (source is <c>url</c>).
 /// </summary>
 public sealed class OneOcrDownloadUrlRequiredException : LocalizedException
 {
@@ -131,17 +132,31 @@ public sealed class OneOcrUnknownSourceException : LocalizedException
 }
 
 /// <summary>
-/// Thrown if <see cref="Services.OneOcrService"/> fails to initialize.
+/// Thrown when a native OneOCR API call fails (init, pipeline, or recognition).
 /// </summary>
-public sealed class OneOcrNotInitializedException : LocalizedException
+public sealed class OneOcrNativeException : LocalizedException
 {
+    private readonly string _detail;
+
     /// <summary>
-    /// Initializes a new instance of the <see cref="OneOcrNotInitializedException"/> class.
+    /// Gets the native failure detail (API name and/or status code).
     /// </summary>
-    public OneOcrNotInitializedException() : base(LocalizationConstants.Exceptions.NotInitialized) { }
+    public string Detail => _detail;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="OneOcrNativeException"/> class.
+    /// </summary>
+    /// <param name="detail">Technical detail from the native call (e.g. <c>CreateOcrPipeline: 0x6</c>).</param>
+    public OneOcrNativeException(string detail) : base(LocalizationConstants.Exceptions.NativeFailed)
+    {
+        _detail = detail;
+    }
 
     /// <inheritdoc />
     public override string GetLocalizedMessage(CultureInfo culture)
-        => Properties.Resources.ResourceManager.GetString(LocalizationConstants.Exceptions.NotInitialized, culture)
-           ?? base.GetLocalizedMessage(culture);
+    {
+        var format = Properties.Resources.ResourceManager.GetString(LocalizationConstants.Exceptions.NativeFailed, culture)
+                     ?? base.GetLocalizedMessage(culture);
+        return string.Format(format, _detail);
+    }
 }
