@@ -33,4 +33,5 @@ foreach (var word in result.Words)
 ## Next Steps
 
 - **Getting Started** — detailed usage guide
+- **[OneOCR settings](articles/oneocr-settings.md)** — `source`, `downloadUrl`, `cacheDirectory`, and other engine keys
 - **API Reference** — complete API documentation generated from source code

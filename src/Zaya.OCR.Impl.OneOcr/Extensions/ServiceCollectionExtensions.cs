@@ -10,7 +10,7 @@ public static class OneOcrServiceCollectionExtensions
 {
     /// <summary>
     /// Registers <see cref="OneOcrService"/> as a singleton <see cref="IOCRService"/>.
-    /// Call <see cref="IOCRService.InitializeAsync"/> explicitly after the container is built.
+    /// Pass engine settings directly to <see cref="IOCRService.CreateSessionAsync(IReadOnlyDictionary{string, object}, CancellationToken)"/>.
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add services to.</param>
     /// <returns>The same service collection for chaining.</returns>

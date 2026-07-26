@@ -21,15 +21,10 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
 
         try
         {
-            await _service.InitializeAsync(null);
-            _session = await _service.CreateSessionAsync(cancellationToken: TestContext.Current.CancellationToken);
-            _modelAvailable = _service.IsAvailable;
+            _session = await _service.CreateSessionAsync(new Dictionary<string, object>(), TestContext.Current.CancellationToken);
+            _modelAvailable = true;
         }
         catch (LocalizedException)
-        {
-            _modelAvailable = false;
-        }
-        catch (InvalidOperationException)
         {
             _modelAvailable = false;
         }
@@ -77,15 +72,19 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
         Assert.True(settings["directoryPath"].IsVisible(new Dictionary<string, object?> { ["source"] = "directory" }));
         Assert.True(settings["directoryPath"].IsRequired(new Dictionary<string, object?> { ["source"] = "directory" }));
 
-        // downloadUrl — visible+required only when source == "url"
-        Assert.False(settings["downloadUrl"].IsVisible(new Dictionary<string, object?>()));
+        // downloadUrl — visible for auto/url; required only when source == "url"
+        Assert.True(settings["downloadUrl"].IsVisible(new Dictionary<string, object?>()));
+        Assert.True(settings["downloadUrl"].IsVisible(new Dictionary<string, object?> { ["source"] = "auto" }));
         Assert.False(settings["downloadUrl"].IsVisible(new Dictionary<string, object?> { ["source"] = "directory" }));
+        Assert.False(settings["downloadUrl"].IsVisible(new Dictionary<string, object?> { ["source"] = "snippingtool" }));
         Assert.False(settings["downloadUrl"].IsRequired(new Dictionary<string, object?>()));
+        Assert.False(settings["downloadUrl"].IsRequired(new Dictionary<string, object?> { ["source"] = "auto" }));
         Assert.True(settings["downloadUrl"].IsVisible(new Dictionary<string, object?> { ["source"] = "url" }));
         Assert.True(settings["downloadUrl"].IsRequired(new Dictionary<string, object?> { ["source"] = "url" }));
 
-        // cacheDirectory — visible for snippingtool or url, hidden for directory
+        // cacheDirectory — visible for auto/snippingtool/url, hidden for directory
         Assert.True(settings["cacheDirectory"].IsVisible(new Dictionary<string, object?>()));
+        Assert.True(settings["cacheDirectory"].IsVisible(new Dictionary<string, object?> { ["source"] = "auto" }));
         Assert.True(settings["cacheDirectory"].IsVisible(new Dictionary<string, object?> { ["source"] = "snippingtool" }));
         Assert.True(settings["cacheDirectory"].IsVisible(new Dictionary<string, object?> { ["source"] = "url" }));
         Assert.False(settings["cacheDirectory"].IsVisible(new Dictionary<string, object?> { ["source"] = "directory" }));
@@ -106,24 +105,28 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task CreateSession_WithoutInitialize_Throws()
+    public async Task CreateSession_Succeeds()
     {
-        var service = new OneOcrService();
-        await Assert.ThrowsAsync<InvalidOperationException>(() =>
-            service.CreateSessionAsync(cancellationToken: TestContext.Current.CancellationToken));
+        if (!_modelAvailable) return;
+
+        using var session = await _service!.CreateSessionAsync(new Dictionary<string, object>(), TestContext.Current.CancellationToken);
+
+        Assert.NotNull(session);
     }
 
     [Fact]
-    public async Task InitializeAsync_IsIdempotent()
+    public async Task CreateSession_WithDirectorySource_MissingPath_Throws()
     {
         var service = new OneOcrService();
-
         try
         {
-            await service.InitializeAsync(null, TestContext.Current.CancellationToken);
-            // Second call should not throw — idempotent
-            await service.InitializeAsync(null, TestContext.Current.CancellationToken);
-            Assert.True(service.IsAvailable);
+            var settings = new Dictionary<string, object>
+            {
+                ["source"] = "directory",
+                ["directoryPath"] = @"C:\nonexistent\path"
+            };
+            await Assert.ThrowsAsync<OneOcrDllNotFoundException>(() =>
+                service.CreateSessionAsync(settings, TestContext.Current.CancellationToken));
         }
         finally
         {
@@ -132,13 +135,62 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task CreateSession_Succeeds()
+    public async Task CreateSession_WithUrlSource_DefaultDownloadUrl_RecognizesText()
     {
-        if (!_modelAvailable) return;
+        using var service = new OneOcrService();
 
-        using var session = await _service!.CreateSessionAsync(cancellationToken: TestContext.Current.CancellationToken);
+        var defaultDownloadUrl = Assert.IsType<UrlSettingDescriptor>(
+            service.Settings.Single(s => s.Key == "downloadUrl")).DefaultValue;
+        Assert.False(string.IsNullOrWhiteSpace(defaultDownloadUrl));
 
-        Assert.NotNull(session);
+        var cacheDir = Path.Combine(Path.GetTempPath(), "Zaya", "OneOcr.Tests.Url", Guid.NewGuid().ToString("N"));
+        var settings = new Dictionary<string, object>
+        {
+            ["source"] = "url",
+            ["downloadUrl"] = defaultDownloadUrl!,
+            ["cacheDirectory"] = cacheDir,
+        };
+
+        IOCRSession? session = null;
+        try
+        {
+            try
+            {
+                session = await service.CreateSessionAsync(settings, TestContext.Current.CancellationToken);
+            }
+            catch (LocalizedException)
+            {
+                return;
+            }
+            catch (HttpRequestException)
+            {
+                return;
+            }
+
+            var image = CreateTestImage("Hello World", 400, 100, 48);
+            var result = await session.RecognizeAsync(image, TestContext.Current.CancellationToken);
+
+            Assert.NotNull(result);
+            Assert.NotEmpty(result.Words);
+            Assert.True(result.Confidence > 0);
+
+            var fullText = string.Join(" ", result.Words.Select(w => w.Text));
+            Assert.Contains("Hello", fullText, StringComparison.OrdinalIgnoreCase);
+            Assert.Contains("World", fullText, StringComparison.OrdinalIgnoreCase);
+        }
+        finally
+        {
+            session?.Dispose();
+            try
+            {
+                if (Directory.Exists(cacheDir))
+                    Directory.Delete(cacheDir, recursive: true);
+            }
+            catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+            {
+                // DLL may still be mapped; leave temp dir for OS cleanup.
+            }
+        }
     }
 
     [Fact]
@@ -221,26 +273,6 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
             Assert.True(word.Confidence > 0);
             Assert.True(word.Bounds.Width > 0);
             Assert.True(word.Bounds.Height > 0);
-        }
-    }
-
-    [Fact]
-    public async Task InitializeAsync_WithDirectorySource_MissingPath_Throws()
-    {
-        var service = new OneOcrService();
-        try
-        {
-            var settings = new Dictionary<string, object?>
-            {
-                ["source"] = "directory",
-                ["directoryPath"] = @"C:\nonexistent\path"
-            };
-            await Assert.ThrowsAsync<OneOcrDllNotFoundException>(() =>
-                service.InitializeAsync(settings, TestContext.Current.CancellationToken));
-        }
-        finally
-        {
-            service.Dispose();
         }
     }
 

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>OneOCR settings </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="OneOCR settings ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="oneocr-settings">OneOCR settings</h1>
+
+<p><code>OneOcrService</code> (<code>EngineId</code>: <code>oneocr</code>) exposes engine settings through
+<a href="xref:Zaya.Primitives.SettingDescriptor"><code>SettingDescriptor</code></a> for UI hosts,
+and accepts the same keys as a dictionary in
+<a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_"><code>CreateSessionAsync</code></a>.</p>
+<p>Typed helper: <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.OneOcrConfig.html"><code>OneOcrConfig</code></a> → <code>ToDictionary()</code>.</p>
+<h2 id="keys">Keys</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>Required when</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source</code></td>
+<td>enum string</td>
+<td><code>auto</code></td>
+<td>always</td>
+<td>Where to load <code>oneocr.dll</code> / model from</td>
+</tr>
+<tr>
+<td><code>directoryPath</code></td>
+<td>directory path</td>
+<td>—</td>
+<td><code>source</code> = <code>directory</code></td>
+<td>Folder with <code>oneocr.dll</code>, <code>onnxruntime.dll</code>, <code>oneocr.onemodel</code></td>
+</tr>
+<tr>
+<td><code>downloadUrl</code></td>
+<td>URL</td>
+<td><a href="https://github.com/shtrasser-dev/Zaya.External/releases/latest/download/OneOCR.zip">Zaya.External OneOCR.zip</a></td>
+<td><code>source</code> = <code>url</code></td>
+<td>Zip package URL; also used as <code>auto</code> fallback</td>
+</tr>
+<tr>
+<td><code>cacheDirectory</code></td>
+<td>directory path</td>
+<td><code>%TEMP%\Zaya\OneOcr</code></td>
+<td>—</td>
+<td>Writable cache for copy/extract (<code>auto</code> / <code>snippingtool</code> / <code>url</code>)</td>
+</tr>
+<tr>
+<td><code>minConfidence</code></td>
+<td>int 0–100</td>
+<td><code>0</code></td>
+<td>—</td>
+<td>Drop words with confidence below this percent</td>
+</tr>
+</tbody>
+</table>
+<h2 id="source-values"><code>source</code> values</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto</code></td>
+<td>Try SnippingTool; on <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException.html"><code>OneOcrSnippingToolNotFoundException</code></a> download via <code>downloadUrl</code></td>
+</tr>
+<tr>
+<td><code>snippingtool</code></td>
+<td>Resolve files from Windows 11 SnippingTool install, copy into <code>cacheDirectory</code></td>
+</tr>
+<tr>
+<td><code>directory</code></td>
+<td>Load from <code>directoryPath</code></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Download zip from <code>downloadUrl</code> into <code>cacheDirectory</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="visibility-ui">Visibility (UI)</h2>
+<p>Hosts should honor <code>SettingDescriptor.IsVisible</code> / <code>IsRequired</code>:</p>
+<ul>
+<li><code>directoryPath</code> — visible only when <code>source</code> is <code>directory</code></li>
+<li><code>downloadUrl</code> — visible for <code>auto</code> and <code>url</code>; required only for <code>url</code></li>
+<li><code>cacheDirectory</code> — visible for <code>auto</code>, <code>snippingtool</code>, and <code>url</code></li>
+</ul>
+<p>Some hosts (for example ScreenTranslator) treat <code>cacheDirectory</code> as host-managed and inject a path under <code>%AppData%</code> instead of showing the field.</p>
+<h2 id="example">Example</h2>
+<pre><code class="lang-csharp">using Zaya.OCR.Impl.OneOcr;
+using Zaya.OCR.Impl.OneOcr.Services;
+
+using var ocr = new OneOcrService();
+
+// Dictionary form
+using var session = await ocr.CreateSessionAsync(new Dictionary&lt;string, object&gt;
+{
+    [&quot;source&quot;] = &quot;auto&quot;,
+    [&quot;minConfidence&quot;] = 40,
+});
+
+// Or typed config
+var config = new OneOcrConfig
+{
+    Source = OneOcrSource.Directory,
+    DirectoryPath = @&quot;C:\tools\oneocr&quot;,
+    MinConfidence = 40,
+};
+var settings = config.ToDictionary()
+    .Where(kv =&gt; kv.Value is not null)
+    .ToDictionary(kv =&gt; kv.Key, kv =&gt; kv.Value!);
+using var session2 = await ocr.CreateSessionAsync(settings);
+</code></pre>
+<p>See also API remarks on <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html"><code>OneOcrService</code></a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/docs/articles/oneocr-settings.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

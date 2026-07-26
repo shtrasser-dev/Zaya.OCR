@@ -1,0 +1,386 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Services.ITextLayoutSession
+  commentId: T:Zaya.OCR.Services.ITextLayoutSession
+  id: ITextLayoutSession
+  parent: Zaya.OCR.Services
+  children:
+  - Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: ITextLayoutSession
+  nameWithType: ITextLayoutSession
+  fullName: Zaya.OCR.Services.ITextLayoutSession
+  type: Interface
+  source:
+    remote:
+      path: src/Zaya.OCR/Services/ITextLayoutSession.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: ITextLayoutSession
+    path: src/Zaya.OCR/Services/ITextLayoutSession.cs
+    startLine: 8
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Services
+  summary: >-
+    Represents an active text layout session with fixed processing parameters.
+
+    Create via <xref href="Zaya.OCR.Services.ITextLayoutService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: 'public interface ITextLayoutSession : IDisposable'
+    content.vb: Public Interface ITextLayoutSession Inherits IDisposable
+  inheritedMembers:
+  - System.IDisposable.Dispose
+- uid: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)
+  commentId: M:Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)
+  id: ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)
+  parent: Zaya.OCR.Services.ITextLayoutSession
+  langs:
+  - csharp
+  - vb
+  name: ProcessAsync(IOCRResult, CancellationToken)
+  nameWithType: ITextLayoutSession.ProcessAsync(IOCRResult, CancellationToken)
+  fullName: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR/Services/ITextLayoutSession.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: ProcessAsync
+    path: src/Zaya.OCR/Services/ITextLayoutSession.cs
+    startLine: 16
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Services
+  summary: Processes an OCR result and merges individual words into structured text blocks.
+  example: []
+  syntax:
+    content: Task<ITextResult> ProcessAsync(IOCRResult result, CancellationToken cancellationToken = default)
+    parameters:
+    - id: result
+      type: Zaya.OCR.Models.IOCRResult
+      description: The raw OCR result containing recognized words.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the processing operation.
+    return:
+      type: System.Threading.Tasks.Task{Zaya.OCR.Models.ITextResult}
+      description: The processed text result containing ordered text blocks.
+    content.vb: Function ProcessAsync(result As IOCRResult, cancellationToken As CancellationToken = Nothing) As Task(Of ITextResult)
+  overload: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync*
+references:
+- uid: Zaya.OCR.Services.ITextLayoutService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+  commentId: M:Zaya.OCR.Services.ITextLayoutService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+  isExternal: true
+  href: Zaya.OCR.Services.ITextLayoutService.html#Zaya_OCR_Services_ITextLayoutService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
+  name: CreateSessionAsync(IReadOnlyDictionary<string, object>, CancellationToken)
+  nameWithType: ITextLayoutService.CreateSessionAsync(IReadOnlyDictionary<string, object>, CancellationToken)
+  fullName: Zaya.OCR.Services.ITextLayoutService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary<string, object>, System.Threading.CancellationToken)
+  nameWithType.vb: ITextLayoutService.CreateSessionAsync(IReadOnlyDictionary(Of String, Object), CancellationToken)
+  fullName.vb: Zaya.OCR.Services.ITextLayoutService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary(Of String, Object), System.Threading.CancellationToken)
+  name.vb: CreateSessionAsync(IReadOnlyDictionary(Of String, Object), CancellationToken)
+  spec.csharp:
+  - uid: Zaya.OCR.Services.ITextLayoutService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+    name: CreateSessionAsync
+    href: Zaya.OCR.Services.ITextLayoutService.html#Zaya_OCR_Services_ITextLayoutService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Zaya.OCR.Services.ITextLayoutService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+    name: CreateSessionAsync
+    href: Zaya.OCR.Services.ITextLayoutService.html#Zaya_OCR_Services_ITextLayoutService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Zaya.OCR.Services
+  commentId: N:Zaya.OCR.Services
+  href: Zaya.html
+  name: Zaya.OCR.Services
+  nameWithType: Zaya.OCR.Services
+  fullName: Zaya.OCR.Services
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Services
+    name: Services
+    href: Zaya.OCR.Services.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Services
+    name: Services
+    href: Zaya.OCR.Services.html
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync*
+  commentId: Overload:Zaya.OCR.Services.ITextLayoutSession.ProcessAsync
+  href: Zaya.OCR.Services.ITextLayoutSession.html#Zaya_OCR_Services_ITextLayoutSession_ProcessAsync_Zaya_OCR_Models_IOCRResult_System_Threading_CancellationToken_
+  name: ProcessAsync
+  nameWithType: ITextLayoutSession.ProcessAsync
+  fullName: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync
+- uid: Zaya.OCR.Models.IOCRResult
+  commentId: T:Zaya.OCR.Models.IOCRResult
+  parent: Zaya.OCR.Models
+  href: Zaya.OCR.Models.IOCRResult.html
+  name: IOCRResult
+  nameWithType: IOCRResult
+  fullName: Zaya.OCR.Models.IOCRResult
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{Zaya.OCR.Models.ITextResult}
+  commentId: T:System.Threading.Tasks.Task{Zaya.OCR.Models.ITextResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ITextResult>
+  nameWithType: Task<ITextResult>
+  fullName: System.Threading.Tasks.Task<Zaya.OCR.Models.ITextResult>
+  nameWithType.vb: Task(Of ITextResult)
+  fullName.vb: System.Threading.Tasks.Task(Of Zaya.OCR.Models.ITextResult)
+  name.vb: Task(Of ITextResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Zaya.OCR.Models.ITextResult
+    name: ITextResult
+    href: Zaya.OCR.Models.ITextResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Zaya.OCR.Models.ITextResult
+    name: ITextResult
+    href: Zaya.OCR.Models.ITextResult.html
+  - name: )
+- uid: Zaya.OCR.Models
+  commentId: N:Zaya.OCR.Models
+  href: Zaya.html
+  name: Zaya.OCR.Models
+  nameWithType: Zaya.OCR.Models
+  fullName: Zaya.OCR.Models
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

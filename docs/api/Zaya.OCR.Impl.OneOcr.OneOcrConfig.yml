@@ -8,6 +8,7 @@ items:
   - Zaya.OCR.Impl.OneOcr.OneOcrConfig.CacheDirectory
   - Zaya.OCR.Impl.OneOcr.OneOcrConfig.DirectoryPath
   - Zaya.OCR.Impl.OneOcr.OneOcrConfig.DownloadUrl
+  - Zaya.OCR.Impl.OneOcr.OneOcrConfig.MinConfidence
   - Zaya.OCR.Impl.OneOcr.OneOcrConfig.Source
   - Zaya.OCR.Impl.OneOcr.OneOcrConfig.ToDictionary
   langs:
@@ -24,14 +25,18 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrConfig
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs
-    startLine: 27
+    startLine: 42
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
   summary: >-
     Typed configuration for <xref href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService" data-throw-if-not-resolved="false"></xref>.
 
-    Converts to the dictionary format expected by <code>InitializeAsync</code>.
+    Converts to the dictionary format expected by <code>CreateSessionAsync</code>.
+  remarks: >-
+    Maps to the same keys as <xref href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Settings" data-throw-if-not-resolved="false"></xref>:
+
+    <code>source</code>, <code>directoryPath</code>, <code>downloadUrl</code>, <code>cacheDirectory</code>, <code>minConfidence</code>.
   example: []
   syntax:
     content: public class OneOcrConfig
@@ -64,11 +69,11 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Source
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs
-    startLine: 32
+    startLine: 47
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Gets or sets the engine source. Default is <xref href="Zaya.OCR.Impl.OneOcr.OneOcrSource.SnippingTool" data-throw-if-not-resolved="false"></xref>.
+  summary: Gets or sets the engine source. Default is <xref href="Zaya.OCR.Impl.OneOcr.OneOcrSource.Auto" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public OneOcrSource Source { get; set; }
@@ -95,7 +100,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: DirectoryPath
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs
-    startLine: 37
+    startLine: 52
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -126,11 +131,14 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: DownloadUrl
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs
-    startLine: 42
+    startLine: 58
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Gets or sets the URL to download the engine from. Required when <xref href="Zaya.OCR.Impl.OneOcr.OneOcrConfig.Source" data-throw-if-not-resolved="false"></xref> is <xref href="Zaya.OCR.Impl.OneOcr.OneOcrSource.Url" data-throw-if-not-resolved="false"></xref>.
+  summary: >-
+    Gets or sets the URL to download the engine from. Required when <xref href="Zaya.OCR.Impl.OneOcr.OneOcrConfig.Source" data-throw-if-not-resolved="false"></xref> is <xref href="Zaya.OCR.Impl.OneOcr.OneOcrSource.Url" data-throw-if-not-resolved="false"></xref>;
+
+    also used as fallback when <xref href="Zaya.OCR.Impl.OneOcr.OneOcrConfig.Source" data-throw-if-not-resolved="false"></xref> is <xref href="Zaya.OCR.Impl.OneOcr.OneOcrSource.Auto" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public string? DownloadUrl { get; set; }
@@ -157,7 +165,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: CacheDirectory
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs
-    startLine: 47
+    startLine: 63
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -170,6 +178,37 @@ items:
       type: System.String
     content.vb: Public Property CacheDirectory As String
   overload: Zaya.OCR.Impl.OneOcr.OneOcrConfig.CacheDirectory*
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrConfig.MinConfidence
+  commentId: P:Zaya.OCR.Impl.OneOcr.OneOcrConfig.MinConfidence
+  id: MinConfidence
+  parent: Zaya.OCR.Impl.OneOcr.OneOcrConfig
+  langs:
+  - csharp
+  - vb
+  name: MinConfidence
+  nameWithType: OneOcrConfig.MinConfidence
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrConfig.MinConfidence
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: MinConfidence
+    path: src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs
+    startLine: 68
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr
+  summary: Gets or sets the minimum word confidence as a percentage (0–100). Default is <code>0</code>.
+  example: []
+  syntax:
+    content: public int MinConfidence { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MinConfidence As Integer
+  overload: Zaya.OCR.Impl.OneOcr.OneOcrConfig.MinConfidence*
 - uid: Zaya.OCR.Impl.OneOcr.OneOcrConfig.ToDictionary
   commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrConfig.ToDictionary
   id: ToDictionary
@@ -188,11 +227,14 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: ToDictionary
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs
-    startLine: 53
+    startLine: 75
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Converts the typed configuration to the dictionary format accepted by <code>InitializeAsync</code>.
+  summary: >-
+    Converts the typed configuration to the dictionary format accepted by
+
+    <xref href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public Dictionary<string, object?> ToDictionary()
@@ -208,6 +250,12 @@ references:
   name: OneOcrService
   nameWithType: OneOcrService
   fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Settings
+  commentId: P:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Settings
+  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Settings
+  name: Settings
+  nameWithType: OneOcrService.Settings
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Settings
 - uid: Zaya.OCR.Impl.OneOcr
   commentId: N:Zaya.OCR.Impl.OneOcr
   href: Zaya.html
@@ -483,12 +531,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrSource.SnippingTool
-  commentId: F:Zaya.OCR.Impl.OneOcr.OneOcrSource.SnippingTool
-  href: Zaya.OCR.Impl.OneOcr.OneOcrSource.html#Zaya_OCR_Impl_OneOcr_OneOcrSource_SnippingTool
-  name: SnippingTool
-  nameWithType: OneOcrSource.SnippingTool
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrSource.SnippingTool
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrSource.Auto
+  commentId: F:Zaya.OCR.Impl.OneOcr.OneOcrSource.Auto
+  href: Zaya.OCR.Impl.OneOcr.OneOcrSource.html#Zaya_OCR_Impl_OneOcr_OneOcrSource_Auto
+  name: Auto
+  nameWithType: OneOcrSource.Auto
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrSource.Auto
 - uid: Zaya.OCR.Impl.OneOcr.OneOcrConfig.Source*
   commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrConfig.Source
   href: Zaya.OCR.Impl.OneOcr.OneOcrConfig.html#Zaya_OCR_Impl_OneOcr_OneOcrConfig_Source
@@ -549,6 +597,91 @@ references:
   name: CacheDirectory
   nameWithType: OneOcrConfig.CacheDirectory
   fullName: Zaya.OCR.Impl.OneOcr.OneOcrConfig.CacheDirectory
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrConfig.MinConfidence*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrConfig.MinConfidence
+  href: Zaya.OCR.Impl.OneOcr.OneOcrConfig.html#Zaya_OCR_Impl_OneOcr_OneOcrConfig_MinConfidence
+  name: MinConfidence
+  nameWithType: OneOcrConfig.MinConfidence
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrConfig.MinConfidence
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+  isExternal: true
+  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
+  name: CreateSessionAsync(IReadOnlyDictionary<string, object>, CancellationToken)
+  nameWithType: OneOcrService.CreateSessionAsync(IReadOnlyDictionary<string, object>, CancellationToken)
+  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary<string, object>, System.Threading.CancellationToken)
+  nameWithType.vb: OneOcrService.CreateSessionAsync(IReadOnlyDictionary(Of String, Object), CancellationToken)
+  fullName.vb: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary(Of String, Object), System.Threading.CancellationToken)
+  name.vb: CreateSessionAsync(IReadOnlyDictionary(Of String, Object), CancellationToken)
+  spec.csharp:
+  - uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+    name: CreateSessionAsync
+    href: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+    name: CreateSessionAsync
+    href: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
 - uid: Zaya.OCR.Impl.OneOcr.OneOcrConfig.ToDictionary*
   commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrConfig.ToDictionary
   href: Zaya.OCR.Impl.OneOcr.OneOcrConfig.html#Zaya_OCR_Impl_OneOcr_OneOcrConfig_ToDictionary

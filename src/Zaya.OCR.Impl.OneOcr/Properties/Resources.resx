@@ -24,8 +24,11 @@
   <data name="Ocr_Source_Desc" xml:space="preserve">
     <value>Where to load OneOCR files from</value>
   </data>
+  <data name="Ocr_Source_Auto" xml:space="preserve">
+    <value>Auto (SnippingTool, then URL)</value>
+  </data>
   <data name="Ocr_Source_SnippingTool" xml:space="preserve">
-    <value>SnippingTool (auto)</value>
+    <value>SnippingTool</value>
   </data>
   <data name="Ocr_Source_Directory" xml:space="preserve">
     <value>Local directory</value>
@@ -65,5 +68,23 @@
   </data>
   <data name="Ocr_Err_DownloadNotImplemented" xml:space="preserve">
     <value>Download source is not yet implemented. Use SnippingTool or directory.</value>
+  </data>
+  <data name="Ocr_MinConfidence" xml:space="preserve">
+    <value>Min confidence (%)</value>
+  </data>
+  <data name="Ocr_MinConfidence_Desc" xml:space="preserve">
+    <value>Words with confidence below this threshold are discarded (0 = keep all)</value>
+  </data>
+  <data name="Ocr_Err_DirectoryPathRequired" xml:space="preserve">
+    <value>Directory path is required when source is 'Directory'</value>
+  </data>
+  <data name="Ocr_Err_DownloadUrlRequired" xml:space="preserve">
+    <value>Download URL is required when source is 'Url'</value>
+  </data>
+  <data name="Ocr_Err_UnknownSource" xml:space="preserve">
+    <value>Unknown source: {0}</value>
+  </data>
+  <data name="Ocr_Err_NotInitialized" xml:space="preserve">
+    <value>OneOCR engine is not initialized. Call InitializeAsync first.</value>
   </data>
 </root>

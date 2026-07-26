@@ -98,7 +98,21 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.OneOcr.OneOcrConfig",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrConfig.yml\" sourcestartlinenumber=\"1\">Typed configuration for <xref href=\"Zaya.OCR.Impl.OneOcr.Services.OneOcrService\" data-throw-if-not-resolved=\"false\"></xref>.\nConverts to the dictionary format expected by <code>InitializeAsync</code>.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrConfig.yml\" sourcestartlinenumber=\"1\">Typed configuration for <xref href=\"Zaya.OCR.Impl.OneOcr.Services.OneOcrService\" data-throw-if-not-resolved=\"false\"></xref>.\nConverts to the dictionary format expected by <code>CreateSessionAsync</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.yml\" sourcestartlinenumber=\"1\">Thrown when the <code>directoryPath</code> setting is required but not provided (source is <code>Directory</code>).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -130,17 +144,17 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.yml",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.html"
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.yml\" sourcestartlinenumber=\"1\">Thrown when the URL-based engine download source is selected but not yet implemented.</p>\n"
+      "Title": "Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException.yml\" sourcestartlinenumber=\"1\">Thrown when the <code>downloadUrl</code> setting is required but not provided (source is <code>Url</code>).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -155,6 +169,20 @@
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException",
       "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException.yml\" sourcestartlinenumber=\"1\">Thrown when the <code>oneocr.onemodel</code> file is not found.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException.yml\" sourcestartlinenumber=\"1\">Thrown if <xref href=\"Zaya.OCR.Impl.OneOcr.Services.OneOcrService\" data-throw-if-not-resolved=\"false\"></xref> fails to initialize.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -186,6 +214,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.OneOcrUnknownSourceException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.OneOcr.OneOcrUnknownSourceException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.OneOcr.OneOcrUnknownSourceException",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.OneOcrUnknownSourceException.yml\" sourcestartlinenumber=\"1\">Thrown when an unknown source value is provided to <xref href=\"Zaya.OCR.Impl.OneOcr.Services.OneOcrService\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml",
       "output": {
         ".html": {
@@ -196,7 +238,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.OneOcr.Services.OneOcrService",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml\" sourcestartlinenumber=\"1\">OneOCR engine implementation of <xref href=\"Zaya.OCR.Services.IOCRService\" data-throw-if-not-resolved=\"false\"></xref> using P/Invoke\ninto the native <code>oneocr.dll</code> (Windows 11 SnippingTool OCR engine).\nNo WinRT, no Windows App SDK, no package identity required.\nCall <xref href=\"Zaya.OCR.Impl.OneOcr.Services.OneOcrService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> before creating sessions.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml\" sourcestartlinenumber=\"1\">OneOCR engine implementation of <xref href=\"Zaya.OCR.Services.IOCRService\" data-throw-if-not-resolved=\"false\"></xref> using P/Invoke\ninto the native <code>oneocr.dll</code> (Windows 11 SnippingTool OCR engine).\nNo WinRT, no Windows App SDK, no package identity required.\nPass engine settings directly to <xref href=\"Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -270,6 +312,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Models.ITextLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Models.ITextLine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Models.ITextLine",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.ITextLine.yml\" sourcestartlinenumber=\"1\">Represents a single line of text composed of one or more recognized words.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Models.ITextParagraph.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Models.ITextParagraph.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Models.ITextParagraph",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.ITextParagraph.yml\" sourcestartlinenumber=\"1\">Represents a paragraph of text composed of one or more lines.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Models.ITextResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Models.ITextResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Models.ITextResult",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.ITextResult.yml\" sourcestartlinenumber=\"1\">Represents the result of text layout processing: structured paragraphs\nparsed from individual OCR words.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/Zaya.OCR.Models.yml",
       "output": {
         ".html": {
@@ -294,7 +378,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Services.IOCRService",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.IOCRService.yml\" sourcestartlinenumber=\"1\">Provides text recognition (OCR) capabilities.\nCreate sessions with <xref href=\"Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> to perform recognition\nwith a fixed set of options.\nCall <xref href=\"Zaya.OCR.Services.IOCRService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> with engine-specific settings before use.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.IOCRService.yml\" sourcestartlinenumber=\"1\">Provides text recognition (OCR) capabilities.\nCreate sessions with <xref href=\"Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> to perform recognition\nwith a fixed set of options.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -308,35 +392,35 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Services.IOCRSession",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.IOCRSession.yml\" sourcestartlinenumber=\"1\">Represents an active OCR session with fixed recognition options.\nCreate via <xref href=\"Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.IOCRSession.yml\" sourcestartlinenumber=\"1\">Represents an active OCR session with fixed recognition options.\nCreate via <xref href=\"Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Services.OcrEngineInfo.yml",
+      "source_relative_path": "docs/api/Zaya.OCR.Services.ITextLayoutService.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Zaya.OCR.Services.OcrEngineInfo.html"
+          "relative_path": "api/Zaya.OCR.Services.ITextLayoutService.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Zaya.OCR.Services.OcrEngineInfo",
-      "Summary": null
+      "Title": "Zaya.OCR.Services.ITextLayoutService",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.ITextLayoutService.yml\" sourcestartlinenumber=\"1\">Merges individually recognized words from an <xref href=\"Zaya.OCR.Models.IOCRResult\" data-throw-if-not-resolved=\"false\"></xref>\ninto structured text blocks (paragraphs and lines) using configurable layout rules.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Services.OcrEngineProvider.yml",
+      "source_relative_path": "docs/api/Zaya.OCR.Services.ITextLayoutSession.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Zaya.OCR.Services.OcrEngineProvider.html"
+          "relative_path": "api/Zaya.OCR.Services.ITextLayoutSession.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Zaya.OCR.Services.OcrEngineProvider",
-      "Summary": null
+      "Title": "Zaya.OCR.Services.ITextLayoutSession",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.ITextLayoutSession.yml\" sourcestartlinenumber=\"1\">Represents an active text layout session with fixed processing parameters.\nCreate via <xref href=\"Zaya.OCR.Services.ITextLayoutService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -351,16 +435,6 @@
       "IsMRef": true,
       "Title": "Zaya.OCR.Services",
       "Summary": null
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "docs/api/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "api/index.html"
-        }
-      },
-      "version": ""
     },
     {
       "type": "Toc",
@@ -381,6 +455,16 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/articles/oneocr-settings.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/oneocr-settings.html"
         }
       },
       "version": ""

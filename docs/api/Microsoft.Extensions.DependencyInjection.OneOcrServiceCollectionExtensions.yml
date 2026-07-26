@@ -65,7 +65,7 @@ items:
   summary: >-
     Registers <xref href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService" data-throw-if-not-resolved="false"></xref> as a singleton <xref href="Zaya.OCR.Services.IOCRService" data-throw-if-not-resolved="false"></xref>.
 
-    Call <xref href="Zaya.OCR.Services.IOCRService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref> explicitly after the container is built.
+    Pass engine settings directly to <xref href="Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public static IServiceCollection AddOneOcr(this IServiceCollection services)
@@ -359,21 +359,21 @@ references:
   name: IOCRService
   nameWithType: IOCRService
   fullName: Zaya.OCR.Services.IOCRService
-- uid: Zaya.OCR.Services.IOCRService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
-  commentId: M:Zaya.OCR.Services.IOCRService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+- uid: Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+  commentId: M:Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
   parent: Zaya.OCR.Services.IOCRService
   isExternal: true
-  href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_InitializeAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
-  name: InitializeAsync(IReadOnlyDictionary<string, object>, CancellationToken)
-  nameWithType: IOCRService.InitializeAsync(IReadOnlyDictionary<string, object>, CancellationToken)
-  fullName: Zaya.OCR.Services.IOCRService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary<string, object>, System.Threading.CancellationToken)
-  nameWithType.vb: IOCRService.InitializeAsync(IReadOnlyDictionary(Of String, Object), CancellationToken)
-  fullName.vb: Zaya.OCR.Services.IOCRService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary(Of String, Object), System.Threading.CancellationToken)
-  name.vb: InitializeAsync(IReadOnlyDictionary(Of String, Object), CancellationToken)
+  href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
+  name: CreateSessionAsync(IReadOnlyDictionary<string, object>, CancellationToken)
+  nameWithType: IOCRService.CreateSessionAsync(IReadOnlyDictionary<string, object>, CancellationToken)
+  fullName: Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary<string, object>, System.Threading.CancellationToken)
+  nameWithType.vb: IOCRService.CreateSessionAsync(IReadOnlyDictionary(Of String, Object), CancellationToken)
+  fullName.vb: Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary(Of String, Object), System.Threading.CancellationToken)
+  name.vb: CreateSessionAsync(IReadOnlyDictionary(Of String, Object), CancellationToken)
   spec.csharp:
-  - uid: Zaya.OCR.Services.IOCRService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
-    name: InitializeAsync
-    href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_InitializeAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
+  - uid: Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+    name: CreateSessionAsync
+    href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
   - name: (
   - uid: System.Collections.Generic.IReadOnlyDictionary`2
     name: IReadOnlyDictionary
@@ -399,9 +399,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
   spec.vb:
-  - uid: Zaya.OCR.Services.IOCRService.InitializeAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
-    name: InitializeAsync
-    href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_InitializeAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
+  - uid: Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)
+    name: CreateSessionAsync
+    href: Zaya.OCR.Services.IOCRService.html#Zaya_OCR_Services_IOCRService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_
   - name: (
   - uid: System.Collections.Generic.IReadOnlyDictionary`2
     name: IReadOnlyDictionary

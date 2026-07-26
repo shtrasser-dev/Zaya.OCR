@@ -5,7 +5,7 @@ namespace Zaya.OCR.Services;
 
 /// <summary>
 /// Represents an active OCR session with fixed recognition options.
-/// Create via <see cref="IOCRService.CreateSessionAsync"/>.
+/// Create via <see cref="IOCRService.CreateSessionAsync(IReadOnlyDictionary{string, object}, CancellationToken)"/>.
 /// </summary>
 public interface IOCRSession : IDisposable
 {

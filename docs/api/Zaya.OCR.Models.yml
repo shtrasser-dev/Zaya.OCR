@@ -6,6 +6,9 @@ items:
   children:
   - Zaya.OCR.Models.IOCRResult
   - Zaya.OCR.Models.IOCRWord
+  - Zaya.OCR.Models.ITextLine
+  - Zaya.OCR.Models.ITextParagraph
+  - Zaya.OCR.Models.ITextResult
   langs:
   - csharp
   - vb
@@ -30,6 +33,24 @@ references:
   name: IOCRWord
   nameWithType: IOCRWord
   fullName: Zaya.OCR.Models.IOCRWord
+- uid: Zaya.OCR.Models.ITextLine
+  commentId: T:Zaya.OCR.Models.ITextLine
+  href: Zaya.OCR.Models.ITextLine.html
+  name: ITextLine
+  nameWithType: ITextLine
+  fullName: Zaya.OCR.Models.ITextLine
+- uid: Zaya.OCR.Models.ITextParagraph
+  commentId: T:Zaya.OCR.Models.ITextParagraph
+  href: Zaya.OCR.Models.ITextParagraph.html
+  name: ITextParagraph
+  nameWithType: ITextParagraph
+  fullName: Zaya.OCR.Models.ITextParagraph
+- uid: Zaya.OCR.Models.ITextResult
+  commentId: T:Zaya.OCR.Models.ITextResult
+  href: Zaya.OCR.Models.ITextResult.html
+  name: ITextResult
+  nameWithType: ITextResult
+  fullName: Zaya.OCR.Models.ITextResult
 - uid: Zaya.OCR.Models
   commentId: N:Zaya.OCR.Models
   href: Zaya.html

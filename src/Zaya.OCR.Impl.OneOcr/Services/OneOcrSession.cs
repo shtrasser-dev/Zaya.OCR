@@ -11,11 +11,13 @@ namespace Zaya.OCR.Impl.OneOcr.Services;
 public sealed class OneOcrSession : IOCRSession
 {
     private readonly OneOcrEngine _engine;
+    private readonly double _minConfidence;
     private bool _disposed;
 
-    internal OneOcrSession(OneOcrEngine engine)
+    internal OneOcrSession(OneOcrEngine engine, double minConfidence = 0)
     {
         _engine = engine;
+        _minConfidence = minConfidence;
     }
 
     /// <inheritdoc />
@@ -24,7 +26,7 @@ public sealed class OneOcrSession : IOCRSession
         cancellationToken.ThrowIfCancellationRequested();
 
         var pixelData = image.ToByteArray();
-        var nativeWords = _engine.Recognize(pixelData, image.Width, image.Height, image.Stride);
+        var nativeWords = _engine.Recognize(pixelData, image.Width, image.Height, image.Stride, _minConfidence);
 
         var words = nativeWords
             .Select(w => (IOCRWord)new OneOcrWord(w.Text, w.Bounds, w.Confidence))

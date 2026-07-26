@@ -1,4 +1,5 @@
 using System.Globalization;
+using Zaya.OCR.Impl.OneOcr.Constants;
 using Zaya.Primitives;
 
 namespace Zaya.OCR.Impl.OneOcr;
@@ -11,11 +12,11 @@ public sealed class OneOcrSnippingToolNotFoundException : LocalizedException
     /// <summary>
     /// Initializes a new instance of the <see cref="OneOcrSnippingToolNotFoundException"/> class.
     /// </summary>
-    public OneOcrSnippingToolNotFoundException() : base("Ocr_Err_SnippingToolNotFound") { }
+    public OneOcrSnippingToolNotFoundException() : base(LocalizationConstants.Exceptions.SnippingToolNotFound) { }
 
     /// <inheritdoc />
     public override string GetLocalizedMessage(CultureInfo culture)
-        => Properties.Resources.ResourceManager.GetString("Ocr_Err_SnippingToolNotFound", culture)
+        => Properties.Resources.ResourceManager.GetString(LocalizationConstants.Exceptions.SnippingToolNotFound, culture)
            ?? base.GetLocalizedMessage(culture);
 }
 
@@ -27,11 +28,11 @@ public sealed class OneOcrModelNotFoundException : LocalizedException
     /// <summary>
     /// Initializes a new instance of the <see cref="OneOcrModelNotFoundException"/> class.
     /// </summary>
-    public OneOcrModelNotFoundException() : base("Ocr_Err_ModelNotFound") { }
+    public OneOcrModelNotFoundException() : base(LocalizationConstants.Exceptions.ModelNotFound) { }
 
     /// <inheritdoc />
     public override string GetLocalizedMessage(CultureInfo culture)
-        => Properties.Resources.ResourceManager.GetString("Ocr_Err_ModelNotFound", culture)
+        => Properties.Resources.ResourceManager.GetString(LocalizationConstants.Exceptions.ModelNotFound, culture)
            ?? base.GetLocalizedMessage(culture);
 }
 
@@ -43,11 +44,11 @@ public sealed class OneOcrDllLoadException : LocalizedException
     /// <summary>
     /// Initializes a new instance of the <see cref="OneOcrDllLoadException"/> class.
     /// </summary>
-    public OneOcrDllLoadException() : base("Ocr_Err_DllLoadFailed") { }
+    public OneOcrDllLoadException() : base(LocalizationConstants.Exceptions.DllLoadFailed) { }
 
     /// <inheritdoc />
     public override string GetLocalizedMessage(CultureInfo culture)
-        => Properties.Resources.ResourceManager.GetString("Ocr_Err_DllLoadFailed", culture)
+        => Properties.Resources.ResourceManager.GetString(LocalizationConstants.Exceptions.DllLoadFailed, culture)
            ?? base.GetLocalizedMessage(culture);
 }
 
@@ -59,26 +60,88 @@ public sealed class OneOcrDllNotFoundException : LocalizedException
     /// <summary>
     /// Initializes a new instance of the <see cref="OneOcrDllNotFoundException"/> class.
     /// </summary>
-    public OneOcrDllNotFoundException() : base("Ocr_Err_DllNotFound") { }
+    public OneOcrDllNotFoundException() : base(LocalizationConstants.Exceptions.DllNotFound) { }
 
     /// <inheritdoc />
     public override string GetLocalizedMessage(CultureInfo culture)
-        => Properties.Resources.ResourceManager.GetString("Ocr_Err_DllNotFound", culture)
+        => Properties.Resources.ResourceManager.GetString(LocalizationConstants.Exceptions.DllNotFound, culture)
            ?? base.GetLocalizedMessage(culture);
 }
 
 /// <summary>
-/// Thrown when the URL-based engine download source is selected but not yet implemented.
+/// Thrown when the <c>directoryPath</c> setting is required but not provided (source is <c>Directory</c>).
 /// </summary>
-public sealed class OneOcrDownloadNotImplementedException : LocalizedException
+public sealed class OneOcrDirectoryPathRequiredException : LocalizedException
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="OneOcrDownloadNotImplementedException"/> class.
+    /// Initializes a new instance of the <see cref="OneOcrDirectoryPathRequiredException"/> class.
     /// </summary>
-    public OneOcrDownloadNotImplementedException() : base("Ocr_Err_DownloadNotImplemented") { }
+    public OneOcrDirectoryPathRequiredException() : base(LocalizationConstants.Exceptions.DirectoryPathRequired) { }
 
     /// <inheritdoc />
     public override string GetLocalizedMessage(CultureInfo culture)
-        => Properties.Resources.ResourceManager.GetString("Ocr_Err_DownloadNotImplemented", culture)
+        => Properties.Resources.ResourceManager.GetString(LocalizationConstants.Exceptions.DirectoryPathRequired, culture)
+           ?? base.GetLocalizedMessage(culture);
+}
+
+/// <summary>
+/// Thrown when the <c>downloadUrl</c> setting is required but not provided (source is <c>Url</c>).
+/// </summary>
+public sealed class OneOcrDownloadUrlRequiredException : LocalizedException
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="OneOcrDownloadUrlRequiredException"/> class.
+    /// </summary>
+    public OneOcrDownloadUrlRequiredException() : base(LocalizationConstants.Exceptions.DownloadUrlRequired) { }
+
+    /// <inheritdoc />
+    public override string GetLocalizedMessage(CultureInfo culture)
+        => Properties.Resources.ResourceManager.GetString(LocalizationConstants.Exceptions.DownloadUrlRequired, culture)
+           ?? base.GetLocalizedMessage(culture);
+}
+
+/// <summary>
+/// Thrown when an unknown source value is provided to <see cref="Services.OneOcrService"/>.
+/// </summary>
+public sealed class OneOcrUnknownSourceException : LocalizedException
+{
+    private readonly string _source;
+
+    /// <summary>
+    /// Gets the unknown source value that caused the exception.
+    /// </summary>
+    public string SourceValue => _source;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="OneOcrUnknownSourceException"/> class.
+    /// </summary>
+    /// <param name="source">The unrecognized source value.</param>
+    public OneOcrUnknownSourceException(string source) : base(LocalizationConstants.Exceptions.UnknownSource)
+    {
+        _source = source;
+    }
+
+    /// <inheritdoc />
+    public override string GetLocalizedMessage(CultureInfo culture)
+    {
+        var format = Properties.Resources.ResourceManager.GetString(LocalizationConstants.Exceptions.UnknownSource, culture)
+                     ?? base.GetLocalizedMessage(culture);
+        return string.Format(format, _source);
+    }
+}
+
+/// <summary>
+/// Thrown if <see cref="Services.OneOcrService"/> fails to initialize.
+/// </summary>
+public sealed class OneOcrNotInitializedException : LocalizedException
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="OneOcrNotInitializedException"/> class.
+    /// </summary>
+    public OneOcrNotInitializedException() : base(LocalizationConstants.Exceptions.NotInitialized) { }
+
+    /// <inheritdoc />
+    public override string GetLocalizedMessage(CultureInfo culture)
+        => Properties.Resources.ResourceManager.GetString(LocalizationConstants.Exceptions.NotInitialized, culture)
            ?? base.GetLocalizedMessage(culture);
 }

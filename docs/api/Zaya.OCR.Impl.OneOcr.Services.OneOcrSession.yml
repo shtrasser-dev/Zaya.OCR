@@ -62,7 +62,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: RecognizeAsync
     path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Services
@@ -102,7 +102,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Dispose
     path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
-    startLine: 40
+    startLine: 42
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Services

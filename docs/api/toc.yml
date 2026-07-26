@@ -17,17 +17,23 @@ items:
   - uid: Zaya.OCR.Impl.OneOcr.OneOcrConfig
     name: OneOcrConfig
     type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException
+    name: OneOcrDirectoryPathRequiredException
+    type: Class
   - uid: Zaya.OCR.Impl.OneOcr.OneOcrDllLoadException
     name: OneOcrDllLoadException
     type: Class
   - uid: Zaya.OCR.Impl.OneOcr.OneOcrDllNotFoundException
     name: OneOcrDllNotFoundException
     type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
-    name: OneOcrDownloadNotImplementedException
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException
+    name: OneOcrDownloadUrlRequiredException
     type: Class
   - uid: Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException
     name: OneOcrModelNotFoundException
+    type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrNotInitializedException
+    name: OneOcrNotInitializedException
     type: Class
   - uid: Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException
     name: OneOcrSnippingToolNotFoundException
@@ -35,6 +41,9 @@ items:
   - uid: Zaya.OCR.Impl.OneOcr.OneOcrSource
     name: OneOcrSource
     type: Enum
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrUnknownSourceException
+    name: OneOcrUnknownSourceException
+    type: Class
 - uid: Zaya.OCR.Impl.OneOcr.Models
   name: Zaya.OCR.Impl.OneOcr.Models
   type: Namespace
@@ -65,6 +74,15 @@ items:
   - uid: Zaya.OCR.Models.IOCRWord
     name: IOCRWord
     type: Interface
+  - uid: Zaya.OCR.Models.ITextLine
+    name: ITextLine
+    type: Interface
+  - uid: Zaya.OCR.Models.ITextParagraph
+    name: ITextParagraph
+    type: Interface
+  - uid: Zaya.OCR.Models.ITextResult
+    name: ITextResult
+    type: Interface
 - uid: Zaya.OCR.Services
   name: Zaya.OCR.Services
   type: Namespace
@@ -75,10 +93,10 @@ items:
   - uid: Zaya.OCR.Services.IOCRSession
     name: IOCRSession
     type: Interface
-  - uid: Zaya.OCR.Services.OcrEngineInfo
-    name: OcrEngineInfo
-    type: Class
-  - uid: Zaya.OCR.Services.OcrEngineProvider
-    name: OcrEngineProvider
-    type: Class
+  - uid: Zaya.OCR.Services.ITextLayoutService
+    name: ITextLayoutService
+    type: Interface
+  - uid: Zaya.OCR.Services.ITextLayoutSession
+    name: ITextLayoutSession
+    type: Interface
 memberLayout: SamePage

@@ -1,35 +1,35 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
-  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
-  id: OneOcrDownloadNotImplementedException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException
+  id: OneOcrDirectoryPathRequiredException
   parent: Zaya.OCR.Impl.OneOcr
   children:
-  - Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.#ctor
-  - Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.GetLocalizedMessage(System.Globalization.CultureInfo)
+  - Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.#ctor
+  - Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.GetLocalizedMessage(System.Globalization.CultureInfo)
   langs:
   - csharp
   - vb
-  name: OneOcrDownloadNotImplementedException
-  nameWithType: OneOcrDownloadNotImplementedException
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
+  name: OneOcrDirectoryPathRequiredException
+  nameWithType: OneOcrDirectoryPathRequiredException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException
   type: Class
   source:
     remote:
       path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
-    id: OneOcrDownloadNotImplementedException
+    id: OneOcrDirectoryPathRequiredException
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 72
+    startLine: 73
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Thrown when the URL-based engine download source is selected but not yet implemented.
+  summary: Thrown when the <code>directoryPath</code> setting is required but not provided (source is <code>Directory</code>).
   example: []
   syntax:
-    content: 'public sealed class OneOcrDownloadNotImplementedException : LocalizedException, ISerializable'
-    content.vb: Public NotInheritable Class OneOcrDownloadNotImplementedException Inherits LocalizedException Implements ISerializable
+    content: 'public sealed class OneOcrDirectoryPathRequiredException : LocalizedException, ISerializable'
+    content.vb: Public NotInheritable Class OneOcrDirectoryPathRequiredException Inherits LocalizedException Implements ISerializable
   inheritance:
   - System.Object
   - System.Exception
@@ -52,16 +52,16 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.#ctor
-  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.#ctor
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.#ctor
+  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.#ctor
   id: '#ctor'
-  parent: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
+  parent: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException
   langs:
   - csharp
   - vb
-  name: OneOcrDownloadNotImplementedException()
-  nameWithType: OneOcrDownloadNotImplementedException.OneOcrDownloadNotImplementedException()
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.OneOcrDownloadNotImplementedException()
+  name: OneOcrDirectoryPathRequiredException()
+  nameWithType: OneOcrDirectoryPathRequiredException.OneOcrDirectoryPathRequiredException()
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.OneOcrDirectoryPathRequiredException()
   type: Constructor
   source:
     remote:
@@ -70,29 +70,29 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 77
+    startLine: 78
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Initializes a new instance of the <xref href="Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException" data-throw-if-not-resolved="false"></xref> class.
+  summary: Initializes a new instance of the <xref href="Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException" data-throw-if-not-resolved="false"></xref> class.
   example: []
   syntax:
-    content: public OneOcrDownloadNotImplementedException()
+    content: public OneOcrDirectoryPathRequiredException()
     content.vb: Public Sub New()
-  overload: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.#ctor*
-  nameWithType.vb: OneOcrDownloadNotImplementedException.New()
-  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.New()
+  overload: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.#ctor*
+  nameWithType.vb: OneOcrDirectoryPathRequiredException.New()
+  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.New()
   name.vb: New()
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.GetLocalizedMessage(System.Globalization.CultureInfo)
-  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.GetLocalizedMessage(System.Globalization.CultureInfo)
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.GetLocalizedMessage(System.Globalization.CultureInfo)
+  commentId: M:Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.GetLocalizedMessage(System.Globalization.CultureInfo)
   id: GetLocalizedMessage(System.Globalization.CultureInfo)
-  parent: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
+  parent: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException
   langs:
   - csharp
   - vb
   name: GetLocalizedMessage(CultureInfo)
-  nameWithType: OneOcrDownloadNotImplementedException.GetLocalizedMessage(CultureInfo)
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.GetLocalizedMessage(System.Globalization.CultureInfo)
+  nameWithType: OneOcrDirectoryPathRequiredException.GetLocalizedMessage(CultureInfo)
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.GetLocalizedMessage(System.Globalization.CultureInfo)
   type: Method
   source:
     remote:
@@ -101,7 +101,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: GetLocalizedMessage
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrExceptions.cs
-    startLine: 80
+    startLine: 81
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -123,7 +123,7 @@ items:
       description: The localized error message.
     content.vb: Public Overrides Function GetLocalizedMessage(culture As CultureInfo) As String
   overridden: Zaya.Primitives.LocalizedException.GetLocalizedMessage(System.Globalization.CultureInfo)
-  overload: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.GetLocalizedMessage*
+  overload: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.GetLocalizedMessage*
 references:
 - uid: Zaya.OCR.Impl.OneOcr
   commentId: N:Zaya.OCR.Impl.OneOcr
@@ -540,20 +540,20 @@ references:
     name: Serialization
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
-  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
-  href: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.html
-  name: OneOcrDownloadNotImplementedException
-  nameWithType: OneOcrDownloadNotImplementedException
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.#ctor*
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.#ctor
-  href: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.html#Zaya_OCR_Impl_OneOcr_OneOcrDownloadNotImplementedException__ctor
-  name: OneOcrDownloadNotImplementedException
-  nameWithType: OneOcrDownloadNotImplementedException.OneOcrDownloadNotImplementedException
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.OneOcrDownloadNotImplementedException
-  nameWithType.vb: OneOcrDownloadNotImplementedException.New
-  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.New
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException
+  href: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.html
+  name: OneOcrDirectoryPathRequiredException
+  nameWithType: OneOcrDirectoryPathRequiredException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.#ctor*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.#ctor
+  href: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.html#Zaya_OCR_Impl_OneOcr_OneOcrDirectoryPathRequiredException__ctor
+  name: OneOcrDirectoryPathRequiredException
+  nameWithType: OneOcrDirectoryPathRequiredException.OneOcrDirectoryPathRequiredException
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.OneOcrDirectoryPathRequiredException
+  nameWithType.vb: OneOcrDirectoryPathRequiredException.New
+  fullName.vb: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.New
   name.vb: New
 - uid: Zaya.Primitives.LocalizedException.GetLocalizedMessage(System.Globalization.CultureInfo)
   commentId: M:Zaya.Primitives.LocalizedException.GetLocalizedMessage(System.Globalization.CultureInfo)
@@ -583,12 +583,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo
   - name: )
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.GetLocalizedMessage*
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.GetLocalizedMessage
-  href: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.html#Zaya_OCR_Impl_OneOcr_OneOcrDownloadNotImplementedException_GetLocalizedMessage_System_Globalization_CultureInfo_
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.GetLocalizedMessage*
+  commentId: Overload:Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.GetLocalizedMessage
+  href: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.html#Zaya_OCR_Impl_OneOcr_OneOcrDirectoryPathRequiredException_GetLocalizedMessage_System_Globalization_CultureInfo_
   name: GetLocalizedMessage
-  nameWithType: OneOcrDownloadNotImplementedException.GetLocalizedMessage
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDownloadNotImplementedException.GetLocalizedMessage
+  nameWithType: OneOcrDirectoryPathRequiredException.GetLocalizedMessage
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException.GetLocalizedMessage
 - uid: System.Globalization.CultureInfo
   commentId: T:System.Globalization.CultureInfo
   parent: System.Globalization
