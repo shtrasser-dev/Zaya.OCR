@@ -1,4 +1,4 @@
-# Versioning (Zaya.OCR)
+﻿# Versioning (Zaya.OCR)
 
 Aligned with the ScreenTranslator updater plan and **Zaya.Primitives** compatibility channel.
 
@@ -7,8 +7,8 @@ Aligned with the ScreenTranslator updater plan and **Zaya.Primitives** compatibi
 | Artifact | Rule | Example |
 |----------|------|---------|
 | `Zaya.Primitives` | `MAJOR.MINOR.0` | `0.4.0` |
-| This repo (`Directory.Build.props`) | Same `MAJOR.MINOR`, own `PATCH` | `0.4.0` |
-| GitHub Release (immutable) | `plugin-v{MAJOR.MINOR.PATCH}` | `plugin-v0.4.0` |
+| This repo (`Directory.Build.props`) | Same `MAJOR.MINOR`, own `PATCH` | `0.4.1` |
+| GitHub Release (immutable) | `plugin-v{MAJOR.MINOR.PATCH}` | `plugin-v0.4.1` |
 | GitHub Release (floating) | `plugin-v{MAJOR.MINOR}-latest` | `plugin-v0.4-latest` |
 
 All NuGet packages and plugin zips use the same `Version` from [`Directory.Build.props`](../Directory.Build.props).
@@ -28,8 +28,8 @@ Each contains `plugin.json`:
   "id": "OneOcr",
   "type": "ocr",
   "interface": "Zaya.OCR",
-  "interfaceVersion": "0.4.0",
-  "pluginVersion": "0.4.0",
+  "interfaceVersion": "0.4.1",
+  "pluginVersion": "0.4.1",
   "primitivesChannel": "0.4"
 }
 ```
@@ -38,7 +38,7 @@ Hosts discover updates via:
 
 `GET /repos/shtrasser-dev/Zaya.OCR/releases/tags/plugin-v0.4-latest`
 
-Release `name` is `Plugin v0.4.0` (semver for comparison without downloading the zip).
+Release `name` is `Plugin v0.4.1` (semver for comparison without downloading the zip).
 
 ## Bumping
 

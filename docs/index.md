@@ -1,4 +1,4 @@
-# Zaya.OCR
+﻿# Zaya.OCR
 
 Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines expose metadata and `SettingDescriptor`s, hosts pass settings into `CreateSessionAsync`.
 
@@ -6,10 +6,10 @@ Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines ex
 
 | Package | Version | Role |
 |---------|---------|------|
-| **Zaya.OCR** | 0.4.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
-| **Zaya.OCR.Impl.OneOcr** | 0.4.0 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
-| **Zaya.OCR.Impl.WindowsMediaOcr** | 0.4.0 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
-| **Zaya.OCR.Impl.ProximityTextLayout** | 0.4.0 | Merges OCR words into lines/paragraphs by proximity heuristics |
+| **Zaya.OCR** | 0.4.1 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
+| **Zaya.OCR.Impl.OneOcr** | 0.4.1 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
+| **Zaya.OCR.Impl.WindowsMediaOcr** | 0.4.1 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 0.4.1 | Merges OCR words into lines/paragraphs by proximity heuristics |
 
 Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **0.4.0** (channel `0.4`). See [versioning](versioning.md).
 
@@ -25,11 +25,11 @@ There is no separate `InitializeAsync`: create a session with defaults or an exp
 ## Installation
 
 ```xml
-<PackageReference Include="Zaya.OCR" Version="0.4.0" />
-<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="0.4.0" />
+<PackageReference Include="Zaya.OCR" Version="0.4.1" />
+<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="0.4.1" />
 <!-- optional -->
-<PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="0.4.0" />
-<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="0.4.0" />
+<PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="0.4.1" />
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="0.4.1" />
 ```
 
 ## Quick Start

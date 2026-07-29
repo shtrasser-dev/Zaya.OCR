@@ -374,7 +374,9 @@ internal sealed class OneOcrEngine : IDisposable
                     if (res != S_OK || word == 0) continue;
 
                     res = _getWordContent(word, out long contentPtr);
-                    var text = Marshal.PtrToStringAnsi((nint)contentPtr) ?? "";
+                    // oneocr.dll returns UTF-8; PtrToStringAnsi uses the system ANSI code page
+                    // (e.g. Windows-1251 on Russian Win10), which mojibakes Cyrillic.
+                    var text = Marshal.PtrToStringUTF8((nint)contentPtr) ?? "";
 
                     res = _getWordBoundingBox(word, out long boxPtr);
                     var bounds = ParseBoundingBox((nint)boxPtr);
