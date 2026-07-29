@@ -1,27 +1,19 @@
 ﻿# Versioning (Zaya.OCR)
 
-Aligned with the ScreenTranslator updater plan and **Zaya.Primitives** compatibility channel.
+Three independent axes — do not bump them together unless required.
 
-## Versions
+| Axis | Source | Example |
+|------|--------|---------|
+| **primitivesChannel** | `ZayaPrimitivesVersion` → `MAJOR.MINOR` | `0.4` |
+| **interfaceVersion** | Version of package **Zaya.OCR** (abstractions) | `0.4.1` |
+| **pluginVersion** | Version of each **Impl** csproj | OneOcr `0.4.1`, others may differ |
 
-| Artifact | Rule | Example |
-|----------|------|---------|
-| `Zaya.Primitives` | `MAJOR.MINOR.0` | `0.4.0` |
-| This repo (`Directory.Build.props`) | Same `MAJOR.MINOR`, own `PATCH` | `0.4.1` |
-| GitHub Release (immutable) | `plugin-v{MAJOR.MINOR.PATCH}` | `plugin-v0.4.1` |
-| GitHub Release (floating) | `plugin-v{MAJOR.MINOR}-latest` | `plugin-v0.4-latest` |
+- Host must ship the same **Zaya.OCR** assembly version as `interfaceVersion` in the zip.
+- Bugfixes in one engine: raise only that Impl’s `<Version>`; leave abstractions unchanged.
+- GitHub floating tag: `plugin-v{primitivesChannel}-latest` (e.g. `plugin-v0.4-latest`).
+- Immutable tag: `plugin-v{maxPluginVersion}` among assets in the release.
 
-All NuGet packages and plugin zips use the same `Version` from [`Directory.Build.props`](../Directory.Build.props).
-
-## Plugin zips
-
-Stable names (no version in the filename), multi-asset release:
-
-- `Zaya.OCR.Impl.OneOcr.zip`
-- `Zaya.OCR.Impl.WindowsMediaOcr.zip`
-- `Zaya.OCR.Impl.ProximityTextLayout.zip`
-
-Each contains `plugin.json`:
+## plugin.json
 
 ```json
 {
@@ -34,14 +26,10 @@ Each contains `plugin.json`:
 }
 ```
 
-Hosts discover updates via:
-
-`GET /repos/shtrasser-dev/Zaya.OCR/releases/tags/plugin-v0.4-latest`
-
-Release `name` is `Plugin v0.4.1` (semver for comparison without downloading the zip).
+Release body lists per-asset versions (`Zaya.OCR.Impl.OneOcr.zip=0.4.1`) for the host updater.
 
 ## Bumping
 
-1. Edit `Version` / `ZayaPrimitivesVersion` in `Directory.Build.props`.
-2. Run `build.cmd` (or publish workflow).
-3. CI creates `plugin-v{ver}` and refreshes `plugin-v{channel}-latest`.
+1. Abstractions / host contract: edit default `Version` in `Directory.Build.props`, then update ScreenTranslator.
+2. Single engine: set `<Version>` only in that Impl’s `.csproj`.
+3. Run `build.cmd` / Publish workflow.
