@@ -1,16 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>13</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
-    <PackageId>Zaya.OCR.Impl.OneOcr</PackageId>
-    <Description>OneOCR engine implementation for Zaya.OCR. Uses P/Invoke into native oneocr.dll (Windows 11 Snipping Tool OCR); no WinRT or Windows App SDK package identity required.</Description>
-    <PackageTags>ocr;text-recognition;oneocr;windows</PackageTags>
+    <PackageId>Zaya.OCR.Impl.WindowsMediaOcr</PackageId>
+    <Description>Windows.Media.Ocr engine implementation for Zaya.OCR. Uses the official WinRT OCR API (Windows 10+). Desktop hosts typically need package identity (MSIX).</Description>
+    <PackageTags>ocr;text-recognition;windows;winrt;windows-media-ocr</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Authors>SHTrassEr</Authors>

@@ -4,42 +4,55 @@ setlocal enabledelayedexpansion
 set ROOT=%~dp0
 set STAGEDIR=%TEMP%\Zaya.OCR\staging
 
-echo === Building Zaya.OCR.Impl.OneOcr ===
+if "%CI%"=="true" (
+    set BUILD_CONFIG=Release
+) else (
+    set BUILD_CONFIG=Debug
+)
 
-dotnet build "%ROOT%src\Zaya.OCR.Impl.OneOcr\Zaya.OCR.Impl.OneOcr.csproj" -c Release
+echo === Building Zaya.OCR.Impl.OneOcr (%BUILD_CONFIG%) ===
+
+dotnet build "%ROOT%src\Zaya.OCR.Impl.OneOcr\Zaya.OCR.Impl.OneOcr.csproj" -c %BUILD_CONFIG%
 if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
-echo === Building Zaya.OCR.Impl.ProximityTextLayout ===
+echo === Building Zaya.OCR.Impl.WindowsMediaOcr (%BUILD_CONFIG%) ===
 
-dotnet build "%ROOT%src\Zaya.OCR.Impl.ProximityTextLayout\Zaya.OCR.Impl.ProximityTextLayout.csproj" -c Release
+dotnet build "%ROOT%src\Zaya.OCR.Impl.WindowsMediaOcr\Zaya.OCR.Impl.WindowsMediaOcr.csproj" -c %BUILD_CONFIG%
 if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
-echo === Detecting versions ===
+echo === Building Zaya.OCR.Impl.ProximityTextLayout (%BUILD_CONFIG%) ===
 
-for /f "tokens=*" %%a in ('findstr /i "<Version>" "%ROOT%src\Zaya.OCR\Zaya.OCR.csproj"') do set INF_LINE=%%a
-set INF_LINE=!INF_LINE:^<Version^>=!
-set INF_LINE=!INF_LINE:^</Version^>=!
-set INF_MAJOR=!INF_LINE:~0,1!
-if "!INF_MAJOR!"=="" set INF_MAJOR=1
+dotnet build "%ROOT%src\Zaya.OCR.Impl.ProximityTextLayout\Zaya.OCR.Impl.ProximityTextLayout.csproj" -c %BUILD_CONFIG%
+if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
-for /f "tokens=*" %%a in ('findstr /i "<Version>" "%ROOT%src\Zaya.OCR.Impl.OneOcr\Zaya.OCR.Impl.OneOcr.csproj"') do set IMPL_LINE=%%a
-set IMPL_LINE=!IMPL_LINE:^<Version^>=!
-set IMPL_LINE=!IMPL_LINE:^</Version^>=!
-if "!IMPL_LINE!"=="" set IMPL_LINE=1.0.0
+echo === Detecting version ===
 
-set LAYOUT_VERSION=!IMPL_LINE!
+for /f "usebackq delims=" %%a in (`dotnet msbuild "%ROOT%src\Zaya.OCR\Zaya.OCR.csproj" -getProperty:Version -nologo -v:q`) do set VER=%%a
+set VER=!VER: =!
+if "!VER!"=="" set VER=0.4.0
+
+for /f "tokens=1,2,3 delims=." %%a in ("!VER!") do (
+    set VER_MAJOR=%%a
+    set VER_MINOR=%%b
+    set VER_PATCH=%%c
+)
+set CHANNEL=!VER_MAJOR!.!VER_MINOR!
+echo   Version=!VER!  Channel=!CHANNEL!
 
 echo === Preparing output directory ===
 
 rmdir /s /q "%ROOT%out" 2>nul
 mkdir "%ROOT%out" 2>nul
 
+echo !VER!>"%ROOT%out\version.txt"
+echo !CHANNEL!>"%ROOT%out\channel.txt"
+
 echo === Creating Zaya.OCR.Impl.OneOcr plugin.zip ===
 
 rmdir /s /q "%STAGEDIR%" 2>nul
 mkdir "%STAGEDIR%"
 
-set OOCR_TFM=%ROOT%src\Zaya.OCR.Impl.OneOcr\bin\Release\net8.0-windows10.0.22621.0
+set OOCR_TFM=%ROOT%src\Zaya.OCR.Impl.OneOcr\bin\%BUILD_CONFIG%\net8.0-windows10.0.22621.0
 
 copy /y "%OOCR_TFM%\Zaya.OCR.Impl.OneOcr.dll" "%STAGEDIR%"
 if %ERRORLEVEL% neq 0 (
@@ -55,19 +68,50 @@ echo {>"%PLUGIN_JSON%"
 echo   "id": "OneOcr",>>"%PLUGIN_JSON%"
 echo   "type": "ocr",>>"%PLUGIN_JSON%"
 echo   "interface": "Zaya.OCR",>>"%PLUGIN_JSON%"
-echo   "interfaceVersion": "!INF_MAJOR!.0.0",>>"%PLUGIN_JSON%"
-echo   "pluginVersion": "!IMPL_LINE!">>"%PLUGIN_JSON%"
+echo   "interfaceVersion": "!VER!",>>"%PLUGIN_JSON%"
+echo   "pluginVersion": "!VER!",>>"%PLUGIN_JSON%"
+echo   "primitivesChannel": "!CHANNEL!">>"%PLUGIN_JSON%"
 echo }>>"%PLUGIN_JSON%"
 
-powershell -Command "Compress-Archive -Path '%STAGEDIR%\*' -DestinationPath '%ROOT%out\Zaya.OCR.Impl.OneOcr-!IMPL_LINE!.zip' -Force"
-echo   out\Zaya.OCR.Impl.OneOcr-!IMPL_LINE!.zip
+REM Stable asset name (no version in filename) for host updater.
+powershell -Command "Compress-Archive -Path '%STAGEDIR%\*' -DestinationPath '%ROOT%out\Zaya.OCR.Impl.OneOcr.zip' -Force"
+echo   out\Zaya.OCR.Impl.OneOcr.zip
+
+echo === Creating Zaya.OCR.Impl.WindowsMediaOcr plugin.zip ===
+
+rmdir /s /q "%STAGEDIR%" 2>nul
+mkdir "%STAGEDIR%"
+
+set WMO_TFM=%ROOT%src\Zaya.OCR.Impl.WindowsMediaOcr\bin\%BUILD_CONFIG%\net8.0-windows10.0.19041.0
+
+copy /y "%WMO_TFM%\Zaya.OCR.Impl.WindowsMediaOcr.dll" "%STAGEDIR%"
+if %ERRORLEVEL% neq 0 (
+    echo ERROR: Could not find WindowsMediaOcr DLL
+    exit /b 1
+)
+
+call :CopySatellites "%WMO_TFM%" "%STAGEDIR%"
+
+set PLUGIN_JSON=%STAGEDIR%\plugin.json
+
+echo {>"%PLUGIN_JSON%"
+echo   "id": "WindowsMediaOcr",>>"%PLUGIN_JSON%"
+echo   "type": "ocr",>>"%PLUGIN_JSON%"
+echo   "interface": "Zaya.OCR",>>"%PLUGIN_JSON%"
+echo   "interfaceVersion": "!VER!",>>"%PLUGIN_JSON%"
+echo   "pluginVersion": "!VER!",>>"%PLUGIN_JSON%"
+echo   "primitivesChannel": "!CHANNEL!">>"%PLUGIN_JSON%"
+echo }>>"%PLUGIN_JSON%"
+
+powershell -Command "Compress-Archive -Path '%STAGEDIR%\*' -DestinationPath '%ROOT%out\Zaya.OCR.Impl.WindowsMediaOcr.zip' -Force"
+echo   out\Zaya.OCR.Impl.WindowsMediaOcr.zip
 
 echo === Creating Zaya.OCR.Impl.ProximityTextLayout plugin.zip ===
 
 rmdir /s /q "%STAGEDIR%" 2>nul
 mkdir "%STAGEDIR%"
 
-set LAYOUT_TFM=%ROOT%src\Zaya.OCR.Impl.ProximityTextLayout\bin\Release\net8.0
+set LAYOUT_TFM=%ROOT%src\Zaya.OCR.Impl.ProximityTextLayout\bin\%BUILD_CONFIG%\net8.0
 
 copy /y "%LAYOUT_TFM%\Zaya.OCR.Impl.ProximityTextLayout.dll" "%STAGEDIR%"
 if %ERRORLEVEL% neq 0 (
@@ -83,29 +127,33 @@ echo {>"%PLUGIN_JSON%"
 echo   "id": "ProximityTextLayout",>>"%PLUGIN_JSON%"
 echo   "type": "textlayout",>>"%PLUGIN_JSON%"
 echo   "interface": "Zaya.OCR",>>"%PLUGIN_JSON%"
-echo   "interfaceVersion": "!INF_MAJOR!.0.0",>>"%PLUGIN_JSON%"
-echo   "pluginVersion": "!LAYOUT_VERSION!">>"%PLUGIN_JSON%"
+echo   "interfaceVersion": "!VER!",>>"%PLUGIN_JSON%"
+echo   "pluginVersion": "!VER!",>>"%PLUGIN_JSON%"
+echo   "primitivesChannel": "!CHANNEL!">>"%PLUGIN_JSON%"
 echo }>>"%PLUGIN_JSON%"
 
-powershell -Command "Compress-Archive -Path '%STAGEDIR%\*' -DestinationPath '%ROOT%out\Zaya.OCR.Impl.ProximityTextLayout-!LAYOUT_VERSION!.zip' -Force"
-echo   out\Zaya.OCR.Impl.ProximityTextLayout-!LAYOUT_VERSION!.zip
+powershell -Command "Compress-Archive -Path '%STAGEDIR%\*' -DestinationPath '%ROOT%out\Zaya.OCR.Impl.ProximityTextLayout.zip' -Force"
+echo   out\Zaya.OCR.Impl.ProximityTextLayout.zip
 
 echo === Packing NuGet packages ===
 
-dotnet pack "%ROOT%src\Zaya.OCR.Impl.OneOcr\Zaya.OCR.Impl.OneOcr.csproj" -c Release -o "%ROOT%out" --no-build
+dotnet pack "%ROOT%src\Zaya.OCR.Impl.OneOcr\Zaya.OCR.Impl.OneOcr.csproj" -c %BUILD_CONFIG% -o "%ROOT%out" --no-build
 if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
-dotnet pack "%ROOT%src\Zaya.OCR.Impl.ProximityTextLayout\Zaya.OCR.Impl.ProximityTextLayout.csproj" -c Release -o "%ROOT%out" --no-build
+dotnet pack "%ROOT%src\Zaya.OCR.Impl.WindowsMediaOcr\Zaya.OCR.Impl.WindowsMediaOcr.csproj" -c %BUILD_CONFIG% -o "%ROOT%out" --no-build
 if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
-dotnet pack "%ROOT%src\Zaya.OCR\Zaya.OCR.csproj" -c Release -o "%ROOT%out" --no-build
+dotnet pack "%ROOT%src\Zaya.OCR.Impl.ProximityTextLayout\Zaya.OCR.Impl.ProximityTextLayout.csproj" -c %BUILD_CONFIG% -o "%ROOT%out" --no-build
+if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
+
+dotnet pack "%ROOT%src\Zaya.OCR\Zaya.OCR.csproj" -c %BUILD_CONFIG% -o "%ROOT%out" --no-build
 if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
 echo === Cleaning up ===
 
 rmdir /s /q "%STAGEDIR%" 2>nul
 
-echo === Done: version !IMPL_LINE! ===
+echo === Done: version !VER! channel !CHANNEL! ===
 goto :eof
 
 :CopySatellites

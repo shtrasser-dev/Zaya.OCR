@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ocr_EngineName" xml:space="preserve">
+    <value>Windows Media OCR</value>
+  </data>
+  <data name="Ocr_EngineDesc" xml:space="preserve">
+    <value>Официальный WinRT API Windows.Media.Ocr (Windows 10+). Для desktop обычно нужна MSIX package identity; языковые пакеты OCR — в параметрах Windows.</value>
+  </data>
+  <data name="Ocr_Language" xml:space="preserve">
+    <value>Язык OCR</value>
+  </data>
+  <data name="Ocr_Language_Desc" xml:space="preserve">
+    <value>Язык распознавания. Auto берёт языки профиля пользователя Windows.</value>
+  </data>
+  <data name="Ocr_Language_Auto" xml:space="preserve">
+    <value>Авто (языки профиля)</value>
+  </data>
+  <data name="Ocr_Err_LanguageNotSupported" xml:space="preserve">
+    <value>Язык OCR '{0}' не установлен или не поддерживается. Установите языковой пакет OCR в параметрах Windows.</value>
+  </data>
+  <data name="Ocr_Err_EngineCreateFailed" xml:space="preserve">
+    <value>Не удалось создать Windows.Media.Ocr. Установите языковые пакеты OCR и убедитесь, что у хоста есть package identity (MSIX), если это требуется.</value>
+  </data>
+  <data name="Ocr_Err_UnsupportedPixelFormat" xml:space="preserve">
+    <value>Неподдерживаемый формат пикселей '{0}'. Ожидается BGRA32.</value>
+  </data>
+  <data name="Ocr_Err_RecognizeFailed" xml:space="preserve">
+    <value>Ошибка распознавания Windows.Media.Ocr: {0}</value>
+  </data>
+  <data name="Ocr_Err_NotAvailable" xml:space="preserve">
+    <value>Windows.Media.Ocr недоступен на этой системе (нужен Windows 10 или новее).</value>
+  </data>
+</root>

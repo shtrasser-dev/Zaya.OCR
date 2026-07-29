@@ -2,3 +2,5 @@
   href: getting-started.md
 - name: OneOCR settings
   href: oneocr-settings.md
+- name: Windows Media OCR settings
+  href: windows-media-ocr-settings.md

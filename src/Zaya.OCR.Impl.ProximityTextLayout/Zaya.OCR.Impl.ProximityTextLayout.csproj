@@ -6,7 +6,6 @@
     <Nullable>enable</Nullable>
     <LangVersion>13</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.3.1</Version>
 
     <PackageId>Zaya.OCR.Impl.ProximityTextLayout</PackageId>
     <Description>Proximity-based text layout engine for Zaya.OCR. Merges OCR words into paragraphs using distance heuristics.</Description>

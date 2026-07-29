@@ -28,6 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Zaya.OCR\Zaya.OCR.csproj" />
     <ProjectReference Include="..\..\src\Zaya.OCR.Impl.OneOcr\Zaya.OCR.Impl.OneOcr.csproj" />
+    <ProjectReference Include="..\..\src\Zaya.OCR.Impl.WindowsMediaOcr\Zaya.OCR.Impl.WindowsMediaOcr.csproj" />
   </ItemGroup>
 
   <ItemGroup>

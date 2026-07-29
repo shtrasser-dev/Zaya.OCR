@@ -3,7 +3,11 @@
     {
       "src": [
         {
-          "files": ["src/Zaya.OCR/Zaya.OCR.csproj", "src/Zaya.OCR.Impl.OneOcr/Zaya.OCR.Impl.OneOcr.csproj"],
+          "files": [
+            "src/Zaya.OCR/Zaya.OCR.csproj",
+            "src/Zaya.OCR.Impl.OneOcr/Zaya.OCR.Impl.OneOcr.csproj",
+            "src/Zaya.OCR.Impl.WindowsMediaOcr/Zaya.OCR.Impl.WindowsMediaOcr.csproj"
+          ],
           "src": "."
         }
       ],
