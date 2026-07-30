@@ -34,6 +34,7 @@ items:
     content.vb: Public Interface IOCRSession Inherits IDisposable
   derivedClasses:
   - Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  - Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession
   inheritedMembers:
   - System.IDisposable.Dispose
 - uid: Zaya.OCR.Services.IOCRSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)

@@ -18,6 +18,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions",
+      "Summary": "<p sourcefile=\"docs/api/Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions.yml\" sourcestartlinenumber=\"1\">Extension methods for registering Windows.Media.Ocr services in a dependency injection container.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/Microsoft.Extensions.DependencyInjection.yml",
       "output": {
         ".html": {
@@ -284,6 +298,202 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.OCR.Models.IOCRResult\" data-throw-if-not-resolved=\"false\"></xref> for Windows.Media.Ocr results.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.OCR.Models.IOCRWord\" data-throw-if-not-resolved=\"false\"></xref> for Windows.Media.Ocr results.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions.yml\" sourcestartlinenumber=\"1\">Extension methods for <xref href=\"Zaya.OCR.Services.IOCRSession\" data-throw-if-not-resolved=\"false\"></xref> to accept <xref href=\"System.Drawing.Bitmap\" data-throw-if-not-resolved=\"false\"></xref> input.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService.yml\" sourcestartlinenumber=\"1\">Windows.Media.Ocr implementation of <xref href=\"Zaya.OCR.Services.IOCRService\" data-throw-if-not-resolved=\"false\"></xref>.\nUses the official WinRT OCR API available on Windows 10+.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.yml\" sourcestartlinenumber=\"1\">OCR session backed by <xref href=\"Windows.Media.Ocr.OcrEngine\" data-throw-if-not-resolved=\"false\"></xref> (<code>Windows.Media.Ocr</code>).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig.yml\" sourcestartlinenumber=\"1\">Typed configuration for <xref href=\"Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService\" data-throw-if-not-resolved=\"false\"></xref>.\nConverts to the dictionary format expected by <code>CreateSessionAsync</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException.yml\" sourcestartlinenumber=\"1\">Thrown when <code>OcrEngine</code> cannot be created (no language packs / package identity / API failure).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException.yml\" sourcestartlinenumber=\"1\">Thrown when the requested OCR language is not installed or not supported by <code>Windows.Media.Ocr</code>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException.yml\" sourcestartlinenumber=\"1\">Thrown when Windows.Media.Ocr is not available on the current system.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException.yml\" sourcestartlinenumber=\"1\">Thrown when <code>RecognizeAsync</code> fails.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException.yml\" sourcestartlinenumber=\"1\">Thrown when the input image pixel format is not supported.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/Zaya.OCR.Impl.WindowsMediaOcr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Zaya.OCR.Impl.WindowsMediaOcr.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Zaya.OCR.Impl.WindowsMediaOcr",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/Zaya.OCR.Models.IOCRResult.yml",
       "output": {
         ".html": {
@@ -484,6 +694,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "docs/articles/windows-media-ocr-settings.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/windows-media-ocr-settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/index.md",
       "output": {
         ".html": {
@@ -501,6 +721,16 @@
         },
         ".json": {
           "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/versioning.md",
+      "output": {
+        ".html": {
+          "relative_path": "versioning.html"
         }
       },
       "version": ""

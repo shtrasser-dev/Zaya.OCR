@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Namespace Microsoft.Extensions.DependencyInjection </title>
+      <title>Namespace Zaya.OCR.Impl.WindowsMediaOcr </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Namespace Microsoft.Extensions.DependencyInjection ">
+      <meta name="title" content="Namespace Zaya.OCR.Impl.WindowsMediaOcr ">
     
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -66,20 +66,36 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Microsoft.Extensions.DependencyInjection">
+            <article class="content wrap" id="_content" data-uid="Zaya.OCR.Impl.WindowsMediaOcr">
 
-  <h1 id="Microsoft_Extensions_DependencyInjection" data-uid="Microsoft.Extensions.DependencyInjection" class="text-break">Namespace Microsoft.Extensions.DependencyInjection</h1>
+  <h1 id="Zaya_OCR_Impl_WindowsMediaOcr" data-uid="Zaya.OCR.Impl.WindowsMediaOcr" class="text-break">Namespace Zaya.OCR.Impl.WindowsMediaOcr</h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">
 Classes
 </h3>
-      <h4><a class="xref" href="Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.html">OneOcrServiceCollectionExtensions</a></h4>
-      <section><p>Extension methods for registering OneOCR services in a dependency injection container.</p>
+      <h4><a class="xref" href="Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions.html">OcrSessionExtensions</a></h4>
+      <section><p>Extension methods for <a class="xref" href="Zaya.OCR.Services.IOCRSession.html">IOCRSession</a> to accept <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.bitmap">Bitmap</a> input.</p>
 </section>
-      <h4><a class="xref" href="Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions.html">WindowsMediaOcrServiceCollectionExtensions</a></h4>
-      <section><p>Extension methods for registering Windows.Media.Ocr services in a dependency injection container.</p>
+      <h4><a class="xref" href="Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig.html">WindowsMediaOcrConfig</a></h4>
+      <section><p>Typed configuration for <a class="xref" href="Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService.html">WindowsMediaOcrService</a>.
+Converts to the dictionary format expected by <code>CreateSessionAsync</code>.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException.html">WindowsMediaOcrEngineCreateFailedException</a></h4>
+      <section><p>Thrown when <code>OcrEngine</code> cannot be created (no language packs / package identity / API failure).</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException.html">WindowsMediaOcrLanguageNotSupportedException</a></h4>
+      <section><p>Thrown when the requested OCR language is not installed or not supported by <code>Windows.Media.Ocr</code>.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException.html">WindowsMediaOcrNotAvailableException</a></h4>
+      <section><p>Thrown when Windows.Media.Ocr is not available on the current system.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException.html">WindowsMediaOcrRecognizeFailedException</a></h4>
+      <section><p>Thrown when <code>RecognizeAsync</code> fails.</p>
+</section>
+      <h4><a class="xref" href="Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException.html">WindowsMediaOcrUnsupportedPixelFormatException</a></h4>
+      <section><p>Thrown when the input image pixel format is not supported.</p>
 </section>
 
 

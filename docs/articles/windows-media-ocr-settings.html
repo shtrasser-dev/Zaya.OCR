@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Namespace Microsoft.Extensions.DependencyInjection </title>
+      <title>Windows Media OCR settings </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Namespace Microsoft.Extensions.DependencyInjection ">
+      <meta name="title" content="Windows Media OCR settings ">
     
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -66,22 +66,41 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Microsoft.Extensions.DependencyInjection">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-media-ocr-settings">Windows Media OCR settings</h1>
 
-  <h1 id="Microsoft_Extensions_DependencyInjection" data-uid="Microsoft.Extensions.DependencyInjection" class="text-break">Namespace Microsoft.Extensions.DependencyInjection</h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">
-Classes
-</h3>
-      <h4><a class="xref" href="Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions.html">OneOcrServiceCollectionExtensions</a></h4>
-      <section><p>Extension methods for registering OneOCR services in a dependency injection container.</p>
-</section>
-      <h4><a class="xref" href="Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions.html">WindowsMediaOcrServiceCollectionExtensions</a></h4>
-      <section><p>Extension methods for registering Windows.Media.Ocr services in a dependency injection container.</p>
-</section>
-
+<p><code>EngineId</code>: <strong><code>windows-media-ocr</code></strong></p>
+<p>Uses the official WinRT API <a href="https://learn.microsoft.com/en-us/uwp/api/windows.media.ocr.ocrengine"><code>Windows.Media.Ocr.OcrEngine</code></a>.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Windows 10 or later</li>
+<li>At least one OCR language pack installed (Windows Settings → Time &amp; language → Language &amp; region)</li>
+<li>Desktop hosts typically need <strong>package identity</strong> (MSIX). Unpackaged Win32 apps may fail to create the engine.</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>language</code></td>
+<td><code>auto</code></td>
+<td><code>auto</code> → <code>OcrEngine.TryCreateFromUserProfileLanguages()</code>; otherwise a BCP-47 tag for <code>TryCreateFromLanguage</code></td>
+</tr>
+</tbody>
+</table>
+<p>When available, the language dropdown lists installed OCR recognizer languages from <code>OcrEngine.AvailableRecognizerLanguages</code>. If that query fails, it falls back to <code>Languages.All</code> from Zaya.Primitives.</p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Preferred input is <strong>BGRA32</strong> (<code>IRawImage</code> / <code>Bitmap</code> extension).</li>
+<li>WinRT <code>OcrWord</code> has no confidence score; words are reported with confidence <code>1.0</code>.</li>
+<li>This is <strong>not</strong> the same engine as OneOCR (<code>oneocr.dll</code> from Snipping Tool).</li>
+</ul>
 
 </article>
           </div>
@@ -90,6 +109,9 @@ Classes
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/docs/articles/windows-media-ocr-settings.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

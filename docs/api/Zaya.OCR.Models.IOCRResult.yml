@@ -32,6 +32,7 @@ items:
     content.vb: Public Interface IOCRResult
   derivedClasses:
   - Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
+  - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult
 - uid: Zaya.OCR.Models.IOCRResult.Words
   commentId: P:Zaya.OCR.Models.IOCRResult.Words
   id: Words

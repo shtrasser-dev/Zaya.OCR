@@ -5,6 +5,7 @@ items:
   id: Microsoft.Extensions.DependencyInjection
   children:
   - Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions
+  - Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions
   langs:
   - csharp
   - vb
@@ -21,3 +22,9 @@ references:
   name: OneOcrServiceCollectionExtensions
   nameWithType: OneOcrServiceCollectionExtensions
   fullName: Microsoft.Extensions.DependencyInjection.OneOcrServiceCollectionExtensions
+- uid: Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions
+  commentId: T:Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions
+  href: Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions.html
+  name: WindowsMediaOcrServiceCollectionExtensions
+  nameWithType: WindowsMediaOcrServiceCollectionExtensions
+  fullName: Microsoft.Extensions.DependencyInjection.WindowsMediaOcrServiceCollectionExtensions

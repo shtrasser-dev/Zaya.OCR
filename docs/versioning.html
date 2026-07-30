@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Versioning (Zaya.OCR) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Versioning (Zaya.OCR) ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="versioning-zayaocr">Versioning (Zaya.OCR)</h1>
+
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>Source</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ZayaPrimitivesVersion</strong></td>
+<td>NuGet pin in <code>Directory.Build.props</code> (supplies <strong>Major</strong>)</td>
+<td><code>1.0.0</code></td>
+</tr>
+<tr>
+<td><strong>interfaceVersion</strong></td>
+<td><code>Zaya.OCR</code> → <code>ZayaVersionMinor</code> / <code>ZayaVersionPatch</code></td>
+<td><code>1.0.0</code></td>
+</tr>
+<tr>
+<td><strong>pluginVersion</strong></td>
+<td>Each Impl → own Minor/Patch</td>
+<td>OneOcr <code>1.0.0</code></td>
+</tr>
+<tr>
+<td><strong>updateChannel</strong></td>
+<td>Interface <code>MAJOR.MINOR</code></td>
+<td><code>1.0</code> → floating tag <code>plugin-v1.0-latest</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Host loads a zip only if <code>plugin.json</code> <code>interfaceVersion</code> <strong>exactly</strong> matches the host’s <code>Zaya.OCR</code> assembly version.</li>
+<li>Host updater fetches <code>plugin-v{updateChannel}-latest</code> (not Primitives).</li>
+<li>Do <strong>not</strong> set <code>&lt;Version&gt;</code> in csproj. Set <code>ZayaVersionMinor</code> / <code>ZayaVersionPatch</code> only; Major is taken from Primitives. <code>Directory.Build.targets</code> fails the build if Major drifts.</li>
+</ul>
+<h2 id="pluginjson">plugin.json</h2>
+<pre><code class="lang-json">{
+  &quot;id&quot;: &quot;OneOcr&quot;,
+  &quot;type&quot;: &quot;ocr&quot;,
+  &quot;interface&quot;: &quot;Zaya.OCR&quot;,
+  &quot;interfaceVersion&quot;: &quot;1.0.0&quot;,
+  &quot;pluginVersion&quot;: &quot;1.0.0&quot;
+}
+</code></pre>
+<p>Release body lists per-asset plugin versions (<code>Zaya.OCR.Impl.OneOcr.zip=1.0.0</code>).</p>
+<h2 id="bumping">Bumping</h2>
+<ol>
+<li>Interface contract: raise <code>ZayaVersionMinor</code> / <code>ZayaVersionPatch</code> in <code>Zaya.OCR.csproj</code>, then bump host’s OCR reference.</li>
+<li>Single engine: raise Minor/Patch only in that Impl’s <code>.csproj</code>.</li>
+<li>Run <code>build.cmd</code> / Publish workflow.</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/docs/versioning.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

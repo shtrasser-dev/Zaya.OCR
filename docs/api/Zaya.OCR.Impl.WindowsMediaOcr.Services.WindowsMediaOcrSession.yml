@@ -1,38 +1,35 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
-  commentId: T:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
-  id: OneOcrSession
-  parent: Zaya.OCR.Impl.OneOcr.Services
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession
+  id: WindowsMediaOcrSession
+  parent: Zaya.OCR.Impl.WindowsMediaOcr.Services
   children:
-  - Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
-  - Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
+  - Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.Dispose
+  - Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
-  name: OneOcrSession
-  nameWithType: OneOcrSession
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  name: WindowsMediaOcrSession
+  nameWithType: WindowsMediaOcrSession
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession
   type: Class
   source:
     remote:
-      path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
+      path: src/Zaya.OCR.Impl.WindowsMediaOcr/Services/WindowsMediaOcrSession.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
-    id: OneOcrSession
-    path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
-    startLine: 11
+    id: WindowsMediaOcrSession
+    path: src/Zaya.OCR.Impl.WindowsMediaOcr/Services/WindowsMediaOcrSession.cs
+    startLine: 14
   assemblies:
-  - Zaya.OCR.Impl.OneOcr
-  namespace: Zaya.OCR.Impl.OneOcr.Services
-  summary: >-
-    OneOCR session that performs OCR using the native <code>oneocr.dll</code> via P/Invoke.
-
-    Owns the underlying <xref href="Zaya.OCR.Impl.OneOcr.OneOcrEngine" data-throw-if-not-resolved="false"></xref> and disposes it with the session.
+  - Zaya.OCR.Impl.WindowsMediaOcr
+  namespace: Zaya.OCR.Impl.WindowsMediaOcr.Services
+  summary: OCR session backed by <xref href="Windows.Media.Ocr.OcrEngine" data-throw-if-not-resolved="false"></xref> (<code>Windows.Media.Ocr</code>).
   example: []
   syntax:
-    content: 'public sealed class OneOcrSession : IOCRSession, IDisposable'
-    content.vb: Public NotInheritable Class OneOcrSession Implements IOCRSession, IDisposable
+    content: 'public sealed class WindowsMediaOcrSession : IOCRSession, IDisposable'
+    content.vb: Public NotInheritable Class WindowsMediaOcrSession Implements IOCRSession, IDisposable
   inheritance:
   - System.Object
   implements:
@@ -48,28 +45,28 @@ items:
   extensionMethods:
   - Zaya.OCR.Services.IOCRSession.Zaya.OCR.Impl.OneOcr.OcrSessionExtensions.RecognizeAsync(System.Drawing.Bitmap,System.Threading.CancellationToken)
   - Zaya.OCR.Services.IOCRSession.Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions.RecognizeAsync(System.Drawing.Bitmap,System.Threading.CancellationToken)
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
-  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
+  commentId: M:Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
   id: RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
-  parent: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  parent: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession
   langs:
   - csharp
   - vb
   name: RecognizeAsync(IRawImage, CancellationToken)
-  nameWithType: OneOcrSession.RecognizeAsync(IRawImage, CancellationToken)
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage, System.Threading.CancellationToken)
+  nameWithType: WindowsMediaOcrSession.RecognizeAsync(IRawImage, CancellationToken)
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.RecognizeAsync(Zaya.Primitives.IRawImage, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
-      path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
+      path: src/Zaya.OCR.Impl.WindowsMediaOcr/Services/WindowsMediaOcrSession.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: RecognizeAsync
-    path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
-    startLine: 24
+    path: src/Zaya.OCR.Impl.WindowsMediaOcr/Services/WindowsMediaOcrSession.cs
+    startLine: 25
   assemblies:
-  - Zaya.OCR.Impl.OneOcr
-  namespace: Zaya.OCR.Impl.OneOcr.Services
+  - Zaya.OCR.Impl.WindowsMediaOcr
+  namespace: Zaya.OCR.Impl.WindowsMediaOcr.Services
   summary: Recognizes text from the provided raw image.
   example: []
   syntax:
@@ -85,51 +82,53 @@ items:
       type: System.Threading.Tasks.Task{Zaya.OCR.Models.IOCRResult}
       description: The OCR result containing recognized words and confidence.
     content.vb: Public Function RecognizeAsync(image As IRawImage, cancellationToken As CancellationToken = Nothing) As Task(Of IOCRResult)
-  overload: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync*
+  overload: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.RecognizeAsync*
   implements:
   - Zaya.OCR.Services.IOCRSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
-  commentId: M:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.Dispose
+  commentId: M:Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.Dispose
   id: Dispose
-  parent: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  parent: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession
   langs:
   - csharp
   - vb
   name: Dispose()
-  nameWithType: OneOcrSession.Dispose()
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose()
+  nameWithType: WindowsMediaOcrSession.Dispose()
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.Dispose()
   type: Method
   source:
     remote:
-      path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
+      path: src/Zaya.OCR.Impl.WindowsMediaOcr/Services/WindowsMediaOcrSession.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Dispose
-    path: src/Zaya.OCR.Impl.OneOcr/Services/OneOcrSession.cs
-    startLine: 44
+    path: src/Zaya.OCR.Impl.WindowsMediaOcr/Services/WindowsMediaOcrSession.cs
+    startLine: 107
   assemblies:
-  - Zaya.OCR.Impl.OneOcr
-  namespace: Zaya.OCR.Impl.OneOcr.Services
+  - Zaya.OCR.Impl.WindowsMediaOcr
+  namespace: Zaya.OCR.Impl.WindowsMediaOcr.Services
   summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
   example: []
   syntax:
     content: public void Dispose()
     content.vb: Public Sub Dispose()
-  overload: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose*
+  overload: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.Dispose*
   implements:
   - System.IDisposable.Dispose
 references:
-- uid: Zaya.OCR.Impl.OneOcr.OneOcrEngine
-  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrEngine
-  name: OneOcrEngine
-  nameWithType: OneOcrEngine
-  fullName: Zaya.OCR.Impl.OneOcr.OneOcrEngine
-- uid: Zaya.OCR.Impl.OneOcr.Services
-  commentId: N:Zaya.OCR.Impl.OneOcr.Services
+- uid: Windows.Media.Ocr.OcrEngine
+  commentId: T:Windows.Media.Ocr.OcrEngine
+  isExternal: true
+  href: https://learn.microsoft.com/uwp/api/windows.media.ocr.ocrengine
+  name: OcrEngine
+  nameWithType: OcrEngine
+  fullName: Windows.Media.Ocr.OcrEngine
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services
+  commentId: N:Zaya.OCR.Impl.WindowsMediaOcr.Services
   href: Zaya.html
-  name: Zaya.OCR.Impl.OneOcr.Services
-  nameWithType: Zaya.OCR.Impl.OneOcr.Services
-  fullName: Zaya.OCR.Impl.OneOcr.Services
+  name: Zaya.OCR.Impl.WindowsMediaOcr.Services
+  nameWithType: Zaya.OCR.Impl.WindowsMediaOcr.Services
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Services
   spec.csharp:
   - uid: Zaya
     name: Zaya
@@ -143,13 +142,13 @@ references:
     name: Impl
     href: Zaya.OCR.Impl.html
   - name: .
-  - uid: Zaya.OCR.Impl.OneOcr
-    name: OneOcr
-    href: Zaya.OCR.Impl.OneOcr.html
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr
+    name: WindowsMediaOcr
+    href: Zaya.OCR.Impl.WindowsMediaOcr.html
   - name: .
-  - uid: Zaya.OCR.Impl.OneOcr.Services
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Services
     name: Services
-    href: Zaya.OCR.Impl.OneOcr.Services.html
+    href: Zaya.OCR.Impl.WindowsMediaOcr.Services.html
   spec.vb:
   - uid: Zaya
     name: Zaya
@@ -163,13 +162,13 @@ references:
     name: Impl
     href: Zaya.OCR.Impl.html
   - name: .
-  - uid: Zaya.OCR.Impl.OneOcr
-    name: OneOcr
-    href: Zaya.OCR.Impl.OneOcr.html
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr
+    name: WindowsMediaOcr
+    href: Zaya.OCR.Impl.WindowsMediaOcr.html
   - name: .
-  - uid: Zaya.OCR.Impl.OneOcr.Services
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Services
     name: Services
-    href: Zaya.OCR.Impl.OneOcr.Services.html
+    href: Zaya.OCR.Impl.WindowsMediaOcr.Services.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -708,12 +707,12 @@ references:
   - uid: Zaya.OCR.Impl.WindowsMediaOcr
     name: WindowsMediaOcr
     href: Zaya.OCR.Impl.WindowsMediaOcr.html
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync*
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync
-  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrSession_RecognizeAsync_Zaya_Primitives_IRawImage_System_Threading_CancellationToken_
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.RecognizeAsync*
+  commentId: Overload:Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.RecognizeAsync
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.html#Zaya_OCR_Impl_WindowsMediaOcr_Services_WindowsMediaOcrSession_RecognizeAsync_Zaya_Primitives_IRawImage_System_Threading_CancellationToken_
   name: RecognizeAsync
-  nameWithType: OneOcrSession.RecognizeAsync
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.RecognizeAsync
+  nameWithType: WindowsMediaOcrSession.RecognizeAsync
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.RecognizeAsync
 - uid: Zaya.OCR.Services.IOCRSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
   commentId: M:Zaya.OCR.Services.IOCRSession.RecognizeAsync(Zaya.Primitives.IRawImage,System.Threading.CancellationToken)
   parent: Zaya.OCR.Services.IOCRSession
@@ -912,12 +911,12 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose*
-  commentId: Overload:Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
-  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrSession_Dispose
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.Dispose*
+  commentId: Overload:Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.Dispose
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.html#Zaya_OCR_Impl_WindowsMediaOcr_Services_WindowsMediaOcrSession_Dispose
   name: Dispose
-  nameWithType: OneOcrSession.Dispose
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession.Dispose
+  nameWithType: WindowsMediaOcrSession.Dispose
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession.Dispose
 - uid: System.IDisposable.Dispose
   commentId: M:System.IDisposable.Dispose
   parent: System.IDisposable

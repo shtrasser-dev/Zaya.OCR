@@ -1,0 +1,104 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.WindowsMediaOcr
+  commentId: N:Zaya.OCR.Impl.WindowsMediaOcr
+  id: Zaya.OCR.Impl.WindowsMediaOcr
+  children:
+  - Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions
+  - Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig
+  - Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException
+  - Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException
+  - Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException
+  - Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException
+  - Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Impl.WindowsMediaOcr
+  nameWithType: Zaya.OCR.Impl.WindowsMediaOcr
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr
+  type: Namespace
+  assemblies:
+  - Zaya.OCR.Impl.WindowsMediaOcr
+references:
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions
+  parent: Zaya.OCR.Impl.WindowsMediaOcr
+  href: Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions.html
+  name: OcrSessionExtensions
+  nameWithType: OcrSessionExtensions
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig
+  href: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig.html
+  name: WindowsMediaOcrConfig
+  nameWithType: WindowsMediaOcrConfig
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException
+  href: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException.html
+  name: WindowsMediaOcrLanguageNotSupportedException
+  nameWithType: WindowsMediaOcrLanguageNotSupportedException
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException
+  href: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException.html
+  name: WindowsMediaOcrEngineCreateFailedException
+  nameWithType: WindowsMediaOcrEngineCreateFailedException
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException
+  href: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException.html
+  name: WindowsMediaOcrUnsupportedPixelFormatException
+  nameWithType: WindowsMediaOcrUnsupportedPixelFormatException
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException
+  href: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException.html
+  name: WindowsMediaOcrRecognizeFailedException
+  nameWithType: WindowsMediaOcrRecognizeFailedException
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException
+  href: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException.html
+  name: WindowsMediaOcrNotAvailableException
+  nameWithType: WindowsMediaOcrNotAvailableException
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException
+- uid: Zaya.OCR.Impl.WindowsMediaOcr
+  commentId: N:Zaya.OCR.Impl.WindowsMediaOcr
+  href: Zaya.html
+  name: Zaya.OCR.Impl.WindowsMediaOcr
+  nameWithType: Zaya.OCR.Impl.WindowsMediaOcr
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr
+    name: WindowsMediaOcr
+    href: Zaya.OCR.Impl.WindowsMediaOcr.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr
+    name: WindowsMediaOcr
+    href: Zaya.OCR.Impl.WindowsMediaOcr.html

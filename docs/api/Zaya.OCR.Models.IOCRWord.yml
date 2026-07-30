@@ -33,6 +33,7 @@ items:
     content.vb: Public Interface IOCRWord
   derivedClasses:
   - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+  - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord
 - uid: Zaya.OCR.Models.IOCRWord.Text
   commentId: P:Zaya.OCR.Models.IOCRWord.Text
   id: Text
