@@ -1,7 +1,11 @@
 <Project>
   <PropertyGroup>
-    <!-- Default Version = Zaya.OCR abstractions (interface). Override per Impl csproj for plugin-only bumps. -->
-    <Version>0.4.1</Version>
-    <ZayaPrimitivesVersion>0.4.0</ZayaPrimitivesVersion>
+    <!-- Pin to published Zaya.Primitives; Major becomes Version Major for all projects. -->
+    <ZayaPrimitivesVersion>1.0.0</ZayaPrimitivesVersion>
+    <ZayaPrimitivesMajor>$([System.Version]::Parse('$(ZayaPrimitivesVersion)').Major)</ZayaPrimitivesMajor>
+
+    <!-- Override per csproj. Version is assembled in Directory.Build.targets. -->
+    <ZayaVersionMinor>0</ZayaVersionMinor>
+    <ZayaVersionPatch>0</ZayaVersionPatch>
   </PropertyGroup>
 </Project>

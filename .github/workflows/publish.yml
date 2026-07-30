@@ -149,11 +149,11 @@ jobs:
             const releaseName = `Plugin v${version}`;
             const body = [
               `version: ${version}`,
-              `primitivesChannel: ${channel}`,
+              `interfaceChannel: ${channel}`,
               '',
               ...assetVersions,
               '',
-              `Plugin release for Zaya.OCR (Primitives channel ${channel}).`,
+              `Plugin release for Zaya.OCR (interface channel ${channel}).`,
               '',
               'Assets:',
               ...zipFiles.map(f => `- \`${f}\``),
@@ -207,6 +207,6 @@ jobs:
               }
             }
 
-            // Immutable versioned release + floating channel-latest for updaters.
+            // Immutable versioned release + floating plugin-v{interfaceMajor.Minor}-latest.
             await createOrReplaceRelease(tag, releaseName, body, true);
             await createOrReplaceRelease(latestTag, releaseName, body, false);

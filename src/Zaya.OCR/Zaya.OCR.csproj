@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ZayaVersionMinor>0</ZayaVersionMinor>
+    <ZayaVersionPatch>0</ZayaVersionPatch>
 
     <PackageId>Zaya.OCR</PackageId>
     <Description>OCR abstractions for the Zaya ecosystem: interfaces for pluggable text recognition services.</Description>

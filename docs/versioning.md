@@ -1,17 +1,15 @@
 ﻿# Versioning (Zaya.OCR)
 
-Three independent axes — do not bump them together unless required.
-
 | Axis | Source | Example |
 |------|--------|---------|
-| **primitivesChannel** | `ZayaPrimitivesVersion` → `MAJOR.MINOR` | `0.4` |
-| **interfaceVersion** | Version of package **Zaya.OCR** (abstractions) | `0.4.1` |
-| **pluginVersion** | Version of each **Impl** csproj | OneOcr `0.4.1`, others may differ |
+| **ZayaPrimitivesVersion** | NuGet pin in `Directory.Build.props` (supplies **Major**) | `1.0.0` |
+| **interfaceVersion** | `Zaya.OCR` → `ZayaVersionMinor` / `ZayaVersionPatch` | `1.0.0` |
+| **pluginVersion** | Each Impl → own Minor/Patch | OneOcr `1.0.0` |
+| **updateChannel** | Interface `MAJOR.MINOR` | `1.0` → floating tag `plugin-v1.0-latest` |
 
-- Host must ship the same **Zaya.OCR** assembly version as `interfaceVersion` in the zip.
-- Bugfixes in one engine: raise only that Impl’s `<Version>`; leave abstractions unchanged.
-- GitHub floating tag: `plugin-v{primitivesChannel}-latest` (e.g. `plugin-v0.4-latest`).
-- Immutable tag: `plugin-v{maxPluginVersion}` among assets in the release.
+- Host loads a zip only if `plugin.json` `interfaceVersion` **exactly** matches the host’s `Zaya.OCR` assembly version.
+- Host updater fetches `plugin-v{updateChannel}-latest` (not Primitives).
+- Do **not** set `<Version>` in csproj. Set `ZayaVersionMinor` / `ZayaVersionPatch` only; Major is taken from Primitives. `Directory.Build.targets` fails the build if Major drifts.
 
 ## plugin.json
 
@@ -20,16 +18,15 @@ Three independent axes — do not bump them together unless required.
   "id": "OneOcr",
   "type": "ocr",
   "interface": "Zaya.OCR",
-  "interfaceVersion": "0.4.1",
-  "pluginVersion": "0.4.1",
-  "primitivesChannel": "0.4"
+  "interfaceVersion": "1.0.0",
+  "pluginVersion": "1.0.0"
 }
 ```
 
-Release body lists per-asset versions (`Zaya.OCR.Impl.OneOcr.zip=0.4.1`) for the host updater.
+Release body lists per-asset plugin versions (`Zaya.OCR.Impl.OneOcr.zip=1.0.0`).
 
 ## Bumping
 
-1. Abstractions / host contract: edit default `Version` in `Directory.Build.props`, then update ScreenTranslator.
-2. Single engine: set `<Version>` only in that Impl’s `.csproj`.
+1. Interface contract: raise `ZayaVersionMinor` / `ZayaVersionPatch` in `Zaya.OCR.csproj`, then bump host’s OCR reference.
+2. Single engine: raise Minor/Patch only in that Impl’s `.csproj`.
 3. Run `build.cmd` / Publish workflow.

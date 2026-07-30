@@ -6,12 +6,12 @@ Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines ex
 
 | Package | Version | Role |
 |---------|---------|------|
-| **Zaya.OCR** | 0.4.1 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
-| **Zaya.OCR.Impl.OneOcr** | 0.4.1 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
-| **Zaya.OCR.Impl.WindowsMediaOcr** | 0.4.1 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
-| **Zaya.OCR.Impl.ProximityTextLayout** | 0.4.1 | Merges OCR words into lines/paragraphs by proximity heuristics |
+| **Zaya.OCR** | 1.0.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
+| **Zaya.OCR.Impl.OneOcr** | 1.0.0 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
+| **Zaya.OCR.Impl.WindowsMediaOcr** | 1.0.0 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 1.0.0 | Merges OCR words into lines/paragraphs by proximity heuristics |
 
-Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **0.4.0** (compatibility channel `0.4`). See [versioning](docs/versioning.md).
+Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Update channel for plugins: `plugin-v1.0-latest`. See [versioning](docs/versioning.md).
 
 Docs: [API & articles](https://shtrasser-dev.github.io/Zaya.OCR)
 
@@ -28,14 +28,14 @@ There is no separate `InitializeAsync` / `OcrEngineProvider`: create a session w
 ## Installation
 
 ```xml
-<PackageReference Include=" param($m) $m.Value -replace '0\.4\.0','0.4.1'  />
-<PackageReference Include=" param($m) $m.Value -replace '0\.4\.0','0.4.1'  />
+<PackageReference Include="Zaya.OCR" Version="1.0.0" />
+<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.0.0" />
 <!-- optional -->
-<PackageReference Include=" param($m) $m.Value -replace '0\.4\.0','0.4.1'  />
-<PackageReference Include=" param($m) $m.Value -replace '0\.4\.0','0.4.1'  />
+<PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.0.0" />
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.0.0" />
 ```
 
-Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plugin-v0.4-latest`):
+Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plugin-v1.0-latest`):
 
 - `Zaya.OCR.Impl.OneOcr.zip`
 - `Zaya.OCR.Impl.WindowsMediaOcr.zip`
