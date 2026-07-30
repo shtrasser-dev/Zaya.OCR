@@ -73,30 +73,33 @@
 <tbody>
 <tr>
 <td><strong>ZayaPrimitivesVersion</strong></td>
-<td>NuGet pin in <code>Directory.Build.props</code> (supplies <strong>Major</strong>)</td>
+<td><code>Directory.Build.props</code> (supplies <strong>Major</strong>)</td>
 <td><code>1.0.0</code></td>
 </tr>
 <tr>
 <td><strong>interfaceVersion</strong></td>
-<td><code>Zaya.OCR</code> → <code>ZayaVersionMinor</code> / <code>ZayaVersionPatch</code></td>
+<td><code>Zaya.OCR.csproj</code> → only <strong><code>ZayaVersionInterface</code></strong> → <code>Major.Interface.0</code></td>
 <td><code>1.0.0</code></td>
 </tr>
 <tr>
 <td><strong>pluginVersion</strong></td>
-<td>Each Impl → own Minor/Patch</td>
-<td>OneOcr <code>1.0.0</code></td>
+<td>Each Impl → <strong><code>ZayaVersionImpMajor</code></strong> + <strong><code>ZayaVersionImpMinor</code></strong>; Interface read from abstractions → <code>Major.Interface.ImpMajor.ImpMinor</code></td>
+<td><code>1.0.0.0</code></td>
 </tr>
 <tr>
 <td><strong>updateChannel</strong></td>
-<td>Interface <code>MAJOR.MINOR</code></td>
-<td><code>1.0</code> → floating tag <code>plugin-v1.0-latest</code></td>
+<td>Interface <code>MAJOR.Interface</code></td>
+<td><code>1.0</code> → <code>plugin-v1.0-latest</code></td>
 </tr>
 </tbody>
 </table>
+<p>Rules:</p>
 <ul>
-<li>Host loads a zip only if <code>plugin.json</code> <code>interfaceVersion</code> <strong>exactly</strong> matches the host’s <code>Zaya.OCR</code> assembly version.</li>
-<li>Host updater fetches <code>plugin-v{updateChannel}-latest</code> (not Primitives).</li>
-<li>Do <strong>not</strong> set <code>&lt;Version&gt;</code> in csproj. Set <code>ZayaVersionMinor</code> / <code>ZayaVersionPatch</code> only; Major is taken from Primitives. <code>Directory.Build.targets</code> fails the build if Major drifts.</li>
+<li>Abstractions: only <code>ZayaVersionInterface</code>. Version always ends with <code>.0</code>. Contract/assembly change → bump Interface.</li>
+<li>Plugin: only <code>ZayaVersionImpMajor</code> / <code>ZayaVersionImpMinor</code>. Interface digit is taken from <code>Zaya.OCR.csproj</code> automatically.</li>
+<li>Do not set <code>&lt;Version&gt;</code> manually. <code>Directory.Build.targets</code> builds it and checks Major vs Primitives.</li>
+<li>Host loads a zip only if <code>interfaceVersion</code> <strong>exactly</strong> matches host’s <code>Zaya.OCR</code> version.</li>
+<li>Updater uses <code>plugin-v{updateChannel}-latest</code> (not Primitives).</li>
 </ul>
 <h2 id="pluginjson">plugin.json</h2>
 <pre><code class="lang-json">{
@@ -104,14 +107,14 @@
   &quot;type&quot;: &quot;ocr&quot;,
   &quot;interface&quot;: &quot;Zaya.OCR&quot;,
   &quot;interfaceVersion&quot;: &quot;1.0.0&quot;,
-  &quot;pluginVersion&quot;: &quot;1.0.0&quot;
+  &quot;pluginVersion&quot;: &quot;1.0.0.0&quot;
 }
 </code></pre>
-<p>Release body lists per-asset plugin versions (<code>Zaya.OCR.Impl.OneOcr.zip=1.0.0</code>).</p>
+<p>Release body lists per-asset plugin versions (<code>Zaya.OCR.Impl.OneOcr.zip=1.0.0.0</code>).</p>
 <h2 id="bumping">Bumping</h2>
 <ol>
-<li>Interface contract: raise <code>ZayaVersionMinor</code> / <code>ZayaVersionPatch</code> in <code>Zaya.OCR.csproj</code>, then bump host’s OCR reference.</li>
-<li>Single engine: raise Minor/Patch only in that Impl’s <code>.csproj</code>.</li>
+<li>Interface: raise <code>ZayaVersionInterface</code> in <code>Zaya.OCR.csproj</code>, update host, republish plugins.</li>
+<li>Single engine: raise <code>ZayaVersionImpMajor</code> / <code>ZayaVersionImpMinor</code> only in that Impl’s <code>.csproj</code>.</li>
 <li>Run <code>build.cmd</code> / Publish workflow.</li>
 </ol>
 

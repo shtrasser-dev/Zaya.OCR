@@ -80,17 +80,17 @@
 </tr>
 <tr>
 <td><strong>Zaya.OCR.Impl.OneOcr</strong></td>
-<td>1.0.0</td>
+<td>1.0.0.0</td>
 <td>Windows OneOCR (<code>oneocr.dll</code> via P/Invoke; no WinRT / App SDK identity)</td>
 </tr>
 <tr>
 <td><strong>Zaya.OCR.Impl.WindowsMediaOcr</strong></td>
-<td>1.0.0</td>
+<td>1.0.0.0</td>
 <td>Official <code>Windows.Media.Ocr</code> WinRT API (Windows 10+; typically needs MSIX identity)</td>
 </tr>
 <tr>
 <td><strong>Zaya.OCR.Impl.ProximityTextLayout</strong></td>
-<td>1.0.0</td>
+<td>1.0.0.0</td>
 <td>Merges OCR words into lines/paragraphs by proximity heuristics</td>
 </tr>
 </tbody>
@@ -106,10 +106,10 @@
 <p>There is no separate <code>InitializeAsync</code>: create a session with defaults or an explicit settings dictionary.</p>
 <h2 id="installation">Installation</h2>
 <pre><code class="lang-xml">&lt;PackageReference Include=&quot;Zaya.OCR&quot; Version=&quot;1.0.0&quot; /&gt;
-&lt;PackageReference Include=&quot;Zaya.OCR.Impl.OneOcr&quot; Version=&quot;1.0.0&quot; /&gt;
+&lt;PackageReference Include=&quot;Zaya.OCR.Impl.OneOcr&quot; Version=&quot;1.0.0.0&quot; /&gt;
 &lt;!-- optional --&gt;
-&lt;PackageReference Include=&quot;Zaya.OCR.Impl.WindowsMediaOcr&quot; Version=&quot;1.0.0&quot; /&gt;
-&lt;PackageReference Include=&quot;Zaya.OCR.Impl.ProximityTextLayout&quot; Version=&quot;1.0.0&quot; /&gt;
+&lt;PackageReference Include=&quot;Zaya.OCR.Impl.WindowsMediaOcr&quot; Version=&quot;1.0.0.0&quot; /&gt;
+&lt;PackageReference Include=&quot;Zaya.OCR.Impl.ProximityTextLayout&quot; Version=&quot;1.0.0.0&quot; /&gt;
 </code></pre>
 <h2 id="quick-start">Quick Start</h2>
 <pre><code class="lang-csharp">using System.Drawing;

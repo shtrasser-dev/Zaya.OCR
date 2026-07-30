@@ -3,9 +3,5 @@
     <!-- Pin to published Zaya.Primitives; Major becomes Version Major for all projects. -->
     <ZayaPrimitivesVersion>1.0.0</ZayaPrimitivesVersion>
     <ZayaPrimitivesMajor>$([System.Version]::Parse('$(ZayaPrimitivesVersion)').Major)</ZayaPrimitivesMajor>
-
-    <!-- Override per csproj. Version is assembled in Directory.Build.targets. -->
-    <ZayaVersionMinor>0</ZayaVersionMinor>
-    <ZayaVersionPatch>0</ZayaVersionPatch>
   </PropertyGroup>
 </Project>

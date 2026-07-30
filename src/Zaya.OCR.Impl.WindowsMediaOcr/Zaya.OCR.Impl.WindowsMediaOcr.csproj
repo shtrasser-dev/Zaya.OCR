@@ -6,8 +6,9 @@
     <Nullable>enable</Nullable>
     <LangVersion>13</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <ZayaVersionMinor>0</ZayaVersionMinor>
-    <ZayaVersionPatch>0</ZayaVersionPatch>
+    <ZayaVersionRole>plugin</ZayaVersionRole>
+    <ZayaVersionImpMajor>0</ZayaVersionImpMajor>
+    <ZayaVersionImpMinor>0</ZayaVersionImpMinor>
 
     <PackageId>Zaya.OCR.Impl.WindowsMediaOcr</PackageId>
     <Description>Windows.Media.Ocr engine implementation for Zaya.OCR. Uses the official WinRT OCR API (Windows 10+). Desktop hosts typically need package identity (MSIX).</Description>
