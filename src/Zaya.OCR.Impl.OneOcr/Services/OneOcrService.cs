@@ -115,7 +115,7 @@ public sealed class OneOcrService : IOCRService
         {
             Description = Loc(LocalizationConstants.Settings.DownloadUrl_Desc),
             DefaultValue = DefaultDownloadUrl,
-            IsVisible  = s => (s.GetValueOrDefault(SettingsConstants.Source) as string ?? SettingsConstants.Auto) is SettingsConstants.Url or SettingsConstants.Auto,
+            IsVisible  = s => (s.GetValueOrDefault(SettingsConstants.Source) as string ?? SettingsConstants.Auto) is SettingsConstants.Url,
             IsRequired = s => s.GetValueOrDefault(SettingsConstants.Source) as string == SettingsConstants.Url,
         },
         new DirectoryPathSettingDescriptor(SettingsConstants.CacheDirectory, Loc(LocalizationConstants.Settings.CacheDir))
