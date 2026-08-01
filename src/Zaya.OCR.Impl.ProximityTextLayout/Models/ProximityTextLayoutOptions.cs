@@ -36,6 +36,18 @@ namespace Zaya.OCR.Impl.ProximityTextLayout.Models;
 /// difference between lines within the same paragraph.
 /// Higher values tolerate greater size variation.
 /// </param>
+/// <param name="EnableStabilization">
+/// When <c>true</c>, paragraphs are temporally matched to the previous frame to reduce OCR flicker.
+/// </param>
+/// <param name="CenterThresholdFraction">
+/// Max center-point drift as a fraction of average paragraph line height (e.g. 0.5 = 50%).
+/// </param>
+/// <param name="LevenshteinThresholdPercent">
+/// Max Levenshtein distance as a percent of the longer normalized text length.
+/// </param>
+/// <param name="MinStabilizationLength">
+/// Below this normalized length, only exact text matches are accepted for temporal pairing.
+/// </param>
 public sealed record ProximityTextLayoutOptions(
     double WordGapThreshold,
     double BaselineDriftTolerance,
@@ -43,4 +55,8 @@ public sealed record ProximityTextLayoutOptions(
     double LeftEdgeAlignmentTolerance,
     double FirstLineIndentTolerance,
     bool EnableCenterAlignment,
-    double FontSizeTolerance);
+    double FontSizeTolerance,
+    bool EnableStabilization = true,
+    double CenterThresholdFraction = 0.5,
+    int LevenshteinThresholdPercent = 8,
+    int MinStabilizationLength = 16);

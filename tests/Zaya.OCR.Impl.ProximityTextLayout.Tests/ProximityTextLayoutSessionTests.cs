@@ -15,9 +15,12 @@ public sealed class ProximityTextLayoutSessionTests
         double leftEdgeAlign = 1.0,
         double firstLineIndent = 3.0,
         bool centerAlign = false,
-        double fontSizeTolerance = 0.5)
+        double fontSizeTolerance = 0.5,
+        bool enableStabilization = false)
     {
-        var options = new ProximityTextLayoutOptions(wordGap, baselineDrift, lineSpacing, leftEdgeAlign, firstLineIndent, centerAlign, fontSizeTolerance);
+        var options = new ProximityTextLayoutOptions(
+            wordGap, baselineDrift, lineSpacing, leftEdgeAlign, firstLineIndent, centerAlign, fontSizeTolerance,
+            EnableStabilization: enableStabilization);
         return new ProximityTextLayoutSession(options);
     }
 
@@ -273,6 +276,43 @@ public sealed class ProximityTextLayoutSessionTests
         Assert.Equal("ce3oh", line1Words[1].Text);
         Assert.Equal("7", line1Words[2].Text);
         Assert.Equal("cepия", line1Words[3].Text);
+    }
+
+    [Fact]
+    public async Task ProcessAsync_ShorterFlicker_KeepsPreviousParagraph()
+    {
+        using var session = CreateSession(enableStabilization: true);
+        const string full =
+            "I first ended up in this place two months ago so I had a bit of time";
+        const string shorter =
+            "I first ended up in this place two months ago so had a bit of time";
+
+        var first = await session.ProcessAsync(
+            CreateResult(MakeWord(full, 10, 10, 400, 20)), TestContext.Current.CancellationToken);
+        var second = await session.ProcessAsync(
+            CreateResult(MakeWord(shorter, 12, 11, 395, 20)), TestContext.Current.CancellationToken);
+
+        Assert.Equal(first.Paragraphs[0].Text, second.Paragraphs[0].Text);
+        Assert.Equal(first.Paragraphs[0].Lines[0].Bounds, second.Paragraphs[0].Lines[0].Bounds);
+    }
+
+    [Fact]
+    public async Task ProcessAsync_LongerUpgrade_TakesNewParagraph()
+    {
+        using var session = CreateSession(enableStabilization: true);
+        const string shorter =
+            "I first ended up in this place two months ago so had a bit of time";
+        const string full =
+            "I first ended up in this place two months ago so I had a bit of time";
+
+        var first = await session.ProcessAsync(
+            CreateResult(MakeWord(shorter, 10, 10, 400, 20)), TestContext.Current.CancellationToken);
+        var second = await session.ProcessAsync(
+            CreateResult(MakeWord(full, 12, 11, 410, 21)), TestContext.Current.CancellationToken);
+
+        Assert.Equal(full, second.Paragraphs[0].Lines[0].Text);
+        Assert.Equal(new Rectangle(12, 11, 410, 21), second.Paragraphs[0].Lines[0].Bounds);
+        Assert.NotEqual(first.Paragraphs[0].Lines[0].Bounds, second.Paragraphs[0].Lines[0].Bounds);
     }
 
     private sealed class StubWord : IOCRWord

@@ -53,11 +53,43 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             MinValue = 0,
         },
         new BooleanSettingDescriptor(SettingsConstants.EnableCenterAlignment, Loc(LocalizationConstants.Settings.CenterAlignment))
-    {
-        Description = Loc(LocalizationConstants.Settings.CenterAlignment_Desc),
+        {
+            Description = Loc(LocalizationConstants.Settings.CenterAlignment_Desc),
             DefaultValue = false,
         },
+        new BooleanSettingDescriptor(SettingsConstants.EnableStabilization, Loc(LocalizationConstants.Settings.EnableStabilization))
+        {
+            Description = Loc(LocalizationConstants.Settings.EnableStabilization_Desc),
+            DefaultValue = true,
+        },
+        new IntegerSettingDescriptor(SettingsConstants.CenterThresholdPercent, Loc(LocalizationConstants.Settings.CenterThresholdPercent))
+        {
+            Description = Loc(LocalizationConstants.Settings.CenterThresholdPercent_Desc),
+            DefaultValue = 50,
+            MinValue = 1,
+            MaxValue = 200,
+            IsVisible = StabVisible,
+        },
+        new IntegerSettingDescriptor(SettingsConstants.LevenshteinThreshold, Loc(LocalizationConstants.Settings.LevenshteinThreshold))
+        {
+            Description = Loc(LocalizationConstants.Settings.LevenshteinThreshold_Desc),
+            DefaultValue = 8,
+            MinValue = 1,
+            MaxValue = 50,
+            IsVisible = StabVisible,
+        },
+        new IntegerSettingDescriptor(SettingsConstants.MinLength, Loc(LocalizationConstants.Settings.MinLength))
+        {
+            Description = Loc(LocalizationConstants.Settings.MinLength_Desc),
+            DefaultValue = 16,
+            MinValue = 1,
+            MaxValue = 200,
+            IsVisible = StabVisible,
+        },
     ];
+
+    private static bool StabVisible(IReadOnlyDictionary<string, object?> s)
+        => s.GetValueOrDefault(SettingsConstants.EnableStabilization) as bool? ?? true;
 
     private static LocalizedString Loc(string key)
         => new(key, culture => Properties.Resources.ResourceManager.GetString(key, culture)!);
@@ -111,7 +143,11 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             settingDescriptorList.GetValueAsInt(SettingsConstants.LeftEdgeAlignmentTolerance) / 100.0,
             settingDescriptorList.GetValueAsInt(SettingsConstants.FirstLineIndentTolerance) / 100.0,
             settingDescriptorList.GetValueAsBool(SettingsConstants.EnableCenterAlignment),
-            settingDescriptorList.GetValueAsInt(SettingsConstants.FontSizeTolerance) / 100.0);
+            settingDescriptorList.GetValueAsInt(SettingsConstants.FontSizeTolerance) / 100.0,
+            settingDescriptorList.GetValueAsBool(SettingsConstants.EnableStabilization),
+            settingDescriptorList.GetValueAsInt(SettingsConstants.CenterThresholdPercent) / 100.0,
+            settingDescriptorList.GetValueAsInt(SettingsConstants.LevenshteinThreshold),
+            settingDescriptorList.GetValueAsInt(SettingsConstants.MinLength));
 
         return Task.FromResult<ITextLayoutSession>(new ProximityTextLayoutSession(options));
     }

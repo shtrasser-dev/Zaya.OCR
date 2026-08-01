@@ -11,22 +11,34 @@ namespace Zaya.OCR.Impl.ProximityTextLayout.Services;
 public sealed class ProximityTextLayoutSession : ITextLayoutSession
 {
     private readonly ProximityTextLayoutOptions _options;
+    private readonly ParagraphStabilizer? _stabilizer;
     private bool _disposed;
 
     internal ProximityTextLayoutSession(ProximityTextLayoutOptions options)
     {
         _options = options;
+        if (options.EnableStabilization)
+        {
+            _stabilizer = new ParagraphStabilizer(
+                options.CenterThresholdFraction,
+                options.LevenshteinThresholdPercent,
+                options.MinStabilizationLength);
+        }
     }
 
     /// <inheritdoc />
     public Task<ITextResult> ProcessAsync(IOCRResult result, CancellationToken cancellationToken = default)
     {
+        ObjectDisposedException.ThrowIf(_disposed, this);
         cancellationToken.ThrowIfCancellationRequested();
 
         var words = result.Words;
 
         if (words.Count == 0)
+        {
+            _stabilizer?.Reset();
             return Task.FromResult<ITextResult>(new TextResult([]));
+        }
 
         var clusters = ClusterWords(words);
 
@@ -40,6 +52,8 @@ public sealed class ProximityTextLayoutSession : ITextLayoutSession
 
         cancellationToken.ThrowIfCancellationRequested();
         var paragraphs = GroupLinesIntoParagraphs(lines);
+        if (_stabilizer is not null)
+            paragraphs = _stabilizer.Stabilize(paragraphs).ToList();
 
         return Task.FromResult<ITextResult>(new TextResult(paragraphs));
     }
@@ -49,6 +63,7 @@ public sealed class ProximityTextLayoutSession : ITextLayoutSession
     {
         if (_disposed) return;
         _disposed = true;
+        _stabilizer?.Reset();
     }
 
     private List<List<IOCRWord>> ClusterWords(IReadOnlyList<IOCRWord> words)

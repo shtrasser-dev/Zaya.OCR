@@ -60,4 +60,28 @@
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
     <value>Максимальная разница высот строк (% от средней высоты) для разделения абзацев</value>
   </data>
+  <data name="Layout_EnableStabilization" xml:space="preserve">
+    <value>Стабилизация между кадрами</value>
+  </data>
+  <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
+    <value>Повторять предыдущие абзацы при OCR-фликере (текст короче/равен, дрожание bounds)</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
+    <value>Порог совпадения центров</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
+    <value>Макс. смещение центра абзаца (% от средней высоты строки) для матча с прошлым кадром</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold" xml:space="preserve">
+    <value>Порог совпадения текста</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
+    <value>Макс. расстояние Левенштейна (% от более длинного текста) для считания абзацев одним</value>
+  </data>
+  <data name="Layout_MinLength" xml:space="preserve">
+    <value>Мин. длина для неточного матча</value>
+  </data>
+  <data name="Layout_MinLength_Desc" xml:space="preserve">
+    <value>Более короткие тексты склеиваются с прошлым кадром только при точном совпадении</value>
+  </data>
 </root>

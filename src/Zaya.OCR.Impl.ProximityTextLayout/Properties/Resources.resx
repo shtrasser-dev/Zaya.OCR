@@ -60,4 +60,28 @@
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
     <value>Max height difference (% of line height) between lines before splitting paragraphs</value>
   </data>
+  <data name="Layout_EnableStabilization" xml:space="preserve">
+    <value>Stabilize across frames</value>
+  </data>
+  <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
+    <value>Reuse previous paragraphs when OCR flickers (text shorter/equal, bounds jitter)</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
+    <value>Center match threshold</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
+    <value>Max paragraph-center drift (% of average line height) to match the previous frame</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold" xml:space="preserve">
+    <value>Text match threshold</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
+    <value>Max Levenshtein distance (% of longer text) to treat paragraphs as the same</value>
+  </data>
+  <data name="Layout_MinLength" xml:space="preserve">
+    <value>Min text length for fuzzy match</value>
+  </data>
+  <data name="Layout_MinLength_Desc" xml:space="preserve">
+    <value>Shorter texts require an exact match to pair with the previous frame</value>
+  </data>
 </root>
