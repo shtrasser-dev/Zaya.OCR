@@ -63,6 +63,12 @@ echo !MAXVER!>"%ROOT%out\version.txt"
 echo !CHANNEL!>"%ROOT%out\channel.txt"
 del "%ROOT%out\plugins.versions.txt" 2>nul
 
+> "%ROOT%out\interfaces.json" (
+echo [
+echo   {"interface":"Zaya.OCR","channel":"!CHANNEL!","version":"!MAXVER!","assets":["Zaya.OCR.Impl.OneOcr.zip","Zaya.OCR.Impl.WindowsMediaOcr.zip","Zaya.OCR.Impl.ProximityTextLayout.zip"]}
+echo ]
+)
+
 echo === Creating Zaya.OCR.Impl.OneOcr plugin.zip ===
 call :MakeZip OneOcr ocr "%ROOT%src\Zaya.OCR.Impl.OneOcr\bin\%BUILD_CONFIG%\net8.0-windows10.0.22621.0" Zaya.OCR.Impl.OneOcr.dll Zaya.OCR.Impl.OneOcr.zip !VER_ONEOCR!
 if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
