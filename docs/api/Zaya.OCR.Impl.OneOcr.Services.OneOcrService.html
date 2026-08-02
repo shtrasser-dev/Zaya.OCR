@@ -71,7 +71,7 @@
 
 
   <h1 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService" class="text-break">Class OneOcrService</h1>
-  <div class="markdown level0 summary"><p>OneOCR engine implementation of <a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a> using P/Invoke
+  <div class="markdown level0 summary"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">OneOCR engine implementation of <a class="xref" href="Zaya.OCR.Services.IOCRService.html">IOCRService</a> using P/Invoke
 into the native <code>oneocr.dll</code> (Windows 11 SnippingTool OCR engine).
 No WinRT, no Windows App SDK, no package identity required.
 Pass engine settings directly to <a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_">CreateSessionAsync(IReadOnlyDictionary&lt;string, object&gt;, CancellationToken)</a>.</p>
@@ -137,7 +137,7 @@ and as fallback when <code>source</code> is <code>auto</code>.
 Writable cache for copied/extracted engine files
 (<code>auto</code>, <code>snippingtool</code>, <code>url</code>).
 Hosts such as ScreenTranslator may override this key.
-</td></tr><tr><td class="term"><code>minConfidence</code></td><td class="term">integer 0–100</td><td class="term"><code>0</code></td><td class="term">Minimum word confidence (percent). Words below the threshold are dropped.</td></tr></tbody></table>
+</td></tr><tr><td class="term"><code>minConfidence</code></td><td class="term">integer 0–100</td><td class="term"><code>90</code></td><td class="term">Minimum word confidence (percent). Words below the threshold are dropped.</td></tr></tbody></table>
 <p>
 Example:
 </p>
@@ -160,7 +160,7 @@ var result = await session.RecognizeAsync(image);</code></pre>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Description_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Description*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Description" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Description">Description</h4>
-  <div class="markdown level1 summary"><p>Gets the UI description for this engine (localized).</p>
+  <div class="markdown level1 summary"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Gets the UI description for this engine (localized).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -191,7 +191,7 @@ var result = await session.RecognizeAsync(image);</code></pre>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisplayName_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisplayName*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_DisplayName" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.DisplayName">DisplayName</h4>
-  <div class="markdown level1 summary"><p>Gets the UI display name for this engine (localized).</p>
+  <div class="markdown level1 summary"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Gets the UI display name for this engine (localized).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -222,7 +222,7 @@ var result = await session.RecognizeAsync(image);</code></pre>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_EngineId_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_EngineId" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.EngineId">EngineId</h4>
-  <div class="markdown level1 summary"><p>Gets a unique identifier for this OCR engine (e.g., &quot;oneocr&quot;, &quot;tesseract&quot;).
+  <div class="markdown level1 summary"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Gets a unique identifier for this OCR engine (e.g., &quot;oneocr&quot;, &quot;tesseract&quot;).
 Used for profile serialization and engine lookup.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -254,7 +254,7 @@ Used for profile serialization and engine lookup.</p>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_IsAvailable_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_IsAvailable" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.IsAvailable">IsAvailable</h4>
-  <div class="markdown level1 summary"><p>Gets whether this OCR engine is available on the current system.</p>
+  <div class="markdown level1 summary"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Gets whether this OCR engine is available on the current system.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -285,7 +285,7 @@ Used for profile serialization and engine lookup.</p>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_PreferredPixelFormat_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_PreferredPixelFormat" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.PreferredPixelFormat">PreferredPixelFormat</h4>
-  <div class="markdown level1 summary"><p>Gets the pixel format preferred by this OCR engine.
+  <div class="markdown level1 summary"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Gets the pixel format preferred by this OCR engine.
 The caller (e.g., a screenshot module) can use this to deliver pixels
 in the optimal format without extra conversion.</p>
 </div>
@@ -318,7 +318,7 @@ in the optimal format without extra conversion.</p>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Settings_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Settings*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Settings" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Settings">Settings</h4>
-  <div class="markdown level1 summary"><p>Gets the engine-specific settings declared by OneOCR
+  <div class="markdown level1 summary"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Gets the engine-specific settings declared by OneOCR
 (<code>source</code>, <code>directoryPath</code>, <code>downloadUrl</code>, <code>cacheDirectory</code>, <code>minConfidence</code>).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -342,7 +342,7 @@ in the optimal format without extra conversion.</p>
     </tbody>
   </table>
   <h5 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Settings_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>See the type-level remarks on <a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html">OneOcrService</a> for key names, defaults, and visibility rules.</p>
+  <div class="markdown level1 remarks"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">See the type-level remarks on <a class="xref" href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html">OneOcrService</a> for key names, defaults, and visibility rules.</p>
 </div>
   <h3 id="methods">Methods
 </h3>
@@ -355,7 +355,7 @@ in the optimal format without extra conversion.</p>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)">CreateSessionAsync(IReadOnlyDictionary&lt;string, object&gt;, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Creates a new OCR session with the specified engine settings.</p>
+  <div class="markdown level1 summary"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Creates a new OCR session with the specified engine settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -375,13 +375,13 @@ in the optimal format without extra conversion.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</td>
         <td><span class="parametername">settings</span></td>
-        <td><p>Dictionary of setting keys (see type-level remarks). Missing keys use descriptor defaults.</p>
+        <td><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Dictionary of setting keys (see type-level remarks). Missing keys use descriptor defaults.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td><p>Token to cancel session creation (e.g. while downloading).</p>
+        <td><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Token to cancel session creation (e.g. while downloading).</p>
 </td>
       </tr>
     </tbody>
@@ -397,7 +397,7 @@ in the optimal format without extra conversion.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Zaya.OCR.Services.IOCRSession.html">IOCRSession</a>&gt;</td>
-        <td><p>An active OCR session ready to recognize text.</p>
+        <td><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">An active OCR session ready to recognize text.</p>
 </td>
       </tr>
     </tbody>
@@ -411,7 +411,7 @@ in the optimal format without extra conversion.</p>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Threading_CancellationToken_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Threading.CancellationToken)">CreateSessionAsync(CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Creates a new OCR session with the default engine settings.</p>
+  <div class="markdown level1 summary"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Creates a new OCR session with the default engine settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -431,7 +431,7 @@ in the optimal format without extra conversion.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td><p>Token to cancel session creation.</p>
+        <td><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Token to cancel session creation.</p>
 </td>
       </tr>
     </tbody>
@@ -447,7 +447,7 @@ in the optimal format without extra conversion.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Zaya.OCR.Services.IOCRSession.html">IOCRSession</a>&gt;</td>
-        <td><p>An active OCR session ready to recognize text.</p>
+        <td><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">An active OCR session ready to recognize text.</p>
 </td>
       </tr>
     </tbody>
@@ -461,7 +461,7 @@ in the optimal format without extra conversion.</p>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Dispose_" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Dispose*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Services_OneOcrService_Dispose" data-uid="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Dispose">Dispose()</h4>
-  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+  <div class="markdown level1 summary"><p sourcefile="docs/api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.yml" sourcestartlinenumber="1">Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>

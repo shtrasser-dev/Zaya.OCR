@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Layout_EngineName" xml:space="preserve">
+    <value>Proximity Text Layout</value>
+  </data>
+  <data name="Layout_EngineDesc" xml:space="preserve">
+    <value>Mesafe eşikleri kullanarak OCR kelimelerini paragraflarda birleştirir</value>
+  </data>
+  <data name="Layout_WordGapThreshold" xml:space="preserve">
+    <value>Kelime boşluğu eşiği</value>
+  </data>
+  <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
+    <value>Satırda birleştirmek için kelimeler arası maksimum boşluk (kelime yüksekliğinin %'si)</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
+    <value>Taban çizgisi sapma toleransı</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
+    <value>Satırda birleştirmek için kelime merkezlerinin maksimum dikey sapması (yüksekliğin %'si)</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold" xml:space="preserve">
+    <value>Satır aralığı eşiği</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
+    <value>Paragrafta birleştirmek için satır merkezleri arası maksimum dikey mesafe (yüksekliğin %'si)</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
+    <value>Sol kenar hizalaması</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
+    <value>Paragrafta birleştirmek için sol kenarların maksimum yatay kayması (yüksekliğin %'si)</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
+    <value>İlk satır girintisi</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
+    <value>İlk satırın maksimum ek girintisi (yüksekliğin %'si)</value>
+  </data>
+  <data name="Layout_CenterAlignment" xml:space="preserve">
+    <value>Ortalı hizalama</value>
+  </data>
+  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
+    <value>Yatay merkezleri hizalıysa satırları da birleştir</value>
+  </data>
+  <data name="Layout_FontSizeTolerance" xml:space="preserve">
+    <value>Yazı tipi boyutu toleransı</value>
+  </data>
+  <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
+    <value>Paragrafları bölmeden önce satırlar arası maksimum yükseklik farkı (satır yüksekliğinin %'si)</value>
+  </data>
+  <data name="Layout_EnableStabilization" xml:space="preserve">
+    <value>Kareler arasında sabitle</value>
+  </data>
+  <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
+    <value>OCR titrediğinde önceki paragrafları yeniden kullan (metin daha kısa/eşit, bounds jitter)</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
+    <value>Merkez eşleşme eşiği</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
+    <value>Önceki kareyle eşleşmek için paragraf merkezinin maksimum sapması (ortalama satır yüksekliğinin %'si)</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold" xml:space="preserve">
+    <value>Metin eşleşme eşiği</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
+    <value>Paragrafları aynı saymak için maksimum Levenshtein mesafesi (daha uzun metnin %'si)</value>
+  </data>
+  <data name="Layout_MinLength" xml:space="preserve">
+    <value>Yaklaşık eşleşme için min. metin uzunluğu</value>
+  </data>
+  <data name="Layout_MinLength_Desc" xml:space="preserve">
+    <value>Daha kısa metinler önceki kareyle tam eşleşme gerektirir</value>
+  </data>
+</root>

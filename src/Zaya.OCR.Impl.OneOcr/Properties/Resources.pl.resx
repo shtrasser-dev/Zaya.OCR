@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ocr_EngineName" xml:space="preserve">
+    <value>Windows OneOCR Engine</value>
+  </data>
+  <data name="Ocr_EngineDesc" xml:space="preserve">
+    <value>Używa wbudowanego silnika OCR Windows 11 (SnippingTool)</value>
+  </data>
+  <data name="Ocr_Source" xml:space="preserve">
+    <value>Źródło silnika</value>
+  </data>
+  <data name="Ocr_Source_Desc" xml:space="preserve">
+    <value>Skąd ładować pliki OneOCR</value>
+  </data>
+  <data name="Ocr_Source_Auto" xml:space="preserve">
+    <value>Auto (SnippingTool, potem URL)</value>
+  </data>
+  <data name="Ocr_Source_SnippingTool" xml:space="preserve">
+    <value>SnippingTool</value>
+  </data>
+  <data name="Ocr_Source_Directory" xml:space="preserve">
+    <value>Katalog lokalny</value>
+  </data>
+  <data name="Ocr_Source_Url" xml:space="preserve">
+    <value>URL pobierania</value>
+  </data>
+  <data name="Ocr_EngineDir" xml:space="preserve">
+    <value>Katalog silnika</value>
+  </data>
+  <data name="Ocr_EngineDir_Desc" xml:space="preserve">
+    <value>Katalog z oneocr.dll, onnxruntime.dll i oneocr.onemodel</value>
+  </data>
+  <data name="Ocr_DownloadUrl" xml:space="preserve">
+    <value>URL pobierania</value>
+  </data>
+  <data name="Ocr_DownloadUrl_Desc" xml:space="preserve">
+    <value>URL do pobrania pakietu silnika OneOCR</value>
+  </data>
+  <data name="Ocr_CacheDir" xml:space="preserve">
+    <value>Katalog pamięci podręcznej</value>
+  </data>
+  <data name="Ocr_CacheDir_Desc" xml:space="preserve">
+    <value>Miejsce przechowywania rozpakowanych plików silnika</value>
+  </data>
+  <data name="Ocr_MinConfidence" xml:space="preserve">
+    <value>Min. pewność (%)</value>
+  </data>
+  <data name="Ocr_MinConfidence_Desc" xml:space="preserve">
+    <value>Słowa z pewnością poniżej tego progu są odrzucane (0 = zachowaj wszystkie)</value>
+  </data>
+  <data name="Ocr_Err_SnippingToolNotFound" xml:space="preserve">
+    <value>Nie znaleziono silnika OneOCR. Upewnij się, że SnippingTool jest zainstalowany w Windows 11, lub podaj cache/URL z plikami silnika.</value>
+  </data>
+  <data name="Ocr_Err_ModelNotFound" xml:space="preserve">
+    <value>Nie znaleziono oneocr.onemodel.</value>
+  </data>
+  <data name="Ocr_Err_DllLoadFailed" xml:space="preserve">
+    <value>Nie udało się załadować oneocr.dll.</value>
+  </data>
+  <data name="Ocr_Err_DllNotFound" xml:space="preserve">
+    <value>Nie znaleziono oneocr.dll w podanym katalogu.</value>
+  </data>
+  <data name="Ocr_Err_DirectoryPathRequired" xml:space="preserve">
+    <value>Ścieżka katalogu jest wymagana, gdy źródło to 'directory'</value>
+  </data>
+  <data name="Ocr_Err_DownloadUrlRequired" xml:space="preserve">
+    <value>URL pobierania jest wymagany, gdy źródło to 'url'</value>
+  </data>
+  <data name="Ocr_Err_UnknownSource" xml:space="preserve">
+    <value>Nieznane źródło: {0}</value>
+  </data>
+  <data name="Ocr_Err_NativeFailed" xml:space="preserve">
+    <value>Błąd natywny OneOCR: {0}</value>
+  </data>
+</root>

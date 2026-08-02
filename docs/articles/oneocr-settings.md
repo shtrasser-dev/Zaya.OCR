@@ -15,7 +15,7 @@ Typed helper: [`OneOcrConfig`](xref:Zaya.OCR.Impl.OneOcr.OneOcrConfig) → `ToDi
 | `directoryPath` | directory path | — | `source` = `directory` | Folder with `oneocr.dll`, `onnxruntime.dll`, `oneocr.onemodel` |
 | `downloadUrl` | URL | [Zaya.External OneOCR.zip](https://github.com/shtrasser-dev/Zaya.External/releases/latest/download/OneOCR.zip) | `source` = `url` | Zip package URL; also used as `auto` fallback |
 | `cacheDirectory` | directory path | `%TEMP%\Zaya\OneOcr` | — | Writable cache for copy/extract (`auto` / `snippingtool` / `url`) |
-| `minConfidence` | int 0–100 | `0` | — | Drop words with confidence below this percent |
+| `minConfidence` | int 0–100 | `90` | — | Drop words with confidence below this percent |
 
 ## `source` values
 
@@ -33,7 +33,7 @@ A cache directory is treated as complete when it contains `oneocr.dll`, `onnxrun
 Hosts should honor `SettingDescriptor.IsVisible` / `IsRequired`:
 
 - `directoryPath` — visible only when `source` is `directory`
-- `downloadUrl` — visible for `auto` and `url`; required only for `url`
+- `downloadUrl` — visible and required only when `source` is `url` (still used as `auto` fallback when needed)
 - `cacheDirectory` — visible for `auto`, `snippingtool`, and `url`
 
 Some hosts (for example ScreenTranslator) treat `cacheDirectory` as host-managed and inject a path under `%AppData%` instead of showing the field.

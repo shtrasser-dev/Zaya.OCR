@@ -60,49 +60,50 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="versioning-zayaocr">Versioning (Zaya.OCR)</h1>
+<h1 id="versioning-zayaocr" sourcefile="docs/versioning.md" sourcestartlinenumber="1">Versioning (Zaya.OCR)</h1>
 
-<table>
+<table sourcefile="docs/versioning.md" sourcestartlinenumber="3">
 <thead>
-<tr>
-<th>Axis</th>
-<th>Source</th>
-<th>Example</th>
+<tr sourcefile="docs/versioning.md" sourcestartlinenumber="3">
+<th sourcefile="docs/versioning.md" sourcestartlinenumber="3">Axis</th>
+<th sourcefile="docs/versioning.md" sourcestartlinenumber="3">Source</th>
+<th sourcefile="docs/versioning.md" sourcestartlinenumber="3">Example</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>ZayaPrimitivesVersion</strong></td>
-<td><code>Directory.Build.props</code> (supplies <strong>Major</strong>)</td>
-<td><code>1.0.0</code></td>
+<tr sourcefile="docs/versioning.md" sourcestartlinenumber="5">
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="5"><strong sourcefile="docs/versioning.md" sourcestartlinenumber="5">ZayaPrimitivesVersion</strong></td>
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="5"><code sourcefile="docs/versioning.md" sourcestartlinenumber="5">Directory.Build.props</code> (supplies <strong sourcefile="docs/versioning.md" sourcestartlinenumber="5">Major</strong>)</td>
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="5"><code sourcefile="docs/versioning.md" sourcestartlinenumber="5">1.0.0</code></td>
 </tr>
-<tr>
-<td><strong>interfaceVersion</strong></td>
-<td><code>Zaya.OCR.csproj</code> → only <strong><code>ZayaVersionInterface</code></strong> → <code>Major.Interface.0</code></td>
-<td><code>1.0.0</code></td>
+<tr sourcefile="docs/versioning.md" sourcestartlinenumber="6">
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="6"><strong sourcefile="docs/versioning.md" sourcestartlinenumber="6">interfaceVersion</strong></td>
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="6"><code sourcefile="docs/versioning.md" sourcestartlinenumber="6">Zaya.OCR.csproj</code> → only <strong sourcefile="docs/versioning.md" sourcestartlinenumber="6"><code sourcefile="docs/versioning.md" sourcestartlinenumber="6">ZayaVersionInterface</code></strong> → <code sourcefile="docs/versioning.md" sourcestartlinenumber="6">Major.Interface.0</code></td>
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="6"><code sourcefile="docs/versioning.md" sourcestartlinenumber="6">1.0.0</code></td>
 </tr>
-<tr>
-<td><strong>pluginVersion</strong></td>
-<td>Each Impl → <strong><code>ZayaVersionImpMajor</code></strong> + <strong><code>ZayaVersionImpMinor</code></strong>; Interface read from abstractions → <code>Major.Interface.ImpMajor.ImpMinor</code></td>
-<td><code>1.0.0.0</code></td>
+<tr sourcefile="docs/versioning.md" sourcestartlinenumber="7">
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="7"><strong sourcefile="docs/versioning.md" sourcestartlinenumber="7">pluginVersion</strong></td>
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="7">Each Impl → <strong sourcefile="docs/versioning.md" sourcestartlinenumber="7"><code sourcefile="docs/versioning.md" sourcestartlinenumber="7">ZayaVersionImpMajor</code></strong> + <strong sourcefile="docs/versioning.md" sourcestartlinenumber="7"><code sourcefile="docs/versioning.md" sourcestartlinenumber="7">ZayaVersionImpMinor</code></strong>; Interface read from abstractions → <code sourcefile="docs/versioning.md" sourcestartlinenumber="7">Major.Interface.ImpMajor.ImpMinor</code></td>
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="7"><code sourcefile="docs/versioning.md" sourcestartlinenumber="7">1.0.0.0</code></td>
 </tr>
-<tr>
-<td><strong>updateChannel</strong></td>
-<td>Interface <code>MAJOR.Interface</code></td>
-<td><code>1.0</code> → <code>plugin-v1.0-latest</code></td>
+<tr sourcefile="docs/versioning.md" sourcestartlinenumber="8">
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="8"><strong sourcefile="docs/versioning.md" sourcestartlinenumber="8">updateChannel</strong></td>
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="8">Interface <code sourcefile="docs/versioning.md" sourcestartlinenumber="8">MAJOR.Interface</code></td>
+<td sourcefile="docs/versioning.md" sourcestartlinenumber="8"><code sourcefile="docs/versioning.md" sourcestartlinenumber="8">1.0</code> → <code sourcefile="docs/versioning.md" sourcestartlinenumber="8">plugin-Zaya.OCR-v1.0-latest</code></td>
 </tr>
 </tbody>
 </table>
-<p>Rules:</p>
-<ul>
-<li>Abstractions: only <code>ZayaVersionInterface</code>. Version always ends with <code>.0</code>. Contract/assembly change → bump Interface.</li>
-<li>Plugin: only <code>ZayaVersionImpMajor</code> / <code>ZayaVersionImpMinor</code>. Interface digit is taken from <code>Zaya.OCR.csproj</code> automatically.</li>
-<li>Do not set <code>&lt;Version&gt;</code> manually. <code>Directory.Build.targets</code> builds it and checks Major vs Primitives.</li>
-<li>Host loads a zip only if <code>interfaceVersion</code> <strong>exactly</strong> matches host’s <code>Zaya.OCR</code> version.</li>
-<li>Updater uses <code>plugin-v{updateChannel}-latest</code> (not Primitives).</li>
+<p sourcefile="docs/versioning.md" sourcestartlinenumber="10">Rules:</p>
+<ul sourcefile="docs/versioning.md" sourcestartlinenumber="12">
+<li sourcefile="docs/versioning.md" sourcestartlinenumber="12">Abstractions: only <code sourcefile="docs/versioning.md" sourcestartlinenumber="12">ZayaVersionInterface</code>. Version always ends with <code sourcefile="docs/versioning.md" sourcestartlinenumber="12">.0</code>. Contract/assembly change → bump Interface.</li>
+<li sourcefile="docs/versioning.md" sourcestartlinenumber="13">Plugin: only <code sourcefile="docs/versioning.md" sourcestartlinenumber="13">ZayaVersionImpMajor</code> / <code sourcefile="docs/versioning.md" sourcestartlinenumber="13">ZayaVersionImpMinor</code>. Interface digit is taken from <code sourcefile="docs/versioning.md" sourcestartlinenumber="13">Zaya.OCR.csproj</code> automatically.</li>
+<li sourcefile="docs/versioning.md" sourcestartlinenumber="14">Do not set <code sourcefile="docs/versioning.md" sourcestartlinenumber="14">&lt;Version&gt;</code> manually. <code sourcefile="docs/versioning.md" sourcestartlinenumber="14">Directory.Build.targets</code> builds it and checks Major vs Primitives.</li>
+<li sourcefile="docs/versioning.md" sourcestartlinenumber="15">Host loads a zip only if <code sourcefile="docs/versioning.md" sourcestartlinenumber="15">interfaceVersion</code> <strong sourcefile="docs/versioning.md" sourcestartlinenumber="15">exactly</strong> matches host’s <code sourcefile="docs/versioning.md" sourcestartlinenumber="15">Zaya.OCR</code> version.</li>
+<li sourcefile="docs/versioning.md" sourcestartlinenumber="16"><strong sourcefile="docs/versioning.md" sourcestartlinenumber="16">One interface → one floating GitHub tag:</strong> <code sourcefile="docs/versioning.md" sourcestartlinenumber="16">plugin-Zaya.OCR-v{channel}-latest</code> (immutable: <code sourcefile="docs/versioning.md" sourcestartlinenumber="16">plugin-Zaya.OCR-v{pluginVersion}</code>). All OCR/layout zips ship in that release.</li>
+<li sourcefile="docs/versioning.md" sourcestartlinenumber="17"><code sourcefile="docs/versioning.md" sourcestartlinenumber="17">build.cmd</code> writes <code sourcefile="docs/versioning.md" sourcestartlinenumber="17">out/interfaces.json</code> for the Publish workflow.</li>
 </ul>
-<h2 id="pluginjson">plugin.json</h2>
-<pre><code class="lang-json">{
+<h2 id="pluginjson" sourcefile="docs/versioning.md" sourcestartlinenumber="19">plugin.json</h2>
+<pre><code class="lang-json" sourcefile="docs/versioning.md" sourcestartlinenumber="21">{
   &quot;id&quot;: &quot;OneOcr&quot;,
   &quot;type&quot;: &quot;ocr&quot;,
   &quot;interface&quot;: &quot;Zaya.OCR&quot;,
@@ -110,12 +111,12 @@
   &quot;pluginVersion&quot;: &quot;1.0.0.0&quot;
 }
 </code></pre>
-<p>Release body lists per-asset plugin versions (<code>Zaya.OCR.Impl.OneOcr.zip=1.0.0.0</code>).</p>
-<h2 id="bumping">Bumping</h2>
-<ol>
-<li>Interface: raise <code>ZayaVersionInterface</code> in <code>Zaya.OCR.csproj</code>, update host, republish plugins.</li>
-<li>Single engine: raise <code>ZayaVersionImpMajor</code> / <code>ZayaVersionImpMinor</code> only in that Impl’s <code>.csproj</code>.</li>
-<li>Run <code>build.cmd</code> / Publish workflow.</li>
+<p sourcefile="docs/versioning.md" sourcestartlinenumber="31">Release body lists per-asset plugin versions (<code sourcefile="docs/versioning.md" sourcestartlinenumber="31">Zaya.OCR.Impl.OneOcr.zip=1.0.0.0</code>).</p>
+<h2 id="bumping" sourcefile="docs/versioning.md" sourcestartlinenumber="33">Bumping</h2>
+<ol sourcefile="docs/versioning.md" sourcestartlinenumber="35">
+<li sourcefile="docs/versioning.md" sourcestartlinenumber="35">Interface: raise <code sourcefile="docs/versioning.md" sourcestartlinenumber="35">ZayaVersionInterface</code> in <code sourcefile="docs/versioning.md" sourcestartlinenumber="35">Zaya.OCR.csproj</code>, update host, republish plugins.</li>
+<li sourcefile="docs/versioning.md" sourcestartlinenumber="36">Single engine: raise <code sourcefile="docs/versioning.md" sourcestartlinenumber="36">ZayaVersionImpMajor</code> / <code sourcefile="docs/versioning.md" sourcestartlinenumber="36">ZayaVersionImpMinor</code> only in that Impl’s <code sourcefile="docs/versioning.md" sourcestartlinenumber="36">.csproj</code>.</li>
+<li sourcefile="docs/versioning.md" sourcestartlinenumber="37">Run <code sourcefile="docs/versioning.md" sourcestartlinenumber="37">build.cmd</code> / Publish workflow.</li>
 </ol>
 
 </article>

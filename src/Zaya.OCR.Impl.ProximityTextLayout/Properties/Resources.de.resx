@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Layout_EngineName" xml:space="preserve">
+    <value>Proximity Text Layout</value>
+  </data>
+  <data name="Layout_EngineDesc" xml:space="preserve">
+    <value>Fügt OCR-Wörter anhand von Abstandsschwellenwerten zu Absätzen zusammen</value>
+  </data>
+  <data name="Layout_WordGapThreshold" xml:space="preserve">
+    <value>Wortabstands-Schwellenwert</value>
+  </data>
+  <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
+    <value>Maximaler Abstand zwischen Wörtern (% der Worthöhe) zum Zusammenfügen in eine Zeile</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
+    <value>Toleranz der Mittellinienabweichung</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
+    <value>Maximale vertikale Abweichung der Wortmitten (% der Worthöhe) zum Zusammenfügen in eine Zeile</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold" xml:space="preserve">
+    <value>Zeilenabstands-Schwellenwert</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
+    <value>Maximaler vertikaler Abstand zwischen Zeilenmitten (% der Worthöhe) zum Zusammenfügen in einen Absatz</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
+    <value>Ausrichtung am linken Rand</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
+    <value>Maximaler horizontaler Versatz der linken Ränder (% der Worthöhe) zum Zusammenfügen in einen Absatz</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
+    <value>Einzug der ersten Zeile</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
+    <value>Maximaler zusätzlicher Einzug der ersten Zeile (% der Worthöhe)</value>
+  </data>
+  <data name="Layout_CenterAlignment" xml:space="preserve">
+    <value>Zentrierte Ausrichtung</value>
+  </data>
+  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
+    <value>Zeilen auch zusammenfügen, wenn ihre horizontalen Mitten ausgerichtet sind</value>
+  </data>
+  <data name="Layout_FontSizeTolerance" xml:space="preserve">
+    <value>Schriftgrößen-Toleranz</value>
+  </data>
+  <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
+    <value>Maximale Höhendifferenz (% der Zeilenhöhe) zwischen Zeilen vor dem Aufteilen von Absätzen</value>
+  </data>
+  <data name="Layout_EnableStabilization" xml:space="preserve">
+    <value>Über Frames stabilisieren</value>
+  </data>
+  <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
+    <value>Vorherige Absätze wiederverwenden, wenn OCR flackert (Text kürzer/gleich, Bounds-Jitter)</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
+    <value>Mitten-Übereinstimmungsschwelle</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
+    <value>Maximale Abweichung der Absatzmitte (% der mittleren Zeilenhöhe) zum Abgleich mit dem vorherigen Frame</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold" xml:space="preserve">
+    <value>Text-Übereinstimmungsschwelle</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
+    <value>Maximale Levenshtein-Distanz (% des längeren Texts), um Absätze als gleich zu behandeln</value>
+  </data>
+  <data name="Layout_MinLength" xml:space="preserve">
+    <value>Min. Textlänge für Fuzzy-Match</value>
+  </data>
+  <data name="Layout_MinLength_Desc" xml:space="preserve">
+    <value>Kürzere Texte erfordern eine exakte Übereinstimmung mit dem vorherigen Frame</value>
+  </data>
+</root>

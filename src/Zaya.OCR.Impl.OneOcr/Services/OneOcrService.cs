@@ -67,7 +67,7 @@ namespace Zaya.OCR.Impl.OneOcr.Services;
 /// <item>
 /// <term><c>minConfidence</c></term>
 /// <term>integer 0–100</term>
-/// <term><c>0</c></term>
+/// <term><c>90</c></term>
 /// <term>Minimum word confidence (percent). Words below the threshold are dropped.</term>
 /// </item>
 /// </list>

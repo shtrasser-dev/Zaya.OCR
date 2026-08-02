@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ocr_EngineName" xml:space="preserve">
+    <value>Windows Media OCR</value>
+  </data>
+  <data name="Ocr_EngineDesc" xml:space="preserve">
+    <value>官方 Windows.Media.Ocr WinRT API（Windows 10+）。桌面应用通常需要 MSIX 包标识；请在 Windows 设置中安装 OCR 语言包。</value>
+  </data>
+  <data name="Ocr_Language" xml:space="preserve">
+    <value>OCR 语言</value>
+  </data>
+  <data name="Ocr_Language_Desc" xml:space="preserve">
+    <value>识别语言。自动使用 Windows 用户配置文件中的语言。</value>
+  </data>
+  <data name="Ocr_Language_Auto" xml:space="preserve">
+    <value>自动（用户配置文件语言）</value>
+  </data>
+  <data name="Ocr_Err_LanguageNotSupported" xml:space="preserve">
+    <value>OCR 语言 '{0}' 未安装或不支持。请在 Windows 设置中安装 OCR 语言包。</value>
+  </data>
+  <data name="Ocr_Err_EngineCreateFailed" xml:space="preserve">
+    <value>无法创建 Windows.Media.Ocr 引擎。请确保已安装 OCR 语言包，并且主机在需要时具有包标识（MSIX）。</value>
+  </data>
+  <data name="Ocr_Err_UnsupportedPixelFormat" xml:space="preserve">
+    <value>不支持的像素格式 '{0}'。需要 BGRA32。</value>
+  </data>
+  <data name="Ocr_Err_RecognizeFailed" xml:space="preserve">
+    <value>Windows.Media.Ocr 识别失败：{0}</value>
+  </data>
+  <data name="Ocr_Err_NotAvailable" xml:space="preserve">
+    <value>此系统上无法使用 Windows.Media.Ocr（需要 Windows 10 或更高版本）。</value>
+  </data>
+</root>

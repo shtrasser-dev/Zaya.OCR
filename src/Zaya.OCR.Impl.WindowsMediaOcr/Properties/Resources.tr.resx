@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ocr_EngineName" xml:space="preserve">
+    <value>Windows Media OCR</value>
+  </data>
+  <data name="Ocr_EngineDesc" xml:space="preserve">
+    <value>Resmi Windows.Media.Ocr WinRT API (Windows 10+). Masaüstü uygulamaları genelde MSIX paket kimliği gerektirir; OCR dil paketlerini Windows Ayarları'ndan yükleyin.</value>
+  </data>
+  <data name="Ocr_Language" xml:space="preserve">
+    <value>OCR dili</value>
+  </data>
+  <data name="Ocr_Language_Desc" xml:space="preserve">
+    <value>Tanıma dili. Otomatik, Windows kullanıcı profilindeki dilleri kullanır.</value>
+  </data>
+  <data name="Ocr_Language_Auto" xml:space="preserve">
+    <value>Otomatik (kullanıcı profili dilleri)</value>
+  </data>
+  <data name="Ocr_Err_LanguageNotSupported" xml:space="preserve">
+    <value>OCR dili '{0}' yüklü değil veya desteklenmiyor. Windows Ayarları'nda OCR dil paketini yükleyin.</value>
+  </data>
+  <data name="Ocr_Err_EngineCreateFailed" xml:space="preserve">
+    <value>Windows.Media.Ocr motoru oluşturulamadı. OCR dil paketlerinin yüklü olduğundan ve gerekirse ana bilgisayarın paket kimliğine (MSIX) sahip olduğundan emin olun.</value>
+  </data>
+  <data name="Ocr_Err_UnsupportedPixelFormat" xml:space="preserve">
+    <value>Desteklenmeyen piksel biçimi '{0}'. Beklenen: BGRA32.</value>
+  </data>
+  <data name="Ocr_Err_RecognizeFailed" xml:space="preserve">
+    <value>Windows.Media.Ocr tanıma başarısız: {0}</value>
+  </data>
+  <data name="Ocr_Err_NotAvailable" xml:space="preserve">
+    <value>Windows.Media.Ocr bu sistemde kullanılamıyor (Windows 10 veya üzeri gerekir).</value>
+  </data>
+</root>

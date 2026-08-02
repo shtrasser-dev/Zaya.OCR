@@ -85,7 +85,7 @@ items:
 
     Hosts such as ScreenTranslator may override this key.
 
-    </td></tr><tr><td class="term"><code>minConfidence</code></td><td class="term">integer 0–100</td><td class="term"><code>0</code></td><td class="term">Minimum word confidence (percent). Words below the threshold are dropped.</td></tr></tbody></table>
+    </td></tr><tr><td class="term"><code>minConfidence</code></td><td class="term">integer 0–100</td><td class="term"><code>90</code></td><td class="term">Minimum word confidence (percent). Words below the threshold are dropped.</td></tr></tbody></table>
 
     <p>
 

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Layout_EngineName" xml:space="preserve">
+    <value>Proximity Text Layout</value>
+  </data>
+  <data name="Layout_EngineDesc" xml:space="preserve">
+    <value>使用距离阈值将 OCR 单词合并为段落</value>
+  </data>
+  <data name="Layout_WordGapThreshold" xml:space="preserve">
+    <value>词间距阈值</value>
+  </data>
+  <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
+    <value>合并为一行时单词间的最大间距（占单词高度的百分比）</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
+    <value>基线偏移容差</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
+    <value>合并为一行时单词中心的最大垂直偏移（占单词高度的百分比）</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold" xml:space="preserve">
+    <value>行距阈值</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
+    <value>合并为段落时行中心间的最大垂直距离（占单词高度的百分比）</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
+    <value>左边缘对齐</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
+    <value>合并为段落时左边缘的最大水平偏移（占单词高度的百分比）</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
+    <value>首行缩进</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
+    <value>首行的最大额外缩进（占单词高度的百分比）</value>
+  </data>
+  <data name="Layout_CenterAlignment" xml:space="preserve">
+    <value>居中对齐</value>
+  </data>
+  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
+    <value>当水平中心对齐时也合并行</value>
+  </data>
+  <data name="Layout_FontSizeTolerance" xml:space="preserve">
+    <value>字号容差</value>
+  </data>
+  <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
+    <value>拆分段落前行之间的最大高度差（占行高的百分比）</value>
+  </data>
+  <data name="Layout_EnableStabilization" xml:space="preserve">
+    <value>跨帧稳定</value>
+  </data>
+  <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
+    <value>OCR 闪烁时复用上一帧段落（文本更短/相等，bounds 抖动）</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
+    <value>中心匹配阈值</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
+    <value>与上一帧匹配时段落中心的最大偏移（占平均行高的百分比）</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold" xml:space="preserve">
+    <value>文本匹配阈值</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
+    <value>将段落视为相同的最大编辑距离（占较长文本的百分比）</value>
+  </data>
+  <data name="Layout_MinLength" xml:space="preserve">
+    <value>模糊匹配的最小文本长度</value>
+  </data>
+  <data name="Layout_MinLength_Desc" xml:space="preserve">
+    <value>更短的文本需要与上一帧完全匹配</value>
+  </data>
+</root>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ocr_EngineName" xml:space="preserve">
+    <value>Windows Media OCR</value>
+  </data>
+  <data name="Ocr_EngineDesc" xml:space="preserve">
+    <value>API WinRT officielle Windows.Media.Ocr (Windows 10+). Les applications de bureau nécessitent généralement une identité de package MSIX ; installez les packs linguistiques OCR dans les paramètres Windows.</value>
+  </data>
+  <data name="Ocr_Language" xml:space="preserve">
+    <value>Langue OCR</value>
+  </data>
+  <data name="Ocr_Language_Desc" xml:space="preserve">
+    <value>Langue de reconnaissance. Auto utilise les langues du profil utilisateur Windows.</value>
+  </data>
+  <data name="Ocr_Language_Auto" xml:space="preserve">
+    <value>Auto (langues du profil utilisateur)</value>
+  </data>
+  <data name="Ocr_Err_LanguageNotSupported" xml:space="preserve">
+    <value>La langue OCR '{0}' n'est pas installée ou n'est pas prise en charge. Installez le pack linguistique OCR dans les paramètres Windows.</value>
+  </data>
+  <data name="Ocr_Err_EngineCreateFailed" xml:space="preserve">
+    <value>Échec de la création du moteur Windows.Media.Ocr. Assurez-vous que les packs linguistiques OCR sont installés et que l'hôte a une identité de package (MSIX) si nécessaire.</value>
+  </data>
+  <data name="Ocr_Err_UnsupportedPixelFormat" xml:space="preserve">
+    <value>Format de pixel non pris en charge '{0}'. BGRA32 attendu.</value>
+  </data>
+  <data name="Ocr_Err_RecognizeFailed" xml:space="preserve">
+    <value>Échec de la reconnaissance Windows.Media.Ocr : {0}</value>
+  </data>
+  <data name="Ocr_Err_NotAvailable" xml:space="preserve">
+    <value>Windows.Media.Ocr n'est pas disponible sur ce système (nécessite Windows 10 ou plus récent).</value>
+  </data>
+</root>

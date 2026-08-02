@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ocr_EngineName" xml:space="preserve">
+    <value>Windows Media OCR</value>
+  </data>
+  <data name="Ocr_EngineDesc" xml:space="preserve">
+    <value>公式の Windows.Media.Ocr WinRT API（Windows 10 以降）。デスクトップアプリでは通常 MSIX パッケージ ID が必要です。OCR 言語パックは Windows の設定からインストールしてください。</value>
+  </data>
+  <data name="Ocr_Language" xml:space="preserve">
+    <value>OCR 言語</value>
+  </data>
+  <data name="Ocr_Language_Desc" xml:space="preserve">
+    <value>認識言語。自動は Windows ユーザープロファイルの言語を使用します。</value>
+  </data>
+  <data name="Ocr_Language_Auto" xml:space="preserve">
+    <value>自動（ユーザープロファイルの言語）</value>
+  </data>
+  <data name="Ocr_Err_LanguageNotSupported" xml:space="preserve">
+    <value>OCR 言語 '{0}' がインストールされていないか、サポートされていません。Windows の設定で OCR 言語パックをインストールしてください。</value>
+  </data>
+  <data name="Ocr_Err_EngineCreateFailed" xml:space="preserve">
+    <value>Windows.Media.Ocr エンジンの作成に失敗しました。OCR 言語パックがインストールされ、必要に応じてホストにパッケージ ID（MSIX）があることを確認してください。</value>
+  </data>
+  <data name="Ocr_Err_UnsupportedPixelFormat" xml:space="preserve">
+    <value>サポートされていないピクセル形式 '{0}'。BGRA32 が必要です。</value>
+  </data>
+  <data name="Ocr_Err_RecognizeFailed" xml:space="preserve">
+    <value>Windows.Media.Ocr の認識に失敗しました: {0}</value>
+  </data>
+  <data name="Ocr_Err_NotAvailable" xml:space="preserve">
+    <value>このシステムでは Windows.Media.Ocr を利用できません（Windows 10 以降が必要です）。</value>
+  </data>
+</root>

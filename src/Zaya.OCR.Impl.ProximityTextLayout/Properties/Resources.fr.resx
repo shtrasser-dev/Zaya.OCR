@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Layout_EngineName" xml:space="preserve">
+    <value>Proximity Text Layout</value>
+  </data>
+  <data name="Layout_EngineDesc" xml:space="preserve">
+    <value>Fusionne les mots OCR en paragraphes à l'aide de seuils de distance</value>
+  </data>
+  <data name="Layout_WordGapThreshold" xml:space="preserve">
+    <value>Seuil d'écart entre mots</value>
+  </data>
+  <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
+    <value>Écart maximal entre les mots (% de la hauteur du mot) pour fusionner en une ligne</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
+    <value>Tolérance de dérive de ligne de base</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
+    <value>Dérive verticale maximale des centres de mots (% de la hauteur) pour fusionner en une ligne</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold" xml:space="preserve">
+    <value>Seuil d'interligne</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
+    <value>Distance verticale maximale entre les centres de lignes (% de la hauteur) pour fusionner en un paragraphe</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
+    <value>Alignement du bord gauche</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
+    <value>Décalage horizontal maximal des bords gauches (% de la hauteur) pour fusionner en un paragraphe</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
+    <value>Retrait de première ligne</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
+    <value>Retrait supplémentaire maximal de la première ligne (% de la hauteur)</value>
+  </data>
+  <data name="Layout_CenterAlignment" xml:space="preserve">
+    <value>Alignement au centre</value>
+  </data>
+  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
+    <value>Fusionner aussi les lignes si leurs centres horizontaux s'alignent</value>
+  </data>
+  <data name="Layout_FontSizeTolerance" xml:space="preserve">
+    <value>Tolérance de taille de police</value>
+  </data>
+  <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
+    <value>Différence de hauteur max (% de la hauteur de ligne) entre lignes avant de séparer les paragraphes</value>
+  </data>
+  <data name="Layout_EnableStabilization" xml:space="preserve">
+    <value>Stabiliser entre les frames</value>
+  </data>
+  <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
+    <value>Réutiliser les paragraphes précédents en cas de scintillement OCR (texte plus court/égal, jitter des bounds)</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
+    <value>Seuil de correspondance des centres</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
+    <value>Dérive max du centre de paragraphe (% de la hauteur de ligne moyenne) pour correspondre à la frame précédente</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold" xml:space="preserve">
+    <value>Seuil de correspondance du texte</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
+    <value>Distance de Levenshtein max (% du texte le plus long) pour traiter les paragraphes comme identiques</value>
+  </data>
+  <data name="Layout_MinLength" xml:space="preserve">
+    <value>Longueur min. pour correspondance floue</value>
+  </data>
+  <data name="Layout_MinLength_Desc" xml:space="preserve">
+    <value>Les textes plus courts exigent une correspondance exacte avec la frame précédente</value>
+  </data>
+</root>

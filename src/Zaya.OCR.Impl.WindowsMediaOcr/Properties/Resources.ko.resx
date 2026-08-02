@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ocr_EngineName" xml:space="preserve">
+    <value>Windows Media OCR</value>
+  </data>
+  <data name="Ocr_EngineDesc" xml:space="preserve">
+    <value>공식 Windows.Media.Ocr WinRT API(Windows 10+). 데스크톱 앱은 일반적으로 MSIX 패키지 ID가 필요합니다. OCR 언어 팩은 Windows 설정에서 설치하세요.</value>
+  </data>
+  <data name="Ocr_Language" xml:space="preserve">
+    <value>OCR 언어</value>
+  </data>
+  <data name="Ocr_Language_Desc" xml:space="preserve">
+    <value>인식 언어. 자동은 Windows 사용자 프로필의 언어를 사용합니다.</value>
+  </data>
+  <data name="Ocr_Language_Auto" xml:space="preserve">
+    <value>자동(사용자 프로필 언어)</value>
+  </data>
+  <data name="Ocr_Err_LanguageNotSupported" xml:space="preserve">
+    <value>OCR 언어 '{0}'이(가) 설치되지 않았거나 지원되지 않습니다. Windows 설정에서 OCR 언어 팩을 설치하세요.</value>
+  </data>
+  <data name="Ocr_Err_EngineCreateFailed" xml:space="preserve">
+    <value>Windows.Media.Ocr 엔진을 만들지 못했습니다. OCR 언어 팩이 설치되어 있고 필요한 경우 호스트에 패키지 ID(MSIX)가 있는지 확인하세요.</value>
+  </data>
+  <data name="Ocr_Err_UnsupportedPixelFormat" xml:space="preserve">
+    <value>지원되지 않는 픽셀 형식 '{0}'. BGRA32가 필요합니다.</value>
+  </data>
+  <data name="Ocr_Err_RecognizeFailed" xml:space="preserve">
+    <value>Windows.Media.Ocr 인식 실패: {0}</value>
+  </data>
+  <data name="Ocr_Err_NotAvailable" xml:space="preserve">
+    <value>이 시스템에서 Windows.Media.Ocr을 사용할 수 없습니다(Windows 10 이상 필요).</value>
+  </data>
+</root>

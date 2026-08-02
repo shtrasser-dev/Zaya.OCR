@@ -64,9 +64,10 @@ public class OneOcrConfig
     public string? CacheDirectory { get; set; }
 
     /// <summary>
-    /// Gets or sets the minimum word confidence as a percentage (0–100). Default is <c>0</c>.
+    /// Gets or sets the minimum word confidence as a percentage (0–100).
+    /// Default is <c>90</c> to match <see cref="Services.OneOcrService.Settings"/>.
     /// </summary>
-    public int MinConfidence { get; set; }
+    public int MinConfidence { get; set; } = 90;
 
     /// <summary>
     /// Converts the typed configuration to the dictionary format accepted by

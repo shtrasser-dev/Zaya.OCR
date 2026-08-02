@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Layout_EngineName" xml:space="preserve">
+    <value>Proximity Text Layout</value>
+  </data>
+  <data name="Layout_EngineDesc" xml:space="preserve">
+    <value>Łączy słowa OCR w akapity na podstawie progów odległości</value>
+  </data>
+  <data name="Layout_WordGapThreshold" xml:space="preserve">
+    <value>Próg odstępu między słowami</value>
+  </data>
+  <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
+    <value>Maksymalny odstęp między słowami (% wysokości słowa) do połączenia w wiersz</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
+    <value>Tolerancja odchylenia linii bazowej</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
+    <value>Maksymalne pionowe odchylenie środków słów (% wysokości) do połączenia w wiersz</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold" xml:space="preserve">
+    <value>Próg odstępu między wierszami</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
+    <value>Maksymalna odległość pionowa między środkami wierszy (% wysokości) do połączenia w akapit</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
+    <value>Wyrównanie lewej krawędzi</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
+    <value>Maksymalne poziome przesunięcie lewych krawędzi (% wysokości) do połączenia w akapit</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
+    <value>Wcięcie pierwszego wiersza</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
+    <value>Maksymalne dodatkowe wcięcie pierwszego wiersza (% wysokości)</value>
+  </data>
+  <data name="Layout_CenterAlignment" xml:space="preserve">
+    <value>Wyrównanie do środka</value>
+  </data>
+  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
+    <value>Łącz także wiersze, gdy ich środki poziome się pokrywają</value>
+  </data>
+  <data name="Layout_FontSizeTolerance" xml:space="preserve">
+    <value>Tolerancja rozmiaru czcionki</value>
+  </data>
+  <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
+    <value>Maksymalna różnica wysokości (% wysokości wiersza) przed podziałem akapitów</value>
+  </data>
+  <data name="Layout_EnableStabilization" xml:space="preserve">
+    <value>Stabilizacja między klatkami</value>
+  </data>
+  <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
+    <value>Ponownie używaj poprzednich akapitów przy migotaniu OCR (tekst krótszy/równy, jitter bounds)</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
+    <value>Próg dopasowania środków</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
+    <value>Maks. odchylenie środka akapitu (% średniej wysokości wiersza) do dopasowania z poprzednią klatką</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold" xml:space="preserve">
+    <value>Próg dopasowania tekstu</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
+    <value>Maks. odległość Levenshteina (% dłuższego tekstu), by uznać akapity za te same</value>
+  </data>
+  <data name="Layout_MinLength" xml:space="preserve">
+    <value>Min. długość tekstu do dopasowania przybliżonego</value>
+  </data>
+  <data name="Layout_MinLength_Desc" xml:space="preserve">
+    <value>Krótsze teksty wymagają dokładnego dopasowania do poprzedniej klatki</value>
+  </data>
+</root>

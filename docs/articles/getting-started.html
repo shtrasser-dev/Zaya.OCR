@@ -67,43 +67,43 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="getting-started">Getting Started</h1>
+<h1 id="getting-started" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="1">Getting Started</h1>
 
-<h2 id="overview">Overview</h2>
-<p>Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on abstractions (<code>IOCRService</code>, <code>IOCRSession</code>, <code>IOCRResult</code>, <code>IOCRWord</code>); implementations such as OneOCR are separate packages.</p>
-<h2 id="architecture">Architecture</h2>
-<table>
+<h2 id="overview" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="3">Overview</h2>
+<p sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="5">Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on abstractions (<code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="5">IOCRService</code>, <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="5">IOCRSession</code>, <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="5">IOCRResult</code>, <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="5">IOCRWord</code>); implementations such as OneOCR are separate packages.</p>
+<h2 id="architecture" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="7">Architecture</h2>
+<table sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="9">
 <thead>
-<tr>
-<th>Interface</th>
-<th>Role</th>
+<tr sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="9">
+<th sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="9">Interface</th>
+<th sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="9">Role</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>IOCRService</code></td>
-<td>Engine metadata + settings; creates sessions via <code>CreateSessionAsync</code></td>
+<tr sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="11">
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="11"><code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="11">IOCRService</code></td>
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="11">Engine metadata + settings; creates sessions via <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="11">CreateSessionAsync</code></td>
 </tr>
-<tr>
-<td><code>IOCRSession</code></td>
-<td>Active recognition session — <code>RecognizeAsync(IRawImage)</code> → <code>IOCRResult</code></td>
+<tr sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="12">
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="12"><code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="12">IOCRSession</code></td>
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="12">Active recognition session — <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="12">RecognizeAsync(IRawImage)</code> → <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="12">IOCRResult</code></td>
 </tr>
-<tr>
-<td><code>IOCRResult</code></td>
-<td>Aggregate result — read-only list of <code>IOCRWord</code> plus overall confidence</td>
+<tr sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="13">
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="13"><code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="13">IOCRResult</code></td>
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="13">Aggregate result — read-only list of <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="13">IOCRWord</code> plus overall confidence</td>
 </tr>
-<tr>
-<td><code>IOCRWord</code></td>
-<td>Individual word — recognized text, pixel bounding box, per-word confidence</td>
+<tr sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="14">
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="14"><code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="14">IOCRWord</code></td>
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="14">Individual word — recognized text, pixel bounding box, per-word confidence</td>
 </tr>
-<tr>
-<td><code>ITextLayoutService</code></td>
-<td>Optional layout engine — structures OCR words into paragraphs/lines</td>
+<tr sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="15">
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="15"><code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="15">ITextLayoutService</code></td>
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="15">Optional layout engine — structures OCR words into paragraphs/lines</td>
 </tr>
 </tbody>
 </table>
-<h2 id="basic-usage-oneocr">Basic Usage (OneOCR)</h2>
-<pre><code class="lang-csharp">using System.Drawing;
+<h2 id="basic-usage-oneocr" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="17">Basic Usage (OneOCR)</h2>
+<pre><code class="lang-csharp" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="19">using System.Drawing;
 using Zaya.OCR.Impl.OneOcr.Services;
 using Zaya.OCR.Services;
 
@@ -126,17 +126,17 @@ foreach (var word in result.Words)
     Console.WriteLine($&quot;  '{word.Text}' — bounds: {word.Bounds}, confidence: {word.Confidence:P0}&quot;);
 }
 </code></pre>
-<p>Each <code>CreateSessionAsync</code> call builds a new engine from the supplied settings (or descriptor defaults). Dispose the session when finished; it owns the native engine.</p>
-<h2 id="defaults-and-di">Defaults and DI</h2>
-<pre><code class="lang-csharp">// Defaults from SettingDescriptor list (source = auto, …)
+<p sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="44">Each <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="44">CreateSessionAsync</code> call builds a new engine from the supplied settings (or descriptor defaults). Dispose the session when finished; it owns the native engine.</p>
+<h2 id="defaults-and-di" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="46">Defaults and DI</h2>
+<pre><code class="lang-csharp" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="48">// Defaults from SettingDescriptor list (source = auto, …)
 using var session = await ocr.CreateSessionAsync();
 
 // Or register in DI
 services.AddOneOcr();
 // services.AddProximityTextLayout();
 </code></pre>
-<p>Typed settings helper:</p>
-<pre><code class="lang-csharp">using Zaya.OCR.Impl.OneOcr;
+<p sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="57">Typed settings helper:</p>
+<pre><code class="lang-csharp" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="59">using Zaya.OCR.Impl.OneOcr;
 
 var config = new OneOcrConfig
 {
@@ -148,41 +148,41 @@ using var session = await ocr.CreateSessionAsync(
         .Where(kv =&gt; kv.Value is not null)
         .ToDictionary(kv =&gt; kv.Key, kv =&gt; kv.Value!));
 </code></pre>
-<h2 id="input-formats">Input formats</h2>
-<table>
+<h2 id="input-formats" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="73">Input formats</h2>
+<table sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="75">
 <thead>
-<tr>
-<th>Source</th>
-<th>API</th>
+<tr sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="75">
+<th sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="75">Source</th>
+<th sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="75">API</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>IRawImage</code></td>
-<td><code>session.RecognizeAsync(rawImage)</code> — preferred (<code>PreferredPixelFormat</code> is BGRA32 for OneOCR)</td>
+<tr sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="77">
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="77"><code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="77">IRawImage</code></td>
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="77"><code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="77">session.RecognizeAsync(rawImage)</code> — preferred (<code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="77">PreferredPixelFormat</code> is BGRA32 for OneOCR)</td>
 </tr>
-<tr>
-<td><code>System.Drawing.Bitmap</code></td>
-<td><code>session.RecognizeAsync(bitmap)</code> — extension in <code>Zaya.OCR.Impl.OneOcr</code></td>
+<tr sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="78">
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="78"><code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="78">System.Drawing.Bitmap</code></td>
+<td sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="78"><code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="78">session.RecognizeAsync(bitmap)</code> — extension in <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="78">Zaya.OCR.Impl.OneOcr</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="cancellation">Cancellation</h2>
-<p>Both session creation and recognition accept an optional <code>CancellationToken</code>:</p>
-<pre><code class="lang-csharp">var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
+<h2 id="cancellation" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="80">Cancellation</h2>
+<p sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="82">Both session creation and recognition accept an optional <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="82">CancellationToken</code>:</p>
+<pre><code class="lang-csharp" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="84">var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
 
 using var session = await ocr.CreateSessionAsync(settings, cts.Token);
 var result = await session.RecognizeAsync(image, cts.Token);
 </code></pre>
-<h2 id="text-layout">Text layout</h2>
-<pre><code class="lang-csharp">using Zaya.OCR.Impl.ProximityTextLayout.Services;
+<h2 id="text-layout" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="91">Text layout</h2>
+<pre><code class="lang-csharp" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="93">using Zaya.OCR.Impl.ProximityTextLayout.Services;
 
 using var layout = new ProximityTextLayoutService();
 using var layoutSession = await layout.CreateSessionAsync();
 var structured = await layoutSession.ProcessAsync(ocrResult);
 </code></pre>
-<h2 id="implementing-a-custom-service">Implementing a custom service</h2>
-<pre><code class="lang-csharp">public sealed class MyOCRService : IOCRService
+<h2 id="implementing-a-custom-service" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="101">Implementing a custom service</h2>
+<pre><code class="lang-csharp" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="103">public sealed class MyOCRService : IOCRService
 {
     public string EngineId =&gt; &quot;my-ocr&quot;;
     public LocalizedString DisplayName { get; } = /* … */;
@@ -213,10 +213,10 @@ public sealed class MyOCRSession : IOCRSession
     public void Dispose() { }
 }
 </code></pre>
-<h2 id="next-steps">Next steps</h2>
-<ul>
-<li><strong><a href="oneocr-settings.html">OneOCR settings</a></strong> — <code>source</code>, <code>downloadUrl</code>, <code>cacheDirectory</code>, and other engine keys</li>
-<li><strong>API Reference</strong> — complete documentation generated from source code</li>
+<h2 id="next-steps" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="136">Next steps</h2>
+<ul sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="138">
+<li sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="138"><strong sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="138"><a href="oneocr-settings.html" sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="138">OneOCR settings</a></strong> — <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="138">source</code>, <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="138">downloadUrl</code>, <code sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="138">cacheDirectory</code>, and other engine keys</li>
+<li sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="139"><strong sourcefile="docs/articles/getting-started.md" sourcestartlinenumber="139">API Reference</strong> — complete documentation generated from source code</li>
 </ul>
 
 </article>

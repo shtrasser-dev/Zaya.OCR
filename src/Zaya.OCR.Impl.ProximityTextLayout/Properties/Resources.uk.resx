@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Layout_EngineName" xml:space="preserve">
+    <value>Proximity Text Layout</value>
+  </data>
+  <data name="Layout_EngineDesc" xml:space="preserve">
+    <value>Об'єднує слова OCR в абзаци за допомогою порогів відстані</value>
+  </data>
+  <data name="Layout_WordGapThreshold" xml:space="preserve">
+    <value>Поріг проміжку між словами</value>
+  </data>
+  <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
+    <value>Максимальний проміжок між словами (% від висоти) для об'єднання в рядок</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
+    <value>Допуск зміщення центрів слів</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
+    <value>Максимальне вертикальне зміщення центрів слів (% від висоти) для об'єднання в рядок</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold" xml:space="preserve">
+    <value>Поріг міжрядкового інтервалу</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
+    <value>Максимальна відстань між центрами рядків (% від висоти) для об'єднання в абзац</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
+    <value>Допуск вирівнювання за лівим краєм</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
+    <value>Максимальне зміщення лівих меж (% від висоти) для об'єднання в абзац</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
+    <value>Відступ першого рядка</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
+    <value>Максимальний додатковий відступ першого рядка (% від висоти)</value>
+  </data>
+  <data name="Layout_CenterAlignment" xml:space="preserve">
+    <value>Вирівнювання за центром</value>
+  </data>
+  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
+    <value>Також об'єднувати рядки при збігу центрів по горизонталі</value>
+  </data>
+  <data name="Layout_FontSizeTolerance" xml:space="preserve">
+    <value>Допуск розміру шрифту</value>
+  </data>
+  <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
+    <value>Максимальна різниця висот рядків (% від середньої висоти) перед розділенням абзаців</value>
+  </data>
+  <data name="Layout_EnableStabilization" xml:space="preserve">
+    <value>Стабілізація між кадрами</value>
+  </data>
+  <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
+    <value>Повторювати попередні абзаци при OCR-флікері (текст коротший/рівний, тремтіння bounds)</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
+    <value>Поріг збігу центрів</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
+    <value>Макс. зміщення центру абзацу (% від середньої висоти рядка) для матчу з попереднім кадром</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold" xml:space="preserve">
+    <value>Поріг збігу тексту</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
+    <value>Макс. відстань Левенштейна (% від довшого тексту), щоб вважати абзаци одним</value>
+  </data>
+  <data name="Layout_MinLength" xml:space="preserve">
+    <value>Мін. довжина для неточного матчу</value>
+  </data>
+  <data name="Layout_MinLength_Desc" xml:space="preserve">
+    <value>Коротші тексти склеюються з попереднім кадром лише за точного збігу</value>
+  </data>
+</root>

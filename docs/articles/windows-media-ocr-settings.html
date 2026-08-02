@@ -67,39 +67,39 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="windows-media-ocr-settings">Windows Media OCR settings</h1>
+<h1 id="windows-media-ocr-settings" sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="1">Windows Media OCR settings</h1>
 
-<p><code>EngineId</code>: <strong><code>windows-media-ocr</code></strong></p>
-<p>Uses the official WinRT API <a href="https://learn.microsoft.com/en-us/uwp/api/windows.media.ocr.ocrengine"><code>Windows.Media.Ocr.OcrEngine</code></a>.</p>
-<h2 id="requirements">Requirements</h2>
-<ul>
-<li>Windows 10 or later</li>
-<li>At least one OCR language pack installed (Windows Settings → Time &amp; language → Language &amp; region)</li>
-<li>Desktop hosts typically need <strong>package identity</strong> (MSIX). Unpackaged Win32 apps may fail to create the engine.</li>
+<p sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="3"><code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="3">EngineId</code>: <strong sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="3"><code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="3">windows-media-ocr</code></strong></p>
+<p sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="5">Uses the official WinRT API <a href="https://learn.microsoft.com/en-us/uwp/api/windows.media.ocr.ocrengine" sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="5"><code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="5">Windows.Media.Ocr.OcrEngine</code></a>.</p>
+<h2 id="requirements" sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="7">Requirements</h2>
+<ul sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="9">
+<li sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="9">Windows 10 or later</li>
+<li sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="10">At least one OCR language pack installed (Windows Settings → Time &amp; language → Language &amp; region)</li>
+<li sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="11">Desktop hosts typically need <strong sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="11">package identity</strong> (MSIX). Unpackaged Win32 apps may fail to create the engine.</li>
 </ul>
-<h2 id="settings">Settings</h2>
-<table>
+<h2 id="settings" sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="13">Settings</h2>
+<table sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="15">
 <thead>
-<tr>
-<th>Key</th>
-<th>Default</th>
-<th>Notes</th>
+<tr sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="15">
+<th sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="15">Key</th>
+<th sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="15">Default</th>
+<th sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="15">Notes</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>language</code></td>
-<td><code>auto</code></td>
-<td><code>auto</code> → <code>OcrEngine.TryCreateFromUserProfileLanguages()</code>; otherwise a BCP-47 tag for <code>TryCreateFromLanguage</code></td>
+<tr sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="17">
+<td sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="17"><code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="17">language</code></td>
+<td sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="17"><code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="17">auto</code></td>
+<td sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="17"><code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="17">auto</code> → <code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="17">OcrEngine.TryCreateFromUserProfileLanguages()</code>; otherwise a BCP-47 tag for <code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="17">TryCreateFromLanguage</code></td>
 </tr>
 </tbody>
 </table>
-<p>When available, the language dropdown lists installed OCR recognizer languages from <code>OcrEngine.AvailableRecognizerLanguages</code>. If that query fails, it falls back to <code>Languages.All</code> from Zaya.Primitives.</p>
-<h2 id="notes">Notes</h2>
-<ul>
-<li>Preferred input is <strong>BGRA32</strong> (<code>IRawImage</code> / <code>Bitmap</code> extension).</li>
-<li>WinRT <code>OcrWord</code> has no confidence score; words are reported with confidence <code>1.0</code>.</li>
-<li>This is <strong>not</strong> the same engine as OneOCR (<code>oneocr.dll</code> from Snipping Tool).</li>
+<p sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="19">When available, the language dropdown lists installed OCR recognizer languages from <code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="19">OcrEngine.AvailableRecognizerLanguages</code>. If that query fails, it falls back to <code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="19">Languages.All</code> from Zaya.Primitives.</p>
+<h2 id="notes" sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="21">Notes</h2>
+<ul sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="23">
+<li sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="23">Preferred input is <strong sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="23">BGRA32</strong> (<code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="23">IRawImage</code> / <code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="23">Bitmap</code> extension).</li>
+<li sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="24">WinRT <code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="24">OcrWord</code> has no confidence score; words are reported with confidence <code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="24">1.0</code>.</li>
+<li sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="25">This is <strong sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="25">not</strong> the same engine as OneOCR (<code sourcefile="docs/articles/windows-media-ocr-settings.md" sourcestartlinenumber="25">oneocr.dll</code> from Snipping Tool).</li>
 </ul>
 
 </article>

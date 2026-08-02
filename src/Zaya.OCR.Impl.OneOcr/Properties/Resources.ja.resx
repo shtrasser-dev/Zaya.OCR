@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ocr_EngineName" xml:space="preserve">
+    <value>Windows OneOCR Engine</value>
+  </data>
+  <data name="Ocr_EngineDesc" xml:space="preserve">
+    <value>Windows 11 内蔵の OCR エンジン（SnippingTool）を使用します</value>
+  </data>
+  <data name="Ocr_Source" xml:space="preserve">
+    <value>エンジンのソース</value>
+  </data>
+  <data name="Ocr_Source_Desc" xml:space="preserve">
+    <value>OneOCR ファイルの読み込み元</value>
+  </data>
+  <data name="Ocr_Source_Auto" xml:space="preserve">
+    <value>自動（SnippingTool、次に URL）</value>
+  </data>
+  <data name="Ocr_Source_SnippingTool" xml:space="preserve">
+    <value>SnippingTool</value>
+  </data>
+  <data name="Ocr_Source_Directory" xml:space="preserve">
+    <value>ローカルディレクトリ</value>
+  </data>
+  <data name="Ocr_Source_Url" xml:space="preserve">
+    <value>ダウンロード URL</value>
+  </data>
+  <data name="Ocr_EngineDir" xml:space="preserve">
+    <value>エンジンディレクトリ</value>
+  </data>
+  <data name="Ocr_EngineDir_Desc" xml:space="preserve">
+    <value>oneocr.dll、onnxruntime.dll、oneocr.onemodel があるディレクトリ</value>
+  </data>
+  <data name="Ocr_DownloadUrl" xml:space="preserve">
+    <value>ダウンロード URL</value>
+  </data>
+  <data name="Ocr_DownloadUrl_Desc" xml:space="preserve">
+    <value>OneOCR エンジンパッケージのダウンロード URL</value>
+  </data>
+  <data name="Ocr_CacheDir" xml:space="preserve">
+    <value>キャッシュディレクトリ</value>
+  </data>
+  <data name="Ocr_CacheDir_Desc" xml:space="preserve">
+    <value>展開したエンジンファイルの保存先</value>
+  </data>
+  <data name="Ocr_MinConfidence" xml:space="preserve">
+    <value>最小信頼度 (%)</value>
+  </data>
+  <data name="Ocr_MinConfidence_Desc" xml:space="preserve">
+    <value>このしきい値未満の信頼度の単語は破棄されます（0 = すべて保持）</value>
+  </data>
+  <data name="Ocr_Err_SnippingToolNotFound" xml:space="preserve">
+    <value>OneOCR エンジンが見つかりません。Windows 11 に SnippingTool がインストールされているか、エンジンファイルのあるキャッシュ/URL を指定してください。</value>
+  </data>
+  <data name="Ocr_Err_ModelNotFound" xml:space="preserve">
+    <value>oneocr.onemodel が見つかりません。</value>
+  </data>
+  <data name="Ocr_Err_DllLoadFailed" xml:space="preserve">
+    <value>oneocr.dll の読み込みに失敗しました。</value>
+  </data>
+  <data name="Ocr_Err_DllNotFound" xml:space="preserve">
+    <value>指定されたディレクトリに oneocr.dll が見つかりません。</value>
+  </data>
+  <data name="Ocr_Err_DirectoryPathRequired" xml:space="preserve">
+    <value>ソースが 'directory' の場合、ディレクトリパスが必要です</value>
+  </data>
+  <data name="Ocr_Err_DownloadUrlRequired" xml:space="preserve">
+    <value>ソースが 'url' の場合、ダウンロード URL が必要です</value>
+  </data>
+  <data name="Ocr_Err_UnknownSource" xml:space="preserve">
+    <value>不明なソース: {0}</value>
+  </data>
+  <data name="Ocr_Err_NativeFailed" xml:space="preserve">
+    <value>OneOCR ネイティブエラー: {0}</value>
+  </data>
+</root>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Layout_EngineName" xml:space="preserve">
+    <value>Proximity Text Layout</value>
+  </data>
+  <data name="Layout_EngineDesc" xml:space="preserve">
+    <value>Mescla palavras OCR em parágrafos usando limiares de distância</value>
+  </data>
+  <data name="Layout_WordGapThreshold" xml:space="preserve">
+    <value>Limiar de espaçamento entre palavras</value>
+  </data>
+  <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
+    <value>Espaçamento máximo entre palavras (% da altura da palavra) para mesclar em uma linha</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
+    <value>Tolerância de desvio da linha de base</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
+    <value>Desvio vertical máximo dos centros das palavras (% da altura) para mesclar em uma linha</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold" xml:space="preserve">
+    <value>Limiar de espaçamento entre linhas</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
+    <value>Distância vertical máxima entre centros de linhas (% da altura) para mesclar em um parágrafo</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
+    <value>Alinhamento da borda esquerda</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
+    <value>Deslocamento horizontal máximo das bordas esquerdas (% da altura) para mesclar em um parágrafo</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
+    <value>Recuo da primeira linha</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
+    <value>Recuo extra máximo da primeira linha (% da altura)</value>
+  </data>
+  <data name="Layout_CenterAlignment" xml:space="preserve">
+    <value>Alinhamento ao centro</value>
+  </data>
+  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
+    <value>Também mesclar linhas se seus centros horizontais se alinharem</value>
+  </data>
+  <data name="Layout_FontSizeTolerance" xml:space="preserve">
+    <value>Tolerância de tamanho da fonte</value>
+  </data>
+  <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
+    <value>Diferença máxima de altura (% da altura da linha) entre linhas antes de dividir parágrafos</value>
+  </data>
+  <data name="Layout_EnableStabilization" xml:space="preserve">
+    <value>Estabilizar entre frames</value>
+  </data>
+  <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
+    <value>Reutilizar parágrafos anteriores quando o OCR piscar (texto mais curto/igual, jitter dos bounds)</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
+    <value>Limiar de correspondência de centros</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
+    <value>Desvio máx. do centro do parágrafo (% da altura média da linha) para corresponder ao frame anterior</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold" xml:space="preserve">
+    <value>Limiar de correspondência de texto</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
+    <value>Distância de Levenshtein máx. (% do texto mais longo) para tratar parágrafos como iguais</value>
+  </data>
+  <data name="Layout_MinLength" xml:space="preserve">
+    <value>Comprimento mín. para correspondência aproximada</value>
+  </data>
+  <data name="Layout_MinLength_Desc" xml:space="preserve">
+    <value>Textos mais curtos exigem correspondência exata com o frame anterior</value>
+  </data>
+</root>

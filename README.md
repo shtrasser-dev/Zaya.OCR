@@ -7,11 +7,11 @@ Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines ex
 | Package | Version | Role |
 |---------|---------|------|
 | **Zaya.OCR** | 1.0.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
-| **Zaya.OCR.Impl.OneOcr** | 1.0.0.0 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
-| **Zaya.OCR.Impl.WindowsMediaOcr** | 1.0.0.0 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
-| **Zaya.OCR.Impl.ProximityTextLayout** | 1.0.0.0 | Merges OCR words into lines/paragraphs by proximity heuristics |
+| **Zaya.OCR.Impl.OneOcr** | 1.0.0.3 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
+| **Zaya.OCR.Impl.WindowsMediaOcr** | 1.0.0.1 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 1.0.0.2 | Merges OCR words into lines/paragraphs by proximity heuristics |
 
-Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Update channel for plugins: `plugin-v1.0-latest`. See [versioning](docs/versioning.md).
+Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Update channel for plugins: `plugin-Zaya.OCR-v1.0-latest`. See [versioning](docs/versioning.md).
 
 Docs: [API & articles](https://shtrasser-dev.github.io/Zaya.OCR)
 
@@ -29,13 +29,13 @@ There is no separate `InitializeAsync` / `OcrEngineProvider`: create a session w
 
 ```xml
 <PackageReference Include="Zaya.OCR" Version="1.0.0" />
-<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.0.0.0" />
+<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.0.0.3" />
 <!-- optional -->
-<PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.0.0.0" />
-<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.0.0.0" />
+<PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.0.0.1" />
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.0.0.2" />
 ```
 
-Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plugin-v1.0-latest`):
+Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plugin-Zaya.OCR-v1.0-latest`):
 
 - `Zaya.OCR.Impl.OneOcr.zip`
 - `Zaya.OCR.Impl.WindowsMediaOcr.zip`
@@ -106,7 +106,7 @@ Session creation (download, missing DLL, etc.) throws `LocalizedException` subcl
 | `directoryPath` | — | Required when `source` = `directory` |
 | `downloadUrl` | [Zaya.External OneOCR.zip](https://github.com/shtrasser-dev/Zaya.External/releases/latest/download/OneOCR.zip) | Used for `url` and as `auto` fallback |
 | `cacheDirectory` | `%TEMP%\Zaya\OneOcr` | Shared cache for `auto` / `snippingtool` / `url`. If it already has `oneocr.dll`, `onnxruntime.dll`, and `oneocr.onemodel`, those files are used as-is (no SnippingTool lookup, no download). |
-| `minConfidence` | `0` | Drop words below this percent (0–100) |
+| `minConfidence` | `90` | Drop words below this percent (0–100) |
 
 `source = auto`: use complete cache if present; else try SnippingTool; if not found, download via `downloadUrl`.
 
@@ -127,15 +127,46 @@ Requires Windows 10+, OCR language packs, and typically MSIX package identity fo
 | `IRawImage` | `session.RecognizeAsync(rawImage)` — preferred (`PreferredPixelFormat` is BGRA32 for OneOCR) |
 | `System.Drawing.Bitmap` | `session.RecognizeAsync(bitmap)` — extension in `Zaya.OCR.Impl.OneOcr` (`LockBits` → BGRA) |
 
-## Text layout
+## Proximity Text Layout settings (`EngineId`: `proximity-text-layout`)
+
+Merges OCR words into lines/paragraphs by proximity heuristics. Optional **stabilization** reuses previous-frame paragraphs when OCR flickers (shorter/equal text, bounds jitter).
 
 ```csharp
 using Zaya.OCR.Impl.ProximityTextLayout.Services;
 
-using var layout = new ProximityTextLayoutService(); // EngineId: proximity-text-layout
-using var layoutSession = await layout.CreateSessionAsync();
+using var layout = new ProximityTextLayoutService();
+using var layoutSession = await layout.CreateSessionAsync(new Dictionary<string, object>
+{
+    ["enableStabilization"] = true,
+    ["centerThresholdPercent"] = 50,
+});
 var structured = await layoutSession.ProcessAsync(ocrResult);
 ```
+
+### Layout heuristics
+
+Integer thresholds are percent of word/line height (stored as ints, applied as `/100` at runtime).
+
+| Key | Default | Notes |
+|-----|---------|--------|
+| `wordGapThreshold` | `50` | Max gap between words to merge into a line |
+| `baselineDriftTolerance` | `50` | Max vertical drift of word centers to merge into a line |
+| `lineSpacingThreshold` | `150` | Max vertical distance between line centers to merge into a paragraph |
+| `leftEdgeAlignmentTolerance` | `100` | Max horizontal offset of left edges to merge into a paragraph |
+| `firstLineIndentTolerance` | `300` | Max extra indentation of the first line |
+| `fontSizeTolerance` | `50` | Max height difference between lines before splitting paragraphs |
+| `enableCenterAlignment` | `false` | Also merge lines if their horizontal centers align |
+
+### Stabilization (across frames)
+
+| Key | Default | Notes |
+|-----|---------|--------|
+| `enableStabilization` | `true` | Reuse previous paragraphs when OCR flickers |
+| `centerThresholdPercent` | `50` | Max paragraph-center drift (% of avg line height) to match previous frame |
+| `levenshteinThreshold` | `8` | Max Levenshtein distance (% of longer text) to treat paragraphs as the same |
+| `minLength` | `16` | Shorter texts require an exact match to pair with the previous frame |
+
+`centerThresholdPercent`, `levenshteinThreshold`, and `minLength` are visible in UI only when `enableStabilization` is `true`.
 
 ## Requirements
 

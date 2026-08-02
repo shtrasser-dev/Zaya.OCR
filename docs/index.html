@@ -60,59 +60,59 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="zayaocr">Zaya.OCR</h1>
+<h1 id="zayaocr" sourcefile="docs/index.md" sourcestartlinenumber="1">Zaya.OCR</h1>
 
-<p>Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines expose metadata and <code>SettingDescriptor</code>s, hosts pass settings into <code>CreateSessionAsync</code>.</p>
-<h2 id="packages">Packages</h2>
-<table>
+<p sourcefile="docs/index.md" sourcestartlinenumber="3">Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines expose metadata and <code sourcefile="docs/index.md" sourcestartlinenumber="3">SettingDescriptor</code>s, hosts pass settings into <code sourcefile="docs/index.md" sourcestartlinenumber="3">CreateSessionAsync</code>.</p>
+<h2 id="packages" sourcefile="docs/index.md" sourcestartlinenumber="5">Packages</h2>
+<table sourcefile="docs/index.md" sourcestartlinenumber="7">
 <thead>
-<tr>
-<th>Package</th>
-<th>Version</th>
-<th>Role</th>
+<tr sourcefile="docs/index.md" sourcestartlinenumber="7">
+<th sourcefile="docs/index.md" sourcestartlinenumber="7">Package</th>
+<th sourcefile="docs/index.md" sourcestartlinenumber="7">Version</th>
+<th sourcefile="docs/index.md" sourcestartlinenumber="7">Role</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>Zaya.OCR</strong></td>
-<td>1.0.0</td>
-<td>Abstractions: <code>IOCRService</code>, <code>IOCRSession</code>, <code>ITextLayoutService</code>, result models</td>
+<tr sourcefile="docs/index.md" sourcestartlinenumber="9">
+<td sourcefile="docs/index.md" sourcestartlinenumber="9"><strong sourcefile="docs/index.md" sourcestartlinenumber="9">Zaya.OCR</strong></td>
+<td sourcefile="docs/index.md" sourcestartlinenumber="9">1.0.0</td>
+<td sourcefile="docs/index.md" sourcestartlinenumber="9">Abstractions: <code sourcefile="docs/index.md" sourcestartlinenumber="9">IOCRService</code>, <code sourcefile="docs/index.md" sourcestartlinenumber="9">IOCRSession</code>, <code sourcefile="docs/index.md" sourcestartlinenumber="9">ITextLayoutService</code>, result models</td>
 </tr>
-<tr>
-<td><strong>Zaya.OCR.Impl.OneOcr</strong></td>
-<td>1.0.0.0</td>
-<td>Windows OneOCR (<code>oneocr.dll</code> via P/Invoke; no WinRT / App SDK identity)</td>
+<tr sourcefile="docs/index.md" sourcestartlinenumber="10">
+<td sourcefile="docs/index.md" sourcestartlinenumber="10"><strong sourcefile="docs/index.md" sourcestartlinenumber="10">Zaya.OCR.Impl.OneOcr</strong></td>
+<td sourcefile="docs/index.md" sourcestartlinenumber="10">1.0.0.3</td>
+<td sourcefile="docs/index.md" sourcestartlinenumber="10">Windows OneOCR (<code sourcefile="docs/index.md" sourcestartlinenumber="10">oneocr.dll</code> via P/Invoke; no WinRT / App SDK identity)</td>
 </tr>
-<tr>
-<td><strong>Zaya.OCR.Impl.WindowsMediaOcr</strong></td>
-<td>1.0.0.0</td>
-<td>Official <code>Windows.Media.Ocr</code> WinRT API (Windows 10+; typically needs MSIX identity)</td>
+<tr sourcefile="docs/index.md" sourcestartlinenumber="11">
+<td sourcefile="docs/index.md" sourcestartlinenumber="11"><strong sourcefile="docs/index.md" sourcestartlinenumber="11">Zaya.OCR.Impl.WindowsMediaOcr</strong></td>
+<td sourcefile="docs/index.md" sourcestartlinenumber="11">1.0.0.1</td>
+<td sourcefile="docs/index.md" sourcestartlinenumber="11">Official <code sourcefile="docs/index.md" sourcestartlinenumber="11">Windows.Media.Ocr</code> WinRT API (Windows 10+; typically needs MSIX identity)</td>
 </tr>
-<tr>
-<td><strong>Zaya.OCR.Impl.ProximityTextLayout</strong></td>
-<td>1.0.0.0</td>
-<td>Merges OCR words into lines/paragraphs by proximity heuristics</td>
+<tr sourcefile="docs/index.md" sourcestartlinenumber="12">
+<td sourcefile="docs/index.md" sourcestartlinenumber="12"><strong sourcefile="docs/index.md" sourcestartlinenumber="12">Zaya.OCR.Impl.ProximityTextLayout</strong></td>
+<td sourcefile="docs/index.md" sourcestartlinenumber="12">1.0.0.2</td>
+<td sourcefile="docs/index.md" sourcestartlinenumber="12">Merges OCR words into lines/paragraphs by proximity heuristics</td>
 </tr>
 </tbody>
 </table>
-<p>Requires <a href="https://github.com/shtrasser-dev/Zaya.Primitives">Zaya.Primitives</a> <strong>1.0.0</strong>. See <a href="versioning.html">versioning</a>.</p>
-<h2 id="features">Features</h2>
-<ul>
-<li><strong>IOCRService</strong> — engine id, localized name/description, <code>Settings</code>, <code>PreferredPixelFormat</code>, <code>CreateSessionAsync</code></li>
-<li><strong>IOCRSession</strong> — <code>RecognizeAsync(IRawImage)</code> → <code>IOCRResult</code> (words + confidence)</li>
-<li><strong>ITextLayoutService</strong> / <strong>ITextLayoutSession</strong> — structure OCR words into paragraphs/lines</li>
-<li>Failures surface as <code>LocalizedException</code> for host UI</li>
+<p sourcefile="docs/index.md" sourcestartlinenumber="14">Requires <a href="https://github.com/shtrasser-dev/Zaya.Primitives" sourcefile="docs/index.md" sourcestartlinenumber="14">Zaya.Primitives</a> <strong sourcefile="docs/index.md" sourcestartlinenumber="14">1.0.0</strong>. See <a href="versioning.html" sourcefile="docs/index.md" sourcestartlinenumber="14">versioning</a>.</p>
+<h2 id="features" sourcefile="docs/index.md" sourcestartlinenumber="16">Features</h2>
+<ul sourcefile="docs/index.md" sourcestartlinenumber="18">
+<li sourcefile="docs/index.md" sourcestartlinenumber="18"><strong sourcefile="docs/index.md" sourcestartlinenumber="18">IOCRService</strong> — engine id, localized name/description, <code sourcefile="docs/index.md" sourcestartlinenumber="18">Settings</code>, <code sourcefile="docs/index.md" sourcestartlinenumber="18">PreferredPixelFormat</code>, <code sourcefile="docs/index.md" sourcestartlinenumber="18">CreateSessionAsync</code></li>
+<li sourcefile="docs/index.md" sourcestartlinenumber="19"><strong sourcefile="docs/index.md" sourcestartlinenumber="19">IOCRSession</strong> — <code sourcefile="docs/index.md" sourcestartlinenumber="19">RecognizeAsync(IRawImage)</code> → <code sourcefile="docs/index.md" sourcestartlinenumber="19">IOCRResult</code> (words + confidence)</li>
+<li sourcefile="docs/index.md" sourcestartlinenumber="20"><strong sourcefile="docs/index.md" sourcestartlinenumber="20">ITextLayoutService</strong> / <strong sourcefile="docs/index.md" sourcestartlinenumber="20">ITextLayoutSession</strong> — structure OCR words into paragraphs/lines</li>
+<li sourcefile="docs/index.md" sourcestartlinenumber="21">Failures surface as <code sourcefile="docs/index.md" sourcestartlinenumber="21">LocalizedException</code> for host UI</li>
 </ul>
-<p>There is no separate <code>InitializeAsync</code>: create a session with defaults or an explicit settings dictionary.</p>
-<h2 id="installation">Installation</h2>
-<pre><code class="lang-xml">&lt;PackageReference Include=&quot;Zaya.OCR&quot; Version=&quot;1.0.0&quot; /&gt;
-&lt;PackageReference Include=&quot;Zaya.OCR.Impl.OneOcr&quot; Version=&quot;1.0.0.0&quot; /&gt;
+<p sourcefile="docs/index.md" sourcestartlinenumber="23">There is no separate <code sourcefile="docs/index.md" sourcestartlinenumber="23">InitializeAsync</code>: create a session with defaults or an explicit settings dictionary.</p>
+<h2 id="installation" sourcefile="docs/index.md" sourcestartlinenumber="25">Installation</h2>
+<pre><code class="lang-xml" sourcefile="docs/index.md" sourcestartlinenumber="27">&lt;PackageReference Include=&quot;Zaya.OCR&quot; Version=&quot;1.0.0&quot; /&gt;
+&lt;PackageReference Include=&quot;Zaya.OCR.Impl.OneOcr&quot; Version=&quot;1.0.0.3&quot; /&gt;
 &lt;!-- optional --&gt;
-&lt;PackageReference Include=&quot;Zaya.OCR.Impl.WindowsMediaOcr&quot; Version=&quot;1.0.0.0&quot; /&gt;
-&lt;PackageReference Include=&quot;Zaya.OCR.Impl.ProximityTextLayout&quot; Version=&quot;1.0.0.0&quot; /&gt;
+&lt;PackageReference Include=&quot;Zaya.OCR.Impl.WindowsMediaOcr&quot; Version=&quot;1.0.0.1&quot; /&gt;
+&lt;PackageReference Include=&quot;Zaya.OCR.Impl.ProximityTextLayout&quot; Version=&quot;1.0.0.2&quot; /&gt;
 </code></pre>
-<h2 id="quick-start">Quick Start</h2>
-<pre><code class="lang-csharp">using System.Drawing;
+<h2 id="quick-start" sourcefile="docs/index.md" sourcestartlinenumber="35">Quick Start</h2>
+<pre><code class="lang-csharp" sourcefile="docs/index.md" sourcestartlinenumber="37">using System.Drawing;
 using Zaya.OCR.Impl.OneOcr.Services;
 using Zaya.OCR.Services;
 
@@ -130,11 +130,11 @@ var result = await session.RecognizeAsync(bitmap); // Bitmap extension in Impl.O
 foreach (var word in result.Words)
     Console.WriteLine($&quot;'{word.Text}' at {word.Bounds} ({word.Confidence:P0})&quot;);
 </code></pre>
-<h2 id="next-steps">Next Steps</h2>
-<ul>
-<li><strong><a href="articles/getting-started.html">Getting Started</a></strong> — detailed usage guide</li>
-<li><strong><a href="articles/oneocr-settings.html">OneOCR settings</a></strong> — <code>source</code>, <code>downloadUrl</code>, <code>cacheDirectory</code>, and other engine keys</li>
-<li><strong><a class="xref" href="api/Zaya.OCR.Services.html">API Reference</a></strong> — complete API documentation generated from source code</li>
+<h2 id="next-steps" sourcefile="docs/index.md" sourcestartlinenumber="57">Next Steps</h2>
+<ul sourcefile="docs/index.md" sourcestartlinenumber="59">
+<li sourcefile="docs/index.md" sourcestartlinenumber="59"><strong sourcefile="docs/index.md" sourcestartlinenumber="59"><a href="articles/getting-started.html" sourcefile="docs/index.md" sourcestartlinenumber="59">Getting Started</a></strong> — detailed usage guide</li>
+<li sourcefile="docs/index.md" sourcestartlinenumber="60"><strong sourcefile="docs/index.md" sourcestartlinenumber="60"><a href="articles/oneocr-settings.html" sourcefile="docs/index.md" sourcestartlinenumber="60">OneOCR settings</a></strong> — <code sourcefile="docs/index.md" sourcestartlinenumber="60">source</code>, <code sourcefile="docs/index.md" sourcestartlinenumber="60">downloadUrl</code>, <code sourcefile="docs/index.md" sourcestartlinenumber="60">cacheDirectory</code>, and other engine keys</li>
+<li sourcefile="docs/index.md" sourcestartlinenumber="61"><strong sourcefile="docs/index.md" sourcestartlinenumber="61"><a class="xref" href="api/Zaya.OCR.Services.html" sourcefile="docs/index.md" sourcestartlinenumber=61>API Reference</a></strong> — complete API documentation generated from source code</li>
 </ul>
 
 </article>

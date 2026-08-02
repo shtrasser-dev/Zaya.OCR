@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Ocr_EngineName" xml:space="preserve">
+    <value>Windows Media OCR</value>
+  </data>
+  <data name="Ocr_EngineDesc" xml:space="preserve">
+    <value>Офіційний WinRT API Windows.Media.Ocr (Windows 10+). Для desktop зазвичай потрібна MSIX package identity; мовні пакети OCR — у параметрах Windows.</value>
+  </data>
+  <data name="Ocr_Language" xml:space="preserve">
+    <value>Мова OCR</value>
+  </data>
+  <data name="Ocr_Language_Desc" xml:space="preserve">
+    <value>Мова розпізнавання. Авто бере мови з профілю користувача Windows.</value>
+  </data>
+  <data name="Ocr_Language_Auto" xml:space="preserve">
+    <value>Авто (мови профілю)</value>
+  </data>
+  <data name="Ocr_Err_LanguageNotSupported" xml:space="preserve">
+    <value>Мову OCR '{0}' не встановлено або вона не підтримується. Встановіть мовний пакет OCR у параметрах Windows.</value>
+  </data>
+  <data name="Ocr_Err_EngineCreateFailed" xml:space="preserve">
+    <value>Не вдалося створити Windows.Media.Ocr. Встановіть мовні пакети OCR і переконайтеся, що в хоста є package identity (MSIX), якщо це потрібно.</value>
+  </data>
+  <data name="Ocr_Err_UnsupportedPixelFormat" xml:space="preserve">
+    <value>Непідтримуваний формат пікселів '{0}'. Очікується BGRA32.</value>
+  </data>
+  <data name="Ocr_Err_RecognizeFailed" xml:space="preserve">
+    <value>Помилка розпізнавання Windows.Media.Ocr: {0}</value>
+  </data>
+  <data name="Ocr_Err_NotAvailable" xml:space="preserve">
+    <value>Windows.Media.Ocr недоступний на цій системі (потрібен Windows 10 або новіший).</value>
+  </data>
+</root>

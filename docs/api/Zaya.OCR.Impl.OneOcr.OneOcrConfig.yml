@@ -196,11 +196,14 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: MinConfidence
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs
-    startLine: 68
+    startLine: 69
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
-  summary: Gets or sets the minimum word confidence as a percentage (0–100). Default is <code>0</code>.
+  summary: >-
+    Gets or sets the minimum word confidence as a percentage (0–100).
+
+    Default is <code>90</code> to match <xref href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService.Settings" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public int MinConfidence { get; set; }
@@ -227,7 +230,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: ToDictionary
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrConfig.cs
-    startLine: 75
+    startLine: 76
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr

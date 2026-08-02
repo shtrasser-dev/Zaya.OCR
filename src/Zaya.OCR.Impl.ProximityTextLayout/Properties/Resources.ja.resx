@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Layout_EngineName" xml:space="preserve">
+    <value>Proximity Text Layout</value>
+  </data>
+  <data name="Layout_EngineDesc" xml:space="preserve">
+    <value>距離のしきい値を使って OCR 単語を段落に結合します</value>
+  </data>
+  <data name="Layout_WordGapThreshold" xml:space="preserve">
+    <value>単語間隔のしきい値</value>
+  </data>
+  <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
+    <value>行に結合するための単語間の最大間隔（単語の高さに対する %）</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
+    <value>ベースラインずれの許容</value>
+  </data>
+  <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
+    <value>行に結合するための単語中心の最大垂直ずれ（単語の高さに対する %）</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold" xml:space="preserve">
+    <value>行間のしきい値</value>
+  </data>
+  <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
+    <value>段落に結合するための行中心間の最大垂直距離（単語の高さに対する %）</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
+    <value>左端揃え</value>
+  </data>
+  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
+    <value>段落に結合するための左端の最大水平オフセット（単語の高さに対する %）</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
+    <value>一行目のインデント</value>
+  </data>
+  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
+    <value>一行目の最大追加インデント（単語の高さに対する %）</value>
+  </data>
+  <data name="Layout_CenterAlignment" xml:space="preserve">
+    <value>中央揃え</value>
+  </data>
+  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
+    <value>水平中心が揃っている場合も行を結合する</value>
+  </data>
+  <data name="Layout_FontSizeTolerance" xml:space="preserve">
+    <value>フォントサイズの許容</value>
+  </data>
+  <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
+    <value>段落を分割する前の行間の最大高さ差（行の高さに対する %）</value>
+  </data>
+  <data name="Layout_EnableStabilization" xml:space="preserve">
+    <value>フレーム間で安定化</value>
+  </data>
+  <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
+    <value>OCR がちらつく場合に前の段落を再利用（テキストが短い/同じ、bounds のジッター）</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
+    <value>中心一致のしきい値</value>
+  </data>
+  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
+    <value>前フレームと一致させる段落中心の最大ずれ（平均行の高さに対する %）</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold" xml:space="preserve">
+    <value>テキスト一致のしきい値</value>
+  </data>
+  <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
+    <value>段落を同一とみなす最大レーベンシュタイン距離（長い方のテキストに対する %）</value>
+  </data>
+  <data name="Layout_MinLength" xml:space="preserve">
+    <value>あいまい一致の最小文字数</value>
+  </data>
+  <data name="Layout_MinLength_Desc" xml:space="preserve">
+    <value>短いテキストは前フレームと完全一致が必要</value>
+  </data>
+</root>
