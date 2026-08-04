@@ -60,17 +60,23 @@
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
     <value>段落を分割する前の行間の最大高さ差（行の高さに対する %）</value>
   </data>
-  <data name="Layout_EnableStabilization" xml:space="preserve">
+<data name="Layout_EnableStabilization" xml:space="preserve">
     <value>フレーム間で安定化</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>OCR がちらつく場合に前の段落を再利用（テキストが短い/同じ、bounds のジッター）</value>
+    <value>前フレームと段落を対応づけて OCR のちらつきを抑える</value>
   </data>
-  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
-    <value>中心一致のしきい値</value>
+<data name="Layout_CenterThresholdXPercent" xml:space="preserve">
+    <value>中心一致のしきい値 (X)</value>
   </data>
-  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
-    <value>前フレームと一致させる段落中心の最大ずれ（平均行の高さに対する %）</value>
+  <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
+    <value>前フレームと一致させる段落中心の最大水平ずれ（平均行の高さに対する %）</value>
+  </data>
+  <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
+    <value>中心一致のしきい値 (Y)</value>
+  </data>
+  <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
+    <value>前フレームと一致させる段落中心の最大垂直ずれ（平均行の高さに対する %）</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>テキスト一致のしきい値</value>
@@ -83,5 +89,50 @@
   </data>
   <data name="Layout_MinLength_Desc" xml:space="preserve">
     <value>短いテキストは前フレームと完全一致が必要</value>
+  </data>
+  <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
+    <value>段落結合ヒステリシス</value>
+  </data>
+  <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
+    <value>行→段落の結合を前フレームの構造に寄せる（100 = オフ、120 = 許容±20%）</value>
+  </data>
+<data name="Layout_WordFilters" xml:space="preserve">
+    <value>Word filters</value>
+  </data>
+  <data name="Layout_WordFilters_Desc" xml:space="preserve">
+    <value>Filter OCR words before lines are built (Skip drops the word; Strip removes the match)</value>
+  </data>
+  <data name="Layout_LineFilters" xml:space="preserve">
+    <value>Line filters</value>
+  </data>
+  <data name="Layout_LineFilters_Desc" xml:space="preserve">
+    <value>Filter lines before paragraphs are built (Skip drops the line; Strip removes the match)</value>
+  </data>
+  <data name="Layout_ParagraphFilters" xml:space="preserve">
+    <value>Paragraph filters</value>
+  </data>
+  <data name="Layout_ParagraphFilters_Desc" xml:space="preserve">
+    <value>Filter paragraphs before stabilization (Skip drops the paragraph; Strip removes the match)</value>
+  </data>
+  <data name="Layout_Filter_Enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="Layout_Filter_Pattern" xml:space="preserve">
+    <value>Pattern</value>
+  </data>
+  <data name="Layout_Filter_IsRegex" xml:space="preserve">
+    <value>Regular expression</value>
+  </data>
+  <data name="Layout_Filter_Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Layout_Filter_Action_Skip" xml:space="preserve">
+    <value>Skip block</value>
+  </data>
+  <data name="Layout_Filter_Action_Strip" xml:space="preserve">
+    <value>Strip match</value>
+  </data>
+  <data name="Layout_Filter_Description" xml:space="preserve">
+    <value>Description</value>
   </data>
 </root>

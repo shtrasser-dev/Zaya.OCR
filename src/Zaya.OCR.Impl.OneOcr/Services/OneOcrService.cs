@@ -127,7 +127,7 @@ public sealed class OneOcrService : IOCRService
         new IntegerSettingDescriptor(SettingsConstants.MinConfidence, Loc(LocalizationConstants.Settings.MinConfidence))
         {
             Description = Loc(LocalizationConstants.Settings.MinConfidence_Desc),
-            DefaultValue = 90,
+            DefaultValue = 70,
             MinValue = 0,
             MaxValue = 100,
         },

@@ -60,17 +60,24 @@
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
     <value>Max height difference (% of line height) between lines before splitting paragraphs</value>
   </data>
+
   <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>Stabilize across frames</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Reuse previous paragraphs when OCR flickers (text shorter/equal, bounds jitter)</value>
+    <value>Match paragraphs to the previous frame to reduce OCR flicker; hold brand-new text and upgrades until stable; ghost short unmatched blocks one frame</value>
   </data>
-  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
-    <value>Center match threshold</value>
+  <data name="Layout_CenterThresholdXPercent" xml:space="preserve">
+    <value>Center match threshold (X)</value>
   </data>
-  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
-    <value>Max paragraph-center drift (% of average line height) to match the previous frame</value>
+  <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
+    <value>Max horizontal paragraph-center drift (% of average line height) to match the previous frame</value>
+  </data>
+  <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
+    <value>Center match threshold (Y)</value>
+  </data>
+  <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
+    <value>Max vertical paragraph-center drift (% of average line height) to match the previous frame</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Text match threshold</value>
@@ -83,5 +90,50 @@
   </data>
   <data name="Layout_MinLength_Desc" xml:space="preserve">
     <value>Shorter texts require an exact match to pair with the previous frame</value>
+  </data>
+  <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
+    <value>Paragraph merge hysteresis</value>
+  </data>
+  <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
+    <value>Bias line-to-paragraph merging toward the previous frame's structure (100 = off, 120 = ±20% tolerances)</value>
+  </data>
+  <data name="Layout_WordFilters" xml:space="preserve">
+    <value>Word filters</value>
+  </data>
+  <data name="Layout_WordFilters_Desc" xml:space="preserve">
+    <value>Filter OCR words before lines are built (Skip drops the word; Strip removes the match)</value>
+  </data>
+  <data name="Layout_LineFilters" xml:space="preserve">
+    <value>Line filters</value>
+  </data>
+  <data name="Layout_LineFilters_Desc" xml:space="preserve">
+    <value>Filter lines before paragraphs are built (Skip drops the line; Strip removes the match)</value>
+  </data>
+  <data name="Layout_ParagraphFilters" xml:space="preserve">
+    <value>Paragraph filters</value>
+  </data>
+  <data name="Layout_ParagraphFilters_Desc" xml:space="preserve">
+    <value>Filter paragraphs before stabilization (Skip drops the paragraph; Strip removes the match)</value>
+  </data>
+  <data name="Layout_Filter_Enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="Layout_Filter_Pattern" xml:space="preserve">
+    <value>Pattern</value>
+  </data>
+  <data name="Layout_Filter_IsRegex" xml:space="preserve">
+    <value>Regular expression</value>
+  </data>
+  <data name="Layout_Filter_Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Layout_Filter_Action_Skip" xml:space="preserve">
+    <value>Skip block</value>
+  </data>
+  <data name="Layout_Filter_Action_Strip" xml:space="preserve">
+    <value>Strip match</value>
+  </data>
+  <data name="Layout_Filter_Description" xml:space="preserve">
+    <value>Description</value>
   </data>
 </root>

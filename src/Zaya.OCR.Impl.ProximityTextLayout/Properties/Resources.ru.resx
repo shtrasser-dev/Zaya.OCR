@@ -16,7 +16,7 @@
     <value>Proximity Text Layout</value>
   </data>
   <data name="Layout_EngineDesc" xml:space="preserve">
-    <value>Объединяет слова OCR в абзацы с помощью порогов расстояния</value>
+    <value>Объединяет слова в абзацы с учетом порогов расстояний</value>
   </data>
   <data name="Layout_WordGapThreshold" xml:space="preserve">
     <value>Порог промежутка между словами</value>
@@ -64,24 +64,75 @@
     <value>Стабилизация между кадрами</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Повторять предыдущие абзацы при OCR-фликере (текст короче/равен, дрожание bounds)</value>
+    <value>Сопоставлять абзацы с прошлым кадром для более плавного распознавания</value>
   </data>
-  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
-    <value>Порог совпадения центров</value>
+  <data name="Layout_CenterThresholdXPercent" xml:space="preserve">
+    <value>Порог совпадения центров (X)</value>
   </data>
-  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
-    <value>Макс. смещение центра абзаца (% от средней высоты строки) для матча с прошлым кадром</value>
+  <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
+    <value>Максимальное смещение центра абзаца по X (% от средней высоты строки) для поиска соответствия с предыдущим кадром</value>
+  </data>
+  <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
+    <value>Порог совпадения центров (Y)</value>
+  </data>
+  <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
+    <value>Максимальное смещение центра абзаца по Y (% от средней высоты строки) для поиска соответствия с предыдущим кадром</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Порог совпадения текста</value>
   </data>
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
-    <value>Макс. расстояние Левенштейна (% от более длинного текста) для считания абзацев одним</value>
+    <value>Максимальное расстояние Левенштейна (% от более длинного текста) для считания абзацев одним</value>
   </data>
   <data name="Layout_MinLength" xml:space="preserve">
-    <value>Мин. длина для неточного матча</value>
+    <value>Минимальная длина для неточного матча</value>
   </data>
   <data name="Layout_MinLength_Desc" xml:space="preserve">
     <value>Более короткие тексты склеиваются с прошлым кадром только при точном совпадении</value>
+  </data>
+  <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
+    <value>Гистерезис склейки абзацев</value>
+  </data>
+  <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
+    <value>Смещать склейку строк в абзацы к структуре прошлого кадра (100 = выкл, 120 = ±20% допусков)</value>
+  </data>
+  <data name="Layout_WordFilters" xml:space="preserve">
+    <value>Фильтры слов</value>
+  </data>
+  <data name="Layout_WordFilters_Desc" xml:space="preserve">
+    <value>Фильтрация OCR-слов до сборки строк (Skip удаляет слово; Strip вырезает совпадение)</value>
+  </data>
+  <data name="Layout_LineFilters" xml:space="preserve">
+    <value>Фильтры строк</value>
+  </data>
+  <data name="Layout_LineFilters_Desc" xml:space="preserve">
+    <value>Фильтрация строк до сборки абзацев (Skip удаляет строку; Strip вырезает совпадение)</value>
+  </data>
+  <data name="Layout_ParagraphFilters" xml:space="preserve">
+    <value>Фильтры абзацев</value>
+  </data>
+  <data name="Layout_ParagraphFilters_Desc" xml:space="preserve">
+    <value>Фильтрация абзацев до стабилизации (Skip удаляет абзац; Strip вырезает совпадение)</value>
+  </data>
+  <data name="Layout_Filter_Enabled" xml:space="preserve">
+    <value>Включить</value>
+  </data>
+  <data name="Layout_Filter_Pattern" xml:space="preserve">
+    <value>Шаблон</value>
+  </data>
+  <data name="Layout_Filter_IsRegex" xml:space="preserve">
+    <value>Регулярное выражение</value>
+  </data>
+  <data name="Layout_Filter_Action" xml:space="preserve">
+    <value>Действие</value>
+  </data>
+  <data name="Layout_Filter_Action_Skip" xml:space="preserve">
+    <value>Пропустить блок</value>
+  </data>
+  <data name="Layout_Filter_Action_Strip" xml:space="preserve">
+    <value>Вырезать совпадение</value>
+  </data>
+  <data name="Layout_Filter_Description" xml:space="preserve">
+    <value>Описание</value>
   </data>
 </root>

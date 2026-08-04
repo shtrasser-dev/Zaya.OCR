@@ -60,17 +60,23 @@
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
     <value>Paragrafları bölmeden önce satırlar arası maksimum yükseklik farkı (satır yüksekliğinin %'si)</value>
   </data>
-  <data name="Layout_EnableStabilization" xml:space="preserve">
+<data name="Layout_EnableStabilization" xml:space="preserve">
     <value>Kareler arasında sabitle</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>OCR titrediğinde önceki paragrafları yeniden kullan (metin daha kısa/eşit, bounds jitter)</value>
+    <value>OCR titremesini azaltmak için paragrafları önceki kareyle eşleştir</value>
   </data>
-  <data name="Layout_CenterThresholdPercent" xml:space="preserve">
-    <value>Merkez eşleşme eşiği</value>
+<data name="Layout_CenterThresholdXPercent" xml:space="preserve">
+    <value>Merkez eşleşme eşiği (X)</value>
   </data>
-  <data name="Layout_CenterThresholdPercent_Desc" xml:space="preserve">
-    <value>Önceki kareyle eşleşmek için paragraf merkezinin maksimum sapması (ortalama satır yüksekliğinin %'si)</value>
+  <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
+    <value>Önceki kareyle eşleşmek için paragraf merkezinin maksimum yatay sapması (ortalama satır yüksekliğinin %'si)</value>
+  </data>
+  <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
+    <value>Merkez eşleşme eşiği (Y)</value>
+  </data>
+  <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
+    <value>Önceki kareyle eşleşmek için paragraf merkezinin maksimum dikey sapması (ortalama satır yüksekliğinin %'si)</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Metin eşleşme eşiği</value>
@@ -83,5 +89,50 @@
   </data>
   <data name="Layout_MinLength_Desc" xml:space="preserve">
     <value>Daha kısa metinler önceki kareyle tam eşleşme gerektirir</value>
+  </data>
+  <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
+    <value>Paragraf birleştirme histerezisi</value>
+  </data>
+  <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
+    <value>Satır→paragraf birleştirmeyi önceki karenin yapısına yaklaştır (100 = kapalı, 120 = ±%20 tolerans)</value>
+  </data>
+<data name="Layout_WordFilters" xml:space="preserve">
+    <value>Word filters</value>
+  </data>
+  <data name="Layout_WordFilters_Desc" xml:space="preserve">
+    <value>Filter OCR words before lines are built (Skip drops the word; Strip removes the match)</value>
+  </data>
+  <data name="Layout_LineFilters" xml:space="preserve">
+    <value>Line filters</value>
+  </data>
+  <data name="Layout_LineFilters_Desc" xml:space="preserve">
+    <value>Filter lines before paragraphs are built (Skip drops the line; Strip removes the match)</value>
+  </data>
+  <data name="Layout_ParagraphFilters" xml:space="preserve">
+    <value>Paragraph filters</value>
+  </data>
+  <data name="Layout_ParagraphFilters_Desc" xml:space="preserve">
+    <value>Filter paragraphs before stabilization (Skip drops the paragraph; Strip removes the match)</value>
+  </data>
+  <data name="Layout_Filter_Enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="Layout_Filter_Pattern" xml:space="preserve">
+    <value>Pattern</value>
+  </data>
+  <data name="Layout_Filter_IsRegex" xml:space="preserve">
+    <value>Regular expression</value>
+  </data>
+  <data name="Layout_Filter_Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Layout_Filter_Action_Skip" xml:space="preserve">
+    <value>Skip block</value>
+  </data>
+  <data name="Layout_Filter_Action_Strip" xml:space="preserve">
+    <value>Strip match</value>
+  </data>
+  <data name="Layout_Filter_Description" xml:space="preserve">
+    <value>Description</value>
   </data>
 </root>

@@ -22,11 +22,28 @@ internal static class LocalizationConstants
         public const string FontSizeTolerance_Desc = "Layout_FontSizeTolerance_Desc";
         public const string EnableStabilization = "Layout_EnableStabilization";
         public const string EnableStabilization_Desc = "Layout_EnableStabilization_Desc";
-        public const string CenterThresholdPercent = "Layout_CenterThresholdPercent";
-        public const string CenterThresholdPercent_Desc = "Layout_CenterThresholdPercent_Desc";
+        public const string CenterThresholdXPercent = "Layout_CenterThresholdXPercent";
+        public const string CenterThresholdXPercent_Desc = "Layout_CenterThresholdXPercent_Desc";
+        public const string CenterThresholdYPercent = "Layout_CenterThresholdYPercent";
+        public const string CenterThresholdYPercent_Desc = "Layout_CenterThresholdYPercent_Desc";
         public const string LevenshteinThreshold = "Layout_LevenshteinThreshold";
         public const string LevenshteinThreshold_Desc = "Layout_LevenshteinThreshold_Desc";
         public const string MinLength = "Layout_MinLength";
         public const string MinLength_Desc = "Layout_MinLength_Desc";
+        public const string ParagraphMergeHysteresisPercent = "Layout_ParagraphMergeHysteresisPercent";
+        public const string ParagraphMergeHysteresisPercent_Desc = "Layout_ParagraphMergeHysteresisPercent_Desc";
+        public const string WordFilters = "Layout_WordFilters";
+        public const string WordFilters_Desc = "Layout_WordFilters_Desc";
+        public const string LineFilters = "Layout_LineFilters";
+        public const string LineFilters_Desc = "Layout_LineFilters_Desc";
+        public const string ParagraphFilters = "Layout_ParagraphFilters";
+        public const string ParagraphFilters_Desc = "Layout_ParagraphFilters_Desc";
+        public const string FilterEnabled = "Layout_Filter_Enabled";
+        public const string FilterPattern = "Layout_Filter_Pattern";
+        public const string FilterIsRegex = "Layout_Filter_IsRegex";
+        public const string FilterAction = "Layout_Filter_Action";
+        public const string FilterActionSkip = "Layout_Filter_Action_Skip";
+        public const string FilterActionStrip = "Layout_Filter_Action_Strip";
+        public const string FilterDescription = "Layout_Filter_Description";
     }
 }

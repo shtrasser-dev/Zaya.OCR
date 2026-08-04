@@ -9,7 +9,7 @@ Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines ex
 | **Zaya.OCR** | 1.0.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
 | **Zaya.OCR.Impl.OneOcr** | 1.0.0.3 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
 | **Zaya.OCR.Impl.WindowsMediaOcr** | 1.0.0.1 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
-| **Zaya.OCR.Impl.ProximityTextLayout** | 1.0.0.2 | Merges OCR words into lines/paragraphs by proximity heuristics |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 1.0.0.3 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
 
 Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. See [versioning](versioning.md).
 
@@ -29,7 +29,7 @@ There is no separate `InitializeAsync`: create a session with defaults or an exp
 <PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.0.0.3" />
 <!-- optional -->
 <PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.0.0.1" />
-<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.0.0.2" />
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.0.0.3" />
 ```
 
 ## Quick Start

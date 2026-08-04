@@ -9,7 +9,7 @@ Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines ex
 | **Zaya.OCR** | 1.0.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
 | **Zaya.OCR.Impl.OneOcr** | 1.0.0.3 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
 | **Zaya.OCR.Impl.WindowsMediaOcr** | 1.0.0.1 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
-| **Zaya.OCR.Impl.ProximityTextLayout** | 1.0.0.2 | Merges OCR words into lines/paragraphs by proximity heuristics |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 1.0.0.3 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
 
 Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Update channel for plugins: `plugin-Zaya.OCR-v1.0-latest`. See [versioning](docs/versioning.md).
 
@@ -32,7 +32,7 @@ There is no separate `InitializeAsync` / `OcrEngineProvider`: create a session w
 <PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.0.0.3" />
 <!-- optional -->
 <PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.0.0.1" />
-<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.0.0.2" />
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.0.0.3" />
 ```
 
 Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plugin-Zaya.OCR-v1.0-latest`):
@@ -106,7 +106,7 @@ Session creation (download, missing DLL, etc.) throws `LocalizedException` subcl
 | `directoryPath` | — | Required when `source` = `directory` |
 | `downloadUrl` | [Zaya.External OneOCR.zip](https://github.com/shtrasser-dev/Zaya.External/releases/latest/download/OneOCR.zip) | Used for `url` and as `auto` fallback |
 | `cacheDirectory` | `%TEMP%\Zaya\OneOcr` | Shared cache for `auto` / `snippingtool` / `url`. If it already has `oneocr.dll`, `onnxruntime.dll`, and `oneocr.onemodel`, those files are used as-is (no SnippingTool lookup, no download). |
-| `minConfidence` | `90` | Drop words below this percent (0–100) |
+| `minConfidence` | `70` | Drop words below this percent (0–100) |
 
 `source = auto`: use complete cache if present; else try SnippingTool; if not found, download via `downloadUrl`.
 
@@ -129,7 +129,7 @@ Requires Windows 10+, OCR language packs, and typically MSIX package identity fo
 
 ## Proximity Text Layout settings (`EngineId`: `proximity-text-layout`)
 
-Merges OCR words into lines/paragraphs by proximity heuristics. Optional **stabilization** reuses previous-frame paragraphs when OCR flickers (shorter/equal text, bounds jitter).
+Merges OCR words into lines/paragraphs by proximity heuristics. Optional **filters** (word / line / paragraph) run before stabilization. Optional **stabilization** reuses previous-frame paragraphs when OCR flickers (shorter/equal text, bounds jitter) and biases line→paragraph merging toward the last emitted structure.
 
 ```csharp
 using Zaya.OCR.Impl.ProximityTextLayout.Services;
@@ -138,7 +138,8 @@ using var layout = new ProximityTextLayoutService();
 using var layoutSession = await layout.CreateSessionAsync(new Dictionary<string, object>
 {
     ["enableStabilization"] = true,
-    ["centerThresholdPercent"] = 50,
+    ["centerThresholdXPercent"] = 50,
+    ["centerThresholdYPercent"] = 50,
 });
 var structured = await layoutSession.ProcessAsync(ocrResult);
 ```
@@ -156,17 +157,34 @@ Integer thresholds are percent of word/line height (stored as ints, applied as `
 | `firstLineIndentTolerance` | `300` | Max extra indentation of the first line |
 | `fontSizeTolerance` | `50` | Max height difference between lines before splitting paragraphs |
 | `enableCenterAlignment` | `false` | Also merge lines if their horizontal centers align |
+| `wordFilters` | _(empty table)_ | Word-level filter rules (see Filters below) |
+| `lineFilters` | _(empty table)_ | Line-level filter rules |
+| `paragraphFilters` | _(empty table)_ | Paragraph-level filter rules |
+
+### Filters (tables)
+
+Each of `wordFilters`, `lineFilters`, and `paragraphFilters` is a table of rules applied at that stage (words → lines → paragraphs → stabilization). Case is always ignored.
+
+| Column | Notes |
+|--------|--------|
+| `enabled` | Enable/disable the rule |
+| `pattern` | Literal (full-string equality) or regex |
+| `isRegex` | When `false`, require exact match of the whole word/line/paragraph text; when `true`, regex `IsMatch` / `Replace` |
+| `action` | `Skip` — drop the whole block; `Strip` — remove the match and keep the rest (empty → drop) |
+| `description` | Optional note for UI |
 
 ### Stabilization (across frames)
 
 | Key | Default | Notes |
 |-----|---------|--------|
-| `enableStabilization` | `true` | Reuse previous paragraphs when OCR flickers |
-| `centerThresholdPercent` | `50` | Max paragraph-center drift (% of avg line height) to match previous frame |
+| `enableStabilization` | `true` | Match paragraphs to the previous frame to reduce OCR flicker; hold brand-new text and upgrades until stable; keep already shown paragraphs while OCR flickers; hold an emit if a not-yet-shown paragraph below could still merge; short unmatched paragraphs ghost for one frame; long ones ghost only when a spatial replacement exists |
+| `centerThresholdXPercent` | `50` | Max horizontal paragraph-center drift (% of avg line height) to match previous frame |
+| `centerThresholdYPercent` | `50` | Max vertical paragraph-center drift (% of avg line height) to match previous frame |
 | `levenshteinThreshold` | `8` | Max Levenshtein distance (% of longer text) to treat paragraphs as the same |
-| `minLength` | `16` | Shorter texts require an exact match to pair with the previous frame |
+| `minLength` | `16` | Shorter texts require an exact match to pair with the previous frame (also the short/long ghost split) |
+| `paragraphMergeHysteresisPercent` | `120` | Bias line→paragraph merging toward the previous emitted structure (`100` = off, `120` = ±20% tolerances: looser if lines shared a paragraph, tighter if they were separate) |
 
-`centerThresholdPercent`, `levenshteinThreshold`, and `minLength` are visible in UI only when `enableStabilization` is `true`.
+`centerThresholdXPercent`, `centerThresholdYPercent`, `levenshteinThreshold`, `minLength`, and `paragraphMergeHysteresisPercent` are visible in UI only when `enableStabilization` is `true`.
 
 ## Requirements
 

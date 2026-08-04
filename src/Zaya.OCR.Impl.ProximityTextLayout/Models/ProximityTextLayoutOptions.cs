@@ -39,14 +39,22 @@ namespace Zaya.OCR.Impl.ProximityTextLayout.Models;
 /// <param name="EnableStabilization">
 /// When <c>true</c>, paragraphs are temporally matched to the previous frame to reduce OCR flicker.
 /// </param>
-/// <param name="CenterThresholdFraction">
-/// Max center-point drift as a fraction of average paragraph line height (e.g. 0.5 = 50%).
+/// <param name="CenterThresholdXFraction">
+/// Max horizontal center-point drift as a fraction of average paragraph line height (e.g. 0.5 = 50%).
+/// </param>
+/// <param name="CenterThresholdYFraction">
+/// Max vertical center-point drift as a fraction of average paragraph line height (e.g. 0.5 = 50%).
 /// </param>
 /// <param name="LevenshteinThresholdPercent">
 /// Max Levenshtein distance as a percent of the longer normalized text length.
 /// </param>
 /// <param name="MinStabilizationLength">
 /// Below this normalized length, only exact text matches are accepted for temporal pairing.
+/// </param>
+/// <param name="ParagraphMergeHysteresis">
+/// Multiplier applied to line→paragraph merge tolerances based on the previous emitted layout:
+/// looser when lines sat in one paragraph, tighter when they were separate (e.g. 1.2 = ±20%).
+/// Use 1.0 to disable.
 /// </param>
 public sealed record ProximityTextLayoutOptions(
     double WordGapThreshold,
@@ -57,6 +65,8 @@ public sealed record ProximityTextLayoutOptions(
     bool EnableCenterAlignment,
     double FontSizeTolerance,
     bool EnableStabilization = true,
-    double CenterThresholdFraction = 0.5,
+    double CenterThresholdXFraction = 0.5,
+    double CenterThresholdYFraction = 0.5,
     int LevenshteinThresholdPercent = 8,
-    int MinStabilizationLength = 16);
+    int MinStabilizationLength = 16,
+    double ParagraphMergeHysteresis = 1.2);

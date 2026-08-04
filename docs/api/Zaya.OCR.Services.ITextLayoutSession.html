@@ -71,7 +71,7 @@
 
 
   <h1 id="Zaya_OCR_Services_ITextLayoutSession" data-uid="Zaya.OCR.Services.ITextLayoutSession" class="text-break">Interface ITextLayoutSession</h1>
-  <div class="markdown level0 summary"><p sourcefile="docs/api/Zaya.OCR.Services.ITextLayoutSession.yml" sourcestartlinenumber="1">Represents an active text layout session with fixed processing parameters.
+  <div class="markdown level0 summary"><p>Represents an active text layout session with fixed processing parameters.
 Create via <a class="xref" href="Zaya.OCR.Services.ITextLayoutService.html#Zaya_OCR_Services_ITextLayoutService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_">CreateSessionAsync(IReadOnlyDictionary&lt;string, object&gt;, CancellationToken)</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -98,7 +98,7 @@ Create via <a class="xref" href="Zaya.OCR.Services.ITextLayoutService.html#Zaya_
   </span>
   <a id="Zaya_OCR_Services_ITextLayoutSession_ProcessAsync_" data-uid="Zaya.OCR.Services.ITextLayoutSession.ProcessAsync*"></a>
   <h4 id="Zaya_OCR_Services_ITextLayoutSession_ProcessAsync_Zaya_OCR_Models_IOCRResult_System_Threading_CancellationToken_" data-uid="Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)">ProcessAsync(IOCRResult, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p sourcefile="docs/api/Zaya.OCR.Services.ITextLayoutSession.yml" sourcestartlinenumber="1">Processes an OCR result and merges individual words into structured text blocks.</p>
+  <div class="markdown level1 summary"><p>Processes an OCR result and merges individual words into structured text blocks.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -118,13 +118,13 @@ Create via <a class="xref" href="Zaya.OCR.Services.ITextLayoutService.html#Zaya_
       <tr>
         <td><a class="xref" href="Zaya.OCR.Models.IOCRResult.html">IOCRResult</a></td>
         <td><span class="parametername">result</span></td>
-        <td><p sourcefile="docs/api/Zaya.OCR.Services.ITextLayoutSession.yml" sourcestartlinenumber="1">The raw OCR result containing recognized words.</p>
+        <td><p>The raw OCR result containing recognized words.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
         <td><span class="parametername">cancellationToken</span></td>
-        <td><p sourcefile="docs/api/Zaya.OCR.Services.ITextLayoutSession.yml" sourcestartlinenumber="1">Token to cancel the processing operation.</p>
+        <td><p>Token to cancel the processing operation.</p>
 </td>
       </tr>
     </tbody>
@@ -140,7 +140,7 @@ Create via <a class="xref" href="Zaya.OCR.Services.ITextLayoutService.html#Zaya_
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Zaya.OCR.Models.ITextResult.html">ITextResult</a>&gt;</td>
-        <td><p sourcefile="docs/api/Zaya.OCR.Services.ITextLayoutSession.yml" sourcestartlinenumber="1">The processed text result containing ordered text blocks.</p>
+        <td><p>The processed text result containing ordered text blocks.</p>
 </td>
       </tr>
     </tbody>

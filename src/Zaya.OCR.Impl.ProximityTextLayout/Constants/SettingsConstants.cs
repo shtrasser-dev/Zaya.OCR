@@ -10,7 +10,22 @@ internal static class SettingsConstants
     public const string EnableCenterAlignment = "enableCenterAlignment";
     public const string FontSizeTolerance = "fontSizeTolerance";
     public const string EnableStabilization = "enableStabilization";
-    public const string CenterThresholdPercent = "centerThresholdPercent";
+    public const string CenterThresholdXPercent = "centerThresholdXPercent";
+    public const string CenterThresholdYPercent = "centerThresholdYPercent";
     public const string LevenshteinThreshold = "levenshteinThreshold";
     public const string MinLength = "minLength";
+    public const string ParagraphMergeHysteresisPercent = "paragraphMergeHysteresisPercent";
+
+    public const string WordFilters = "wordFilters";
+    public const string LineFilters = "lineFilters";
+    public const string ParagraphFilters = "paragraphFilters";
+
+    public const string FilterEnabled = "enabled";
+    public const string FilterPattern = "pattern";
+    public const string FilterIsRegex = "isRegex";
+    public const string FilterAction = "action";
+    public const string FilterDescription = "description";
+
+    public const string FilterActionSkip = "Skip";
+    public const string FilterActionStrip = "Strip";
 }

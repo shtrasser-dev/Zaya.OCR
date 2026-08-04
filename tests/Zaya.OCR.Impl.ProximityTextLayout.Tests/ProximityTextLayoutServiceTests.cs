@@ -31,11 +31,16 @@ public sealed class ProximityTextLayoutServiceTests
         Assert.Contains(settings, s => s.Key == "firstLineIndentTolerance");
         Assert.Contains(settings, s => s.Key == "enableCenterAlignment");
         Assert.Contains(settings, s => s.Key == "fontSizeTolerance");
+        Assert.Contains(settings, s => s.Key == "wordFilters");
+        Assert.Contains(settings, s => s.Key == "lineFilters");
+        Assert.Contains(settings, s => s.Key == "paragraphFilters");
         Assert.Contains(settings, s => s.Key == "enableStabilization");
-        Assert.Contains(settings, s => s.Key == "centerThresholdPercent");
+        Assert.Contains(settings, s => s.Key == "centerThresholdXPercent");
+        Assert.Contains(settings, s => s.Key == "centerThresholdYPercent");
         Assert.Contains(settings, s => s.Key == "levenshteinThreshold");
         Assert.Contains(settings, s => s.Key == "minLength");
-        Assert.Equal(11, settings.Count);
+        Assert.Contains(settings, s => s.Key == "paragraphMergeHysteresisPercent");
+        Assert.Equal(16, settings.Count);
     }
 
     [Fact]
@@ -52,9 +57,11 @@ public sealed class ProximityTextLayoutServiceTests
         Assert.False(((Zaya.Primitives.BooleanSettingDescriptor)settings["enableCenterAlignment"]).DefaultValue);
         Assert.Equal(50, ((Zaya.Primitives.IntegerSettingDescriptor)settings["fontSizeTolerance"]).DefaultValue);
         Assert.True(((Zaya.Primitives.BooleanSettingDescriptor)settings["enableStabilization"]).DefaultValue);
-        Assert.Equal(50, ((Zaya.Primitives.IntegerSettingDescriptor)settings["centerThresholdPercent"]).DefaultValue);
+        Assert.Equal(50, ((Zaya.Primitives.IntegerSettingDescriptor)settings["centerThresholdXPercent"]).DefaultValue);
+        Assert.Equal(50, ((Zaya.Primitives.IntegerSettingDescriptor)settings["centerThresholdYPercent"]).DefaultValue);
         Assert.Equal(8, ((Zaya.Primitives.IntegerSettingDescriptor)settings["levenshteinThreshold"]).DefaultValue);
         Assert.Equal(16, ((Zaya.Primitives.IntegerSettingDescriptor)settings["minLength"]).DefaultValue);
+        Assert.Equal(120, ((Zaya.Primitives.IntegerSettingDescriptor)settings["paragraphMergeHysteresisPercent"]).DefaultValue);
     }
 
     [Fact]
