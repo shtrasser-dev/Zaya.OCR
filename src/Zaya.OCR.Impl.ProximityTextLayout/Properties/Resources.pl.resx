@@ -100,19 +100,19 @@
     <value>Word filters</value>
   </data>
   <data name="Layout_WordFilters_Desc" xml:space="preserve">
-    <value>Filter OCR words before lines are built (Skip drops the word; Strip removes the match)</value>
+    <value>Filter OCR words before lines are built</value>
   </data>
   <data name="Layout_LineFilters" xml:space="preserve">
     <value>Line filters</value>
   </data>
   <data name="Layout_LineFilters_Desc" xml:space="preserve">
-    <value>Filter lines before paragraphs are built (Skip drops the line; Strip removes the match)</value>
+    <value>Filter lines before paragraphs are built</value>
   </data>
   <data name="Layout_ParagraphFilters" xml:space="preserve">
     <value>Paragraph filters</value>
   </data>
   <data name="Layout_ParagraphFilters_Desc" xml:space="preserve">
-    <value>Filter paragraphs before stabilization (Skip drops the paragraph; Strip removes the match)</value>
+    <value>Filter paragraphs before stabilization</value>
   </data>
   <data name="Layout_Filter_Enabled" xml:space="preserve">
     <value>Enabled</value>

@@ -100,19 +100,19 @@
     <value>Фильтры слов</value>
   </data>
   <data name="Layout_WordFilters_Desc" xml:space="preserve">
-    <value>Фильтрация OCR-слов до сборки строк (Skip удаляет слово; Strip вырезает совпадение)</value>
+    <value>Фильтрация OCR-слов до сборки строк</value>
   </data>
   <data name="Layout_LineFilters" xml:space="preserve">
     <value>Фильтры строк</value>
   </data>
   <data name="Layout_LineFilters_Desc" xml:space="preserve">
-    <value>Фильтрация строк до сборки абзацев (Skip удаляет строку; Strip вырезает совпадение)</value>
+    <value>Фильтрация строк до сборки абзацев</value>
   </data>
   <data name="Layout_ParagraphFilters" xml:space="preserve">
     <value>Фильтры абзацев</value>
   </data>
   <data name="Layout_ParagraphFilters_Desc" xml:space="preserve">
-    <value>Фильтрация абзацев до стабилизации (Skip удаляет абзац; Strip вырезает совпадение)</value>
+    <value>Фильтрация абзацев до стабилизации</value>
   </data>
   <data name="Layout_Filter_Enabled" xml:space="preserve">
     <value>Включить</value>
