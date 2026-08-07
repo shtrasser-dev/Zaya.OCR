@@ -1,5 +1,3 @@
-using System.Drawing;
-
 namespace Zaya.OCR.Models;
 
 /// <summary>
@@ -18,7 +16,13 @@ public interface ITextLine
     IReadOnlyList<IOCRWord> Words { get; }
 
     /// <summary>
-    /// Gets the bounding rectangle that encompasses all words in this line.
+    /// Gets the oriented bounding box that encompasses all words in this line.
     /// </summary>
-    Rectangle Bounds { get; }
+    BoundingBox Bounds { get; }
+
+    /// <summary>
+    /// Gets whether this line has a previous-frame match whose text equals
+    /// <see cref="Text"/> ignoring case.
+    /// </summary>
+    bool HasPreviousFrameMatch { get; }
 }

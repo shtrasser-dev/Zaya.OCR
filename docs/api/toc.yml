@@ -116,6 +116,9 @@ items:
   name: Zaya.OCR.Models
   type: Namespace
   items:
+  - uid: Zaya.OCR.Models.BoundingBox
+    name: BoundingBox
+    type: Struct
   - uid: Zaya.OCR.Models.IOCRResult
     name: IOCRResult
     type: Interface
@@ -130,6 +133,9 @@ items:
     type: Interface
   - uid: Zaya.OCR.Models.ITextResult
     name: ITextResult
+    type: Interface
+  - uid: Zaya.OCR.Models.ITextWord
+    name: ITextWord
     type: Interface
 - uid: Zaya.OCR.Services
   name: Zaya.OCR.Services

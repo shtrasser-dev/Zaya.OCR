@@ -1,18 +1,19 @@
 namespace Zaya.OCR.Models;
 
 /// <summary>
-/// Represents the result of text layout processing: structured paragraphs
-/// parsed from individual OCR words.
+/// Result of text layout: words, lines, and paragraphs structured from OCR.
 /// </summary>
 public interface ITextResult
 {
-    /// <summary>
-    /// Gets the ordered list of paragraphs.
-    /// </summary>
+    /// <summary>Words used for layout (after word filters).</summary>
+    IReadOnlyList<ITextWord> Words { get; }
+
+    /// <summary>Assembled lines.</summary>
+    IReadOnlyList<ITextLine> Lines { get; }
+
+    /// <summary>Emitted / stable paragraphs (alias of the primary show list).</summary>
     IReadOnlyList<ITextParagraph> Paragraphs { get; }
 
-    /// <summary>
-    /// Gets the full text of all paragraphs, separated by empty lines.
-    /// </summary>
+    /// <summary>Full text of all paragraphs, separated by empty lines.</summary>
     string FullText { get; }
 }

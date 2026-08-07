@@ -1,4 +1,3 @@
-using System.Drawing;
 using Windows.Graphics.Imaging;
 using Windows.Media.Ocr;
 using Windows.Storage.Streams;
@@ -48,17 +47,20 @@ public sealed class WindowsMediaOcrSession : IOCRSession
             throw new WindowsMediaOcrRecognizeFailedException(ex.Message);
         }
 
+        var textAngle = ocrResult.TextAngle;
+        var imageWidth = (float)image.Width;
+        var imageHeight = (float)image.Height;
+
         var words = new List<IOCRWord>();
         foreach (var line in ocrResult.Lines)
         {
             foreach (var word in line.Words)
             {
-                var rect = word.BoundingRect;
-                var bounds = new Rectangle(
-                    (int)Math.Round(rect.X),
-                    (int)Math.Round(rect.Y),
-                    Math.Max(1, (int)Math.Round(rect.Width)),
-                    Math.Max(1, (int)Math.Round(rect.Height)));
+                var bounds = WindowsMediaOcrBounds.FromWordRect(
+                    word.BoundingRect,
+                    textAngle,
+                    imageWidth,
+                    imageHeight);
 
                 // WinRT OcrWord has no confidence; treat detections as fully confident.
                 words.Add(new WindowsMediaOcrWord(word.Text, bounds, 1.0));

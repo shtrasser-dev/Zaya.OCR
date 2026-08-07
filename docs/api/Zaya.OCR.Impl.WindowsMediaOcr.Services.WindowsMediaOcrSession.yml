@@ -21,7 +21,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: WindowsMediaOcrSession
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/Services/WindowsMediaOcrSession.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr.Services
@@ -63,7 +63,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: RecognizeAsync
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/Services/WindowsMediaOcrSession.cs
-    startLine: 25
+    startLine: 24
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr.Services
@@ -103,7 +103,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Dispose
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/Services/WindowsMediaOcrSession.cs
-    startLine: 107
+    startLine: 109
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr.Services

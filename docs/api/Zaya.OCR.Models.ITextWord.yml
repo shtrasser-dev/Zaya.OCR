@@ -1,62 +1,59 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Zaya.OCR.Models.IOCRWord
-  commentId: T:Zaya.OCR.Models.IOCRWord
-  id: IOCRWord
+- uid: Zaya.OCR.Models.ITextWord
+  commentId: T:Zaya.OCR.Models.ITextWord
+  id: ITextWord
   parent: Zaya.OCR.Models
   children:
-  - Zaya.OCR.Models.IOCRWord.Bounds
-  - Zaya.OCR.Models.IOCRWord.Confidence
-  - Zaya.OCR.Models.IOCRWord.Text
+  - Zaya.OCR.Models.ITextWord.Bounds
+  - Zaya.OCR.Models.ITextWord.Confidence
+  - Zaya.OCR.Models.ITextWord.Text
   langs:
   - csharp
   - vb
-  name: IOCRWord
-  nameWithType: IOCRWord
-  fullName: Zaya.OCR.Models.IOCRWord
+  name: ITextWord
+  nameWithType: ITextWord
+  fullName: Zaya.OCR.Models.ITextWord
   type: Interface
   source:
     remote:
-      path: src/Zaya.OCR/Models/IOCRWord.cs
+      path: src/Zaya.OCR/Models/ITextWord.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
-    id: IOCRWord
-    path: src/Zaya.OCR/Models/IOCRWord.cs
+    id: ITextWord
+    path: src/Zaya.OCR/Models/ITextWord.cs
     startLine: 5
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Models
-  summary: Represents a single recognized word with its text, bounding box, and confidence score.
+  summary: A layout-facing word with text, bounds, and confidence (typically from OCR).
   example: []
   syntax:
-    content: public interface IOCRWord
-    content.vb: Public Interface IOCRWord
-  derivedClasses:
-  - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
-  - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord
-- uid: Zaya.OCR.Models.IOCRWord.Text
-  commentId: P:Zaya.OCR.Models.IOCRWord.Text
+    content: public interface ITextWord
+    content.vb: Public Interface ITextWord
+- uid: Zaya.OCR.Models.ITextWord.Text
+  commentId: P:Zaya.OCR.Models.ITextWord.Text
   id: Text
-  parent: Zaya.OCR.Models.IOCRWord
+  parent: Zaya.OCR.Models.ITextWord
   langs:
   - csharp
   - vb
   name: Text
-  nameWithType: IOCRWord.Text
-  fullName: Zaya.OCR.Models.IOCRWord.Text
+  nameWithType: ITextWord.Text
+  fullName: Zaya.OCR.Models.ITextWord.Text
   type: Property
   source:
     remote:
-      path: src/Zaya.OCR/Models/IOCRWord.cs
+      path: src/Zaya.OCR/Models/ITextWord.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Text
-    path: src/Zaya.OCR/Models/IOCRWord.cs
-    startLine: 10
+    path: src/Zaya.OCR/Models/ITextWord.cs
+    startLine: 8
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Models
-  summary: Gets the recognized text of the word.
+  summary: Recognized / display text.
   example: []
   syntax:
     content: string Text { get; }
@@ -64,30 +61,30 @@ items:
     return:
       type: System.String
     content.vb: ReadOnly Property Text As String
-  overload: Zaya.OCR.Models.IOCRWord.Text*
-- uid: Zaya.OCR.Models.IOCRWord.Bounds
-  commentId: P:Zaya.OCR.Models.IOCRWord.Bounds
+  overload: Zaya.OCR.Models.ITextWord.Text*
+- uid: Zaya.OCR.Models.ITextWord.Bounds
+  commentId: P:Zaya.OCR.Models.ITextWord.Bounds
   id: Bounds
-  parent: Zaya.OCR.Models.IOCRWord
+  parent: Zaya.OCR.Models.ITextWord
   langs:
   - csharp
   - vb
   name: Bounds
-  nameWithType: IOCRWord.Bounds
-  fullName: Zaya.OCR.Models.IOCRWord.Bounds
+  nameWithType: ITextWord.Bounds
+  fullName: Zaya.OCR.Models.ITextWord.Bounds
   type: Property
   source:
     remote:
-      path: src/Zaya.OCR/Models/IOCRWord.cs
+      path: src/Zaya.OCR/Models/ITextWord.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Bounds
-    path: src/Zaya.OCR/Models/IOCRWord.cs
-    startLine: 15
+    path: src/Zaya.OCR/Models/ITextWord.cs
+    startLine: 11
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Models
-  summary: Gets the oriented bounding box of the word in the image.
+  summary: Oriented bounding box in image space.
   example: []
   syntax:
     content: BoundingBox Bounds { get; }
@@ -95,30 +92,30 @@ items:
     return:
       type: Zaya.OCR.Models.BoundingBox
     content.vb: ReadOnly Property Bounds As BoundingBox
-  overload: Zaya.OCR.Models.IOCRWord.Bounds*
-- uid: Zaya.OCR.Models.IOCRWord.Confidence
-  commentId: P:Zaya.OCR.Models.IOCRWord.Confidence
+  overload: Zaya.OCR.Models.ITextWord.Bounds*
+- uid: Zaya.OCR.Models.ITextWord.Confidence
+  commentId: P:Zaya.OCR.Models.ITextWord.Confidence
   id: Confidence
-  parent: Zaya.OCR.Models.IOCRWord
+  parent: Zaya.OCR.Models.ITextWord
   langs:
   - csharp
   - vb
   name: Confidence
-  nameWithType: IOCRWord.Confidence
-  fullName: Zaya.OCR.Models.IOCRWord.Confidence
+  nameWithType: ITextWord.Confidence
+  fullName: Zaya.OCR.Models.ITextWord.Confidence
   type: Property
   source:
     remote:
-      path: src/Zaya.OCR/Models/IOCRWord.cs
+      path: src/Zaya.OCR/Models/ITextWord.cs
       branch: main
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Confidence
-    path: src/Zaya.OCR/Models/IOCRWord.cs
-    startLine: 20
+    path: src/Zaya.OCR/Models/ITextWord.cs
+    startLine: 14
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Models
-  summary: Gets the confidence of the word recognition (0.0 to 1.0).
+  summary: Recognition confidence in [0, 1].
   example: []
   syntax:
     content: double Confidence { get; }
@@ -126,7 +123,7 @@ items:
     return:
       type: System.Double
     content.vb: ReadOnly Property Confidence As Double
-  overload: Zaya.OCR.Models.IOCRWord.Confidence*
+  overload: Zaya.OCR.Models.ITextWord.Confidence*
 references:
 - uid: Zaya.OCR.Models
   commentId: N:Zaya.OCR.Models
@@ -158,12 +155,12 @@ references:
   - uid: Zaya.OCR.Models
     name: Models
     href: Zaya.OCR.Models.html
-- uid: Zaya.OCR.Models.IOCRWord.Text*
-  commentId: Overload:Zaya.OCR.Models.IOCRWord.Text
-  href: Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Text
+- uid: Zaya.OCR.Models.ITextWord.Text*
+  commentId: Overload:Zaya.OCR.Models.ITextWord.Text
+  href: Zaya.OCR.Models.ITextWord.html#Zaya_OCR_Models_ITextWord_Text
   name: Text
-  nameWithType: IOCRWord.Text
-  fullName: Zaya.OCR.Models.IOCRWord.Text
+  nameWithType: ITextWord.Text
+  fullName: Zaya.OCR.Models.ITextWord.Text
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -182,12 +179,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Zaya.OCR.Models.IOCRWord.Bounds*
-  commentId: Overload:Zaya.OCR.Models.IOCRWord.Bounds
-  href: Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Bounds
+- uid: Zaya.OCR.Models.ITextWord.Bounds*
+  commentId: Overload:Zaya.OCR.Models.ITextWord.Bounds
+  href: Zaya.OCR.Models.ITextWord.html#Zaya_OCR_Models_ITextWord_Bounds
   name: Bounds
-  nameWithType: IOCRWord.Bounds
-  fullName: Zaya.OCR.Models.IOCRWord.Bounds
+  nameWithType: ITextWord.Bounds
+  fullName: Zaya.OCR.Models.ITextWord.Bounds
 - uid: Zaya.OCR.Models.BoundingBox
   commentId: T:Zaya.OCR.Models.BoundingBox
   parent: Zaya.OCR.Models
@@ -195,12 +192,12 @@ references:
   name: BoundingBox
   nameWithType: BoundingBox
   fullName: Zaya.OCR.Models.BoundingBox
-- uid: Zaya.OCR.Models.IOCRWord.Confidence*
-  commentId: Overload:Zaya.OCR.Models.IOCRWord.Confidence
-  href: Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Confidence
+- uid: Zaya.OCR.Models.ITextWord.Confidence*
+  commentId: Overload:Zaya.OCR.Models.ITextWord.Confidence
+  href: Zaya.OCR.Models.ITextWord.html#Zaya_OCR_Models_ITextWord_Confidence
   name: Confidence
-  nameWithType: IOCRWord.Confidence
-  fullName: Zaya.OCR.Models.IOCRWord.Confidence
+  nameWithType: ITextWord.Confidence
+  fullName: Zaya.OCR.Models.ITextWord.Confidence
 - uid: System.Double
   commentId: T:System.Double
   parent: System

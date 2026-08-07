@@ -67,6 +67,13 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             DefaultValue = 50,
             MinValue = 0,
         },
+        new IntegerSettingDescriptor(SettingsConstants.AngleToleranceDegrees, Loc(LocalizationConstants.Settings.AngleToleranceDegrees))
+        {
+            Description = Loc(LocalizationConstants.Settings.AngleToleranceDegrees_Desc),
+            DefaultValue = 10,
+            MinValue = 0,
+            MaxValue = 90,
+        },
         new IntegerSettingDescriptor(SettingsConstants.LineSpacingThreshold, Loc(LocalizationConstants.Settings.LineSpacingThreshold))
         {
             Description = Loc(LocalizationConstants.Settings.LineSpacingThreshold_Desc),
@@ -116,20 +123,26 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             Description = Loc(LocalizationConstants.Settings.EnableStabilization_Desc),
             DefaultValue = true,
         },
+        new BooleanSettingDescriptor(SettingsConstants.HoldNewBlocks, Loc(LocalizationConstants.Settings.HoldNewBlocks))
+        {
+            Description = Loc(LocalizationConstants.Settings.HoldNewBlocks_Desc),
+            DefaultValue = false,
+            IsVisible = StabVisible,
+        },
         new IntegerSettingDescriptor(SettingsConstants.CenterThresholdXPercent, Loc(LocalizationConstants.Settings.CenterThresholdXPercent))
         {
             Description = Loc(LocalizationConstants.Settings.CenterThresholdXPercent_Desc),
-            DefaultValue = 50,
-            MinValue = 1,
-            MaxValue = 200,
+            DefaultValue = 300,
+            MinValue = 0,
+            MaxValue = 1000,
             IsVisible = StabVisible,
         },
         new IntegerSettingDescriptor(SettingsConstants.CenterThresholdYPercent, Loc(LocalizationConstants.Settings.CenterThresholdYPercent))
         {
             Description = Loc(LocalizationConstants.Settings.CenterThresholdYPercent_Desc),
-            DefaultValue = 50,
-            MinValue = 1,
-            MaxValue = 200,
+            DefaultValue = 75,
+            MinValue = 0,
+            MaxValue = 500,
             IsVisible = StabVisible,
         },
         new IntegerSettingDescriptor(SettingsConstants.LevenshteinThreshold, Loc(LocalizationConstants.Settings.LevenshteinThreshold))
@@ -140,13 +153,20 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             MaxValue = 50,
             IsVisible = StabVisible,
         },
-        new IntegerSettingDescriptor(SettingsConstants.MinLength, Loc(LocalizationConstants.Settings.MinLength))
+        new IntegerSettingDescriptor(SettingsConstants.GhostMaxFrames, Loc(LocalizationConstants.Settings.GhostMaxFrames))
         {
-            Description = Loc(LocalizationConstants.Settings.MinLength_Desc),
-            DefaultValue = 16,
-            MinValue = 1,
-            MaxValue = 200,
+            Description = Loc(LocalizationConstants.Settings.GhostMaxFrames_Desc),
+            DefaultValue = 3,
+            MinValue = 0,
+            MaxValue = 30,
             IsVisible = StabVisible,
+        },
+        new IntegerSettingDescriptor(SettingsConstants.MaxLineProtrusionPercent, Loc(LocalizationConstants.Settings.MaxLineProtrusionPercent))
+        {
+            Description = Loc(LocalizationConstants.Settings.MaxLineProtrusionPercent_Desc),
+            DefaultValue = 10,
+            MinValue = 2,
+            MaxValue = 50,
         },
         new IntegerSettingDescriptor(SettingsConstants.ParagraphMergeHysteresisPercent, Loc(LocalizationConstants.Settings.ParagraphMergeHysteresisPercent))
         {
@@ -154,6 +174,14 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             DefaultValue = 120,
             MinValue = 100,
             MaxValue = 200,
+            IsVisible = StabVisible,
+        },
+        new IntegerSettingDescriptor(SettingsConstants.SameLineWordGapHysteresisPercent, Loc(LocalizationConstants.Settings.SameLineWordGapHysteresisPercent))
+        {
+            Description = Loc(LocalizationConstants.Settings.SameLineWordGapHysteresisPercent_Desc),
+            DefaultValue = 600,
+            MinValue = 100,
+            MaxValue = 2000,
             IsVisible = StabVisible,
         },
     ];
@@ -218,8 +246,12 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             settingDescriptorList.GetValueAsInt(SettingsConstants.CenterThresholdXPercent) / 100.0,
             settingDescriptorList.GetValueAsInt(SettingsConstants.CenterThresholdYPercent) / 100.0,
             settingDescriptorList.GetValueAsInt(SettingsConstants.LevenshteinThreshold),
-            settingDescriptorList.GetValueAsInt(SettingsConstants.MinLength),
-            settingDescriptorList.GetValueAsInt(SettingsConstants.ParagraphMergeHysteresisPercent) / 100.0);
+            settingDescriptorList.GetValueAsInt(SettingsConstants.ParagraphMergeHysteresisPercent) / 100.0,
+            settingDescriptorList.GetValueAsInt(SettingsConstants.AngleToleranceDegrees),
+            settingDescriptorList.GetValueAsBool(SettingsConstants.HoldNewBlocks),
+            MaxLineProtrusionFraction: settingDescriptorList.GetValueAsInt(SettingsConstants.MaxLineProtrusionPercent) / 100.0,
+            GhostMaxFrames: settingDescriptorList.GetValueAsInt(SettingsConstants.GhostMaxFrames),
+            SameLineWordGapHysteresis: settingDescriptorList.GetValueAsInt(SettingsConstants.SameLineWordGapHysteresisPercent) / 100.0);
 
         var wordFilter = LayoutTextFilter.FromTable(settingDescriptorList.GetValueAsTable(SettingsConstants.WordFilters));
         var lineFilter = LayoutTextFilter.FromTable(settingDescriptorList.GetValueAsTable(SettingsConstants.LineFilters));

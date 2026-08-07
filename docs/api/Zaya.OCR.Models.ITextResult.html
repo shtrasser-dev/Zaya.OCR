@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Interface ITextResult ">
     
-    <meta name="description" content="Represents the result of text layout processing: structured paragraphs parsed from individual OCR words.">
+    <meta name="description" content="Result of text layout: words, lines, and paragraphs structured from OCR.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -71,8 +71,7 @@
 
 
   <h1 id="Zaya_OCR_Models_ITextResult" data-uid="Zaya.OCR.Models.ITextResult" class="text-break">Interface ITextResult</h1>
-  <div class="markdown level0 summary"><p>Represents the result of text layout processing: structured paragraphs
-parsed from individual OCR words.</p>
+  <div class="markdown level0 summary"><p>Result of text layout: words, lines, and paragraphs structured from OCR.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Zaya.html">Zaya</a>.<a class="xref" href="Zaya.OCR.html">OCR</a>.<a class="xref" href="Zaya.OCR.Models.html">Models</a></h6>
@@ -88,11 +87,11 @@ parsed from individual OCR words.</p>
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextResult_FullText.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextResult.FullText%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextResult.cs/#L17">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextResult.cs/#L18">View Source</a>
   </span>
   <a id="Zaya_OCR_Models_ITextResult_FullText_" data-uid="Zaya.OCR.Models.ITextResult.FullText*"></a>
   <h4 id="Zaya_OCR_Models_ITextResult_FullText" data-uid="Zaya.OCR.Models.ITextResult.FullText">FullText</h4>
-  <div class="markdown level1 summary"><p>Gets the full text of all paragraphs, separated by empty lines.</p>
+  <div class="markdown level1 summary"><p>Full text of all paragraphs, separated by empty lines.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -116,14 +115,45 @@ parsed from individual OCR words.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextResult_Paragraphs.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextResult.Paragraphs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextResult_Lines.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextResult.Lines%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextResult.cs/#L12">View Source</a>
   </span>
+  <a id="Zaya_OCR_Models_ITextResult_Lines_" data-uid="Zaya.OCR.Models.ITextResult.Lines*"></a>
+  <h4 id="Zaya_OCR_Models_ITextResult_Lines" data-uid="Zaya.OCR.Models.ITextResult.Lines">Lines</h4>
+  <div class="markdown level1 summary"><p>Assembled lines.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IReadOnlyList&lt;ITextLine&gt; Lines { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Zaya.OCR.Models.ITextLine.html">ITextLine</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextResult_Paragraphs.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextResult.Paragraphs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextResult.cs/#L15">View Source</a>
+  </span>
   <a id="Zaya_OCR_Models_ITextResult_Paragraphs_" data-uid="Zaya.OCR.Models.ITextResult.Paragraphs*"></a>
   <h4 id="Zaya_OCR_Models_ITextResult_Paragraphs" data-uid="Zaya.OCR.Models.ITextResult.Paragraphs">Paragraphs</h4>
-  <div class="markdown level1 summary"><p>Gets the ordered list of paragraphs.</p>
+  <div class="markdown level1 summary"><p>Emitted / stable paragraphs (alias of the primary show list).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -145,6 +175,37 @@ parsed from individual OCR words.</p>
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextResult_Words.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextResult.Words%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextResult.cs/#L9">View Source</a>
+  </span>
+  <a id="Zaya_OCR_Models_ITextResult_Words_" data-uid="Zaya.OCR.Models.ITextResult.Words*"></a>
+  <h4 id="Zaya_OCR_Models_ITextResult_Words" data-uid="Zaya.OCR.Models.ITextResult.Words">Words</h4>
+  <div class="markdown level1 summary"><p>Words used for layout (after word filters).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IReadOnlyList&lt;ITextWord&gt; Words { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Zaya.OCR.Models.ITextWord.html">ITextWord</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
           </div>
@@ -157,7 +218,7 @@ parsed from individual OCR words.</p>
                     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextResult.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextResult%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextResult.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextResult.cs/#L6" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

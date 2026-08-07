@@ -9,7 +9,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <ZayaVersionRole>plugin</ZayaVersionRole>
     <ZayaVersionImpMajor>0</ZayaVersionImpMajor>
-    <ZayaVersionImpMinor>3</ZayaVersionImpMinor>
+    <ZayaVersionImpMinor>0</ZayaVersionImpMinor>
 
     <PackageId>Zaya.OCR.Impl.OneOcr</PackageId>
     <Description>OneOCR engine implementation for Zaya.OCR. Uses P/Invoke into native oneocr.dll (Windows 11 Snipping Tool OCR); no WinRT or Windows App SDK package identity required.</Description>

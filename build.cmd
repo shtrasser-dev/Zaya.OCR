@@ -123,7 +123,7 @@ goto :eof
         exit /b 1
     )
 
-    call :CopySatellites "%ZIP_TFM%" "%STAGEDIR%"
+    call :CopySatellites "%ZIP_TFM%" "%STAGEDIR%" "%ZIP_DLL%"
 
     set PLUGIN_JSON=%STAGEDIR%\plugin.json
     echo {>"%PLUGIN_JSON%"
@@ -139,11 +139,15 @@ goto :eof
     echo !ZIP_NAME!=!ZIP_PVER!>>"%ROOT%out\plugins.versions.txt"
     exit /b 0
 
+REM Copy culture satellites for the plugin assembly only.
+REM Do not use *.resources.dll — win-x64 from Windows SDK TFMs contains
+REM Microsoft.Windows.ApplicationModel.Resources.dll and would be packed by mistake.
 :CopySatellites
+    set "SAT_DLL=%~n3.resources.dll"
     for /d %%d in ("%~1\*") do (
-        if exist "%%d\*.resources.dll" (
+        if exist "%%d\!SAT_DLL!" (
             mkdir "%~2\%%~nxd" 2>nul
-            copy /y "%%d\*" "%~2\%%~nxd\"
+            copy /y "%%d\!SAT_DLL!" "%~2\%%~nxd\"
         )
     )
     exit /b

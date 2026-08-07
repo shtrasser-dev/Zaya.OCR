@@ -22,7 +22,7 @@
     <value>词间距阈值</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>合并为一行时单词间的最大间距（占单词高度的百分比）</value>
+    <value>沿基线合并为同一行的单词间最大间距（占单词高度的百分比）；也用作相对上一帧行端的吸附容差</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>基线偏移容差</value>
@@ -30,11 +30,17 @@
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
     <value>合并为一行时单词中心的最大垂直偏移（占单词高度的百分比）</value>
   </data>
+  <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
+    <value>Angle Tolerance</value>
+  </data>
+  <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
+    <value>将单词合并为行、将行合并为段落以及匹配上一帧行时允许的最大角度差（度）</value>
+  </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>行距阈值</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>合并为段落时行中心间的最大垂直距离（占单词高度的百分比）</value>
+    <value>沿段落法线方向行中心之间的最大距离（占平均行高的百分比），用于将行合并为段落</value>
   </data>
   <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
     <value>左边缘对齐</value>
@@ -58,25 +64,31 @@
     <value>字号容差</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>拆分段落前行之间的最大高度差（占行高的百分比）</value>
+    <value>仍可将行合并为同一段落的最大高度差（占平均行高的百分比）</value>
   </data>
-<data name="Layout_EnableStabilization" xml:space="preserve">
+  <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>跨帧稳定</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>将段落与上一帧匹配以减少 OCR 闪烁</value>
+    <value>将行和段落与上一帧匹配：吸附几何、平滑文本闪烁，并将未匹配的上一帧段落作为 ghost 保留</value>
   </data>
-<data name="Layout_CenterThresholdXPercent" xml:space="preserve">
-    <value>中心匹配阈值 (X)</value>
+  <data name="Layout_HoldNewBlocks" xml:space="preserve">
+    <value>Hold new blocks</value>
+  </data>
+  <data name="Layout_HoldNewBlocks_Desc" xml:space="preserve">
+    <value>在原始文本与上一帧一致之前，或上一段落已显示且归一化文本相似（在文本匹配阈值内）之前，不显示段落</value>
+  </data>
+  <data name="Layout_CenterThresholdXPercent" xml:space="preserve">
+    <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>与上一帧匹配时段落中心的最大水平偏移（占平均行高的百分比）</value>
+    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
-    <value>中心匹配阈值 (Y)</value>
+    <value>Previous-line search (across)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>与上一帧匹配时段落中心的最大垂直偏移（占平均行高的百分比）</value>
+    <value>How far off the previous baseline to still match a word (% of line height; 75 = 0.75×height)</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>文本匹配阈值</value>
@@ -84,19 +96,31 @@
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
     <value>将段落视为相同的最大编辑距离（占较长文本的百分比）</value>
   </data>
-  <data name="Layout_MinLength" xml:space="preserve">
-    <value>模糊匹配的最小文本长度</value>
+  <data name="Layout_GhostMaxFrames" xml:space="preserve">
+    <value>Ghost max frames</value>
   </data>
-  <data name="Layout_MinLength_Desc" xml:space="preserve">
-    <value>更短的文本需要与上一帧完全匹配</value>
+  <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
+    <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
+  </data>
+  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
+    <value>Line overlap protrusion</value>
+  </data>
+  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
+    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
-    <value>段落合并迟滞</value>
+    <value>合并迟滞</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>将行→段落合并偏向上一帧结构（100 = 关闭，120 = 容差 ±20%）</value>
+    <value>放宽或收紧合并容差以偏向上一帧的行与段落结构（100 = 关闭，120 = 偏向合并时 ×1.2，偏向拆分时 ×1/1.2）</value>
   </data>
-<data name="Layout_WordFilters" xml:space="preserve">
+  <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
+    <value>Same-line word gap hysteresis</value>
+  </data>
+  <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
+    <value>How far along the baseline to pull words that shared a previous-frame line (100 = normal gap, 600 = 6×; bridges dropped tokens)</value>
+  </data>
+  <data name="Layout_WordFilters" xml:space="preserve">
     <value>Word filters</value>
   </data>
   <data name="Layout_WordFilters_Desc" xml:space="preserve">

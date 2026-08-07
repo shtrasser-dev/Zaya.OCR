@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Interface ITextLine </title>
+      <title>Interface ITextWord </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Interface ITextLine ">
+      <meta name="title" content="Interface ITextWord ">
     
-    <meta name="description" content="Represents a single line of text composed of one or more recognized words.">
+    <meta name="description" content="A layout-facing word with text, bounds, and confidence (typically from OCR).">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -66,32 +66,32 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Zaya.OCR.Models.ITextLine">
+            <article class="content wrap" id="_content" data-uid="Zaya.OCR.Models.ITextWord">
 
 
 
-  <h1 id="Zaya_OCR_Models_ITextLine" data-uid="Zaya.OCR.Models.ITextLine" class="text-break">Interface ITextLine</h1>
-  <div class="markdown level0 summary"><p>Represents a single line of text composed of one or more recognized words.</p>
+  <h1 id="Zaya_OCR_Models_ITextWord" data-uid="Zaya.OCR.Models.ITextWord" class="text-break">Interface ITextWord</h1>
+  <div class="markdown level0 summary"><p>A layout-facing word with text, bounds, and confidence (typically from OCR).</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Zaya.html">Zaya</a>.<a class="xref" href="Zaya.OCR.html">OCR</a>.<a class="xref" href="Zaya.OCR.Models.html">Models</a></h6>
   <h6><strong>Assembly</strong>: Zaya.OCR.dll</h6>
-  <h5 id="Zaya_OCR_Models_ITextLine_syntax">Syntax</h5>
+  <h5 id="Zaya_OCR_Models_ITextWord_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface ITextLine</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ITextWord</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextLine_Bounds.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextLine.Bounds%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextWord_Bounds.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextWord.Bounds%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextLine.cs/#L21">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextWord.cs/#L12">View Source</a>
   </span>
-  <a id="Zaya_OCR_Models_ITextLine_Bounds_" data-uid="Zaya.OCR.Models.ITextLine.Bounds*"></a>
-  <h4 id="Zaya_OCR_Models_ITextLine_Bounds" data-uid="Zaya.OCR.Models.ITextLine.Bounds">Bounds</h4>
-  <div class="markdown level1 summary"><p>Gets the oriented bounding box that encompasses all words in this line.</p>
+  <a id="Zaya_OCR_Models_ITextWord_Bounds_" data-uid="Zaya.OCR.Models.ITextWord.Bounds*"></a>
+  <h4 id="Zaya_OCR_Models_ITextWord_Bounds" data-uid="Zaya.OCR.Models.ITextWord.Bounds">Bounds</h4>
+  <div class="markdown level1 summary"><p>Oriented bounding box in image space.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -115,20 +115,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextLine_HasPreviousFrameMatch.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextWord_Confidence.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextWord.Confidence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextLine.cs/#L27">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextWord.cs/#L15">View Source</a>
   </span>
-  <a id="Zaya_OCR_Models_ITextLine_HasPreviousFrameMatch_" data-uid="Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch*"></a>
-  <h4 id="Zaya_OCR_Models_ITextLine_HasPreviousFrameMatch" data-uid="Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch">HasPreviousFrameMatch</h4>
-  <div class="markdown level1 summary"><p>Gets whether this line has a previous-frame match whose text equals
-<a class="xref" href="Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Text">Text</a> ignoring case.</p>
+  <a id="Zaya_OCR_Models_ITextWord_Confidence_" data-uid="Zaya.OCR.Models.ITextWord.Confidence*"></a>
+  <h4 id="Zaya_OCR_Models_ITextWord_Confidence" data-uid="Zaya.OCR.Models.ITextWord.Confidence">Confidence</h4>
+  <div class="markdown level1 summary"><p>Recognition confidence in [0, 1].</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool HasPreviousFrameMatch { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">double Confidence { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -140,21 +139,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextLine_Text.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextLine.Text%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextWord_Text.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextWord.Text%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextLine.cs/#L11">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextWord.cs/#L9">View Source</a>
   </span>
-  <a id="Zaya_OCR_Models_ITextLine_Text_" data-uid="Zaya.OCR.Models.ITextLine.Text*"></a>
-  <h4 id="Zaya_OCR_Models_ITextLine_Text" data-uid="Zaya.OCR.Models.ITextLine.Text">Text</h4>
-  <div class="markdown level1 summary"><p>Gets the concatenated text of all words in this line.</p>
+  <a id="Zaya_OCR_Models_ITextWord_Text_" data-uid="Zaya.OCR.Models.ITextWord.Text*"></a>
+  <h4 id="Zaya_OCR_Models_ITextWord_Text" data-uid="Zaya.OCR.Models.ITextWord.Text">Text</h4>
+  <div class="markdown level1 summary"><p>Recognized / display text.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -176,37 +175,6 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextLine_Words.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextLine.Words%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextLine.cs/#L16">View Source</a>
-  </span>
-  <a id="Zaya_OCR_Models_ITextLine_Words_" data-uid="Zaya.OCR.Models.ITextLine.Words*"></a>
-  <h4 id="Zaya_OCR_Models_ITextLine_Words" data-uid="Zaya.OCR.Models.ITextLine.Words">Words</h4>
-  <div class="markdown level1 summary"><p>Gets the original recognized words that belong to this line.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IReadOnlyList&lt;IOCRWord&gt; Words { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Zaya.OCR.Models.IOCRWord.html">IOCRWord</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 
 </article>
           </div>
@@ -216,10 +184,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextLine.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextLine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextWord.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextWord%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextLine.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextWord.cs/#L6" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

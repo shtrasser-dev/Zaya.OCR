@@ -62,9 +62,9 @@ public sealed class OneOcrServiceTests : IAsyncLifetime
         Assert.True(settings["directoryPath"].IsVisible(new Dictionary<string, object?> { ["source"] = "directory" }));
         Assert.True(settings["directoryPath"].IsRequired(new Dictionary<string, object?> { ["source"] = "directory" }));
 
-        // downloadUrl — visible for auto/url; required only when source == "url"
-        Assert.True(settings["downloadUrl"].IsVisible(new Dictionary<string, object?>()));
-        Assert.True(settings["downloadUrl"].IsVisible(new Dictionary<string, object?> { ["source"] = "auto" }));
+        // downloadUrl — visible+required only when source == "url" (auto still uses DefaultValue as fallback)
+        Assert.False(settings["downloadUrl"].IsVisible(new Dictionary<string, object?>()));
+        Assert.False(settings["downloadUrl"].IsVisible(new Dictionary<string, object?> { ["source"] = "auto" }));
         Assert.False(settings["downloadUrl"].IsVisible(new Dictionary<string, object?> { ["source"] = "directory" }));
         Assert.False(settings["downloadUrl"].IsVisible(new Dictionary<string, object?> { ["source"] = "snippingtool" }));
         Assert.False(settings["downloadUrl"].IsRequired(new Dictionary<string, object?>()));

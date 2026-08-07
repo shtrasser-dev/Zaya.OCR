@@ -114,19 +114,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Models_OneOcrWord__ctor_System_String_System_Drawing_Rectangle_System_Double_.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.%23ctor(System.String%2CSystem.Drawing.Rectangle%2CSystem.Double)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Models_OneOcrWord__ctor_System_String_Zaya_OCR_Models_BoundingBox_System_Double_.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.%23ctor(System.String%2CZaya.OCR.Models.BoundingBox%2CSystem.Double)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs/#L32">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs/#L31">View Source</a>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Models_OneOcrWord__ctor_" data-uid="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor*"></a>
-  <h4 id="Zaya_OCR_Impl_OneOcr_Models_OneOcrWord__ctor_System_String_System_Drawing_Rectangle_System_Double_" data-uid="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,System.Drawing.Rectangle,System.Double)">OneOcrWord(string, Rectangle, double)</h4>
+  <h4 id="Zaya_OCR_Impl_OneOcr_Models_OneOcrWord__ctor_System_String_Zaya_OCR_Models_BoundingBox_System_Double_" data-uid="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)">OneOcrWord(string, BoundingBox, double)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html">OneOcrWord</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OneOcrWord(string text, Rectangle bounds, double confidence)</code></pre>
+    <pre><code class="lang-csharp hljs">public OneOcrWord(string text, BoundingBox bounds, double confidence)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -145,9 +145,9 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.rectangle">Rectangle</a></td>
+        <td><a class="xref" href="Zaya.OCR.Models.BoundingBox.html">BoundingBox</a></td>
         <td><span class="parametername">bounds</span></td>
-        <td><p>The bounding rectangle in the image.</p>
+        <td><p>The oriented bounding box in the image.</p>
 </td>
       </tr>
       <tr>
@@ -165,16 +165,16 @@
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Bounds.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs/#L19">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs/#L18">View Source</a>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Bounds_" data-uid="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Bounds" data-uid="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds">Bounds</h4>
-  <div class="markdown level1 summary"><p>Gets the bounding rectangle of the word in the image.</p>
+  <div class="markdown level1 summary"><p>Gets the oriented bounding box of the word in the image.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Rectangle Bounds { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public BoundingBox Bounds { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -186,7 +186,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.rectangle">Rectangle</a></td>
+        <td><a class="xref" href="Zaya.OCR.Models.BoundingBox.html">BoundingBox</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -196,7 +196,7 @@
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Confidence.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs/#L24">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs/#L23">View Source</a>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Confidence_" data-uid="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Confidence" data-uid="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence">Confidence</h4>
@@ -227,7 +227,7 @@
     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Text.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs/#L14">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs/#L13">View Source</a>
   </span>
   <a id="Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Text_" data-uid="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text*"></a>
   <h4 id="Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Text" data-uid="Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text">Text</h4>
@@ -269,7 +269,7 @@
                     <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Impl_OneOcr_Models_OneOcrWord.md&amp;value=---%0Auid%3A%20Zaya.OCR.Impl.OneOcr.Models.OneOcrWord%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

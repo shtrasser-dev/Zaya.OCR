@@ -4,11 +4,13 @@ items:
   commentId: N:Zaya.OCR.Models
   id: Zaya.OCR.Models
   children:
+  - Zaya.OCR.Models.BoundingBox
   - Zaya.OCR.Models.IOCRResult
   - Zaya.OCR.Models.IOCRWord
   - Zaya.OCR.Models.ITextLine
   - Zaya.OCR.Models.ITextParagraph
   - Zaya.OCR.Models.ITextResult
+  - Zaya.OCR.Models.ITextWord
   langs:
   - csharp
   - vb
@@ -19,6 +21,13 @@ items:
   assemblies:
   - Zaya.OCR
 references:
+- uid: Zaya.OCR.Models.BoundingBox
+  commentId: T:Zaya.OCR.Models.BoundingBox
+  parent: Zaya.OCR.Models
+  href: Zaya.OCR.Models.BoundingBox.html
+  name: BoundingBox
+  nameWithType: BoundingBox
+  fullName: Zaya.OCR.Models.BoundingBox
 - uid: Zaya.OCR.Models.IOCRResult
   commentId: T:Zaya.OCR.Models.IOCRResult
   parent: Zaya.OCR.Models
@@ -51,6 +60,12 @@ references:
   name: ITextResult
   nameWithType: ITextResult
   fullName: Zaya.OCR.Models.ITextResult
+- uid: Zaya.OCR.Models.ITextWord
+  commentId: T:Zaya.OCR.Models.ITextWord
+  href: Zaya.OCR.Models.ITextWord.html
+  name: ITextWord
+  nameWithType: ITextWord
+  fullName: Zaya.OCR.Models.ITextWord
 - uid: Zaya.OCR.Models
   commentId: N:Zaya.OCR.Models
   href: Zaya.html

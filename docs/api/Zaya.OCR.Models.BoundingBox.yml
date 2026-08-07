@@ -1,0 +1,2176 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Models.BoundingBox
+  commentId: T:Zaya.OCR.Models.BoundingBox
+  id: BoundingBox
+  parent: Zaya.OCR.Models
+  children:
+  - Zaya.OCR.Models.BoundingBox.#ctor(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)
+  - Zaya.OCR.Models.BoundingBox.AngleDegrees
+  - Zaya.OCR.Models.BoundingBox.Bottom
+  - Zaya.OCR.Models.BoundingBox.Direction
+  - Zaya.OCR.Models.BoundingBox.Empty
+  - Zaya.OCR.Models.BoundingBox.Equals(System.Object)
+  - Zaya.OCR.Models.BoundingBox.Equals(Zaya.OCR.Models.BoundingBox)
+  - Zaya.OCR.Models.BoundingBox.FromAxisAligned(System.Int32,System.Int32,System.Int32,System.Int32)
+  - Zaya.OCR.Models.BoundingBox.FromAxisAligned(System.Single,System.Single,System.Single,System.Single)
+  - Zaya.OCR.Models.BoundingBox.FromLTRB(System.Int32,System.Int32,System.Int32,System.Int32)
+  - Zaya.OCR.Models.BoundingBox.GetHashCode
+  - Zaya.OCR.Models.BoundingBox.Height
+  - Zaya.OCR.Models.BoundingBox.IsEmpty
+  - Zaya.OCR.Models.BoundingBox.Left
+  - Zaya.OCR.Models.BoundingBox.MaxX
+  - Zaya.OCR.Models.BoundingBox.MaxY
+  - Zaya.OCR.Models.BoundingBox.MinX
+  - Zaya.OCR.Models.BoundingBox.MinY
+  - Zaya.OCR.Models.BoundingBox.Normal
+  - Zaya.OCR.Models.BoundingBox.P1
+  - Zaya.OCR.Models.BoundingBox.P2
+  - Zaya.OCR.Models.BoundingBox.P3
+  - Zaya.OCR.Models.BoundingBox.P4
+  - Zaya.OCR.Models.BoundingBox.P5
+  - Zaya.OCR.Models.BoundingBox.P6
+  - Zaya.OCR.Models.BoundingBox.P7
+  - Zaya.OCR.Models.BoundingBox.P8
+  - Zaya.OCR.Models.BoundingBox.Right
+  - Zaya.OCR.Models.BoundingBox.TextHeight
+  - Zaya.OCR.Models.BoundingBox.ToRect
+  - Zaya.OCR.Models.BoundingBox.ToString
+  - Zaya.OCR.Models.BoundingBox.Top
+  - Zaya.OCR.Models.BoundingBox.Width
+  - Zaya.OCR.Models.BoundingBox.X
+  - Zaya.OCR.Models.BoundingBox.Y
+  - Zaya.OCR.Models.BoundingBox.op_Equality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
+  - Zaya.OCR.Models.BoundingBox.op_Inequality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
+  langs:
+  - csharp
+  - vb
+  name: BoundingBox
+  nameWithType: BoundingBox
+  fullName: Zaya.OCR.Models.BoundingBox
+  type: Struct
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: BoundingBox
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 19
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    Oriented quadrilateral in image pixel space (Y down).
+
+    Corner order matches OneOCR: P1→P2 along the top (reading direction), P3→P4 along the bottom back.
+  remarks: >-
+    <p>
+
+    <code>P1 ----→ P2</code><br />
+
+    <code>↑         ↓</code><br />
+
+    <code>P4 ←---- P3</code>
+
+    </p>
+
+    <p>
+
+    <xref href="Zaya.OCR.Models.BoundingBox.Direction" data-throw-if-not-resolved="false"></xref> and <xref href="Zaya.OCR.Models.BoundingBox.AngleDegrees" data-throw-if-not-resolved="false"></xref> are derived from the average of
+
+    the top edge (P2−P1) and bottom edge (P3−P4).
+
+    </p>
+  example: []
+  syntax:
+    content: 'public readonly struct BoundingBox : IEquatable<BoundingBox>'
+    content.vb: Public Structure BoundingBox Implements IEquatable(Of BoundingBox)
+  implements:
+  - System.IEquatable{Zaya.OCR.Models.BoundingBox}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Zaya.OCR.Models.BoundingBox.Empty
+  commentId: P:Zaya.OCR.Models.BoundingBox.Empty
+  id: Empty
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Empty
+  nameWithType: BoundingBox.Empty
+  fullName: Zaya.OCR.Models.BoundingBox.Empty
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Empty
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 22
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Empty box (all corners at origin).
+  example: []
+  syntax:
+    content: public static BoundingBox Empty { get; }
+    parameters: []
+    return:
+      type: Zaya.OCR.Models.BoundingBox
+    content.vb: Public Shared ReadOnly Property Empty As BoundingBox
+  overload: Zaya.OCR.Models.BoundingBox.Empty*
+- uid: Zaya.OCR.Models.BoundingBox.P1
+  commentId: P:Zaya.OCR.Models.BoundingBox.P1
+  id: P1
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: P1
+  nameWithType: BoundingBox.P1
+  fullName: Zaya.OCR.Models.BoundingBox.P1
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: P1
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 25
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Start of the top edge (reading start).
+  example: []
+  syntax:
+    content: public Vector2 P1 { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property P1 As Vector2
+  overload: Zaya.OCR.Models.BoundingBox.P1*
+- uid: Zaya.OCR.Models.BoundingBox.P2
+  commentId: P:Zaya.OCR.Models.BoundingBox.P2
+  id: P2
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: P2
+  nameWithType: BoundingBox.P2
+  fullName: Zaya.OCR.Models.BoundingBox.P2
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: P2
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 28
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: End of the top edge (reading end).
+  example: []
+  syntax:
+    content: public Vector2 P2 { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property P2 As Vector2
+  overload: Zaya.OCR.Models.BoundingBox.P2*
+- uid: Zaya.OCR.Models.BoundingBox.P3
+  commentId: P:Zaya.OCR.Models.BoundingBox.P3
+  id: P3
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: P3
+  nameWithType: BoundingBox.P3
+  fullName: Zaya.OCR.Models.BoundingBox.P3
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: P3
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 31
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: End of the bottom edge.
+  example: []
+  syntax:
+    content: public Vector2 P3 { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property P3 As Vector2
+  overload: Zaya.OCR.Models.BoundingBox.P3*
+- uid: Zaya.OCR.Models.BoundingBox.P4
+  commentId: P:Zaya.OCR.Models.BoundingBox.P4
+  id: P4
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: P4
+  nameWithType: BoundingBox.P4
+  fullName: Zaya.OCR.Models.BoundingBox.P4
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: P4
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 34
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Start of the bottom edge.
+  example: []
+  syntax:
+    content: public Vector2 P4 { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property P4 As Vector2
+  overload: Zaya.OCR.Models.BoundingBox.P4*
+- uid: Zaya.OCR.Models.BoundingBox.Direction
+  commentId: P:Zaya.OCR.Models.BoundingBox.Direction
+  id: Direction
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Direction
+  nameWithType: BoundingBox.Direction
+  fullName: Zaya.OCR.Models.BoundingBox.Direction
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Direction
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 40
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    Unit vector along reading direction: normalize((P2−P1)+(P3−P4)).
+
+    Falls back to (1,0) when both edges are degenerate.
+  example: []
+  syntax:
+    content: public Vector2 Direction { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property Direction As Vector2
+  overload: Zaya.OCR.Models.BoundingBox.Direction*
+- uid: Zaya.OCR.Models.BoundingBox.AngleDegrees
+  commentId: P:Zaya.OCR.Models.BoundingBox.AngleDegrees
+  id: AngleDegrees
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: AngleDegrees
+  nameWithType: BoundingBox.AngleDegrees
+  fullName: Zaya.OCR.Models.BoundingBox.AngleDegrees
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: AngleDegrees
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 45
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Tilt of <xref href="Zaya.OCR.Models.BoundingBox.Direction" data-throw-if-not-resolved="false"></xref> from +X, in degrees (image space, Y down).
+  example: []
+  syntax:
+    content: public float AngleDegrees { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property AngleDegrees As Single
+  overload: Zaya.OCR.Models.BoundingBox.AngleDegrees*
+- uid: Zaya.OCR.Models.BoundingBox.MinX
+  commentId: P:Zaya.OCR.Models.BoundingBox.MinX
+  id: MinX
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: MinX
+  nameWithType: BoundingBox.MinX
+  fullName: Zaya.OCR.Models.BoundingBox.MinX
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: MinX
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 48
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Minimum X of the axis-aligned bounds.
+  example: []
+  syntax:
+    content: public float MinX { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property MinX As Single
+  overload: Zaya.OCR.Models.BoundingBox.MinX*
+- uid: Zaya.OCR.Models.BoundingBox.MinY
+  commentId: P:Zaya.OCR.Models.BoundingBox.MinY
+  id: MinY
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: MinY
+  nameWithType: BoundingBox.MinY
+  fullName: Zaya.OCR.Models.BoundingBox.MinY
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: MinY
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 51
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Minimum Y of the axis-aligned bounds.
+  example: []
+  syntax:
+    content: public float MinY { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property MinY As Single
+  overload: Zaya.OCR.Models.BoundingBox.MinY*
+- uid: Zaya.OCR.Models.BoundingBox.MaxX
+  commentId: P:Zaya.OCR.Models.BoundingBox.MaxX
+  id: MaxX
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: MaxX
+  nameWithType: BoundingBox.MaxX
+  fullName: Zaya.OCR.Models.BoundingBox.MaxX
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: MaxX
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 54
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Maximum X of the axis-aligned bounds.
+  example: []
+  syntax:
+    content: public float MaxX { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property MaxX As Single
+  overload: Zaya.OCR.Models.BoundingBox.MaxX*
+- uid: Zaya.OCR.Models.BoundingBox.MaxY
+  commentId: P:Zaya.OCR.Models.BoundingBox.MaxY
+  id: MaxY
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: MaxY
+  nameWithType: BoundingBox.MaxY
+  fullName: Zaya.OCR.Models.BoundingBox.MaxY
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: MaxY
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 57
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Maximum Y of the axis-aligned bounds.
+  example: []
+  syntax:
+    content: public float MaxY { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property MaxY As Single
+  overload: Zaya.OCR.Models.BoundingBox.MaxY*
+- uid: Zaya.OCR.Models.BoundingBox.X
+  commentId: P:Zaya.OCR.Models.BoundingBox.X
+  id: X
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: BoundingBox.X
+  fullName: Zaya.OCR.Models.BoundingBox.X
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: X
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 60
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Integer left of the AABB (floor of <xref href="Zaya.OCR.Models.BoundingBox.MinX" data-throw-if-not-resolved="false"></xref>).
+  example: []
+  syntax:
+    content: public int X { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property X As Integer
+  overload: Zaya.OCR.Models.BoundingBox.X*
+- uid: Zaya.OCR.Models.BoundingBox.Y
+  commentId: P:Zaya.OCR.Models.BoundingBox.Y
+  id: Y
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: BoundingBox.Y
+  fullName: Zaya.OCR.Models.BoundingBox.Y
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Y
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 63
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Integer top of the AABB (floor of <xref href="Zaya.OCR.Models.BoundingBox.MinY" data-throw-if-not-resolved="false"></xref>).
+  example: []
+  syntax:
+    content: public int Y { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Y As Integer
+  overload: Zaya.OCR.Models.BoundingBox.Y*
+- uid: Zaya.OCR.Models.BoundingBox.Left
+  commentId: P:Zaya.OCR.Models.BoundingBox.Left
+  id: Left
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: BoundingBox.Left
+  fullName: Zaya.OCR.Models.BoundingBox.Left
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Left
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 66
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Same as <xref href="Zaya.OCR.Models.BoundingBox.X" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public int Left { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Left As Integer
+  overload: Zaya.OCR.Models.BoundingBox.Left*
+- uid: Zaya.OCR.Models.BoundingBox.Top
+  commentId: P:Zaya.OCR.Models.BoundingBox.Top
+  id: Top
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Top
+  nameWithType: BoundingBox.Top
+  fullName: Zaya.OCR.Models.BoundingBox.Top
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Top
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 69
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Same as <xref href="Zaya.OCR.Models.BoundingBox.Y" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public int Top { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Top As Integer
+  overload: Zaya.OCR.Models.BoundingBox.Top*
+- uid: Zaya.OCR.Models.BoundingBox.Right
+  commentId: P:Zaya.OCR.Models.BoundingBox.Right
+  id: Right
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: BoundingBox.Right
+  fullName: Zaya.OCR.Models.BoundingBox.Right
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Right
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 72
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Integer right of the AABB (ceil of <xref href="Zaya.OCR.Models.BoundingBox.MaxX" data-throw-if-not-resolved="false"></xref>).
+  example: []
+  syntax:
+    content: public int Right { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Right As Integer
+  overload: Zaya.OCR.Models.BoundingBox.Right*
+- uid: Zaya.OCR.Models.BoundingBox.Bottom
+  commentId: P:Zaya.OCR.Models.BoundingBox.Bottom
+  id: Bottom
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Bottom
+  nameWithType: BoundingBox.Bottom
+  fullName: Zaya.OCR.Models.BoundingBox.Bottom
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Bottom
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 75
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Integer bottom of the AABB (ceil of <xref href="Zaya.OCR.Models.BoundingBox.MaxY" data-throw-if-not-resolved="false"></xref>).
+  example: []
+  syntax:
+    content: public int Bottom { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Bottom As Integer
+  overload: Zaya.OCR.Models.BoundingBox.Bottom*
+- uid: Zaya.OCR.Models.BoundingBox.Width
+  commentId: P:Zaya.OCR.Models.BoundingBox.Width
+  id: Width
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: BoundingBox.Width
+  fullName: Zaya.OCR.Models.BoundingBox.Width
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Width
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 78
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Integer AABB width.
+  example: []
+  syntax:
+    content: public int Width { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Width As Integer
+  overload: Zaya.OCR.Models.BoundingBox.Width*
+- uid: Zaya.OCR.Models.BoundingBox.Height
+  commentId: P:Zaya.OCR.Models.BoundingBox.Height
+  id: Height
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: BoundingBox.Height
+  fullName: Zaya.OCR.Models.BoundingBox.Height
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Height
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 81
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Integer AABB height.
+  example: []
+  syntax:
+    content: public int Height { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Height As Integer
+  overload: Zaya.OCR.Models.BoundingBox.Height*
+- uid: Zaya.OCR.Models.BoundingBox.IsEmpty
+  commentId: P:Zaya.OCR.Models.BoundingBox.IsEmpty
+  id: IsEmpty
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: IsEmpty
+  nameWithType: BoundingBox.IsEmpty
+  fullName: Zaya.OCR.Models.BoundingBox.IsEmpty
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: IsEmpty
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 84
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: True when all corners are at the origin and the box has no extent.
+  example: []
+  syntax:
+    content: public bool IsEmpty { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsEmpty As Boolean
+  overload: Zaya.OCR.Models.BoundingBox.IsEmpty*
+- uid: Zaya.OCR.Models.BoundingBox.P5
+  commentId: P:Zaya.OCR.Models.BoundingBox.P5
+  id: P5
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: P5
+  nameWithType: BoundingBox.P5
+  fullName: Zaya.OCR.Models.BoundingBox.P5
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: P5
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 91
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: 'Midpoint of the leading edge (P1–P4): start of the word along reading direction.'
+  example: []
+  syntax:
+    content: public Vector2 P5 { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property P5 As Vector2
+  overload: Zaya.OCR.Models.BoundingBox.P5*
+- uid: Zaya.OCR.Models.BoundingBox.P6
+  commentId: P:Zaya.OCR.Models.BoundingBox.P6
+  id: P6
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: P6
+  nameWithType: BoundingBox.P6
+  fullName: Zaya.OCR.Models.BoundingBox.P6
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: P6
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 96
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: 'Midpoint of the trailing edge (P2–P3): end of the word along reading direction.'
+  example: []
+  syntax:
+    content: public Vector2 P6 { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property P6 As Vector2
+  overload: Zaya.OCR.Models.BoundingBox.P6*
+- uid: Zaya.OCR.Models.BoundingBox.P7
+  commentId: P:Zaya.OCR.Models.BoundingBox.P7
+  id: P7
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: P7
+  nameWithType: BoundingBox.P7
+  fullName: Zaya.OCR.Models.BoundingBox.P7
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: P7
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 101
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Midpoint of the top edge (P1–P2).
+  example: []
+  syntax:
+    content: public Vector2 P7 { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property P7 As Vector2
+  overload: Zaya.OCR.Models.BoundingBox.P7*
+- uid: Zaya.OCR.Models.BoundingBox.P8
+  commentId: P:Zaya.OCR.Models.BoundingBox.P8
+  id: P8
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: P8
+  nameWithType: BoundingBox.P8
+  fullName: Zaya.OCR.Models.BoundingBox.P8
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: P8
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 106
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Midpoint of the bottom edge (P4–P3).
+  example: []
+  syntax:
+    content: public Vector2 P8 { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property P8 As Vector2
+  overload: Zaya.OCR.Models.BoundingBox.P8*
+- uid: Zaya.OCR.Models.BoundingBox.Normal
+  commentId: P:Zaya.OCR.Models.BoundingBox.Normal
+  id: Normal
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: BoundingBox.Normal
+  fullName: Zaya.OCR.Models.BoundingBox.Normal
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Normal
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 111
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Unit normal rotated 90° from <xref href="Zaya.OCR.Models.BoundingBox.Direction" data-throw-if-not-resolved="false"></xref> (points toward the bottom of the glyph in image space for LTR horizontal text).
+  example: []
+  syntax:
+    content: public Vector2 Normal { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property Normal As Vector2
+  overload: Zaya.OCR.Models.BoundingBox.Normal*
+- uid: Zaya.OCR.Models.BoundingBox.TextHeight
+  commentId: P:Zaya.OCR.Models.BoundingBox.TextHeight
+  id: TextHeight
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: TextHeight
+  nameWithType: BoundingBox.TextHeight
+  fullName: Zaya.OCR.Models.BoundingBox.TextHeight
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: TextHeight
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 116
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Glyph height along the normal (distance between top and bottom edge midpoints).
+  example: []
+  syntax:
+    content: public float TextHeight { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property TextHeight As Single
+  overload: Zaya.OCR.Models.BoundingBox.TextHeight*
+- uid: Zaya.OCR.Models.BoundingBox.#ctor(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)
+  commentId: M:Zaya.OCR.Models.BoundingBox.#ctor(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)
+  id: '#ctor(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)'
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: BoundingBox(Vector2, Vector2, Vector2, Vector2)
+  nameWithType: BoundingBox.BoundingBox(Vector2, Vector2, Vector2, Vector2)
+  fullName: Zaya.OCR.Models.BoundingBox.BoundingBox(System.Numerics.Vector2, System.Numerics.Vector2, System.Numerics.Vector2, System.Numerics.Vector2)
+  type: Constructor
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: .ctor
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 129
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Creates a bounding box from four corners in OneOCR order.
+  example: []
+  syntax:
+    content: public BoundingBox(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4)
+    parameters:
+    - id: p1
+      type: System.Numerics.Vector2
+    - id: p2
+      type: System.Numerics.Vector2
+    - id: p3
+      type: System.Numerics.Vector2
+    - id: p4
+      type: System.Numerics.Vector2
+    content.vb: Public Sub New(p1 As Vector2, p2 As Vector2, p3 As Vector2, p4 As Vector2)
+  overload: Zaya.OCR.Models.BoundingBox.#ctor*
+  nameWithType.vb: BoundingBox.New(Vector2, Vector2, Vector2, Vector2)
+  fullName.vb: Zaya.OCR.Models.BoundingBox.New(System.Numerics.Vector2, System.Numerics.Vector2, System.Numerics.Vector2, System.Numerics.Vector2)
+  name.vb: New(Vector2, Vector2, Vector2, Vector2)
+- uid: Zaya.OCR.Models.BoundingBox.FromAxisAligned(System.Single,System.Single,System.Single,System.Single)
+  commentId: M:Zaya.OCR.Models.BoundingBox.FromAxisAligned(System.Single,System.Single,System.Single,System.Single)
+  id: FromAxisAligned(System.Single,System.Single,System.Single,System.Single)
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: FromAxisAligned(float, float, float, float)
+  nameWithType: BoundingBox.FromAxisAligned(float, float, float, float)
+  fullName: Zaya.OCR.Models.BoundingBox.FromAxisAligned(float, float, float, float)
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: FromAxisAligned
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 161
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Creates an axis-aligned box (P1 top-left → P2 top-right → P3 bottom-right → P4 bottom-left).
+  example: []
+  syntax:
+    content: public static BoundingBox FromAxisAligned(float x, float y, float width, float height)
+    parameters:
+    - id: x
+      type: System.Single
+    - id: y
+      type: System.Single
+    - id: width
+      type: System.Single
+    - id: height
+      type: System.Single
+    return:
+      type: Zaya.OCR.Models.BoundingBox
+    content.vb: Public Shared Function FromAxisAligned(x As Single, y As Single, width As Single, height As Single) As BoundingBox
+  overload: Zaya.OCR.Models.BoundingBox.FromAxisAligned*
+  nameWithType.vb: BoundingBox.FromAxisAligned(Single, Single, Single, Single)
+  fullName.vb: Zaya.OCR.Models.BoundingBox.FromAxisAligned(Single, Single, Single, Single)
+  name.vb: FromAxisAligned(Single, Single, Single, Single)
+- uid: Zaya.OCR.Models.BoundingBox.FromAxisAligned(System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:Zaya.OCR.Models.BoundingBox.FromAxisAligned(System.Int32,System.Int32,System.Int32,System.Int32)
+  id: FromAxisAligned(System.Int32,System.Int32,System.Int32,System.Int32)
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: FromAxisAligned(int, int, int, int)
+  nameWithType: BoundingBox.FromAxisAligned(int, int, int, int)
+  fullName: Zaya.OCR.Models.BoundingBox.FromAxisAligned(int, int, int, int)
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: FromAxisAligned
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 175
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Creates an axis-aligned box from integer pixel coordinates.
+  example: []
+  syntax:
+    content: public static BoundingBox FromAxisAligned(int x, int y, int width, int height)
+    parameters:
+    - id: x
+      type: System.Int32
+    - id: y
+      type: System.Int32
+    - id: width
+      type: System.Int32
+    - id: height
+      type: System.Int32
+    return:
+      type: Zaya.OCR.Models.BoundingBox
+    content.vb: Public Shared Function FromAxisAligned(x As Integer, y As Integer, width As Integer, height As Integer) As BoundingBox
+  overload: Zaya.OCR.Models.BoundingBox.FromAxisAligned*
+  nameWithType.vb: BoundingBox.FromAxisAligned(Integer, Integer, Integer, Integer)
+  fullName.vb: Zaya.OCR.Models.BoundingBox.FromAxisAligned(Integer, Integer, Integer, Integer)
+  name.vb: FromAxisAligned(Integer, Integer, Integer, Integer)
+- uid: Zaya.OCR.Models.BoundingBox.FromLTRB(System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:Zaya.OCR.Models.BoundingBox.FromLTRB(System.Int32,System.Int32,System.Int32,System.Int32)
+  id: FromLTRB(System.Int32,System.Int32,System.Int32,System.Int32)
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: FromLTRB(int, int, int, int)
+  nameWithType: BoundingBox.FromLTRB(int, int, int, int)
+  fullName: Zaya.OCR.Models.BoundingBox.FromLTRB(int, int, int, int)
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: FromLTRB
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 181
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Creates an axis-aligned box from left/top/right/bottom edges.
+  example: []
+  syntax:
+    content: public static BoundingBox FromLTRB(int left, int top, int right, int bottom)
+    parameters:
+    - id: left
+      type: System.Int32
+    - id: top
+      type: System.Int32
+    - id: right
+      type: System.Int32
+    - id: bottom
+      type: System.Int32
+    return:
+      type: Zaya.OCR.Models.BoundingBox
+    content.vb: Public Shared Function FromLTRB(left As Integer, top As Integer, right As Integer, bottom As Integer) As BoundingBox
+  overload: Zaya.OCR.Models.BoundingBox.FromLTRB*
+  nameWithType.vb: BoundingBox.FromLTRB(Integer, Integer, Integer, Integer)
+  fullName.vb: Zaya.OCR.Models.BoundingBox.FromLTRB(Integer, Integer, Integer, Integer)
+  name.vb: FromLTRB(Integer, Integer, Integer, Integer)
+- uid: Zaya.OCR.Models.BoundingBox.ToRect
+  commentId: M:Zaya.OCR.Models.BoundingBox.ToRect
+  id: ToRect
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: ToRect()
+  nameWithType: BoundingBox.ToRect()
+  fullName: Zaya.OCR.Models.BoundingBox.ToRect()
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: ToRect
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 187
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Returns the integer axis-aligned rectangle (X, Y, Width, Height).
+  example: []
+  syntax:
+    content: public (int X, int Y, int Width, int Height) ToRect()
+    return:
+      type: System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}
+    content.vb: Public Function ToRect() As (X As Integer, Y As Integer, Width As Integer, Height As Integer)
+  overload: Zaya.OCR.Models.BoundingBox.ToRect*
+- uid: Zaya.OCR.Models.BoundingBox.Equals(Zaya.OCR.Models.BoundingBox)
+  commentId: M:Zaya.OCR.Models.BoundingBox.Equals(Zaya.OCR.Models.BoundingBox)
+  id: Equals(Zaya.OCR.Models.BoundingBox)
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Equals(BoundingBox)
+  nameWithType: BoundingBox.Equals(BoundingBox)
+  fullName: Zaya.OCR.Models.BoundingBox.Equals(Zaya.OCR.Models.BoundingBox)
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Equals
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 191
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Indicates whether the current object is equal to another object of the same type.
+  example: []
+  syntax:
+    content: public bool Equals(BoundingBox other)
+    parameters:
+    - id: other
+      type: Zaya.OCR.Models.BoundingBox
+      description: An object to compare with this object.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current object is equal to the <code class="paramref">other</code> parameter; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Function Equals(other As BoundingBox) As Boolean
+  overload: Zaya.OCR.Models.BoundingBox.Equals*
+  implements:
+  - System.IEquatable{Zaya.OCR.Models.BoundingBox}.Equals(Zaya.OCR.Models.BoundingBox)
+- uid: Zaya.OCR.Models.BoundingBox.Equals(System.Object)
+  commentId: M:Zaya.OCR.Models.BoundingBox.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: Equals(object?)
+  nameWithType: BoundingBox.Equals(object?)
+  fullName: Zaya.OCR.Models.BoundingBox.Equals(object?)
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Equals
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 198
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Indicates whether this instance and a specified object are equal.
+  example: []
+  syntax:
+    content: public override bool Equals(object? obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare with the current instance.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">obj</code> and this instance are the same type and represent the same value; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: Zaya.OCR.Models.BoundingBox.Equals*
+  nameWithType.vb: BoundingBox.Equals(Object)
+  fullName.vb: Zaya.OCR.Models.BoundingBox.Equals(Object)
+  name.vb: Equals(Object)
+- uid: Zaya.OCR.Models.BoundingBox.GetHashCode
+  commentId: M:Zaya.OCR.Models.BoundingBox.GetHashCode
+  id: GetHashCode
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: BoundingBox.GetHashCode()
+  fullName: Zaya.OCR.Models.BoundingBox.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: GetHashCode
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 202
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Returns the hash code for this instance.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: A 32-bit signed integer that is the hash code for this instance.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: Zaya.OCR.Models.BoundingBox.GetHashCode*
+- uid: Zaya.OCR.Models.BoundingBox.op_Equality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
+  commentId: M:Zaya.OCR.Models.BoundingBox.op_Equality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
+  id: op_Equality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: operator ==(BoundingBox, BoundingBox)
+  nameWithType: BoundingBox.operator ==(BoundingBox, BoundingBox)
+  fullName: Zaya.OCR.Models.BoundingBox.operator ==(Zaya.OCR.Models.BoundingBox, Zaya.OCR.Models.BoundingBox)
+  type: Operator
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: op_Equality
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 206
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Equality operator.
+  example: []
+  syntax:
+    content: public static bool operator ==(BoundingBox left, BoundingBox right)
+    parameters:
+    - id: left
+      type: Zaya.OCR.Models.BoundingBox
+    - id: right
+      type: Zaya.OCR.Models.BoundingBox
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As BoundingBox, right As BoundingBox) As Boolean
+  overload: Zaya.OCR.Models.BoundingBox.op_Equality*
+  nameWithType.vb: BoundingBox.=(BoundingBox, BoundingBox)
+  fullName.vb: Zaya.OCR.Models.BoundingBox.=(Zaya.OCR.Models.BoundingBox, Zaya.OCR.Models.BoundingBox)
+  name.vb: =(BoundingBox, BoundingBox)
+- uid: Zaya.OCR.Models.BoundingBox.op_Inequality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
+  commentId: M:Zaya.OCR.Models.BoundingBox.op_Inequality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
+  id: op_Inequality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: operator !=(BoundingBox, BoundingBox)
+  nameWithType: BoundingBox.operator !=(BoundingBox, BoundingBox)
+  fullName: Zaya.OCR.Models.BoundingBox.operator !=(Zaya.OCR.Models.BoundingBox, Zaya.OCR.Models.BoundingBox)
+  type: Operator
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: op_Inequality
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 210
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Inequality operator.
+  example: []
+  syntax:
+    content: public static bool operator !=(BoundingBox left, BoundingBox right)
+    parameters:
+    - id: left
+      type: Zaya.OCR.Models.BoundingBox
+    - id: right
+      type: Zaya.OCR.Models.BoundingBox
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As BoundingBox, right As BoundingBox) As Boolean
+  overload: Zaya.OCR.Models.BoundingBox.op_Inequality*
+  nameWithType.vb: BoundingBox.<>(BoundingBox, BoundingBox)
+  fullName.vb: Zaya.OCR.Models.BoundingBox.<>(Zaya.OCR.Models.BoundingBox, Zaya.OCR.Models.BoundingBox)
+  name.vb: <>(BoundingBox, BoundingBox)
+- uid: Zaya.OCR.Models.BoundingBox.ToString
+  commentId: M:Zaya.OCR.Models.BoundingBox.ToString
+  id: ToString
+  parent: Zaya.OCR.Models.BoundingBox
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: BoundingBox.ToString()
+  fullName: Zaya.OCR.Models.BoundingBox.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/BoundingBox.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: ToString
+    path: src/Zaya.OCR/Models/BoundingBox.cs
+    startLine: 214
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Returns the fully qualified type name of this instance.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: The fully qualified type name.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: Zaya.OCR.Models.BoundingBox.ToString*
+references:
+- uid: Zaya.OCR.Models.BoundingBox.Direction
+  commentId: P:Zaya.OCR.Models.BoundingBox.Direction
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Direction
+  name: Direction
+  nameWithType: BoundingBox.Direction
+  fullName: Zaya.OCR.Models.BoundingBox.Direction
+- uid: Zaya.OCR.Models.BoundingBox.AngleDegrees
+  commentId: P:Zaya.OCR.Models.BoundingBox.AngleDegrees
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_AngleDegrees
+  name: AngleDegrees
+  nameWithType: BoundingBox.AngleDegrees
+  fullName: Zaya.OCR.Models.BoundingBox.AngleDegrees
+- uid: Zaya.OCR.Models
+  commentId: N:Zaya.OCR.Models
+  href: Zaya.html
+  name: Zaya.OCR.Models
+  nameWithType: Zaya.OCR.Models
+  fullName: Zaya.OCR.Models
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+- uid: System.IEquatable{Zaya.OCR.Models.BoundingBox}
+  commentId: T:System.IEquatable{Zaya.OCR.Models.BoundingBox}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<BoundingBox>
+  nameWithType: IEquatable<BoundingBox>
+  fullName: System.IEquatable<Zaya.OCR.Models.BoundingBox>
+  nameWithType.vb: IEquatable(Of BoundingBox)
+  fullName.vb: System.IEquatable(Of Zaya.OCR.Models.BoundingBox)
+  name.vb: IEquatable(Of BoundingBox)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Zaya.OCR.Models.BoundingBox
+    name: BoundingBox
+    href: Zaya.OCR.Models.BoundingBox.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Zaya.OCR.Models.BoundingBox
+    name: BoundingBox
+    href: Zaya.OCR.Models.BoundingBox.html
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Zaya.OCR.Models.BoundingBox.Empty*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Empty
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Empty
+  name: Empty
+  nameWithType: BoundingBox.Empty
+  fullName: Zaya.OCR.Models.BoundingBox.Empty
+- uid: Zaya.OCR.Models.BoundingBox
+  commentId: T:Zaya.OCR.Models.BoundingBox
+  parent: Zaya.OCR.Models
+  href: Zaya.OCR.Models.BoundingBox.html
+  name: BoundingBox
+  nameWithType: BoundingBox
+  fullName: Zaya.OCR.Models.BoundingBox
+- uid: Zaya.OCR.Models.BoundingBox.P1*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.P1
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P1
+  name: P1
+  nameWithType: BoundingBox.P1
+  fullName: Zaya.OCR.Models.BoundingBox.P1
+- uid: System.Numerics.Vector2
+  commentId: T:System.Numerics.Vector2
+  parent: System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2
+  nameWithType: Vector2
+  fullName: System.Numerics.Vector2
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+- uid: Zaya.OCR.Models.BoundingBox.P2*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.P2
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P2
+  name: P2
+  nameWithType: BoundingBox.P2
+  fullName: Zaya.OCR.Models.BoundingBox.P2
+- uid: Zaya.OCR.Models.BoundingBox.P3*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.P3
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P3
+  name: P3
+  nameWithType: BoundingBox.P3
+  fullName: Zaya.OCR.Models.BoundingBox.P3
+- uid: Zaya.OCR.Models.BoundingBox.P4*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.P4
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P4
+  name: P4
+  nameWithType: BoundingBox.P4
+  fullName: Zaya.OCR.Models.BoundingBox.P4
+- uid: Zaya.OCR.Models.BoundingBox.Direction*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Direction
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Direction
+  name: Direction
+  nameWithType: BoundingBox.Direction
+  fullName: Zaya.OCR.Models.BoundingBox.Direction
+- uid: Zaya.OCR.Models.BoundingBox.AngleDegrees*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.AngleDegrees
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_AngleDegrees
+  name: AngleDegrees
+  nameWithType: BoundingBox.AngleDegrees
+  fullName: Zaya.OCR.Models.BoundingBox.AngleDegrees
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Zaya.OCR.Models.BoundingBox.MinX*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.MinX
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MinX
+  name: MinX
+  nameWithType: BoundingBox.MinX
+  fullName: Zaya.OCR.Models.BoundingBox.MinX
+- uid: Zaya.OCR.Models.BoundingBox.MinY*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.MinY
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MinY
+  name: MinY
+  nameWithType: BoundingBox.MinY
+  fullName: Zaya.OCR.Models.BoundingBox.MinY
+- uid: Zaya.OCR.Models.BoundingBox.MaxX*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.MaxX
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MaxX
+  name: MaxX
+  nameWithType: BoundingBox.MaxX
+  fullName: Zaya.OCR.Models.BoundingBox.MaxX
+- uid: Zaya.OCR.Models.BoundingBox.MaxY*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.MaxY
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MaxY
+  name: MaxY
+  nameWithType: BoundingBox.MaxY
+  fullName: Zaya.OCR.Models.BoundingBox.MaxY
+- uid: Zaya.OCR.Models.BoundingBox.MinX
+  commentId: P:Zaya.OCR.Models.BoundingBox.MinX
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MinX
+  name: MinX
+  nameWithType: BoundingBox.MinX
+  fullName: Zaya.OCR.Models.BoundingBox.MinX
+- uid: Zaya.OCR.Models.BoundingBox.X*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.X
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_X
+  name: X
+  nameWithType: BoundingBox.X
+  fullName: Zaya.OCR.Models.BoundingBox.X
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Zaya.OCR.Models.BoundingBox.MinY
+  commentId: P:Zaya.OCR.Models.BoundingBox.MinY
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MinY
+  name: MinY
+  nameWithType: BoundingBox.MinY
+  fullName: Zaya.OCR.Models.BoundingBox.MinY
+- uid: Zaya.OCR.Models.BoundingBox.Y*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Y
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Y
+  name: Y
+  nameWithType: BoundingBox.Y
+  fullName: Zaya.OCR.Models.BoundingBox.Y
+- uid: Zaya.OCR.Models.BoundingBox.X
+  commentId: P:Zaya.OCR.Models.BoundingBox.X
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_X
+  name: X
+  nameWithType: BoundingBox.X
+  fullName: Zaya.OCR.Models.BoundingBox.X
+- uid: Zaya.OCR.Models.BoundingBox.Left*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Left
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Left
+  name: Left
+  nameWithType: BoundingBox.Left
+  fullName: Zaya.OCR.Models.BoundingBox.Left
+- uid: Zaya.OCR.Models.BoundingBox.Y
+  commentId: P:Zaya.OCR.Models.BoundingBox.Y
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Y
+  name: Y
+  nameWithType: BoundingBox.Y
+  fullName: Zaya.OCR.Models.BoundingBox.Y
+- uid: Zaya.OCR.Models.BoundingBox.Top*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Top
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Top
+  name: Top
+  nameWithType: BoundingBox.Top
+  fullName: Zaya.OCR.Models.BoundingBox.Top
+- uid: Zaya.OCR.Models.BoundingBox.MaxX
+  commentId: P:Zaya.OCR.Models.BoundingBox.MaxX
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MaxX
+  name: MaxX
+  nameWithType: BoundingBox.MaxX
+  fullName: Zaya.OCR.Models.BoundingBox.MaxX
+- uid: Zaya.OCR.Models.BoundingBox.Right*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Right
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Right
+  name: Right
+  nameWithType: BoundingBox.Right
+  fullName: Zaya.OCR.Models.BoundingBox.Right
+- uid: Zaya.OCR.Models.BoundingBox.MaxY
+  commentId: P:Zaya.OCR.Models.BoundingBox.MaxY
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MaxY
+  name: MaxY
+  nameWithType: BoundingBox.MaxY
+  fullName: Zaya.OCR.Models.BoundingBox.MaxY
+- uid: Zaya.OCR.Models.BoundingBox.Bottom*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Bottom
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Bottom
+  name: Bottom
+  nameWithType: BoundingBox.Bottom
+  fullName: Zaya.OCR.Models.BoundingBox.Bottom
+- uid: Zaya.OCR.Models.BoundingBox.Width*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Width
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Width
+  name: Width
+  nameWithType: BoundingBox.Width
+  fullName: Zaya.OCR.Models.BoundingBox.Width
+- uid: Zaya.OCR.Models.BoundingBox.Height*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Height
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Height
+  name: Height
+  nameWithType: BoundingBox.Height
+  fullName: Zaya.OCR.Models.BoundingBox.Height
+- uid: Zaya.OCR.Models.BoundingBox.IsEmpty*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.IsEmpty
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_IsEmpty
+  name: IsEmpty
+  nameWithType: BoundingBox.IsEmpty
+  fullName: Zaya.OCR.Models.BoundingBox.IsEmpty
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Zaya.OCR.Models.BoundingBox.P5*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.P5
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P5
+  name: P5
+  nameWithType: BoundingBox.P5
+  fullName: Zaya.OCR.Models.BoundingBox.P5
+- uid: Zaya.OCR.Models.BoundingBox.P6*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.P6
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P6
+  name: P6
+  nameWithType: BoundingBox.P6
+  fullName: Zaya.OCR.Models.BoundingBox.P6
+- uid: Zaya.OCR.Models.BoundingBox.P7*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.P7
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P7
+  name: P7
+  nameWithType: BoundingBox.P7
+  fullName: Zaya.OCR.Models.BoundingBox.P7
+- uid: Zaya.OCR.Models.BoundingBox.P8*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.P8
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P8
+  name: P8
+  nameWithType: BoundingBox.P8
+  fullName: Zaya.OCR.Models.BoundingBox.P8
+- uid: Zaya.OCR.Models.BoundingBox.Normal*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Normal
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Normal
+  name: Normal
+  nameWithType: BoundingBox.Normal
+  fullName: Zaya.OCR.Models.BoundingBox.Normal
+- uid: Zaya.OCR.Models.BoundingBox.TextHeight*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.TextHeight
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_TextHeight
+  name: TextHeight
+  nameWithType: BoundingBox.TextHeight
+  fullName: Zaya.OCR.Models.BoundingBox.TextHeight
+- uid: Zaya.OCR.Models.BoundingBox.#ctor*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.#ctor
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox__ctor_System_Numerics_Vector2_System_Numerics_Vector2_System_Numerics_Vector2_System_Numerics_Vector2_
+  name: BoundingBox
+  nameWithType: BoundingBox.BoundingBox
+  fullName: Zaya.OCR.Models.BoundingBox.BoundingBox
+  nameWithType.vb: BoundingBox.New
+  fullName.vb: Zaya.OCR.Models.BoundingBox.New
+  name.vb: New
+- uid: Zaya.OCR.Models.BoundingBox.FromAxisAligned*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.FromAxisAligned
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_FromAxisAligned_System_Single_System_Single_System_Single_System_Single_
+  name: FromAxisAligned
+  nameWithType: BoundingBox.FromAxisAligned
+  fullName: Zaya.OCR.Models.BoundingBox.FromAxisAligned
+- uid: Zaya.OCR.Models.BoundingBox.FromLTRB*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.FromLTRB
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_FromLTRB_System_Int32_System_Int32_System_Int32_System_Int32_
+  name: FromLTRB
+  nameWithType: BoundingBox.FromLTRB
+  fullName: Zaya.OCR.Models.BoundingBox.FromLTRB
+- uid: Zaya.OCR.Models.BoundingBox.ToRect*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.ToRect
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_ToRect
+  name: ToRect
+  nameWithType: BoundingBox.ToRect
+  fullName: Zaya.OCR.Models.BoundingBox.ToRect
+- uid: System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}
+  commentId: T:System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}
+  parent: System
+  definition: System.ValueTuple`4
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: (int X, int Y, int Width, int Height)
+  nameWithType: (int X, int Y, int Width, int Height)
+  fullName: (int X, int Y, int Width, int Height)
+  nameWithType.vb: (X As Integer, Y As Integer, Width As Integer, Height As Integer)
+  fullName.vb: (X As Integer, Y As Integer, Width As Integer, Height As Integer)
+  name.vb: (X As Integer, Y As Integer, Width As Integer, Height As Integer)
+  spec.csharp:
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}.X
+    name: X
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32,system.int32-.x
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}.Y
+    name: Y
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32,system.int32-.y
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}.Width
+    name: Width
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32,system.int32-.width
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}.Height
+    name: Height
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32,system.int32-.height
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}.X
+    name: X
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32,system.int32-.x
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}.Y
+    name: Y
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32,system.int32-.y
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}.Width
+    name: Width
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32,system.int32-.width
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32}.Height
+    name: Height
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32,system.int32-.height
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.ValueTuple`4
+  commentId: T:System.ValueTuple`4
+  name: (T1, T2, T3, T4)
+  nameWithType: (T1, T2, T3, T4)
+  fullName: (T1, T2, T3, T4)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+- uid: Zaya.OCR.Models.BoundingBox.Equals*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.Equals
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Equals_Zaya_OCR_Models_BoundingBox_
+  name: Equals
+  nameWithType: BoundingBox.Equals
+  fullName: Zaya.OCR.Models.BoundingBox.Equals
+- uid: System.IEquatable{Zaya.OCR.Models.BoundingBox}.Equals(Zaya.OCR.Models.BoundingBox)
+  commentId: M:System.IEquatable{Zaya.OCR.Models.BoundingBox}.Equals(Zaya.OCR.Models.BoundingBox)
+  parent: System.IEquatable{Zaya.OCR.Models.BoundingBox}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(BoundingBox)
+  nameWithType: IEquatable<BoundingBox>.Equals(BoundingBox)
+  fullName: System.IEquatable<Zaya.OCR.Models.BoundingBox>.Equals(Zaya.OCR.Models.BoundingBox)
+  nameWithType.vb: IEquatable(Of BoundingBox).Equals(BoundingBox)
+  fullName.vb: System.IEquatable(Of Zaya.OCR.Models.BoundingBox).Equals(Zaya.OCR.Models.BoundingBox)
+  spec.csharp:
+  - uid: System.IEquatable{Zaya.OCR.Models.BoundingBox}.Equals(Zaya.OCR.Models.BoundingBox)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: Zaya.OCR.Models.BoundingBox
+    name: BoundingBox
+    href: Zaya.OCR.Models.BoundingBox.html
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{Zaya.OCR.Models.BoundingBox}.Equals(Zaya.OCR.Models.BoundingBox)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: Zaya.OCR.Models.BoundingBox
+    name: BoundingBox
+    href: Zaya.OCR.Models.BoundingBox.html
+  - name: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: Zaya.OCR.Models.BoundingBox.GetHashCode*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.GetHashCode
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_GetHashCode
+  name: GetHashCode
+  nameWithType: BoundingBox.GetHashCode
+  fullName: Zaya.OCR.Models.BoundingBox.GetHashCode
+- uid: Zaya.OCR.Models.BoundingBox.op_Equality*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.op_Equality
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_op_Equality_Zaya_OCR_Models_BoundingBox_Zaya_OCR_Models_BoundingBox_
+  name: operator ==
+  nameWithType: BoundingBox.operator ==
+  fullName: Zaya.OCR.Models.BoundingBox.operator ==
+  nameWithType.vb: BoundingBox.=
+  fullName.vb: Zaya.OCR.Models.BoundingBox.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: Zaya.OCR.Models.BoundingBox.op_Equality*
+    name: ==
+    href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_op_Equality_Zaya_OCR_Models_BoundingBox_Zaya_OCR_Models_BoundingBox_
+- uid: Zaya.OCR.Models.BoundingBox.op_Inequality*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.op_Inequality
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_op_Inequality_Zaya_OCR_Models_BoundingBox_Zaya_OCR_Models_BoundingBox_
+  name: operator !=
+  nameWithType: BoundingBox.operator !=
+  fullName: Zaya.OCR.Models.BoundingBox.operator !=
+  nameWithType.vb: BoundingBox.<>
+  fullName.vb: Zaya.OCR.Models.BoundingBox.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: Zaya.OCR.Models.BoundingBox.op_Inequality*
+    name: '!='
+    href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_op_Inequality_Zaya_OCR_Models_BoundingBox_Zaya_OCR_Models_BoundingBox_
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: Zaya.OCR.Models.BoundingBox.ToString*
+  commentId: Overload:Zaya.OCR.Models.BoundingBox.ToString
+  href: Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_ToString
+  name: ToString
+  nameWithType: BoundingBox.ToString
+  fullName: Zaya.OCR.Models.BoundingBox.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

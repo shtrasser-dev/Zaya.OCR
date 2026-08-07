@@ -1,5 +1,3 @@
-﻿using System.Drawing;
-
 namespace Zaya.OCR.Models;
 
 /// <summary>
@@ -13,9 +11,9 @@ public interface IOCRWord
     string Text { get; }
 
     /// <summary>
-    /// Gets the bounding rectangle of the word in the image.
+    /// Gets the oriented bounding box of the word in the image.
     /// </summary>
-    Rectangle Bounds { get; }
+    BoundingBox Bounds { get; }
 
     /// <summary>
     /// Gets the confidence of the word recognition (0.0 to 1.0).

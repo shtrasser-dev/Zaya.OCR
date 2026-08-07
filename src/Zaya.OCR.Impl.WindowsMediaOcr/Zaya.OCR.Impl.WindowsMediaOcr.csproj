@@ -8,7 +8,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <ZayaVersionRole>plugin</ZayaVersionRole>
     <ZayaVersionImpMajor>0</ZayaVersionImpMajor>
-    <ZayaVersionImpMinor>1</ZayaVersionImpMinor>
+    <ZayaVersionImpMinor>0</ZayaVersionImpMinor>
 
     <PackageId>Zaya.OCR.Impl.WindowsMediaOcr</PackageId>
     <Description>Windows.Media.Ocr engine implementation for Zaya.OCR. Uses the official WinRT OCR API (Windows 10+). Desktop hosts typically need package identity (MSIX).</Description>
@@ -23,6 +23,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Zaya.OCR\Zaya.OCR.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Zaya.OCR.Tests" />
   </ItemGroup>
 
   <ItemGroup>

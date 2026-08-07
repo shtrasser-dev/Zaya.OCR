@@ -5,7 +5,7 @@ items:
   id: WindowsMediaOcrWord
   parent: Zaya.OCR.Impl.WindowsMediaOcr.Models
   children:
-  - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor(System.String,System.Drawing.Rectangle,System.Double)
+  - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)
   - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.Bounds
   - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.Confidence
   - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.Text
@@ -23,7 +23,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: WindowsMediaOcrWord
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/Models/WindowsMediaOcrWord.cs
-    startLine: 8
+    startLine: 7
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr.Models
@@ -61,7 +61,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Text
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/Models/WindowsMediaOcrWord.cs
-    startLine: 11
+    startLine: 10
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr.Models
@@ -94,18 +94,18 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Bounds
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/Models/WindowsMediaOcrWord.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr.Models
-  summary: Gets the bounding rectangle of the word in the image.
+  summary: Gets the oriented bounding box of the word in the image.
   example: []
   syntax:
-    content: public Rectangle Bounds { get; }
+    content: public BoundingBox Bounds { get; }
     parameters: []
     return:
-      type: System.Drawing.Rectangle
-    content.vb: Public ReadOnly Property Bounds As Rectangle
+      type: Zaya.OCR.Models.BoundingBox
+    content.vb: Public ReadOnly Property Bounds As BoundingBox
   overload: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.Bounds*
   implements:
   - Zaya.OCR.Models.IOCRWord.Bounds
@@ -127,7 +127,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Confidence
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/Models/WindowsMediaOcrWord.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr.Models
@@ -142,16 +142,16 @@ items:
   overload: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.Confidence*
   implements:
   - Zaya.OCR.Models.IOCRWord.Confidence
-- uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor(System.String,System.Drawing.Rectangle,System.Double)
-  commentId: M:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor(System.String,System.Drawing.Rectangle,System.Double)
-  id: '#ctor(System.String,System.Drawing.Rectangle,System.Double)'
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)
+  commentId: M:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)
+  id: '#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)'
   parent: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord
   langs:
   - csharp
   - vb
-  name: WindowsMediaOcrWord(string, Rectangle, double)
-  nameWithType: WindowsMediaOcrWord.WindowsMediaOcrWord(string, Rectangle, double)
-  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.WindowsMediaOcrWord(string, System.Drawing.Rectangle, double)
+  name: WindowsMediaOcrWord(string, BoundingBox, double)
+  nameWithType: WindowsMediaOcrWord.WindowsMediaOcrWord(string, BoundingBox, double)
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.WindowsMediaOcrWord(string, Zaya.OCR.Models.BoundingBox, double)
   type: Constructor
   source:
     remote:
@@ -160,29 +160,29 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/Models/WindowsMediaOcrWord.cs
-    startLine: 25
+    startLine: 24
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr.Models
   summary: Initializes a new instance of the <xref href="Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord" data-throw-if-not-resolved="false"></xref> class.
   example: []
   syntax:
-    content: public WindowsMediaOcrWord(string text, Rectangle bounds, double confidence)
+    content: public WindowsMediaOcrWord(string text, BoundingBox bounds, double confidence)
     parameters:
     - id: text
       type: System.String
       description: The recognized text.
     - id: bounds
-      type: System.Drawing.Rectangle
-      description: The bounding rectangle in the image.
+      type: Zaya.OCR.Models.BoundingBox
+      description: The oriented bounding box in the image.
     - id: confidence
       type: System.Double
       description: The confidence score (0.0 to 1.0).
-    content.vb: Public Sub New(text As String, bounds As Rectangle, confidence As Double)
+    content.vb: Public Sub New(text As String, bounds As BoundingBox, confidence As Double)
   overload: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor*
-  nameWithType.vb: WindowsMediaOcrWord.New(String, Rectangle, Double)
-  fullName.vb: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.New(String, System.Drawing.Rectangle, Double)
-  name.vb: New(String, Rectangle, Double)
+  nameWithType.vb: WindowsMediaOcrWord.New(String, BoundingBox, Double)
+  fullName.vb: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.New(String, Zaya.OCR.Models.BoundingBox, Double)
+  name.vb: New(String, BoundingBox, Double)
 references:
 - uid: Zaya.OCR.Models.IOCRWord
   commentId: T:Zaya.OCR.Models.IOCRWord
@@ -515,41 +515,13 @@ references:
   name: Bounds
   nameWithType: IOCRWord.Bounds
   fullName: Zaya.OCR.Models.IOCRWord.Bounds
-- uid: System.Drawing.Rectangle
-  commentId: T:System.Drawing.Rectangle
-  parent: System.Drawing
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
-  name: Rectangle
-  nameWithType: Rectangle
-  fullName: System.Drawing.Rectangle
-- uid: System.Drawing
-  commentId: N:System.Drawing
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Drawing
-  nameWithType: System.Drawing
-  fullName: System.Drawing
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Drawing
-    name: Drawing
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Drawing
-    name: Drawing
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Zaya.OCR.Models.BoundingBox
+  commentId: T:Zaya.OCR.Models.BoundingBox
+  parent: Zaya.OCR.Models
+  href: Zaya.OCR.Models.BoundingBox.html
+  name: BoundingBox
+  nameWithType: BoundingBox
+  fullName: Zaya.OCR.Models.BoundingBox
 - uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.Confidence*
   commentId: Overload:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.Confidence
   href: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.html#Zaya_OCR_Impl_WindowsMediaOcr_Models_WindowsMediaOcrWord_Confidence
@@ -581,7 +553,7 @@ references:
   fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord
 - uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor*
   commentId: Overload:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor
-  href: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.html#Zaya_OCR_Impl_WindowsMediaOcr_Models_WindowsMediaOcrWord__ctor_System_String_System_Drawing_Rectangle_System_Double_
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.html#Zaya_OCR_Impl_WindowsMediaOcr_Models_WindowsMediaOcrWord__ctor_System_String_Zaya_OCR_Models_BoundingBox_System_Double_
   name: WindowsMediaOcrWord
   nameWithType: WindowsMediaOcrWord.WindowsMediaOcrWord
   fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.WindowsMediaOcrWord

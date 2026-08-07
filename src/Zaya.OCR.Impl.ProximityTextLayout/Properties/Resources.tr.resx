@@ -22,7 +22,7 @@
     <value>Kelime boşluğu eşiği</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>Satırda birleştirmek için kelimeler arası maksimum boşluk (kelime yüksekliğinin %'si)</value>
+    <value>Satırda birleştirmek için kelimeler arasında taban çizgisi boyunca maksimum boşluk (kelime yüksekliğinin yüzdesi); ayrıca önceki kareye göre satır uçları için snap toleransı</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>Taban çizgisi sapma toleransı</value>
@@ -30,11 +30,17 @@
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
     <value>Satırda birleştirmek için kelime merkezlerinin maksimum dikey sapması (yüksekliğin %'si)</value>
   </data>
+  <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
+    <value>Angle Tolerance</value>
+  </data>
+  <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
+    <value>Kelimeleri satırda, satırları paragrafta birleştirmek ve önceki karenin satırıyla eşleştirmek için maksimum açı farkı (derece)</value>
+  </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>Satır aralığı eşiği</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>Paragrafta birleştirmek için satır merkezleri arası maksimum dikey mesafe (yüksekliğin %'si)</value>
+    <value>Satırları paragrafta birleştirmek için paragraf normali boyunca merkezler arası maksimum mesafe (ortalama satır yüksekliğinin yüzdesi)</value>
   </data>
   <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
     <value>Sol kenar hizalaması</value>
@@ -58,25 +64,31 @@
     <value>Yazı tipi boyutu toleransı</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>Paragrafları bölmeden önce satırlar arası maksimum yükseklik farkı (satır yüksekliğinin %'si)</value>
+    <value>Satırları hâlâ tek paragrafta birleştirmek için izin verilen maksimum yükseklik farkı (ortalama satır yüksekliğinin yüzdesi)</value>
   </data>
-<data name="Layout_EnableStabilization" xml:space="preserve">
+  <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>Kareler arasında sabitle</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>OCR titremesini azaltmak için paragrafları önceki kareyle eşleştir</value>
+    <value>Satırları ve paragrafları önceki kareyle eşleştir: geometriyi sabitle, metin titremesini yumuşat ve eşleşmeyen önceki paragrafları ghost olarak tut</value>
   </data>
-<data name="Layout_CenterThresholdXPercent" xml:space="preserve">
-    <value>Merkez eşleşme eşiği (X)</value>
+  <data name="Layout_HoldNewBlocks" xml:space="preserve">
+    <value>Hold new blocks</value>
+  </data>
+  <data name="Layout_HoldNewBlocks_Desc" xml:space="preserve">
+    <value>Orijinal metin önceki kareyle eşleşene kadar, ya da önceki paragraf zaten gösterilmişken ve normalize metin benzerken (metin eşleşme eşiği içinde) paragrafı gösterme</value>
+  </data>
+  <data name="Layout_CenterThresholdXPercent" xml:space="preserve">
+    <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>Önceki kareyle eşleşmek için paragraf merkezinin maksimum yatay sapması (ortalama satır yüksekliğinin %'si)</value>
+    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
-    <value>Merkez eşleşme eşiği (Y)</value>
+    <value>Previous-line search (across)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>Önceki kareyle eşleşmek için paragraf merkezinin maksimum dikey sapması (ortalama satır yüksekliğinin %'si)</value>
+    <value>How far off the previous baseline to still match a word (% of line height; 75 = 0.75×height)</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Metin eşleşme eşiği</value>
@@ -84,19 +96,31 @@
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
     <value>Paragrafları aynı saymak için maksimum Levenshtein mesafesi (daha uzun metnin %'si)</value>
   </data>
-  <data name="Layout_MinLength" xml:space="preserve">
-    <value>Yaklaşık eşleşme için min. metin uzunluğu</value>
+  <data name="Layout_GhostMaxFrames" xml:space="preserve">
+    <value>Ghost max frames</value>
   </data>
-  <data name="Layout_MinLength_Desc" xml:space="preserve">
-    <value>Daha kısa metinler önceki kareyle tam eşleşme gerektirir</value>
+  <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
+    <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
+  </data>
+  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
+    <value>Line overlap protrusion</value>
+  </data>
+  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
+    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
-    <value>Paragraf birleştirme histerezisi</value>
+    <value>Birleştirme histerezisi</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>Satır→paragraf birleştirmeyi önceki karenin yapısına yaklaştır (100 = kapalı, 120 = ±%20 tolerans)</value>
+    <value>Önceki karenin satır ve paragraf yapısını tercih etmek için birleştirme toleranslarını gevşet veya sıkılaştır (100 = kapalı, 120 = birleştirmeyi tercih ederken ×1.2, ayırmayı tercih ederken ×1/1.2)</value>
   </data>
-<data name="Layout_WordFilters" xml:space="preserve">
+  <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
+    <value>Same-line word gap hysteresis</value>
+  </data>
+  <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
+    <value>How far along the baseline to pull words that shared a previous-frame line (100 = normal gap, 600 = 6×; bridges dropped tokens)</value>
+  </data>
+  <data name="Layout_WordFilters" xml:space="preserve">
     <value>Word filters</value>
   </data>
   <data name="Layout_WordFilters_Desc" xml:space="preserve">

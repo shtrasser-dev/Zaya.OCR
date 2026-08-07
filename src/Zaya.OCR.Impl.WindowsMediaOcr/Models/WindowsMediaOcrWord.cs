@@ -1,4 +1,3 @@
-using System.Drawing;
 using Zaya.OCR.Models;
 
 namespace Zaya.OCR.Impl.WindowsMediaOcr.Models;
@@ -12,7 +11,7 @@ public sealed class WindowsMediaOcrWord : IOCRWord
     public string Text { get; }
 
     /// <inheritdoc />
-    public Rectangle Bounds { get; }
+    public BoundingBox Bounds { get; }
 
     /// <inheritdoc />
     public double Confidence { get; }
@@ -21,9 +20,9 @@ public sealed class WindowsMediaOcrWord : IOCRWord
     /// Initializes a new instance of the <see cref="WindowsMediaOcrWord"/> class.
     /// </summary>
     /// <param name="text">The recognized text.</param>
-    /// <param name="bounds">The bounding rectangle in the image.</param>
+    /// <param name="bounds">The oriented bounding box in the image.</param>
     /// <param name="confidence">The confidence score (0.0 to 1.0).</param>
-    public WindowsMediaOcrWord(string text, Rectangle bounds, double confidence)
+    public WindowsMediaOcrWord(string text, BoundingBox bounds, double confidence)
     {
         Text = text;
         Bounds = bounds;

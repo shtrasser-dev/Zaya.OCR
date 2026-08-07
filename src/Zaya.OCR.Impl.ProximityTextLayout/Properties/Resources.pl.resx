@@ -22,7 +22,7 @@
     <value>Próg odstępu między słowami</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>Maksymalny odstęp między słowami (% wysokości słowa) do połączenia w wiersz</value>
+    <value>Maksymalny odstęp wzdłuż linii bazowej między słowami do połączenia w wiersz (% wysokości słowa); także tolerancja snap końców wiersza względem poprzedniej klatki</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>Tolerancja odchylenia linii bazowej</value>
@@ -30,11 +30,17 @@
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
     <value>Maksymalne pionowe odchylenie środków słów (% wysokości) do połączenia w wiersz</value>
   </data>
+  <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
+    <value>Angle Tolerance</value>
+  </data>
+  <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
+    <value>Maksymalna różnica kątów (stopnie) przy łączeniu słów w wiersz, wierszy w akapit oraz dopasowaniu do wiersza poprzedniej klatki</value>
+  </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>Próg odstępu między wierszami</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>Maksymalna odległość pionowa między środkami wierszy (% wysokości) do połączenia w akapit</value>
+    <value>Maksymalna odległość środek–środek wzdłuż normalnej akapitu (% średniej wysokości wiersza) do łączenia wierszy w akapit</value>
   </data>
   <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
     <value>Wyrównanie lewej krawędzi</value>
@@ -58,25 +64,31 @@
     <value>Tolerancja rozmiaru czcionki</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>Maksymalna różnica wysokości (% wysokości wiersza) przed podziałem akapitów</value>
+    <value>Maksymalna dopuszczalna różnica wysokości wierszy (% średniej wysokości), przy której nadal można je połączyć w jeden akapit</value>
   </data>
-<data name="Layout_EnableStabilization" xml:space="preserve">
+  <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>Stabilizacja między klatkami</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Dopasowuj akapity do poprzedniej klatki, aby ograniczyć migotanie OCR</value>
+    <value>Dopasowuj wiersze i akapity do poprzedniej klatki: przyciąganie geometrii, wygładzanie migotania tekstu oraz utrzymywanie niedopasowanych poprzednich akapitów jako ghost</value>
   </data>
-<data name="Layout_CenterThresholdXPercent" xml:space="preserve">
-    <value>Próg dopasowania środków (X)</value>
+  <data name="Layout_HoldNewBlocks" xml:space="preserve">
+    <value>Hold new blocks</value>
+  </data>
+  <data name="Layout_HoldNewBlocks_Desc" xml:space="preserve">
+    <value>Wstrzymaj akapit, aż jego oryginalny tekst będzie zgodny z poprzednią klatką, albo aż poprzedni akapit był już pokazany i znormalizowany tekst jest podobny (w granicach progu dopasowania tekstu)</value>
+  </data>
+  <data name="Layout_CenterThresholdXPercent" xml:space="preserve">
+    <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>Maks. poziome odchylenie środka akapitu (% średniej wysokości wiersza) do dopasowania z poprzednią klatką</value>
+    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
-    <value>Próg dopasowania środków (Y)</value>
+    <value>Previous-line search (across)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>Maks. pionowe odchylenie środka akapitu (% średniej wysokości wiersza) do dopasowania z poprzednią klatką</value>
+    <value>How far off the previous baseline to still match a word (% of line height; 75 = 0.75×height)</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Próg dopasowania tekstu</value>
@@ -84,19 +96,31 @@
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
     <value>Maks. odległość Levenshteina (% dłuższego tekstu), by uznać akapity za te same</value>
   </data>
-  <data name="Layout_MinLength" xml:space="preserve">
-    <value>Min. długość tekstu do dopasowania przybliżonego</value>
+  <data name="Layout_GhostMaxFrames" xml:space="preserve">
+    <value>Ghost max frames</value>
   </data>
-  <data name="Layout_MinLength_Desc" xml:space="preserve">
-    <value>Krótsze teksty wymagają dokładnego dopasowania do poprzedniej klatki</value>
+  <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
+    <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
+  </data>
+  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
+    <value>Line overlap protrusion</value>
+  </data>
+  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
+    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
-    <value>Histereza łączenia akapitów</value>
+    <value>Histereza łączenia</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>Przechylaj łączenie wierszy w akapity ku strukturze poprzedniej klatki (100 = wył., 120 = ±20% tolerancji)</value>
+    <value>Poluzuj lub zacieśnij tolerancje łączenia, by preferować strukturę wierszy i akapitów poprzedniej klatki (100 = wyłączone, 120 = ×1.2 przy preferencji łączenia, ×1/1.2 przy preferencji podziału)</value>
   </data>
-<data name="Layout_WordFilters" xml:space="preserve">
+  <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
+    <value>Same-line word gap hysteresis</value>
+  </data>
+  <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
+    <value>How far along the baseline to pull words that shared a previous-frame line (100 = normal gap, 600 = 6×; bridges dropped tokens)</value>
+  </data>
+  <data name="Layout_WordFilters" xml:space="preserve">
     <value>Word filters</value>
   </data>
   <data name="Layout_WordFilters_Desc" xml:space="preserve">

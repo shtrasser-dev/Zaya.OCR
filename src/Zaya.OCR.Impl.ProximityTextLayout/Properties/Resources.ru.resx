@@ -22,31 +22,37 @@
     <value>Порог промежутка между словами</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>Максимальный промежуток между словами (% от высоты) для объединения в строку</value>
+    <value>Максимальный зазор вдоль базовой линии между словами для склейки в строку (в процентах от высоты слова); также используется как допуск привязки концов строки к прошлому кадру</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>Допуск смещения центров слов</value>
   </data>
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
-    <value>Максимальное смещение центров слов по вертикали (% от высоты) для объединения в строку</value>
+    <value>Максимальное смещение центров слов перпендикулярно направлению чтения (в процентах от высоты) для объединения в строку</value>
+  </data>
+  <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
+    <value>Допуск угла</value>
+  </data>
+  <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
+    <value>Максимальная разница углов (в градусах) для склейки слов в строку, строк в абзац и сопоставления с прошлой строкой</value>
   </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>Порог межстрочного интервала</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>Максимальное расстояние между центрами строк (% от высоты) для объединения в абзац</value>
+    <value>Максимальное расстояние между центрами строк вдоль нормали абзаца (в процентах от средней высоты строк) для склейки в абзац</value>
   </data>
   <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
     <value>Допуск выравнивания по левому краю</value>
   </data>
   <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>Максимальное смещение левых границ (% от высоты) для объединения в абзац</value>
+    <value>Максимальное смещение левых границ (в процентах от высоты) для объединения в абзац</value>
   </data>
   <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
     <value>Отступ первой строки</value>
   </data>
   <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>Максимальный дополнительный отступ первой строки (% от высоты)</value>
+    <value>Максимальный дополнительный отступ первой строки (в процентах от высоты)</value>
   </data>
   <data name="Layout_CenterAlignment" xml:space="preserve">
     <value>Выравнивание по центру</value>
@@ -58,43 +64,61 @@
     <value>Допуск размера шрифта</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>Максимальная разница высот строк (% от средней высоты) для разделения абзацев</value>
+    <value>Максимальная допустимая разница высот строк (в процентах от средней высоты), при которой их ещё можно склеить в один абзац</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>Стабилизация между кадрами</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Сопоставлять абзацы с прошлым кадром для более плавного распознавания</value>
+    <value>Сопоставлять строки и абзацы с прошлым кадром: привязка геометрии, сглаживание мерцания текста и удержание непарных прошлых абзацев (ghost)</value>
+  </data>
+  <data name="Layout_HoldNewBlocks" xml:space="preserve">
+    <value>Не показывать блок до стабилизации</value>
+  </data>
+  <data name="Layout_HoldNewBlocks_Desc" xml:space="preserve">
+    <value>Не показывать абзац, пока его оригинальный текст не совпадёт с прошлым кадром, либо пока предыдущий абзац уже не был показан и нормализованный текст похож (с учётом порога совпадения текста)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent" xml:space="preserve">
-    <value>Порог совпадения центров (X)</value>
+    <value>Поиск прошлой линии (вдоль)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>Максимальное смещение центра абзаца по X (% от средней высоты строки) для поиска соответствия с предыдущим кадром</value>
+    <value>Насколько далеко за концами прошлой строки ещё считать совпадение (в процентах от высоты строки; 300 означает три высоты)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
-    <value>Порог совпадения центров (Y)</value>
+    <value>Поиск прошлой линии (поперёк)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>Максимальное смещение центра абзаца по Y (% от средней высоты строки) для поиска соответствия с предыдущим кадром</value>
+    <value>Насколько далеко от базовой линии прошлой строки ещё считать совпадение (в процентах от высоты строки; 75 означает 0.75 высоты)</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Порог совпадения текста</value>
   </data>
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
-    <value>Максимальное расстояние Левенштейна (% от более длинного текста) для считания абзацев одним</value>
+    <value>Максимальное расстояние Левенштейна (в процентах от более длинного ключа сравнения), чтобы считать связанные чтения одним текстом; затем побеждает более длинный текст, при равной длине — предыдущий</value>
   </data>
-  <data name="Layout_MinLength" xml:space="preserve">
-    <value>Минимальная длина для неточного матча</value>
+  <data name="Layout_GhostMaxFrames" xml:space="preserve">
+    <value>Максимальное число кадров для ghost</value>
   </data>
-  <data name="Layout_MinLength_Desc" xml:space="preserve">
-    <value>Более короткие тексты склеиваются с прошлым кадром только при точном совпадении</value>
+  <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
+    <value>Сколько кадров держать видимым непарный предыдущий абзац (0 — выключить ghost)</value>
+  </data>
+  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
+    <value>Выступ строк при склейке</value>
+  </data>
+  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
+    <value>При склейке строк в абзац: каждая строка может выступать за зону перекрытия не больше чем на этот процент своей длины (10 означает 10 процентов; либо одна строка целиком внутри другой)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
-    <value>Гистерезис склейки абзацев</value>
+    <value>Гистерезис склейки</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>Смещать склейку строк в абзацы к структуре прошлого кадра (100 = выкл, 120 = ±20% допусков)</value>
+    <value>Ослаблять или ужесточать допуски склейки слов и строк, чтобы ближе к структуре прошлого кадра (100 — выключено, 120 — умножение на 1.2 при предпочтении склейки, деление на 1.2 при предпочтении разделения)</value>
+  </data>
+  <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
+    <value>Гистерезис разрыва слов в строке</value>
+  </data>
+  <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
+    <value>Насколько далеко вдоль базовой линии притягивать слова, бывшие в одной строке прошлого кадра (100 — обычный зазор, 600 — в шесть раз больше; перекрывает пропавшие слова)</value>
   </data>
   <data name="Layout_WordFilters" xml:space="preserve">
     <value>Фильтры слов</value>

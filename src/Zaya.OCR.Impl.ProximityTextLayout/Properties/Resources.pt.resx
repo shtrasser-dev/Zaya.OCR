@@ -22,7 +22,7 @@
     <value>Limiar de espaçamento entre palavras</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>Espaçamento máximo entre palavras (% da altura da palavra) para mesclar em uma linha</value>
+    <value>Espaçamento máximo ao longo da linha de base entre palavras para mesclar em uma linha (% da altura da palavra); também tolerância de snap das extremidades da linha em relação ao frame anterior</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>Tolerância de desvio da linha de base</value>
@@ -30,11 +30,17 @@
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
     <value>Desvio vertical máximo dos centros das palavras (% da altura) para mesclar em uma linha</value>
   </data>
+  <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
+    <value>Angle Tolerance</value>
+  </data>
+  <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
+    <value>Diferença máxima de ângulo (graus) para mesclar palavras em uma linha, linhas em um parágrafo e corresponder a uma linha do frame anterior</value>
+  </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>Limiar de espaçamento entre linhas</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>Distância vertical máxima entre centros de linhas (% da altura) para mesclar em um parágrafo</value>
+    <value>Distância máxima centro a centro ao longo da normal do parágrafo (% da altura média da linha) para mesclar linhas em um parágrafo</value>
   </data>
   <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
     <value>Alinhamento da borda esquerda</value>
@@ -58,25 +64,31 @@
     <value>Tolerância de tamanho da fonte</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>Diferença máxima de altura (% da altura da linha) entre linhas antes de dividir parágrafos</value>
+    <value>Diferença máxima de altura permitida entre linhas (% da altura média da linha) para ainda mesclá-las em um parágrafo</value>
   </data>
-<data name="Layout_EnableStabilization" xml:space="preserve">
+  <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>Estabilizar entre frames</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Emparelhar parágrafos com o frame anterior para reduzir flicker de OCR</value>
+    <value>Emparelhar linhas e parágrafos com o frame anterior: fixar geometria, suavizar flicker do texto e manter parágrafos anteriores sem correspondência como ghosts</value>
   </data>
-<data name="Layout_CenterThresholdXPercent" xml:space="preserve">
-    <value>Limiar de correspondência de centros (X)</value>
+  <data name="Layout_HoldNewBlocks" xml:space="preserve">
+    <value>Hold new blocks</value>
+  </data>
+  <data name="Layout_HoldNewBlocks_Desc" xml:space="preserve">
+    <value>Segurar um parágrafo até que o texto original coincida com o frame anterior, ou até que o parágrafo anterior já tenha sido mostrado e o texto normalizado seja semelhante (dentro do limiar de correspondência de texto)</value>
+  </data>
+  <data name="Layout_CenterThresholdXPercent" xml:space="preserve">
+    <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>Desvio horizontal máx. do centro do parágrafo (% da altura média da linha) para corresponder ao frame anterior</value>
+    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
-    <value>Limiar de correspondência de centros (Y)</value>
+    <value>Previous-line search (across)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>Desvio vertical máx. do centro do parágrafo (% da altura média da linha) para corresponder ao frame anterior</value>
+    <value>How far off the previous baseline to still match a word (% of line height; 75 = 0.75×height)</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Limiar de correspondência de texto</value>
@@ -84,19 +96,31 @@
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
     <value>Distância de Levenshtein máx. (% do texto mais longo) para tratar parágrafos como iguais</value>
   </data>
-  <data name="Layout_MinLength" xml:space="preserve">
-    <value>Comprimento mín. para correspondência aproximada</value>
+  <data name="Layout_GhostMaxFrames" xml:space="preserve">
+    <value>Ghost max frames</value>
   </data>
-  <data name="Layout_MinLength_Desc" xml:space="preserve">
-    <value>Textos mais curtos exigem correspondência exata com o frame anterior</value>
+  <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
+    <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
+  </data>
+  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
+    <value>Line overlap protrusion</value>
+  </data>
+  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
+    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
-    <value>Histerese de fusão de parágrafos</value>
+    <value>Histerese de fusão</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>Enviesar a fusão linhas→parágrafos para a estrutura do frame anterior (100 = off, 120 = ±20% de tolerâncias)</value>
+    <value>Afrouxar ou apertar as tolerâncias de fusão para preferir a estrutura de linhas e parágrafos do frame anterior (100 = off, 120 = ×1.2 ao preferir fusão, ×1/1.2 ao preferir divisão)</value>
   </data>
-<data name="Layout_WordFilters" xml:space="preserve">
+  <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
+    <value>Same-line word gap hysteresis</value>
+  </data>
+  <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
+    <value>How far along the baseline to pull words that shared a previous-frame line (100 = normal gap, 600 = 6×; bridges dropped tokens)</value>
+  </data>
+  <data name="Layout_WordFilters" xml:space="preserve">
     <value>Word filters</value>
   </data>
   <data name="Layout_WordFilters_Desc" xml:space="preserve">

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <ZayaVersionRole>interface</ZayaVersionRole>
-    <ZayaVersionInterface>0</ZayaVersionInterface>
+    <ZayaVersionInterface>1</ZayaVersionInterface>
 
     <PackageId>Zaya.OCR</PackageId>
     <Description>OCR abstractions for the Zaya ecosystem: interfaces for pluggable text recognition services.</Description>

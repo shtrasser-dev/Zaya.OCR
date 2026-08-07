@@ -1,6 +1,6 @@
-using System.Drawing;
 using System.IO.Compression;
 using System.Runtime.InteropServices;
+using Zaya.OCR.Models;
 
 namespace Zaya.OCR.Impl.OneOcr;
 
@@ -408,18 +408,17 @@ internal sealed class OneOcrEngine : IDisposable
         }
     }
 
-    private static unsafe Rectangle ParseBoundingBox(nint ptr)
+    private static unsafe BoundingBox ParseBoundingBox(nint ptr)
     {
         if (ptr == 0)
-            return Rectangle.Empty;
+            return BoundingBox.Empty;
 
         var data = (float*)ptr;
-        float minX = MathF.Min(MathF.Min(data[0], data[2]), MathF.Min(data[4], data[6]));
-        float minY = MathF.Min(MathF.Min(data[1], data[3]), MathF.Min(data[5], data[7]));
-        float maxX = MathF.Max(MathF.Max(data[0], data[2]), MathF.Max(data[4], data[6]));
-        float maxY = MathF.Max(MathF.Max(data[1], data[3]), MathF.Max(data[5], data[7]));
-
-        return new Rectangle((int)MathF.Floor(minX), (int)MathF.Floor(minY), (int)MathF.Ceiling(MathF.Max(0, maxX - minX)), (int)MathF.Ceiling(MathF.Max(0, maxY - minY)));
+        return new BoundingBox(
+            new System.Numerics.Vector2(data[0], data[1]),
+            new System.Numerics.Vector2(data[2], data[3]),
+            new System.Numerics.Vector2(data[4], data[5]),
+            new System.Numerics.Vector2(data[6], data[7]));
     }
 
     private static string? FindOneOcrDll()

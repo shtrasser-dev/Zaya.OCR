@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using System.Drawing;
 using System.Text.RegularExpressions;
 using Zaya.OCR.Impl.ProximityTextLayout.Constants;
 using Zaya.OCR.Impl.ProximityTextLayout.Models;
@@ -138,9 +137,18 @@ internal sealed class LayoutTextFilter
             if (text is null)
                 continue;
             if (string.Equals(text, line.Text, StringComparison.Ordinal))
+            {
                 result.Add(line);
+            }
+            else if (line is Models.TextLine concrete)
+            {
+                concrete.Text = text;
+                result.Add(concrete);
+            }
             else
-                result.Add(new TextLine(text, line.Words, line.Bounds));
+            {
+                result.Add(new Models.TextLine(text, line.Words, line.Bounds));
+            }
         }
 
         return result;
@@ -158,9 +166,18 @@ internal sealed class LayoutTextFilter
             if (text is null)
                 continue;
             if (string.Equals(text, paragraph.Text, StringComparison.Ordinal))
+            {
                 result.Add(paragraph);
+            }
+            else if (paragraph is Models.TextParagraph concrete)
+            {
+                concrete.Text = text;
+                result.Add(concrete);
+            }
             else
-                result.Add(new TextParagraph(text, paragraph.Lines));
+            {
+                result.Add(new Models.TextParagraph(text, paragraph.Lines));
+            }
         }
 
         return result;
@@ -209,10 +226,10 @@ internal sealed class LayoutTextFilter
 
     private sealed record CompiledRule(string Pattern, Regex? Regex);
 
-    private sealed class FilteredOcrWord(string text, Rectangle bounds, double confidence) : IOCRWord
+    private sealed class FilteredOcrWord(string text, BoundingBox bounds, double confidence) : IOCRWord
     {
         public string Text { get; } = text;
-        public Rectangle Bounds { get; } = bounds;
+        public BoundingBox Bounds { get; } = bounds;
         public double Confidence { get; } = confidence;
     }
 }
