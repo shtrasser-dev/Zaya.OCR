@@ -3,9 +3,9 @@
 | Axis | Source | Example |
 |------|--------|---------|
 | **ZayaPrimitivesVersion** | `Directory.Build.props` (supplies **Major**) | `1.0.0` |
-| **interfaceVersion** | `Zaya.OCR.csproj` → only **`ZayaVersionInterface`** → `Major.Interface.0` | `1.0.0` |
-| **pluginVersion** | Each Impl → **`ZayaVersionImpMajor`** + **`ZayaVersionImpMinor`**; Interface read from abstractions → `Major.Interface.ImpMajor.ImpMinor` | `1.0.0.0` |
-| **updateChannel** | Interface `MAJOR.Interface` | `1.0` → `plugin-Zaya.OCR-v1.0-latest` |
+| **interfaceVersion** | `Zaya.OCR.csproj` → only **`ZayaVersionInterface`** → `Major.Interface.0` | `1.2.0` |
+| **pluginVersion** | Each Impl → **`ZayaVersionImpMajor`** + **`ZayaVersionImpMinor`**; Interface read from abstractions → `Major.Interface.ImpMajor.ImpMinor` | `1.2.0.0` |
+| **updateChannel** | Interface `MAJOR.Interface` | `1.2` → `plugin-Zaya.OCR-v1.2-latest` |
 
 Rules:
 
@@ -23,12 +23,12 @@ Rules:
   "id": "OneOcr",
   "type": "ocr",
   "interface": "Zaya.OCR",
-  "interfaceVersion": "1.0.0",
-  "pluginVersion": "1.0.0.0"
+  "interfaceVersion": "1.2.0",
+  "pluginVersion": "1.2.0.0"
 }
 ```
 
-Release body lists per-asset plugin versions (`Zaya.OCR.Impl.OneOcr.zip=1.0.0.0`).
+Release body lists per-asset plugin versions (`Zaya.OCR.Impl.OneOcr.zip=1.2.0.0`).
 
 ## Bumping
 

@@ -131,7 +131,77 @@ internal sealed class ParagraphAssembler
             paragraphs.Add(new TextParagraph(text, bucket));
         }
 
+        AssignParagraphIds(paragraphs, history);
         frame.MutableParagraphs = paragraphs;
+    }
+
+    /// <summary>
+    /// Reuses previous-paragraph id and increments match age when every current line maps to
+    /// that same previous paragraph; otherwise marks the paragraph as new (age = 1).
+    /// </summary>
+    private static void AssignParagraphIds(List<TextParagraph> paragraphs, TextLayoutHistoryService history)
+    {
+        Dictionary<TextLine, TextParagraph>? lineToParagraph = null;
+        if (history.Previous is not null)
+        {
+            lineToParagraph = new Dictionary<TextLine, TextParagraph>();
+            foreach (var prevParagraph in history.Previous.AllParagraphs)
+            {
+                foreach (var line in prevParagraph.TextLines)
+                    lineToParagraph[line] = prevParagraph;
+            }
+        }
+
+        foreach (var paragraph in paragraphs)
+        {
+            TextParagraph? matched = null;
+            var ok = lineToParagraph is not null && paragraph.TextLines.Count > 0;
+            if (ok)
+            {
+                foreach (var line in paragraph.TextLines)
+                {
+                    if (line.PreviousFrameLineList.Count == 0)
+                    {
+                        ok = false;
+                        break;
+                    }
+
+                    foreach (var prevLine in line.PreviousFrameLineList)
+                    {
+                        if (!lineToParagraph!.TryGetValue(prevLine, out var prevParagraph))
+                        {
+                            ok = false;
+                            break;
+                        }
+
+                        if (matched is null)
+                            matched = prevParagraph;
+                        else if (!ReferenceEquals(matched, prevParagraph))
+                        {
+                            ok = false;
+                            break;
+                        }
+                    }
+
+                    if (!ok)
+                        break;
+                }
+            }
+
+            if (ok && matched is not null)
+            {
+                paragraph.Id = matched.Id;
+                paragraph.HasPreviousFrameMatch = true;
+                paragraph.PreviousFrameMatchAge = matched.PreviousFrameMatchAge + 1;
+                paragraph.PreviousFrameText = matched.Text;
+            }
+            else
+            {
+                paragraph.HasPreviousFrameMatch = false;
+                paragraph.PreviousFrameMatchAge = 1;
+                paragraph.PreviousFrameText = string.Empty;
+            }
+        }
     }
 
     private double GetMergeScale(

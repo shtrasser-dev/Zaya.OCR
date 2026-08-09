@@ -537,31 +537,60 @@ public sealed class ProximityTextLayoutSessionTests
     }
 
     [Fact]
-    public async Task ProcessAsync_HasPreviousFrameMatch_RequiresCaseInsensitiveFullText()
+    public async Task ProcessAsync_HasPreviousFrameMatch_TracksGeometryAcrossTextChanges()
     {
         using var session = CreateSession(enableStabilization: true);
 
         var first = await session.ProcessAsync(
             CreateResult(MakeWord("Hello World", 10, 10, 100, 20)), TestContext.Current.CancellationToken);
+        Assert.False(first.Paragraphs[0].HasPreviousFrameMatch);
+        Assert.Equal(1, first.Paragraphs[0].PreviousFrameMatchAge);
+        Assert.Equal(string.Empty, first.Paragraphs[0].PreviousFrameText);
         Assert.False(first.Paragraphs[0].Lines[0].HasPreviousFrameMatch);
+        Assert.Equal(1, first.Paragraphs[0].Lines[0].PreviousFrameMatchAge);
+        Assert.Equal(string.Empty, first.Paragraphs[0].Lines[0].PreviousFrameText);
 
         var same = await session.ProcessAsync(
             CreateResult(MakeWord("hello world", 10, 10, 100, 20)), TestContext.Current.CancellationToken);
+        Assert.True(same.Paragraphs[0].HasPreviousFrameMatch);
+        Assert.Equal(2, same.Paragraphs[0].PreviousFrameMatchAge);
+        Assert.Equal("Hello World", same.Paragraphs[0].PreviousFrameText);
         Assert.True(same.Paragraphs[0].Lines[0].HasPreviousFrameMatch);
+        Assert.Equal(2, same.Paragraphs[0].Lines[0].PreviousFrameMatchAge);
+        Assert.Equal("Hello World", same.Paragraphs[0].Lines[0].PreviousFrameText);
+        // Old text-equality signal reconstructed from geometry match + PreviousFrameText.
+        Assert.Equal(
+            same.Paragraphs[0].Lines[0].Text,
+            same.Paragraphs[0].Lines[0].PreviousFrameText,
+            ignoreCase: true);
 
-        // Dissimilar same-length → not fuzzy-matched → take current.
+        // Same rails, different text — still a previous-frame geometric match.
         var different = await session.ProcessAsync(
             CreateResult(MakeWord("Hello there", 10, 10, 100, 20)), TestContext.Current.CancellationToken);
         Assert.Equal("Hello there", different.Paragraphs[0].Text);
-        Assert.False(different.Lines[0].HasPreviousFrameMatch);
+        Assert.True(different.Paragraphs[0].HasPreviousFrameMatch);
+        Assert.Equal(3, different.Paragraphs[0].PreviousFrameMatchAge);
+        Assert.Equal("Hello World", different.Paragraphs[0].PreviousFrameText);
+        Assert.True(different.Lines[0].HasPreviousFrameMatch);
+        Assert.Equal(3, different.Lines[0].PreviousFrameMatchAge);
+        Assert.Equal("Hello World", different.Lines[0].PreviousFrameText);
+        Assert.NotEqual(
+            different.Lines[0].Text,
+            different.Lines[0].PreviousFrameText,
+            StringComparer.OrdinalIgnoreCase);
+        Assert.False(different.Paragraphs[0].IsGhost);
+        Assert.Equal(0, different.Paragraphs[0].GhostAge);
 
-        // Longer similar growth replaces previous.
-        await session.ProcessAsync(
-            CreateResult(MakeWord("Hello World", 10, 10, 100, 20)), TestContext.Current.CancellationToken);
+        // Longer growth on same rails keeps the match and advances age.
         var longer = await session.ProcessAsync(
             CreateResult(MakeWord("Hello World Extended", 10, 10, 160, 20)), TestContext.Current.CancellationToken);
         Assert.Equal("Hello World Extended", longer.Paragraphs[0].Text);
-        Assert.False(longer.Lines[0].HasPreviousFrameMatch);
+        Assert.True(longer.Lines[0].HasPreviousFrameMatch);
+        Assert.Equal(4, longer.Lines[0].PreviousFrameMatchAge);
+        Assert.Equal("Hello there", longer.Lines[0].PreviousFrameText);
+        Assert.True(longer.Paragraphs[0].HasPreviousFrameMatch);
+        Assert.Equal(4, longer.Paragraphs[0].PreviousFrameMatchAge);
+        Assert.Equal("Hello there", longer.Paragraphs[0].PreviousFrameText);
     }
 
     [Fact]
@@ -1157,6 +1186,50 @@ public sealed class ProximityTextLayoutSessionTests
 
         Assert.Single(result.Paragraphs);
         Assert.Equal("noisy", result.Paragraphs[0].Text);
+    }
+
+    [Fact]
+    public async Task ProcessAsync_StableIds_ReusePreviousLineAndParagraphIds()
+    {
+        using var session = CreateSession(enableStabilization: true, holdNewBlocks: false);
+        const string text = "Stable identity line for tracking";
+
+        var first = await session.ProcessAsync(
+            CreateResult(MakeWord(text, 10, 10, 300, 20)), TestContext.Current.CancellationToken);
+        Assert.Single(first.Paragraphs);
+        Assert.Single(first.Paragraphs[0].Lines);
+        var paragraphId = first.Paragraphs[0].Id;
+        var lineId = first.Paragraphs[0].Lines[0].Id;
+        Assert.NotEqual(Guid.Empty, paragraphId);
+        Assert.NotEqual(Guid.Empty, lineId);
+
+        var second = await session.ProcessAsync(
+            CreateResult(MakeWord(text, 12, 11, 300, 20)), TestContext.Current.CancellationToken);
+        Assert.Single(second.Paragraphs);
+        Assert.Single(second.Paragraphs[0].Lines);
+        Assert.Equal(paragraphId, second.Paragraphs[0].Id);
+        Assert.Equal(lineId, second.Paragraphs[0].Lines[0].Id);
+        Assert.True(second.Paragraphs[0].HasPreviousFrameMatch);
+        Assert.Equal(2, second.Paragraphs[0].PreviousFrameMatchAge);
+        Assert.True(second.Paragraphs[0].Lines[0].HasPreviousFrameMatch);
+        Assert.Equal(2, second.Paragraphs[0].Lines[0].PreviousFrameMatchAge);
+
+        var third = await session.ProcessAsync(
+            CreateResult(MakeWord("Completely different block elsewhere", 10, 200, 300, 20)),
+            TestContext.Current.CancellationToken);
+        // Previous block may remain as a ghost; the new live paragraph must get fresh ids.
+        var live = Assert.Single(third.Paragraphs, p => p is TextParagraph tp && !tp.IsGhost);
+        Assert.NotEqual(paragraphId, live.Id);
+        Assert.NotEqual(lineId, live.Lines[0].Id);
+        Assert.False(live.HasPreviousFrameMatch);
+        Assert.Equal(1, live.PreviousFrameMatchAge);
+        var ghost = Assert.Single(third.Paragraphs.OfType<TextParagraph>(), p => p.IsGhost);
+        Assert.Equal(paragraphId, ghost.Id);
+        Assert.Equal(lineId, ghost.Lines[0].Id);
+        Assert.True(ghost.IsGhost);
+        Assert.Equal(1, ghost.GhostAge);
+        Assert.True(ghost.HasPreviousFrameMatch);
+        Assert.Equal(3, ghost.PreviousFrameMatchAge);
     }
 
     private sealed class StubWord : IOCRWord

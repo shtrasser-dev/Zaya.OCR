@@ -51,19 +51,30 @@ internal sealed class ParagraphGhostService
             if (age > maxAge)
                 continue;
 
-            // Clone ghost into current frame Stable set.
+            // Clone ghost into current frame Stable set; keep stable ids and advance ages.
             var ghostLines = prevParagraph.TextLines
-                .Select(l => new TextLine(l.Text, l.Words, l.Bounds))
+                .Select(l => new TextLine(
+                    l.Text,
+                    l.Words,
+                    l.Bounds,
+                    l.Id,
+                    hasPreviousFrameMatch: true,
+                    previousFrameMatchAge: l.PreviousFrameMatchAge + 1,
+                    previousFrameText: l.Text))
                 .ToList();
             var ghost = new TextParagraph(
                 prevParagraph.Text,
                 ghostLines,
                 prevParagraph.OriginalText,
-                wasShown: true)
+                wasShown: true,
+                id: prevParagraph.Id,
+                hasPreviousFrameMatch: true,
+                previousFrameMatchAge: prevParagraph.PreviousFrameMatchAge + 1,
+                previousFrameText: prevParagraph.Text,
+                isGhost: true,
+                ghostAge: age)
             {
                 IsEmitted = true,
-                IsGhost = true,
-                GhostAge = age,
             };
             frame.MutableParagraphs.Add(ghost);
         }

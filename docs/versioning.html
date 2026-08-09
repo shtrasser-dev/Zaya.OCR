@@ -79,17 +79,17 @@
 <tr>
 <td><strong>interfaceVersion</strong></td>
 <td><code>Zaya.OCR.csproj</code> → only <strong><code>ZayaVersionInterface</code></strong> → <code>Major.Interface.0</code></td>
-<td><code>1.0.0</code></td>
+<td><code>1.2.0</code></td>
 </tr>
 <tr>
 <td><strong>pluginVersion</strong></td>
 <td>Each Impl → <strong><code>ZayaVersionImpMajor</code></strong> + <strong><code>ZayaVersionImpMinor</code></strong>; Interface read from abstractions → <code>Major.Interface.ImpMajor.ImpMinor</code></td>
-<td><code>1.0.0.0</code></td>
+<td><code>1.2.0.0</code></td>
 </tr>
 <tr>
 <td><strong>updateChannel</strong></td>
 <td>Interface <code>MAJOR.Interface</code></td>
-<td><code>1.0</code> → <code>plugin-Zaya.OCR-v1.0-latest</code></td>
+<td><code>1.2</code> → <code>plugin-Zaya.OCR-v1.2-latest</code></td>
 </tr>
 </tbody>
 </table>
@@ -107,11 +107,11 @@
   &quot;id&quot;: &quot;OneOcr&quot;,
   &quot;type&quot;: &quot;ocr&quot;,
   &quot;interface&quot;: &quot;Zaya.OCR&quot;,
-  &quot;interfaceVersion&quot;: &quot;1.0.0&quot;,
-  &quot;pluginVersion&quot;: &quot;1.0.0.0&quot;
+  &quot;interfaceVersion&quot;: &quot;1.2.0&quot;,
+  &quot;pluginVersion&quot;: &quot;1.2.0.0&quot;
 }
 </code></pre>
-<p>Release body lists per-asset plugin versions (<code>Zaya.OCR.Impl.OneOcr.zip=1.0.0.0</code>).</p>
+<p>Release body lists per-asset plugin versions (<code>Zaya.OCR.Impl.OneOcr.zip=1.2.0.0</code>).</p>
 <h2 id="bumping">Bumping</h2>
 <ol>
 <li>Interface: raise <code>ZayaVersionInterface</code> in <code>Zaya.OCR.csproj</code>, update host, republish plugins.</li>

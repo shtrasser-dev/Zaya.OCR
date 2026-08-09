@@ -1993,6 +1993,45 @@ references:
   isSpec: "True"
   fullName: Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
   nameWithType: ITextLine.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextLine.Id
+  name: Id
+  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Id
+  commentId: P:Zaya.OCR.Models.ITextLine.Id
+  fullName: Zaya.OCR.Models.ITextLine.Id
+  nameWithType: ITextLine.Id
+- uid: Zaya.OCR.Models.ITextLine.Id*
+  name: Id
+  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Id_
+  commentId: Overload:Zaya.OCR.Models.ITextLine.Id
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.ITextLine.Id
+  nameWithType: ITextLine.Id
+- uid: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  name: PreviousFrameMatchAge
+  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_PreviousFrameMatchAge
+  commentId: P:Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  nameWithType: ITextLine.PreviousFrameMatchAge
+- uid: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge*
+  name: PreviousFrameMatchAge
+  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_PreviousFrameMatchAge_
+  commentId: Overload:Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  nameWithType: ITextLine.PreviousFrameMatchAge
+- uid: Zaya.OCR.Models.ITextLine.PreviousFrameText
+  name: PreviousFrameText
+  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_PreviousFrameText
+  commentId: P:Zaya.OCR.Models.ITextLine.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameText
+  nameWithType: ITextLine.PreviousFrameText
+- uid: Zaya.OCR.Models.ITextLine.PreviousFrameText*
+  name: PreviousFrameText
+  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_PreviousFrameText_
+  commentId: Overload:Zaya.OCR.Models.ITextLine.PreviousFrameText
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameText
+  nameWithType: ITextLine.PreviousFrameText
 - uid: Zaya.OCR.Models.ITextLine.Text
   name: Text
   href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Text
@@ -2025,6 +2064,58 @@ references:
   commentId: T:Zaya.OCR.Models.ITextParagraph
   fullName: Zaya.OCR.Models.ITextParagraph
   nameWithType: ITextParagraph
+- uid: Zaya.OCR.Models.ITextParagraph.GhostAge
+  name: GhostAge
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_GhostAge
+  commentId: P:Zaya.OCR.Models.ITextParagraph.GhostAge
+  fullName: Zaya.OCR.Models.ITextParagraph.GhostAge
+  nameWithType: ITextParagraph.GhostAge
+- uid: Zaya.OCR.Models.ITextParagraph.GhostAge*
+  name: GhostAge
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_GhostAge_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.GhostAge
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.ITextParagraph.GhostAge
+  nameWithType: ITextParagraph.GhostAge
+- uid: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  name: HasPreviousFrameMatch
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_HasPreviousFrameMatch
+  commentId: P:Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  nameWithType: ITextParagraph.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch*
+  name: HasPreviousFrameMatch
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_HasPreviousFrameMatch_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  nameWithType: ITextParagraph.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextParagraph.Id
+  name: Id
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Id
+  commentId: P:Zaya.OCR.Models.ITextParagraph.Id
+  fullName: Zaya.OCR.Models.ITextParagraph.Id
+  nameWithType: ITextParagraph.Id
+- uid: Zaya.OCR.Models.ITextParagraph.Id*
+  name: Id
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Id_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.Id
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.ITextParagraph.Id
+  nameWithType: ITextParagraph.Id
+- uid: Zaya.OCR.Models.ITextParagraph.IsGhost
+  name: IsGhost
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_IsGhost
+  commentId: P:Zaya.OCR.Models.ITextParagraph.IsGhost
+  fullName: Zaya.OCR.Models.ITextParagraph.IsGhost
+  nameWithType: ITextParagraph.IsGhost
+- uid: Zaya.OCR.Models.ITextParagraph.IsGhost*
+  name: IsGhost
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_IsGhost_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.IsGhost
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.ITextParagraph.IsGhost
+  nameWithType: ITextParagraph.IsGhost
 - uid: Zaya.OCR.Models.ITextParagraph.Lines
   name: Lines
   href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Lines
@@ -2038,6 +2129,32 @@ references:
   isSpec: "True"
   fullName: Zaya.OCR.Models.ITextParagraph.Lines
   nameWithType: ITextParagraph.Lines
+- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  name: PreviousFrameMatchAge
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_PreviousFrameMatchAge
+  commentId: P:Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  nameWithType: ITextParagraph.PreviousFrameMatchAge
+- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge*
+  name: PreviousFrameMatchAge
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_PreviousFrameMatchAge_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  nameWithType: ITextParagraph.PreviousFrameMatchAge
+- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  name: PreviousFrameText
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_PreviousFrameText
+  commentId: P:Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  nameWithType: ITextParagraph.PreviousFrameText
+- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameText*
+  name: PreviousFrameText
+  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_PreviousFrameText_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  isSpec: "True"
+  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  nameWithType: ITextParagraph.PreviousFrameText
 - uid: Zaya.OCR.Models.ITextParagraph.Text
   name: Text
   href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Text

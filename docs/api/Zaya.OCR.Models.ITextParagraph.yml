@@ -5,7 +5,13 @@ items:
   id: ITextParagraph
   parent: Zaya.OCR.Models
   children:
+  - Zaya.OCR.Models.ITextParagraph.GhostAge
+  - Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  - Zaya.OCR.Models.ITextParagraph.Id
+  - Zaya.OCR.Models.ITextParagraph.IsGhost
   - Zaya.OCR.Models.ITextParagraph.Lines
+  - Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  - Zaya.OCR.Models.ITextParagraph.PreviousFrameText
   - Zaya.OCR.Models.ITextParagraph.Text
   langs:
   - csharp
@@ -30,6 +36,42 @@ items:
   syntax:
     content: public interface ITextParagraph
     content.vb: Public Interface ITextParagraph
+- uid: Zaya.OCR.Models.ITextParagraph.Id
+  commentId: P:Zaya.OCR.Models.ITextParagraph.Id
+  id: Id
+  parent: Zaya.OCR.Models.ITextParagraph
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ITextParagraph.Id
+  fullName: Zaya.OCR.Models.ITextParagraph.Id
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextParagraph.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Id
+    path: src/Zaya.OCR/Models/ITextParagraph.cs
+    startLine: 12
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    Stable identity for this paragraph across frames.
+
+    When the paragraph matches a previous-frame paragraph, equals that paragraph's <xref href="Zaya.OCR.Models.ITextParagraph.Id" data-throw-if-not-resolved="false"></xref>;
+
+    otherwise a newly generated unique value.
+  example: []
+  syntax:
+    content: Guid Id { get; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: ReadOnly Property Id As Guid
+  overload: Zaya.OCR.Models.ITextParagraph.Id*
 - uid: Zaya.OCR.Models.ITextParagraph.Text
   commentId: P:Zaya.OCR.Models.ITextParagraph.Text
   id: Text
@@ -48,7 +90,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Text
     path: src/Zaya.OCR/Models/ITextParagraph.cs
-    startLine: 10
+    startLine: 17
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Models
@@ -79,7 +121,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Lines
     path: src/Zaya.OCR/Models/ITextParagraph.cs
-    startLine: 15
+    startLine: 22
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Models
@@ -92,6 +134,172 @@ items:
       type: System.Collections.Generic.IReadOnlyList{Zaya.OCR.Models.ITextLine}
     content.vb: ReadOnly Property Lines As IReadOnlyList(Of ITextLine)
   overload: Zaya.OCR.Models.ITextParagraph.Lines*
+- uid: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  commentId: P:Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  id: HasPreviousFrameMatch
+  parent: Zaya.OCR.Models.ITextParagraph
+  langs:
+  - csharp
+  - vb
+  name: HasPreviousFrameMatch
+  nameWithType: ITextParagraph.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextParagraph.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: HasPreviousFrameMatch
+    path: src/Zaya.OCR/Models/ITextParagraph.cs
+    startLine: 27
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: True when this paragraph was matched to a previous-frame paragraph (geometry / tracking).
+  example: []
+  syntax:
+    content: bool HasPreviousFrameMatch { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property HasPreviousFrameMatch As Boolean
+  overload: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch*
+- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  commentId: P:Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  id: PreviousFrameMatchAge
+  parent: Zaya.OCR.Models.ITextParagraph
+  langs:
+  - csharp
+  - vb
+  name: PreviousFrameMatchAge
+  nameWithType: ITextParagraph.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextParagraph.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: PreviousFrameMatchAge
+    path: src/Zaya.OCR/Models/ITextParagraph.cs
+    startLine: 33
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    How many frames this paragraph identity has been alive (1 on first appearance;
+
+    increments while <xref href="Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch" data-throw-if-not-resolved="false"></xref> stays true across frames).
+  example: []
+  syntax:
+    content: int PreviousFrameMatchAge { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property PreviousFrameMatchAge As Integer
+  overload: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge*
+- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  commentId: P:Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  id: PreviousFrameText
+  parent: Zaya.OCR.Models.ITextParagraph
+  langs:
+  - csharp
+  - vb
+  name: PreviousFrameText
+  nameWithType: ITextParagraph.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextParagraph.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: PreviousFrameText
+    path: src/Zaya.OCR/Models/ITextParagraph.cs
+    startLine: 40
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    Display text of the matched previous-frame paragraph, or empty when there is no match.
+
+    Hosts can restore the old text-equality signal with
+
+    <code>HasPreviousFrameMatch &amp;&amp; string.Equals(Text, PreviousFrameText, StringComparison.OrdinalIgnoreCase)</code>.
+  example: []
+  syntax:
+    content: string PreviousFrameText { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property PreviousFrameText As String
+  overload: Zaya.OCR.Models.ITextParagraph.PreviousFrameText*
+- uid: Zaya.OCR.Models.ITextParagraph.IsGhost
+  commentId: P:Zaya.OCR.Models.ITextParagraph.IsGhost
+  id: IsGhost
+  parent: Zaya.OCR.Models.ITextParagraph
+  langs:
+  - csharp
+  - vb
+  name: IsGhost
+  nameWithType: ITextParagraph.IsGhost
+  fullName: Zaya.OCR.Models.ITextParagraph.IsGhost
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextParagraph.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: IsGhost
+    path: src/Zaya.OCR/Models/ITextParagraph.cs
+    startLine: 46
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    True when this paragraph is carried forward as a ghost from a previous frame
+
+    (no live match this frame).
+  example: []
+  syntax:
+    content: bool IsGhost { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property IsGhost As Boolean
+  overload: Zaya.OCR.Models.ITextParagraph.IsGhost*
+- uid: Zaya.OCR.Models.ITextParagraph.GhostAge
+  commentId: P:Zaya.OCR.Models.ITextParagraph.GhostAge
+  id: GhostAge
+  parent: Zaya.OCR.Models.ITextParagraph
+  langs:
+  - csharp
+  - vb
+  name: GhostAge
+  nameWithType: ITextParagraph.GhostAge
+  fullName: Zaya.OCR.Models.ITextParagraph.GhostAge
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextParagraph.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: GhostAge
+    path: src/Zaya.OCR/Models/ITextParagraph.cs
+    startLine: 51
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Consecutive ghost frames for this identity (0 = live emit; increments while <xref href="Zaya.OCR.Models.ITextParagraph.IsGhost" data-throw-if-not-resolved="false"></xref>).
+  example: []
+  syntax:
+    content: int GhostAge { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property GhostAge As Integer
+  overload: Zaya.OCR.Models.ITextParagraph.GhostAge*
 references:
 - uid: Zaya.OCR.Models
   commentId: N:Zaya.OCR.Models
@@ -123,6 +331,33 @@ references:
   - uid: Zaya.OCR.Models
     name: Models
     href: Zaya.OCR.Models.html
+- uid: Zaya.OCR.Models.ITextParagraph.Id
+  commentId: P:Zaya.OCR.Models.ITextParagraph.Id
+  href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Id
+  name: Id
+  nameWithType: ITextParagraph.Id
+  fullName: Zaya.OCR.Models.ITextParagraph.Id
+- uid: Zaya.OCR.Models.ITextParagraph.Id*
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.Id
+  href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Id
+  name: Id
+  nameWithType: ITextParagraph.Id
+  fullName: Zaya.OCR.Models.ITextParagraph.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Zaya.OCR.Models.ITextParagraph.Text*
   commentId: Overload:Zaya.OCR.Models.ITextParagraph.Text
   href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Text
@@ -140,13 +375,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: Zaya.OCR.Models.ITextParagraph.Lines*
   commentId: Overload:Zaya.OCR.Models.ITextParagraph.Lines
   href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Lines
@@ -251,3 +479,67 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch*
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_HasPreviousFrameMatch
+  name: HasPreviousFrameMatch
+  nameWithType: ITextParagraph.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  commentId: P:Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_HasPreviousFrameMatch
+  name: HasPreviousFrameMatch
+  nameWithType: ITextParagraph.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge*
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_PreviousFrameMatchAge
+  name: PreviousFrameMatchAge
+  nameWithType: ITextParagraph.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameText*
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_PreviousFrameText
+  name: PreviousFrameText
+  nameWithType: ITextParagraph.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+- uid: Zaya.OCR.Models.ITextParagraph.IsGhost*
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.IsGhost
+  href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_IsGhost
+  name: IsGhost
+  nameWithType: ITextParagraph.IsGhost
+  fullName: Zaya.OCR.Models.ITextParagraph.IsGhost
+- uid: Zaya.OCR.Models.ITextParagraph.IsGhost
+  commentId: P:Zaya.OCR.Models.ITextParagraph.IsGhost
+  href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_IsGhost
+  name: IsGhost
+  nameWithType: ITextParagraph.IsGhost
+  fullName: Zaya.OCR.Models.ITextParagraph.IsGhost
+- uid: Zaya.OCR.Models.ITextParagraph.GhostAge*
+  commentId: Overload:Zaya.OCR.Models.ITextParagraph.GhostAge
+  href: Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_GhostAge
+  name: GhostAge
+  nameWithType: ITextParagraph.GhostAge
+  fullName: Zaya.OCR.Models.ITextParagraph.GhostAge

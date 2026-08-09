@@ -7,6 +7,9 @@ items:
   children:
   - Zaya.OCR.Models.ITextLine.Bounds
   - Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
+  - Zaya.OCR.Models.ITextLine.Id
+  - Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  - Zaya.OCR.Models.ITextLine.PreviousFrameText
   - Zaya.OCR.Models.ITextLine.Text
   - Zaya.OCR.Models.ITextLine.Words
   langs:
@@ -32,6 +35,42 @@ items:
   syntax:
     content: public interface ITextLine
     content.vb: Public Interface ITextLine
+- uid: Zaya.OCR.Models.ITextLine.Id
+  commentId: P:Zaya.OCR.Models.ITextLine.Id
+  id: Id
+  parent: Zaya.OCR.Models.ITextLine
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ITextLine.Id
+  fullName: Zaya.OCR.Models.ITextLine.Id
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextLine.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Id
+    path: src/Zaya.OCR/Models/ITextLine.cs
+    startLine: 12
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    Stable identity for this line across frames.
+
+    When the line matches a previous-frame line, equals that line's <xref href="Zaya.OCR.Models.ITextLine.Id" data-throw-if-not-resolved="false"></xref>;
+
+    otherwise a newly generated unique value.
+  example: []
+  syntax:
+    content: Guid Id { get; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: ReadOnly Property Id As Guid
+  overload: Zaya.OCR.Models.ITextLine.Id*
 - uid: Zaya.OCR.Models.ITextLine.Text
   commentId: P:Zaya.OCR.Models.ITextLine.Text
   id: Text
@@ -50,7 +89,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Text
     path: src/Zaya.OCR/Models/ITextLine.cs
-    startLine: 10
+    startLine: 17
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Models
@@ -81,7 +120,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Words
     path: src/Zaya.OCR/Models/ITextLine.cs
-    startLine: 15
+    startLine: 22
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Models
@@ -112,7 +151,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Bounds
     path: src/Zaya.OCR/Models/ITextLine.cs
-    startLine: 20
+    startLine: 27
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Models
@@ -143,14 +182,11 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: HasPreviousFrameMatch
     path: src/Zaya.OCR/Models/ITextLine.cs
-    startLine: 26
+    startLine: 32
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Models
-  summary: >-
-    Gets whether this line has a previous-frame match whose text equals
-
-    <xref href="Zaya.OCR.Models.ITextLine.Text" data-throw-if-not-resolved="false"></xref> ignoring case.
+  summary: True when this line was matched to a previous-frame line (geometry / tracking).
   example: []
   syntax:
     content: bool HasPreviousFrameMatch { get; }
@@ -159,6 +195,76 @@ items:
       type: System.Boolean
     content.vb: ReadOnly Property HasPreviousFrameMatch As Boolean
   overload: Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch*
+- uid: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  commentId: P:Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  id: PreviousFrameMatchAge
+  parent: Zaya.OCR.Models.ITextLine
+  langs:
+  - csharp
+  - vb
+  name: PreviousFrameMatchAge
+  nameWithType: ITextLine.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextLine.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: PreviousFrameMatchAge
+    path: src/Zaya.OCR/Models/ITextLine.cs
+    startLine: 38
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    How many frames this line identity has been alive (1 on first appearance;
+
+    increments while <xref href="Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch" data-throw-if-not-resolved="false"></xref> stays true across frames).
+  example: []
+  syntax:
+    content: int PreviousFrameMatchAge { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property PreviousFrameMatchAge As Integer
+  overload: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge*
+- uid: Zaya.OCR.Models.ITextLine.PreviousFrameText
+  commentId: P:Zaya.OCR.Models.ITextLine.PreviousFrameText
+  id: PreviousFrameText
+  parent: Zaya.OCR.Models.ITextLine
+  langs:
+  - csharp
+  - vb
+  name: PreviousFrameText
+  nameWithType: ITextLine.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameText
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextLine.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: PreviousFrameText
+    path: src/Zaya.OCR/Models/ITextLine.cs
+    startLine: 45
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    Display text of the matched previous-frame line(s), or empty when there is no match.
+
+    Hosts can restore the old text-equality signal with
+
+    <code>HasPreviousFrameMatch &amp;&amp; string.Equals(Text, PreviousFrameText, StringComparison.OrdinalIgnoreCase)</code>.
+  example: []
+  syntax:
+    content: string PreviousFrameText { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property PreviousFrameText As String
+  overload: Zaya.OCR.Models.ITextLine.PreviousFrameText*
 references:
 - uid: Zaya.OCR.Models
   commentId: N:Zaya.OCR.Models
@@ -190,6 +296,33 @@ references:
   - uid: Zaya.OCR.Models
     name: Models
     href: Zaya.OCR.Models.html
+- uid: Zaya.OCR.Models.ITextLine.Id
+  commentId: P:Zaya.OCR.Models.ITextLine.Id
+  href: Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Id
+  name: Id
+  nameWithType: ITextLine.Id
+  fullName: Zaya.OCR.Models.ITextLine.Id
+- uid: Zaya.OCR.Models.ITextLine.Id*
+  commentId: Overload:Zaya.OCR.Models.ITextLine.Id
+  href: Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Id
+  name: Id
+  nameWithType: ITextLine.Id
+  fullName: Zaya.OCR.Models.ITextLine.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Zaya.OCR.Models.ITextLine.Text*
   commentId: Overload:Zaya.OCR.Models.ITextLine.Text
   href: Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Text
@@ -207,13 +340,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: Zaya.OCR.Models.ITextLine.Words*
   commentId: Overload:Zaya.OCR.Models.ITextLine.Words
   href: Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Words
@@ -331,12 +457,6 @@ references:
   name: BoundingBox
   nameWithType: BoundingBox
   fullName: Zaya.OCR.Models.BoundingBox
-- uid: Zaya.OCR.Models.ITextLine.Text
-  commentId: P:Zaya.OCR.Models.ITextLine.Text
-  href: Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Text
-  name: Text
-  nameWithType: ITextLine.Text
-  fullName: Zaya.OCR.Models.ITextLine.Text
 - uid: Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch*
   commentId: Overload:Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
   href: Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_HasPreviousFrameMatch
@@ -354,3 +474,32 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
+  commentId: P:Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
+  href: Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_HasPreviousFrameMatch
+  name: HasPreviousFrameMatch
+  nameWithType: ITextLine.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge*
+  commentId: Overload:Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  href: Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_PreviousFrameMatchAge
+  name: PreviousFrameMatchAge
+  nameWithType: ITextLine.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Zaya.OCR.Models.ITextLine.PreviousFrameText*
+  commentId: Overload:Zaya.OCR.Models.ITextLine.PreviousFrameText
+  href: Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_PreviousFrameText
+  name: PreviousFrameText
+  nameWithType: ITextLine.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameText

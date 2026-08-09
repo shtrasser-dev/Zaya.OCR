@@ -6,6 +6,13 @@ namespace Zaya.OCR.Models;
 public interface ITextLine
 {
     /// <summary>
+    /// Stable identity for this line across frames.
+    /// When the line matches a previous-frame line, equals that line's <see cref="Id"/>;
+    /// otherwise a newly generated unique value.
+    /// </summary>
+    Guid Id { get; }
+
+    /// <summary>
     /// Gets the concatenated text of all words in this line.
     /// </summary>
     string Text { get; }
@@ -21,8 +28,20 @@ public interface ITextLine
     BoundingBox Bounds { get; }
 
     /// <summary>
-    /// Gets whether this line has a previous-frame match whose text equals
-    /// <see cref="Text"/> ignoring case.
+    /// True when this line was matched to a previous-frame line (geometry / tracking).
     /// </summary>
     bool HasPreviousFrameMatch { get; }
+
+    /// <summary>
+    /// How many frames this line identity has been alive (1 on first appearance;
+    /// increments while <see cref="HasPreviousFrameMatch"/> stays true across frames).
+    /// </summary>
+    int PreviousFrameMatchAge { get; }
+
+    /// <summary>
+    /// Display text of the matched previous-frame line(s), or empty when there is no match.
+    /// Hosts can restore the old text-equality signal with
+    /// <c>HasPreviousFrameMatch &amp;&amp; string.Equals(Text, PreviousFrameText, StringComparison.OrdinalIgnoreCase)</c>.
+    /// </summary>
+    string PreviousFrameText { get; }
 }

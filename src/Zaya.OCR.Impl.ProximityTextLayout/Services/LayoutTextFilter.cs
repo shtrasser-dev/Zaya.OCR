@@ -147,7 +147,14 @@ internal sealed class LayoutTextFilter
             }
             else
             {
-                result.Add(new Models.TextLine(text, line.Words, line.Bounds));
+                result.Add(new Models.TextLine(
+                    text,
+                    line.Words,
+                    line.Bounds,
+                    line.Id,
+                    line.HasPreviousFrameMatch,
+                    line.PreviousFrameMatchAge,
+                    line.PreviousFrameText));
             }
         }
 
@@ -176,7 +183,15 @@ internal sealed class LayoutTextFilter
             }
             else
             {
-                result.Add(new Models.TextParagraph(text, paragraph.Lines));
+                result.Add(new Models.TextParagraph(text, paragraph.Lines)
+                {
+                    Id = paragraph.Id,
+                    HasPreviousFrameMatch = paragraph.HasPreviousFrameMatch,
+                    PreviousFrameMatchAge = paragraph.PreviousFrameMatchAge,
+                    PreviousFrameText = paragraph.PreviousFrameText,
+                    IsGhost = paragraph.IsGhost,
+                    GhostAge = paragraph.GhostAge,
+                });
             }
         }
 

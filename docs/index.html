@@ -75,41 +75,41 @@
 <tbody>
 <tr>
 <td><strong>Zaya.OCR</strong></td>
-<td>1.0.0</td>
+<td>1.2.0</td>
 <td>Abstractions: <code>IOCRService</code>, <code>IOCRSession</code>, <code>ITextLayoutService</code>, result models</td>
 </tr>
 <tr>
 <td><strong>Zaya.OCR.Impl.OneOcr</strong></td>
-<td>1.0.0.3</td>
+<td>1.2.0.0</td>
 <td>Windows OneOCR (<code>oneocr.dll</code> via P/Invoke; no WinRT / App SDK identity)</td>
 </tr>
 <tr>
 <td><strong>Zaya.OCR.Impl.WindowsMediaOcr</strong></td>
-<td>1.0.0.1</td>
+<td>1.2.0.0</td>
 <td>Official <code>Windows.Media.Ocr</code> WinRT API (Windows 10+; typically needs MSIX identity)</td>
 </tr>
 <tr>
 <td><strong>Zaya.OCR.Impl.ProximityTextLayout</strong></td>
-<td>1.0.0.3</td>
+<td>1.2.0.0</td>
 <td>Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters</td>
 </tr>
 </tbody>
 </table>
-<p>Requires <a href="https://github.com/shtrasser-dev/Zaya.Primitives">Zaya.Primitives</a> <strong>1.0.0</strong>. See <a href="versioning.html">versioning</a>.</p>
+<p>Requires <a href="https://github.com/shtrasser-dev/Zaya.Primitives">Zaya.Primitives</a> <strong>1.0.0</strong>. Update channel for plugins: <code>plugin-Zaya.OCR-v1.2-latest</code>. See <a href="versioning.html">versioning</a>.</p>
 <h2 id="features">Features</h2>
 <ul>
 <li><strong>IOCRService</strong> — engine id, localized name/description, <code>Settings</code>, <code>PreferredPixelFormat</code>, <code>CreateSessionAsync</code></li>
 <li><strong>IOCRSession</strong> — <code>RecognizeAsync(IRawImage)</code> → <code>IOCRResult</code> (words + confidence)</li>
-<li><strong>ITextLayoutService</strong> / <strong>ITextLayoutSession</strong> — structure OCR words into paragraphs/lines</li>
+<li><strong>ITextLayoutService</strong> / <strong>ITextLayoutSession</strong> — structure OCR words into paragraphs/lines with stable <code>Id</code>, previous-frame match flags/ages, and ghost metadata</li>
 <li>Failures surface as <code>LocalizedException</code> for host UI</li>
 </ul>
 <p>There is no separate <code>InitializeAsync</code>: create a session with defaults or an explicit settings dictionary.</p>
 <h2 id="installation">Installation</h2>
-<pre><code class="lang-xml">&lt;PackageReference Include=&quot;Zaya.OCR&quot; Version=&quot;1.0.0&quot; /&gt;
-&lt;PackageReference Include=&quot;Zaya.OCR.Impl.OneOcr&quot; Version=&quot;1.0.0.3&quot; /&gt;
+<pre><code class="lang-xml">&lt;PackageReference Include=&quot;Zaya.OCR&quot; Version=&quot;1.2.0&quot; /&gt;
+&lt;PackageReference Include=&quot;Zaya.OCR.Impl.OneOcr&quot; Version=&quot;1.2.0.0&quot; /&gt;
 &lt;!-- optional --&gt;
-&lt;PackageReference Include=&quot;Zaya.OCR.Impl.WindowsMediaOcr&quot; Version=&quot;1.0.0.1&quot; /&gt;
-&lt;PackageReference Include=&quot;Zaya.OCR.Impl.ProximityTextLayout&quot; Version=&quot;1.0.0.3&quot; /&gt;
+&lt;PackageReference Include=&quot;Zaya.OCR.Impl.WindowsMediaOcr&quot; Version=&quot;1.2.0.0&quot; /&gt;
+&lt;PackageReference Include=&quot;Zaya.OCR.Impl.ProximityTextLayout&quot; Version=&quot;1.2.0.0&quot; /&gt;
 </code></pre>
 <h2 id="quick-start">Quick Start</h2>
 <pre><code class="lang-csharp">using System.Drawing;

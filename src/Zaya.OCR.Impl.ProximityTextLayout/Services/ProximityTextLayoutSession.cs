@@ -95,7 +95,14 @@ public sealed class ProximityTextLayoutSession : ITextLayoutSession
                 continue;
             }
 
-            concrete.Add(new TextLine(line.Text, line.Words, line.Bounds));
+            concrete.Add(new TextLine(
+                line.Text,
+                line.Words,
+                line.Bounds,
+                line.Id,
+                line.HasPreviousFrameMatch,
+                line.PreviousFrameMatchAge,
+                line.PreviousFrameText));
         }
 
         frame.MutableLines = concrete;
@@ -116,7 +123,17 @@ public sealed class ProximityTextLayoutSession : ITextLayoutSession
                 continue;
             }
 
-            concrete.Add(new TextParagraph(p.Text, p.Lines.OfType<TextLine>().ToList()));
+            concrete.Add(new TextParagraph(
+                p.Text,
+                p.Lines.OfType<TextLine>().ToList(),
+                p.Text,
+                wasShown: false,
+                id: p.Id,
+                hasPreviousFrameMatch: p.HasPreviousFrameMatch,
+                previousFrameMatchAge: p.PreviousFrameMatchAge,
+                previousFrameText: p.PreviousFrameText,
+                isGhost: p.IsGhost,
+                ghostAge: p.GhostAge));
         }
 
         frame.MutableParagraphs = concrete;

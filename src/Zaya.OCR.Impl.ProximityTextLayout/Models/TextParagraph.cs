@@ -6,6 +6,9 @@ namespace Zaya.OCR.Impl.ProximityTextLayout.Models;
 public sealed class TextParagraph : ITextParagraph
 {
     /// <inheritdoc />
+    public Guid Id { get; set; } = Guid.NewGuid();
+
+    /// <inheritdoc />
     public string Text { get; set; }
 
     /// <inheritdoc />
@@ -22,6 +25,15 @@ public sealed class TextParagraph : ITextParagraph
     /// <summary>Normalized compare key (optional cache).</summary>
     public string? CompareKey { get; set; }
 
+    /// <inheritdoc />
+    public bool HasPreviousFrameMatch { get; set; }
+
+    /// <inheritdoc />
+    public int PreviousFrameMatchAge { get; set; } = 1;
+
+    /// <inheritdoc />
+    public string PreviousFrameText { get; set; } = string.Empty;
+
     /// <summary>True when included in the Stable emit list this frame.</summary>
     public bool IsEmitted { get; set; }
 
@@ -31,10 +43,10 @@ public sealed class TextParagraph : ITextParagraph
     /// </summary>
     public bool WasShown { get; set; }
 
-    /// <summary>True when carried forward as a ghost.</summary>
+    /// <inheritdoc />
     public bool IsGhost { get; set; }
 
-    /// <summary>Consecutive ghost frames (0 = live emit).</summary>
+    /// <inheritdoc />
     public int GhostAge { get; set; }
 
     /// <summary>Creates a paragraph from lines.</summary>
@@ -53,17 +65,45 @@ public sealed class TextParagraph : ITextParagraph
         OriginalText = text;
         var concrete = lines.OfType<TextLine>().ToList();
         if (concrete.Count != lines.Count)
-            concrete = lines.Select(l => l as TextLine ?? new TextLine(l.Text, l.Words, l.Bounds)).ToList();
+        {
+            concrete = lines.Select(l => l as TextLine
+                ?? new TextLine(
+                    l.Text,
+                    l.Words,
+                    l.Bounds,
+                    l.Id,
+                    l.HasPreviousFrameMatch,
+                    l.PreviousFrameMatchAge,
+                    l.PreviousFrameText)).ToList();
+        }
+
         TextLines = concrete;
         Lines = concrete;
     }
 
-    /// <summary>Creates a paragraph copying metadata from an existing one (filters).</summary>
-    public TextParagraph(string text, IReadOnlyList<TextLine> lines, string originalText, bool wasShown)
+    /// <summary>Creates a paragraph copying metadata from an existing one (filters / ghosts).</summary>
+    public TextParagraph(
+        string text,
+        IReadOnlyList<TextLine> lines,
+        string originalText,
+        bool wasShown,
+        Guid? id = null,
+        bool hasPreviousFrameMatch = false,
+        int previousFrameMatchAge = 1,
+        string previousFrameText = "",
+        bool isGhost = false,
+        int ghostAge = 0)
     {
         Text = text;
         OriginalText = originalText;
         WasShown = wasShown;
+        if (id is { } existing)
+            Id = existing;
+        HasPreviousFrameMatch = hasPreviousFrameMatch;
+        PreviousFrameMatchAge = previousFrameMatchAge;
+        PreviousFrameText = previousFrameText;
+        IsGhost = isGhost;
+        GhostAge = ghostAge;
         TextLines = lines;
         Lines = lines;
     }

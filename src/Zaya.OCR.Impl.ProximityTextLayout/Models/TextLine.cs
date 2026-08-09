@@ -8,6 +8,9 @@ public sealed class TextLine : ITextLine
     private readonly List<TextLine> _previousFrameLineList = [];
 
     /// <inheritdoc />
+    public Guid Id { get; set; } = Guid.NewGuid();
+
+    /// <inheritdoc />
     public string Text { get; set; }
 
     /// <inheritdoc />
@@ -17,17 +20,13 @@ public sealed class TextLine : ITextLine
     public BoundingBox Bounds { get; set; }
 
     /// <inheritdoc />
-    public bool HasPreviousFrameMatch
-    {
-        get
-        {
-            if (_previousFrameLineList.Count == 0)
-                return false;
+    public bool HasPreviousFrameMatch { get; set; }
 
-            var previousText = string.Join(" ", _previousFrameLineList.Select(p => p.Text));
-            return string.Equals(Text, previousText, StringComparison.OrdinalIgnoreCase);
-        }
-    }
+    /// <inheritdoc />
+    public int PreviousFrameMatchAge { get; set; } = 1;
+
+    /// <inheritdoc />
+    public string PreviousFrameText { get; set; } = string.Empty;
 
     /// <summary>Normalized compare key (optional cache).</summary>
     public string? CompareKey { get; set; }
@@ -50,6 +49,23 @@ public sealed class TextLine : ITextLine
         Text = text;
         Words = words;
         Bounds = bounds;
+    }
+
+    /// <summary>Creates a line copying identity metadata (filters / ghosts).</summary>
+    public TextLine(
+        string text,
+        IReadOnlyList<IOCRWord> words,
+        BoundingBox bounds,
+        Guid id,
+        bool hasPreviousFrameMatch = false,
+        int previousFrameMatchAge = 1,
+        string previousFrameText = "")
+        : this(text, words, bounds)
+    {
+        Id = id;
+        HasPreviousFrameMatch = hasPreviousFrameMatch;
+        PreviousFrameMatchAge = previousFrameMatchAge;
+        PreviousFrameText = previousFrameText;
     }
 
     /// <summary>Replaces the previous-frame list and sorts left→right along <paramref name="direction"/>.</summary>
