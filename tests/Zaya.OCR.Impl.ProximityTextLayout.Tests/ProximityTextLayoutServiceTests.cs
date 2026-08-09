@@ -31,6 +31,7 @@ public sealed class ProximityTextLayoutServiceTests
         Assert.Contains(settings, s => s.Key == "leftEdgeAlignmentTolerance");
         Assert.Contains(settings, s => s.Key == "firstLineIndentTolerance");
         Assert.Contains(settings, s => s.Key == "enableCenterAlignment");
+        Assert.Contains(settings, s => s.Key == "verticalColumns");
         Assert.Contains(settings, s => s.Key == "fontSizeTolerance");
         Assert.Contains(settings, s => s.Key == "wordFilters");
         Assert.Contains(settings, s => s.Key == "lineFilters");
@@ -44,7 +45,7 @@ public sealed class ProximityTextLayoutServiceTests
         Assert.Contains(settings, s => s.Key == "maxLineProtrusionPercent");
         Assert.Contains(settings, s => s.Key == "paragraphMergeHysteresisPercent");
         Assert.Contains(settings, s => s.Key == "sameLineWordGapHysteresisPercent");
-        Assert.Equal(20, settings.Count);
+        Assert.Equal(21, settings.Count);
     }
 
     [Fact]
@@ -60,6 +61,7 @@ public sealed class ProximityTextLayoutServiceTests
         Assert.Equal(100, ((Zaya.Primitives.IntegerSettingDescriptor)settings["leftEdgeAlignmentTolerance"]).DefaultValue);
         Assert.Equal(300, ((Zaya.Primitives.IntegerSettingDescriptor)settings["firstLineIndentTolerance"]).DefaultValue);
         Assert.False(((Zaya.Primitives.BooleanSettingDescriptor)settings["enableCenterAlignment"]).DefaultValue);
+        Assert.False(((Zaya.Primitives.BooleanSettingDescriptor)settings["verticalColumns"]).DefaultValue);
         Assert.Equal(50, ((Zaya.Primitives.IntegerSettingDescriptor)settings["fontSizeTolerance"]).DefaultValue);
         Assert.True(((Zaya.Primitives.BooleanSettingDescriptor)settings["enableStabilization"]).DefaultValue);
         Assert.False(((Zaya.Primitives.BooleanSettingDescriptor)settings["holdNewBlocks"]).DefaultValue);

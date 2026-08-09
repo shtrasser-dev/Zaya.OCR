@@ -69,14 +69,6 @@ internal sealed class LineAssembler
             lines.Add(line);
         }
 
-        lines.Sort((a, b) =>
-        {
-            var ay = (a.Bounds.MinY + a.Bounds.MaxY) * 0.5f;
-            var by = (b.Bounds.MinY + b.Bounds.MaxY) * 0.5f;
-            var cmp = ay.CompareTo(by);
-            return cmp != 0 ? cmp : a.Bounds.MinX.CompareTo(b.Bounds.MinX);
-        });
-
         return lines;
     }
 

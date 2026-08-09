@@ -19,6 +19,7 @@ internal static class SettingsConstants
     public const string SameLineWordGapHysteresisPercent = "sameLineWordGapHysteresisPercent";
     public const string GhostMaxFrames = "ghostMaxFrames";
     public const string MaxLineProtrusionPercent = "maxLineProtrusionPercent";
+    public const string VerticalColumns = "verticalColumns";
 
     public const string WordFilters = "wordFilters";
     public const string LineFilters = "lineFilters";

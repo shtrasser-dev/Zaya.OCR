@@ -9,10 +9,12 @@ namespace Zaya.OCR.Impl.ProximityTextLayout.Services;
 /// </summary>
 internal sealed class LinePreviousMatcher
 {
+    private readonly ProximityTextLayoutOptions _options;
     private readonly LineRailSnapper _snapper;
 
     public LinePreviousMatcher(ProximityTextLayoutOptions options)
     {
+        _options = options;
         _snapper = new LineRailSnapper(options);
     }
 
@@ -25,11 +27,13 @@ internal sealed class LinePreviousMatcher
         if (previousLines.Count == 0)
             return;
 
-        // Soft claims: current → best previous by word vote.
+        // Soft claims: current → best previous by word vote, then require start or end still anchored.
         var claims = new Dictionary<TextLine, (TextLine Prev, double Score)>();
         foreach (var line in lines)
         {
             if (!TryVotePrevious(line, history, out var prev, out var score))
+                continue;
+            if (!HasAlongEndpointAnchor(line, prev))
                 continue;
             claims[line] = (prev, score);
         }
@@ -162,6 +166,32 @@ internal sealed class LinePreviousMatcher
             point + dir * half + line.Bounds.Normal * half,
             point - dir * half + line.Bounds.Normal * half);
         return history.FindPreviousLineCovering(box);
+    }
+
+    /// <summary>
+    /// True when the previous line's start or end still lines up with the current line's
+    /// corresponding end within <see cref="ProximityTextLayoutOptions.CenterThresholdXFraction"/>
+    /// (same along-tolerance used for previous-line word search).
+    /// Rejects rigid sideways scroll where both ends have drifted.
+    /// </summary>
+    private bool HasAlongEndpointAnchor(TextLine current, TextLine previous)
+    {
+        var dir = previous.Bounds.Direction;
+        var height = Math.Max(1.0, Math.Max(current.Bounds.TextHeight, previous.Bounds.TextHeight));
+        var tol = _options.CenterThresholdXFraction * height;
+
+        var prevStart = Vector2.Dot(previous.Bounds.P5, dir);
+        var prevEnd = Vector2.Dot(previous.Bounds.P6, dir);
+        var currStart = Vector2.Dot(current.Bounds.P5, dir);
+        var currEnd = Vector2.Dot(current.Bounds.P6, dir);
+
+        // Compare leading→trailing along reading direction (not raw P5/P6 order).
+        if (prevStart > prevEnd) (prevStart, prevEnd) = (prevEnd, prevStart);
+        if (currStart > currEnd) (currStart, currEnd) = (currEnd, currStart);
+
+        var startDrift = Math.Abs(currStart - prevStart);
+        var endDrift = Math.Abs(currEnd - prevEnd);
+        return startDrift <= tol || endDrift <= tol;
     }
 
     private static bool CanAbsorbPrevious(TextLine current, List<TextLine> already, TextLine candidate)

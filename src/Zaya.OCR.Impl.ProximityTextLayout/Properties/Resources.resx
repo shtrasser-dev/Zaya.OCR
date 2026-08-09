@@ -60,6 +60,12 @@
   <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
     <value>Also merge lines if their horizontal centers align</value>
   </data>
+  <data name="Layout_VerticalColumns" xml:space="preserve">
+    <value>Vertical Columns (Manga)</value>
+  </data>
+  <data name="Layout_VerticalColumns_Desc" xml:space="preserve">
+    <value>Experimental. Assemble CJK glyphs (and upright punctuation/digits / square numbers) into top-to-bottom columns and read columns right to left. For manga when OCR returns characters with no rotation.</value>
+  </data>
   <data name="Layout_FontSizeTolerance" xml:space="preserve">
     <value>Font Size Tolerance</value>
   </data>
@@ -83,7 +89,7 @@
     <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
+    <value>Along-reading match window (% of line height; 300 = 3×height): how far past previous-line ends a word may still match, and max drift of line start or end vs the previous line (at least one end must stay within this)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
     <value>Previous-line search (across)</value>

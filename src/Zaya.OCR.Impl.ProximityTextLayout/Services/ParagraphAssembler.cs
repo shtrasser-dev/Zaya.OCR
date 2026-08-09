@@ -5,7 +5,7 @@ using Zaya.OCR.Models;
 namespace Zaya.OCR.Impl.ProximityTextLayout.Services;
 
 /// <summary>
-/// Groups snapped lines into paragraphs using overlap geometry and PreviousFrameLineList neighbors.
+/// Groups lines into paragraphs by growing each component both ways along the paragraph normal.
 /// </summary>
 internal sealed class ParagraphAssembler
 {
@@ -25,6 +25,12 @@ internal sealed class ParagraphAssembler
         {
             frame.MutableParagraphs = [];
             return;
+        }
+
+        foreach (var line in lines)
+        {
+            line.PrevLine = null;
+            line.NextLine = null;
         }
 
         // Index prev → current for reverse lookup (detect duplicate claims).
@@ -54,78 +60,57 @@ internal sealed class ParagraphAssembler
             return prevToCurrent.GetValueOrDefault(want);
         }
 
-        var buckets = new List<List<TextLine>>();
-        var assigned = new HashSet<TextLine>();
-
-        foreach (var line in lines)
-        {
-            if (assigned.Contains(line))
-                continue;
-
-            var bucket = new List<TextLine> { line };
-            assigned.Add(line);
-
-            // Grow downward via temporal neighbor then geometry.
-            while (true)
-            {
-                var last = bucket[^1];
-                TextLine? next = null;
-
-                if (last.PreviousFrameLineList.Count > 0)
-                {
-                    var right = last.PreviousFrameLineList[^1];
-                    next = FindCurrentForPrev(right.NextLine);
-                    if (next is not null && assigned.Contains(next))
-                        next = null;
-                    if (next is not null && !CanMergeLines(bucket, next, PreferScale(last, next, preferMerge: true)))
-                        next = null;
-                }
-
-                if (next is null)
-                {
-                    // Nearest unassigned line below that passes geometry (do not skip over a closer line).
-                    next = lines
-                        .Where(c => !assigned.Contains(c))
-                        .Select(c =>
-                        {
-                            var lastCenter = (last.Bounds.P7 + last.Bounds.P8) * 0.5f;
-                            var cCenter = (c.Bounds.P7 + c.Bounds.P8) * 0.5f;
-                            var dist = Vector2.Dot(cCenter - lastCenter, last.Bounds.Normal);
-                            return (Line: c, Dist: dist);
-                        })
-                        .Where(x => x.Dist >= -0.25 * Math.Max(1.0, last.Bounds.TextHeight))
-                        .OrderBy(x => x.Dist)
-                        .Select(x => x.Line)
-                        .FirstOrDefault(c =>
-                            CanMergeLines(bucket, c, GetMergeScale(last, c, FindCurrentForPrev)));
-                }
-
-                if (next is null)
-                    break;
-
-                bucket.Add(next);
-                assigned.Add(next);
-            }
-
-            buckets.Add(bucket);
-        }
-
-        // Attach unassigned (should be none) as singletons.
-        foreach (var line in lines)
-        {
-            if (assigned.Contains(line))
-                continue;
-            buckets.Add([line]);
-        }
-
+        var unassigned = lines.ToHashSet();
         var paragraphs = new List<TextParagraph>();
-        foreach (var bucket in buckets)
+
+        // Seed order follows the input list for stable paragraph emission; growth is bidirectional.
+        foreach (var seed in lines)
         {
-            for (var i = 0; i < bucket.Count; i++)
+            if (!unassigned.Remove(seed))
+                continue;
+
+            var head = seed;
+            var tail = seed;
+
+            var grew = true;
+            while (grew)
             {
-                bucket[i].PrevLine = i > 0 ? bucket[i - 1] : null;
-                bucket[i].NextLine = i + 1 < bucket.Count ? bucket[i + 1] : null;
+                grew = false;
+
+                var above = FindNeighbor(
+                    head,
+                    unassigned,
+                    below: false,
+                    FindCurrentForPrev);
+                if (above is not null)
+                {
+                    unassigned.Remove(above);
+                    above.PrevLine = null;
+                    above.NextLine = head;
+                    head.PrevLine = above;
+                    head = above;
+                    grew = true;
+                }
+
+                var below = FindNeighbor(
+                    tail,
+                    unassigned,
+                    below: true,
+                    FindCurrentForPrev);
+                if (below is not null)
+                {
+                    unassigned.Remove(below);
+                    below.NextLine = null;
+                    below.PrevLine = tail;
+                    tail.NextLine = below;
+                    tail = below;
+                    grew = true;
+                }
             }
+
+            var bucket = new List<TextLine>();
+            for (var n = head; n is not null; n = n.NextLine)
+                bucket.Add(n);
 
             var text = string.Join("\n", bucket.Select(l => l.Text));
             paragraphs.Add(new TextParagraph(text, bucket));
@@ -133,6 +118,62 @@ internal sealed class ParagraphAssembler
 
         AssignParagraphIds(paragraphs, history);
         frame.MutableParagraphs = paragraphs;
+    }
+
+    /// <summary>
+    /// Nearest unassigned neighbor along <paramref name="anchor"/>'s normal
+    /// (below = +Normal, above = −Normal), preferring temporal links when present.
+    /// </summary>
+    private TextLine? FindNeighbor(
+        TextLine anchor,
+        HashSet<TextLine> unassigned,
+        bool below,
+        Func<TextLine?, TextLine?> findCurrentForPrev)
+    {
+        TextLine? temporal = null;
+        if (anchor.PreviousFrameLineList.Count > 0)
+        {
+            var prevAnchor = below
+                ? anchor.PreviousFrameLineList[^1]
+                : anchor.PreviousFrameLineList[0];
+            var want = below ? prevAnchor.NextLine : prevAnchor.PrevLine;
+            temporal = findCurrentForPrev(want);
+            if (temporal is not null && !unassigned.Contains(temporal))
+                temporal = null;
+        }
+
+        if (temporal is not null)
+        {
+            var (upper, lower) = below ? (anchor, temporal) : (temporal, anchor);
+            if (CanMergeOrdered(upper, lower, PreferScale(upper, lower, preferMerge: true)))
+                return temporal;
+        }
+
+        var height = Math.Max(1.0, anchor.Bounds.TextHeight);
+        var normal = anchor.Bounds.Normal;
+        var anchorCenter = (anchor.Bounds.P7 + anchor.Bounds.P8) * 0.5f;
+
+        var candidates = unassigned
+            .Select(c =>
+            {
+                var cCenter = (c.Bounds.P7 + c.Bounds.P8) * 0.5f;
+                var dist = (double)Vector2.Dot(cCenter - anchorCenter, normal);
+                return (Line: c, Dist: dist);
+            });
+
+        IEnumerable<(TextLine Line, double Dist)> ordered = below
+            ? candidates.Where(x => x.Dist >= -0.25 * height).OrderBy(x => x.Dist)
+            : candidates.Where(x => x.Dist <= 0.25 * height).OrderByDescending(x => x.Dist);
+
+        foreach (var (candidate, _) in ordered)
+        {
+            var (upper, lower) = below ? (anchor, candidate) : (candidate, anchor);
+            var scale = GetMergeScale(upper, lower, findCurrentForPrev);
+            if (CanMergeOrdered(upper, lower, scale))
+                return candidate;
+        }
+
+        return null;
     }
 
     /// <summary>
@@ -274,37 +315,35 @@ internal sealed class ParagraphAssembler
         return mapped is not null && ReferenceEquals(mapped, lower);
     }
 
-    private bool CanMergeLines(List<TextLine> bucket, TextLine line, double scale)
+    /// <summary>
+    /// True when <paramref name="lower"/> sits just below <paramref name="upper"/> along the paragraph normal.
+    /// </summary>
+    private bool CanMergeOrdered(TextLine upper, TextLine lower, double scale)
     {
-        var lastLine = bucket[^1];
-        var avgHeight = Math.Max(1.0, (lastLine.Bounds.TextHeight + line.Bounds.TextHeight) / 2.0);
+        var avgHeight = Math.Max(1.0, (upper.Bounds.TextHeight + lower.Bounds.TextHeight) / 2.0);
 
-        if (AngleDeltaDegrees(lastLine.Bounds.AngleDegrees, line.Bounds.AngleDegrees)
+        if (AngleDeltaDegrees(upper.Bounds.AngleDegrees, lower.Bounds.AngleDegrees)
             > _options.AngleToleranceDegrees)
             return false;
 
-        var normal = lastLine.Bounds.Normal;
-        // Center-to-center distance along paragraph normal (NOT empty gap between boxes).
-        // For h=20, boxes y=10..30 and y=40..60 → centers 20 and 50 → spacing=30
-        // (= 1.0×height between baselines≈centers + visual gap 10).
-        var lastCenter = (lastLine.Bounds.P7 + lastLine.Bounds.P8) * 0.5f;
-        var newCenter = (line.Bounds.P7 + line.Bounds.P8) * 0.5f;
-        var spacing = Vector2.Dot(newCenter - lastCenter, normal);
+        var normal = upper.Bounds.Normal;
+        var upperCenter = (upper.Bounds.P7 + upper.Bounds.P8) * 0.5f;
+        var lowerCenter = (lower.Bounds.P7 + lower.Bounds.P8) * 0.5f;
+        var spacing = Vector2.Dot(lowerCenter - upperCenter, normal);
 
         if (spacing < -0.25 * avgHeight)
             return false;
 
-        // LineSpacingThreshold is a multiplier of avg line height for max center-to-center spacing.
         var maxSpacing = _options.LineSpacingThreshold * avgHeight * scale;
         if (spacing > maxSpacing + 0.5)
             return false;
 
-        var heightDiff = Math.Abs(line.Bounds.TextHeight - lastLine.Bounds.TextHeight);
+        var heightDiff = Math.Abs(lower.Bounds.TextHeight - upper.Bounds.TextHeight);
         var maxHeightDiff = _options.FontSizeTolerance * avgHeight * scale;
         if (heightDiff > maxHeightDiff)
             return false;
 
-        return HasAlongOverlap(lastLine, line, scale);
+        return HasAlongOverlap(upper, lower, scale);
     }
 
     private bool HasAlongOverlap(TextLine a, TextLine b, double scale)

@@ -20,4 +20,5 @@ public sealed record ProximityTextLayoutOptions(
     bool HoldNewBlocks = false,
     double MaxLineProtrusionFraction = 0.10,
     int GhostMaxFrames = 3,
-    double SameLineWordGapHysteresis = 6.0);
+    double SameLineWordGapHysteresis = 6.0,
+    bool VerticalColumns = false);

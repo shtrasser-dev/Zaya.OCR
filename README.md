@@ -9,7 +9,7 @@ Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines ex
 | **Zaya.OCR** | 1.2.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
 | **Zaya.OCR.Impl.OneOcr** | 1.2.0.0 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
 | **Zaya.OCR.Impl.WindowsMediaOcr** | 1.2.0.0 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
-| **Zaya.OCR.Impl.ProximityTextLayout** | 1.2.0.0 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 1.2.0.1 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
 
 Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Update channel for plugins: `plugin-Zaya.OCR-v1.2-latest`. See [versioning](docs/versioning.md).
 
@@ -32,7 +32,7 @@ There is no separate `InitializeAsync` / `OcrEngineProvider`: create a session w
 <PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.2.0.0" />
 <!-- optional -->
 <PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.2.0.0" />
-<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.2.0.0" />
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.2.0.1" />
 ```
 
 Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plugin-Zaya.OCR-v1.2-latest`):
@@ -158,6 +158,7 @@ Integer thresholds are percent of word/line height (stored as ints, applied as `
 | `firstLineIndentTolerance` | `300` | Max extra indentation of the first line |
 | `fontSizeTolerance` | `50` | Max allowed height difference between lines to still merge them into one paragraph |
 | `enableCenterAlignment` | `false` | Also merge lines if their centers align along the reading direction |
+| `verticalColumns` | `false` | Experimental manga mode: relabel upright CJK / punctuation / digits / square numbers so reading direction is top-to-bottom (columns assemble downward, right-to-left) |
 | `maxLineProtrusionPercent` | `10` | When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length |
 | `wordFilters` | _(empty table)_ | Word-level filter rules (see Filters below) |
 | `lineFilters` | _(empty table)_ | Line-level filter rules |
@@ -181,7 +182,7 @@ Each of `wordFilters`, `lineFilters`, and `paragraphFilters` is a table of rules
 |-----|---------|--------|
 | `enableStabilization` | `true` | Match lines/paragraphs to the previous frame: snap geometry, smooth text flicker, and keep unmatched previous paragraphs as ghosts |
 | `holdNewBlocks` | `false` | Hold a paragraph until its original text matches the previous frame, or until the previous paragraph was already shown and the normalized text is similar (within `levenshteinThreshold`) |
-| `centerThresholdXPercent` | `300` | How far beyond the previous line ends to still match a word (`300` = 3× line height) |
+| `centerThresholdXPercent` | `300` | Along-reading match window (`300` = 3× line height): how far past previous-line ends a word may still match, and max drift of line start *or* end vs the previous line (at least one end must stay within this) |
 | `centerThresholdYPercent` | `75` | How far off the previous baseline to still match a word (`75` = 0.75× line height) |
 | `levenshteinThreshold` | `8` | Max Levenshtein distance (% of longer compare-key) to treat linked readings as the same; then longer text wins, equal length keeps previous |
 | `ghostMaxFrames` | `3` | How many frames to keep an unmatched previous paragraph visible (`0` = disable ghosts) |

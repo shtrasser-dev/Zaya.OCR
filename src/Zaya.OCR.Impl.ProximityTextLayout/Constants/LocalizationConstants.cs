@@ -40,6 +40,8 @@ internal static class LocalizationConstants
         public const string GhostMaxFrames_Desc = "Layout_GhostMaxFrames_Desc";
         public const string MaxLineProtrusionPercent = "Layout_MaxLineProtrusionPercent";
         public const string MaxLineProtrusionPercent_Desc = "Layout_MaxLineProtrusionPercent_Desc";
+        public const string VerticalColumns = "Layout_VerticalColumns";
+        public const string VerticalColumns_Desc = "Layout_VerticalColumns_Desc";
         public const string WordFilters = "Layout_WordFilters";
         public const string WordFilters_Desc = "Layout_WordFilters_Desc";
         public const string LineFilters = "Layout_LineFilters";

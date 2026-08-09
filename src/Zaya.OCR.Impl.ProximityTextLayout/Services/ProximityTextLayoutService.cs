@@ -103,6 +103,11 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             Description = Loc(LocalizationConstants.Settings.CenterAlignment_Desc),
             DefaultValue = false,
         },
+        new BooleanSettingDescriptor(SettingsConstants.VerticalColumns, Loc(LocalizationConstants.Settings.VerticalColumns))
+        {
+            Description = Loc(LocalizationConstants.Settings.VerticalColumns_Desc),
+            DefaultValue = false,
+        },
         new TableSettingDescriptor(SettingsConstants.WordFilters, Loc(LocalizationConstants.Settings.WordFilters))
         {
             Description = Loc(LocalizationConstants.Settings.WordFilters_Desc),
@@ -251,7 +256,8 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             settingDescriptorList.GetValueAsBool(SettingsConstants.HoldNewBlocks),
             MaxLineProtrusionFraction: settingDescriptorList.GetValueAsInt(SettingsConstants.MaxLineProtrusionPercent) / 100.0,
             GhostMaxFrames: settingDescriptorList.GetValueAsInt(SettingsConstants.GhostMaxFrames),
-            SameLineWordGapHysteresis: settingDescriptorList.GetValueAsInt(SettingsConstants.SameLineWordGapHysteresisPercent) / 100.0);
+            SameLineWordGapHysteresis: settingDescriptorList.GetValueAsInt(SettingsConstants.SameLineWordGapHysteresisPercent) / 100.0,
+            VerticalColumns: settingDescriptorList.GetValueAsBool(SettingsConstants.VerticalColumns));
 
         var wordFilter = LayoutTextFilter.FromTable(settingDescriptorList.GetValueAsTable(SettingsConstants.WordFilters));
         var lineFilter = LayoutTextFilter.FromTable(settingDescriptorList.GetValueAsTable(SettingsConstants.LineFilters));

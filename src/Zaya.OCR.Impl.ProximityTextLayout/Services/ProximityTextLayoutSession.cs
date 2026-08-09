@@ -47,7 +47,10 @@ public sealed class ProximityTextLayoutSession : ITextLayoutSession
         cancellationToken.ThrowIfCancellationRequested();
 
         var filteredWords = _wordFilter.FilterWords(result.Words);
-        var words = filteredWords.Select(w => w as TextWord ?? new TextWord(w)).ToList();
+        var words = filteredWords
+            .Select(w => w as TextWord ?? new TextWord(w))
+            .Select(ApplyVerticalColumnsIfNeeded)
+            .ToList();
         var frame = new TextResult(words);
 
         if (words.Count == 0)
@@ -78,6 +81,14 @@ public sealed class ProximityTextLayoutSession : ITextLayoutSession
         if (_disposed) return;
         _disposed = true;
         _history.Clear();
+    }
+
+    private TextWord ApplyVerticalColumnsIfNeeded(TextWord word)
+    {
+        if (!_options.VerticalColumns || !CjkText.ShouldRelabelForVerticalColumns(word.Text, word.Bounds))
+            return word;
+
+        return new TextWord(word.Text, CjkText.RelabelForVerticalReading(word.Bounds), word.Confidence);
     }
 
     private void ApplyLineFilter(TextResult frame)

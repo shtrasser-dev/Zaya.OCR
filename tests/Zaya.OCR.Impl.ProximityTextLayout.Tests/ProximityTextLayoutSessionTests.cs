@@ -20,6 +20,7 @@ public sealed class ProximityTextLayoutSessionTests
         double paragraphMergeHysteresis = 1.2,
         double sameLineWordGapHysteresis = 6.0,
         int ghostMaxFrames = 3,
+        bool verticalColumns = false,
         LayoutTextFilter? wordFilter = null,
         LayoutTextFilter? lineFilter = null,
         LayoutTextFilter? paragraphFilter = null)
@@ -30,7 +31,8 @@ public sealed class ProximityTextLayoutSessionTests
             ParagraphMergeHysteresis: paragraphMergeHysteresis,
             HoldNewBlocks: holdNewBlocks,
             GhostMaxFrames: ghostMaxFrames,
-            SameLineWordGapHysteresis: sameLineWordGapHysteresis);
+            SameLineWordGapHysteresis: sameLineWordGapHysteresis,
+            VerticalColumns: verticalColumns);
         return new ProximityTextLayoutSession(options, wordFilter, lineFilter, paragraphFilter);
     }
 
@@ -69,6 +71,62 @@ public sealed class ProximityTextLayoutSessionTests
         Assert.Single(result.Paragraphs[0].Lines);
         Assert.Equal("Hello World", result.Paragraphs[0].Lines[0].Text);
         Assert.InRange(Math.Abs(result.Paragraphs[0].Lines[0].Bounds.AngleDegrees), 20, 35);
+    }
+
+    [Fact]
+    public async Task ProcessAsync_VerticalColumns_RelabelsCjkAndMergesColumn()
+    {
+        // Two upright CJK glyphs stacked in one column (OCR angle = 0).
+        using var session = CreateSession(wordGap: 1.5, verticalColumns: true);
+        var result = await session.ProcessAsync(CreateResult(
+            MakeWord("あ", 10, 10, 20, 20),
+            MakeWord("い", 10, 28, 20, 20)
+        ), TestContext.Current.CancellationToken);
+
+        Assert.Single(result.Paragraphs);
+        Assert.Single(result.Paragraphs[0].Lines);
+        Assert.Equal("あ い", result.Paragraphs[0].Text);
+        Assert.InRange(Math.Abs(result.Paragraphs[0].Lines[0].Bounds.AngleDegrees), 80, 100);
+    }
+
+    [Fact]
+    public async Task ProcessAsync_VerticalColumns_RelabelsPunctuationDigitAndSquareNumber()
+    {
+        using var session = CreateSession(wordGap: 2.0, verticalColumns: true);
+        var result = await session.ProcessAsync(CreateResult(
+            MakeWord("?", 10, 10, 18, 18),
+            MakeWord("3", 10, 30, 18, 18),
+            MakeWord("80", 10, 50, 20, 20)
+        ), TestContext.Current.CancellationToken);
+
+        Assert.Single(result.Paragraphs);
+        Assert.Single(result.Paragraphs[0].Lines);
+        Assert.Equal("? 3 80", result.Paragraphs[0].Text);
+        Assert.InRange(Math.Abs(result.Paragraphs[0].Lines[0].Bounds.AngleDegrees), 80, 100);
+    }
+
+    [Fact]
+    public async Task ProcessAsync_VerticalColumns_DoesNotRelabelWideNumber()
+    {
+        using var session = CreateSession(verticalColumns: true);
+        var result = await session.ProcessAsync(CreateResult(
+            MakeWord("80", 10, 10, 40, 16)
+        ), TestContext.Current.CancellationToken);
+
+        Assert.Single(result.Paragraphs);
+        Assert.InRange(Math.Abs(result.Paragraphs[0].Lines[0].Bounds.AngleDegrees), 0, 5);
+    }
+
+    [Fact]
+    public async Task ProcessAsync_VerticalColumns_DoesNotRelabelLatin()
+    {
+        using var session = CreateSession(verticalColumns: true);
+        var result = await session.ProcessAsync(CreateResult(
+            MakeWord("AB", 10, 10, 40, 20)
+        ), TestContext.Current.CancellationToken);
+
+        Assert.Single(result.Paragraphs);
+        Assert.InRange(Math.Abs(result.Paragraphs[0].Lines[0].Bounds.AngleDegrees), 0, 5);
     }
 
     [Fact]
@@ -148,6 +206,28 @@ public sealed class ProximityTextLayoutSessionTests
 
         Assert.Single(result.Paragraphs);
         Assert.Equal(2, result.Paragraphs[0].Lines.Count);
+    }
+
+    [Fact]
+    public async Task ProcessAsync_ThreeLines_LinksPrevNextAlongParagraph()
+    {
+        using var session = CreateSession();
+        var result = await session.ProcessAsync(CreateResult(
+            MakeWord("One", 10, 10, 40, 20),
+            MakeWord("Two", 10, 40, 40, 20),
+            MakeWord("Three", 10, 70, 40, 20)
+        ), TestContext.Current.CancellationToken);
+
+        Assert.Single(result.Paragraphs);
+        var lines = result.Paragraphs[0].Lines.OfType<TextLine>().ToList();
+        Assert.Equal(3, lines.Count);
+        Assert.Null(lines[0].PrevLine);
+        Assert.Same(lines[1], lines[0].NextLine);
+        Assert.Same(lines[0], lines[1].PrevLine);
+        Assert.Same(lines[2], lines[1].NextLine);
+        Assert.Same(lines[1], lines[2].PrevLine);
+        Assert.Null(lines[2].NextLine);
+        Assert.Equal("One\nTwo\nThree", result.Paragraphs[0].Text);
     }
 
     [Fact]
@@ -534,6 +614,26 @@ public sealed class ProximityTextLayoutSessionTests
         Assert.Equal(a.P5.Y, b.P5.Y, precision: 1);
         Assert.Equal(a.P6.X, b.P6.X, precision: 1);
         Assert.Equal(a.P6.Y, b.P6.Y, precision: 1);
+    }
+
+    [Fact]
+    public async Task ProcessAsync_LargeAlongShift_BreaksPreviousLineMatch()
+    {
+        // Default along window = 3×height (60px for h=20). Rigid shift of both ends by 80px must unmatch.
+        using var session = CreateSession(enableStabilization: true);
+        const string text = "Hello World Anchored";
+
+        await session.ProcessAsync(
+            CreateResult(MakeWord(text, 10, 10, 120, 20)), TestContext.Current.CancellationToken);
+
+        var shifted = await session.ProcessAsync(
+            CreateResult(MakeWord(text, 90, 10, 120, 20)), TestContext.Current.CancellationToken);
+
+        Assert.False(shifted.Lines[0].HasPreviousFrameMatch);
+        Assert.Equal(1, shifted.Lines[0].PreviousFrameMatchAge);
+        Assert.Equal(text, shifted.Lines[0].Text);
+        // Geometry follows the new OCR box, not the previous rails.
+        Assert.InRange(shifted.Lines[0].Bounds.P5.X, 85, 95);
     }
 
     [Fact]

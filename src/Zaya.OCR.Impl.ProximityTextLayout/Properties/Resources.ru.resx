@@ -60,6 +60,12 @@
   <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
     <value>Также объединять строки при совпадении центров по горизонтали</value>
   </data>
+  <data name="Layout_VerticalColumns" xml:space="preserve">
+    <value>Вертикальные колонки (манга)</value>
+  </data>
+  <data name="Layout_VerticalColumns_Desc" xml:space="preserve">
+    <value>Экспериментально. Собирать иероглифы (а также одиночные знаки препинания/цифры и почти квадратные числа) в колонки сверху вниз и читать колонки справа налево. Для манги, когда OCR отдаёт символы без поворота.</value>
+  </data>
   <data name="Layout_FontSizeTolerance" xml:space="preserve">
     <value>Допуск размера шрифта</value>
   </data>
@@ -82,7 +88,7 @@
     <value>Поиск прошлой линии (вдоль)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>Насколько далеко за концами прошлой строки ещё считать совпадение (в процентах от высоты строки; 300 означает три высоты)</value>
+    <value>Окно совпадения вдоль чтения (в процентах от высоты строки; 300 = 3 высоты): насколько далеко за концами прошлой строки ещё матчить слово, и насколько могут разъехаться начало или конец строки относительно прошлой (хотя бы один конец должен остаться в допуске)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
     <value>Поиск прошлой линии (поперёк)</value>
