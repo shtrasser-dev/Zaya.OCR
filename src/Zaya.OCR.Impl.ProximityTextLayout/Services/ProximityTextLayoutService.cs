@@ -112,6 +112,34 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             Description = Loc(LocalizationConstants.Settings.ParagraphFilters_Desc),
             Columns = BuildFilterColumns(),
         },
+        new IntegerSettingDescriptor(SettingsConstants.CenterThresholdXPercent, Loc(LocalizationConstants.Settings.CenterThresholdXPercent))
+        {
+            Description = Loc(LocalizationConstants.Settings.CenterThresholdXPercent_Desc),
+            DefaultValue = 300,
+            MinValue = 0,
+            MaxValue = 1000,
+        },
+        new IntegerSettingDescriptor(SettingsConstants.CenterThresholdYPercent, Loc(LocalizationConstants.Settings.CenterThresholdYPercent))
+        {
+            Description = Loc(LocalizationConstants.Settings.CenterThresholdYPercent_Desc),
+            DefaultValue = 75,
+            MinValue = 0,
+            MaxValue = 500,
+        },
+        new IntegerSettingDescriptor(SettingsConstants.ParagraphMergeHysteresisPercent, Loc(LocalizationConstants.Settings.ParagraphMergeHysteresisPercent))
+        {
+            Description = Loc(LocalizationConstants.Settings.ParagraphMergeHysteresisPercent_Desc),
+            DefaultValue = 120,
+            MinValue = 100,
+            MaxValue = 200,
+        },
+        new IntegerSettingDescriptor(SettingsConstants.SameLineWordGapHysteresisPercent, Loc(LocalizationConstants.Settings.SameLineWordGapHysteresisPercent))
+        {
+            Description = Loc(LocalizationConstants.Settings.SameLineWordGapHysteresisPercent_Desc),
+            DefaultValue = 600,
+            MinValue = 100,
+            MaxValue = 2000,
+        },
         new BooleanSettingDescriptor(SettingsConstants.EnableStabilization, Loc(LocalizationConstants.Settings.EnableStabilization))
         {
             Description = Loc(LocalizationConstants.Settings.EnableStabilization_Desc),
@@ -121,22 +149,6 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
         {
             Description = Loc(LocalizationConstants.Settings.HoldNewBlocks_Desc),
             DefaultValue = false,
-            IsVisible = StabVisible,
-        },
-        new IntegerSettingDescriptor(SettingsConstants.CenterThresholdXPercent, Loc(LocalizationConstants.Settings.CenterThresholdXPercent))
-        {
-            Description = Loc(LocalizationConstants.Settings.CenterThresholdXPercent_Desc),
-            DefaultValue = 300,
-            MinValue = 0,
-            MaxValue = 1000,
-            IsVisible = StabVisible,
-        },
-        new IntegerSettingDescriptor(SettingsConstants.CenterThresholdYPercent, Loc(LocalizationConstants.Settings.CenterThresholdYPercent))
-        {
-            Description = Loc(LocalizationConstants.Settings.CenterThresholdYPercent_Desc),
-            DefaultValue = 75,
-            MinValue = 0,
-            MaxValue = 500,
             IsVisible = StabVisible,
         },
         new IntegerSettingDescriptor(SettingsConstants.LevenshteinThreshold, Loc(LocalizationConstants.Settings.LevenshteinThreshold))
@@ -153,22 +165,6 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             DefaultValue = 3,
             MinValue = 0,
             MaxValue = 30,
-            IsVisible = StabVisible,
-        },
-        new IntegerSettingDescriptor(SettingsConstants.ParagraphMergeHysteresisPercent, Loc(LocalizationConstants.Settings.ParagraphMergeHysteresisPercent))
-        {
-            Description = Loc(LocalizationConstants.Settings.ParagraphMergeHysteresisPercent_Desc),
-            DefaultValue = 120,
-            MinValue = 100,
-            MaxValue = 200,
-            IsVisible = StabVisible,
-        },
-        new IntegerSettingDescriptor(SettingsConstants.SameLineWordGapHysteresisPercent, Loc(LocalizationConstants.Settings.SameLineWordGapHysteresisPercent))
-        {
-            Description = Loc(LocalizationConstants.Settings.SameLineWordGapHysteresisPercent_Desc),
-            DefaultValue = 600,
-            MinValue = 100,
-            MaxValue = 2000,
             IsVisible = StabVisible,
         },
     ];

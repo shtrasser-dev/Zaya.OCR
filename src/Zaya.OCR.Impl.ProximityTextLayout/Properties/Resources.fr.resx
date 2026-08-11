@@ -61,7 +61,7 @@
     <value>Différence de hauteur maximale autorisée entre lignes (% de la hauteur moyenne de ligne) pour encore les fusionner en un paragraphe</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>Ancrer la géométrie entre les frames</value>
+    <value>Stabiliser entre les frames</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
     <value>Ancrer les limites des lignes à la frame précédente, lisser le scintillement du texte et conserver les paragraphes non appariés comme ghosts</value>

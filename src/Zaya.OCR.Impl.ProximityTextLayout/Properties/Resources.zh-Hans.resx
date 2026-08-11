@@ -61,7 +61,7 @@
     <value>仍可将行合并为同一段落的最大高度差（占平均行高的百分比）</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>跨帧吸附几何</value>
+    <value>跨帧稳定</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
     <value>将行边界吸附到上一帧、平滑文本闪烁，并将未匹配段落保留为 ghost</value>

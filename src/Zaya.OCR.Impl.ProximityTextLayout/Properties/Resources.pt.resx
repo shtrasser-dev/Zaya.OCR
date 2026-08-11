@@ -61,7 +61,7 @@
     <value>Diferença máxima de altura permitida entre linhas (% da altura média da linha) para ainda mesclá-las em um parágrafo</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>Ancorar geometria entre frames</value>
+    <value>Estabilizar entre frames</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
     <value>Ancorar os limites das linhas ao frame anterior, suavizar o flicker do texto e manter parágrafos sem correspondência como ghosts</value>

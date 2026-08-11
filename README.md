@@ -129,7 +129,7 @@ Requires Windows 10+, OCR language packs, and typically MSIX package identity fo
 
 ## Proximity Text Layout settings (`EngineId`: `proximity-text-layout`)
 
-Merges OCR words into lines/paragraphs by proximity heuristics. Optional **filters** (word / line / paragraph) run before layout finalization. Optional **snap geometry** (`enableStabilization`) snaps line bounds to the previous frame, smooths text flicker, and keeps unmatched paragraphs as ghosts (`IsGhost` / `GhostAge`); it can also hold new paragraphs until their text settles. Hosts can compare `Text` to `PreviousFrameText` when they need the old case-insensitive text-equality signal.
+Merges OCR words into lines/paragraphs by proximity heuristics. Optional **filters** (word / line / paragraph) run before layout finalization. Optional **stabilization** (`enableStabilization`) snaps line bounds to the previous frame, smooths text flicker, and keeps unmatched paragraphs as ghosts (`IsGhost` / `GhostAge`); it can also hold new paragraphs until their text settles. Hosts can compare `Text` to `PreviousFrameText` when they need the old case-insensitive text-equality signal.
 
 ```csharp
 using Zaya.OCR.Impl.ProximityTextLayout.Services;
@@ -186,7 +186,7 @@ Each of `wordFilters`, `lineFilters`, and `paragraphFilters` is a table of rules
 | `paragraphMergeHysteresisPercent` | `120` | Loosen/tighten merge tolerances to prefer the previous frame’s line and paragraph structure (`100` = off, `120` = ×1.2 when preferring merge, ×1/1.2 when preferring split) |
 | `sameLineWordGapHysteresisPercent` | `600` | How far along the baseline to pull words that shared a previous-frame line (`100` = normal gap, `600` = 6×; bridges dropped tokens) |
 
-`holdNewBlocks`, `centerThresholdXPercent`, `centerThresholdYPercent`, `levenshteinThreshold`, `ghostMaxFrames`, `paragraphMergeHysteresisPercent`, and `sameLineWordGapHysteresisPercent` are visible in UI only when `enableStabilization` is `true`.
+`holdNewBlocks`, `levenshteinThreshold`, and `ghostMaxFrames` are visible in UI only when `enableStabilization` is `true`. Tracking settings (`centerThreshold*`, merge/word-gap hysteresis) stay visible because line/paragraph matching always runs.
 
 ## Requirements
 

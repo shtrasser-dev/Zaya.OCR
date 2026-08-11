@@ -61,7 +61,7 @@
     <value>줄을 아직 하나의 단락으로 병합할 수 있는 최대 높이 차이(평균 줄 높이 대비 %)</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>프레임 간 기하 스냅</value>
+    <value>프레임 간 안정화</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
     <value>줄 경계를 이전 프레임에 맞추고, 텍스트 깜빡임을 완화하며, 미매칭 단락을 고스트로 유지</value>
