@@ -22,31 +22,31 @@
     <value>Порог промежутка между словами</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>Максимальный зазор вдоль базовой линии между словами для склейки в строку (в процентах от высоты слова); также используется как допуск привязки концов строки к прошлому кадру</value>
+    <value>Максимальный зазор вдоль базовой линии между словами для склейки в строку, в процентах от высоты слова; также допуск привязки концов строки к прошлому кадру</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>Допуск смещения центров слов</value>
   </data>
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
-    <value>Максимальное смещение центров слов перпендикулярно направлению чтения (в процентах от высоты) для объединения в строку</value>
+    <value>Максимальное смещение центров слов перпендикулярно направлению чтения для объединения в строку, в процентах от высоты слова</value>
   </data>
   <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
     <value>Допуск угла</value>
   </data>
   <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
-    <value>Максимальная разница углов (в градусах) для склейки слов в строку, строк в абзац и сопоставления с прошлой строкой</value>
+    <value>Максимальная разница углов для склейки слов в строку, строк в абзац и сопоставления с прошлой строкой, в градусах</value>
   </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>Порог межстрочного интервала</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>Максимальное расстояние между центрами строк вдоль нормали абзаца (в процентах от средней высоты строк) для склейки в абзац</value>
+    <value>Максимальное расстояние между центрами строк вдоль нормали абзаца для склейки в абзац, в процентах от средней высоты строк</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
     <value>Выступ строки</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
-    <value>Склеивать строки, если хотя бы одна лежит в пределах другой вдоль чтения; максимальный выступ — процент высоты строки (100 ≈ одна буква)</value>
+    <value>Склеивать строки, если хотя бы одна лежит в пределах другой вдоль чтения; максимальный выступ в процентах от высоты строки</value>
   </data>
   <data name="Layout_VerticalColumns" xml:space="preserve">
     <value>Вертикальные колонки (манга)</value>
@@ -58,7 +58,7 @@
     <value>Допуск размера шрифта</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>Максимальная допустимая разница высот строк (в процентах от средней высоты), при которой их ещё можно склеить в один абзац</value>
+    <value>Максимальная допустимая разница высот строк для склейки в один абзац, в процентах от средней высоты строк</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>Стабилизация между кадрами</value>
@@ -76,37 +76,37 @@
     <value>Поиск прошлой линии (вдоль)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>Окно совпадения вдоль чтения (в процентах от высоты строки; 300 = 3 высоты): насколько далеко за концами прошлой строки ещё матчить слово, и насколько могут разъехаться начало или конец строки относительно прошлой (хотя бы один конец должен остаться в допуске)</value>
+    <value>Насколько далеко за концами прошлой строки ещё считать совпадение, в процентах от высоты строки</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
     <value>Поиск прошлой линии (поперёк)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>Насколько далеко от базовой линии прошлой строки ещё считать совпадение (в процентах от высоты строки; 75 означает 0.75 высоты)</value>
+    <value>Насколько далеко от базовой линии прошлой строки ещё считать совпадение, в процентах от высоты строки</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Порог совпадения текста</value>
   </data>
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
-    <value>Максимальное расстояние Левенштейна (в процентах от более длинного ключа сравнения), чтобы считать связанные чтения одним текстом; затем побеждает более длинный текст, при равной длине — предыдущий</value>
+    <value>Максимальное расстояние Левенштейна, чтобы считать связанные чтения одним текстом (затем побеждает более длинный текст, при равной длине — предыдущий), в процентах от более длинного ключа сравнения</value>
   </data>
   <data name="Layout_GhostMaxFrames" xml:space="preserve">
     <value>Максимальное число кадров для ghost</value>
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
-    <value>Сколько кадров держать видимым непарный предыдущий абзац (0 — выключить ghost)</value>
+    <value>Сколько держать видимым непарный предыдущий абзац, в кадрах (0 — выключить ghost)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Гистерезис склейки</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>Ослаблять или ужесточать допуски склейки слов и строк, чтобы ближе к структуре прошлого кадра (100 — выключено, 120 — умножение на 1.2 при предпочтении склейки, деление на 1.2 при предпочтении разделения)</value>
+    <value>Масштаб ослабления или ужесточения допусков склейки, чтобы ближе к структуре прошлого кадра, в процентах от базовых допусков</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
     <value>Гистерезис разрыва слов в строке</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
-    <value>Насколько далеко вдоль базовой линии притягивать слова, бывшие в одной строке прошлого кадра (100 — обычный зазор, 600 — в шесть раз больше; перекрывает пропавшие слова)</value>
+    <value>Насколько далеко вдоль базовой линии притягивать слова, бывшие в одной строке прошлого кадра, в процентах от порога промежутка между словами</value>
   </data>
   <data name="Layout_WordFilters" xml:space="preserve">
     <value>Фильтры слов</value>

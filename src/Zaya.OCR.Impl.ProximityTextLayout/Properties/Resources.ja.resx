@@ -22,31 +22,31 @@
     <value>単語間隔のしきい値</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>行に結合するためのベースライン方向の単語間の最大間隔（単語の高さに対する％）。前フレームに対する行端のスナップ許容としても使用</value>
+    <value>単語を行に結合するためのベースライン方向の最大ギャップ（単語の高さに対するパーセント）。前フレームに対する行端スナップ許容にも使用</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>ベースラインずれの許容</value>
   </data>
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
-    <value>行に結合するための単語中心の最大垂直ずれ（単語の高さに対する %）</value>
+    <value>単語を行に結合するための、読み方向に垂直な単語中心の最大ずれ（単語の高さに対するパーセント）</value>
   </data>
   <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
     <value>Angle Tolerance</value>
   </data>
   <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
-    <value>単語を行に、行を段落に結合し、前フレームの行と対応づけるための最大角度差（度）</value>
+    <value>単語の行結合、行の段落結合、前フレーム行との照合における最大角度差（度）</value>
   </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>行間のしきい値</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>段落の法線方向の行中心間の最大距離（平均行高に対する％）で行を段落に結合</value>
+    <value>行を段落に結合するための、段落法線方向の中心間最大距離（平均行の高さに対するパーセント）</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
     <value>行のはみ出し</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
-    <value>読み方向に沿って少なくとも一方が他方の範囲内にあれば行を結合。最大はみ出しは行高の%（100 ≈ 1文字）</value>
+    <value>読み方向に沿って少なくとも一方が他方の範囲内にあれば行を結合。最大はみ出しは行の高さに対するパーセント</value>
   </data>
   <data name="Layout_VerticalColumns" xml:space="preserve">
     <value>縦組み（マンガ）</value>
@@ -58,7 +58,7 @@
     <value>フォントサイズの許容</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>行をまだ1つの段落に結合できる最大の高さ差（平均行高に対する％）</value>
+    <value>行を1つの段落に結合できる最大の高さ差（平均行の高さに対するパーセント）</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>フレーム間で安定化</value>
@@ -76,37 +76,37 @@
     <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
+    <value>前行の端をどれだけ越えても単語を照合するか、行の高さに対するパーセント</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
     <value>Previous-line search (across)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>How far off the previous baseline to still match a word (% of line height; 75 = 0.75×height)</value>
+    <value>前のベースラインからどれだけ離れていても単語を照合するか、行の高さに対するパーセント</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>テキスト一致のしきい値</value>
   </data>
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
-    <value>段落を同一とみなす最大レーベンシュタイン距離（長い方のテキストに対する %）</value>
+    <value>関連する読みを同一テキストとみなす最大レーベンシュタイン距離（その後は長い方が勝ち、同じ長さなら前を保持）、より長い比較キーに対するパーセント</value>
   </data>
   <data name="Layout_GhostMaxFrames" xml:space="preserve">
     <value>Ghost max frames</value>
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
-    <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
+    <value>未対応の前段落を表示し続ける長さ（フレーム）。0でゴースト無効</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>結合ヒステリシス</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>前フレームの行・段落構造を優先するため結合許容を緩めたり厳しくしたりする（100 = オフ、120 = 結合優先で×1.2、分割優先で×1/1.2）</value>
+    <value>前フレーム構造を優先するために結合許容を緩める／厳しくする倍率、基準許容に対するパーセント</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
     <value>Same-line word gap hysteresis</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
-    <value>How far along the baseline to pull words that shared a previous-frame line (100 = normal gap, 600 = 6×; bridges dropped tokens)</value>
+    <value>前フレームで同じ行だった単語をベースライン方向に引き付ける距離、単語ギャップ閾値に対するパーセント</value>
   </data>
   <data name="Layout_WordFilters" xml:space="preserve">
     <value>Word filters</value>

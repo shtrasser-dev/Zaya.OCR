@@ -22,31 +22,31 @@
     <value>Поріг проміжку між словами</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>Максимальний зазор уздовж базової лінії між словами для склеювання в рядок (у відсотках від висоти слова); також використовується як допуск прив'язки кінців рядка до попереднього кадру</value>
+    <value>Максимальний зазор уздовж базової лінії між словами для склеювання в рядок, у відсотках від висоти слова; також допуск прив'язки кінців рядка до попереднього кадру</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>Допуск зміщення центрів слів</value>
   </data>
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
-    <value>Максимальне вертикальне зміщення центрів слів (% від висоти) для об'єднання в рядок</value>
+    <value>Максимальне зміщення центрів слів перпендикулярно напрямку читання для об'єднання в рядок, у відсотках від висоти слова</value>
   </data>
   <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
     <value>Angle Tolerance</value>
   </data>
   <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
-    <value>Максимальна різниця кутів (у градусах) для склеювання слів у рядок, рядків в абзац і зіставлення з попереднім рядком</value>
+    <value>Максимальна різниця кутів для склеювання слів у рядок, рядків в абзац і зіставлення з попереднім рядком, у градусах</value>
   </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>Поріг міжрядкового інтервалу</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>Максимальна відстань між центрами рядків уздовж нормалі абзацу (у відсотках від середньої висоти рядків) для склеювання в абзац</value>
+    <value>Максимальна відстань між центрами рядків уздовж нормалі абзацу для склеювання в абзац, у відсотках від середньої висоти рядків</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
     <value>Виступ рядка</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
-    <value>Склеювати рядки, якщо хоча б один лежить у межах іншого вздовж читання; максимальний виступ — відсоток висоти рядка (100 ≈ одна літера)</value>
+    <value>Склеювати рядки, якщо хоча б один лежить у межах іншого вздовж читання; максимальний виступ у відсотках від висоти рядка</value>
   </data>
   <data name="Layout_VerticalColumns" xml:space="preserve">
     <value>Вертикальні колонки (манга)</value>
@@ -58,7 +58,7 @@
     <value>Допуск розміру шрифту</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>Максимальна допустима різниця висот рядків (у відсотках від середньої висоти), за якої їх ще можна склеїти в один абзац</value>
+    <value>Максимальна допустима різниця висот рядків для склеювання в один абзац, у відсотках від середньої висоти рядків</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>Стабілізація між кадрами</value>
@@ -76,37 +76,37 @@
     <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
+    <value>Наскільки далеко за кінцями попереднього рядка ще вважати збіг, у відсотках від висоти рядка</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
     <value>Previous-line search (across)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>How far off the previous baseline to still match a word (% of line height; 75 = 0.75×height)</value>
+    <value>Наскільки далеко від базової лінії попереднього рядка ще вважати збіг, у відсотках від висоти рядка</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Поріг збігу тексту</value>
   </data>
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
-    <value>Макс. відстань Левенштейна (% від довшого тексту), щоб вважати абзаци одним</value>
+    <value>Максимальна відстань Левенштейна, щоб вважати пов'язані читання одним текстом (потім перемагає довший текст, за рівної довжини — попередній), у відсотках від довшого ключа порівняння</value>
   </data>
   <data name="Layout_GhostMaxFrames" xml:space="preserve">
     <value>Ghost max frames</value>
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
-    <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
+    <value>Скільки тримати видимим непарний попередній абзац, у кадрах (0 — вимкнути ghost)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Гістерезис склеювання</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>Послаблювати або посилювати допуски склеювання слів і рядків, щоб ближче до структури попереднього кадру (100 — вимкнено, 120 — множення на 1.2 при перевазі склеювання, ділення на 1.2 при перевазі розділення)</value>
+    <value>Масштаб послаблення або посилення допусків склеювання, щоб ближче до структури попереднього кадру, у відсотках від базових допусків</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
     <value>Same-line word gap hysteresis</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
-    <value>How far along the baseline to pull words that shared a previous-frame line (100 = normal gap, 600 = 6×; bridges dropped tokens)</value>
+    <value>Наскільки далеко вздовж базової лінії притягувати слова, що були в одному рядку попереднього кадру, у відсотках від порога проміжку між словами</value>
   </data>
   <data name="Layout_WordFilters" xml:space="preserve">
     <value>Word filters</value>

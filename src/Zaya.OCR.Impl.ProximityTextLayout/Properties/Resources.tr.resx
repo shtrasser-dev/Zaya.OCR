@@ -22,31 +22,31 @@
     <value>Kelime boşluğu eşiği</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>Satırda birleştirmek için kelimeler arasında taban çizgisi boyunca maksimum boşluk (kelime yüksekliğinin yüzdesi); ayrıca önceki kareye göre satır uçları için snap toleransı</value>
+    <value>Sözcükleri satıra birleştirmek için taban çizgisi boyunca maksimum boşluk, sözcük yüksekliğinin yüzdesi olarak; önceki kareye göre satır uçları sabitleme toleransı olarak da kullanılır</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>Taban çizgisi sapma toleransı</value>
   </data>
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
-    <value>Satırda birleştirmek için kelime merkezlerinin maksimum dikey sapması (yüksekliğin %'si)</value>
+    <value>Sözcükleri satıra birleştirmek için okuma yönüne dik sözcük merkezlerinin maksimum sapması, sözcük yüksekliğinin yüzdesi olarak</value>
   </data>
   <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
     <value>Angle Tolerance</value>
   </data>
   <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
-    <value>Kelimeleri satırda, satırları paragrafta birleştirmek ve önceki karenin satırıyla eşleştirmek için maksimum açı farkı (derece)</value>
+    <value>Sözcükleri satıra, satırları paragrafa birleştirme ve önceki kare satırıyla eşleştirme için maksimum açı farkı, derece cinsinden</value>
   </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>Satır aralığı eşiği</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>Satırları paragrafta birleştirmek için paragraf normali boyunca merkezler arası maksimum mesafe (ortalama satır yüksekliğinin yüzdesi)</value>
+    <value>Satırları paragrafa birleştirmek için paragraf normali boyunca merkezler arası maksimum mesafe, ortalama satır yüksekliğinin yüzdesi olarak</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
     <value>Satır taşması</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
-    <value>Okuma yönünde en az biri diğerinin içindeyse satırları birleştir; maksimum taşma satır yüksekliğinin yüzdesi (100 ≈ bir karakter)</value>
+    <value>Okuma yönünde en az biri diğerinin içindeyse satırları birleştir; maksimum taşma satır yüksekliğinin yüzdesi olarak</value>
   </data>
   <data name="Layout_VerticalColumns" xml:space="preserve">
     <value>Dikey sütunlar (manga)</value>
@@ -58,7 +58,7 @@
     <value>Yazı tipi boyutu toleransı</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>Satırları hâlâ tek paragrafta birleştirmek için izin verilen maksimum yükseklik farkı (ortalama satır yüksekliğinin yüzdesi)</value>
+    <value>Satırları tek paragrafta birleştirmek için izin verilen maksimum yükseklik farkı, ortalama satır yüksekliğinin yüzdesi olarak</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>Kareler arasında sabitle</value>
@@ -76,37 +76,37 @@
     <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
+    <value>Önceki satır uçlarından ne kadar ötede sözcük hâlâ eşleşsin, satır yüksekliğinin yüzdesi olarak</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
     <value>Previous-line search (across)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>How far off the previous baseline to still match a word (% of line height; 75 = 0.75×height)</value>
+    <value>Önceki taban çizgisinden ne kadar uzakta sözcük hâlâ eşleşsin, satır yüksekliğinin yüzdesi olarak</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Metin eşleşme eşiği</value>
   </data>
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
-    <value>Paragrafları aynı saymak için maksimum Levenshtein mesafesi (daha uzun metnin %'si)</value>
+    <value>Bağlı okumaları aynı metin saymak için maksimum Levenshtein mesafesi (sonra daha uzun metin kazanır, eşit uzunlukta önceki kalır), daha uzun karşılaştırma anahtarının yüzdesi olarak</value>
   </data>
   <data name="Layout_GhostMaxFrames" xml:space="preserve">
     <value>Ghost max frames</value>
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
-    <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
+    <value>Eşleşmeyen önceki paragrafın ne kadar süre görünür kalacağı, kare cinsinden (0 ghost'ları kapatır)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Birleştirme histerezisi</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>Önceki karenin satır ve paragraf yapısını tercih etmek için birleştirme toleranslarını gevşet veya sıkılaştır (100 = kapalı, 120 = birleştirmeyi tercih ederken ×1.2, ayırmayı tercih ederken ×1/1.2)</value>
+    <value>Önceki kare yapısını tercih etmek için birleştirme toleranslarını gevşeten veya sıkılaştıran ölçek faktörü, temel toleransların yüzdesi olarak</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
     <value>Same-line word gap hysteresis</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
-    <value>How far along the baseline to pull words that shared a previous-frame line (100 = normal gap, 600 = 6×; bridges dropped tokens)</value>
+    <value>Önceki karede aynı satırda olan sözcükleri taban çizgisi boyunca ne kadar çekeceği, sözcük boşluğu eşiğinin yüzdesi olarak</value>
   </data>
   <data name="Layout_WordFilters" xml:space="preserve">
     <value>Word filters</value>

@@ -22,31 +22,31 @@
     <value>단어 간격 임계값</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>한 줄로 병합하기 위한 베이스라인 방향 단어 간 최대 간격(단어 높이 대비 %); 이전 프레임 대비 줄 끝 스냅 허용에도 사용</value>
+    <value>단어를 한 줄로 합치기 위한 기준선 방향 최대 간격(단어 높이 대비 퍼센트). 이전 프레임 대비 줄 끝 스냅 허용에도 사용</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>기준선 드리프트 허용치</value>
   </data>
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
-    <value>한 줄로 병합하기 위한 단어 중심의 최대 수직 드리프트(단어 높이 대비 %)</value>
+    <value>단어를 한 줄로 합치기 위한, 읽기 방향에 수직인 단어 중심의 최대 편차(단어 높이 대비 퍼센트)</value>
   </data>
   <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
     <value>Angle Tolerance</value>
   </data>
   <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
-    <value>단어를 줄로, 줄을 단락으로 병합하고 이전 프레임 줄과 맞추기 위한 최대 각도 차이(도)</value>
+    <value>단어를 줄로, 줄을 단락으로 합치고 이전 프레임 줄과 맞출 때의 최대 각도 차이(도)</value>
   </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>줄 간격 임계값</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>단락 법선 방향 줄 중심 간 최대 거리(평균 줄 높이 대비 %)로 줄을 단락에 병합</value>
+    <value>줄을 단락으로 합치기 위한 단락 법선 방향 중심 간 최대 거리(평균 줄 높이 대비 퍼센트)</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
     <value>줄 돌출</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
-    <value>읽기 방향으로 적어도 한 줄이 다른 줄 안에 있으면 병합. 최대 돌출은 줄 높이의 %(100 ≈ 한 글자)</value>
+    <value>읽기 방향으로 적어도 한 줄이 다른 줄 안에 있으면 병합. 최대 돌출은 줄 높이 대비 퍼센트</value>
   </data>
   <data name="Layout_VerticalColumns" xml:space="preserve">
     <value>세로 칸 (만화)</value>
@@ -58,7 +58,7 @@
     <value>글꼴 크기 허용치</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>줄을 아직 하나의 단락으로 병합할 수 있는 최대 높이 차이(평균 줄 높이 대비 %)</value>
+    <value>줄을 한 단락으로 합칠 수 있는 최대 높이 차이(평균 줄 높이 대비 퍼센트)</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>프레임 간 안정화</value>
@@ -76,37 +76,37 @@
     <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
+    <value>이전 줄 끝을 얼마나 지나도 단어를 매칭할지, 줄 높이 대비 퍼센트</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
     <value>Previous-line search (across)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>How far off the previous baseline to still match a word (% of line height; 75 = 0.75×height)</value>
+    <value>이전 기준선에서 얼마나 벗어나도 단어를 매칭할지, 줄 높이 대비 퍼센트</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>텍스트 일치 임계값</value>
   </data>
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
-    <value>단락을 동일한 것으로 볼 최대 레벤슈타인 거리(더 긴 텍스트 대비 %)</value>
+    <value>연결된 판독을 같은 텍스트로 볼 최대 레벤슈타인 거리(이후 더 긴 텍스트 우선, 길이 같으면 이전 유지), 더 긴 비교 키 대비 퍼센트</value>
   </data>
   <data name="Layout_GhostMaxFrames" xml:space="preserve">
     <value>Ghost max frames</value>
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
-    <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
+    <value>미매칭 이전 단락을 유지할 시간(프레임). 0이면 고스트 비활성</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>병합 히스테리시스</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>이전 프레임의 줄·단락 구조를 선호하도록 병합 허용을 완화하거나 강화(100 = 끔, 120 = 병합 선호 시 ×1.2, 분할 선호 시 ×1/1.2)</value>
+    <value>이전 프레임 구조를 선호하도록 병합 허용을 완화/강화하는 배율, 기본 허용 대비 퍼센트</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
     <value>Same-line word gap hysteresis</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
-    <value>How far along the baseline to pull words that shared a previous-frame line (100 = normal gap, 600 = 6×; bridges dropped tokens)</value>
+    <value>이전 프레임에서 같은 줄이었던 단어를 기준선 방향으로 끌어당기는 거리, 단어 간격 임계값 대비 퍼센트</value>
   </data>
   <data name="Layout_WordFilters" xml:space="preserve">
     <value>Word filters</value>

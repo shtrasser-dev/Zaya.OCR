@@ -22,31 +22,31 @@
     <value>词间距阈值</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>沿基线合并为同一行的单词间最大间距（占单词高度的百分比）；也用作相对上一帧行端的吸附容差</value>
+    <value>沿基线将词合并为行的最大间距，以字高百分比计；也用作相对上一帧行端吸附容差</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>基线偏移容差</value>
   </data>
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
-    <value>合并为一行时单词中心的最大垂直偏移（占单词高度的百分比）</value>
+    <value>垂直于阅读方向的词中心最大偏移（合并为行），以字高百分比计</value>
   </data>
   <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
     <value>Angle Tolerance</value>
   </data>
   <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
-    <value>将单词合并为行、将行合并为段落以及匹配上一帧行时允许的最大角度差（度）</value>
+    <value>将词合并为行、行合并为段，以及与上一帧行匹配时的最大角度差，以度为单位</value>
   </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>行距阈值</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>沿段落法线方向行中心之间的最大距离（占平均行高的百分比），用于将行合并为段落</value>
+    <value>沿段落法线将行合并为段的最大中心距，以平均行高百分比计</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
     <value>行伸出量</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
-    <value>若至少一行在阅读方向上位于另一行范围内则合并；最大伸出量为行高的百分比（100 ≈ 一个字符）</value>
+    <value>若至少一行在阅读方向上位于另一行范围内则合并；最大伸出量以行高百分比计</value>
   </data>
   <data name="Layout_VerticalColumns" xml:space="preserve">
     <value>竖排分栏（漫画）</value>
@@ -58,7 +58,7 @@
     <value>字号容差</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>仍可将行合并为同一段落的最大高度差（占平均行高的百分比）</value>
+    <value>仍可将行合并为同一段的最大高度差，以平均行高百分比计</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>跨帧稳定</value>
@@ -76,37 +76,37 @@
     <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
+    <value>可超出上一行端点多远仍匹配词，以行高百分比计</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
     <value>Previous-line search (across)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>How far off the previous baseline to still match a word (% of line height; 75 = 0.75×height)</value>
+    <value>相对上一基线多远仍匹配词，以行高百分比计</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>文本匹配阈值</value>
   </data>
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
-    <value>将段落视为相同的最大编辑距离（占较长文本的百分比）</value>
+    <value>将关联读数视为同一文本的最大编辑距离（随后取更长文本，等长则保留上一帧），以较长比较键百分比计</value>
   </data>
   <data name="Layout_GhostMaxFrames" xml:space="preserve">
     <value>Ghost max frames</value>
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
-    <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
+    <value>未匹配上一帧段落保留可见的时长，以帧计（0 关闭 ghost）</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>合并迟滞</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>放宽或收紧合并容差以偏向上一帧的行与段落结构（100 = 关闭，120 = 偏向合并时 ×1.2，偏向拆分时 ×1/1.2）</value>
+    <value>放宽或收紧合并容差以贴近上一帧结构的比例系数，以基础容差百分比计</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
     <value>Same-line word gap hysteresis</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
-    <value>How far along the baseline to pull words that shared a previous-frame line (100 = normal gap, 600 = 6×; bridges dropped tokens)</value>
+    <value>沿基线拉动上一帧同属一行的词的距离，以词间距阈值百分比计</value>
   </data>
   <data name="Layout_WordFilters" xml:space="preserve">
     <value>Word filters</value>

@@ -9,7 +9,7 @@ Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines ex
 | **Zaya.OCR** | 1.2.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
 | **Zaya.OCR.Impl.OneOcr** | 1.2.0.0 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
 | **Zaya.OCR.Impl.WindowsMediaOcr** | 1.2.0.0 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
-| **Zaya.OCR.Impl.ProximityTextLayout** | 1.2.0.2 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 1.2.0.3 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
 
 Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Update channel for plugins: `plugin-Zaya.OCR-v1.2-latest`. See [versioning](docs/versioning.md) and [CHANGELOG](CHANGELOG.md).
 
@@ -32,7 +32,7 @@ There is no separate `InitializeAsync` / `OcrEngineProvider`: create a session w
 <PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.2.0.0" />
 <!-- optional -->
 <PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.2.0.0" />
-<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.2.0.2" />
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.2.0.3" />
 ```
 
 Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plugin-Zaya.OCR-v1.2-latest`):
@@ -146,16 +146,16 @@ var structured = await layoutSession.ProcessAsync(ocrResult);
 
 ### Layout heuristics
 
-Integer thresholds are percent of word/line height (stored as ints, applied as `/100` at runtime), except `angleToleranceDegrees` and `levenshteinThreshold` / `ghostMaxFrames` which are absolute.
+Integer thresholds are stored as ints and applied as `/100` at runtime when they are percentages. Units are stated in each setting description.
 
 | Key | Default | Notes |
 |-----|---------|--------|
-| `wordGapThreshold` | `50` | Max gap along the baseline between words to merge into a line; also snap tolerance for line ends vs the previous frame |
-| `baselineDriftTolerance` | `50` | Max drift of word centers perpendicular to reading direction to merge into a line |
-| `angleToleranceDegrees` | `10` | Max angle difference for merging words into a line, lines into a paragraph, and matching a previous-frame line |
-| `lineSpacingThreshold` | `150` | Max center-to-center distance along the paragraph normal to merge lines into a paragraph |
-| `lineOverhangTolerancePercent` | `100` | Merge lines if at least one stays within the other along reading; max overhang as % of line height (`100` ≈ one character) |
-| `fontSizeTolerance` | `50` | Max allowed height difference between lines to still merge them into one paragraph |
+| `wordGapThreshold` | `50` | Max gap along the baseline between words to merge into a line, in percent of word height; also snap tolerance for line ends vs the previous frame |
+| `baselineDriftTolerance` | `50` | Max drift of word centers perpendicular to reading direction to merge into a line, in percent of word height |
+| `angleToleranceDegrees` | `10` | Max angle difference for merging words into a line, lines into a paragraph, and matching a previous-frame line, in degrees |
+| `lineSpacingThreshold` | `150` | Max center-to-center distance along the paragraph normal to merge lines into a paragraph, in percent of average line height |
+| `lineOverhangTolerancePercent` | `100` | Merge lines if at least one stays within the other along reading; max overhang in percent of line height |
+| `fontSizeTolerance` | `50` | Max height difference between lines to still merge into one paragraph, in percent of average line height |
 | `verticalColumns` | `false` | Experimental manga mode: relabel upright CJK / punctuation / digits / square numbers so reading direction is top-to-bottom (columns assemble downward, right-to-left) |
 | `wordFilters` | _(empty table)_ | Word-level filter rules (see Filters below) |
 | `lineFilters` | _(empty table)_ | Line-level filter rules |
@@ -179,12 +179,12 @@ Each of `wordFilters`, `lineFilters`, and `paragraphFilters` is a table of rules
 |-----|---------|--------|
 | `enableStabilization` | `true` | Snap line bounds to the previous frame, smooth text flicker, and keep unmatched paragraphs as ghosts |
 | `holdNewBlocks` | `false` | Hold a paragraph until its original text matches the previous frame, or until the previous paragraph was already shown and the normalized text is similar (within `levenshteinThreshold`) |
-| `centerThresholdXPercent` | `300` | Along-reading match window (`300` = 3× line height): how far past previous-line ends a word may still match, and max drift of line start *or* end vs the previous line (at least one end must stay within this) |
-| `centerThresholdYPercent` | `75` | How far off the previous baseline to still match a word (`75` = 0.75× line height) |
-| `levenshteinThreshold` | `8` | Max Levenshtein distance (% of longer compare-key) to treat linked readings as the same; then longer text wins, equal length keeps previous |
-| `ghostMaxFrames` | `3` | How many frames to keep an unmatched previous paragraph visible (`0` = disable ghosts) |
-| `paragraphMergeHysteresisPercent` | `120` | Loosen/tighten merge tolerances to prefer the previous frame’s line and paragraph structure (`100` = off, `120` = ×1.2 when preferring merge, ×1/1.2 when preferring split) |
-| `sameLineWordGapHysteresisPercent` | `600` | How far along the baseline to pull words that shared a previous-frame line (`100` = normal gap, `600` = 6×; bridges dropped tokens) |
+| `centerThresholdXPercent` | `300` | How far past the previous line ends to still match a word, in percent of line height |
+| `centerThresholdYPercent` | `75` | How far off the previous baseline to still match a word, in percent of line height |
+| `levenshteinThreshold` | `8` | Max Levenshtein distance to treat linked readings as the same (then longer text wins, equal length keeps previous), in percent of the longer compare-key |
+| `ghostMaxFrames` | `3` | How long to keep an unmatched previous paragraph visible, in frames (`0` disables ghosts) |
+| `paragraphMergeHysteresisPercent` | `120` | Scale factor that loosens or tightens merge tolerances to prefer the previous frame structure, in percent of the base tolerances |
+| `sameLineWordGapHysteresisPercent` | `600` | How far along the baseline to pull words that shared a previous-frame line, in percent of the word gap threshold |
 
 `holdNewBlocks`, `levenshteinThreshold`, and `ghostMaxFrames` are visible in UI only when `enableStabilization` is `true`. Tracking settings (`centerThreshold*`, merge/word-gap hysteresis) stay visible because line/paragraph matching always runs.
 

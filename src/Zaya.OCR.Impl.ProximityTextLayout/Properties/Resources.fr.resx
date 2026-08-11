@@ -22,31 +22,31 @@
     <value>Seuil d'écart entre mots</value>
   </data>
   <data name="Layout_WordGapThreshold_Desc" xml:space="preserve">
-    <value>Écart maximal le long de la ligne de base entre les mots pour fusionner en une ligne (% de la hauteur du mot) ; aussi tolérance de snap des extrémités de ligne par rapport à la frame précédente</value>
+    <value>Écart maximal le long de la ligne de base entre les mots pour fusionner en une ligne, en pourcentage de la hauteur du mot ; aussi tolérance de snap des extrémités de ligne par rapport à la frame précédente</value>
   </data>
   <data name="Layout_BaselineDriftTolerance" xml:space="preserve">
     <value>Tolérance de dérive de ligne de base</value>
   </data>
   <data name="Layout_BaselineDriftTolerance_Desc" xml:space="preserve">
-    <value>Dérive verticale maximale des centres de mots (% de la hauteur) pour fusionner en une ligne</value>
+    <value>Dérive maximale des centres de mots perpendiculairement au sens de lecture pour fusionner en une ligne, en pourcentage de la hauteur du mot</value>
   </data>
   <data name="Layout_AngleToleranceDegrees" xml:space="preserve">
     <value>Angle Tolerance</value>
   </data>
   <data name="Layout_AngleToleranceDegrees_Desc" xml:space="preserve">
-    <value>Différence d'angle maximale (degrés) pour fusionner des mots en une ligne, des lignes en un paragraphe, et pour correspondre à une ligne de la frame précédente</value>
+    <value>Différence d'angle maximale pour fusionner des mots en une ligne, des lignes en un paragraphe, et pour correspondre à une ligne de la frame précédente, en degrés</value>
   </data>
   <data name="Layout_LineSpacingThreshold" xml:space="preserve">
     <value>Seuil d'interligne</value>
   </data>
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
-    <value>Distance maximale centre à centre le long de la normale du paragraphe (% de la hauteur moyenne de ligne) pour fusionner des lignes en un paragraphe</value>
+    <value>Distance maximale centre à centre le long de la normale du paragraphe pour fusionner des lignes en un paragraphe, en pourcentage de la hauteur moyenne de ligne</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
     <value>Débordement de ligne</value>
   </data>
   <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
-    <value>Fusionner les lignes si au moins une reste dans l'autre dans le sens de lecture ; débordement maximal en % de la hauteur de ligne (100 ≈ un caractère)</value>
+    <value>Fusionner les lignes si au moins une reste dans l'autre dans le sens de lecture ; débordement maximal en pourcentage de la hauteur de ligne</value>
   </data>
   <data name="Layout_VerticalColumns" xml:space="preserve">
     <value>Colonnes verticales (manga)</value>
@@ -58,7 +58,7 @@
     <value>Tolérance de taille de police</value>
   </data>
   <data name="Layout_FontSizeTolerance_Desc" xml:space="preserve">
-    <value>Différence de hauteur maximale autorisée entre lignes (% de la hauteur moyenne de ligne) pour encore les fusionner en un paragraphe</value>
+    <value>Différence de hauteur maximale autorisée entre lignes pour encore les fusionner en un paragraphe, en pourcentage de la hauteur moyenne de ligne</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
     <value>Stabiliser entre les frames</value>
@@ -76,37 +76,37 @@
     <value>Previous-line search (along)</value>
   </data>
   <data name="Layout_CenterThresholdXPercent_Desc" xml:space="preserve">
-    <value>How far beyond the previous line ends to still match a word (% of line height; 300 = 3×height)</value>
+    <value>Jusqu'où au-delà des extrémités de la ligne précédente un mot peut encore correspondre, en pourcentage de la hauteur de ligne</value>
   </data>
   <data name="Layout_CenterThresholdYPercent" xml:space="preserve">
     <value>Previous-line search (across)</value>
   </data>
   <data name="Layout_CenterThresholdYPercent_Desc" xml:space="preserve">
-    <value>How far off the previous baseline to still match a word (% of line height; 75 = 0.75×height)</value>
+    <value>Écart maximal par rapport à la ligne de base précédente pour encore faire correspondre un mot, en pourcentage de la hauteur de ligne</value>
   </data>
   <data name="Layout_LevenshteinThreshold" xml:space="preserve">
     <value>Seuil de correspondance du texte</value>
   </data>
   <data name="Layout_LevenshteinThreshold_Desc" xml:space="preserve">
-    <value>Distance de Levenshtein max (% du texte le plus long) pour traiter les paragraphes comme identiques</value>
+    <value>Distance de Levenshtein maximale pour traiter des lectures liées comme le même texte (ensuite le texte plus long gagne, à longueur égale on garde le précédent), en pourcentage de la clé de comparaison la plus longue</value>
   </data>
   <data name="Layout_GhostMaxFrames" xml:space="preserve">
     <value>Ghost max frames</value>
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
-    <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
+    <value>Durée de conservation d'un paragraphe précédent non apparié, en frames (0 désactive les ghosts)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Hystérésis de fusion</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent_Desc" xml:space="preserve">
-    <value>Assouplir ou resserrer les tolérances de fusion pour préférer la structure lignes/paragraphes de la frame précédente (100 = off, 120 = ×1.2 en faveur de la fusion, ×1/1.2 en faveur de la séparation)</value>
+    <value>Facteur d'échelle qui assouplit ou resserre les tolérances de fusion pour préférer la structure de la frame précédente, en pourcentage des tolérances de base</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent" xml:space="preserve">
     <value>Same-line word gap hysteresis</value>
   </data>
   <data name="Layout_SameLineWordGapHysteresisPercent_Desc" xml:space="preserve">
-    <value>How far along the baseline to pull words that shared a previous-frame line (100 = normal gap, 600 = 6×; bridges dropped tokens)</value>
+    <value>Distance le long de la ligne de base pour attirer les mots qui partageaient une ligne de la frame précédente, en pourcentage du seuil d'écart entre mots</value>
   </data>
   <data name="Layout_WordFilters" xml:space="preserve">
     <value>Word filters</value>

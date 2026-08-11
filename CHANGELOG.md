@@ -16,3 +16,5 @@ History starts at the current release line; older releases are not backfilled.
 ## [Unreleased]
 
 ### Changed
+
+- **ProximityTextLayout `1.2.0.3`:** unify setting description units (percent / degrees / frames) and shorten previous-line search (along) copy.
