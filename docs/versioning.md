@@ -30,8 +30,18 @@ Rules:
 
 Release body lists per-asset plugin versions (`Zaya.OCR.Impl.OneOcr.zip=1.2.0.0`).
 
+## Changelog
+
+Use root [`CHANGELOG.md`](../CHANGELOG.md) ([Keep a Changelog](https://keepachangelog.com/)):
+
+1. While working, append notes under `## [Unreleased]`.
+2. Run the Publish workflow — GitHub Release body is taken from `[Unreleased]` (plus release metadata). There is no changelog input on the action.
+3. After a successful publish, move that block to a dated section, e.g. `## [1.2.0.2] - 2026-08-11`, and leave `[Unreleased]` empty for the next cycle.
+
+Do not backfill older releases; history starts from the current line.
+
 ## Bumping
 
 1. Interface: raise `ZayaVersionInterface` in `Zaya.OCR.csproj`, update host, republish plugins.
 2. Single engine: raise `ZayaVersionImpMajor` / `ZayaVersionImpMinor` only in that Impl’s `.csproj`.
-3. Run `build.cmd` / Publish workflow.
+3. Update `CHANGELOG.md` `[Unreleased]`, then run `build.cmd` / Publish workflow.

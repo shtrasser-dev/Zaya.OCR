@@ -42,23 +42,17 @@
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
     <value>Maksymalna odległość środek–środek wzdłuż normalnej akapitu (% średniej wysokości wiersza) do łączenia wierszy w akapit</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
-    <value>Wyrównanie lewej krawędzi</value>
+  <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
+    <value>Wystawanie wiersza</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>Maksymalne poziome przesunięcie lewych krawędzi (% wysokości) do połączenia w akapit</value>
+  <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
+    <value>Scalaj wiersze, jeśli przynajmniej jeden mieści się w drugim wzdłuż kierunku czytania; maksymalny wystający fragment — % wysokości wiersza (100 ≈ jedna litera)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
-    <value>Wcięcie pierwszego wiersza</value>
+  <data name="Layout_VerticalColumns" xml:space="preserve">
+    <value>Kolumny pionowe (manga)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>Maksymalne dodatkowe wcięcie pierwszego wiersza (% wysokości)</value>
-  </data>
-  <data name="Layout_CenterAlignment" xml:space="preserve">
-    <value>Wyrównanie do środka</value>
-  </data>
-  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
-    <value>Łącz także wiersze, gdy ich środki poziome się pokrywają</value>
+  <data name="Layout_VerticalColumns_Desc" xml:space="preserve">
+    <value>Eksperymentalne. Składaj glify CJK (oraz pionową interpunkcję/cyfry / kwadratowe liczby) w kolumny z góry na dół i czytaj kolumny od prawej do lewej. Do mangi, gdy OCR zwraca znaki bez obrotu.</value>
   </data>
   <data name="Layout_FontSizeTolerance" xml:space="preserve">
     <value>Tolerancja rozmiaru czcionki</value>
@@ -67,10 +61,10 @@
     <value>Maksymalna dopuszczalna różnica wysokości wierszy (% średniej wysokości), przy której nadal można je połączyć w jeden akapit</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>Stabilizacja między klatkami</value>
+    <value>Przyciąganie geometrii między klatkami</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Dopasowuj wiersze i akapity do poprzedniej klatki: przyciąganie geometrii, wygładzanie migotania tekstu oraz utrzymywanie niedopasowanych poprzednich akapitów jako ghost</value>
+    <value>Przyciągaj granice wierszy do poprzedniej klatki, wygładzaj migotanie tekstu i trzymaj niedopasowane akapity jako ghost</value>
   </data>
   <data name="Layout_HoldNewBlocks" xml:space="preserve">
     <value>Hold new blocks</value>
@@ -101,12 +95,6 @@
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
     <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
-    <value>Line overlap protrusion</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
-    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Histereza łączenia</value>

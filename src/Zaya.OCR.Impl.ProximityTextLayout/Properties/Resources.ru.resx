@@ -42,23 +42,11 @@
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
     <value>Максимальное расстояние между центрами строк вдоль нормали абзаца (в процентах от средней высоты строк) для склейки в абзац</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
-    <value>Допуск выравнивания по левому краю</value>
+  <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
+    <value>Выступ строки</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>Максимальное смещение левых границ (в процентах от высоты) для объединения в абзац</value>
-  </data>
-  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
-    <value>Отступ первой строки</value>
-  </data>
-  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>Максимальный дополнительный отступ первой строки (в процентах от высоты)</value>
-  </data>
-  <data name="Layout_CenterAlignment" xml:space="preserve">
-    <value>Выравнивание по центру</value>
-  </data>
-  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
-    <value>Также объединять строки при совпадении центров по горизонтали</value>
+  <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
+    <value>Склеивать строки, если хотя бы одна лежит в пределах другой вдоль чтения; максимальный выступ — процент высоты строки (100 ≈ одна буква)</value>
   </data>
   <data name="Layout_VerticalColumns" xml:space="preserve">
     <value>Вертикальные колонки (манга)</value>
@@ -73,10 +61,10 @@
     <value>Максимальная допустимая разница высот строк (в процентах от средней высоты), при которой их ещё можно склеить в один абзац</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>Стабилизация между кадрами</value>
+    <value>Привязка геометрии между кадрами</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Сопоставлять строки и абзацы с прошлым кадром: привязка геометрии, сглаживание мерцания текста и удержание непарных прошлых абзацев (ghost)</value>
+    <value>Привязывать границы строк к прошлому кадру, сглаживать мерцание текста и держать непарные абзацы как ghost</value>
   </data>
   <data name="Layout_HoldNewBlocks" xml:space="preserve">
     <value>Не показывать блок до стабилизации</value>
@@ -107,12 +95,6 @@
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
     <value>Сколько кадров держать видимым непарный предыдущий абзац (0 — выключить ghost)</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
-    <value>Выступ строк при склейке</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
-    <value>При склейке строк в абзац: каждая строка может выступать за зону перекрытия не больше чем на этот процент своей длины (10 означает 10 процентов; либо одна строка целиком внутри другой)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Гистерезис склейки</value>

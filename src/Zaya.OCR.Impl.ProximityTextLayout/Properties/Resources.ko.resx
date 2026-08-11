@@ -42,23 +42,17 @@
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
     <value>단락 법선 방향 줄 중심 간 최대 거리(평균 줄 높이 대비 %)로 줄을 단락에 병합</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
-    <value>왼쪽 가장자리 정렬</value>
+  <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
+    <value>줄 돌출</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>단락으로 병합하기 위한 왼쪽 가장자리의 최대 수평 오프셋(단어 높이 대비 %)</value>
+  <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
+    <value>읽기 방향으로 적어도 한 줄이 다른 줄 안에 있으면 병합. 최대 돌출은 줄 높이의 %(100 ≈ 한 글자)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
-    <value>첫 줄 들여쓰기</value>
+  <data name="Layout_VerticalColumns" xml:space="preserve">
+    <value>세로 칸 (만화)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>첫 줄의 최대 추가 들여쓰기(단어 높이 대비 %)</value>
-  </data>
-  <data name="Layout_CenterAlignment" xml:space="preserve">
-    <value>가운데 정렬</value>
-  </data>
-  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
-    <value>수평 중심이 맞으면 줄도 병합</value>
+  <data name="Layout_VerticalColumns_Desc" xml:space="preserve">
+    <value>실험적. CJK 글자(및 직립 문장부호/숫자 / 정사각형에 가까운 숫자)를 위→아래 열로 모으고 열을 오른쪽→왼쪽으로 읽습니다. OCR이 회전 없이 문자를 줄 때 만화용.</value>
   </data>
   <data name="Layout_FontSizeTolerance" xml:space="preserve">
     <value>글꼴 크기 허용치</value>
@@ -67,10 +61,10 @@
     <value>줄을 아직 하나의 단락으로 병합할 수 있는 최대 높이 차이(평균 줄 높이 대비 %)</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>프레임 간 안정화</value>
+    <value>프레임 간 기하 스냅</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>줄과 단락을 이전 프레임과 맞춤: 기하 스냅, 텍스트 깜빡임 완화, 미매칭 이전 단락을 고스트로 유지</value>
+    <value>줄 경계를 이전 프레임에 맞추고, 텍스트 깜빡임을 완화하며, 미매칭 단락을 고스트로 유지</value>
   </data>
   <data name="Layout_HoldNewBlocks" xml:space="preserve">
     <value>Hold new blocks</value>
@@ -101,12 +95,6 @@
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
     <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
-    <value>Line overlap protrusion</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
-    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>병합 히스테리시스</value>

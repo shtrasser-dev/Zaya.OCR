@@ -42,23 +42,17 @@
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
     <value>沿段落法线方向行中心之间的最大距离（占平均行高的百分比），用于将行合并为段落</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
-    <value>左边缘对齐</value>
+  <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
+    <value>行伸出量</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>合并为段落时左边缘的最大水平偏移（占单词高度的百分比）</value>
+  <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
+    <value>若至少一行在阅读方向上位于另一行范围内则合并；最大伸出量为行高的百分比（100 ≈ 一个字符）</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
-    <value>首行缩进</value>
+  <data name="Layout_VerticalColumns" xml:space="preserve">
+    <value>竖排分栏（漫画）</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>首行的最大额外缩进（占单词高度的百分比）</value>
-  </data>
-  <data name="Layout_CenterAlignment" xml:space="preserve">
-    <value>居中对齐</value>
-  </data>
-  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
-    <value>当水平中心对齐时也合并行</value>
+  <data name="Layout_VerticalColumns_Desc" xml:space="preserve">
+    <value>实验性。将 CJK 字形（以及直立标点/数字 / 近似方形数字）组装为自上而下的栏，并从右到左读栏。适用于 OCR 返回无旋转字符的漫画。</value>
   </data>
   <data name="Layout_FontSizeTolerance" xml:space="preserve">
     <value>字号容差</value>
@@ -67,10 +61,10 @@
     <value>仍可将行合并为同一段落的最大高度差（占平均行高的百分比）</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>跨帧稳定</value>
+    <value>跨帧吸附几何</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>将行和段落与上一帧匹配：吸附几何、平滑文本闪烁，并将未匹配的上一帧段落作为 ghost 保留</value>
+    <value>将行边界吸附到上一帧、平滑文本闪烁，并将未匹配段落保留为 ghost</value>
   </data>
   <data name="Layout_HoldNewBlocks" xml:space="preserve">
     <value>Hold new blocks</value>
@@ -101,12 +95,6 @@
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
     <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
-    <value>Line overlap protrusion</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
-    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>合并迟滞</value>

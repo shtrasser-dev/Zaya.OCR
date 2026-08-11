@@ -42,23 +42,17 @@
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
     <value>Maximaler Abstand Mitte-zu-Mitte entlang der Absatznormale (% der mittleren Zeilenhöhe) zum Zusammenfügen von Zeilen in einen Absatz</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
-    <value>Ausrichtung am linken Rand</value>
+  <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
+    <value>Zeilenüberstand</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>Maximaler horizontaler Versatz der linken Ränder (% der Worthöhe) zum Zusammenfügen in einen Absatz</value>
+  <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
+    <value>Zeilen zusammenfügen, wenn mindestens eine entlang der Leserichtung innerhalb der anderen liegt; maximaler Überstand in % der Zeilenhöhe (100 ≈ ein Zeichen)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
-    <value>Einzug der ersten Zeile</value>
+  <data name="Layout_VerticalColumns" xml:space="preserve">
+    <value>Vertikale Spalten (Manga)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>Maximaler zusätzlicher Einzug der ersten Zeile (% der Worthöhe)</value>
-  </data>
-  <data name="Layout_CenterAlignment" xml:space="preserve">
-    <value>Zentrierte Ausrichtung</value>
-  </data>
-  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
-    <value>Zeilen auch zusammenfügen, wenn ihre horizontalen Mitten ausgerichtet sind</value>
+  <data name="Layout_VerticalColumns_Desc" xml:space="preserve">
+    <value>Experimentell. CJK-Glyphen (sowie aufrechte Satzzeichen/Ziffern / quadratische Zahlen) zu Spalten von oben nach unten zusammenfügen und Spalten von rechts nach links lesen. Für Manga, wenn OCR Zeichen ohne Drehung liefert.</value>
   </data>
   <data name="Layout_FontSizeTolerance" xml:space="preserve">
     <value>Schriftgrößen-Toleranz</value>
@@ -67,10 +61,10 @@
     <value>Maximal erlaubte Höhendifferenz zwischen Zeilen (% der mittleren Zeilenhöhe), um sie noch in einen Absatz zusammenzufügen</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>Über Frames stabilisieren</value>
+    <value>Geometrie über Frames einrasten</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Zeilen und Absätze mit dem vorherigen Frame abgleichen: Geometrie einrasten, Textflimmern glätten und unzugeordnete vorherige Absätze als Ghosts behalten</value>
+    <value>Zeilengrenzen an den vorherigen Frame anbinden, Textflimmern glätten und unzugeordnete Absätze als Ghosts behalten</value>
   </data>
   <data name="Layout_HoldNewBlocks" xml:space="preserve">
     <value>Hold new blocks</value>
@@ -101,12 +95,6 @@
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
     <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
-    <value>Line overlap protrusion</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
-    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Merge-Hysterese</value>

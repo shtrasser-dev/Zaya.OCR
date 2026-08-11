@@ -6,9 +6,7 @@ internal static class SettingsConstants
     public const string BaselineDriftTolerance = "baselineDriftTolerance";
     public const string AngleToleranceDegrees = "angleToleranceDegrees";
     public const string LineSpacingThreshold = "lineSpacingThreshold";
-    public const string LeftEdgeAlignmentTolerance = "leftEdgeAlignmentTolerance";
-    public const string FirstLineIndentTolerance = "firstLineIndentTolerance";
-    public const string EnableCenterAlignment = "enableCenterAlignment";
+    public const string LineOverhangTolerancePercent = "lineOverhangTolerancePercent";
     public const string FontSizeTolerance = "fontSizeTolerance";
     public const string EnableStabilization = "enableStabilization";
     public const string HoldNewBlocks = "holdNewBlocks";
@@ -18,7 +16,6 @@ internal static class SettingsConstants
     public const string ParagraphMergeHysteresisPercent = "paragraphMergeHysteresisPercent";
     public const string SameLineWordGapHysteresisPercent = "sameLineWordGapHysteresisPercent";
     public const string GhostMaxFrames = "ghostMaxFrames";
-    public const string MaxLineProtrusionPercent = "maxLineProtrusionPercent";
     public const string VerticalColumns = "verticalColumns";
 
     public const string WordFilters = "wordFilters";

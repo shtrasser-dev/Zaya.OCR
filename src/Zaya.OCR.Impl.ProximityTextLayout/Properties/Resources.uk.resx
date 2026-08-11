@@ -42,23 +42,17 @@
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
     <value>Максимальна відстань між центрами рядків уздовж нормалі абзацу (у відсотках від середньої висоти рядків) для склеювання в абзац</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
-    <value>Допуск вирівнювання за лівим краєм</value>
+  <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
+    <value>Виступ рядка</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>Максимальне зміщення лівих меж (% від висоти) для об'єднання в абзац</value>
+  <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
+    <value>Склеювати рядки, якщо хоча б один лежить у межах іншого вздовж читання; максимальний виступ — відсоток висоти рядка (100 ≈ одна літера)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
-    <value>Відступ першого рядка</value>
+  <data name="Layout_VerticalColumns" xml:space="preserve">
+    <value>Вертикальні колонки (манга)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>Максимальний додатковий відступ першого рядка (% від висоти)</value>
-  </data>
-  <data name="Layout_CenterAlignment" xml:space="preserve">
-    <value>Вирівнювання за центром</value>
-  </data>
-  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
-    <value>Також об'єднувати рядки при збігу центрів по горизонталі</value>
+  <data name="Layout_VerticalColumns_Desc" xml:space="preserve">
+    <value>Експериментально. Збирати ієрогліфи (а також поодинокі розділові знаки/цифри та майже квадратні числа) в колонки зверху вниз і читати колонки справа наліво. Для манги, коли OCR віддає символи без повороту.</value>
   </data>
   <data name="Layout_FontSizeTolerance" xml:space="preserve">
     <value>Допуск розміру шрифту</value>
@@ -67,10 +61,10 @@
     <value>Максимальна допустима різниця висот рядків (у відсотках від середньої висоти), за якої їх ще можна склеїти в один абзац</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>Стабілізація між кадрами</value>
+    <value>Прив'язка геометрії між кадрами</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Зіставляти рядки й абзаци з попереднім кадром: прив'язка геометрії, згладжування мерехтіння тексту та утримання непарних попередніх абзаців (ghost)</value>
+    <value>Прив'язувати межі рядків до попереднього кадру, згладжувати мерехтіння тексту та тримати непарні абзаци як ghost</value>
   </data>
   <data name="Layout_HoldNewBlocks" xml:space="preserve">
     <value>Hold new blocks</value>
@@ -101,12 +95,6 @@
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
     <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
-    <value>Line overlap protrusion</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
-    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Гістерезис склеювання</value>

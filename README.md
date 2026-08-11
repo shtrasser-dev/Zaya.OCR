@@ -9,9 +9,9 @@ Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines ex
 | **Zaya.OCR** | 1.2.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
 | **Zaya.OCR.Impl.OneOcr** | 1.2.0.0 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
 | **Zaya.OCR.Impl.WindowsMediaOcr** | 1.2.0.0 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
-| **Zaya.OCR.Impl.ProximityTextLayout** | 1.2.0.1 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 1.2.0.2 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
 
-Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Update channel for plugins: `plugin-Zaya.OCR-v1.2-latest`. See [versioning](docs/versioning.md).
+Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Update channel for plugins: `plugin-Zaya.OCR-v1.2-latest`. See [versioning](docs/versioning.md) and [CHANGELOG](CHANGELOG.md).
 
 Docs: [API & articles](https://shtrasser-dev.github.io/Zaya.OCR)
 
@@ -32,7 +32,7 @@ There is no separate `InitializeAsync` / `OcrEngineProvider`: create a session w
 <PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.2.0.0" />
 <!-- optional -->
 <PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.2.0.0" />
-<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.2.0.1" />
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.2.0.2" />
 ```
 
 Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plugin-Zaya.OCR-v1.2-latest`):
@@ -129,7 +129,7 @@ Requires Windows 10+, OCR language packs, and typically MSIX package identity fo
 
 ## Proximity Text Layout settings (`EngineId`: `proximity-text-layout`)
 
-Merges OCR words into lines/paragraphs by proximity heuristics. Optional **filters** (word / line / paragraph) run before stabilization. Optional **stabilization** matches lines to the previous frame (stable `Id`, snap geometry, smooth text flicker, ghosts via `IsGhost` / `GhostAge`) and can hold new paragraphs until their text settles. Hosts can compare `Text` to `PreviousFrameText` when they need the old case-insensitive text-equality signal.
+Merges OCR words into lines/paragraphs by proximity heuristics. Optional **filters** (word / line / paragraph) run before layout finalization. Optional **snap geometry** (`enableStabilization`) snaps line bounds to the previous frame, smooths text flicker, and keeps unmatched paragraphs as ghosts (`IsGhost` / `GhostAge`); it can also hold new paragraphs until their text settles. Hosts can compare `Text` to `PreviousFrameText` when they need the old case-insensitive text-equality signal.
 
 ```csharp
 using Zaya.OCR.Impl.ProximityTextLayout.Services;
@@ -154,12 +154,9 @@ Integer thresholds are percent of word/line height (stored as ints, applied as `
 | `baselineDriftTolerance` | `50` | Max drift of word centers perpendicular to reading direction to merge into a line |
 | `angleToleranceDegrees` | `10` | Max angle difference for merging words into a line, lines into a paragraph, and matching a previous-frame line |
 | `lineSpacingThreshold` | `150` | Max center-to-center distance along the paragraph normal to merge lines into a paragraph |
-| `leftEdgeAlignmentTolerance` | `100` | Max offset of left edges to merge into a paragraph |
-| `firstLineIndentTolerance` | `300` | Max extra indentation of the first line |
+| `lineOverhangTolerancePercent` | `100` | Merge lines if at least one stays within the other along reading; max overhang as % of line height (`100` ≈ one character) |
 | `fontSizeTolerance` | `50` | Max allowed height difference between lines to still merge them into one paragraph |
-| `enableCenterAlignment` | `false` | Also merge lines if their centers align along the reading direction |
 | `verticalColumns` | `false` | Experimental manga mode: relabel upright CJK / punctuation / digits / square numbers so reading direction is top-to-bottom (columns assemble downward, right-to-left) |
-| `maxLineProtrusionPercent` | `10` | When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length |
 | `wordFilters` | _(empty table)_ | Word-level filter rules (see Filters below) |
 | `lineFilters` | _(empty table)_ | Line-level filter rules |
 | `paragraphFilters` | _(empty table)_ | Paragraph-level filter rules |
@@ -180,7 +177,7 @@ Each of `wordFilters`, `lineFilters`, and `paragraphFilters` is a table of rules
 
 | Key | Default | Notes |
 |-----|---------|--------|
-| `enableStabilization` | `true` | Match lines/paragraphs to the previous frame: snap geometry, smooth text flicker, and keep unmatched previous paragraphs as ghosts |
+| `enableStabilization` | `true` | Snap line bounds to the previous frame, smooth text flicker, and keep unmatched paragraphs as ghosts |
 | `holdNewBlocks` | `false` | Hold a paragraph until its original text matches the previous frame, or until the previous paragraph was already shown and the normalized text is similar (within `levenshteinThreshold`) |
 | `centerThresholdXPercent` | `300` | Along-reading match window (`300` = 3× line height): how far past previous-line ends a word may still match, and max drift of line start *or* end vs the previous line (at least one end must stay within this) |
 | `centerThresholdYPercent` | `75` | How far off the previous baseline to still match a word (`75` = 0.75× line height) |

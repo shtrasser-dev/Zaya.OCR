@@ -359,37 +359,21 @@ internal sealed class ParagraphAssembler
         if (a0 > a1) (a0, a1) = (a1, a0);
         if (b0 > b1) (b0, b1) = (b1, b0);
 
-        var lenA = Math.Max(1e-3, a1 - a0);
-        var lenB = Math.Max(1e-3, b1 - b0);
-        var overlap = Math.Max(0, Math.Min(a1, b1) - Math.Max(a0, b0));
+        // PreferMerge (scale>1) loosens overhang; PreferSplit tightens.
+        var tol = _options.LineOverhangTolerance
+            * Math.Max(a.Bounds.TextHeight, b.Bounds.TextHeight)
+            * scale;
 
-        // PreferMerge (scale>1) must loosen: allow more protrusion. PreferSplit tightens.
-        var maxProtrusion = Math.Clamp(_options.MaxLineProtrusionFraction * scale, 0.02, 0.5);
-        var minCoverage = 1.0 - maxProtrusion;
-        if (overlap >= minCoverage * lenA && overlap >= minCoverage * lenB)
-            return true;
-
-        // Fallback: left-edge alignment.
-        var maxLateral = _options.LeftEdgeAlignmentTolerance * Math.Max(a.Bounds.TextHeight, b.Bounds.TextHeight) * scale;
-        var leftDiff = Math.Abs(Vector2.Dot(b.Bounds.P1 - a.Bounds.P1, dir));
-        if (leftDiff <= maxLateral)
-            return true;
-
-        // Fallback: first-line indent (upper starts to the right of lower).
-        var indent = Vector2.Dot(a.Bounds.P1 - b.Bounds.P1, dir);
-        if (indent > 0
-            && indent <= _options.FirstLineIndentTolerance * Math.Max(a.Bounds.TextHeight, b.Bounds.TextHeight) * scale)
-            return true;
-
-        if (_options.EnableCenterAlignment)
-        {
-            var centerDiff = Math.Abs(Vector2.Dot(b.Bounds.P7 - a.Bounds.P7, dir));
-            if (centerDiff <= maxLateral)
-                return true;
-        }
-
-        return false;
+        return LiesWithinAlong(a0, a1, b0, b1, tol) || LiesWithinAlong(b0, b1, a0, a1, tol);
     }
+
+    /// <summary>
+    /// True when <paramref name="inner0"/>..<paramref name="inner1"/> stays inside
+    /// <paramref name="outer0"/>..<paramref name="outer1"/> allowing overhang up to <paramref name="tol"/>.
+    /// </summary>
+    private static bool LiesWithinAlong(
+        double inner0, double inner1, double outer0, double outer1, double tol)
+        => inner0 >= outer0 - tol && inner1 <= outer1 + tol;
 
     private static double AngleDeltaDegrees(double a, double b)
     {

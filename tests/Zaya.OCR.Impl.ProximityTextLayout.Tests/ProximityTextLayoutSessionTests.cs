@@ -11,9 +11,7 @@ public sealed class ProximityTextLayoutSessionTests
         double wordGap = 0.5,
         double baselineDrift = 0.5,
         double lineSpacing = 1.5,
-        double leftEdgeAlign = 1.0,
-        double firstLineIndent = 3.0,
-        bool centerAlign = false,
+        double lineOverhang = 1.0,
         double fontSizeTolerance = 0.5,
         bool enableStabilization = false,
         bool holdNewBlocks = false,
@@ -26,7 +24,7 @@ public sealed class ProximityTextLayoutSessionTests
         LayoutTextFilter? paragraphFilter = null)
     {
         var options = new ProximityTextLayoutOptions(
-            wordGap, baselineDrift, lineSpacing, leftEdgeAlign, firstLineIndent, centerAlign, fontSizeTolerance,
+            wordGap, baselineDrift, lineSpacing, lineOverhang, fontSizeTolerance,
             EnableStabilization: enableStabilization,
             ParagraphMergeHysteresis: paragraphMergeHysteresis,
             HoldNewBlocks: holdNewBlocks,
@@ -133,7 +131,7 @@ public sealed class ProximityTextLayoutSessionTests
     public async Task ProcessAsync_TiltedLines_MergesIntoParagraph()
     {
         // Two left-aligned lines on a ~26.5° tilt (second shifted along the paragraph normal).
-        using var session = CreateSession(lineSpacing: 2.0, leftEdgeAlign: 1.0);
+        using var session = CreateSession(lineSpacing: 2.0);
         var result = await session.ProcessAsync(CreateResult(
             MakeOrientedWord("Hello", 10, 40, 80, 75, 76, 91, 6, 56),
             MakeOrientedWord("World", -1, 62, 69, 97, 65, 113, -5, 78)
@@ -280,8 +278,8 @@ public sealed class ProximityTextLayoutSessionTests
         using var session = CreateSession();
         var result = await session.ProcessAsync(CreateResult(
             MakeWord("First", 50, 10, 40, 20),
-            MakeWord("Second", 10, 40, 45, 20),
-            MakeWord("Third", 10, 70, 40, 20)
+            MakeWord("Second", 10, 40, 100, 20),
+            MakeWord("Third", 10, 70, 90, 20)
         ), TestContext.Current.CancellationToken);
 
         Assert.Single(result.Paragraphs);
@@ -301,9 +299,9 @@ public sealed class ProximityTextLayoutSessionTests
     }
 
     [Fact]
-    public async Task ProcessAsync_CenterAlignment_MergesCenteredLines()
+    public async Task ProcessAsync_CenteredTitle_MergesIntoBlock()
     {
-        using var session = CreateSession(centerAlign: true);
+        using var session = CreateSession();
         var result = await session.ProcessAsync(CreateResult(
             MakeWord("Title", 180, 10, 40, 20),
             MakeWord("Subtitle", 90, 40, 220, 20)
@@ -313,12 +311,12 @@ public sealed class ProximityTextLayoutSessionTests
     }
 
     [Fact]
-    public async Task ProcessAsync_CenterAlignmentDisabled_SplitsCenteredLines()
+    public async Task ProcessAsync_OffsetLines_NeitherContained_SplitsIntoBlocks()
     {
-        using var session = CreateSession(centerAlign: false);
+        using var session = CreateSession();
         var result = await session.ProcessAsync(CreateResult(
-            MakeWord("Title", 180, 10, 40, 20),
-            MakeWord("Subtitle", 90, 40, 220, 20)
+            MakeWord("Leftish", 10, 10, 80, 20),
+            MakeWord("Rightish", 70, 40, 120, 20)
         ), TestContext.Current.CancellationToken);
 
         Assert.Equal(2, result.Paragraphs.Count);
@@ -845,7 +843,6 @@ public sealed class ProximityTextLayoutSessionTests
     public async Task ProcessAsync_PartialCenteredLineBelow_HoldsUpperParagraph()
     {
         using var session = CreateSession(
-            centerAlign: true,
             enableStabilization: true,
             holdNewBlocks: true);
 

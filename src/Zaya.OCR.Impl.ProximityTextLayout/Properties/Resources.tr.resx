@@ -42,23 +42,17 @@
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
     <value>Satırları paragrafta birleştirmek için paragraf normali boyunca merkezler arası maksimum mesafe (ortalama satır yüksekliğinin yüzdesi)</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
-    <value>Sol kenar hizalaması</value>
+  <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
+    <value>Satır taşması</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>Paragrafta birleştirmek için sol kenarların maksimum yatay kayması (yüksekliğin %'si)</value>
+  <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
+    <value>Okuma yönünde en az biri diğerinin içindeyse satırları birleştir; maksimum taşma satır yüksekliğinin yüzdesi (100 ≈ bir karakter)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
-    <value>İlk satır girintisi</value>
+  <data name="Layout_VerticalColumns" xml:space="preserve">
+    <value>Dikey sütunlar (manga)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>İlk satırın maksimum ek girintisi (yüksekliğin %'si)</value>
-  </data>
-  <data name="Layout_CenterAlignment" xml:space="preserve">
-    <value>Ortalı hizalama</value>
-  </data>
-  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
-    <value>Yatay merkezleri hizalıysa satırları da birleştir</value>
+  <data name="Layout_VerticalColumns_Desc" xml:space="preserve">
+    <value>Deneysel. CJK gliflerini (ve dik duran noktalama/rakamlar / kare sayılar) yukarıdan aşağı sütunlara topla ve sütunları sağdan sola oku. OCR karakterleri döndürmeden verdiğinde manga için.</value>
   </data>
   <data name="Layout_FontSizeTolerance" xml:space="preserve">
     <value>Yazı tipi boyutu toleransı</value>
@@ -67,10 +61,10 @@
     <value>Satırları hâlâ tek paragrafta birleştirmek için izin verilen maksimum yükseklik farkı (ortalama satır yüksekliğinin yüzdesi)</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>Kareler arasında sabitle</value>
+    <value>Kareler arasında geometriyi sabitle</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Satırları ve paragrafları önceki kareyle eşleştir: geometriyi sabitle, metin titremesini yumuşat ve eşleşmeyen önceki paragrafları ghost olarak tut</value>
+    <value>Satır sınırlarını önceki kareye sabitle, metin titremesini yumuşat ve eşleşmeyen paragrafları ghost olarak tut</value>
   </data>
   <data name="Layout_HoldNewBlocks" xml:space="preserve">
     <value>Hold new blocks</value>
@@ -101,12 +95,6 @@
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
     <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
-    <value>Line overlap protrusion</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
-    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Birleştirme histerezisi</value>

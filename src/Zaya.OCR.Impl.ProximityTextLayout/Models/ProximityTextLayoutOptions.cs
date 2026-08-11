@@ -7,9 +7,7 @@ public sealed record ProximityTextLayoutOptions(
     double WordGapThreshold,
     double BaselineDriftTolerance,
     double LineSpacingThreshold,
-    double LeftEdgeAlignmentTolerance,
-    double FirstLineIndentTolerance,
-    bool EnableCenterAlignment,
+    double LineOverhangTolerance,
     double FontSizeTolerance,
     bool EnableStabilization = true,
     double CenterThresholdXFraction = 3.0,
@@ -18,7 +16,6 @@ public sealed record ProximityTextLayoutOptions(
     double ParagraphMergeHysteresis = 1.2,
     double AngleToleranceDegrees = 10,
     bool HoldNewBlocks = false,
-    double MaxLineProtrusionFraction = 0.10,
     int GhostMaxFrames = 3,
     double SameLineWordGapHysteresis = 6.0,
     bool VerticalColumns = false);

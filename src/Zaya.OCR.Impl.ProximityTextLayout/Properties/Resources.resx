@@ -42,23 +42,11 @@
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
     <value>Max center-to-center distance along the paragraph normal (% of average line height) to merge lines into a paragraph</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
-    <value>Left Edge Alignment</value>
+  <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
+    <value>Line overhang</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>Maximum horizontal offset of left edges (% of word height) to merge into a paragraph</value>
-  </data>
-  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
-    <value>First Line Indent</value>
-  </data>
-  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>Maximum extra indentation of the first line (% of word height)</value>
-  </data>
-  <data name="Layout_CenterAlignment" xml:space="preserve">
-    <value>Center Alignment</value>
-  </data>
-  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
-    <value>Also merge lines if their horizontal centers align</value>
+  <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
+    <value>Merge lines if at least one stays within the other along reading; max overhang as % of line height (100 ≈ one character)</value>
   </data>
   <data name="Layout_VerticalColumns" xml:space="preserve">
     <value>Vertical Columns (Manga)</value>
@@ -74,10 +62,10 @@
   </data>
 
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>Stabilize across frames</value>
+    <value>Snap geometry across frames</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Match lines and paragraphs to the previous frame: snap geometry, smooth text flicker, and keep unmatched previous paragraphs as ghosts</value>
+    <value>Snap line bounds to the previous frame, smooth text flicker, and keep unmatched paragraphs as ghosts</value>
   </data>
   <data name="Layout_HoldNewBlocks" xml:space="preserve">
     <value>Hold new blocks</value>
@@ -108,12 +96,6 @@
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
     <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
-    <value>Line overlap protrusion</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
-    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Merge hysteresis</value>

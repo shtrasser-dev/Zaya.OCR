@@ -80,16 +80,10 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             DefaultValue = 150,
             MinValue = 0,
         },
-        new IntegerSettingDescriptor(SettingsConstants.LeftEdgeAlignmentTolerance, Loc(LocalizationConstants.Settings.LeftEdgeAlignmentTolerance))
+        new IntegerSettingDescriptor(SettingsConstants.LineOverhangTolerancePercent, Loc(LocalizationConstants.Settings.LineOverhangTolerancePercent))
         {
-            Description = Loc(LocalizationConstants.Settings.LeftEdgeAlignmentTolerance_Desc),
+            Description = Loc(LocalizationConstants.Settings.LineOverhangTolerancePercent_Desc),
             DefaultValue = 100,
-            MinValue = 0,
-        },
-        new IntegerSettingDescriptor(SettingsConstants.FirstLineIndentTolerance, Loc(LocalizationConstants.Settings.FirstLineIndentTolerance))
-        {
-            Description = Loc(LocalizationConstants.Settings.FirstLineIndentTolerance_Desc),
-            DefaultValue = 300,
             MinValue = 0,
         },
         new IntegerSettingDescriptor(SettingsConstants.FontSizeTolerance, Loc(LocalizationConstants.Settings.FontSizeTolerance))
@@ -97,11 +91,6 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             Description = Loc(LocalizationConstants.Settings.FontSizeTolerance_Desc),
             DefaultValue = 50,
             MinValue = 0,
-        },
-        new BooleanSettingDescriptor(SettingsConstants.EnableCenterAlignment, Loc(LocalizationConstants.Settings.CenterAlignment))
-        {
-            Description = Loc(LocalizationConstants.Settings.CenterAlignment_Desc),
-            DefaultValue = false,
         },
         new BooleanSettingDescriptor(SettingsConstants.VerticalColumns, Loc(LocalizationConstants.Settings.VerticalColumns))
         {
@@ -165,13 +154,6 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             MinValue = 0,
             MaxValue = 30,
             IsVisible = StabVisible,
-        },
-        new IntegerSettingDescriptor(SettingsConstants.MaxLineProtrusionPercent, Loc(LocalizationConstants.Settings.MaxLineProtrusionPercent))
-        {
-            Description = Loc(LocalizationConstants.Settings.MaxLineProtrusionPercent_Desc),
-            DefaultValue = 10,
-            MinValue = 2,
-            MaxValue = 50,
         },
         new IntegerSettingDescriptor(SettingsConstants.ParagraphMergeHysteresisPercent, Loc(LocalizationConstants.Settings.ParagraphMergeHysteresisPercent))
         {
@@ -243,9 +225,7 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             settingDescriptorList.GetValueAsInt(SettingsConstants.WordGapThreshold) / 100.0,
             settingDescriptorList.GetValueAsInt(SettingsConstants.BaselineDriftTolerance) / 100.0,
             settingDescriptorList.GetValueAsInt(SettingsConstants.LineSpacingThreshold) / 100.0,
-            settingDescriptorList.GetValueAsInt(SettingsConstants.LeftEdgeAlignmentTolerance) / 100.0,
-            settingDescriptorList.GetValueAsInt(SettingsConstants.FirstLineIndentTolerance) / 100.0,
-            settingDescriptorList.GetValueAsBool(SettingsConstants.EnableCenterAlignment),
+            settingDescriptorList.GetValueAsInt(SettingsConstants.LineOverhangTolerancePercent) / 100.0,
             settingDescriptorList.GetValueAsInt(SettingsConstants.FontSizeTolerance) / 100.0,
             settingDescriptorList.GetValueAsBool(SettingsConstants.EnableStabilization),
             settingDescriptorList.GetValueAsInt(SettingsConstants.CenterThresholdXPercent) / 100.0,
@@ -254,7 +234,6 @@ public sealed class ProximityTextLayoutService : ITextLayoutService
             settingDescriptorList.GetValueAsInt(SettingsConstants.ParagraphMergeHysteresisPercent) / 100.0,
             settingDescriptorList.GetValueAsInt(SettingsConstants.AngleToleranceDegrees),
             settingDescriptorList.GetValueAsBool(SettingsConstants.HoldNewBlocks),
-            MaxLineProtrusionFraction: settingDescriptorList.GetValueAsInt(SettingsConstants.MaxLineProtrusionPercent) / 100.0,
             GhostMaxFrames: settingDescriptorList.GetValueAsInt(SettingsConstants.GhostMaxFrames),
             SameLineWordGapHysteresis: settingDescriptorList.GetValueAsInt(SettingsConstants.SameLineWordGapHysteresisPercent) / 100.0,
             VerticalColumns: settingDescriptorList.GetValueAsBool(SettingsConstants.VerticalColumns));

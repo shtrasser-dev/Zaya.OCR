@@ -42,23 +42,17 @@
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
     <value>Distance maximale centre à centre le long de la normale du paragraphe (% de la hauteur moyenne de ligne) pour fusionner des lignes en un paragraphe</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
-    <value>Alignement du bord gauche</value>
+  <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
+    <value>Débordement de ligne</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>Décalage horizontal maximal des bords gauches (% de la hauteur) pour fusionner en un paragraphe</value>
+  <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
+    <value>Fusionner les lignes si au moins une reste dans l'autre dans le sens de lecture ; débordement maximal en % de la hauteur de ligne (100 ≈ un caractère)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
-    <value>Retrait de première ligne</value>
+  <data name="Layout_VerticalColumns" xml:space="preserve">
+    <value>Colonnes verticales (manga)</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>Retrait supplémentaire maximal de la première ligne (% de la hauteur)</value>
-  </data>
-  <data name="Layout_CenterAlignment" xml:space="preserve">
-    <value>Alignement au centre</value>
-  </data>
-  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
-    <value>Fusionner aussi les lignes si leurs centres horizontaux s'alignent</value>
+  <data name="Layout_VerticalColumns_Desc" xml:space="preserve">
+    <value>Expérimental. Assembler les glyphes CJK (et la ponctuation/chiffres droits / nombres carrés) en colonnes de haut en bas et lire les colonnes de droite à gauche. Pour les mangas lorsque l'OCR renvoie des caractères sans rotation.</value>
   </data>
   <data name="Layout_FontSizeTolerance" xml:space="preserve">
     <value>Tolérance de taille de police</value>
@@ -67,10 +61,10 @@
     <value>Différence de hauteur maximale autorisée entre lignes (% de la hauteur moyenne de ligne) pour encore les fusionner en un paragraphe</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>Stabiliser entre les frames</value>
+    <value>Ancrer la géométrie entre les frames</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>Apparier lignes et paragraphes à la frame précédente : ancrer la géométrie, lisser le scintillement du texte, et conserver les paragraphes précédents non appariés comme ghosts</value>
+    <value>Ancrer les limites des lignes à la frame précédente, lisser le scintillement du texte et conserver les paragraphes non appariés comme ghosts</value>
   </data>
   <data name="Layout_HoldNewBlocks" xml:space="preserve">
     <value>Hold new blocks</value>
@@ -101,12 +95,6 @@
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
     <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
-    <value>Line overlap protrusion</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
-    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>Hystérésis de fusion</value>

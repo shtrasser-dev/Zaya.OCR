@@ -14,12 +14,8 @@ internal static class LocalizationConstants
         public const string AngleToleranceDegrees_Desc = "Layout_AngleToleranceDegrees_Desc";
         public const string LineSpacingThreshold = "Layout_LineSpacingThreshold";
         public const string LineSpacingThreshold_Desc = "Layout_LineSpacingThreshold_Desc";
-        public const string LeftEdgeAlignmentTolerance = "Layout_LeftEdgeAlignmentTolerance";
-        public const string LeftEdgeAlignmentTolerance_Desc = "Layout_LeftEdgeAlignmentTolerance_Desc";
-        public const string FirstLineIndentTolerance = "Layout_FirstLineIndentTolerance";
-        public const string FirstLineIndentTolerance_Desc = "Layout_FirstLineIndentTolerance_Desc";
-        public const string CenterAlignment = "Layout_CenterAlignment";
-        public const string CenterAlignment_Desc = "Layout_CenterAlignment_Desc";
+        public const string LineOverhangTolerancePercent = "Layout_LineOverhangTolerancePercent";
+        public const string LineOverhangTolerancePercent_Desc = "Layout_LineOverhangTolerancePercent_Desc";
         public const string FontSizeTolerance = "Layout_FontSizeTolerance";
         public const string FontSizeTolerance_Desc = "Layout_FontSizeTolerance_Desc";
         public const string EnableStabilization = "Layout_EnableStabilization";
@@ -38,8 +34,6 @@ internal static class LocalizationConstants
         public const string SameLineWordGapHysteresisPercent_Desc = "Layout_SameLineWordGapHysteresisPercent_Desc";
         public const string GhostMaxFrames = "Layout_GhostMaxFrames";
         public const string GhostMaxFrames_Desc = "Layout_GhostMaxFrames_Desc";
-        public const string MaxLineProtrusionPercent = "Layout_MaxLineProtrusionPercent";
-        public const string MaxLineProtrusionPercent_Desc = "Layout_MaxLineProtrusionPercent_Desc";
         public const string VerticalColumns = "Layout_VerticalColumns";
         public const string VerticalColumns_Desc = "Layout_VerticalColumns_Desc";
         public const string WordFilters = "Layout_WordFilters";

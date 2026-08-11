@@ -42,23 +42,17 @@
   <data name="Layout_LineSpacingThreshold_Desc" xml:space="preserve">
     <value>段落の法線方向の行中心間の最大距離（平均行高に対する％）で行を段落に結合</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance" xml:space="preserve">
-    <value>左端揃え</value>
+  <data name="Layout_LineOverhangTolerancePercent" xml:space="preserve">
+    <value>行のはみ出し</value>
   </data>
-  <data name="Layout_LeftEdgeAlignmentTolerance_Desc" xml:space="preserve">
-    <value>段落に結合するための左端の最大水平オフセット（単語の高さに対する %）</value>
+  <data name="Layout_LineOverhangTolerancePercent_Desc" xml:space="preserve">
+    <value>読み方向に沿って少なくとも一方が他方の範囲内にあれば行を結合。最大はみ出しは行高の%（100 ≈ 1文字）</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance" xml:space="preserve">
-    <value>一行目のインデント</value>
+  <data name="Layout_VerticalColumns" xml:space="preserve">
+    <value>縦組み（マンガ）</value>
   </data>
-  <data name="Layout_FirstLineIndentTolerance_Desc" xml:space="preserve">
-    <value>一行目の最大追加インデント（単語の高さに対する %）</value>
-  </data>
-  <data name="Layout_CenterAlignment" xml:space="preserve">
-    <value>中央揃え</value>
-  </data>
-  <data name="Layout_CenterAlignment_Desc" xml:space="preserve">
-    <value>水平中心が揃っている場合も行を結合する</value>
+  <data name="Layout_VerticalColumns_Desc" xml:space="preserve">
+    <value>実験的。CJK文字（および正立の句読点・数字／ほぼ正方形の数字）を上から下の列にまとめ、列を右から左に読む。OCRが回転なしで文字を返すマンガ向け。</value>
   </data>
   <data name="Layout_FontSizeTolerance" xml:space="preserve">
     <value>フォントサイズの許容</value>
@@ -67,10 +61,10 @@
     <value>行をまだ1つの段落に結合できる最大の高さ差（平均行高に対する％）</value>
   </data>
   <data name="Layout_EnableStabilization" xml:space="preserve">
-    <value>フレーム間で安定化</value>
+    <value>フレーム間で幾何をスナップ</value>
   </data>
   <data name="Layout_EnableStabilization_Desc" xml:space="preserve">
-    <value>行と段落を前フレームと対応づけ：幾何のスナップ、テキストちらつきの平滑化、未対応の前段落をゴーストとして保持</value>
+    <value>行の境界を前フレームにスナップし、テキストのちらつきを平滑化し、未対応の段落をゴーストとして保持</value>
   </data>
   <data name="Layout_HoldNewBlocks" xml:space="preserve">
     <value>Hold new blocks</value>
@@ -101,12 +95,6 @@
   </data>
   <data name="Layout_GhostMaxFrames_Desc" xml:space="preserve">
     <value>How many frames to keep an unmatched previous paragraph visible (0 = disable ghosts)</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent" xml:space="preserve">
-    <value>Line overlap protrusion</value>
-  </data>
-  <data name="Layout_MaxLineProtrusionPercent_Desc" xml:space="preserve">
-    <value>When merging lines into a paragraph: each line may stick out past the shared overlap by at most this % of its length (10 = 10%; or one line fully inside the other)</value>
   </data>
   <data name="Layout_ParagraphMergeHysteresisPercent" xml:space="preserve">
     <value>結合ヒステリシス</value>
