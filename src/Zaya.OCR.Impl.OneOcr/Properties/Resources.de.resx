@@ -19,7 +19,7 @@
     <value>Verwendet die integrierte OCR-Engine von Windows 11 (SnippingTool)</value>
   </data>
   <data name="Ocr_Source" xml:space="preserve">
-    <value>Engine-Quelle</value>
+    <value>Quelle</value>
   </data>
   <data name="Ocr_Source_Desc" xml:space="preserve">
     <value>Woher die OneOCR-Dateien geladen werden</value>
@@ -55,10 +55,10 @@
     <value>Speicherort der entpackten Engine-Dateien</value>
   </data>
   <data name="Ocr_MinConfidence" xml:space="preserve">
-    <value>Min. Konfidenz (%)</value>
+    <value>Minimale Konfidenz</value>
   </data>
   <data name="Ocr_MinConfidence_Desc" xml:space="preserve">
-    <value>Wörter unter diesem Konfidenzschwellenwert werden verworfen (0 = alle behalten)</value>
+    <value>Wörter unter diesem Konfidenzschwellenwert werden verworfen (0 = alle behalten), in Prozent</value>
   </data>
   <data name="Ocr_Err_SnippingToolNotFound" xml:space="preserve">
     <value>OneOCR-Engine nicht gefunden. Stellen Sie sicher, dass SnippingTool unter Windows 11 installiert ist, oder geben Sie einen Cache/URL mit Engine-Dateien an.</value>

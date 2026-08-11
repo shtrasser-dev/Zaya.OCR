@@ -19,7 +19,7 @@
     <value>Використовує вбудований OCR Windows 11 (SnippingTool)</value>
   </data>
   <data name="Ocr_Source" xml:space="preserve">
-    <value>Джерело рушія</value>
+    <value>Джерело</value>
   </data>
   <data name="Ocr_Source_Desc" xml:space="preserve">
     <value>Звідки завантажувати файли OneOCR</value>
@@ -55,10 +55,10 @@
     <value>Папка для розпакованих файлів рушія</value>
   </data>
   <data name="Ocr_MinConfidence" xml:space="preserve">
-    <value>Мін. впевненість (%)</value>
+    <value>Мінімальна впевненість</value>
   </data>
   <data name="Ocr_MinConfidence_Desc" xml:space="preserve">
-    <value>Слова з впевненістю нижче порога відкидаються (0 = зберігати всі)</value>
+    <value>Слова з упевненістю нижче порога відкидаються (0 — зберігати всі), у відсотках</value>
   </data>
   <data name="Ocr_Err_SnippingToolNotFound" xml:space="preserve">
     <value>Рушій OneOCR не знайдено. Встановіть SnippingTool у Windows 11 або вкажіть кеш/URL з файлами рушія.</value>

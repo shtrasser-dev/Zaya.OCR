@@ -19,7 +19,7 @@
     <value>Использует встроенный OCR Windows 11 (SnippingTool)</value>
   </data>
   <data name="Ocr_Source" xml:space="preserve">
-    <value>Источник движка</value>
+    <value>Источник</value>
   </data>
   <data name="Ocr_Source_Desc" xml:space="preserve">
     <value>Откуда загрузить файлы OneOCR</value>
@@ -55,10 +55,10 @@
     <value>Папка для распакованных файлов движка</value>
   </data>
   <data name="Ocr_MinConfidence" xml:space="preserve">
-    <value>Мин. уверенность (%)</value>
+    <value>Минимальная уверенность</value>
   </data>
   <data name="Ocr_MinConfidence_Desc" xml:space="preserve">
-    <value>Слова с уверенностью ниже порога отбрасываются (0 = сохранять все)</value>
+    <value>Слова с уверенностью ниже порога отбрасываются (0 — сохранять все), в процентах</value>
   </data>
   <data name="Ocr_Err_SnippingToolNotFound" xml:space="preserve">
     <value>Движок OneOCR не найден. Установите SnippingTool в Windows 11 или укажите кэш/URL с файлами движка.</value>

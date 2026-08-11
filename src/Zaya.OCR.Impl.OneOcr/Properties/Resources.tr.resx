@@ -19,7 +19,7 @@
     <value>Windows 11 yerleşik OCR motorunu (SnippingTool) kullanır</value>
   </data>
   <data name="Ocr_Source" xml:space="preserve">
-    <value>Motor kaynağı</value>
+    <value>Kaynak</value>
   </data>
   <data name="Ocr_Source_Desc" xml:space="preserve">
     <value>OneOCR dosyalarının yükleneceği yer</value>
@@ -55,10 +55,10 @@
     <value>Çıkarılmış motor dosyalarının saklandığı yer</value>
   </data>
   <data name="Ocr_MinConfidence" xml:space="preserve">
-    <value>Min. güven (%)</value>
+    <value>Minimum güven</value>
   </data>
   <data name="Ocr_MinConfidence_Desc" xml:space="preserve">
-    <value>Bu eşiğin altındaki güvene sahip kelimeler atılır (0 = tümünü tut)</value>
+    <value>Bu eşiğin altındaki güvenliğe sahip sözcükler atılır (0 = tümünü tut), yüzde olarak</value>
   </data>
   <data name="Ocr_Err_SnippingToolNotFound" xml:space="preserve">
     <value>OneOCR motoru bulunamadı. Windows 11'de SnippingTool'un yüklü olduğundan emin olun veya motor dosyaları içeren bir önbellek/URL sağlayın.</value>

@@ -19,7 +19,7 @@
     <value>使用 Windows 11 内置 OCR 引擎（SnippingTool）</value>
   </data>
   <data name="Ocr_Source" xml:space="preserve">
-    <value>引擎来源</value>
+    <value>来源</value>
   </data>
   <data name="Ocr_Source_Desc" xml:space="preserve">
     <value>从何处加载 OneOCR 文件</value>
@@ -55,10 +55,10 @@
     <value>解压后的引擎文件存放位置</value>
   </data>
   <data name="Ocr_MinConfidence" xml:space="preserve">
-    <value>最低置信度 (%)</value>
+    <value>最低置信度</value>
   </data>
   <data name="Ocr_MinConfidence_Desc" xml:space="preserve">
-    <value>置信度低于此阈值的词将被丢弃（0 = 全部保留）</value>
+    <value>低于此置信度阈值的词将被丢弃（0 = 全部保留），以百分比计</value>
   </data>
   <data name="Ocr_Err_SnippingToolNotFound" xml:space="preserve">
     <value>未找到 OneOCR 引擎。请确保已在 Windows 11 上安装 SnippingTool，或提供包含引擎文件的缓存/URL。</value>

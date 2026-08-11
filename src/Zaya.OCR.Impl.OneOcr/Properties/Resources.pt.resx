@@ -19,7 +19,7 @@
     <value>Usa o mecanismo OCR integrado do Windows 11 (SnippingTool)</value>
   </data>
   <data name="Ocr_Source" xml:space="preserve">
-    <value>Fonte do mecanismo</value>
+    <value>Fonte</value>
   </data>
   <data name="Ocr_Source_Desc" xml:space="preserve">
     <value>De onde carregar os arquivos OneOCR</value>
@@ -55,10 +55,10 @@
     <value>Onde os arquivos extraídos do mecanismo são armazenados</value>
   </data>
   <data name="Ocr_MinConfidence" xml:space="preserve">
-    <value>Confiança mín. (%)</value>
+    <value>Confiança mínima</value>
   </data>
   <data name="Ocr_MinConfidence_Desc" xml:space="preserve">
-    <value>Palavras com confiança abaixo deste limiar são descartadas (0 = manter todas)</value>
+    <value>Palavras com confiança abaixo deste limiar são descartadas (0 = manter todas), em porcentagem</value>
   </data>
   <data name="Ocr_Err_SnippingToolNotFound" xml:space="preserve">
     <value>Mecanismo OneOCR não encontrado. Certifique-se de que o SnippingTool está instalado no Windows 11 ou forneça um cache/URL com os arquivos do mecanismo.</value>

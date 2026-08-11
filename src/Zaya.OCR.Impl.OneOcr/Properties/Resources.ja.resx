@@ -19,7 +19,7 @@
     <value>Windows 11 内蔵の OCR エンジン（SnippingTool）を使用します</value>
   </data>
   <data name="Ocr_Source" xml:space="preserve">
-    <value>エンジンのソース</value>
+    <value>ソース</value>
   </data>
   <data name="Ocr_Source_Desc" xml:space="preserve">
     <value>OneOCR ファイルの読み込み元</value>
@@ -55,10 +55,10 @@
     <value>展開したエンジンファイルの保存先</value>
   </data>
   <data name="Ocr_MinConfidence" xml:space="preserve">
-    <value>最小信頼度 (%)</value>
+    <value>最小信頼度</value>
   </data>
   <data name="Ocr_MinConfidence_Desc" xml:space="preserve">
-    <value>このしきい値未満の信頼度の単語は破棄されます（0 = すべて保持）</value>
+    <value>この閾値未満の信頼度の単語は破棄（0 = すべて保持）、パーセント単位</value>
   </data>
   <data name="Ocr_Err_SnippingToolNotFound" xml:space="preserve">
     <value>OneOCR エンジンが見つかりません。Windows 11 に SnippingTool がインストールされているか、エンジンファイルのあるキャッシュ/URL を指定してください。</value>
