@@ -62,7 +62,7 @@ items:
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Microsoft.Extensions.DependencyInjection
-  summary: Registers <xref href="Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService" data-throw-if-not-resolved="false"></xref> as a singleton <xref href="Zaya.OCR.Services.IOCRService" data-throw-if-not-resolved="false"></xref>.
+  summary: Registers <xref href="Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService" data-throw-if-not-resolved="false"></xref> as a singleton <xref href="Zaya.OCR.Services.IOCRService" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public static IServiceCollection AddWindowsMediaOcr(this IServiceCollection services)
@@ -343,12 +343,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService
-  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService
-  href: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService.html
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService
+  href: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService.html
   name: WindowsMediaOcrService
   nameWithType: WindowsMediaOcrService
-  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService
 - uid: Zaya.OCR.Services.IOCRService
   commentId: T:Zaya.OCR.Services.IOCRService
   parent: Zaya.OCR.Services

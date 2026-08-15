@@ -6,12 +6,12 @@ Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines ex
 
 | Package | Version | Role |
 |---------|---------|------|
-| **Zaya.OCR** | 1.2.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
-| **Zaya.OCR.Impl.OneOcr** | 1.2.0.0 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
-| **Zaya.OCR.Impl.WindowsMediaOcr** | 1.2.0.0 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
-| **Zaya.OCR.Impl.ProximityTextLayout** | 1.2.0.3 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
+| **Zaya.OCR** | 1.3.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
+| **Zaya.OCR.Impl.OneOcr** | 1.3.0.0 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
+| **Zaya.OCR.Impl.WindowsMediaOcr** | 1.3.0.0 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 1.3.0.0 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
 
-Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Update channel for plugins: `plugin-Zaya.OCR-v1.2-latest`. See [versioning](docs/versioning.md) and [CHANGELOG](CHANGELOG.md).
+Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Impl packages depend on [Zaya.Logging](https://github.com/shtrasser-dev/Zaya.Logging) **1.0.0**. Update channel for plugins: `plugin-Zaya.OCR-v1.3-latest`. See [versioning](docs/versioning.md) and [CHANGELOG](CHANGELOG.md).
 
 Docs: [API & articles](https://shtrasser-dev.github.io/Zaya.OCR)
 
@@ -22,20 +22,24 @@ Docs: [API & articles](https://shtrasser-dev.github.io/Zaya.OCR)
 - **ITextLayoutService** / **ITextLayoutSession** — structure OCR words into paragraphs/lines with stable `Id`, previous-frame match flags/ages, and ghost metadata
 - **SettingDescriptor** — typed UI settings (enum, URL, paths, ints, …) from [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives)
 - Failures surface as `LocalizedException` for host UI
+- Impl constructors take `ILoggingWrapper` (parameterless uses `EmptyLoggingWrapper`) and wrap sessions / nested services for Trace/Debug logging
+- Plugin zips include `plugin.json` with `entryPoint` (e.g. `Zaya.OCR.Impl.OneOcr.OneOcrService`)
 
 There is no separate `InitializeAsync` / `OcrEngineProvider`: create a session with defaults or an explicit settings dictionary.
 
 ## Installation
 
 ```xml
-<PackageReference Include="Zaya.OCR" Version="1.2.0" />
-<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.2.0.0" />
+<PackageReference Include="Zaya.OCR" Version="1.3.0" />
+<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.3.0.0" />
 <!-- optional -->
-<PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.2.0.0" />
-<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.2.0.3" />
+<PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.3.0.0" />
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.3.0.0" />
 ```
 
-Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plugin-Zaya.OCR-v1.2-latest`):
+`Zaya.Logging` is pulled transitively by the Impl packages.
+
+Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plugin-Zaya.OCR-v1.3-latest`):
 
 - `Zaya.OCR.Impl.OneOcr.zip`
 - `Zaya.OCR.Impl.WindowsMediaOcr.zip`
@@ -46,10 +50,9 @@ Plugin zips for ScreenTranslator hosts (stable names) from GitHub Releases (`plu
 ```csharp
 using System.Drawing;
 using Zaya.OCR.Impl.OneOcr;
-using Zaya.OCR.Impl.OneOcr.Services;
 using Zaya.OCR.Services;
 
-using var ocr = new OneOcrService();
+using var ocr = new OneOcrService(); // or new OneOcrService(logging)
 
 using var session = await ocr.CreateSessionAsync(new Dictionary<string, object>
 {
@@ -132,7 +135,7 @@ Requires Windows 10+, OCR language packs, and typically MSIX package identity fo
 Merges OCR words into lines/paragraphs by proximity heuristics. Optional **filters** (word / line / paragraph) run before layout finalization. Optional **stabilization** (`enableStabilization`) snaps line bounds to the previous frame, smooths text flicker, and keeps unmatched paragraphs as ghosts (`IsGhost` / `GhostAge`); it can also hold new paragraphs until their text settles. Hosts can compare `Text` to `PreviousFrameText` when they need the old case-insensitive text-equality signal.
 
 ```csharp
-using Zaya.OCR.Impl.ProximityTextLayout.Services;
+using Zaya.OCR.Impl.ProximityTextLayout;
 
 using var layout = new ProximityTextLayoutService();
 using var layoutSession = await layout.CreateSessionAsync(new Dictionary<string, object>
@@ -196,7 +199,8 @@ Each of `wordFilters`, `lineFilters`, and `paragraphFilters` is a table of rules
 
 ## Ecosystem
 
-- **Zaya.Primitives** — `IRawImage`, `PixelFormat`, `LocalizedString`, `SettingDescriptor`, `LocalizedException`
+- **Zaya.Primitives** — `IRawImage`, `PixelFormat`, `LocalizedString`, `SettingDescriptor`, `LocalizedException` (**1.0.0**)
+- **Zaya.Logging** — `ILoggingWrapper` / `EmptyLoggingWrapper` for Impl constructors and session wrapping (**1.0.0**)
 - **Zaya.ScreenTranslator** — host that loads OCR / layout plugins and binds settings in UI
 
 ## License

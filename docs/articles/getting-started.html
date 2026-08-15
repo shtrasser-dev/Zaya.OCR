@@ -70,7 +70,7 @@
 <h1 id="getting-started">Getting Started</h1>
 
 <h2 id="overview">Overview</h2>
-<p>Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on abstractions (<code>IOCRService</code>, <code>IOCRSession</code>, <code>IOCRResult</code>, <code>IOCRWord</code>); implementations such as OneOCR are separate packages.</p>
+<p>Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on abstractions (<code>IOCRService</code>, <code>IOCRSession</code>, <code>IOCRResult</code>, <code>IOCRWord</code>); implementations such as OneOCR are separate packages. Plugin hosts construct Impl types with <a href="https://github.com/shtrasser-dev/Zaya.Logging">Zaya.Logging</a> <code>ILoggingWrapper</code> (or use the parameterless ctor with <code>EmptyLoggingWrapper</code>).</p>
 <h2 id="architecture">Architecture</h2>
 <table>
 <thead>
@@ -104,15 +104,15 @@
 </table>
 <h2 id="basic-usage-oneocr">Basic Usage (OneOCR)</h2>
 <pre><code class="lang-csharp">using System.Drawing;
-using Zaya.OCR.Impl.OneOcr.Services;
+using Zaya.OCR.Impl.OneOcr;
 using Zaya.OCR.Services;
 
-using var ocr = new OneOcrService();
+using var ocr = new OneOcrService(); // EmptyLoggingWrapper; or new OneOcrService(logging)
 
 using var session = await ocr.CreateSessionAsync(new Dictionary&lt;string, object&gt;
 {
     [&quot;source&quot;] = &quot;auto&quot;,          // SnippingTool, then download URL fallback
-    [&quot;minConfidence&quot;] = 40,       // 0–100
+    [&quot;minConfidence&quot;] = 40,       // 0–100 (default is 70)
 });
 
 using var bitmap = new Bitmap(&quot;document.png&quot;);
@@ -175,7 +175,7 @@ using var session = await ocr.CreateSessionAsync(settings, cts.Token);
 var result = await session.RecognizeAsync(image, cts.Token);
 </code></pre>
 <h2 id="text-layout">Text layout</h2>
-<pre><code class="lang-csharp">using Zaya.OCR.Impl.ProximityTextLayout.Services;
+<pre><code class="lang-csharp">using Zaya.OCR.Impl.ProximityTextLayout;
 
 using var layout = new ProximityTextLayoutService();
 using var layoutSession = await layout.CreateSessionAsync();

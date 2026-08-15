@@ -1,4 +1,4 @@
-using Zaya.OCR.Impl.OneOcr.Services;
+using Zaya.OCR.Impl.OneOcr;
 using Zaya.OCR.Services;
 
 namespace Microsoft.Extensions.DependencyInjection;

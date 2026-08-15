@@ -154,7 +154,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: IsAvailable
     path: src/Zaya.OCR/Services/ITextLayoutService.cs
-    startLine: 31
+    startLine: 30
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
@@ -185,7 +185,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Settings
     path: src/Zaya.OCR/Services/ITextLayoutService.cs
-    startLine: 36
+    startLine: 35
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
@@ -216,7 +216,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: CreateSessionAsync
     path: src/Zaya.OCR/Services/ITextLayoutService.cs
-    startLine: 43
+    startLine: 42
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
@@ -251,7 +251,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: CreateSessionAsync
     path: src/Zaya.OCR/Services/ITextLayoutService.cs
-    startLine: 51
+    startLine: 50
   assemblies:
   - Zaya.OCR
   namespace: Zaya.OCR.Services

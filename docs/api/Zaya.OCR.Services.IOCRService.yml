@@ -42,8 +42,8 @@ items:
     content: 'public interface IOCRService : IDisposable'
     content.vb: Public Interface IOCRService Inherits IDisposable
   derivedClasses:
-  - Zaya.OCR.Impl.OneOcr.Services.OneOcrService
-  - Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService
+  - Zaya.OCR.Impl.OneOcr.OneOcrService
+  - Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService
   inheritedMembers:
   - System.IDisposable.Dispose
 - uid: Zaya.OCR.Services.IOCRService.EngineId

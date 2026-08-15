@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl
+  commentId: N:Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl
+  id: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl
+  children:
+  - Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl.WindowsMediaOcrSession
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl
+  nameWithType: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl
+  type: Namespace
+  assemblies:
+  - Zaya.OCR.Impl.WindowsMediaOcr
+references:
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl.WindowsMediaOcrSession
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl.WindowsMediaOcrSession
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl.WindowsMediaOcrSession.html
+  name: WindowsMediaOcrSession
+  nameWithType: WindowsMediaOcrSession
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl.WindowsMediaOcrSession

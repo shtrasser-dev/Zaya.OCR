@@ -1,4 +1,4 @@
-using Zaya.OCR.Impl.ProximityTextLayout.Services;
+using Zaya.OCR.Impl.ProximityTextLayout;
 using Zaya.OCR.Services;
 
 namespace Microsoft.Extensions.DependencyInjection;

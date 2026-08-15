@@ -1,4 +1,4 @@
-﻿using Zaya.Primitives;
+using Zaya.Primitives;
 
 namespace Zaya.OCR.Services;
 

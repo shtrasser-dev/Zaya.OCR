@@ -1,0 +1,154 @@
+using Zaya.Logging.Services;
+using Zaya.OCR.Impl.ProximityTextLayout.Models;
+using Zaya.OCR.Models;
+using Zaya.OCR.Services;
+
+namespace Zaya.OCR.Impl.ProximityTextLayout.Services.Impl;
+
+/// <summary>
+/// ProximityTextLayout session: filters → lines → paragraphs → emit → ghost.
+/// </summary>
+public sealed class ProximityTextLayoutSession : ITextLayoutSession
+{
+    private readonly ProximityTextLayoutOptions _options;
+    private readonly ILayoutTextFilter _wordFilter;
+    private readonly ILayoutTextFilter _lineFilter;
+    private readonly ILayoutTextFilter _paragraphFilter;
+    private readonly ITextLayoutHistoryService _history;
+    private readonly ILineAssembler _lineAssembler;
+    private readonly IParagraphAssembler _paragraphAssembler;
+    private readonly IParagraphTextEmitter _textEmitter;
+    private readonly IParagraphGhostService _ghostService;
+    private bool _disposed;
+
+    internal ProximityTextLayoutSession(
+        ProximityTextLayoutOptions options,
+        ILoggingWrapper logging,
+        ILayoutTextFilter? wordFilter = null,
+        ILayoutTextFilter? lineFilter = null,
+        ILayoutTextFilter? paragraphFilter = null)
+    {
+        _options = options;
+        _wordFilter = wordFilter ?? LayoutTextFilter.Empty;
+        _lineFilter = lineFilter ?? LayoutTextFilter.Empty;
+        _paragraphFilter = paragraphFilter ?? LayoutTextFilter.Empty;
+        _history = logging.Wrap<ITextLayoutHistoryService>(_ => new TextLayoutHistoryService(
+            options.AngleToleranceDegrees,
+            alongTolFraction: options.CenterThresholdXFraction,
+            acrossTolFraction: options.CenterThresholdYFraction));
+        _lineAssembler = logging.Wrap<ILineAssembler>(lw => new LineAssembler(options, lw));
+        _paragraphAssembler = logging.Wrap<IParagraphAssembler>(_ => new ParagraphAssembler(options));
+        _textEmitter = logging.Wrap<IParagraphTextEmitter>(_ => new ParagraphTextEmitter(options));
+        _ghostService = logging.Wrap<IParagraphGhostService>(_ => new ParagraphGhostService(options));
+    }
+
+    /// <inheritdoc />
+    public Task<ITextResult> ProcessAsync(IOCRResult result, CancellationToken cancellationToken = default)
+    {
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        cancellationToken.ThrowIfCancellationRequested();
+
+        var filteredWords = _wordFilter.FilterWords(result.Words);
+        var words = filteredWords
+            .Select(w => w as TextWord ?? new TextWord(w))
+            .Select(ApplyVerticalColumnsIfNeeded)
+            .ToList();
+        var frame = new TextResult(words);
+
+        if (words.Count == 0)
+        {
+            _ghostService.AppendGhosts(frame, _history);
+            frame.Freeze();
+            _history.Push(frame);
+            return Task.FromResult<ITextResult>(frame);
+        }
+
+        _lineAssembler.Assemble(frame, _history);
+        ApplyLineFilter(frame);
+        cancellationToken.ThrowIfCancellationRequested();
+
+        _paragraphAssembler.Assemble(frame, _history);
+        _textEmitter.Emit(frame, _history);
+        ApplyParagraphFilter(frame);
+        _ghostService.AppendGhosts(frame, _history);
+
+        frame.Freeze();
+        _history.Push(frame);
+        return Task.FromResult<ITextResult>(frame);
+    }
+
+    /// <inheritdoc />
+    public void Dispose()
+    {
+        if (_disposed) return;
+        _disposed = true;
+        _history.Clear();
+    }
+
+    private TextWord ApplyVerticalColumnsIfNeeded(TextWord word)
+    {
+        if (!_options.VerticalColumns || !CjkText.ShouldRelabelForVerticalColumns(word.Text, word.Bounds))
+            return word;
+
+        return new TextWord(word.Text, CjkText.RelabelForVerticalReading(word.Bounds), word.Confidence);
+    }
+
+    private void ApplyLineFilter(TextResult frame)
+    {
+        if (_lineFilter.IsEmpty)
+            return;
+
+        var filtered = _lineFilter.FilterLines(frame.MutableLines).ToList();
+        var concrete = new List<TextLine>(filtered.Count);
+        foreach (var line in filtered)
+        {
+            if (line is TextLine tl)
+            {
+                concrete.Add(tl);
+                continue;
+            }
+
+            concrete.Add(new TextLine(
+                line.Text,
+                line.Words,
+                line.Bounds,
+                line.Id,
+                line.HasPreviousFrameMatch,
+                line.PreviousFrameMatchAge,
+                line.PreviousFrameText));
+        }
+
+        frame.MutableLines = concrete;
+    }
+
+    private void ApplyParagraphFilter(TextResult frame)
+    {
+        if (_paragraphFilter.IsEmpty)
+            return;
+
+        var filtered = _paragraphFilter.FilterParagraphs(frame.MutableParagraphs).ToList();
+        var concrete = new List<TextParagraph>(filtered.Count);
+        foreach (var p in filtered)
+        {
+            if (p is TextParagraph tp)
+            {
+                concrete.Add(tp);
+                continue;
+            }
+
+            concrete.Add(new TextParagraph(
+                p.Text,
+                p.Lines.OfType<TextLine>().ToList(),
+                p.Text,
+                wasShown: false,
+                id: p.Id,
+                hasPreviousFrameMatch: p.HasPreviousFrameMatch,
+                previousFrameMatchAge: p.PreviousFrameMatchAge,
+                previousFrameText: p.PreviousFrameText,
+                isGhost: p.IsGhost,
+                ghostAge: p.GhostAge));
+        }
+
+        frame.MutableParagraphs = concrete;
+    }
+}

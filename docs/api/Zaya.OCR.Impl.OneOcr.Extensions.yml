@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.OneOcr.Extensions
+  commentId: N:Zaya.OCR.Impl.OneOcr.Extensions
+  id: Zaya.OCR.Impl.OneOcr.Extensions
+  children:
+  - Zaya.OCR.Impl.OneOcr.Extensions.OcrSessionExtensions
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Impl.OneOcr.Extensions
+  nameWithType: Zaya.OCR.Impl.OneOcr.Extensions
+  fullName: Zaya.OCR.Impl.OneOcr.Extensions
+  type: Namespace
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+references:
+- uid: Zaya.OCR.Impl.OneOcr.Extensions.OcrSessionExtensions
+  commentId: T:Zaya.OCR.Impl.OneOcr.Extensions.OcrSessionExtensions
+  parent: Zaya.OCR.Impl.OneOcr.Extensions
+  href: Zaya.OCR.Impl.OneOcr.Extensions.OcrSessionExtensions.html
+  name: OcrSessionExtensions
+  nameWithType: OcrSessionExtensions
+  fullName: Zaya.OCR.Impl.OneOcr.Extensions.OcrSessionExtensions
+- uid: Zaya.OCR.Impl.OneOcr.Extensions
+  commentId: N:Zaya.OCR.Impl.OneOcr.Extensions
+  href: Zaya.html
+  name: Zaya.OCR.Impl.OneOcr.Extensions
+  nameWithType: Zaya.OCR.Impl.OneOcr.Extensions
+  fullName: Zaya.OCR.Impl.OneOcr.Extensions
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr
+    name: OneOcr
+    href: Zaya.OCR.Impl.OneOcr.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr.Extensions
+    name: Extensions
+    href: Zaya.OCR.Impl.OneOcr.Extensions.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr
+    name: OneOcr
+    href: Zaya.OCR.Impl.OneOcr.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr.Extensions
+    name: Extensions
+    href: Zaya.OCR.Impl.OneOcr.Extensions.html

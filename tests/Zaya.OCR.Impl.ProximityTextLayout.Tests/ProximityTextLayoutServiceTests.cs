@@ -1,4 +1,4 @@
-using Zaya.OCR.Impl.ProximityTextLayout.Services;
+using Zaya.OCR.Impl.ProximityTextLayout;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Tests;
 

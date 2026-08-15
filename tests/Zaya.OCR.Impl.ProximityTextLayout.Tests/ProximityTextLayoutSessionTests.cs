@@ -1,5 +1,6 @@
+using Zaya.Logging.Services;
 using Zaya.OCR.Impl.ProximityTextLayout.Models;
-using Zaya.OCR.Impl.ProximityTextLayout.Services;
+using Zaya.OCR.Impl.ProximityTextLayout.Services.Impl;
 using Zaya.OCR.Models;
 using Zaya.OCR.Services;
 
@@ -31,7 +32,7 @@ public sealed class ProximityTextLayoutSessionTests
             GhostMaxFrames: ghostMaxFrames,
             SameLineWordGapHysteresis: sameLineWordGapHysteresis,
             VerticalColumns: verticalColumns);
-        return new ProximityTextLayoutSession(options, wordFilter, lineFilter, paragraphFilter);
+        return new ProximityTextLayoutSession(options, EmptyLoggingWrapper.Instance, wordFilter, lineFilter, paragraphFilter);
     }
 
     private static IOCRResult CreateResult(params IOCRWord[] words) => new StubResult(words);

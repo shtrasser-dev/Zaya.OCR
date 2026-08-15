@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  commentId: N:Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  id: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  children:
+  - Zaya.OCR.Impl.WindowsMediaOcr.Extensions.OcrSessionExtensions
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  nameWithType: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  type: Namespace
+  assemblies:
+  - Zaya.OCR.Impl.WindowsMediaOcr
+references:
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Extensions.OcrSessionExtensions
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Extensions.OcrSessionExtensions
+  parent: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Extensions.OcrSessionExtensions.html
+  name: OcrSessionExtensions
+  nameWithType: OcrSessionExtensions
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Extensions.OcrSessionExtensions
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  commentId: N:Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  href: Zaya.html
+  name: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  nameWithType: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr
+    name: WindowsMediaOcr
+    href: Zaya.OCR.Impl.WindowsMediaOcr.html
+  - name: .
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+    name: Extensions
+    href: Zaya.OCR.Impl.WindowsMediaOcr.Extensions.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr
+    name: WindowsMediaOcr
+    href: Zaya.OCR.Impl.WindowsMediaOcr.html
+  - name: .
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+    name: Extensions
+    href: Zaya.OCR.Impl.WindowsMediaOcr.Extensions.html

@@ -1,7 +1,7 @@
 namespace Zaya.OCR.Impl.ProximityTextLayout.Models;
 
 /// <summary>
-/// Options for configuring <see cref="Services.ProximityTextLayoutSession"/>.
+/// Options for configuring <see cref="Services.Impl.ProximityTextLayoutSession"/>.
 /// </summary>
 public sealed record ProximityTextLayoutOptions(
     double WordGapThreshold,

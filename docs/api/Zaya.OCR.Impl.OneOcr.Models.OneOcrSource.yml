@@ -1,0 +1,212 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  id: OneOcrSource
+  parent: Zaya.OCR.Impl.OneOcr.Models
+  children:
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Auto
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Directory
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.SnippingTool
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Url
+  langs:
+  - csharp
+  - vb
+  name: OneOcrSource
+  nameWithType: OneOcrSource
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  type: Enum
+  source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrSource.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: OneOcrSource
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrSource.cs
+    startLine: 5
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Models
+  summary: Specifies how the OneOCR engine files are obtained.
+  example: []
+  syntax:
+    content: public enum OneOcrSource
+    content.vb: Public Enum OneOcrSource
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Auto
+  commentId: F:Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Auto
+  id: Auto
+  parent: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  langs:
+  - csharp
+  - vb
+  name: Auto
+  nameWithType: OneOcrSource.Auto
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Auto
+  type: Field
+  source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrSource.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Auto
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrSource.cs
+    startLine: 11
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Models
+  summary: >-
+    Try SnippingTool first; if not found, download from URL.
+
+    Dictionary value: <code>auto</code>.
+  example: []
+  syntax:
+    content: Auto = 0
+    return:
+      type: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.SnippingTool
+  commentId: F:Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.SnippingTool
+  id: SnippingTool
+  parent: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  langs:
+  - csharp
+  - vb
+  name: SnippingTool
+  nameWithType: OneOcrSource.SnippingTool
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.SnippingTool
+  type: Field
+  source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrSource.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: SnippingTool
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrSource.cs
+    startLine: 17
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Models
+  summary: >-
+    Auto-detect from the Windows 11 SnippingTool installation.
+
+    Dictionary value: <code>snippingtool</code>.
+  example: []
+  syntax:
+    content: SnippingTool = 1
+    return:
+      type: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Directory
+  commentId: F:Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Directory
+  id: Directory
+  parent: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  langs:
+  - csharp
+  - vb
+  name: Directory
+  nameWithType: OneOcrSource.Directory
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Directory
+  type: Field
+  source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrSource.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Directory
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrSource.cs
+    startLine: 23
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Models
+  summary: >-
+    Load from a local directory containing oneocr.dll, onnxruntime.dll, and oneocr.onemodel.
+
+    Dictionary value: <code>directory</code>.
+  example: []
+  syntax:
+    content: Directory = 2
+    return:
+      type: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Url
+  commentId: F:Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Url
+  id: Url
+  parent: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  langs:
+  - csharp
+  - vb
+  name: Url
+  nameWithType: OneOcrSource.Url
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.Url
+  type: Field
+  source:
+    remote:
+      path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrSource.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: Url
+    path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrSource.cs
+    startLine: 29
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+  namespace: Zaya.OCR.Impl.OneOcr.Models
+  summary: >-
+    Download from a URL.
+
+    Dictionary value: <code>url</code>.
+  example: []
+  syntax:
+    content: Url = 3
+    return:
+      type: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+references:
+- uid: Zaya.OCR.Impl.OneOcr.Models
+  commentId: N:Zaya.OCR.Impl.OneOcr.Models
+  href: Zaya.html
+  name: Zaya.OCR.Impl.OneOcr.Models
+  nameWithType: Zaya.OCR.Impl.OneOcr.Models
+  fullName: Zaya.OCR.Impl.OneOcr.Models
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr
+    name: OneOcr
+    href: Zaya.OCR.Impl.OneOcr.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr.Models
+    name: Models
+    href: Zaya.OCR.Impl.OneOcr.Models.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr
+    name: OneOcr
+    href: Zaya.OCR.Impl.OneOcr.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr.Models
+    name: Models
+    href: Zaya.OCR.Impl.OneOcr.Models.html
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  parent: Zaya.OCR.Impl.OneOcr.Models
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.html
+  name: OneOcrSource
+  nameWithType: OneOcrSource
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource

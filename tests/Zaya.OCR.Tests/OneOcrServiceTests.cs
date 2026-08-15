@@ -3,7 +3,7 @@ using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using Xunit;
 using Zaya.OCR.Impl.OneOcr;
-using Zaya.OCR.Impl.OneOcr.Services;
+using Zaya.OCR.Impl.OneOcr.Exceptions;
 using Zaya.OCR.Services;
 using Zaya.Primitives;
 

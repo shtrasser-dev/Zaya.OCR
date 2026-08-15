@@ -63,7 +63,7 @@ items:
   - Zaya.OCR.Impl.OneOcr
   namespace: Microsoft.Extensions.DependencyInjection
   summary: >-
-    Registers <xref href="Zaya.OCR.Impl.OneOcr.Services.OneOcrService" data-throw-if-not-resolved="false"></xref> as a singleton <xref href="Zaya.OCR.Services.IOCRService" data-throw-if-not-resolved="false"></xref>.
+    Registers <xref href="Zaya.OCR.Impl.OneOcr.OneOcrService" data-throw-if-not-resolved="false"></xref> as a singleton <xref href="Zaya.OCR.Services.IOCRService" data-throw-if-not-resolved="false"></xref>.
 
     Pass engine settings directly to <xref href="Zaya.OCR.Services.IOCRService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary%7bSystem.String%2cSystem.Object%7d%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref>.
   example: []
@@ -346,12 +346,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
-  commentId: T:Zaya.OCR.Impl.OneOcr.Services.OneOcrService
-  href: Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html
+- uid: Zaya.OCR.Impl.OneOcr.OneOcrService
+  commentId: T:Zaya.OCR.Impl.OneOcr.OneOcrService
+  href: Zaya.OCR.Impl.OneOcr.OneOcrService.html
   name: OneOcrService
   nameWithType: OneOcrService
-  fullName: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
+  fullName: Zaya.OCR.Impl.OneOcr.OneOcrService
 - uid: Zaya.OCR.Services.IOCRService
   commentId: T:Zaya.OCR.Services.IOCRService
   parent: Zaya.OCR.Services

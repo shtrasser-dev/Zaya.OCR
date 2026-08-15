@@ -2,7 +2,7 @@
 
 ## Overview
 
-Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on abstractions (`IOCRService`, `IOCRSession`, `IOCRResult`, `IOCRWord`); implementations such as OneOCR are separate packages.
+Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on abstractions (`IOCRService`, `IOCRSession`, `IOCRResult`, `IOCRWord`); implementations such as OneOCR are separate packages. Plugin hosts construct Impl types with [Zaya.Logging](https://github.com/shtrasser-dev/Zaya.Logging) `ILoggingWrapper` (or use the parameterless ctor with `EmptyLoggingWrapper`).
 
 ## Architecture
 
@@ -18,15 +18,15 @@ Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Con
 
 ```csharp
 using System.Drawing;
-using Zaya.OCR.Impl.OneOcr.Services;
+using Zaya.OCR.Impl.OneOcr;
 using Zaya.OCR.Services;
 
-using var ocr = new OneOcrService();
+using var ocr = new OneOcrService(); // EmptyLoggingWrapper; or new OneOcrService(logging)
 
 using var session = await ocr.CreateSessionAsync(new Dictionary<string, object>
 {
     ["source"] = "auto",          // SnippingTool, then download URL fallback
-    ["minConfidence"] = 40,       // 0–100
+    ["minConfidence"] = 40,       // 0–100 (default is 70)
 });
 
 using var bitmap = new Bitmap("document.png");
@@ -91,7 +91,7 @@ var result = await session.RecognizeAsync(image, cts.Token);
 ## Text layout
 
 ```csharp
-using Zaya.OCR.Impl.ProximityTextLayout.Services;
+using Zaya.OCR.Impl.ProximityTextLayout;
 
 using var layout = new ProximityTextLayoutService();
 using var layoutSession = await layout.CreateSessionAsync();

@@ -4,7 +4,9 @@ items:
   commentId: N:Zaya.OCR.Impl.OneOcr.Models
   id: Zaya.OCR.Impl.OneOcr.Models
   children:
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrConfig
   - Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
   - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
   langs:
   - csharp
@@ -16,15 +18,74 @@ items:
   assemblies:
   - Zaya.OCR.Impl.OneOcr
 references:
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrConfig
+  commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrConfig
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrConfig.html
+  name: OneOcrConfig
+  nameWithType: OneOcrConfig
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrConfig
 - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
   commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
   href: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.html
   name: OneOcrResult
   nameWithType: OneOcrResult
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+  parent: Zaya.OCR.Impl.OneOcr.Models
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource.html
+  name: OneOcrSource
+  nameWithType: OneOcrSource
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
 - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
   commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
   href: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html
   name: OneOcrWord
   nameWithType: OneOcrWord
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
+- uid: Zaya.OCR.Impl.OneOcr.Models
+  commentId: N:Zaya.OCR.Impl.OneOcr.Models
+  href: Zaya.html
+  name: Zaya.OCR.Impl.OneOcr.Models
+  nameWithType: Zaya.OCR.Impl.OneOcr.Models
+  fullName: Zaya.OCR.Impl.OneOcr.Models
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr
+    name: OneOcr
+    href: Zaya.OCR.Impl.OneOcr.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr.Models
+    name: Models
+    href: Zaya.OCR.Impl.OneOcr.Models.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Impl
+    name: Impl
+    href: Zaya.OCR.Impl.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr
+    name: OneOcr
+    href: Zaya.OCR.Impl.OneOcr.html
+  - name: .
+  - uid: Zaya.OCR.Impl.OneOcr.Models
+    name: Models
+    href: Zaya.OCR.Impl.OneOcr.Models.html

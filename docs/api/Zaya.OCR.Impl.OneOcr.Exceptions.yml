@@ -1,0 +1,72 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.OneOcr.Exceptions
+  commentId: N:Zaya.OCR.Impl.OneOcr.Exceptions
+  id: Zaya.OCR.Impl.OneOcr.Exceptions
+  children:
+  - Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDirectoryPathRequiredException
+  - Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllLoadException
+  - Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllNotFoundException
+  - Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDownloadUrlRequiredException
+  - Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrModelNotFoundException
+  - Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrNativeException
+  - Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrSnippingToolNotFoundException
+  - Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrUnknownSourceException
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Impl.OneOcr.Exceptions
+  nameWithType: Zaya.OCR.Impl.OneOcr.Exceptions
+  fullName: Zaya.OCR.Impl.OneOcr.Exceptions
+  type: Namespace
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+references:
+- uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDirectoryPathRequiredException
+  commentId: T:Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDirectoryPathRequiredException
+  href: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDirectoryPathRequiredException.html
+  name: OneOcrDirectoryPathRequiredException
+  nameWithType: OneOcrDirectoryPathRequiredException
+  fullName: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDirectoryPathRequiredException
+- uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllLoadException
+  commentId: T:Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllLoadException
+  href: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllLoadException.html
+  name: OneOcrDllLoadException
+  nameWithType: OneOcrDllLoadException
+  fullName: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllLoadException
+- uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllNotFoundException
+  commentId: T:Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllNotFoundException
+  href: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllNotFoundException.html
+  name: OneOcrDllNotFoundException
+  nameWithType: OneOcrDllNotFoundException
+  fullName: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllNotFoundException
+- uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDownloadUrlRequiredException
+  commentId: T:Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDownloadUrlRequiredException
+  href: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDownloadUrlRequiredException.html
+  name: OneOcrDownloadUrlRequiredException
+  nameWithType: OneOcrDownloadUrlRequiredException
+  fullName: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDownloadUrlRequiredException
+- uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrModelNotFoundException
+  commentId: T:Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrModelNotFoundException
+  href: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrModelNotFoundException.html
+  name: OneOcrModelNotFoundException
+  nameWithType: OneOcrModelNotFoundException
+  fullName: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrModelNotFoundException
+- uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrNativeException
+  commentId: T:Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrNativeException
+  href: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrNativeException.html
+  name: OneOcrNativeException
+  nameWithType: OneOcrNativeException
+  fullName: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrNativeException
+- uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrSnippingToolNotFoundException
+  commentId: T:Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrSnippingToolNotFoundException
+  href: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrSnippingToolNotFoundException.html
+  name: OneOcrSnippingToolNotFoundException
+  nameWithType: OneOcrSnippingToolNotFoundException
+  fullName: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrSnippingToolNotFoundException
+- uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrUnknownSourceException
+  commentId: T:Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrUnknownSourceException
+  href: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrUnknownSourceException.html
+  name: OneOcrUnknownSourceException
+  nameWithType: OneOcrUnknownSourceException
+  fullName: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrUnknownSourceException

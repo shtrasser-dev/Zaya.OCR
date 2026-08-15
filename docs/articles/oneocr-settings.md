@@ -3,7 +3,7 @@
 `OneOcrService` (`EngineId`: `oneocr`) exposes engine settings through
 [`SettingDescriptor`](xref:Zaya.Primitives.SettingDescriptor) for UI hosts,
 and accepts the same keys as a dictionary in
-[`CreateSessionAsync`](xref:Zaya.OCR.Impl.OneOcr.Services.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)).
+[`CreateSessionAsync`](xref:Zaya.OCR.Impl.OneOcr.OneOcrService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)).
 
 Typed helper: [`OneOcrConfig`](xref:Zaya.OCR.Impl.OneOcr.OneOcrConfig) → `ToDictionary()`.
 
@@ -42,7 +42,7 @@ Some hosts (for example ScreenTranslator) treat `cacheDirectory` as host-managed
 
 ```csharp
 using Zaya.OCR.Impl.OneOcr;
-using Zaya.OCR.Impl.OneOcr.Services;
+using Zaya.OCR.Impl.OneOcr;
 
 using var ocr = new OneOcrService();
 
@@ -66,4 +66,4 @@ var settings = config.ToDictionary()
 using var session2 = await ocr.CreateSessionAsync(settings);
 ```
 
-See also API remarks on [`OneOcrService`](xref:Zaya.OCR.Impl.OneOcr.Services.OneOcrService).
+See also API remarks on [`OneOcrService`](xref:Zaya.OCR.Impl.OneOcr.OneOcrService).

@@ -1,4 +1,4 @@
-using Zaya.OCR.Impl.WindowsMediaOcr.Services;
+using Zaya.OCR.Impl.WindowsMediaOcr;
 using Zaya.OCR.Services;
 
 namespace Microsoft.Extensions.DependencyInjection;

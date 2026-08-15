@@ -72,8 +72,8 @@
 <p><code>OneOcrService</code> (<code>EngineId</code>: <code>oneocr</code>) exposes engine settings through
 <a class="xref" href="https://shtrasser-dev.github.io/Zaya.Primitives/api/Zaya.Primitives.SettingDescriptor.html"><code>SettingDescriptor</code></a> for UI hosts,
 and accepts the same keys as a dictionary in
-<a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html#Zaya_OCR_Impl_OneOcr_Services_OneOcrService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_"><code>CreateSessionAsync</code></a>.</p>
-<p>Typed helper: <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.OneOcrConfig.html"><code>OneOcrConfig</code></a> → <code>ToDictionary()</code>.</p>
+<a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.OneOcrService.html#Zaya_OCR_Impl_OneOcr_OneOcrService_CreateSessionAsync_System_Collections_Generic_IReadOnlyDictionary_System_String_System_Object__System_Threading_CancellationToken_"><code>CreateSessionAsync</code></a>.</p>
+<p>Typed helper: <a href="xref:Zaya.OCR.Impl.OneOcr.OneOcrConfig"><code>OneOcrConfig</code></a> → <code>ToDictionary()</code>.</p>
 <h2 id="keys">Keys</h2>
 <table>
 <thead>
@@ -134,7 +134,7 @@ and accepts the same keys as a dictionary in
 <tbody>
 <tr>
 <td><code>auto</code></td>
-<td>Use cache if complete; else try SnippingTool; on <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException.html"><code>OneOcrSnippingToolNotFoundException</code></a> download via <code>downloadUrl</code></td>
+<td>Use cache if complete; else try SnippingTool; on <a href="xref:Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException"><code>OneOcrSnippingToolNotFoundException</code></a> download via <code>downloadUrl</code></td>
 </tr>
 <tr>
 <td><code>snippingtool</code></td>
@@ -161,7 +161,7 @@ and accepts the same keys as a dictionary in
 <p>Some hosts (for example ScreenTranslator) treat <code>cacheDirectory</code> as host-managed and inject a path under <code>%AppData%</code> instead of showing the field.</p>
 <h2 id="example">Example</h2>
 <pre><code class="lang-csharp">using Zaya.OCR.Impl.OneOcr;
-using Zaya.OCR.Impl.OneOcr.Services;
+using Zaya.OCR.Impl.OneOcr;
 
 using var ocr = new OneOcrService();
 
@@ -184,7 +184,7 @@ var settings = config.ToDictionary()
     .ToDictionary(kv =&gt; kv.Key, kv =&gt; kv.Value!);
 using var session2 = await ocr.CreateSessionAsync(settings);
 </code></pre>
-<p>See also API remarks on <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.Services.OneOcrService.html"><code>OneOcrService</code></a>.</p>
+<p>See also API remarks on <a class="xref" href="../api/Zaya.OCR.Impl.OneOcr.OneOcrService.html"><code>OneOcrService</code></a>.</p>
 
 </article>
           </div>

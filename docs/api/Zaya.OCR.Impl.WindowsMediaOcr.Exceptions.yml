@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions
+  commentId: N:Zaya.OCR.Impl.WindowsMediaOcr.Exceptions
+  id: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions
+  children:
+  - Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrEngineCreateFailedException
+  - Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrLanguageNotSupportedException
+  - Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrNotAvailableException
+  - Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrRecognizeFailedException
+  - Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrUnsupportedPixelFormatException
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions
+  nameWithType: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions
+  type: Namespace
+  assemblies:
+  - Zaya.OCR.Impl.WindowsMediaOcr
+references:
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrEngineCreateFailedException
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrEngineCreateFailedException
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrEngineCreateFailedException.html
+  name: WindowsMediaOcrEngineCreateFailedException
+  nameWithType: WindowsMediaOcrEngineCreateFailedException
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrEngineCreateFailedException
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrLanguageNotSupportedException
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrLanguageNotSupportedException
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrLanguageNotSupportedException.html
+  name: WindowsMediaOcrLanguageNotSupportedException
+  nameWithType: WindowsMediaOcrLanguageNotSupportedException
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrLanguageNotSupportedException
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrNotAvailableException
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrNotAvailableException
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrNotAvailableException.html
+  name: WindowsMediaOcrNotAvailableException
+  nameWithType: WindowsMediaOcrNotAvailableException
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrNotAvailableException
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrRecognizeFailedException
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrRecognizeFailedException
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrRecognizeFailedException.html
+  name: WindowsMediaOcrRecognizeFailedException
+  nameWithType: WindowsMediaOcrRecognizeFailedException
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrRecognizeFailedException
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrUnsupportedPixelFormatException
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrUnsupportedPixelFormatException
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrUnsupportedPixelFormatException.html
+  name: WindowsMediaOcrUnsupportedPixelFormatException
+  nameWithType: WindowsMediaOcrUnsupportedPixelFormatException
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrUnsupportedPixelFormatException

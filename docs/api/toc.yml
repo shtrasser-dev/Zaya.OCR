@@ -14,102 +14,118 @@ items:
   name: Zaya.OCR.Impl.OneOcr
   type: Namespace
   items:
-  - uid: Zaya.OCR.Impl.OneOcr.OcrSessionExtensions
-    name: OcrSessionExtensions
+  - uid: Zaya.OCR.Impl.OneOcr.OneOcrService
+    name: OneOcrService
     type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrConfig
-    name: OneOcrConfig
-    type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrDirectoryPathRequiredException
+- uid: Zaya.OCR.Impl.OneOcr.Exceptions
+  name: Zaya.OCR.Impl.OneOcr.Exceptions
+  type: Namespace
+  items:
+  - uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDirectoryPathRequiredException
     name: OneOcrDirectoryPathRequiredException
     type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrDllLoadException
+  - uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllLoadException
     name: OneOcrDllLoadException
     type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrDllNotFoundException
+  - uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDllNotFoundException
     name: OneOcrDllNotFoundException
     type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrDownloadUrlRequiredException
+  - uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrDownloadUrlRequiredException
     name: OneOcrDownloadUrlRequiredException
     type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrModelNotFoundException
+  - uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrModelNotFoundException
     name: OneOcrModelNotFoundException
     type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrNativeException
+  - uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrNativeException
     name: OneOcrNativeException
     type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrSnippingToolNotFoundException
+  - uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrSnippingToolNotFoundException
     name: OneOcrSnippingToolNotFoundException
     type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrSource
-    name: OneOcrSource
-    type: Enum
-  - uid: Zaya.OCR.Impl.OneOcr.OneOcrUnknownSourceException
+  - uid: Zaya.OCR.Impl.OneOcr.Exceptions.OneOcrUnknownSourceException
     name: OneOcrUnknownSourceException
+    type: Class
+- uid: Zaya.OCR.Impl.OneOcr.Extensions
+  name: Zaya.OCR.Impl.OneOcr.Extensions
+  type: Namespace
+  items:
+  - uid: Zaya.OCR.Impl.OneOcr.Extensions.OcrSessionExtensions
+    name: OcrSessionExtensions
     type: Class
 - uid: Zaya.OCR.Impl.OneOcr.Models
   name: Zaya.OCR.Impl.OneOcr.Models
   type: Namespace
   items:
+  - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrConfig
+    name: OneOcrConfig
+    type: Class
   - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
     name: OneOcrResult
     type: Class
+  - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrSource
+    name: OneOcrSource
+    type: Enum
   - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
     name: OneOcrWord
     type: Class
-- uid: Zaya.OCR.Impl.OneOcr.Services
-  name: Zaya.OCR.Impl.OneOcr.Services
+- uid: Zaya.OCR.Impl.OneOcr.Services.Impl
+  name: Zaya.OCR.Impl.OneOcr.Services.Impl
   type: Namespace
   items:
-  - uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrService
-    name: OneOcrService
-    type: Class
-  - uid: Zaya.OCR.Impl.OneOcr.Services.OneOcrSession
+  - uid: Zaya.OCR.Impl.OneOcr.Services.Impl.OneOcrSession
     name: OneOcrSession
     type: Class
 - uid: Zaya.OCR.Impl.WindowsMediaOcr
   name: Zaya.OCR.Impl.WindowsMediaOcr
   type: Namespace
   items:
-  - uid: Zaya.OCR.Impl.WindowsMediaOcr.OcrSessionExtensions
-    name: OcrSessionExtensions
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService
+    name: WindowsMediaOcrService
     type: Class
-  - uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrConfig
-    name: WindowsMediaOcrConfig
-    type: Class
-  - uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrEngineCreateFailedException
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions
+  name: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions
+  type: Namespace
+  items:
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrEngineCreateFailedException
     name: WindowsMediaOcrEngineCreateFailedException
     type: Class
-  - uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrLanguageNotSupportedException
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrLanguageNotSupportedException
     name: WindowsMediaOcrLanguageNotSupportedException
     type: Class
-  - uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrNotAvailableException
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrNotAvailableException
     name: WindowsMediaOcrNotAvailableException
     type: Class
-  - uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrRecognizeFailedException
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrRecognizeFailedException
     name: WindowsMediaOcrRecognizeFailedException
     type: Class
-  - uid: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrUnsupportedPixelFormatException
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Exceptions.WindowsMediaOcrUnsupportedPixelFormatException
     name: WindowsMediaOcrUnsupportedPixelFormatException
+    type: Class
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  name: Zaya.OCR.Impl.WindowsMediaOcr.Extensions
+  type: Namespace
+  items:
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Extensions.OcrSessionExtensions
+    name: OcrSessionExtensions
     type: Class
 - uid: Zaya.OCR.Impl.WindowsMediaOcr.Models
   name: Zaya.OCR.Impl.WindowsMediaOcr.Models
   type: Namespace
   items:
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrConfig
+    name: WindowsMediaOcrConfig
+    type: Class
   - uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult
     name: WindowsMediaOcrResult
     type: Class
   - uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord
     name: WindowsMediaOcrWord
     type: Class
-- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services
-  name: Zaya.OCR.Impl.WindowsMediaOcr.Services
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl
+  name: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl
   type: Namespace
   items:
-  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrService
-    name: WindowsMediaOcrService
-    type: Class
-  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.WindowsMediaOcrSession
+  - uid: Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl.WindowsMediaOcrSession
     name: WindowsMediaOcrSession
     type: Class
 - uid: Zaya.OCR.Models

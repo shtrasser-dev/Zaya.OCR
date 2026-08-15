@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Impl.OneOcr.Services.Impl
+  commentId: N:Zaya.OCR.Impl.OneOcr.Services.Impl
+  id: Zaya.OCR.Impl.OneOcr.Services.Impl
+  children:
+  - Zaya.OCR.Impl.OneOcr.Services.Impl.OneOcrSession
+  langs:
+  - csharp
+  - vb
+  name: Zaya.OCR.Impl.OneOcr.Services.Impl
+  nameWithType: Zaya.OCR.Impl.OneOcr.Services.Impl
+  fullName: Zaya.OCR.Impl.OneOcr.Services.Impl
+  type: Namespace
+  assemblies:
+  - Zaya.OCR.Impl.OneOcr
+references:
+- uid: Zaya.OCR.Impl.OneOcr.Services.Impl.OneOcrSession
+  commentId: T:Zaya.OCR.Impl.OneOcr.Services.Impl.OneOcrSession
+  href: Zaya.OCR.Impl.OneOcr.Services.Impl.OneOcrSession.html
+  name: OneOcrSession
+  nameWithType: OneOcrSession
+  fullName: Zaya.OCR.Impl.OneOcr.Services.Impl.OneOcrSession

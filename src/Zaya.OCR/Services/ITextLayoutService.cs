@@ -25,7 +25,6 @@ public interface ITextLayoutService : IDisposable
     /// </summary>
     LocalizedString Description { get; }
 
-
     /// <summary>
     /// Gets whether this text layout engine is available on the current system.
     /// </summary>

@@ -4,6 +4,7 @@ items:
   commentId: N:Zaya.OCR.Impl.WindowsMediaOcr.Models
   id: Zaya.OCR.Impl.WindowsMediaOcr.Models
   children:
+  - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrConfig
   - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult
   - Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord
   langs:
@@ -16,6 +17,12 @@ items:
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
 references:
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrConfig
+  commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrConfig
+  href: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrConfig.html
+  name: WindowsMediaOcrConfig
+  nameWithType: WindowsMediaOcrConfig
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrConfig
 - uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult
   commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult
   href: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.html

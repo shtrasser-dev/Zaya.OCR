@@ -70,15 +70,15 @@ echo ]
 )
 
 echo === Creating Zaya.OCR.Impl.OneOcr plugin.zip ===
-call :MakeZip OneOcr ocr "%ROOT%src\Zaya.OCR.Impl.OneOcr\bin\%BUILD_CONFIG%\net8.0-windows10.0.22621.0" Zaya.OCR.Impl.OneOcr.dll Zaya.OCR.Impl.OneOcr.zip !VER_ONEOCR!
+call :MakeZip OneOcr ocr "%ROOT%src\Zaya.OCR.Impl.OneOcr\bin\%BUILD_CONFIG%\net8.0-windows10.0.22621.0" Zaya.OCR.Impl.OneOcr.dll Zaya.OCR.Impl.OneOcr.zip !VER_ONEOCR! Zaya.OCR.Impl.OneOcr.OneOcrService
 if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
 echo === Creating Zaya.OCR.Impl.WindowsMediaOcr plugin.zip ===
-call :MakeZip WindowsMediaOcr ocr "%ROOT%src\Zaya.OCR.Impl.WindowsMediaOcr\bin\%BUILD_CONFIG%\net8.0-windows10.0.19041.0" Zaya.OCR.Impl.WindowsMediaOcr.dll Zaya.OCR.Impl.WindowsMediaOcr.zip !VER_WMO!
+call :MakeZip WindowsMediaOcr ocr "%ROOT%src\Zaya.OCR.Impl.WindowsMediaOcr\bin\%BUILD_CONFIG%\net8.0-windows10.0.19041.0" Zaya.OCR.Impl.WindowsMediaOcr.dll Zaya.OCR.Impl.WindowsMediaOcr.zip !VER_WMO! Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService
 if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
 echo === Creating Zaya.OCR.Impl.ProximityTextLayout plugin.zip ===
-call :MakeZip ProximityTextLayout textlayout "%ROOT%src\Zaya.OCR.Impl.ProximityTextLayout\bin\%BUILD_CONFIG%\net8.0" Zaya.OCR.Impl.ProximityTextLayout.dll Zaya.OCR.Impl.ProximityTextLayout.zip !VER_LAYOUT!
+call :MakeZip ProximityTextLayout textlayout "%ROOT%src\Zaya.OCR.Impl.ProximityTextLayout\bin\%BUILD_CONFIG%\net8.0" Zaya.OCR.Impl.ProximityTextLayout.dll Zaya.OCR.Impl.ProximityTextLayout.zip !VER_LAYOUT! Zaya.OCR.Impl.ProximityTextLayout.ProximityTextLayoutService
 if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
 echo === Packing NuGet packages ===
@@ -113,6 +113,7 @@ goto :eof
     set ZIP_DLL=%~4
     set ZIP_NAME=%~5
     set ZIP_PVER=%~6
+    set ZIP_ENTRY=%~7
 
     rmdir /s /q "%STAGEDIR%" 2>nul
     mkdir "%STAGEDIR%"
@@ -131,7 +132,8 @@ goto :eof
     echo   "type": "!ZIP_TYPE!",>>"%PLUGIN_JSON%"
     echo   "interface": "Zaya.OCR",>>"%PLUGIN_JSON%"
     echo   "interfaceVersion": "!IFACE!",>>"%PLUGIN_JSON%"
-    echo   "pluginVersion": "!ZIP_PVER!">>"%PLUGIN_JSON%"
+    echo   "pluginVersion": "!ZIP_PVER!",>>"%PLUGIN_JSON%"
+    echo   "entryPoint": "!ZIP_ENTRY!">>"%PLUGIN_JSON%"
     echo }>>"%PLUGIN_JSON%"
 
     powershell -Command "Compress-Archive -Path '%STAGEDIR%\*' -DestinationPath '%ROOT%out\!ZIP_NAME!' -Force"
