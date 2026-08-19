@@ -70,7 +70,7 @@
 <h1 id="getting-started">Getting Started</h1>
 
 <h2 id="overview">Overview</h2>
-<p>Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on abstractions (<code>IOCRService</code>, <code>IOCRSession</code>, <code>IOCRResult</code>, <code>IOCRWord</code>); implementations such as OneOCR are separate packages. Plugin hosts construct Impl types with <a href="https://github.com/shtrasser-dev/Zaya.Logging">Zaya.Logging</a> <code>ILoggingWrapper</code> (or use the parameterless ctor with <code>EmptyLoggingWrapper</code>).</p>
+<p>Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on service abstractions (<code>IOCRService</code>, <code>IOCRSession</code>) and result types from <a href="https://github.com/shtrasser-dev/Zaya.Primitives">Zaya.Primitives</a> (<code>IOCRResult</code>, <code>IOCRWord</code>, <code>ITextResult</code>, …). Implementations such as OneOCR are separate packages. Plugin hosts construct Impl types with <a href="https://github.com/shtrasser-dev/Zaya.Logging">Zaya.Logging</a> <code>ILoggingWrapper</code> (or use the parameterless ctor with <code>EmptyLoggingWrapper</code>).</p>
 <h2 id="architecture">Architecture</h2>
 <table>
 <thead>
@@ -89,16 +89,16 @@
 <td>Active recognition session — <code>RecognizeAsync(IRawImage)</code> → <code>IOCRResult</code></td>
 </tr>
 <tr>
-<td><code>IOCRResult</code></td>
-<td>Aggregate result — read-only list of <code>IOCRWord</code> plus overall confidence</td>
-</tr>
-<tr>
-<td><code>IOCRWord</code></td>
-<td>Individual word — recognized text, pixel bounding box, per-word confidence</td>
+<td><code>IOCRResult</code> / <code>IOCRWord</code></td>
+<td>From <code>Zaya.Primitives.OCR</code> — words + confidence</td>
 </tr>
 <tr>
 <td><code>ITextLayoutService</code></td>
-<td>Optional layout engine — structures OCR words into paragraphs/lines</td>
+<td>Optional layout engine — <code>ITextResult</code> (<code>Paragraphs</code> + <code>FullText</code>)</td>
+</tr>
+<tr>
+<td><code>ITextLineExt</code> / <code>ITextParagraphExt</code></td>
+<td>Optional debug tracking/ghost (<code>Zaya.OCR.Models</code>)</td>
 </tr>
 </tbody>
 </table>

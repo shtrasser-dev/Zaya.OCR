@@ -224,7 +224,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.OneOcr.Models.OneOcrResult",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.OCR.Models.IOCRResult\" data-throw-if-not-resolved=\"false\"></xref> for OneOCR engine results.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.Primitives.OCR.IOCRResult\" data-throw-if-not-resolved=\"false\"></xref> for OneOCR engine results.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -252,7 +252,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.OneOcr.Models.OneOcrWord",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.OCR.Models.IOCRWord\" data-throw-if-not-resolved=\"false\"></xref> for OneOCR engine results.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.Primitives.OCR.IOCRWord\" data-throw-if-not-resolved=\"false\"></xref> for OneOCR engine results.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -462,7 +462,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.OCR.Models.IOCRResult\" data-throw-if-not-resolved=\"false\"></xref> for Windows.Media.Ocr results.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.Primitives.OCR.IOCRResult\" data-throw-if-not-resolved=\"false\"></xref> for Windows.Media.Ocr results.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -476,7 +476,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.OCR.Models.IOCRWord\" data-throw-if-not-resolved=\"false\"></xref> for Windows.Media.Ocr results.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.yml\" sourcestartlinenumber=\"1\">Default implementation of <xref href=\"Zaya.Primitives.OCR.IOCRWord\" data-throw-if-not-resolved=\"false\"></xref> for Windows.Media.Ocr results.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -550,101 +550,31 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Models.BoundingBox.yml",
+      "source_relative_path": "docs/api/Zaya.OCR.Models.ITextLineExt.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Zaya.OCR.Models.BoundingBox.html"
+          "relative_path": "api/Zaya.OCR.Models.ITextLineExt.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Zaya.OCR.Models.BoundingBox",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.BoundingBox.yml\" sourcestartlinenumber=\"1\">Oriented quadrilateral in image pixel space (Y down).\nCorner order matches OneOCR: P1→P2 along the top (reading direction), P3→P4 along the bottom back.</p>\n"
+      "Title": "Zaya.OCR.Models.ITextLineExt",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.ITextLineExt.yml\" sourcestartlinenumber=\"1\">Optional debug/tracking metadata for a layout line (e.g. overlay diagnostics).\nConcrete layout engines may implement this alongside <xref href=\"Zaya.Primitives.OCR.ITextLine\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Models.IOCRResult.yml",
+      "source_relative_path": "docs/api/Zaya.OCR.Models.ITextParagraphExt.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Zaya.OCR.Models.IOCRResult.html"
+          "relative_path": "api/Zaya.OCR.Models.ITextParagraphExt.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Zaya.OCR.Models.IOCRResult",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.IOCRResult.yml\" sourcestartlinenumber=\"1\">Represents the result of an OCR recognition operation.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Models.IOCRWord.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Zaya.OCR.Models.IOCRWord.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Zaya.OCR.Models.IOCRWord",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.IOCRWord.yml\" sourcestartlinenumber=\"1\">Represents a single recognized word with its text, bounding box, and confidence score.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Models.ITextLine.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Zaya.OCR.Models.ITextLine.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Zaya.OCR.Models.ITextLine",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.ITextLine.yml\" sourcestartlinenumber=\"1\">Represents a single line of text composed of one or more recognized words.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Models.ITextParagraph.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Zaya.OCR.Models.ITextParagraph.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Zaya.OCR.Models.ITextParagraph",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.ITextParagraph.yml\" sourcestartlinenumber=\"1\">Represents a paragraph of text composed of one or more lines.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Models.ITextResult.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Zaya.OCR.Models.ITextResult.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Zaya.OCR.Models.ITextResult",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.ITextResult.yml\" sourcestartlinenumber=\"1\">Result of text layout: words, lines, and paragraphs structured from OCR.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "docs/api/Zaya.OCR.Models.ITextWord.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Zaya.OCR.Models.ITextWord.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Zaya.OCR.Models.ITextWord",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.ITextWord.yml\" sourcestartlinenumber=\"1\">A layout-facing word with text, bounds, and confidence (typically from OCR).</p>\n"
+      "Title": "Zaya.OCR.Models.ITextParagraphExt",
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Models.ITextParagraphExt.yml\" sourcestartlinenumber=\"1\">Optional debug/tracking and ghost metadata for a layout paragraph (e.g. overlay diagnostics).\nConcrete layout engines may implement this alongside <xref href=\"Zaya.Primitives.OCR.ITextParagraph\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -700,7 +630,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Zaya.OCR.Services.ITextLayoutService",
-      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.ITextLayoutService.yml\" sourcestartlinenumber=\"1\">Merges individually recognized words from an <xref href=\"Zaya.OCR.Models.IOCRResult\" data-throw-if-not-resolved=\"false\"></xref>\ninto structured text blocks (paragraphs and lines) using configurable layout rules.</p>\n"
+      "Summary": "<p sourcefile=\"docs/api/Zaya.OCR.Services.ITextLayoutService.yml\" sourcestartlinenumber=\"1\">Merges individually recognized words from an <xref href=\"Zaya.Primitives.OCR.IOCRResult\" data-throw-if-not-resolved=\"false\"></xref>\ninto structured text blocks (paragraphs and lines) using configurable layout rules.</p>\n"
     },
     {
       "type": "ManagedReference",

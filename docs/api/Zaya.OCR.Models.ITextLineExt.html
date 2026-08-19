@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Interface IOCRWord </title>
+      <title>Interface ITextLineExt </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Interface IOCRWord ">
+      <meta name="title" content="Interface ITextLineExt ">
     
-    <meta name="description" content="Represents a single recognized word with its text, bounding box, and confidence score.">
+    <meta name="description" content="Optional debug/tracking metadata for a layout line (e.g. overlay diagnostics). Concrete layout engines may implement this alongside .">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -66,37 +66,38 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Zaya.OCR.Models.IOCRWord">
+            <article class="content wrap" id="_content" data-uid="Zaya.OCR.Models.ITextLineExt">
 
 
 
-  <h1 id="Zaya_OCR_Models_IOCRWord" data-uid="Zaya.OCR.Models.IOCRWord" class="text-break">Interface IOCRWord</h1>
-  <div class="markdown level0 summary"><p>Represents a single recognized word with its text, bounding box, and confidence score.</p>
+  <h1 id="Zaya_OCR_Models_ITextLineExt" data-uid="Zaya.OCR.Models.ITextLineExt" class="text-break">Interface ITextLineExt</h1>
+  <div class="markdown level0 summary"><p>Optional debug/tracking metadata for a layout line (e.g. overlay diagnostics).
+Concrete layout engines may implement this alongside <a class="xref" href="https://shtrasser-dev.github.io/Zaya.Primitives/api/Zaya.Primitives.OCR.ITextLine.html">ITextLine</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Zaya.html">Zaya</a>.<a class="xref" href="Zaya.OCR.html">OCR</a>.<a class="xref" href="Zaya.OCR.Models.html">Models</a></h6>
   <h6><strong>Assembly</strong>: Zaya.OCR.dll</h6>
-  <h5 id="Zaya_OCR_Models_IOCRWord_syntax">Syntax</h5>
+  <h5 id="Zaya_OCR_Models_ITextLineExt_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IOCRWord</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ITextLineExt</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_IOCRWord_Bounds.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.IOCRWord.Bounds%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextLineExt_HasPreviousFrameMatch.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/IOCRWord.cs/#L16">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextLineExt.cs/#L12">View Source</a>
   </span>
-  <a id="Zaya_OCR_Models_IOCRWord_Bounds_" data-uid="Zaya.OCR.Models.IOCRWord.Bounds*"></a>
-  <h4 id="Zaya_OCR_Models_IOCRWord_Bounds" data-uid="Zaya.OCR.Models.IOCRWord.Bounds">Bounds</h4>
-  <div class="markdown level1 summary"><p>Gets the oriented bounding box of the word in the image.</p>
+  <a id="Zaya_OCR_Models_ITextLineExt_HasPreviousFrameMatch_" data-uid="Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch*"></a>
+  <h4 id="Zaya_OCR_Models_ITextLineExt_HasPreviousFrameMatch" data-uid="Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch">HasPreviousFrameMatch</h4>
+  <div class="markdown level1 summary"><p>True when this line was matched to a previous-frame line (geometry / tracking).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">BoundingBox Bounds { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">bool HasPreviousFrameMatch { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -108,26 +109,27 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Zaya.OCR.Models.BoundingBox.html">BoundingBox</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_IOCRWord_Confidence.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.IOCRWord.Confidence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextLineExt_PreviousFrameMatchAge.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/IOCRWord.cs/#L21">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextLineExt.cs/#L18">View Source</a>
   </span>
-  <a id="Zaya_OCR_Models_IOCRWord_Confidence_" data-uid="Zaya.OCR.Models.IOCRWord.Confidence*"></a>
-  <h4 id="Zaya_OCR_Models_IOCRWord_Confidence" data-uid="Zaya.OCR.Models.IOCRWord.Confidence">Confidence</h4>
-  <div class="markdown level1 summary"><p>Gets the confidence of the word recognition (0.0 to 1.0).</p>
+  <a id="Zaya_OCR_Models_ITextLineExt_PreviousFrameMatchAge_" data-uid="Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge*"></a>
+  <h4 id="Zaya_OCR_Models_ITextLineExt_PreviousFrameMatchAge" data-uid="Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge">PreviousFrameMatchAge</h4>
+  <div class="markdown level1 summary"><p>How many frames this line identity has been alive (1 on first appearance;
+increments while <a class="xref" href="Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_HasPreviousFrameMatch">HasPreviousFrameMatch</a> stays true across frames).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">double Confidence { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">int PreviousFrameMatchAge { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -139,26 +141,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_IOCRWord_Text.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.IOCRWord.Text%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextLineExt_PreviousFrameText.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextLineExt.PreviousFrameText%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/IOCRWord.cs/#L11">View Source</a>
+    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextLineExt.cs/#L23">View Source</a>
   </span>
-  <a id="Zaya_OCR_Models_IOCRWord_Text_" data-uid="Zaya.OCR.Models.IOCRWord.Text*"></a>
-  <h4 id="Zaya_OCR_Models_IOCRWord_Text" data-uid="Zaya.OCR.Models.IOCRWord.Text">Text</h4>
-  <div class="markdown level1 summary"><p>Gets the recognized text of the word.</p>
+  <a id="Zaya_OCR_Models_ITextLineExt_PreviousFrameText_" data-uid="Zaya.OCR.Models.ITextLineExt.PreviousFrameText*"></a>
+  <h4 id="Zaya_OCR_Models_ITextLineExt_PreviousFrameText" data-uid="Zaya.OCR.Models.ITextLineExt.PreviousFrameText">PreviousFrameText</h4>
+  <div class="markdown level1 summary"><p>Display text of the matched previous-frame line(s), or empty when there is no match.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string Text { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">string PreviousFrameText { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -184,10 +186,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_IOCRWord.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.IOCRWord%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/new/main/apiSpec/new?filename=Zaya_OCR_Models_ITextLineExt.md&amp;value=---%0Auid%3A%20Zaya.OCR.Models.ITextLineExt%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/IOCRWord.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/shtrasser-dev/Zaya.OCR/blob/main/src/Zaya.OCR/Models/ITextLineExt.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

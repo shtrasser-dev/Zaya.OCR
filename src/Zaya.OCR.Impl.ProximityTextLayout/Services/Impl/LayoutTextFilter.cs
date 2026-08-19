@@ -3,7 +3,9 @@ using System.Text.RegularExpressions;
 using Zaya.OCR.Impl.ProximityTextLayout.Constants;
 using Zaya.OCR.Impl.ProximityTextLayout.Models;
 using Zaya.OCR.Models;
+using Zaya.Primitives.OCR;
 using Zaya.Primitives;
+using Zaya.Primitives.Settings;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Services.Impl;
 
@@ -145,14 +147,15 @@ internal sealed class LayoutTextFilter : ILayoutTextFilter
             }
             else
             {
+                var ext = line as ITextLineExt;
                 result.Add(new Models.TextLine(
                     text,
                     line.Words,
                     line.Bounds,
                     line.Id,
-                    line.HasPreviousFrameMatch,
-                    line.PreviousFrameMatchAge,
-                    line.PreviousFrameText));
+                    ext?.HasPreviousFrameMatch ?? false,
+                    ext?.PreviousFrameMatchAge ?? 1,
+                    ext?.PreviousFrameText ?? string.Empty));
             }
         }
 
@@ -180,14 +183,15 @@ internal sealed class LayoutTextFilter : ILayoutTextFilter
             }
             else
             {
+                var ext = paragraph as ITextParagraphExt;
                 result.Add(new Models.TextParagraph(text, paragraph.Lines)
                 {
                     Id = paragraph.Id,
-                    HasPreviousFrameMatch = paragraph.HasPreviousFrameMatch,
-                    PreviousFrameMatchAge = paragraph.PreviousFrameMatchAge,
-                    PreviousFrameText = paragraph.PreviousFrameText,
-                    IsGhost = paragraph.IsGhost,
-                    GhostAge = paragraph.GhostAge,
+                    HasPreviousFrameMatch = ext?.HasPreviousFrameMatch ?? false,
+                    PreviousFrameMatchAge = ext?.PreviousFrameMatchAge ?? 1,
+                    PreviousFrameText = ext?.PreviousFrameText ?? string.Empty,
+                    IsGhost = ext?.IsGhost ?? false,
+                    GhostAge = ext?.GhostAge ?? 0,
                 });
             }
         }

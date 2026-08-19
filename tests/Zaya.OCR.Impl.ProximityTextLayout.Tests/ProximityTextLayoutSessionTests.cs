@@ -3,6 +3,8 @@ using Zaya.OCR.Impl.ProximityTextLayout.Models;
 using Zaya.OCR.Impl.ProximityTextLayout.Services.Impl;
 using Zaya.OCR.Models;
 using Zaya.OCR.Services;
+using Zaya.Primitives;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Tests;
 
@@ -55,6 +57,14 @@ public sealed class ProximityTextLayoutSessionTests
                 new System.Numerics.Vector2(x3, y3),
                 new System.Numerics.Vector2(x4, y4)),
             confidence);
+
+    private static TextResult Frame(ITextResult result) => Assert.IsType<TextResult>(result);
+
+    private static ITextParagraphExt ParaExt(ITextParagraph paragraph)
+        => Assert.IsAssignableFrom<ITextParagraphExt>(paragraph);
+
+    private static ITextLineExt LineExt(ITextLine line)
+        => Assert.IsAssignableFrom<ITextLineExt>(line);
 
     [Fact]
     public async Task ProcessAsync_TiltedWords_MergesIntoOneLine()
@@ -561,10 +571,10 @@ public sealed class ProximityTextLayoutSessionTests
             MakeWord("STAR.", 300, 10, 45, 20)
         ), TestContext.Current.CancellationToken);
 
-        // Assembled geometry (ITextResult.Lines), not emitted/ghost paragraphs.
-        Assert.Single(dropped.Lines);
-        Assert.Equal(5, dropped.Lines[0].Words.Count);
-        Assert.DoesNotContain(dropped.Lines[0].Words, w => w.Text == "III");
+        // Assembled geometry (TextResult.AssembledLines), not emitted/ghost paragraphs.
+        Assert.Single(Frame(dropped).AssembledLines);
+        Assert.Equal(5, Frame(dropped).AssembledLines[0].Words.Count);
+        Assert.DoesNotContain(Frame(dropped).AssembledLines[0].Words, w => w.Text == "III");
     }
 
     [Fact]
@@ -589,7 +599,7 @@ public sealed class ProximityTextLayoutSessionTests
             MakeWord("STAR.", 170, 10, 45, 20)
         ), TestContext.Current.CancellationToken);
 
-        Assert.True(dropped.Lines.Count >= 2);
+        Assert.True(Frame(dropped).AssembledLines.Count >= 2);
     }
 
     [Fact]
@@ -600,14 +610,14 @@ public sealed class ProximityTextLayoutSessionTests
 
         var first = await session.ProcessAsync(
             CreateResult(MakeWord(text, 10, 10, 100, 20)), TestContext.Current.CancellationToken);
-        Assert.True(first.Lines[0].HasPreviousFrameMatch is false);
-        var a = first.Lines[0].Bounds;
+        Assert.True(Frame(first).AssembledLines[0].HasPreviousFrameMatch is false);
+        var a = Frame(first).AssembledLines[0].Bounds;
 
         // Translate by a few pixels — same text must freeze rails to the previous frame.
         var second = await session.ProcessAsync(
             CreateResult(MakeWord(text, 13, 12, 100, 20)), TestContext.Current.CancellationToken);
-        Assert.True(second.Lines[0].HasPreviousFrameMatch);
-        var b = second.Lines[0].Bounds;
+        Assert.True(Frame(second).AssembledLines[0].HasPreviousFrameMatch);
+        var b = Frame(second).AssembledLines[0].Bounds;
 
         Assert.Equal(a.P5.X, b.P5.X, precision: 1);
         Assert.Equal(a.P5.Y, b.P5.Y, precision: 1);
@@ -628,11 +638,11 @@ public sealed class ProximityTextLayoutSessionTests
         var shifted = await session.ProcessAsync(
             CreateResult(MakeWord(text, 90, 10, 120, 20)), TestContext.Current.CancellationToken);
 
-        Assert.False(shifted.Lines[0].HasPreviousFrameMatch);
-        Assert.Equal(1, shifted.Lines[0].PreviousFrameMatchAge);
-        Assert.Equal(text, shifted.Lines[0].Text);
+        Assert.False(Frame(shifted).AssembledLines[0].HasPreviousFrameMatch);
+        Assert.Equal(1, Frame(shifted).AssembledLines[0].PreviousFrameMatchAge);
+        Assert.Equal(text, Frame(shifted).AssembledLines[0].Text);
         // Geometry follows the new OCR box, not the previous rails.
-        Assert.InRange(shifted.Lines[0].Bounds.P5.X, 85, 95);
+        Assert.InRange(Frame(shifted).AssembledLines[0].Bounds.P5.X, 85, 95);
     }
 
     [Fact]
@@ -642,54 +652,54 @@ public sealed class ProximityTextLayoutSessionTests
 
         var first = await session.ProcessAsync(
             CreateResult(MakeWord("Hello World", 10, 10, 100, 20)), TestContext.Current.CancellationToken);
-        Assert.False(first.Paragraphs[0].HasPreviousFrameMatch);
-        Assert.Equal(1, first.Paragraphs[0].PreviousFrameMatchAge);
-        Assert.Equal(string.Empty, first.Paragraphs[0].PreviousFrameText);
-        Assert.False(first.Paragraphs[0].Lines[0].HasPreviousFrameMatch);
-        Assert.Equal(1, first.Paragraphs[0].Lines[0].PreviousFrameMatchAge);
-        Assert.Equal(string.Empty, first.Paragraphs[0].Lines[0].PreviousFrameText);
+        Assert.False(ParaExt(first.Paragraphs[0]).HasPreviousFrameMatch);
+        Assert.Equal(1, ParaExt(first.Paragraphs[0]).PreviousFrameMatchAge);
+        Assert.Equal(string.Empty, ParaExt(first.Paragraphs[0]).PreviousFrameText);
+        Assert.False(LineExt(first.Paragraphs[0].Lines[0]).HasPreviousFrameMatch);
+        Assert.Equal(1, LineExt(first.Paragraphs[0].Lines[0]).PreviousFrameMatchAge);
+        Assert.Equal(string.Empty, LineExt(first.Paragraphs[0].Lines[0]).PreviousFrameText);
 
         var same = await session.ProcessAsync(
             CreateResult(MakeWord("hello world", 10, 10, 100, 20)), TestContext.Current.CancellationToken);
-        Assert.True(same.Paragraphs[0].HasPreviousFrameMatch);
-        Assert.Equal(2, same.Paragraphs[0].PreviousFrameMatchAge);
-        Assert.Equal("Hello World", same.Paragraphs[0].PreviousFrameText);
-        Assert.True(same.Paragraphs[0].Lines[0].HasPreviousFrameMatch);
-        Assert.Equal(2, same.Paragraphs[0].Lines[0].PreviousFrameMatchAge);
-        Assert.Equal("Hello World", same.Paragraphs[0].Lines[0].PreviousFrameText);
+        Assert.True(ParaExt(same.Paragraphs[0]).HasPreviousFrameMatch);
+        Assert.Equal(2, ParaExt(same.Paragraphs[0]).PreviousFrameMatchAge);
+        Assert.Equal("Hello World", ParaExt(same.Paragraphs[0]).PreviousFrameText);
+        Assert.True(LineExt(same.Paragraphs[0].Lines[0]).HasPreviousFrameMatch);
+        Assert.Equal(2, LineExt(same.Paragraphs[0].Lines[0]).PreviousFrameMatchAge);
+        Assert.Equal("Hello World", LineExt(same.Paragraphs[0].Lines[0]).PreviousFrameText);
         // Old text-equality signal reconstructed from geometry match + PreviousFrameText.
         Assert.Equal(
             same.Paragraphs[0].Lines[0].Text,
-            same.Paragraphs[0].Lines[0].PreviousFrameText,
+            LineExt(same.Paragraphs[0].Lines[0]).PreviousFrameText,
             ignoreCase: true);
 
         // Same rails, different text — still a previous-frame geometric match.
         var different = await session.ProcessAsync(
             CreateResult(MakeWord("Hello there", 10, 10, 100, 20)), TestContext.Current.CancellationToken);
         Assert.Equal("Hello there", different.Paragraphs[0].Text);
-        Assert.True(different.Paragraphs[0].HasPreviousFrameMatch);
-        Assert.Equal(3, different.Paragraphs[0].PreviousFrameMatchAge);
-        Assert.Equal("Hello World", different.Paragraphs[0].PreviousFrameText);
-        Assert.True(different.Lines[0].HasPreviousFrameMatch);
-        Assert.Equal(3, different.Lines[0].PreviousFrameMatchAge);
-        Assert.Equal("Hello World", different.Lines[0].PreviousFrameText);
+        Assert.True(ParaExt(different.Paragraphs[0]).HasPreviousFrameMatch);
+        Assert.Equal(3, ParaExt(different.Paragraphs[0]).PreviousFrameMatchAge);
+        Assert.Equal("Hello World", ParaExt(different.Paragraphs[0]).PreviousFrameText);
+        Assert.True(Frame(different).AssembledLines[0].HasPreviousFrameMatch);
+        Assert.Equal(3, Frame(different).AssembledLines[0].PreviousFrameMatchAge);
+        Assert.Equal("Hello World", Frame(different).AssembledLines[0].PreviousFrameText);
         Assert.NotEqual(
-            different.Lines[0].Text,
-            different.Lines[0].PreviousFrameText,
+            Frame(different).AssembledLines[0].Text,
+            Frame(different).AssembledLines[0].PreviousFrameText,
             StringComparer.OrdinalIgnoreCase);
-        Assert.False(different.Paragraphs[0].IsGhost);
-        Assert.Equal(0, different.Paragraphs[0].GhostAge);
+        Assert.False(ParaExt(different.Paragraphs[0]).IsGhost);
+        Assert.Equal(0, ParaExt(different.Paragraphs[0]).GhostAge);
 
         // Longer growth on same rails keeps the match and advances age.
         var longer = await session.ProcessAsync(
             CreateResult(MakeWord("Hello World Extended", 10, 10, 160, 20)), TestContext.Current.CancellationToken);
         Assert.Equal("Hello World Extended", longer.Paragraphs[0].Text);
-        Assert.True(longer.Lines[0].HasPreviousFrameMatch);
-        Assert.Equal(4, longer.Lines[0].PreviousFrameMatchAge);
-        Assert.Equal("Hello there", longer.Lines[0].PreviousFrameText);
-        Assert.True(longer.Paragraphs[0].HasPreviousFrameMatch);
-        Assert.Equal(4, longer.Paragraphs[0].PreviousFrameMatchAge);
-        Assert.Equal("Hello there", longer.Paragraphs[0].PreviousFrameText);
+        Assert.True(Frame(longer).AssembledLines[0].HasPreviousFrameMatch);
+        Assert.Equal(4, Frame(longer).AssembledLines[0].PreviousFrameMatchAge);
+        Assert.Equal("Hello there", Frame(longer).AssembledLines[0].PreviousFrameText);
+        Assert.True(ParaExt(longer.Paragraphs[0]).HasPreviousFrameMatch);
+        Assert.Equal(4, ParaExt(longer.Paragraphs[0]).PreviousFrameMatchAge);
+        Assert.Equal("Hello there", ParaExt(longer.Paragraphs[0]).PreviousFrameText);
     }
 
     [Fact]
@@ -703,7 +713,7 @@ public sealed class ProximityTextLayoutSessionTests
         ), TestContext.Current.CancellationToken);
         Assert.Single(first.Paragraphs);
         Assert.Equal(text, first.Paragraphs[0].Text);
-        Assert.False(first.Paragraphs[0].Lines[0].HasPreviousFrameMatch);
+        Assert.False(LineExt(first.Paragraphs[0].Lines[0]).HasPreviousFrameMatch);
 
         // Slight pose jitter along the same tilt — should keep the first emission.
         var second = await session.ProcessAsync(CreateResult(
@@ -711,7 +721,7 @@ public sealed class ProximityTextLayoutSessionTests
         ), TestContext.Current.CancellationToken);
         Assert.Single(second.Paragraphs);
         Assert.Equal(text, second.Paragraphs[0].Text);
-        Assert.True(second.Paragraphs[0].Lines[0].HasPreviousFrameMatch);
+        Assert.True(LineExt(second.Paragraphs[0].Lines[0]).HasPreviousFrameMatch);
         var a = first.Paragraphs[0].Lines[0].Bounds;
         var b = second.Paragraphs[0].Lines[0].Bounds;
         Assert.Equal(a.AngleDegrees, b.AngleDegrees, precision: 1);
@@ -1307,10 +1317,10 @@ public sealed class ProximityTextLayoutSessionTests
         Assert.Single(second.Paragraphs[0].Lines);
         Assert.Equal(paragraphId, second.Paragraphs[0].Id);
         Assert.Equal(lineId, second.Paragraphs[0].Lines[0].Id);
-        Assert.True(second.Paragraphs[0].HasPreviousFrameMatch);
-        Assert.Equal(2, second.Paragraphs[0].PreviousFrameMatchAge);
-        Assert.True(second.Paragraphs[0].Lines[0].HasPreviousFrameMatch);
-        Assert.Equal(2, second.Paragraphs[0].Lines[0].PreviousFrameMatchAge);
+        Assert.True(ParaExt(second.Paragraphs[0]).HasPreviousFrameMatch);
+        Assert.Equal(2, ParaExt(second.Paragraphs[0]).PreviousFrameMatchAge);
+        Assert.True(LineExt(second.Paragraphs[0].Lines[0]).HasPreviousFrameMatch);
+        Assert.Equal(2, LineExt(second.Paragraphs[0].Lines[0]).PreviousFrameMatchAge);
 
         var third = await session.ProcessAsync(
             CreateResult(MakeWord("Completely different block elsewhere", 10, 200, 300, 20)),
@@ -1319,8 +1329,8 @@ public sealed class ProximityTextLayoutSessionTests
         var live = Assert.Single(third.Paragraphs, p => p is TextParagraph tp && !tp.IsGhost);
         Assert.NotEqual(paragraphId, live.Id);
         Assert.NotEqual(lineId, live.Lines[0].Id);
-        Assert.False(live.HasPreviousFrameMatch);
-        Assert.Equal(1, live.PreviousFrameMatchAge);
+        Assert.False(ParaExt(live).HasPreviousFrameMatch);
+        Assert.Equal(1, ParaExt(live).PreviousFrameMatchAge);
         var ghost = Assert.Single(third.Paragraphs.OfType<TextParagraph>(), p => p.IsGhost);
         Assert.Equal(paragraphId, ghost.Id);
         Assert.Equal(lineId, ghost.Lines[0].Id);

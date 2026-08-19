@@ -5,6 +5,7 @@ using Zaya.OCR.Impl.ProximityTextLayout.Services;
 using Zaya.OCR.Impl.ProximityTextLayout.Services.Impl;
 using Zaya.OCR.Services;
 using Zaya.Primitives;
+using Zaya.Primitives.Settings;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout;
 

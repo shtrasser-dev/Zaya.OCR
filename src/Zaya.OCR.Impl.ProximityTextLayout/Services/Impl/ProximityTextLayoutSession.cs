@@ -1,6 +1,7 @@
 using Zaya.Logging.Services;
 using Zaya.OCR.Impl.ProximityTextLayout.Models;
 using Zaya.OCR.Models;
+using Zaya.Primitives.OCR;
 using Zaya.OCR.Services;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Services.Impl;
@@ -108,14 +109,15 @@ public sealed class ProximityTextLayoutSession : ITextLayoutSession
                 continue;
             }
 
+            var ext = line as ITextLineExt;
             concrete.Add(new TextLine(
                 line.Text,
                 line.Words,
                 line.Bounds,
                 line.Id,
-                line.HasPreviousFrameMatch,
-                line.PreviousFrameMatchAge,
-                line.PreviousFrameText));
+                ext?.HasPreviousFrameMatch ?? false,
+                ext?.PreviousFrameMatchAge ?? 1,
+                ext?.PreviousFrameText ?? string.Empty));
         }
 
         frame.MutableLines = concrete;
@@ -136,17 +138,18 @@ public sealed class ProximityTextLayoutSession : ITextLayoutSession
                 continue;
             }
 
+            var ext = p as ITextParagraphExt;
             concrete.Add(new TextParagraph(
                 p.Text,
                 p.Lines.OfType<TextLine>().ToList(),
                 p.Text,
                 wasShown: false,
                 id: p.Id,
-                hasPreviousFrameMatch: p.HasPreviousFrameMatch,
-                previousFrameMatchAge: p.PreviousFrameMatchAge,
-                previousFrameText: p.PreviousFrameText,
-                isGhost: p.IsGhost,
-                ghostAge: p.GhostAge));
+                hasPreviousFrameMatch: ext?.HasPreviousFrameMatch ?? false,
+                previousFrameMatchAge: ext?.PreviousFrameMatchAge ?? 1,
+                previousFrameText: ext?.PreviousFrameText ?? string.Empty,
+                isGhost: ext?.IsGhost ?? false,
+                ghostAge: ext?.GhostAge ?? 0));
         }
 
         frame.MutableParagraphs = concrete;

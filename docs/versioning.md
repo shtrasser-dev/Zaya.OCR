@@ -2,10 +2,10 @@
 
 | Axis | Source | Example |
 |------|--------|---------|
-| **ZayaPrimitivesVersion** | `Directory.Build.props` (supplies **Major**) | `1.0.0` |
-| **interfaceVersion** | `Zaya.OCR.csproj` → only **`ZayaVersionInterface`** → `Major.Interface.0` | `1.3.0` |
-| **pluginVersion** | Each Impl → **`ZayaVersionImpMajor`** + **`ZayaVersionImpMinor`**; Interface read from abstractions → `Major.Interface.ImpMajor.ImpMinor` | `1.3.0.0` |
-| **updateChannel** | Interface `MAJOR.Interface` | `1.3` → `plugin-Zaya.OCR-v1.3-latest` |
+| **ZayaPrimitivesVersion** | `Directory.Build.props` (supplies **Major**) | `2.0.0` |
+| **interfaceVersion** | `Zaya.OCR.csproj` → only **`ZayaVersionInterface`** → `Major.Interface.0` | `2.0.0` |
+| **pluginVersion** | Each Impl → **`ZayaVersionImpMajor`** + **`ZayaVersionImpMinor`**; Interface read from abstractions → `Major.Interface.ImpMajor.ImpMinor` | `2.0.0.0` |
+| **updateChannel** | Interface `MAJOR.Interface` | `2.0` → `plugin-Zaya.OCR-v2.0-latest` |
 
 Rules:
 
@@ -23,15 +23,15 @@ Rules:
   "id": "OneOcr",
   "type": "ocr",
   "interface": "Zaya.OCR",
-  "interfaceVersion": "1.3.0",
-  "pluginVersion": "1.3.0.0",
+  "interfaceVersion": "2.0.0",
+  "pluginVersion": "2.0.0.0",
   "entryPoint": "Zaya.OCR.Impl.OneOcr.OneOcrService"
 }
 ```
 
 `entryPoint` is the fully qualified type that implements `IOCRService` / `ITextLayoutService` (hosts construct it with `ILoggingWrapper`, or use the parameterless ctor). Other plugins: `Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService`, `Zaya.OCR.Impl.ProximityTextLayout.ProximityTextLayoutService`.
 
-Release body lists per-asset plugin versions (`Zaya.OCR.Impl.OneOcr.zip=1.3.0.0`).
+Release body lists per-asset plugin versions (`Zaya.OCR.Impl.OneOcr.zip=2.0.0.0`).
 
 ## Changelog
 

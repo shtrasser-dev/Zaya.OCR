@@ -1,9 +1,11 @@
 using Zaya.OCR.Models;
+using Zaya.Primitives;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Models;
 
 /// <summary>Internal line with temporal links and display rails.</summary>
-public sealed class TextLine : ITextLine
+public sealed class TextLine : ITextLine, ITextLineExt
 {
     private readonly List<TextLine> _previousFrameLineList = [];
 

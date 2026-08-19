@@ -1,7 +1,8 @@
 using System.Numerics;
 using Zaya.Logging.Services;
 using Zaya.OCR.Impl.ProximityTextLayout.Models;
-using Zaya.OCR.Models;
+using Zaya.Primitives;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Services.Impl;
 
@@ -23,7 +24,7 @@ internal sealed class LinePreviousMatcher : ILinePreviousMatcher
         if (history.Previous is null)
             return;
 
-        var previousLines = history.Previous.Lines.OfType<TextLine>().ToList();
+        var previousLines = history.Previous.AssembledLines.ToList();
         if (previousLines.Count == 0)
             return;
 

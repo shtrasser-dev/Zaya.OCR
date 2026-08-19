@@ -1,5 +1,5 @@
-using Zaya.OCR.Models;
 using Zaya.Primitives;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Services;
 

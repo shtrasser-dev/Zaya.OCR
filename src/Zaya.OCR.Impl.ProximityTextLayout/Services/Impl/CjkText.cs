@@ -1,5 +1,6 @@
 using System.Text;
-using Zaya.OCR.Models;
+using Zaya.Primitives;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Services.Impl;
 

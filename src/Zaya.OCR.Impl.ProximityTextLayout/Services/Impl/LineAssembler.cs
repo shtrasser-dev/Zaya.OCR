@@ -1,7 +1,8 @@
 using System.Numerics;
 using Zaya.Logging.Services;
 using Zaya.OCR.Impl.ProximityTextLayout.Models;
-using Zaya.OCR.Models;
+using Zaya.Primitives;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Services.Impl;
 

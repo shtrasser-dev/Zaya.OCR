@@ -1,4 +1,5 @@
 using Zaya.OCR.Models;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Models;
 
@@ -14,16 +15,15 @@ public sealed class TextResult : ITextResult
     private bool _frozen;
 
     /// <inheritdoc />
-    public IReadOnlyList<ITextWord> Words => _words;
-
-    /// <inheritdoc />
-    public IReadOnlyList<ITextLine> Lines => _lines;
-
-    /// <inheritdoc />
     public IReadOnlyList<ITextParagraph> Paragraphs => _emittedParagraphs;
 
     /// <summary>All paragraphs including held (non-emitted), for history.</summary>
     public IReadOnlyList<TextParagraph> AllParagraphs => _allParagraphs;
+
+    /// <summary>
+    /// Assembled layout lines for pipeline/history (not part of <see cref="ITextResult"/>).
+    /// </summary>
+    public IReadOnlyList<TextLine> AssembledLines => _lines;
 
     /// <summary>Mutable word list (before freeze).</summary>
     public List<TextWord> MutableWords
@@ -77,7 +77,7 @@ public sealed class TextResult : ITextResult
     public TextResult(IReadOnlyList<ITextParagraph> paragraphs)
     {
         _allParagraphs = paragraphs
-            .Select(p => p as TextParagraph ?? new TextParagraph(p.Text, p.Lines))
+            .Select(WrapParagraph)
             .ToList();
         foreach (var p in _allParagraphs)
         {
@@ -110,6 +110,24 @@ public sealed class TextResult : ITextResult
 
     /// <summary>True after <see cref="Freeze"/>.</summary>
     public bool IsFrozen => _frozen;
+
+    private static TextParagraph WrapParagraph(ITextParagraph p)
+    {
+        if (p is TextParagraph concrete)
+            return concrete;
+
+        var wrapped = new TextParagraph(p.Text, p.Lines) { Id = p.Id };
+        if (p is ITextParagraphExt ext)
+        {
+            wrapped.HasPreviousFrameMatch = ext.HasPreviousFrameMatch;
+            wrapped.PreviousFrameMatchAge = ext.PreviousFrameMatchAge;
+            wrapped.PreviousFrameText = ext.PreviousFrameText;
+            wrapped.IsGhost = ext.IsGhost;
+            wrapped.GhostAge = ext.GhostAge;
+        }
+
+        return wrapped;
+    }
 
     private void ThrowIfFrozen()
     {

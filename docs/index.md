@@ -6,18 +6,19 @@ Pluggable OCR and text-layout abstractions for the Zaya ecosystem — engines ex
 
 | Package | Version | Role |
 |---------|---------|------|
-| **Zaya.OCR** | 1.3.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`, result models |
-| **Zaya.OCR.Impl.OneOcr** | 1.3.0.0 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
-| **Zaya.OCR.Impl.WindowsMediaOcr** | 1.3.0.0 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
-| **Zaya.OCR.Impl.ProximityTextLayout** | 1.3.0.0 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
+| **Zaya.OCR** | 2.0.0 | Abstractions: `IOCRService`, `IOCRSession`, `ITextLayoutService`; debug Ext for layout tracking |
+| **Zaya.OCR.Impl.OneOcr** | 2.0.0.0 | Windows OneOCR (`oneocr.dll` via P/Invoke; no WinRT / App SDK identity) |
+| **Zaya.OCR.Impl.WindowsMediaOcr** | 2.0.0.0 | Official `Windows.Media.Ocr` WinRT API (Windows 10+; typically needs MSIX identity) |
+| **Zaya.OCR.Impl.ProximityTextLayout** | 2.0.0.0 | Merges OCR words into lines/paragraphs; optional stabilization, merge hysteresis, and word/line/paragraph filters |
 
-Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **1.0.0**. Impl packages depend on [Zaya.Logging](https://github.com/shtrasser-dev/Zaya.Logging) **1.0.0**. Update channel for plugins: `plugin-Zaya.OCR-v1.3-latest`. See [versioning](versioning.md).
+Requires [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) **2.0.0**. Impl packages depend on [Zaya.Logging](https://github.com/shtrasser-dev/Zaya.Logging) **1.0.0**. Update channel for plugins: `plugin-Zaya.OCR-v2.0-latest`. See [versioning](versioning.md).
 
 ## Features
 
 - **IOCRService** — engine id, localized name/description, `Settings`, `PreferredPixelFormat`, `CreateSessionAsync`
-- **IOCRSession** — `RecognizeAsync(IRawImage)` → `IOCRResult` (words + confidence)
-- **ITextLayoutService** / **ITextLayoutSession** — structure OCR words into paragraphs/lines with stable `Id`, previous-frame match flags/ages, and ghost metadata
+- **IOCRSession** — `RecognizeAsync(IRawImage)` → `IOCRResult` (from `Zaya.Primitives.OCR`)
+- **ITextLayoutService** / **ITextLayoutSession** — `ITextResult` with `Paragraphs` + `FullText`
+- **ITextLineExt** / **ITextParagraphExt** — optional tracking/ghost for debug overlay
 - Failures surface as `LocalizedException` for host UI
 - Plugin Impl constructors take [Zaya.Logging](https://github.com/shtrasser-dev/Zaya.Logging) `ILoggingWrapper`
 
@@ -26,11 +27,11 @@ There is no separate `InitializeAsync`: create a session with defaults or an exp
 ## Installation
 
 ```xml
-<PackageReference Include="Zaya.OCR" Version="1.3.0" />
-<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="1.3.0.0" />
+<PackageReference Include="Zaya.OCR" Version="2.0.0" />
+<PackageReference Include="Zaya.OCR.Impl.OneOcr" Version="2.0.0.0" />
 <!-- optional -->
-<PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="1.3.0.0" />
-<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="1.3.0.0" />
+<PackageReference Include="Zaya.OCR.Impl.WindowsMediaOcr" Version="2.0.0.0" />
+<PackageReference Include="Zaya.OCR.Impl.ProximityTextLayout" Version="2.0.0.0" />
 ```
 
 ## Quick Start

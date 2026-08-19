@@ -1,6 +1,7 @@
 using System.Numerics;
 using Windows.Foundation;
-using Zaya.OCR.Models;
+using Zaya.Primitives;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl;
 

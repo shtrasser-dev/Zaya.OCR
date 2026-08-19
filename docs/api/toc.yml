@@ -132,26 +132,11 @@ items:
   name: Zaya.OCR.Models
   type: Namespace
   items:
-  - uid: Zaya.OCR.Models.BoundingBox
-    name: BoundingBox
-    type: Struct
-  - uid: Zaya.OCR.Models.IOCRResult
-    name: IOCRResult
+  - uid: Zaya.OCR.Models.ITextLineExt
+    name: ITextLineExt
     type: Interface
-  - uid: Zaya.OCR.Models.IOCRWord
-    name: IOCRWord
-    type: Interface
-  - uid: Zaya.OCR.Models.ITextLine
-    name: ITextLine
-    type: Interface
-  - uid: Zaya.OCR.Models.ITextParagraph
-    name: ITextParagraph
-    type: Interface
-  - uid: Zaya.OCR.Models.ITextResult
-    name: ITextResult
-    type: Interface
-  - uid: Zaya.OCR.Models.ITextWord
-    name: ITextWord
+  - uid: Zaya.OCR.Models.ITextParagraphExt
+    name: ITextParagraphExt
     type: Interface
 - uid: Zaya.OCR.Services
   name: Zaya.OCR.Services

@@ -5,7 +5,7 @@ items:
   id: OneOcrWord
   parent: Zaya.OCR.Impl.OneOcr.Models
   children:
-  - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)
+  - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.Primitives.BoundingBox,System.Double)
   - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
   - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
   - Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text
@@ -23,11 +23,11 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrWord
     path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Models
-  summary: Default implementation of <xref href="Zaya.OCR.Models.IOCRWord" data-throw-if-not-resolved="false"></xref> for OneOCR engine results.
+  summary: Default implementation of <xref href="Zaya.Primitives.OCR.IOCRWord" data-throw-if-not-resolved="false"></xref> for OneOCR engine results.
   example: []
   syntax:
     content: 'public sealed class OneOcrWord : IOCRWord'
@@ -35,7 +35,7 @@ items:
   inheritance:
   - System.Object
   implements:
-  - Zaya.OCR.Models.IOCRWord
+  - Zaya.Primitives.OCR.IOCRWord
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -61,7 +61,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Text
     path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Models
@@ -75,7 +75,7 @@ items:
     content.vb: Public ReadOnly Property Text As String
   overload: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text*
   implements:
-  - Zaya.OCR.Models.IOCRWord.Text
+  - Zaya.Primitives.OCR.IOCRWord.Text
 - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
   commentId: P:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
   id: Bounds
@@ -94,7 +94,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Bounds
     path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Models
@@ -104,11 +104,11 @@ items:
     content: public BoundingBox Bounds { get; }
     parameters: []
     return:
-      type: Zaya.OCR.Models.BoundingBox
+      type: Zaya.Primitives.BoundingBox
     content.vb: Public ReadOnly Property Bounds As BoundingBox
   overload: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds*
   implements:
-  - Zaya.OCR.Models.IOCRWord.Bounds
+  - Zaya.Primitives.OCR.IOCRWord.Bounds
 - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
   commentId: P:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
   id: Confidence
@@ -127,7 +127,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Confidence
     path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Models
@@ -141,17 +141,17 @@ items:
     content.vb: Public ReadOnly Property Confidence As Double
   overload: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence*
   implements:
-  - Zaya.OCR.Models.IOCRWord.Confidence
-- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)
-  commentId: M:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)
-  id: '#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)'
+  - Zaya.Primitives.OCR.IOCRWord.Confidence
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.Primitives.BoundingBox,System.Double)
+  commentId: M:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.Primitives.BoundingBox,System.Double)
+  id: '#ctor(System.String,Zaya.Primitives.BoundingBox,System.Double)'
   parent: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
   langs:
   - csharp
   - vb
   name: OneOcrWord(string, BoundingBox, double)
   nameWithType: OneOcrWord.OneOcrWord(string, BoundingBox, double)
-  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.OneOcrWord(string, Zaya.OCR.Models.BoundingBox, double)
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.OneOcrWord(string, Zaya.Primitives.BoundingBox, double)
   type: Constructor
   source:
     remote:
@@ -160,7 +160,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.OneOcr/Models/OneOcrWord.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr.Models
@@ -173,7 +173,7 @@ items:
       type: System.String
       description: The recognized text.
     - id: bounds
-      type: Zaya.OCR.Models.BoundingBox
+      type: Zaya.Primitives.BoundingBox
       description: The oriented bounding box in the image.
     - id: confidence
       type: System.Double
@@ -181,16 +181,16 @@ items:
     content.vb: Public Sub New(text As String, bounds As BoundingBox, confidence As Double)
   overload: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor*
   nameWithType.vb: OneOcrWord.New(String, BoundingBox, Double)
-  fullName.vb: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.New(String, Zaya.OCR.Models.BoundingBox, Double)
+  fullName.vb: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.New(String, Zaya.Primitives.BoundingBox, Double)
   name.vb: New(String, BoundingBox, Double)
 references:
-- uid: Zaya.OCR.Models.IOCRWord
-  commentId: T:Zaya.OCR.Models.IOCRWord
-  parent: Zaya.OCR.Models
-  href: Zaya.OCR.Models.IOCRWord.html
+- uid: Zaya.Primitives.OCR.IOCRWord
+  commentId: T:Zaya.Primitives.OCR.IOCRWord
+  parent: Zaya.Primitives.OCR
+  isExternal: true
   name: IOCRWord
   nameWithType: IOCRWord
-  fullName: Zaya.OCR.Models.IOCRWord
+  fullName: Zaya.Primitives.OCR.IOCRWord
 - uid: Zaya.OCR.Impl.OneOcr.Models
   commentId: N:Zaya.OCR.Impl.OneOcr.Models
   href: Zaya.html
@@ -443,36 +443,36 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
-- uid: Zaya.OCR.Models
-  commentId: N:Zaya.OCR.Models
-  href: Zaya.html
-  name: Zaya.OCR.Models
-  nameWithType: Zaya.OCR.Models
-  fullName: Zaya.OCR.Models
+- uid: Zaya.Primitives.OCR
+  commentId: N:Zaya.Primitives.OCR
+  isExternal: true
+  name: Zaya.Primitives.OCR
+  nameWithType: Zaya.Primitives.OCR
+  fullName: Zaya.Primitives.OCR
   spec.csharp:
   - uid: Zaya
     name: Zaya
-    href: Zaya.html
+    isExternal: true
   - name: .
-  - uid: Zaya.OCR
+  - uid: Zaya.Primitives
+    name: Primitives
+    isExternal: true
+  - name: .
+  - uid: Zaya.Primitives.OCR
     name: OCR
-    href: Zaya.OCR.html
-  - name: .
-  - uid: Zaya.OCR.Models
-    name: Models
-    href: Zaya.OCR.Models.html
+    isExternal: true
   spec.vb:
   - uid: Zaya
     name: Zaya
-    href: Zaya.html
+    isExternal: true
   - name: .
-  - uid: Zaya.OCR
+  - uid: Zaya.Primitives
+    name: Primitives
+    isExternal: true
+  - name: .
+  - uid: Zaya.Primitives.OCR
     name: OCR
-    href: Zaya.OCR.html
-  - name: .
-  - uid: Zaya.OCR.Models
-    name: Models
-    href: Zaya.OCR.Models.html
+    isExternal: true
 - uid: System
   commentId: N:System
   isExternal: true
@@ -486,12 +486,13 @@ references:
   name: Text
   nameWithType: OneOcrWord.Text
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Text
-- uid: Zaya.OCR.Models.IOCRWord.Text
-  commentId: P:Zaya.OCR.Models.IOCRWord.Text
-  parent: Zaya.OCR.Models.IOCRWord
+- uid: Zaya.Primitives.OCR.IOCRWord.Text
+  commentId: P:Zaya.Primitives.OCR.IOCRWord.Text
+  parent: Zaya.Primitives.OCR.IOCRWord
+  isExternal: true
   name: Text
   nameWithType: IOCRWord.Text
-  fullName: Zaya.OCR.Models.IOCRWord.Text
+  fullName: Zaya.Primitives.OCR.IOCRWord.Text
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -509,31 +510,55 @@ references:
   name: Bounds
   nameWithType: OneOcrWord.Bounds
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Bounds
-- uid: Zaya.OCR.Models.IOCRWord.Bounds
-  commentId: P:Zaya.OCR.Models.IOCRWord.Bounds
-  parent: Zaya.OCR.Models.IOCRWord
+- uid: Zaya.Primitives.OCR.IOCRWord.Bounds
+  commentId: P:Zaya.Primitives.OCR.IOCRWord.Bounds
+  parent: Zaya.Primitives.OCR.IOCRWord
+  isExternal: true
   name: Bounds
   nameWithType: IOCRWord.Bounds
-  fullName: Zaya.OCR.Models.IOCRWord.Bounds
-- uid: Zaya.OCR.Models.BoundingBox
-  commentId: T:Zaya.OCR.Models.BoundingBox
-  parent: Zaya.OCR.Models
-  href: Zaya.OCR.Models.BoundingBox.html
+  fullName: Zaya.Primitives.OCR.IOCRWord.Bounds
+- uid: Zaya.Primitives.BoundingBox
+  commentId: T:Zaya.Primitives.BoundingBox
+  parent: Zaya.Primitives
+  isExternal: true
   name: BoundingBox
   nameWithType: BoundingBox
-  fullName: Zaya.OCR.Models.BoundingBox
+  fullName: Zaya.Primitives.BoundingBox
+- uid: Zaya.Primitives
+  commentId: N:Zaya.Primitives
+  isExternal: true
+  name: Zaya.Primitives
+  nameWithType: Zaya.Primitives
+  fullName: Zaya.Primitives
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    isExternal: true
+  - name: .
+  - uid: Zaya.Primitives
+    name: Primitives
+    isExternal: true
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    isExternal: true
+  - name: .
+  - uid: Zaya.Primitives
+    name: Primitives
+    isExternal: true
 - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence*
   commentId: Overload:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
   href: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrWord_Confidence
   name: Confidence
   nameWithType: OneOcrWord.Confidence
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.Confidence
-- uid: Zaya.OCR.Models.IOCRWord.Confidence
-  commentId: P:Zaya.OCR.Models.IOCRWord.Confidence
-  parent: Zaya.OCR.Models.IOCRWord
+- uid: Zaya.Primitives.OCR.IOCRWord.Confidence
+  commentId: P:Zaya.Primitives.OCR.IOCRWord.Confidence
+  parent: Zaya.Primitives.OCR.IOCRWord
+  isExternal: true
   name: Confidence
   nameWithType: IOCRWord.Confidence
-  fullName: Zaya.OCR.Models.IOCRWord.Confidence
+  fullName: Zaya.Primitives.OCR.IOCRWord.Confidence
 - uid: System.Double
   commentId: T:System.Double
   parent: System
@@ -553,7 +578,7 @@ references:
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
 - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor*
   commentId: Overload:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor
-  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrWord__ctor_System_String_Zaya_OCR_Models_BoundingBox_System_Double_
+  href: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrWord__ctor_System_String_Zaya_Primitives_BoundingBox_System_Double_
   name: OneOcrWord
   nameWithType: OneOcrWord.OneOcrWord
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.OneOcrWord

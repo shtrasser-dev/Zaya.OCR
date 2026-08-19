@@ -77,7 +77,7 @@ items:
     - id: cancellationToken
       type: System.Threading.CancellationToken
     return:
-      type: System.Threading.Tasks.Task{Zaya.OCR.Models.IOCRResult}
+      type: System.Threading.Tasks.Task{Zaya.Primitives.OCR.IOCRResult}
     content.vb: Public Shared Function RecognizeAsync(session As IOCRSession, bitmap As Bitmap, cancellationToken As CancellationToken = Nothing) As Task(Of IOCRResult)
   overload: Zaya.OCR.Impl.WindowsMediaOcr.Extensions.OcrSessionExtensions.RecognizeAsync*
 references:
@@ -486,16 +486,16 @@ references:
   name: CancellationToken
   nameWithType: CancellationToken
   fullName: System.Threading.CancellationToken
-- uid: System.Threading.Tasks.Task{Zaya.OCR.Models.IOCRResult}
-  commentId: T:System.Threading.Tasks.Task{Zaya.OCR.Models.IOCRResult}
+- uid: System.Threading.Tasks.Task{Zaya.Primitives.OCR.IOCRResult}
+  commentId: T:System.Threading.Tasks.Task{Zaya.Primitives.OCR.IOCRResult}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   name: Task<IOCRResult>
   nameWithType: Task<IOCRResult>
-  fullName: System.Threading.Tasks.Task<Zaya.OCR.Models.IOCRResult>
+  fullName: System.Threading.Tasks.Task<Zaya.Primitives.OCR.IOCRResult>
   nameWithType.vb: Task(Of IOCRResult)
-  fullName.vb: System.Threading.Tasks.Task(Of Zaya.OCR.Models.IOCRResult)
+  fullName.vb: System.Threading.Tasks.Task(Of Zaya.Primitives.OCR.IOCRResult)
   name.vb: Task(Of IOCRResult)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
@@ -503,9 +503,9 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - uid: Zaya.OCR.Models.IOCRResult
+  - uid: Zaya.Primitives.OCR.IOCRResult
     name: IOCRResult
-    href: Zaya.OCR.Models.IOCRResult.html
+    isExternal: true
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -515,9 +515,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: Zaya.OCR.Models.IOCRResult
+  - uid: Zaya.Primitives.OCR.IOCRResult
     name: IOCRResult
-    href: Zaya.OCR.Models.IOCRResult.html
+    isExternal: true
   - name: )
 - uid: System.Threading
   commentId: N:System.Threading

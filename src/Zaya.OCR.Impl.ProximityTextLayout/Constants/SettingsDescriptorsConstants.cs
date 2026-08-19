@@ -1,4 +1,5 @@
 using Zaya.Primitives;
+using Zaya.Primitives.Settings;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Constants;
 

@@ -1,4 +1,5 @@
 using Zaya.OCR.Impl.ProximityTextLayout;
+using Zaya.Primitives.Settings;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Tests;
 
@@ -51,21 +52,21 @@ public sealed class ProximityTextLayoutServiceTests
         using var service = new ProximityTextLayoutService();
         var settings = service.Settings.ToDictionary(s => s.Key);
 
-        Assert.Equal(50, ((Zaya.Primitives.IntegerSettingDescriptor)settings["wordGapThreshold"]).DefaultValue);
-        Assert.Equal(50, ((Zaya.Primitives.IntegerSettingDescriptor)settings["baselineDriftTolerance"]).DefaultValue);
-        Assert.Equal(10, ((Zaya.Primitives.IntegerSettingDescriptor)settings["angleToleranceDegrees"]).DefaultValue);
-        Assert.Equal(150, ((Zaya.Primitives.IntegerSettingDescriptor)settings["lineSpacingThreshold"]).DefaultValue);
-        Assert.Equal(100, ((Zaya.Primitives.IntegerSettingDescriptor)settings["lineOverhangTolerancePercent"]).DefaultValue);
-        Assert.False(((Zaya.Primitives.BooleanSettingDescriptor)settings["verticalColumns"]).DefaultValue);
-        Assert.Equal(50, ((Zaya.Primitives.IntegerSettingDescriptor)settings["fontSizeTolerance"]).DefaultValue);
-        Assert.True(((Zaya.Primitives.BooleanSettingDescriptor)settings["enableStabilization"]).DefaultValue);
-        Assert.False(((Zaya.Primitives.BooleanSettingDescriptor)settings["holdNewBlocks"]).DefaultValue);
-        Assert.Equal(300, ((Zaya.Primitives.IntegerSettingDescriptor)settings["centerThresholdXPercent"]).DefaultValue);
-        Assert.Equal(75, ((Zaya.Primitives.IntegerSettingDescriptor)settings["centerThresholdYPercent"]).DefaultValue);
-        Assert.Equal(8, ((Zaya.Primitives.IntegerSettingDescriptor)settings["levenshteinThreshold"]).DefaultValue);
-        Assert.Equal(3, ((Zaya.Primitives.IntegerSettingDescriptor)settings["ghostMaxFrames"]).DefaultValue);
-        Assert.Equal(120, ((Zaya.Primitives.IntegerSettingDescriptor)settings["paragraphMergeHysteresisPercent"]).DefaultValue);
-        Assert.Equal(600, ((Zaya.Primitives.IntegerSettingDescriptor)settings["sameLineWordGapHysteresisPercent"]).DefaultValue);
+        Assert.Equal(50, ((IntegerSettingDescriptor)settings["wordGapThreshold"]).DefaultValue);
+        Assert.Equal(50, ((IntegerSettingDescriptor)settings["baselineDriftTolerance"]).DefaultValue);
+        Assert.Equal(10, ((IntegerSettingDescriptor)settings["angleToleranceDegrees"]).DefaultValue);
+        Assert.Equal(150, ((IntegerSettingDescriptor)settings["lineSpacingThreshold"]).DefaultValue);
+        Assert.Equal(100, ((IntegerSettingDescriptor)settings["lineOverhangTolerancePercent"]).DefaultValue);
+        Assert.False(((BooleanSettingDescriptor)settings["verticalColumns"]).DefaultValue);
+        Assert.Equal(50, ((IntegerSettingDescriptor)settings["fontSizeTolerance"]).DefaultValue);
+        Assert.True(((BooleanSettingDescriptor)settings["enableStabilization"]).DefaultValue);
+        Assert.False(((BooleanSettingDescriptor)settings["holdNewBlocks"]).DefaultValue);
+        Assert.Equal(300, ((IntegerSettingDescriptor)settings["centerThresholdXPercent"]).DefaultValue);
+        Assert.Equal(75, ((IntegerSettingDescriptor)settings["centerThresholdYPercent"]).DefaultValue);
+        Assert.Equal(8, ((IntegerSettingDescriptor)settings["levenshteinThreshold"]).DefaultValue);
+        Assert.Equal(3, ((IntegerSettingDescriptor)settings["ghostMaxFrames"]).DefaultValue);
+        Assert.Equal(120, ((IntegerSettingDescriptor)settings["paragraphMergeHysteresisPercent"]).DefaultValue);
+        Assert.Equal(600, ((IntegerSettingDescriptor)settings["sameLineWordGapHysteresisPercent"]).DefaultValue);
     }
 
     [Fact]

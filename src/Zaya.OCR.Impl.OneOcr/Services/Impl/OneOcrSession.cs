@@ -1,8 +1,8 @@
 using Zaya.OCR.Impl.OneOcr.Models;
 using Zaya.OCR.Impl.OneOcr.Services;
-using Zaya.OCR.Models;
 using Zaya.OCR.Services;
 using Zaya.Primitives;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.OneOcr.Services.Impl;
 

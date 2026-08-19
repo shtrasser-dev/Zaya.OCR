@@ -5,7 +5,7 @@ items:
   id: ITextLayoutSession
   parent: Zaya.OCR.Services
   children:
-  - Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)
+  - Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.Primitives.OCR.IOCRResult,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -34,16 +34,16 @@ items:
     content.vb: Public Interface ITextLayoutSession Inherits IDisposable
   inheritedMembers:
   - System.IDisposable.Dispose
-- uid: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)
-  commentId: M:Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)
-  id: ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)
+- uid: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.Primitives.OCR.IOCRResult,System.Threading.CancellationToken)
+  commentId: M:Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.Primitives.OCR.IOCRResult,System.Threading.CancellationToken)
+  id: ProcessAsync(Zaya.Primitives.OCR.IOCRResult,System.Threading.CancellationToken)
   parent: Zaya.OCR.Services.ITextLayoutSession
   langs:
   - csharp
   - vb
   name: ProcessAsync(IOCRResult, CancellationToken)
   nameWithType: ITextLayoutSession.ProcessAsync(IOCRResult, CancellationToken)
-  fullName: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult, System.Threading.CancellationToken)
+  fullName: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.Primitives.OCR.IOCRResult, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -62,13 +62,13 @@ items:
     content: Task<ITextResult> ProcessAsync(IOCRResult result, CancellationToken cancellationToken = default)
     parameters:
     - id: result
-      type: Zaya.OCR.Models.IOCRResult
+      type: Zaya.Primitives.OCR.IOCRResult
       description: The raw OCR result containing recognized words.
     - id: cancellationToken
       type: System.Threading.CancellationToken
       description: Token to cancel the processing operation.
     return:
-      type: System.Threading.Tasks.Task{Zaya.OCR.Models.ITextResult}
+      type: System.Threading.Tasks.Task{Zaya.Primitives.OCR.ITextResult}
       description: The processed text result containing ordered text blocks.
     content.vb: Function ProcessAsync(result As IOCRResult, cancellationToken As CancellationToken = Nothing) As Task(Of ITextResult)
   overload: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync*
@@ -210,17 +210,17 @@ references:
   fullName: System
 - uid: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync*
   commentId: Overload:Zaya.OCR.Services.ITextLayoutSession.ProcessAsync
-  href: Zaya.OCR.Services.ITextLayoutSession.html#Zaya_OCR_Services_ITextLayoutSession_ProcessAsync_Zaya_OCR_Models_IOCRResult_System_Threading_CancellationToken_
+  href: Zaya.OCR.Services.ITextLayoutSession.html#Zaya_OCR_Services_ITextLayoutSession_ProcessAsync_Zaya_Primitives_OCR_IOCRResult_System_Threading_CancellationToken_
   name: ProcessAsync
   nameWithType: ITextLayoutSession.ProcessAsync
   fullName: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync
-- uid: Zaya.OCR.Models.IOCRResult
-  commentId: T:Zaya.OCR.Models.IOCRResult
-  parent: Zaya.OCR.Models
-  href: Zaya.OCR.Models.IOCRResult.html
+- uid: Zaya.Primitives.OCR.IOCRResult
+  commentId: T:Zaya.Primitives.OCR.IOCRResult
+  parent: Zaya.Primitives.OCR
+  isExternal: true
   name: IOCRResult
   nameWithType: IOCRResult
-  fullName: Zaya.OCR.Models.IOCRResult
+  fullName: Zaya.Primitives.OCR.IOCRResult
 - uid: System.Threading.CancellationToken
   commentId: T:System.Threading.CancellationToken
   parent: System.Threading
@@ -229,16 +229,16 @@ references:
   name: CancellationToken
   nameWithType: CancellationToken
   fullName: System.Threading.CancellationToken
-- uid: System.Threading.Tasks.Task{Zaya.OCR.Models.ITextResult}
-  commentId: T:System.Threading.Tasks.Task{Zaya.OCR.Models.ITextResult}
+- uid: System.Threading.Tasks.Task{Zaya.Primitives.OCR.ITextResult}
+  commentId: T:System.Threading.Tasks.Task{Zaya.Primitives.OCR.ITextResult}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   name: Task<ITextResult>
   nameWithType: Task<ITextResult>
-  fullName: System.Threading.Tasks.Task<Zaya.OCR.Models.ITextResult>
+  fullName: System.Threading.Tasks.Task<Zaya.Primitives.OCR.ITextResult>
   nameWithType.vb: Task(Of ITextResult)
-  fullName.vb: System.Threading.Tasks.Task(Of Zaya.OCR.Models.ITextResult)
+  fullName.vb: System.Threading.Tasks.Task(Of Zaya.Primitives.OCR.ITextResult)
   name.vb: Task(Of ITextResult)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
@@ -246,9 +246,9 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - uid: Zaya.OCR.Models.ITextResult
+  - uid: Zaya.Primitives.OCR.ITextResult
     name: ITextResult
-    href: Zaya.OCR.Models.ITextResult.html
+    isExternal: true
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -258,40 +258,40 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: Zaya.OCR.Models.ITextResult
+  - uid: Zaya.Primitives.OCR.ITextResult
     name: ITextResult
-    href: Zaya.OCR.Models.ITextResult.html
+    isExternal: true
   - name: )
-- uid: Zaya.OCR.Models
-  commentId: N:Zaya.OCR.Models
-  href: Zaya.html
-  name: Zaya.OCR.Models
-  nameWithType: Zaya.OCR.Models
-  fullName: Zaya.OCR.Models
+- uid: Zaya.Primitives.OCR
+  commentId: N:Zaya.Primitives.OCR
+  isExternal: true
+  name: Zaya.Primitives.OCR
+  nameWithType: Zaya.Primitives.OCR
+  fullName: Zaya.Primitives.OCR
   spec.csharp:
   - uid: Zaya
     name: Zaya
-    href: Zaya.html
+    isExternal: true
   - name: .
-  - uid: Zaya.OCR
+  - uid: Zaya.Primitives
+    name: Primitives
+    isExternal: true
+  - name: .
+  - uid: Zaya.Primitives.OCR
     name: OCR
-    href: Zaya.OCR.html
-  - name: .
-  - uid: Zaya.OCR.Models
-    name: Models
-    href: Zaya.OCR.Models.html
+    isExternal: true
   spec.vb:
   - uid: Zaya
     name: Zaya
-    href: Zaya.html
+    isExternal: true
   - name: .
-  - uid: Zaya.OCR
+  - uid: Zaya.Primitives
+    name: Primitives
+    isExternal: true
+  - name: .
+  - uid: Zaya.Primitives.OCR
     name: OCR
-    href: Zaya.OCR.html
-  - name: .
-  - uid: Zaya.OCR.Models
-    name: Models
-    href: Zaya.OCR.Models.html
+    isExternal: true
 - uid: System.Threading
   commentId: N:System.Threading
   isExternal: true

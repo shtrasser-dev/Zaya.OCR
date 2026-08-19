@@ -7,6 +7,8 @@ using Zaya.OCR.Impl.WindowsMediaOcr.Extensions;
 using Zaya.OCR.Impl.WindowsMediaOcr.Models;
 using Zaya.OCR.Services;
 using Zaya.Primitives;
+using Zaya.Primitives.OCR;
+using Zaya.Primitives.Settings;
 using DrawingPixelFormat = System.Drawing.Imaging.PixelFormat;
 
 namespace Zaya.OCR.Tests;

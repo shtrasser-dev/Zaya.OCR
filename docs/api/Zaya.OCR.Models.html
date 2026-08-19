@@ -72,33 +72,16 @@
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
-    <h3 id="structs">
-Structs
-</h3>
-      <h4><a class="xref" href="Zaya.OCR.Models.BoundingBox.html">BoundingBox</a></h4>
-      <section><p>Oriented quadrilateral in image pixel space (Y down).
-Corner order matches OneOCR: P1→P2 along the top (reading direction), P3→P4 along the bottom back.</p>
-</section>
     <h3 id="interfaces">
 Interfaces
 </h3>
-      <h4><a class="xref" href="Zaya.OCR.Models.IOCRResult.html">IOCRResult</a></h4>
-      <section><p>Represents the result of an OCR recognition operation.</p>
+      <h4><a class="xref" href="Zaya.OCR.Models.ITextLineExt.html">ITextLineExt</a></h4>
+      <section><p>Optional debug/tracking metadata for a layout line (e.g. overlay diagnostics).
+Concrete layout engines may implement this alongside <a class="xref" href="https://shtrasser-dev.github.io/Zaya.Primitives/api/Zaya.Primitives.OCR.ITextLine.html">ITextLine</a>.</p>
 </section>
-      <h4><a class="xref" href="Zaya.OCR.Models.IOCRWord.html">IOCRWord</a></h4>
-      <section><p>Represents a single recognized word with its text, bounding box, and confidence score.</p>
-</section>
-      <h4><a class="xref" href="Zaya.OCR.Models.ITextLine.html">ITextLine</a></h4>
-      <section><p>Represents a single line of text composed of one or more recognized words.</p>
-</section>
-      <h4><a class="xref" href="Zaya.OCR.Models.ITextParagraph.html">ITextParagraph</a></h4>
-      <section><p>Represents a paragraph of text composed of one or more lines.</p>
-</section>
-      <h4><a class="xref" href="Zaya.OCR.Models.ITextResult.html">ITextResult</a></h4>
-      <section><p>Result of text layout: words, lines, and paragraphs structured from OCR.</p>
-</section>
-      <h4><a class="xref" href="Zaya.OCR.Models.ITextWord.html">ITextWord</a></h4>
-      <section><p>A layout-facing word with text, bounds, and confidence (typically from OCR).</p>
+      <h4><a class="xref" href="Zaya.OCR.Models.ITextParagraphExt.html">ITextParagraphExt</a></h4>
+      <section><p>Optional debug/tracking and ghost metadata for a layout paragraph (e.g. overlay diagnostics).
+Concrete layout engines may implement this alongside <a class="xref" href="https://shtrasser-dev.github.io/Zaya.Primitives/api/Zaya.Primitives.OCR.ITextParagraph.html">ITextParagraph</a>.</p>
 </section>
 
 

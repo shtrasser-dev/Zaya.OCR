@@ -508,13 +508,13 @@ references:
   commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult
   nameWithType: OneOcrResult
-- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.#ctor(System.Collections.Generic.IReadOnlyList{Zaya.OCR.Models.IOCRWord},System.Double)
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.#ctor(System.Collections.Generic.IReadOnlyList{Zaya.Primitives.OCR.IOCRWord},System.Double)
   name: OneOcrResult(IReadOnlyList<IOCRWord>, double)
-  href: api/Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrResult__ctor_System_Collections_Generic_IReadOnlyList_Zaya_OCR_Models_IOCRWord__System_Double_
-  commentId: M:Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.#ctor(System.Collections.Generic.IReadOnlyList{Zaya.OCR.Models.IOCRWord},System.Double)
+  href: api/Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrResult__ctor_System_Collections_Generic_IReadOnlyList_Zaya_Primitives_OCR_IOCRWord__System_Double_
+  commentId: M:Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.#ctor(System.Collections.Generic.IReadOnlyList{Zaya.Primitives.OCR.IOCRWord},System.Double)
   name.vb: New(IReadOnlyList(Of IOCRWord), Double)
-  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.OneOcrResult(System.Collections.Generic.IReadOnlyList<Zaya.OCR.Models.IOCRWord>, double)
-  fullName.vb: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.New(System.Collections.Generic.IReadOnlyList(Of Zaya.OCR.Models.IOCRWord), Double)
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.OneOcrResult(System.Collections.Generic.IReadOnlyList<Zaya.Primitives.OCR.IOCRWord>, double)
+  fullName.vb: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.New(System.Collections.Generic.IReadOnlyList(Of Zaya.Primitives.OCR.IOCRWord), Double)
   nameWithType: OneOcrResult.OneOcrResult(IReadOnlyList<IOCRWord>, double)
   nameWithType.vb: OneOcrResult.New(IReadOnlyList(Of IOCRWord), Double)
 - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrResult.#ctor*
@@ -589,13 +589,13 @@ references:
   commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
   fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord
   nameWithType: OneOcrWord
-- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)
+- uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.Primitives.BoundingBox,System.Double)
   name: OneOcrWord(string, BoundingBox, double)
-  href: api/Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrWord__ctor_System_String_Zaya_OCR_Models_BoundingBox_System_Double_
-  commentId: M:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)
+  href: api/Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.html#Zaya_OCR_Impl_OneOcr_Models_OneOcrWord__ctor_System_String_Zaya_Primitives_BoundingBox_System_Double_
+  commentId: M:Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor(System.String,Zaya.Primitives.BoundingBox,System.Double)
   name.vb: New(String, BoundingBox, Double)
-  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.OneOcrWord(string, Zaya.OCR.Models.BoundingBox, double)
-  fullName.vb: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.New(String, Zaya.OCR.Models.BoundingBox, Double)
+  fullName: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.OneOcrWord(string, Zaya.Primitives.BoundingBox, double)
+  fullName.vb: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.New(String, Zaya.Primitives.BoundingBox, Double)
   nameWithType: OneOcrWord.OneOcrWord(string, BoundingBox, double)
   nameWithType.vb: OneOcrWord.New(String, BoundingBox, Double)
 - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrWord.#ctor*
@@ -1142,13 +1142,13 @@ references:
   commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult
   fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult
   nameWithType: WindowsMediaOcrResult
-- uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.#ctor(System.Collections.Generic.IReadOnlyList{Zaya.OCR.Models.IOCRWord},System.Double)
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.#ctor(System.Collections.Generic.IReadOnlyList{Zaya.Primitives.OCR.IOCRWord},System.Double)
   name: WindowsMediaOcrResult(IReadOnlyList<IOCRWord>, double)
-  href: api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.html#Zaya_OCR_Impl_WindowsMediaOcr_Models_WindowsMediaOcrResult__ctor_System_Collections_Generic_IReadOnlyList_Zaya_OCR_Models_IOCRWord__System_Double_
-  commentId: M:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.#ctor(System.Collections.Generic.IReadOnlyList{Zaya.OCR.Models.IOCRWord},System.Double)
+  href: api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.html#Zaya_OCR_Impl_WindowsMediaOcr_Models_WindowsMediaOcrResult__ctor_System_Collections_Generic_IReadOnlyList_Zaya_Primitives_OCR_IOCRWord__System_Double_
+  commentId: M:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.#ctor(System.Collections.Generic.IReadOnlyList{Zaya.Primitives.OCR.IOCRWord},System.Double)
   name.vb: New(IReadOnlyList(Of IOCRWord), Double)
-  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.WindowsMediaOcrResult(System.Collections.Generic.IReadOnlyList<Zaya.OCR.Models.IOCRWord>, double)
-  fullName.vb: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.New(System.Collections.Generic.IReadOnlyList(Of Zaya.OCR.Models.IOCRWord), Double)
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.WindowsMediaOcrResult(System.Collections.Generic.IReadOnlyList<Zaya.Primitives.OCR.IOCRWord>, double)
+  fullName.vb: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.New(System.Collections.Generic.IReadOnlyList(Of Zaya.Primitives.OCR.IOCRWord), Double)
   nameWithType: WindowsMediaOcrResult.WindowsMediaOcrResult(IReadOnlyList<IOCRWord>, double)
   nameWithType.vb: WindowsMediaOcrResult.New(IReadOnlyList(Of IOCRWord), Double)
 - uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrResult.#ctor*
@@ -1193,13 +1193,13 @@ references:
   commentId: T:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord
   fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord
   nameWithType: WindowsMediaOcrWord
-- uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)
+- uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor(System.String,Zaya.Primitives.BoundingBox,System.Double)
   name: WindowsMediaOcrWord(string, BoundingBox, double)
-  href: api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.html#Zaya_OCR_Impl_WindowsMediaOcr_Models_WindowsMediaOcrWord__ctor_System_String_Zaya_OCR_Models_BoundingBox_System_Double_
-  commentId: M:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor(System.String,Zaya.OCR.Models.BoundingBox,System.Double)
+  href: api/Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.html#Zaya_OCR_Impl_WindowsMediaOcr_Models_WindowsMediaOcrWord__ctor_System_String_Zaya_Primitives_BoundingBox_System_Double_
+  commentId: M:Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor(System.String,Zaya.Primitives.BoundingBox,System.Double)
   name.vb: New(String, BoundingBox, Double)
-  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.WindowsMediaOcrWord(string, Zaya.OCR.Models.BoundingBox, double)
-  fullName.vb: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.New(String, Zaya.OCR.Models.BoundingBox, Double)
+  fullName: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.WindowsMediaOcrWord(string, Zaya.Primitives.BoundingBox, double)
+  fullName.vb: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.New(String, Zaya.Primitives.BoundingBox, Double)
   nameWithType: WindowsMediaOcrWord.WindowsMediaOcrWord(string, BoundingBox, double)
   nameWithType.vb: WindowsMediaOcrWord.New(String, BoundingBox, Double)
 - uid: Zaya.OCR.Impl.WindowsMediaOcr.Models.WindowsMediaOcrWord.#ctor*
@@ -1442,896 +1442,122 @@ references:
   commentId: N:Zaya.OCR.Models
   fullName: Zaya.OCR.Models
   nameWithType: Zaya.OCR.Models
-- uid: Zaya.OCR.Models.BoundingBox
-  name: BoundingBox
-  href: api/Zaya.OCR.Models.BoundingBox.html
-  commentId: T:Zaya.OCR.Models.BoundingBox
-  fullName: Zaya.OCR.Models.BoundingBox
-  nameWithType: BoundingBox
-- uid: Zaya.OCR.Models.BoundingBox.#ctor(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)
-  name: BoundingBox(Vector2, Vector2, Vector2, Vector2)
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox__ctor_System_Numerics_Vector2_System_Numerics_Vector2_System_Numerics_Vector2_System_Numerics_Vector2_
-  commentId: M:Zaya.OCR.Models.BoundingBox.#ctor(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)
-  name.vb: New(Vector2, Vector2, Vector2, Vector2)
-  fullName: Zaya.OCR.Models.BoundingBox.BoundingBox(System.Numerics.Vector2, System.Numerics.Vector2, System.Numerics.Vector2, System.Numerics.Vector2)
-  fullName.vb: Zaya.OCR.Models.BoundingBox.New(System.Numerics.Vector2, System.Numerics.Vector2, System.Numerics.Vector2, System.Numerics.Vector2)
-  nameWithType: BoundingBox.BoundingBox(Vector2, Vector2, Vector2, Vector2)
-  nameWithType.vb: BoundingBox.New(Vector2, Vector2, Vector2, Vector2)
-- uid: Zaya.OCR.Models.BoundingBox.#ctor*
-  name: BoundingBox
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox__ctor_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Zaya.OCR.Models.BoundingBox.BoundingBox
-  fullName.vb: Zaya.OCR.Models.BoundingBox.New
-  nameWithType: BoundingBox.BoundingBox
-  nameWithType.vb: BoundingBox.New
-- uid: Zaya.OCR.Models.BoundingBox.AngleDegrees
-  name: AngleDegrees
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_AngleDegrees
-  commentId: P:Zaya.OCR.Models.BoundingBox.AngleDegrees
-  fullName: Zaya.OCR.Models.BoundingBox.AngleDegrees
-  nameWithType: BoundingBox.AngleDegrees
-- uid: Zaya.OCR.Models.BoundingBox.AngleDegrees*
-  name: AngleDegrees
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_AngleDegrees_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.AngleDegrees
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.AngleDegrees
-  nameWithType: BoundingBox.AngleDegrees
-- uid: Zaya.OCR.Models.BoundingBox.Bottom
-  name: Bottom
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Bottom
-  commentId: P:Zaya.OCR.Models.BoundingBox.Bottom
-  fullName: Zaya.OCR.Models.BoundingBox.Bottom
-  nameWithType: BoundingBox.Bottom
-- uid: Zaya.OCR.Models.BoundingBox.Bottom*
-  name: Bottom
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Bottom_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Bottom
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Bottom
-  nameWithType: BoundingBox.Bottom
-- uid: Zaya.OCR.Models.BoundingBox.Direction
-  name: Direction
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Direction
-  commentId: P:Zaya.OCR.Models.BoundingBox.Direction
-  fullName: Zaya.OCR.Models.BoundingBox.Direction
-  nameWithType: BoundingBox.Direction
-- uid: Zaya.OCR.Models.BoundingBox.Direction*
-  name: Direction
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Direction_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Direction
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Direction
-  nameWithType: BoundingBox.Direction
-- uid: Zaya.OCR.Models.BoundingBox.Empty
-  name: Empty
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Empty
-  commentId: P:Zaya.OCR.Models.BoundingBox.Empty
-  fullName: Zaya.OCR.Models.BoundingBox.Empty
-  nameWithType: BoundingBox.Empty
-- uid: Zaya.OCR.Models.BoundingBox.Empty*
-  name: Empty
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Empty_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Empty
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Empty
-  nameWithType: BoundingBox.Empty
-- uid: Zaya.OCR.Models.BoundingBox.Equals(System.Object)
-  name: Equals(object?)
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Equals_System_Object_
-  commentId: M:Zaya.OCR.Models.BoundingBox.Equals(System.Object)
-  name.vb: Equals(Object)
-  fullName: Zaya.OCR.Models.BoundingBox.Equals(object?)
-  fullName.vb: Zaya.OCR.Models.BoundingBox.Equals(Object)
-  nameWithType: BoundingBox.Equals(object?)
-  nameWithType.vb: BoundingBox.Equals(Object)
-- uid: Zaya.OCR.Models.BoundingBox.Equals(Zaya.OCR.Models.BoundingBox)
-  name: Equals(BoundingBox)
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Equals_Zaya_OCR_Models_BoundingBox_
-  commentId: M:Zaya.OCR.Models.BoundingBox.Equals(Zaya.OCR.Models.BoundingBox)
-  fullName: Zaya.OCR.Models.BoundingBox.Equals(Zaya.OCR.Models.BoundingBox)
-  nameWithType: BoundingBox.Equals(BoundingBox)
-- uid: Zaya.OCR.Models.BoundingBox.Equals*
-  name: Equals
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Equals_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Equals
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Equals
-  nameWithType: BoundingBox.Equals
-- uid: Zaya.OCR.Models.BoundingBox.FromAxisAligned(System.Int32,System.Int32,System.Int32,System.Int32)
-  name: FromAxisAligned(int, int, int, int)
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_FromAxisAligned_System_Int32_System_Int32_System_Int32_System_Int32_
-  commentId: M:Zaya.OCR.Models.BoundingBox.FromAxisAligned(System.Int32,System.Int32,System.Int32,System.Int32)
-  name.vb: FromAxisAligned(Integer, Integer, Integer, Integer)
-  fullName: Zaya.OCR.Models.BoundingBox.FromAxisAligned(int, int, int, int)
-  fullName.vb: Zaya.OCR.Models.BoundingBox.FromAxisAligned(Integer, Integer, Integer, Integer)
-  nameWithType: BoundingBox.FromAxisAligned(int, int, int, int)
-  nameWithType.vb: BoundingBox.FromAxisAligned(Integer, Integer, Integer, Integer)
-- uid: Zaya.OCR.Models.BoundingBox.FromAxisAligned(System.Single,System.Single,System.Single,System.Single)
-  name: FromAxisAligned(float, float, float, float)
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_FromAxisAligned_System_Single_System_Single_System_Single_System_Single_
-  commentId: M:Zaya.OCR.Models.BoundingBox.FromAxisAligned(System.Single,System.Single,System.Single,System.Single)
-  name.vb: FromAxisAligned(Single, Single, Single, Single)
-  fullName: Zaya.OCR.Models.BoundingBox.FromAxisAligned(float, float, float, float)
-  fullName.vb: Zaya.OCR.Models.BoundingBox.FromAxisAligned(Single, Single, Single, Single)
-  nameWithType: BoundingBox.FromAxisAligned(float, float, float, float)
-  nameWithType.vb: BoundingBox.FromAxisAligned(Single, Single, Single, Single)
-- uid: Zaya.OCR.Models.BoundingBox.FromAxisAligned*
-  name: FromAxisAligned
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_FromAxisAligned_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.FromAxisAligned
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.FromAxisAligned
-  nameWithType: BoundingBox.FromAxisAligned
-- uid: Zaya.OCR.Models.BoundingBox.FromLTRB(System.Int32,System.Int32,System.Int32,System.Int32)
-  name: FromLTRB(int, int, int, int)
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_FromLTRB_System_Int32_System_Int32_System_Int32_System_Int32_
-  commentId: M:Zaya.OCR.Models.BoundingBox.FromLTRB(System.Int32,System.Int32,System.Int32,System.Int32)
-  name.vb: FromLTRB(Integer, Integer, Integer, Integer)
-  fullName: Zaya.OCR.Models.BoundingBox.FromLTRB(int, int, int, int)
-  fullName.vb: Zaya.OCR.Models.BoundingBox.FromLTRB(Integer, Integer, Integer, Integer)
-  nameWithType: BoundingBox.FromLTRB(int, int, int, int)
-  nameWithType.vb: BoundingBox.FromLTRB(Integer, Integer, Integer, Integer)
-- uid: Zaya.OCR.Models.BoundingBox.FromLTRB*
-  name: FromLTRB
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_FromLTRB_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.FromLTRB
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.FromLTRB
-  nameWithType: BoundingBox.FromLTRB
-- uid: Zaya.OCR.Models.BoundingBox.GetHashCode
-  name: GetHashCode()
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_GetHashCode
-  commentId: M:Zaya.OCR.Models.BoundingBox.GetHashCode
-  fullName: Zaya.OCR.Models.BoundingBox.GetHashCode()
-  nameWithType: BoundingBox.GetHashCode()
-- uid: Zaya.OCR.Models.BoundingBox.GetHashCode*
-  name: GetHashCode
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_GetHashCode_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.GetHashCode
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.GetHashCode
-  nameWithType: BoundingBox.GetHashCode
-- uid: Zaya.OCR.Models.BoundingBox.Height
-  name: Height
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Height
-  commentId: P:Zaya.OCR.Models.BoundingBox.Height
-  fullName: Zaya.OCR.Models.BoundingBox.Height
-  nameWithType: BoundingBox.Height
-- uid: Zaya.OCR.Models.BoundingBox.Height*
-  name: Height
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Height_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Height
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Height
-  nameWithType: BoundingBox.Height
-- uid: Zaya.OCR.Models.BoundingBox.IsEmpty
-  name: IsEmpty
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_IsEmpty
-  commentId: P:Zaya.OCR.Models.BoundingBox.IsEmpty
-  fullName: Zaya.OCR.Models.BoundingBox.IsEmpty
-  nameWithType: BoundingBox.IsEmpty
-- uid: Zaya.OCR.Models.BoundingBox.IsEmpty*
-  name: IsEmpty
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_IsEmpty_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.IsEmpty
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.IsEmpty
-  nameWithType: BoundingBox.IsEmpty
-- uid: Zaya.OCR.Models.BoundingBox.Left
-  name: Left
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Left
-  commentId: P:Zaya.OCR.Models.BoundingBox.Left
-  fullName: Zaya.OCR.Models.BoundingBox.Left
-  nameWithType: BoundingBox.Left
-- uid: Zaya.OCR.Models.BoundingBox.Left*
-  name: Left
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Left_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Left
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Left
-  nameWithType: BoundingBox.Left
-- uid: Zaya.OCR.Models.BoundingBox.MaxX
-  name: MaxX
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MaxX
-  commentId: P:Zaya.OCR.Models.BoundingBox.MaxX
-  fullName: Zaya.OCR.Models.BoundingBox.MaxX
-  nameWithType: BoundingBox.MaxX
-- uid: Zaya.OCR.Models.BoundingBox.MaxX*
-  name: MaxX
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MaxX_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.MaxX
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.MaxX
-  nameWithType: BoundingBox.MaxX
-- uid: Zaya.OCR.Models.BoundingBox.MaxY
-  name: MaxY
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MaxY
-  commentId: P:Zaya.OCR.Models.BoundingBox.MaxY
-  fullName: Zaya.OCR.Models.BoundingBox.MaxY
-  nameWithType: BoundingBox.MaxY
-- uid: Zaya.OCR.Models.BoundingBox.MaxY*
-  name: MaxY
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MaxY_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.MaxY
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.MaxY
-  nameWithType: BoundingBox.MaxY
-- uid: Zaya.OCR.Models.BoundingBox.MinX
-  name: MinX
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MinX
-  commentId: P:Zaya.OCR.Models.BoundingBox.MinX
-  fullName: Zaya.OCR.Models.BoundingBox.MinX
-  nameWithType: BoundingBox.MinX
-- uid: Zaya.OCR.Models.BoundingBox.MinX*
-  name: MinX
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MinX_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.MinX
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.MinX
-  nameWithType: BoundingBox.MinX
-- uid: Zaya.OCR.Models.BoundingBox.MinY
-  name: MinY
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MinY
-  commentId: P:Zaya.OCR.Models.BoundingBox.MinY
-  fullName: Zaya.OCR.Models.BoundingBox.MinY
-  nameWithType: BoundingBox.MinY
-- uid: Zaya.OCR.Models.BoundingBox.MinY*
-  name: MinY
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_MinY_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.MinY
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.MinY
-  nameWithType: BoundingBox.MinY
-- uid: Zaya.OCR.Models.BoundingBox.Normal
-  name: Normal
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Normal
-  commentId: P:Zaya.OCR.Models.BoundingBox.Normal
-  fullName: Zaya.OCR.Models.BoundingBox.Normal
-  nameWithType: BoundingBox.Normal
-- uid: Zaya.OCR.Models.BoundingBox.Normal*
-  name: Normal
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Normal_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Normal
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Normal
-  nameWithType: BoundingBox.Normal
-- uid: Zaya.OCR.Models.BoundingBox.P1
-  name: P1
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P1
-  commentId: P:Zaya.OCR.Models.BoundingBox.P1
-  fullName: Zaya.OCR.Models.BoundingBox.P1
-  nameWithType: BoundingBox.P1
-- uid: Zaya.OCR.Models.BoundingBox.P1*
-  name: P1
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P1_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.P1
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.P1
-  nameWithType: BoundingBox.P1
-- uid: Zaya.OCR.Models.BoundingBox.P2
-  name: P2
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P2
-  commentId: P:Zaya.OCR.Models.BoundingBox.P2
-  fullName: Zaya.OCR.Models.BoundingBox.P2
-  nameWithType: BoundingBox.P2
-- uid: Zaya.OCR.Models.BoundingBox.P2*
-  name: P2
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P2_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.P2
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.P2
-  nameWithType: BoundingBox.P2
-- uid: Zaya.OCR.Models.BoundingBox.P3
-  name: P3
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P3
-  commentId: P:Zaya.OCR.Models.BoundingBox.P3
-  fullName: Zaya.OCR.Models.BoundingBox.P3
-  nameWithType: BoundingBox.P3
-- uid: Zaya.OCR.Models.BoundingBox.P3*
-  name: P3
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P3_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.P3
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.P3
-  nameWithType: BoundingBox.P3
-- uid: Zaya.OCR.Models.BoundingBox.P4
-  name: P4
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P4
-  commentId: P:Zaya.OCR.Models.BoundingBox.P4
-  fullName: Zaya.OCR.Models.BoundingBox.P4
-  nameWithType: BoundingBox.P4
-- uid: Zaya.OCR.Models.BoundingBox.P4*
-  name: P4
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P4_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.P4
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.P4
-  nameWithType: BoundingBox.P4
-- uid: Zaya.OCR.Models.BoundingBox.P5
-  name: P5
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P5
-  commentId: P:Zaya.OCR.Models.BoundingBox.P5
-  fullName: Zaya.OCR.Models.BoundingBox.P5
-  nameWithType: BoundingBox.P5
-- uid: Zaya.OCR.Models.BoundingBox.P5*
-  name: P5
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P5_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.P5
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.P5
-  nameWithType: BoundingBox.P5
-- uid: Zaya.OCR.Models.BoundingBox.P6
-  name: P6
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P6
-  commentId: P:Zaya.OCR.Models.BoundingBox.P6
-  fullName: Zaya.OCR.Models.BoundingBox.P6
-  nameWithType: BoundingBox.P6
-- uid: Zaya.OCR.Models.BoundingBox.P6*
-  name: P6
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P6_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.P6
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.P6
-  nameWithType: BoundingBox.P6
-- uid: Zaya.OCR.Models.BoundingBox.P7
-  name: P7
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P7
-  commentId: P:Zaya.OCR.Models.BoundingBox.P7
-  fullName: Zaya.OCR.Models.BoundingBox.P7
-  nameWithType: BoundingBox.P7
-- uid: Zaya.OCR.Models.BoundingBox.P7*
-  name: P7
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P7_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.P7
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.P7
-  nameWithType: BoundingBox.P7
-- uid: Zaya.OCR.Models.BoundingBox.P8
-  name: P8
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P8
-  commentId: P:Zaya.OCR.Models.BoundingBox.P8
-  fullName: Zaya.OCR.Models.BoundingBox.P8
-  nameWithType: BoundingBox.P8
-- uid: Zaya.OCR.Models.BoundingBox.P8*
-  name: P8
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_P8_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.P8
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.P8
-  nameWithType: BoundingBox.P8
-- uid: Zaya.OCR.Models.BoundingBox.Right
-  name: Right
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Right
-  commentId: P:Zaya.OCR.Models.BoundingBox.Right
-  fullName: Zaya.OCR.Models.BoundingBox.Right
-  nameWithType: BoundingBox.Right
-- uid: Zaya.OCR.Models.BoundingBox.Right*
-  name: Right
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Right_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Right
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Right
-  nameWithType: BoundingBox.Right
-- uid: Zaya.OCR.Models.BoundingBox.TextHeight
-  name: TextHeight
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_TextHeight
-  commentId: P:Zaya.OCR.Models.BoundingBox.TextHeight
-  fullName: Zaya.OCR.Models.BoundingBox.TextHeight
-  nameWithType: BoundingBox.TextHeight
-- uid: Zaya.OCR.Models.BoundingBox.TextHeight*
-  name: TextHeight
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_TextHeight_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.TextHeight
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.TextHeight
-  nameWithType: BoundingBox.TextHeight
-- uid: Zaya.OCR.Models.BoundingBox.ToRect
-  name: ToRect()
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_ToRect
-  commentId: M:Zaya.OCR.Models.BoundingBox.ToRect
-  fullName: Zaya.OCR.Models.BoundingBox.ToRect()
-  nameWithType: BoundingBox.ToRect()
-- uid: Zaya.OCR.Models.BoundingBox.ToRect*
-  name: ToRect
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_ToRect_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.ToRect
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.ToRect
-  nameWithType: BoundingBox.ToRect
-- uid: Zaya.OCR.Models.BoundingBox.ToString
-  name: ToString()
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_ToString
-  commentId: M:Zaya.OCR.Models.BoundingBox.ToString
-  fullName: Zaya.OCR.Models.BoundingBox.ToString()
-  nameWithType: BoundingBox.ToString()
-- uid: Zaya.OCR.Models.BoundingBox.ToString*
-  name: ToString
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_ToString_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.ToString
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.ToString
-  nameWithType: BoundingBox.ToString
-- uid: Zaya.OCR.Models.BoundingBox.Top
-  name: Top
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Top
-  commentId: P:Zaya.OCR.Models.BoundingBox.Top
-  fullName: Zaya.OCR.Models.BoundingBox.Top
-  nameWithType: BoundingBox.Top
-- uid: Zaya.OCR.Models.BoundingBox.Top*
-  name: Top
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Top_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Top
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Top
-  nameWithType: BoundingBox.Top
-- uid: Zaya.OCR.Models.BoundingBox.Width
-  name: Width
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Width
-  commentId: P:Zaya.OCR.Models.BoundingBox.Width
-  fullName: Zaya.OCR.Models.BoundingBox.Width
-  nameWithType: BoundingBox.Width
-- uid: Zaya.OCR.Models.BoundingBox.Width*
-  name: Width
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Width_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Width
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Width
-  nameWithType: BoundingBox.Width
-- uid: Zaya.OCR.Models.BoundingBox.X
-  name: X
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_X
-  commentId: P:Zaya.OCR.Models.BoundingBox.X
-  fullName: Zaya.OCR.Models.BoundingBox.X
-  nameWithType: BoundingBox.X
-- uid: Zaya.OCR.Models.BoundingBox.X*
-  name: X
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_X_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.X
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.X
-  nameWithType: BoundingBox.X
-- uid: Zaya.OCR.Models.BoundingBox.Y
-  name: Y
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Y
-  commentId: P:Zaya.OCR.Models.BoundingBox.Y
-  fullName: Zaya.OCR.Models.BoundingBox.Y
-  nameWithType: BoundingBox.Y
-- uid: Zaya.OCR.Models.BoundingBox.Y*
-  name: Y
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_Y_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.Y
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.BoundingBox.Y
-  nameWithType: BoundingBox.Y
-- uid: Zaya.OCR.Models.BoundingBox.op_Equality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
-  name: operator ==(BoundingBox, BoundingBox)
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_op_Equality_Zaya_OCR_Models_BoundingBox_Zaya_OCR_Models_BoundingBox_
-  commentId: M:Zaya.OCR.Models.BoundingBox.op_Equality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
-  name.vb: =(BoundingBox, BoundingBox)
-  fullName: Zaya.OCR.Models.BoundingBox.operator ==(Zaya.OCR.Models.BoundingBox, Zaya.OCR.Models.BoundingBox)
-  fullName.vb: Zaya.OCR.Models.BoundingBox.=(Zaya.OCR.Models.BoundingBox, Zaya.OCR.Models.BoundingBox)
-  nameWithType: BoundingBox.operator ==(BoundingBox, BoundingBox)
-  nameWithType.vb: BoundingBox.=(BoundingBox, BoundingBox)
-- uid: Zaya.OCR.Models.BoundingBox.op_Equality*
-  name: operator ==
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_op_Equality_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.op_Equality
-  isSpec: "True"
-  name.vb: =
-  fullName: Zaya.OCR.Models.BoundingBox.operator ==
-  fullName.vb: Zaya.OCR.Models.BoundingBox.=
-  nameWithType: BoundingBox.operator ==
-  nameWithType.vb: BoundingBox.=
-- uid: Zaya.OCR.Models.BoundingBox.op_Inequality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
-  name: operator !=(BoundingBox, BoundingBox)
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_op_Inequality_Zaya_OCR_Models_BoundingBox_Zaya_OCR_Models_BoundingBox_
-  commentId: M:Zaya.OCR.Models.BoundingBox.op_Inequality(Zaya.OCR.Models.BoundingBox,Zaya.OCR.Models.BoundingBox)
-  name.vb: <>(BoundingBox, BoundingBox)
-  fullName: Zaya.OCR.Models.BoundingBox.operator !=(Zaya.OCR.Models.BoundingBox, Zaya.OCR.Models.BoundingBox)
-  fullName.vb: Zaya.OCR.Models.BoundingBox.<>(Zaya.OCR.Models.BoundingBox, Zaya.OCR.Models.BoundingBox)
-  nameWithType: BoundingBox.operator !=(BoundingBox, BoundingBox)
-  nameWithType.vb: BoundingBox.<>(BoundingBox, BoundingBox)
-- uid: Zaya.OCR.Models.BoundingBox.op_Inequality*
-  name: operator !=
-  href: api/Zaya.OCR.Models.BoundingBox.html#Zaya_OCR_Models_BoundingBox_op_Inequality_
-  commentId: Overload:Zaya.OCR.Models.BoundingBox.op_Inequality
-  isSpec: "True"
-  name.vb: <>
-  fullName: Zaya.OCR.Models.BoundingBox.operator !=
-  fullName.vb: Zaya.OCR.Models.BoundingBox.<>
-  nameWithType: BoundingBox.operator !=
-  nameWithType.vb: BoundingBox.<>
-- uid: Zaya.OCR.Models.IOCRResult
-  name: IOCRResult
-  href: api/Zaya.OCR.Models.IOCRResult.html
-  commentId: T:Zaya.OCR.Models.IOCRResult
-  fullName: Zaya.OCR.Models.IOCRResult
-  nameWithType: IOCRResult
-- uid: Zaya.OCR.Models.IOCRResult.Confidence
-  name: Confidence
-  href: api/Zaya.OCR.Models.IOCRResult.html#Zaya_OCR_Models_IOCRResult_Confidence
-  commentId: P:Zaya.OCR.Models.IOCRResult.Confidence
-  fullName: Zaya.OCR.Models.IOCRResult.Confidence
-  nameWithType: IOCRResult.Confidence
-- uid: Zaya.OCR.Models.IOCRResult.Confidence*
-  name: Confidence
-  href: api/Zaya.OCR.Models.IOCRResult.html#Zaya_OCR_Models_IOCRResult_Confidence_
-  commentId: Overload:Zaya.OCR.Models.IOCRResult.Confidence
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.IOCRResult.Confidence
-  nameWithType: IOCRResult.Confidence
-- uid: Zaya.OCR.Models.IOCRResult.Words
-  name: Words
-  href: api/Zaya.OCR.Models.IOCRResult.html#Zaya_OCR_Models_IOCRResult_Words
-  commentId: P:Zaya.OCR.Models.IOCRResult.Words
-  fullName: Zaya.OCR.Models.IOCRResult.Words
-  nameWithType: IOCRResult.Words
-- uid: Zaya.OCR.Models.IOCRResult.Words*
-  name: Words
-  href: api/Zaya.OCR.Models.IOCRResult.html#Zaya_OCR_Models_IOCRResult_Words_
-  commentId: Overload:Zaya.OCR.Models.IOCRResult.Words
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.IOCRResult.Words
-  nameWithType: IOCRResult.Words
-- uid: Zaya.OCR.Models.IOCRWord
-  name: IOCRWord
-  href: api/Zaya.OCR.Models.IOCRWord.html
-  commentId: T:Zaya.OCR.Models.IOCRWord
-  fullName: Zaya.OCR.Models.IOCRWord
-  nameWithType: IOCRWord
-- uid: Zaya.OCR.Models.IOCRWord.Bounds
-  name: Bounds
-  href: api/Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Bounds
-  commentId: P:Zaya.OCR.Models.IOCRWord.Bounds
-  fullName: Zaya.OCR.Models.IOCRWord.Bounds
-  nameWithType: IOCRWord.Bounds
-- uid: Zaya.OCR.Models.IOCRWord.Bounds*
-  name: Bounds
-  href: api/Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Bounds_
-  commentId: Overload:Zaya.OCR.Models.IOCRWord.Bounds
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.IOCRWord.Bounds
-  nameWithType: IOCRWord.Bounds
-- uid: Zaya.OCR.Models.IOCRWord.Confidence
-  name: Confidence
-  href: api/Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Confidence
-  commentId: P:Zaya.OCR.Models.IOCRWord.Confidence
-  fullName: Zaya.OCR.Models.IOCRWord.Confidence
-  nameWithType: IOCRWord.Confidence
-- uid: Zaya.OCR.Models.IOCRWord.Confidence*
-  name: Confidence
-  href: api/Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Confidence_
-  commentId: Overload:Zaya.OCR.Models.IOCRWord.Confidence
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.IOCRWord.Confidence
-  nameWithType: IOCRWord.Confidence
-- uid: Zaya.OCR.Models.IOCRWord.Text
-  name: Text
-  href: api/Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Text
-  commentId: P:Zaya.OCR.Models.IOCRWord.Text
-  fullName: Zaya.OCR.Models.IOCRWord.Text
-  nameWithType: IOCRWord.Text
-- uid: Zaya.OCR.Models.IOCRWord.Text*
-  name: Text
-  href: api/Zaya.OCR.Models.IOCRWord.html#Zaya_OCR_Models_IOCRWord_Text_
-  commentId: Overload:Zaya.OCR.Models.IOCRWord.Text
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.IOCRWord.Text
-  nameWithType: IOCRWord.Text
-- uid: Zaya.OCR.Models.ITextLine
-  name: ITextLine
-  href: api/Zaya.OCR.Models.ITextLine.html
-  commentId: T:Zaya.OCR.Models.ITextLine
-  fullName: Zaya.OCR.Models.ITextLine
-  nameWithType: ITextLine
-- uid: Zaya.OCR.Models.ITextLine.Bounds
-  name: Bounds
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Bounds
-  commentId: P:Zaya.OCR.Models.ITextLine.Bounds
-  fullName: Zaya.OCR.Models.ITextLine.Bounds
-  nameWithType: ITextLine.Bounds
-- uid: Zaya.OCR.Models.ITextLine.Bounds*
-  name: Bounds
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Bounds_
-  commentId: Overload:Zaya.OCR.Models.ITextLine.Bounds
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextLine.Bounds
-  nameWithType: ITextLine.Bounds
-- uid: Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextLineExt
+  name: ITextLineExt
+  href: api/Zaya.OCR.Models.ITextLineExt.html
+  commentId: T:Zaya.OCR.Models.ITextLineExt
+  fullName: Zaya.OCR.Models.ITextLineExt
+  nameWithType: ITextLineExt
+- uid: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
   name: HasPreviousFrameMatch
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_HasPreviousFrameMatch
-  commentId: P:Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
-  fullName: Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
-  nameWithType: ITextLine.HasPreviousFrameMatch
-- uid: Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch*
+  href: api/Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_HasPreviousFrameMatch
+  commentId: P:Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+  nameWithType: ITextLineExt.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch*
   name: HasPreviousFrameMatch
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_HasPreviousFrameMatch_
-  commentId: Overload:Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
+  href: api/Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_HasPreviousFrameMatch_
+  commentId: Overload:Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
   isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextLine.HasPreviousFrameMatch
-  nameWithType: ITextLine.HasPreviousFrameMatch
-- uid: Zaya.OCR.Models.ITextLine.Id
-  name: Id
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Id
-  commentId: P:Zaya.OCR.Models.ITextLine.Id
-  fullName: Zaya.OCR.Models.ITextLine.Id
-  nameWithType: ITextLine.Id
-- uid: Zaya.OCR.Models.ITextLine.Id*
-  name: Id
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Id_
-  commentId: Overload:Zaya.OCR.Models.ITextLine.Id
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextLine.Id
-  nameWithType: ITextLine.Id
-- uid: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+  nameWithType: ITextLineExt.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
   name: PreviousFrameMatchAge
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_PreviousFrameMatchAge
-  commentId: P:Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
-  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
-  nameWithType: ITextLine.PreviousFrameMatchAge
-- uid: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge*
+  href: api/Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_PreviousFrameMatchAge
+  commentId: P:Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
+  nameWithType: ITextLineExt.PreviousFrameMatchAge
+- uid: Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge*
   name: PreviousFrameMatchAge
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_PreviousFrameMatchAge_
-  commentId: Overload:Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
+  href: api/Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_PreviousFrameMatchAge_
+  commentId: Overload:Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
   isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameMatchAge
-  nameWithType: ITextLine.PreviousFrameMatchAge
-- uid: Zaya.OCR.Models.ITextLine.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
+  nameWithType: ITextLineExt.PreviousFrameMatchAge
+- uid: Zaya.OCR.Models.ITextLineExt.PreviousFrameText
   name: PreviousFrameText
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_PreviousFrameText
-  commentId: P:Zaya.OCR.Models.ITextLine.PreviousFrameText
-  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameText
-  nameWithType: ITextLine.PreviousFrameText
-- uid: Zaya.OCR.Models.ITextLine.PreviousFrameText*
+  href: api/Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_PreviousFrameText
+  commentId: P:Zaya.OCR.Models.ITextLineExt.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextLineExt.PreviousFrameText
+  nameWithType: ITextLineExt.PreviousFrameText
+- uid: Zaya.OCR.Models.ITextLineExt.PreviousFrameText*
   name: PreviousFrameText
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_PreviousFrameText_
-  commentId: Overload:Zaya.OCR.Models.ITextLine.PreviousFrameText
+  href: api/Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_PreviousFrameText_
+  commentId: Overload:Zaya.OCR.Models.ITextLineExt.PreviousFrameText
   isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextLine.PreviousFrameText
-  nameWithType: ITextLine.PreviousFrameText
-- uid: Zaya.OCR.Models.ITextLine.Text
-  name: Text
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Text
-  commentId: P:Zaya.OCR.Models.ITextLine.Text
-  fullName: Zaya.OCR.Models.ITextLine.Text
-  nameWithType: ITextLine.Text
-- uid: Zaya.OCR.Models.ITextLine.Text*
-  name: Text
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Text_
-  commentId: Overload:Zaya.OCR.Models.ITextLine.Text
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextLine.Text
-  nameWithType: ITextLine.Text
-- uid: Zaya.OCR.Models.ITextLine.Words
-  name: Words
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Words
-  commentId: P:Zaya.OCR.Models.ITextLine.Words
-  fullName: Zaya.OCR.Models.ITextLine.Words
-  nameWithType: ITextLine.Words
-- uid: Zaya.OCR.Models.ITextLine.Words*
-  name: Words
-  href: api/Zaya.OCR.Models.ITextLine.html#Zaya_OCR_Models_ITextLine_Words_
-  commentId: Overload:Zaya.OCR.Models.ITextLine.Words
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextLine.Words
-  nameWithType: ITextLine.Words
-- uid: Zaya.OCR.Models.ITextParagraph
-  name: ITextParagraph
-  href: api/Zaya.OCR.Models.ITextParagraph.html
-  commentId: T:Zaya.OCR.Models.ITextParagraph
-  fullName: Zaya.OCR.Models.ITextParagraph
-  nameWithType: ITextParagraph
-- uid: Zaya.OCR.Models.ITextParagraph.GhostAge
+  fullName: Zaya.OCR.Models.ITextLineExt.PreviousFrameText
+  nameWithType: ITextLineExt.PreviousFrameText
+- uid: Zaya.OCR.Models.ITextParagraphExt
+  name: ITextParagraphExt
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html
+  commentId: T:Zaya.OCR.Models.ITextParagraphExt
+  fullName: Zaya.OCR.Models.ITextParagraphExt
+  nameWithType: ITextParagraphExt
+- uid: Zaya.OCR.Models.ITextParagraphExt.GhostAge
   name: GhostAge
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_GhostAge
-  commentId: P:Zaya.OCR.Models.ITextParagraph.GhostAge
-  fullName: Zaya.OCR.Models.ITextParagraph.GhostAge
-  nameWithType: ITextParagraph.GhostAge
-- uid: Zaya.OCR.Models.ITextParagraph.GhostAge*
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html#Zaya_OCR_Models_ITextParagraphExt_GhostAge
+  commentId: P:Zaya.OCR.Models.ITextParagraphExt.GhostAge
+  fullName: Zaya.OCR.Models.ITextParagraphExt.GhostAge
+  nameWithType: ITextParagraphExt.GhostAge
+- uid: Zaya.OCR.Models.ITextParagraphExt.GhostAge*
   name: GhostAge
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_GhostAge_
-  commentId: Overload:Zaya.OCR.Models.ITextParagraph.GhostAge
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html#Zaya_OCR_Models_ITextParagraphExt_GhostAge_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraphExt.GhostAge
   isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextParagraph.GhostAge
-  nameWithType: ITextParagraph.GhostAge
-- uid: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextParagraphExt.GhostAge
+  nameWithType: ITextParagraphExt.GhostAge
+- uid: Zaya.OCR.Models.ITextParagraphExt.HasPreviousFrameMatch
   name: HasPreviousFrameMatch
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_HasPreviousFrameMatch
-  commentId: P:Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
-  fullName: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
-  nameWithType: ITextParagraph.HasPreviousFrameMatch
-- uid: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch*
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html#Zaya_OCR_Models_ITextParagraphExt_HasPreviousFrameMatch
+  commentId: P:Zaya.OCR.Models.ITextParagraphExt.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextParagraphExt.HasPreviousFrameMatch
+  nameWithType: ITextParagraphExt.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextParagraphExt.HasPreviousFrameMatch*
   name: HasPreviousFrameMatch
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_HasPreviousFrameMatch_
-  commentId: Overload:Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html#Zaya_OCR_Models_ITextParagraphExt_HasPreviousFrameMatch_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraphExt.HasPreviousFrameMatch
   isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextParagraph.HasPreviousFrameMatch
-  nameWithType: ITextParagraph.HasPreviousFrameMatch
-- uid: Zaya.OCR.Models.ITextParagraph.Id
-  name: Id
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Id
-  commentId: P:Zaya.OCR.Models.ITextParagraph.Id
-  fullName: Zaya.OCR.Models.ITextParagraph.Id
-  nameWithType: ITextParagraph.Id
-- uid: Zaya.OCR.Models.ITextParagraph.Id*
-  name: Id
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Id_
-  commentId: Overload:Zaya.OCR.Models.ITextParagraph.Id
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextParagraph.Id
-  nameWithType: ITextParagraph.Id
-- uid: Zaya.OCR.Models.ITextParagraph.IsGhost
+  fullName: Zaya.OCR.Models.ITextParagraphExt.HasPreviousFrameMatch
+  nameWithType: ITextParagraphExt.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextParagraphExt.IsGhost
   name: IsGhost
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_IsGhost
-  commentId: P:Zaya.OCR.Models.ITextParagraph.IsGhost
-  fullName: Zaya.OCR.Models.ITextParagraph.IsGhost
-  nameWithType: ITextParagraph.IsGhost
-- uid: Zaya.OCR.Models.ITextParagraph.IsGhost*
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html#Zaya_OCR_Models_ITextParagraphExt_IsGhost
+  commentId: P:Zaya.OCR.Models.ITextParagraphExt.IsGhost
+  fullName: Zaya.OCR.Models.ITextParagraphExt.IsGhost
+  nameWithType: ITextParagraphExt.IsGhost
+- uid: Zaya.OCR.Models.ITextParagraphExt.IsGhost*
   name: IsGhost
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_IsGhost_
-  commentId: Overload:Zaya.OCR.Models.ITextParagraph.IsGhost
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html#Zaya_OCR_Models_ITextParagraphExt_IsGhost_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraphExt.IsGhost
   isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextParagraph.IsGhost
-  nameWithType: ITextParagraph.IsGhost
-- uid: Zaya.OCR.Models.ITextParagraph.Lines
-  name: Lines
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Lines
-  commentId: P:Zaya.OCR.Models.ITextParagraph.Lines
-  fullName: Zaya.OCR.Models.ITextParagraph.Lines
-  nameWithType: ITextParagraph.Lines
-- uid: Zaya.OCR.Models.ITextParagraph.Lines*
-  name: Lines
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Lines_
-  commentId: Overload:Zaya.OCR.Models.ITextParagraph.Lines
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextParagraph.Lines
-  nameWithType: ITextParagraph.Lines
-- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextParagraphExt.IsGhost
+  nameWithType: ITextParagraphExt.IsGhost
+- uid: Zaya.OCR.Models.ITextParagraphExt.PreviousFrameMatchAge
   name: PreviousFrameMatchAge
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_PreviousFrameMatchAge
-  commentId: P:Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
-  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
-  nameWithType: ITextParagraph.PreviousFrameMatchAge
-- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge*
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html#Zaya_OCR_Models_ITextParagraphExt_PreviousFrameMatchAge
+  commentId: P:Zaya.OCR.Models.ITextParagraphExt.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextParagraphExt.PreviousFrameMatchAge
+  nameWithType: ITextParagraphExt.PreviousFrameMatchAge
+- uid: Zaya.OCR.Models.ITextParagraphExt.PreviousFrameMatchAge*
   name: PreviousFrameMatchAge
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_PreviousFrameMatchAge_
-  commentId: Overload:Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html#Zaya_OCR_Models_ITextParagraphExt_PreviousFrameMatchAge_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraphExt.PreviousFrameMatchAge
   isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameMatchAge
-  nameWithType: ITextParagraph.PreviousFrameMatchAge
-- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextParagraphExt.PreviousFrameMatchAge
+  nameWithType: ITextParagraphExt.PreviousFrameMatchAge
+- uid: Zaya.OCR.Models.ITextParagraphExt.PreviousFrameText
   name: PreviousFrameText
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_PreviousFrameText
-  commentId: P:Zaya.OCR.Models.ITextParagraph.PreviousFrameText
-  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameText
-  nameWithType: ITextParagraph.PreviousFrameText
-- uid: Zaya.OCR.Models.ITextParagraph.PreviousFrameText*
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html#Zaya_OCR_Models_ITextParagraphExt_PreviousFrameText
+  commentId: P:Zaya.OCR.Models.ITextParagraphExt.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextParagraphExt.PreviousFrameText
+  nameWithType: ITextParagraphExt.PreviousFrameText
+- uid: Zaya.OCR.Models.ITextParagraphExt.PreviousFrameText*
   name: PreviousFrameText
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_PreviousFrameText_
-  commentId: Overload:Zaya.OCR.Models.ITextParagraph.PreviousFrameText
+  href: api/Zaya.OCR.Models.ITextParagraphExt.html#Zaya_OCR_Models_ITextParagraphExt_PreviousFrameText_
+  commentId: Overload:Zaya.OCR.Models.ITextParagraphExt.PreviousFrameText
   isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextParagraph.PreviousFrameText
-  nameWithType: ITextParagraph.PreviousFrameText
-- uid: Zaya.OCR.Models.ITextParagraph.Text
-  name: Text
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Text
-  commentId: P:Zaya.OCR.Models.ITextParagraph.Text
-  fullName: Zaya.OCR.Models.ITextParagraph.Text
-  nameWithType: ITextParagraph.Text
-- uid: Zaya.OCR.Models.ITextParagraph.Text*
-  name: Text
-  href: api/Zaya.OCR.Models.ITextParagraph.html#Zaya_OCR_Models_ITextParagraph_Text_
-  commentId: Overload:Zaya.OCR.Models.ITextParagraph.Text
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextParagraph.Text
-  nameWithType: ITextParagraph.Text
-- uid: Zaya.OCR.Models.ITextResult
-  name: ITextResult
-  href: api/Zaya.OCR.Models.ITextResult.html
-  commentId: T:Zaya.OCR.Models.ITextResult
-  fullName: Zaya.OCR.Models.ITextResult
-  nameWithType: ITextResult
-- uid: Zaya.OCR.Models.ITextResult.FullText
-  name: FullText
-  href: api/Zaya.OCR.Models.ITextResult.html#Zaya_OCR_Models_ITextResult_FullText
-  commentId: P:Zaya.OCR.Models.ITextResult.FullText
-  fullName: Zaya.OCR.Models.ITextResult.FullText
-  nameWithType: ITextResult.FullText
-- uid: Zaya.OCR.Models.ITextResult.FullText*
-  name: FullText
-  href: api/Zaya.OCR.Models.ITextResult.html#Zaya_OCR_Models_ITextResult_FullText_
-  commentId: Overload:Zaya.OCR.Models.ITextResult.FullText
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextResult.FullText
-  nameWithType: ITextResult.FullText
-- uid: Zaya.OCR.Models.ITextResult.Lines
-  name: Lines
-  href: api/Zaya.OCR.Models.ITextResult.html#Zaya_OCR_Models_ITextResult_Lines
-  commentId: P:Zaya.OCR.Models.ITextResult.Lines
-  fullName: Zaya.OCR.Models.ITextResult.Lines
-  nameWithType: ITextResult.Lines
-- uid: Zaya.OCR.Models.ITextResult.Lines*
-  name: Lines
-  href: api/Zaya.OCR.Models.ITextResult.html#Zaya_OCR_Models_ITextResult_Lines_
-  commentId: Overload:Zaya.OCR.Models.ITextResult.Lines
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextResult.Lines
-  nameWithType: ITextResult.Lines
-- uid: Zaya.OCR.Models.ITextResult.Paragraphs
-  name: Paragraphs
-  href: api/Zaya.OCR.Models.ITextResult.html#Zaya_OCR_Models_ITextResult_Paragraphs
-  commentId: P:Zaya.OCR.Models.ITextResult.Paragraphs
-  fullName: Zaya.OCR.Models.ITextResult.Paragraphs
-  nameWithType: ITextResult.Paragraphs
-- uid: Zaya.OCR.Models.ITextResult.Paragraphs*
-  name: Paragraphs
-  href: api/Zaya.OCR.Models.ITextResult.html#Zaya_OCR_Models_ITextResult_Paragraphs_
-  commentId: Overload:Zaya.OCR.Models.ITextResult.Paragraphs
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextResult.Paragraphs
-  nameWithType: ITextResult.Paragraphs
-- uid: Zaya.OCR.Models.ITextResult.Words
-  name: Words
-  href: api/Zaya.OCR.Models.ITextResult.html#Zaya_OCR_Models_ITextResult_Words
-  commentId: P:Zaya.OCR.Models.ITextResult.Words
-  fullName: Zaya.OCR.Models.ITextResult.Words
-  nameWithType: ITextResult.Words
-- uid: Zaya.OCR.Models.ITextResult.Words*
-  name: Words
-  href: api/Zaya.OCR.Models.ITextResult.html#Zaya_OCR_Models_ITextResult_Words_
-  commentId: Overload:Zaya.OCR.Models.ITextResult.Words
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextResult.Words
-  nameWithType: ITextResult.Words
-- uid: Zaya.OCR.Models.ITextWord
-  name: ITextWord
-  href: api/Zaya.OCR.Models.ITextWord.html
-  commentId: T:Zaya.OCR.Models.ITextWord
-  fullName: Zaya.OCR.Models.ITextWord
-  nameWithType: ITextWord
-- uid: Zaya.OCR.Models.ITextWord.Bounds
-  name: Bounds
-  href: api/Zaya.OCR.Models.ITextWord.html#Zaya_OCR_Models_ITextWord_Bounds
-  commentId: P:Zaya.OCR.Models.ITextWord.Bounds
-  fullName: Zaya.OCR.Models.ITextWord.Bounds
-  nameWithType: ITextWord.Bounds
-- uid: Zaya.OCR.Models.ITextWord.Bounds*
-  name: Bounds
-  href: api/Zaya.OCR.Models.ITextWord.html#Zaya_OCR_Models_ITextWord_Bounds_
-  commentId: Overload:Zaya.OCR.Models.ITextWord.Bounds
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextWord.Bounds
-  nameWithType: ITextWord.Bounds
-- uid: Zaya.OCR.Models.ITextWord.Confidence
-  name: Confidence
-  href: api/Zaya.OCR.Models.ITextWord.html#Zaya_OCR_Models_ITextWord_Confidence
-  commentId: P:Zaya.OCR.Models.ITextWord.Confidence
-  fullName: Zaya.OCR.Models.ITextWord.Confidence
-  nameWithType: ITextWord.Confidence
-- uid: Zaya.OCR.Models.ITextWord.Confidence*
-  name: Confidence
-  href: api/Zaya.OCR.Models.ITextWord.html#Zaya_OCR_Models_ITextWord_Confidence_
-  commentId: Overload:Zaya.OCR.Models.ITextWord.Confidence
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextWord.Confidence
-  nameWithType: ITextWord.Confidence
-- uid: Zaya.OCR.Models.ITextWord.Text
-  name: Text
-  href: api/Zaya.OCR.Models.ITextWord.html#Zaya_OCR_Models_ITextWord_Text
-  commentId: P:Zaya.OCR.Models.ITextWord.Text
-  fullName: Zaya.OCR.Models.ITextWord.Text
-  nameWithType: ITextWord.Text
-- uid: Zaya.OCR.Models.ITextWord.Text*
-  name: Text
-  href: api/Zaya.OCR.Models.ITextWord.html#Zaya_OCR_Models_ITextWord_Text_
-  commentId: Overload:Zaya.OCR.Models.ITextWord.Text
-  isSpec: "True"
-  fullName: Zaya.OCR.Models.ITextWord.Text
-  nameWithType: ITextWord.Text
+  fullName: Zaya.OCR.Models.ITextParagraphExt.PreviousFrameText
+  nameWithType: ITextParagraphExt.PreviousFrameText
 - uid: Zaya.OCR.Services
   name: Zaya.OCR.Services
   href: api/Zaya.OCR.Services.html
@@ -2562,11 +1788,11 @@ references:
   commentId: T:Zaya.OCR.Services.ITextLayoutSession
   fullName: Zaya.OCR.Services.ITextLayoutSession
   nameWithType: ITextLayoutSession
-- uid: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)
+- uid: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.Primitives.OCR.IOCRResult,System.Threading.CancellationToken)
   name: ProcessAsync(IOCRResult, CancellationToken)
-  href: api/Zaya.OCR.Services.ITextLayoutSession.html#Zaya_OCR_Services_ITextLayoutSession_ProcessAsync_Zaya_OCR_Models_IOCRResult_System_Threading_CancellationToken_
-  commentId: M:Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult,System.Threading.CancellationToken)
-  fullName: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.OCR.Models.IOCRResult, System.Threading.CancellationToken)
+  href: api/Zaya.OCR.Services.ITextLayoutSession.html#Zaya_OCR_Services_ITextLayoutSession_ProcessAsync_Zaya_Primitives_OCR_IOCRResult_System_Threading_CancellationToken_
+  commentId: M:Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.Primitives.OCR.IOCRResult,System.Threading.CancellationToken)
+  fullName: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync(Zaya.Primitives.OCR.IOCRResult, System.Threading.CancellationToken)
   nameWithType: ITextLayoutSession.ProcessAsync(IOCRResult, CancellationToken)
 - uid: Zaya.OCR.Services.ITextLayoutSession.ProcessAsync*
   name: ProcessAsync

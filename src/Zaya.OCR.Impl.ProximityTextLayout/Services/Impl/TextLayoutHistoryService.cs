@@ -1,6 +1,7 @@
 using System.Numerics;
 using Zaya.OCR.Impl.ProximityTextLayout.Models;
-using Zaya.OCR.Models;
+using Zaya.Primitives;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Services.Impl;
 
@@ -41,7 +42,7 @@ internal sealed class TextLayoutHistoryService : ITextLayoutHistoryService
 
     /// <summary>Finds the previous-frame line whose band best covers <paramref name="bounds"/>.</summary>
     public TextLine? FindPreviousLineCovering(BoundingBox bounds)
-        => _previous is null ? null : FindBestLine(_previous.Lines.OfType<TextLine>(), bounds);
+        => _previous is null ? null : FindBestLine(_previous.AssembledLines, bounds);
 
     /// <summary>True when both boxes map to the same previous line.</summary>
     public bool WereOnSamePreviousLine(BoundingBox a, BoundingBox b)

@@ -6,6 +6,7 @@ using Zaya.OCR.Impl.OneOcr.Services;
 using Zaya.OCR.Impl.OneOcr.Services.Impl;
 using Zaya.OCR.Services;
 using Zaya.Primitives;
+using Zaya.Primitives.Settings;
 
 namespace Zaya.OCR.Impl.OneOcr;
 

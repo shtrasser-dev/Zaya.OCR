@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <ZayaVersionRole>interface</ZayaVersionRole>
-    <ZayaVersionInterface>3</ZayaVersionInterface>
+    <ZayaVersionInterface>0</ZayaVersionInterface>
 
     <PackageId>Zaya.OCR</PackageId>
     <Description>OCR abstractions for the Zaya ecosystem: interfaces for pluggable text recognition services.</Description>

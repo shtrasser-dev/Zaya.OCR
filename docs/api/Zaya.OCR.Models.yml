@@ -4,13 +4,8 @@ items:
   commentId: N:Zaya.OCR.Models
   id: Zaya.OCR.Models
   children:
-  - Zaya.OCR.Models.BoundingBox
-  - Zaya.OCR.Models.IOCRResult
-  - Zaya.OCR.Models.IOCRWord
-  - Zaya.OCR.Models.ITextLine
-  - Zaya.OCR.Models.ITextParagraph
-  - Zaya.OCR.Models.ITextResult
-  - Zaya.OCR.Models.ITextWord
+  - Zaya.OCR.Models.ITextLineExt
+  - Zaya.OCR.Models.ITextParagraphExt
   langs:
   - csharp
   - vb
@@ -21,78 +16,15 @@ items:
   assemblies:
   - Zaya.OCR
 references:
-- uid: Zaya.OCR.Models.BoundingBox
-  commentId: T:Zaya.OCR.Models.BoundingBox
-  parent: Zaya.OCR.Models
-  href: Zaya.OCR.Models.BoundingBox.html
-  name: BoundingBox
-  nameWithType: BoundingBox
-  fullName: Zaya.OCR.Models.BoundingBox
-- uid: Zaya.OCR.Models.IOCRResult
-  commentId: T:Zaya.OCR.Models.IOCRResult
-  parent: Zaya.OCR.Models
-  href: Zaya.OCR.Models.IOCRResult.html
-  name: IOCRResult
-  nameWithType: IOCRResult
-  fullName: Zaya.OCR.Models.IOCRResult
-- uid: Zaya.OCR.Models.IOCRWord
-  commentId: T:Zaya.OCR.Models.IOCRWord
-  parent: Zaya.OCR.Models
-  href: Zaya.OCR.Models.IOCRWord.html
-  name: IOCRWord
-  nameWithType: IOCRWord
-  fullName: Zaya.OCR.Models.IOCRWord
-- uid: Zaya.OCR.Models.ITextLine
-  commentId: T:Zaya.OCR.Models.ITextLine
-  href: Zaya.OCR.Models.ITextLine.html
-  name: ITextLine
-  nameWithType: ITextLine
-  fullName: Zaya.OCR.Models.ITextLine
-- uid: Zaya.OCR.Models.ITextParagraph
-  commentId: T:Zaya.OCR.Models.ITextParagraph
-  href: Zaya.OCR.Models.ITextParagraph.html
-  name: ITextParagraph
-  nameWithType: ITextParagraph
-  fullName: Zaya.OCR.Models.ITextParagraph
-- uid: Zaya.OCR.Models.ITextResult
-  commentId: T:Zaya.OCR.Models.ITextResult
-  href: Zaya.OCR.Models.ITextResult.html
-  name: ITextResult
-  nameWithType: ITextResult
-  fullName: Zaya.OCR.Models.ITextResult
-- uid: Zaya.OCR.Models.ITextWord
-  commentId: T:Zaya.OCR.Models.ITextWord
-  href: Zaya.OCR.Models.ITextWord.html
-  name: ITextWord
-  nameWithType: ITextWord
-  fullName: Zaya.OCR.Models.ITextWord
-- uid: Zaya.OCR.Models
-  commentId: N:Zaya.OCR.Models
-  href: Zaya.html
-  name: Zaya.OCR.Models
-  nameWithType: Zaya.OCR.Models
-  fullName: Zaya.OCR.Models
-  spec.csharp:
-  - uid: Zaya
-    name: Zaya
-    href: Zaya.html
-  - name: .
-  - uid: Zaya.OCR
-    name: OCR
-    href: Zaya.OCR.html
-  - name: .
-  - uid: Zaya.OCR.Models
-    name: Models
-    href: Zaya.OCR.Models.html
-  spec.vb:
-  - uid: Zaya
-    name: Zaya
-    href: Zaya.html
-  - name: .
-  - uid: Zaya.OCR
-    name: OCR
-    href: Zaya.OCR.html
-  - name: .
-  - uid: Zaya.OCR.Models
-    name: Models
-    href: Zaya.OCR.Models.html
+- uid: Zaya.OCR.Models.ITextLineExt
+  commentId: T:Zaya.OCR.Models.ITextLineExt
+  href: Zaya.OCR.Models.ITextLineExt.html
+  name: ITextLineExt
+  nameWithType: ITextLineExt
+  fullName: Zaya.OCR.Models.ITextLineExt
+- uid: Zaya.OCR.Models.ITextParagraphExt
+  commentId: T:Zaya.OCR.Models.ITextParagraphExt
+  href: Zaya.OCR.Models.ITextParagraphExt.html
+  name: ITextParagraphExt
+  nameWithType: ITextParagraphExt
+  fullName: Zaya.OCR.Models.ITextParagraphExt

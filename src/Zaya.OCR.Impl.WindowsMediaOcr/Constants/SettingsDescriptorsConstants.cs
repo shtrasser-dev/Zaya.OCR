@@ -1,5 +1,6 @@
 using Windows.Media.Ocr;
 using Zaya.Primitives;
+using Zaya.Primitives.Settings;
 
 namespace Zaya.OCR.Impl.WindowsMediaOcr.Constants;
 

@@ -1,9 +1,10 @@
-using Zaya.OCR.Models;
+using Zaya.Primitives;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Models;
 
 /// <summary>Internal word wrapper used by the layout pipeline.</summary>
-public sealed class TextWord : ITextWord, IOCRWord
+public sealed class TextWord : IOCRWord
 {
     /// <inheritdoc />
     public string Text { get; }

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on abstractions (`IOCRService`, `IOCRSession`, `IOCRResult`, `IOCRWord`); implementations such as OneOCR are separate packages. Plugin hosts construct Impl types with [Zaya.Logging](https://github.com/shtrasser-dev/Zaya.Logging) `ILoggingWrapper` (or use the parameterless ctor with `EmptyLoggingWrapper`).
+Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Consumers depend on service abstractions (`IOCRService`, `IOCRSession`) and result types from [Zaya.Primitives](https://github.com/shtrasser-dev/Zaya.Primitives) (`IOCRResult`, `IOCRWord`, `ITextResult`, …). Implementations such as OneOCR are separate packages. Plugin hosts construct Impl types with [Zaya.Logging](https://github.com/shtrasser-dev/Zaya.Logging) `ILoggingWrapper` (or use the parameterless ctor with `EmptyLoggingWrapper`).
 
 ## Architecture
 
@@ -10,9 +10,9 @@ Zaya.OCR provides interfaces for optical character recognition in .NET 8.0+. Con
 |---|---|
 | `IOCRService` | Engine metadata + settings; creates sessions via `CreateSessionAsync` |
 | `IOCRSession` | Active recognition session — `RecognizeAsync(IRawImage)` → `IOCRResult` |
-| `IOCRResult` | Aggregate result — read-only list of `IOCRWord` plus overall confidence |
-| `IOCRWord` | Individual word — recognized text, pixel bounding box, per-word confidence |
-| `ITextLayoutService` | Optional layout engine — structures OCR words into paragraphs/lines |
+| `IOCRResult` / `IOCRWord` | From `Zaya.Primitives.OCR` — words + confidence |
+| `ITextLayoutService` | Optional layout engine — `ITextResult` (`Paragraphs` + `FullText`) |
+| `ITextLineExt` / `ITextParagraphExt` | Optional debug tracking/ghost (`Zaya.OCR.Models`) |
 
 ## Basic Usage (OneOCR)
 

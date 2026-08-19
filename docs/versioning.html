@@ -74,22 +74,22 @@
 <tr>
 <td><strong>ZayaPrimitivesVersion</strong></td>
 <td><code>Directory.Build.props</code> (supplies <strong>Major</strong>)</td>
-<td><code>1.0.0</code></td>
+<td><code>2.0.0</code></td>
 </tr>
 <tr>
 <td><strong>interfaceVersion</strong></td>
 <td><code>Zaya.OCR.csproj</code> → only <strong><code>ZayaVersionInterface</code></strong> → <code>Major.Interface.0</code></td>
-<td><code>1.3.0</code></td>
+<td><code>2.0.0</code></td>
 </tr>
 <tr>
 <td><strong>pluginVersion</strong></td>
 <td>Each Impl → <strong><code>ZayaVersionImpMajor</code></strong> + <strong><code>ZayaVersionImpMinor</code></strong>; Interface read from abstractions → <code>Major.Interface.ImpMajor.ImpMinor</code></td>
-<td><code>1.3.0.0</code></td>
+<td><code>2.0.0.0</code></td>
 </tr>
 <tr>
 <td><strong>updateChannel</strong></td>
 <td>Interface <code>MAJOR.Interface</code></td>
-<td><code>1.3</code> → <code>plugin-Zaya.OCR-v1.3-latest</code></td>
+<td><code>2.0</code> → <code>plugin-Zaya.OCR-v2.0-latest</code></td>
 </tr>
 </tbody>
 </table>
@@ -107,13 +107,13 @@
   &quot;id&quot;: &quot;OneOcr&quot;,
   &quot;type&quot;: &quot;ocr&quot;,
   &quot;interface&quot;: &quot;Zaya.OCR&quot;,
-  &quot;interfaceVersion&quot;: &quot;1.3.0&quot;,
-  &quot;pluginVersion&quot;: &quot;1.3.0.0&quot;,
+  &quot;interfaceVersion&quot;: &quot;2.0.0&quot;,
+  &quot;pluginVersion&quot;: &quot;2.0.0.0&quot;,
   &quot;entryPoint&quot;: &quot;Zaya.OCR.Impl.OneOcr.OneOcrService&quot;
 }
 </code></pre>
 <p><code>entryPoint</code> is the fully qualified type that implements <code>IOCRService</code> / <code>ITextLayoutService</code> (hosts construct it with <code>ILoggingWrapper</code>, or use the parameterless ctor). Other plugins: <code>Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService</code>, <code>Zaya.OCR.Impl.ProximityTextLayout.ProximityTextLayoutService</code>.</p>
-<p>Release body lists per-asset plugin versions (<code>Zaya.OCR.Impl.OneOcr.zip=1.3.0.0</code>).</p>
+<p>Release body lists per-asset plugin versions (<code>Zaya.OCR.Impl.OneOcr.zip=2.0.0.0</code>).</p>
 <h2 id="changelog">Changelog</h2>
 <p>Use root <a href="../CHANGELOG.md"><code>CHANGELOG.md</code></a> (<a href="https://keepachangelog.com/">Keep a Changelog</a>):</p>
 <ol>

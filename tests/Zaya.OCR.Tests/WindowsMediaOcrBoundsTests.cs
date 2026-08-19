@@ -1,6 +1,6 @@
 using Windows.Foundation;
 using Zaya.OCR.Impl.WindowsMediaOcr.Services.Impl;
-using Zaya.OCR.Models;
+using Zaya.Primitives;
 
 namespace Zaya.OCR.Tests;
 

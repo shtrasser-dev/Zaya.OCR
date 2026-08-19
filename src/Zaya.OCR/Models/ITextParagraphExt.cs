@@ -1,27 +1,11 @@
 namespace Zaya.OCR.Models;
 
 /// <summary>
-/// Represents a paragraph of text composed of one or more lines.
+/// Optional debug/tracking and ghost metadata for a layout paragraph (e.g. overlay diagnostics).
+/// Concrete layout engines may implement this alongside <see cref="Zaya.Primitives.OCR.ITextParagraph"/>.
 /// </summary>
-public interface ITextParagraph
+public interface ITextParagraphExt
 {
-    /// <summary>
-    /// Stable identity for this paragraph across frames.
-    /// When the paragraph matches a previous-frame paragraph, equals that paragraph's <see cref="Id"/>;
-    /// otherwise a newly generated unique value.
-    /// </summary>
-    Guid Id { get; }
-
-    /// <summary>
-    /// Gets the full text of this paragraph, with lines separated by newlines.
-    /// </summary>
-    string Text { get; }
-
-    /// <summary>
-    /// Gets the lines that make up this paragraph.
-    /// </summary>
-    IReadOnlyList<ITextLine> Lines { get; }
-
     /// <summary>
     /// True when this paragraph was matched to a previous-frame paragraph (geometry / tracking).
     /// </summary>
@@ -35,8 +19,6 @@ public interface ITextParagraph
 
     /// <summary>
     /// Display text of the matched previous-frame paragraph, or empty when there is no match.
-    /// Hosts can restore the old text-equality signal with
-    /// <c>HasPreviousFrameMatch &amp;&amp; string.Equals(Text, PreviousFrameText, StringComparison.OrdinalIgnoreCase)</c>.
     /// </summary>
     string PreviousFrameText { get; }
 

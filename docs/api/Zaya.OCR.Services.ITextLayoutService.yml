@@ -31,7 +31,7 @@ items:
   - Zaya.OCR
   namespace: Zaya.OCR.Services
   summary: >-
-    Merges individually recognized words from an <xref href="Zaya.OCR.Models.IOCRResult" data-throw-if-not-resolved="false"></xref>
+    Merges individually recognized words from an <xref href="Zaya.Primitives.OCR.IOCRResult" data-throw-if-not-resolved="false"></xref>
 
     into structured text blocks (paragraphs and lines) using configurable layout rules.
   example: []
@@ -195,7 +195,7 @@ items:
     content: IReadOnlyList<SettingDescriptor> Settings { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.SettingDescriptor}
+      type: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.Settings.SettingDescriptor}
     content.vb: ReadOnly Property Settings As IReadOnlyList(Of SettingDescriptor)
   overload: Zaya.OCR.Services.ITextLayoutService.Settings*
 - uid: Zaya.OCR.Services.ITextLayoutService.CreateSessionAsync(System.Threading.CancellationToken)
@@ -275,13 +275,13 @@ items:
   fullName.vb: Zaya.OCR.Services.ITextLayoutService.CreateSessionAsync(System.Collections.Generic.IReadOnlyDictionary(Of String, Object), System.Threading.CancellationToken)
   name.vb: CreateSessionAsync(IReadOnlyDictionary(Of String, Object), CancellationToken)
 references:
-- uid: Zaya.OCR.Models.IOCRResult
-  commentId: T:Zaya.OCR.Models.IOCRResult
-  parent: Zaya.OCR.Models
-  href: Zaya.OCR.Models.IOCRResult.html
+- uid: Zaya.Primitives.OCR.IOCRResult
+  commentId: T:Zaya.Primitives.OCR.IOCRResult
+  parent: Zaya.Primitives.OCR
+  isExternal: true
   name: IOCRResult
   nameWithType: IOCRResult
-  fullName: Zaya.OCR.Models.IOCRResult
+  fullName: Zaya.Primitives.OCR.IOCRResult
 - uid: Zaya.OCR.Services
   commentId: N:Zaya.OCR.Services
   href: Zaya.html
@@ -334,36 +334,36 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
   - name: (
   - name: )
-- uid: Zaya.OCR.Models
-  commentId: N:Zaya.OCR.Models
-  href: Zaya.html
-  name: Zaya.OCR.Models
-  nameWithType: Zaya.OCR.Models
-  fullName: Zaya.OCR.Models
+- uid: Zaya.Primitives.OCR
+  commentId: N:Zaya.Primitives.OCR
+  isExternal: true
+  name: Zaya.Primitives.OCR
+  nameWithType: Zaya.Primitives.OCR
+  fullName: Zaya.Primitives.OCR
   spec.csharp:
   - uid: Zaya
     name: Zaya
-    href: Zaya.html
+    isExternal: true
   - name: .
-  - uid: Zaya.OCR
+  - uid: Zaya.Primitives
+    name: Primitives
+    isExternal: true
+  - name: .
+  - uid: Zaya.Primitives.OCR
     name: OCR
-    href: Zaya.OCR.html
-  - name: .
-  - uid: Zaya.OCR.Models
-    name: Models
-    href: Zaya.OCR.Models.html
+    isExternal: true
   spec.vb:
   - uid: Zaya
     name: Zaya
-    href: Zaya.html
+    isExternal: true
   - name: .
-  - uid: Zaya.OCR
+  - uid: Zaya.Primitives
+    name: Primitives
+    isExternal: true
+  - name: .
+  - uid: Zaya.Primitives.OCR
     name: OCR
-    href: Zaya.OCR.html
-  - name: .
-  - uid: Zaya.OCR.Models
-    name: Models
-    href: Zaya.OCR.Models.html
+    isExternal: true
 - uid: System.IDisposable
   commentId: T:System.IDisposable
   parent: System
@@ -460,16 +460,16 @@ references:
   name: Settings
   nameWithType: ITextLayoutService.Settings
   fullName: Zaya.OCR.Services.ITextLayoutService.Settings
-- uid: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.SettingDescriptor}
-  commentId: T:System.Collections.Generic.IReadOnlyList{Zaya.Primitives.SettingDescriptor}
+- uid: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.Settings.SettingDescriptor}
+  commentId: T:System.Collections.Generic.IReadOnlyList{Zaya.Primitives.Settings.SettingDescriptor}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IReadOnlyList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   name: IReadOnlyList<SettingDescriptor>
   nameWithType: IReadOnlyList<SettingDescriptor>
-  fullName: System.Collections.Generic.IReadOnlyList<Zaya.Primitives.SettingDescriptor>
+  fullName: System.Collections.Generic.IReadOnlyList<Zaya.Primitives.Settings.SettingDescriptor>
   nameWithType.vb: IReadOnlyList(Of SettingDescriptor)
-  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Zaya.Primitives.SettingDescriptor)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Zaya.Primitives.Settings.SettingDescriptor)
   name.vb: IReadOnlyList(Of SettingDescriptor)
   spec.csharp:
   - uid: System.Collections.Generic.IReadOnlyList`1
@@ -477,7 +477,7 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
-  - uid: Zaya.Primitives.SettingDescriptor
+  - uid: Zaya.Primitives.Settings.SettingDescriptor
     name: SettingDescriptor
     isExternal: true
   - name: '>'
@@ -489,7 +489,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: Zaya.Primitives.SettingDescriptor
+  - uid: Zaya.Primitives.Settings.SettingDescriptor
     name: SettingDescriptor
     isExternal: true
   - name: )

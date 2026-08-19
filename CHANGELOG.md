@@ -7,6 +7,25 @@ History starts at the current release line; older releases are not backfilled.
 
 ## [Unreleased]
 
+### Changed
+
+Version bumps from the Primitives 2.0 migration decisions:
+
+| Axis | Was | Now | Decision |
+|------|-----|-----|----------|
+| **Zaya.Primitives** (NuGet) | `1.0.0` | `2.0.0` | published major |
+| **ZayaVersionInterface** | `3` | `0` | reset for new Primitives major |
+| **Zaya.OCR** (interface) | `1.3.0` | `2.0.0` | `Major.Interface.0` |
+| **OneOcr / WindowsMediaOcr / ProximityTextLayout** | `1.3.0.0` | `2.0.0.0` | ImpMajor/ImpMinor stay `0.0` |
+| **update channel** | `plugin-Zaya.OCR-v1.3-latest` | `plugin-Zaya.OCR-v2.0-latest` | host must match exactly |
+| **Zaya.Logging** | `1.0.0` | `1.0.0` | unchanged |
+
+API alignment with Primitives 2.0:
+
+- Result/layout models (`BoundingBox`, `IOCRWord`, `IOCRResult`, `ITextLine`, `ITextParagraph`, `ITextResult`) live in `Zaya.Primitives` / `Zaya.Primitives.OCR`; local duplicates removed.
+- `SettingDescriptor*` moved to `Zaya.Primitives.Settings`.
+- Tracking/ghost metadata exposed as optional `ITextLineExt` / `ITextParagraphExt` (debug overlay); `ITextResult` is `Paragraphs` + `FullText` only.
+
 ## [1.3.0.0] - 2026-08-15
 
 ### Added

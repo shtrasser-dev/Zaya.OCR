@@ -1,0 +1,233 @@
+### YamlMime:ManagedReference
+items:
+- uid: Zaya.OCR.Models.ITextLineExt
+  commentId: T:Zaya.OCR.Models.ITextLineExt
+  id: ITextLineExt
+  parent: Zaya.OCR.Models
+  children:
+  - Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+  - Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
+  - Zaya.OCR.Models.ITextLineExt.PreviousFrameText
+  langs:
+  - csharp
+  - vb
+  name: ITextLineExt
+  nameWithType: ITextLineExt
+  fullName: Zaya.OCR.Models.ITextLineExt
+  type: Interface
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextLineExt.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: ITextLineExt
+    path: src/Zaya.OCR/Models/ITextLineExt.cs
+    startLine: 6
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    Optional debug/tracking metadata for a layout line (e.g. overlay diagnostics).
+
+    Concrete layout engines may implement this alongside <xref href="Zaya.Primitives.OCR.ITextLine" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public interface ITextLineExt
+    content.vb: Public Interface ITextLineExt
+- uid: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+  commentId: P:Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+  id: HasPreviousFrameMatch
+  parent: Zaya.OCR.Models.ITextLineExt
+  langs:
+  - csharp
+  - vb
+  name: HasPreviousFrameMatch
+  nameWithType: ITextLineExt.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextLineExt.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: HasPreviousFrameMatch
+    path: src/Zaya.OCR/Models/ITextLineExt.cs
+    startLine: 11
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: True when this line was matched to a previous-frame line (geometry / tracking).
+  example: []
+  syntax:
+    content: bool HasPreviousFrameMatch { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property HasPreviousFrameMatch As Boolean
+  overload: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch*
+- uid: Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
+  commentId: P:Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
+  id: PreviousFrameMatchAge
+  parent: Zaya.OCR.Models.ITextLineExt
+  langs:
+  - csharp
+  - vb
+  name: PreviousFrameMatchAge
+  nameWithType: ITextLineExt.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextLineExt.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: PreviousFrameMatchAge
+    path: src/Zaya.OCR/Models/ITextLineExt.cs
+    startLine: 17
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: >-
+    How many frames this line identity has been alive (1 on first appearance;
+
+    increments while <xref href="Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch" data-throw-if-not-resolved="false"></xref> stays true across frames).
+  example: []
+  syntax:
+    content: int PreviousFrameMatchAge { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property PreviousFrameMatchAge As Integer
+  overload: Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge*
+- uid: Zaya.OCR.Models.ITextLineExt.PreviousFrameText
+  commentId: P:Zaya.OCR.Models.ITextLineExt.PreviousFrameText
+  id: PreviousFrameText
+  parent: Zaya.OCR.Models.ITextLineExt
+  langs:
+  - csharp
+  - vb
+  name: PreviousFrameText
+  nameWithType: ITextLineExt.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextLineExt.PreviousFrameText
+  type: Property
+  source:
+    remote:
+      path: src/Zaya.OCR/Models/ITextLineExt.cs
+      branch: main
+      repo: https://github.com/shtrasser-dev/Zaya.OCR
+    id: PreviousFrameText
+    path: src/Zaya.OCR/Models/ITextLineExt.cs
+    startLine: 22
+  assemblies:
+  - Zaya.OCR
+  namespace: Zaya.OCR.Models
+  summary: Display text of the matched previous-frame line(s), or empty when there is no match.
+  example: []
+  syntax:
+    content: string PreviousFrameText { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property PreviousFrameText As String
+  overload: Zaya.OCR.Models.ITextLineExt.PreviousFrameText*
+references:
+- uid: Zaya.Primitives.OCR.ITextLine
+  commentId: T:Zaya.Primitives.OCR.ITextLine
+  isExternal: true
+  name: ITextLine
+  nameWithType: ITextLine
+  fullName: Zaya.Primitives.OCR.ITextLine
+- uid: Zaya.OCR.Models
+  commentId: N:Zaya.OCR.Models
+  href: Zaya.html
+  name: Zaya.OCR.Models
+  nameWithType: Zaya.OCR.Models
+  fullName: Zaya.OCR.Models
+  spec.csharp:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+  spec.vb:
+  - uid: Zaya
+    name: Zaya
+    href: Zaya.html
+  - name: .
+  - uid: Zaya.OCR
+    name: OCR
+    href: Zaya.OCR.html
+  - name: .
+  - uid: Zaya.OCR.Models
+    name: Models
+    href: Zaya.OCR.Models.html
+- uid: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch*
+  commentId: Overload:Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+  href: Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_HasPreviousFrameMatch
+  name: HasPreviousFrameMatch
+  nameWithType: ITextLineExt.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+  commentId: P:Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+  href: Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_HasPreviousFrameMatch
+  name: HasPreviousFrameMatch
+  nameWithType: ITextLineExt.HasPreviousFrameMatch
+  fullName: Zaya.OCR.Models.ITextLineExt.HasPreviousFrameMatch
+- uid: Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge*
+  commentId: Overload:Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
+  href: Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_PreviousFrameMatchAge
+  name: PreviousFrameMatchAge
+  nameWithType: ITextLineExt.PreviousFrameMatchAge
+  fullName: Zaya.OCR.Models.ITextLineExt.PreviousFrameMatchAge
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Zaya.OCR.Models.ITextLineExt.PreviousFrameText*
+  commentId: Overload:Zaya.OCR.Models.ITextLineExt.PreviousFrameText
+  href: Zaya.OCR.Models.ITextLineExt.html#Zaya_OCR_Models_ITextLineExt_PreviousFrameText
+  name: PreviousFrameText
+  nameWithType: ITextLineExt.PreviousFrameText
+  fullName: Zaya.OCR.Models.ITextLineExt.PreviousFrameText
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

@@ -30,7 +30,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: OneOcrService
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 91
+    startLine: 92
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -47,7 +47,7 @@ items:
 
     <xref href="Zaya.OCR.Impl.OneOcr.OneOcrService.EngineId" data-throw-if-not-resolved="false"></xref> is <code>oneocr</code>.
 
-    Settings are exposed via <xref href="Zaya.OCR.Impl.OneOcr.OneOcrService.Settings" data-throw-if-not-resolved="false"></xref> as <xref href="Zaya.Primitives.SettingDescriptor" data-throw-if-not-resolved="false"></xref> instances
+    Settings are exposed via <xref href="Zaya.OCR.Impl.OneOcr.OneOcrService.Settings" data-throw-if-not-resolved="false"></xref> as <xref href="Zaya.Primitives.Settings.SettingDescriptor" data-throw-if-not-resolved="false"></xref> instances
 
     for UI hosts, and accepted as a string-keyed dictionary by
 
@@ -139,7 +139,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 97
+    startLine: 98
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -170,7 +170,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 106
+    startLine: 107
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -205,7 +205,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: EngineId
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 121
+    startLine: 122
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -241,7 +241,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: DisplayName
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 124
+    startLine: 125
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -274,7 +274,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Description
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 127
+    startLine: 128
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -307,7 +307,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: PreferredPixelFormat
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 130
+    startLine: 131
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -345,7 +345,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Settings
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 139
+    startLine: 140
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -359,7 +359,7 @@ items:
     content: public IReadOnlyList<SettingDescriptor> Settings { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.SettingDescriptor}
+      type: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.Settings.SettingDescriptor}
     content.vb: Public ReadOnly Property Settings As IReadOnlyList(Of SettingDescriptor)
   overload: Zaya.OCR.Impl.OneOcr.OneOcrService.Settings*
   implements:
@@ -382,7 +382,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: IsAvailable
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 142
+    startLine: 143
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -415,7 +415,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: CreateSessionAsync
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 145
+    startLine: 146
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -452,7 +452,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: CreateSessionAsync
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 161
+    startLine: 162
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -495,7 +495,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Dispose
     path: src/Zaya.OCR.Impl.OneOcr/OneOcrService.cs
-    startLine: 228
+    startLine: 229
   assemblies:
   - Zaya.OCR.Impl.OneOcr
   namespace: Zaya.OCR.Impl.OneOcr
@@ -595,12 +595,12 @@ references:
   name: Settings
   nameWithType: OneOcrService.Settings
   fullName: Zaya.OCR.Impl.OneOcr.OneOcrService.Settings
-- uid: Zaya.Primitives.SettingDescriptor
-  commentId: T:Zaya.Primitives.SettingDescriptor
+- uid: Zaya.Primitives.Settings.SettingDescriptor
+  commentId: T:Zaya.Primitives.Settings.SettingDescriptor
   isExternal: true
   name: SettingDescriptor
   nameWithType: SettingDescriptor
-  fullName: Zaya.Primitives.SettingDescriptor
+  fullName: Zaya.Primitives.Settings.SettingDescriptor
 - uid: Zaya.OCR.Impl.OneOcr.Models.OneOcrConfig
   commentId: T:Zaya.OCR.Impl.OneOcr.Models.OneOcrConfig
   href: Zaya.OCR.Impl.OneOcr.Models.OneOcrConfig.html
@@ -1061,16 +1061,16 @@ references:
   name: Settings
   nameWithType: IOCRService.Settings
   fullName: Zaya.OCR.Services.IOCRService.Settings
-- uid: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.SettingDescriptor}
-  commentId: T:System.Collections.Generic.IReadOnlyList{Zaya.Primitives.SettingDescriptor}
+- uid: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.Settings.SettingDescriptor}
+  commentId: T:System.Collections.Generic.IReadOnlyList{Zaya.Primitives.Settings.SettingDescriptor}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IReadOnlyList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   name: IReadOnlyList<SettingDescriptor>
   nameWithType: IReadOnlyList<SettingDescriptor>
-  fullName: System.Collections.Generic.IReadOnlyList<Zaya.Primitives.SettingDescriptor>
+  fullName: System.Collections.Generic.IReadOnlyList<Zaya.Primitives.Settings.SettingDescriptor>
   nameWithType.vb: IReadOnlyList(Of SettingDescriptor)
-  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Zaya.Primitives.SettingDescriptor)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Zaya.Primitives.Settings.SettingDescriptor)
   name.vb: IReadOnlyList(Of SettingDescriptor)
   spec.csharp:
   - uid: System.Collections.Generic.IReadOnlyList`1
@@ -1078,7 +1078,7 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
-  - uid: Zaya.Primitives.SettingDescriptor
+  - uid: Zaya.Primitives.Settings.SettingDescriptor
     name: SettingDescriptor
     isExternal: true
   - name: '>'
@@ -1090,7 +1090,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: Zaya.Primitives.SettingDescriptor
+  - uid: Zaya.Primitives.Settings.SettingDescriptor
     name: SettingDescriptor
     isExternal: true
   - name: )

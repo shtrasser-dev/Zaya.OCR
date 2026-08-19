@@ -1,9 +1,10 @@
 using Zaya.OCR.Models;
+using Zaya.Primitives.OCR;
 
 namespace Zaya.OCR.Impl.ProximityTextLayout.Models;
 
 /// <summary>Internal paragraph with emit/ghost metadata.</summary>
-public sealed class TextParagraph : ITextParagraph
+public sealed class TextParagraph : ITextParagraph, ITextParagraphExt
 {
     /// <inheritdoc />
     public Guid Id { get; set; } = Guid.NewGuid();
@@ -66,15 +67,21 @@ public sealed class TextParagraph : ITextParagraph
         var concrete = lines.OfType<TextLine>().ToList();
         if (concrete.Count != lines.Count)
         {
-            concrete = lines.Select(l => l as TextLine
-                ?? new TextLine(
+            concrete = lines.Select(l =>
+            {
+                if (l is TextLine tl)
+                    return tl;
+
+                var ext = l as ITextLineExt;
+                return new TextLine(
                     l.Text,
                     l.Words,
                     l.Bounds,
                     l.Id,
-                    l.HasPreviousFrameMatch,
-                    l.PreviousFrameMatchAge,
-                    l.PreviousFrameText)).ToList();
+                    ext?.HasPreviousFrameMatch ?? false,
+                    ext?.PreviousFrameMatchAge ?? 1,
+                    ext?.PreviousFrameText ?? string.Empty);
+            }).ToList();
         }
 
         TextLines = concrete;

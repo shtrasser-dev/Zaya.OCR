@@ -1,10 +1,10 @@
-using Zaya.OCR.Models;
 using Zaya.Primitives;
+using Zaya.Primitives.Settings;
 
 namespace Zaya.OCR.Services;
 
 /// <summary>
-/// Merges individually recognized words from an <see cref="IOCRResult"/>
+/// Merges individually recognized words from an <see cref="Zaya.Primitives.OCR.IOCRResult"/>
 /// into structured text blocks (paragraphs and lines) using configurable layout rules.
 /// </summary>
 public interface ITextLayoutService : IDisposable

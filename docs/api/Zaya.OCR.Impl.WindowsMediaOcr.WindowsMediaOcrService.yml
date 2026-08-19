@@ -30,7 +30,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: WindowsMediaOcrService
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 53
+    startLine: 54
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -110,7 +110,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -141,7 +141,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: .ctor
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 72
+    startLine: 73
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -176,7 +176,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: EngineId
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 82
+    startLine: 83
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -212,7 +212,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: DisplayName
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 85
+    startLine: 86
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -245,7 +245,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Description
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 88
+    startLine: 89
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -278,7 +278,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: PreferredPixelFormat
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 91
+    startLine: 92
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -316,7 +316,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Settings
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 94
+    startLine: 95
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -326,7 +326,7 @@ items:
     content: public IReadOnlyList<SettingDescriptor> Settings { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.SettingDescriptor}
+      type: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.Settings.SettingDescriptor}
     content.vb: Public ReadOnly Property Settings As IReadOnlyList(Of SettingDescriptor)
   overload: Zaya.OCR.Impl.WindowsMediaOcr.WindowsMediaOcrService.Settings*
   implements:
@@ -349,7 +349,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: IsAvailable
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 97
+    startLine: 98
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -382,7 +382,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: CreateSessionAsync
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 118
+    startLine: 119
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -419,7 +419,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: CreateSessionAsync
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 126
+    startLine: 127
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -461,7 +461,7 @@ items:
       repo: https://github.com/shtrasser-dev/Zaya.OCR
     id: Dispose
     path: src/Zaya.OCR.Impl.WindowsMediaOcr/WindowsMediaOcrService.cs
-    startLine: 188
+    startLine: 189
   assemblies:
   - Zaya.OCR.Impl.WindowsMediaOcr
   namespace: Zaya.OCR.Impl.WindowsMediaOcr
@@ -941,16 +941,16 @@ references:
   name: Settings
   nameWithType: IOCRService.Settings
   fullName: Zaya.OCR.Services.IOCRService.Settings
-- uid: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.SettingDescriptor}
-  commentId: T:System.Collections.Generic.IReadOnlyList{Zaya.Primitives.SettingDescriptor}
+- uid: System.Collections.Generic.IReadOnlyList{Zaya.Primitives.Settings.SettingDescriptor}
+  commentId: T:System.Collections.Generic.IReadOnlyList{Zaya.Primitives.Settings.SettingDescriptor}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IReadOnlyList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   name: IReadOnlyList<SettingDescriptor>
   nameWithType: IReadOnlyList<SettingDescriptor>
-  fullName: System.Collections.Generic.IReadOnlyList<Zaya.Primitives.SettingDescriptor>
+  fullName: System.Collections.Generic.IReadOnlyList<Zaya.Primitives.Settings.SettingDescriptor>
   nameWithType.vb: IReadOnlyList(Of SettingDescriptor)
-  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Zaya.Primitives.SettingDescriptor)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Zaya.Primitives.Settings.SettingDescriptor)
   name.vb: IReadOnlyList(Of SettingDescriptor)
   spec.csharp:
   - uid: System.Collections.Generic.IReadOnlyList`1
@@ -958,7 +958,7 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
-  - uid: Zaya.Primitives.SettingDescriptor
+  - uid: Zaya.Primitives.Settings.SettingDescriptor
     name: SettingDescriptor
     isExternal: true
   - name: '>'
@@ -970,7 +970,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: Zaya.Primitives.SettingDescriptor
+  - uid: Zaya.Primitives.Settings.SettingDescriptor
     name: SettingDescriptor
     isExternal: true
   - name: )
