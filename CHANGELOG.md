@@ -7,6 +7,8 @@ History starts at the current release line; older releases are not backfilled.
 
 ## [Unreleased]
 
+## [1.3.0.0] - 2026-08-15
+
 ### Added
 
 - **OneOcr / WindowsMediaOcr / ProximityTextLayout `1.3.0.0`:** constructors take `ILoggingWrapper`; sessions (and nested OneOcr/WindowsMedia engines and Proximity layout services) are created via `Wrap`.
